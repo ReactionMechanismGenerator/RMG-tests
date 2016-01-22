@@ -42,3 +42,4 @@ script:
 
 cache:
   pip: true
+  apt: true
