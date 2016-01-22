@@ -43,3 +43,5 @@ script:
 cache:
   pip: true
   apt: true
+  directories:
+    - $HOME/anaconda/pkgs
