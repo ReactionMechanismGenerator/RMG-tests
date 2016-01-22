@@ -39,3 +39,6 @@ script:
   # go to RMG-tests folder:
   - cd $TRAVIS_BUILD_DIR
   - make eg1
+
+cache:
+  pip: true
