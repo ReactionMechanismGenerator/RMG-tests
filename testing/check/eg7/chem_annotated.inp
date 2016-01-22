@@ -1,0 +1,164 @@
+ELEMENTS H C O N Ne Ar He Si S Cl END
+
+SPECIES
+    Ar                  ! Ar
+    He                  ! He
+    Ne                  ! Ne
+    N2                  ! N2
+    ethane(1)           ! ethane(1)
+    H2(3)               ! H2(3)
+    H(4)                ! H(4)
+    CH3(14)             ! CH3(14)
+    CH4(16)             ! CH4(16)
+    C2H4(26)            ! C2H4(26)
+    C2H5(27)            ! C2H5(27)
+END
+
+
+
+THERM ALL
+    300.000  1000.000  5000.000
+
+! Thermo library: primaryThermoLibrary
+Ar                      Ar1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 4.37967000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 4.37967000E+00                   4
+
+! Thermo library: primaryThermoLibrary
+He                      He1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 9.28724000E-01 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 9.28724000E-01                   4
+
+! Thermo library: primaryThermoLibrary
+Ne                      Ne1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 3.35532000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 3.35532000E+00                   4
+
+! Thermo library: primaryThermoLibrary
+N2                      N 2                 G200.000   6000.000  1000.00       1
+ 2.95258000E+00 1.39690000E-03-4.92632000E-07 7.86010000E-11-4.60755000E-15    2
+-9.23949000E+02 5.87189000E+00 3.53101000E+00-1.23661000E-04-5.02999000E-07    3
+ 2.43531000E-09-1.40881000E-12-1.04698000E+03 2.96747000E+00                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R)
+ethane(1)               C 2  H 6            G100.000   5000.000  954.51        1
+ 4.58979653E+00 1.41508345E-02-4.75965676E-06 8.60302658E-10-6.21723639E-14    2
+-1.27217512E+04-3.61719603E+00 3.78034545E+00-3.24275729E-03 5.52385248E-05    3
+-6.38587529E-08 2.28639901E-11-1.16203413E+04 5.21029844E+00                   4
+
+! Thermo library: primaryThermoLibrary
+H2(3)                   H 2                 G100.000   5000.000  1959.07       1
+ 2.78817599E+00 5.87627738E-04 1.59016598E-07-5.52751433E-11 4.34320027E-15    2
+-5.96150266E+02 1.12672409E-01 3.43536402E+00 2.12711198E-04-2.78626958E-07    3
+ 3.40268668E-10-7.76035717E-14-1.03135983E+03-3.90841695E+00                   4
+
+! Thermo library: primaryThermoLibrary
+H(4)                    H 1                 G100.000   5000.000  4549.80       1
+ 2.49952070E+00 4.12340064E-07-1.32961237E-10 1.90456912E-14-1.02253194E-18    2
+ 2.54746633E+04-4.41924068E-01 2.50000000E+00 6.38129443E-13-8.20026313E-16    3
+ 3.42836147E-19-4.40751862E-23 2.54742178E+04-4.44972896E-01                   4
+
+! Thermo library: primaryThermoLibrary + radical(CH3)
+CH3(14)                 C 1  H 3            G100.000   5000.000  1337.60       1
+ 3.54140841E+00 4.76794303E-03-1.82152393E-06 3.28885395E-10-2.22552560E-14    2
+ 1.62239817E+04 1.66063199E+00 3.91547097E+00 1.84150822E-03 3.48752007E-06    3
+-3.32758350E-09 8.49993096E-13 1.62856392E+04 3.51729106E-01                   4
+
+! Thermo library: primaryThermoLibrary
+CH4(16)                 C 1  H 4            G100.000   5000.000  1084.13       1
+ 9.08292799E-01 1.14540412E-02-4.57171312E-06 8.29185827E-10-5.66310109E-14    2
+-9.71998630E+03 1.39929410E+01 4.20541054E+00-5.35551951E-03 2.51121444E-05    3
+-2.13760599E-08 5.97514944E-12-1.01619431E+04-9.21262349E-01                   4
+
+! Thermo group additivity estimation: group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R)
+C2H4(26)                C 2  H 4            G100.000   5000.000  940.43        1
+ 5.20280312E+00 7.82475550E-03-2.12702754E-06 3.79736714E-10-2.94709293E-14    2
+ 3.93635943E+03-6.62303917E+00 3.97980449E+00-7.57633942E-03 5.53000618E-05    3
+-6.36259294E-08 2.31784164E-11 5.07745830E+03 4.04601427E+00                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCJ)
+C2H5(27)                C 2  H 5            G100.000   5000.000  900.31        1
+ 5.15613522E+00 9.43135497E-03-1.81953639E-06 2.21214145E-10-1.43496741E-14    2
+ 1.20641121E+04-2.91057512E+00 3.82186381E+00-3.43395517E-03 5.09270648E-05    3
+-6.20230611E-08 2.37082235E-11 1.30660117E+04 7.61633521E+00                   4
+
+END
+
+
+
+REACTIONS    KCAL/MOLE   MOLES
+
+! Reaction index: Chemkin #1; RMG #195
+! Library reaction: GRI-Mech3.0
+CH3(14)+CH3(14)(+M)=ethane(1)(+M)                   6.770e+16 -1.180    0.654    
+CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ 
+    LOW/ 3.400e+41 -7.030    2.762    /
+    TROE/ 6.190e-01 73.2      1.18e+03  1e+04    /
+
+! Reaction index: Chemkin #2; RMG #134
+! Library reaction: GRI-Mech3.0
+ethane(1)+CH3(14)=CH4(16)+C2H5(27)                  6.140e+06 1.740     10.450   
+
+! Reaction index: Chemkin #3; RMG #128
+! Library reaction: GRI-Mech3.0
+CH3(14)+CH3(14)=C2H5(27)+H(4)                       6.840e+12 0.100     10.600   
+
+! Reaction index: Chemkin #4; RMG #178
+! Library reaction: GRI-Mech3.0
+CH3(14)+H(4)(+M)=CH4(16)(+M)                        1.390e+16 -0.534    0.536    
+CH4(16)/3.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ 
+    LOW/ 2.620e+33 -4.760    2.440    /
+    TROE/ 7.830e-01 74        2.94e+03  6.96e+03 /
+
+! Reaction index: Chemkin #5; RMG #188
+! Library reaction: GRI-Mech3.0
+C2H5(27)+H(4)(+M)=ethane(1)(+M)                     5.210e+17 -0.990    1.580    
+CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ 
+    LOW/ 1.990e+41 -7.080    6.685    /
+    TROE/ 8.422e-01 125       2.22e+03  6.88e+03 /
+
+! Reaction index: Chemkin #6; RMG #33
+! Library reaction: GRI-Mech3.0
+H2(3)+H(4)+H(4)=H2(3)+H2(3)                         9.000e+16 -0.600    0.000    
+
+! Reaction index: Chemkin #7; RMG #43
+! Library reaction: GRI-Mech3.0
+CH4(16)+H(4)=CH3(14)+H2(3)                          6.600e+08 1.620     10.840   
+
+! Reaction index: Chemkin #8; RMG #58
+! Library reaction: GRI-Mech3.0
+ethane(1)+H(4)=C2H5(27)+H2(3)                       1.150e+08 1.900     7.530    
+
+! Reaction index: Chemkin #9; RMG #173
+! Library reaction: GRI-Mech3.0
+H(4)+H(4)+M=H2(3)+M                                 1.000e+18 -1.000    0.000    
+CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/0.00/ Ar/0.63/ 
+
+! Reaction index: Chemkin #10; RMG #57
+! Library reaction: GRI-Mech3.0
+C2H5(27)+H(4)=C2H4(26)+H2(3)                        2.000e+12 0.000     0.000    
+
+! Reaction index: Chemkin #11; RMG #187
+! Library reaction: GRI-Mech3.0
+C2H4(26)+H(4)(+M)=C2H5(27)(+M)                      5.400e+11 0.454     1.820    
+CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ 
+    LOW/ 6.000e+41 -7.620    6.970    /
+    TROE/ 9.753e-01 210       984       4.37e+03 /
+
+! Reaction index: Chemkin #12; RMG #202
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_methyl;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+CH3(14)+C2H5(27)=CH4(16)+C2H4(26)                   6.570e+14 -0.680    0.000    
+
+! Reaction index: Chemkin #13; RMG #204
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_rad/H2/Cs;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(27)+C2H5(27)=ethane(1)+C2H4(26)                6.900e+13 -0.350    0.000    
+
+END
+
