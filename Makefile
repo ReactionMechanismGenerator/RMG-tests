@@ -1,6 +1,6 @@
 eg1:
-	mkdir -p testing/minimal
-	rm -rf testing/minimal/*
-	cp examples/rmg/minimal/input.py testing/minimal/input.py
-	@ echo "Running minimal example"
-	python $(RMG)/rmg.py testing/minimal/input.py
+	mkdir -p testing/eg1
+	rm -rf testing/eg1/*
+	cp examples/rmg/eg1/input.py testing/eg1/input.py
+	@ echo "Running eg1 example"
+	python $(RMG)/rmg.py testing/eg1/input.py
