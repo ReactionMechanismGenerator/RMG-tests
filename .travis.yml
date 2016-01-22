@@ -23,8 +23,8 @@ before_install:
   - cd ..
 
   - git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
-  - export PYTHONPATH=$TRAVIS_BUILD_DIR/RMG-Py:$PYTHONPATH
   - export RMG=$TRAVIS_BUILD_DIR/../RMG-Py
+  - export PYTHONPATH=$RMG:$PYTHONPATH
 
   - git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 
