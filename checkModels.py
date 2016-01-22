@@ -41,6 +41,9 @@ def parseCommandLineArguments():
         
     
     parser = argparse.ArgumentParser()
+    
+    parser.add_argument('name', metavar='NAME', type=str, nargs=1,
+        help='Name of test target model')
     parser.add_argument('chemkin', metavar='CHEMKIN', type=str, nargs=1,
         help='the Chemkin file of the tested model')
     parser.add_argument('speciesDict', metavar='SPECIESDICT', type=str, nargs=1,
@@ -58,18 +61,19 @@ def main():
     logger = logging.getLogger()
     logger.setLevel(logging.WARNING)
 
+    name = args.name[0]
     chemkin = os.path.join(os.getcwd(), args.chemkin[0])
     speciesDict = os.path.join(os.getcwd(), args.speciesDict[0])
 
-    check(chemkin, speciesDict)
+    check(name, chemkin, speciesDict)
 
-def check(chemkin, speciesDict):
+def check(name, chemkin, speciesDict):
     """
     Compare the provided chemkin model to the
     default chemkin model.
     """
 
-    folder = os.path.join(os.getcwd(),'testing/check/minimal')
+    folder = os.path.join(os.getcwd(),'testing/check/', name)
     chemkinOrig = os.path.join(folder,'chem_annotated.inp')
     speciesDictOrig = os.path.join(folder,'species_dictionary.txt')
 
