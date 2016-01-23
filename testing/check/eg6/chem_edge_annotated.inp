@@ -1,0 +1,2706 @@
+ELEMENTS H C O N Ne Ar He Si S Cl END
+
+SPECIES
+    Ar                  ! Ar
+    He                  ! He
+    Ne                  ! Ne
+    N2                  ! N2
+    ethane(1)           ! ethane(1)
+    O2(2)               ! O2(2)
+    CH3(3)              ! [CH3](3)
+    C2H5(4)             ! C[CH2](4)
+    H(5)                ! [H](5)
+    CH2(6)              ! [CH2](6)
+    C(7)                ! C(7)
+    HO2(8)              ! [O]O(8)
+    CH2(9)              ! [CH2](9)
+    CH3O2(10)           ! CO[O](10)
+    CH2O2(11)           ! [CH2]O[O](11)
+    CH3O2(12)           ! [CH2]OO(12)
+    CH3O(13)            ! C[O](13)
+    O(14)               ! [O](14)
+    COO(15)             ! COO(15)
+    COOC(16)            ! COOC(16)
+    CH2O(17)            ! C=O(17)
+    HO(18)              ! [OH](18)
+    CH2O(19)            ! [CH2][O](19)
+    CH3O2(20)           ! [O]CO(20)
+    CH3O4(21)           ! [O]OCOO(21)
+    CCOO(22)            ! CCOO(22)
+    COOCOO(23)          ! COOCOO(23)
+    OOCCOO(24)          ! OOCCOO(24)
+    O(25)               ! O(25)
+    CO(26)              ! CO(26)
+    OCOO(27)            ! OCOO(27)
+    OO(28)              ! OO(28)
+    CHO(29)             ! [CH]=O(29)
+    CO(30)              ! [C-]#[O+](30)
+    H2(31)              ! [H][H](31)
+    CH3O(32)            ! [CH2]O(32)
+    CH2O3(33)           ! [O]CO[O](33)
+    C2H5O(34)           ! CC[O](34)
+    C2H5O(35)           ! [CH2]OC(35)
+    C2H5O3(36)          ! COOC[O](36)
+    C2H5O3(37)          ! [O]CCOO(37)
+    C2H5O3(38)          ! [CH2]OCOO(38)
+    C2H4O2(39)          ! [CH2]OC[O](39)
+    C2H4O2(40)          ! [O]CC[O](40)
+    C2H4O2(41)          ! [CH2]OO[CH2](41)
+    C1COO1(42)          ! C1COO1(42)
+    C1OCO1(43)          ! C1OCO1(43)
+    C2H3O2(44)          ! [CH2]OC=O(44)
+    C2H3O2(45)          ! [CH2]O[CH][O](45)
+    C2H4O2(46)          ! COC=O(46)
+    C2H4O2(47)          ! [CH2]O[CH]O(47)
+    C2H4O2(48)          ! CO[CH][O](48)
+    C2H4O(49)           ! [CH2]O[CH2](49)
+    C2H3O2(50)          ! [O]CC=O(50)
+    C2H3O2(51)          ! [O][CH]C[O](51)
+    C2H4O2(52)          ! O=CCO(52)
+    C2H4O2(53)          ! [O]C[CH]O(53)
+    C2H4O2(54)          ! [O][CH]CO(54)
+    C2H4O(55)           ! [CH2]C[O](55)
+    C2H4(56)            ! C=C(56)
+    C2H4(57)            ! [CH2][CH2](57)
+    C2H5O2(58)          ! CCO[O](58)
+    CCC(59)             ! CCC(59)
+    CCOOC(60)           ! CCOOC(60)
+    CCCOO(61)           ! CCCOO(61)
+    CCO(62)             ! CCO(62)
+    C3H7O(63)           ! CCC[O](63)
+    C3H7O(64)           ! [CH2]OCC(64)
+    CCCC(65)            ! CCCC(65)
+    C2H4O2(66)          ! C[CH]O[O](66)
+    C2H4O2(67)          ! [CH2]CO[O](67)
+    C2H5O2(68)          ! C[CH]OO(68)
+    C2H5O2(69)          ! [CH2]COO(69)
+    C2H3(70)            ! [CH]=C(70)
+    C3H7(71)            ! [CH2]CC(71)
+    C3H7O2(72)          ! [CH2]COOC(72)
+    C3H7O2(73)          ! [CH2]CCOO(73)
+    C2H5O(74)           ! [CH2]CO(74)
+    C3H6O(75)           ! [CH2]CC[O](75)
+    C3H6O(76)           ! [CH2]CO[CH2](76)
+    C1COC1(77)          ! C1COC1(77)
+    C4H9(78)            ! [CH2]CCC(78)
+    C4H8(79)            ! [CH2]CC[CH2](79)
+    C1CCC1(80)          ! C1CCC1(80)
+    C3H5O(81)           ! C=CC[O](81)
+    C3H5O(82)           ! [CH2]CC=O(82)
+    C3H5O(83)           ! [CH2][CH]C[O](83)
+    C3H5O(84)           ! [CH2]C[CH][O](84)
+    C3H6O(85)           ! CCC=O(85)
+    C3H6O(86)           ! C=CCO(86)
+    C3H6O(87)           ! C[CH]C[O](87)
+    C3H6O(88)           ! [CH2]C[CH]O(88)
+    C3H6O(89)           ! CC[CH][O](89)
+    C3H6O(90)           ! [CH2][CH]CO(90)
+    C3H6(91)            ! [CH2]C[CH2](91)
+    C3H5O(92)           ! [CH2]OC=C(92)
+    C3H5O(93)           ! [CH2][CH]O[CH2](93)
+    C3H6O(94)           ! C=COC(94)
+    C3H6O(95)           ! [CH2]O[CH]C(95)
+    C3H6O(96)           ! [CH2][CH]OC(96)
+    C4H7(97)            ! [CH2]CC=C(97)
+    C4H7(98)            ! [CH2][CH]C[CH2](98)
+    C4H8(99)            ! C=CCC(99)
+    C4H8(100)           ! [CH2]C[CH]C(100)
+    C4H8(101)           ! [CH2][CH]CC(101)
+END
+
+
+
+THERM ALL
+    300.000  1000.000  5000.000
+
+! Thermo library: primaryThermoLibrary
+Ar                      Ar1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 4.37967000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 4.37967000E+00                   4
+
+! Thermo library: primaryThermoLibrary
+He                      He1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 9.28724000E-01 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 9.28724000E-01                   4
+
+! Thermo library: primaryThermoLibrary
+Ne                      Ne1                 G200.000   6000.000  1000.00       1
+ 2.50000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00 0.00000000E+00    2
+-7.45375000E+02 3.35532000E+00 2.50000000E+00 0.00000000E+00 0.00000000E+00    3
+ 0.00000000E+00 0.00000000E+00-7.45375000E+02 3.35532000E+00                   4
+
+! Thermo library: primaryThermoLibrary
+N2                      N 2                 G200.000   6000.000  1000.00       1
+ 2.95258000E+00 1.39690000E-03-4.92632000E-07 7.86010000E-11-4.60755000E-15    2
+-9.23949000E+02 5.87189000E+00 3.53101000E+00-1.23661000E-04-5.02999000E-07    3
+ 2.43531000E-09-1.40881000E-12-1.04698000E+03 2.96747000E+00                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R)
+ethane(1)               C 2  H 6            G100.000   5000.000  954.53        1
+ 4.58997390E+00 1.41505285E-02-4.75947845E-06 8.60260221E-10-6.21688243E-14    2
+-1.27218243E+04-3.61819191E+00 3.78029291E+00-3.24211430E-03 5.52361704E-05    3
+-6.38555558E-08 2.28625654E-11-1.16203391E+04 5.21048530E+00                   4
+
+! Thermo library: primaryThermoLibrary
+O2(2)                   O 2                 G100.000   5000.000  1074.55       1
+ 3.15382071E+00 1.67804388E-03-7.69974332E-07 1.51275484E-10-1.08782432E-14    2
+-1.04081724E+03 6.16755890E+00 3.53732245E+00-1.21571669E-03 5.31620326E-06    3
+-4.89446524E-09 1.45846294E-12-1.03858849E+03 4.68368176E+00                   4
+
+! Thermo library: primaryThermoLibrary + radical(CH3)
+CH3(3)                  C 1  H 3            G100.000   5000.000  1337.63       1
+ 3.54146159E+00 4.76786209E-03-1.82148094E-06 3.28875850E-10-2.22545011E-14    2
+ 1.62239559E+04 1.66032608E+00 3.91546733E+00 1.84154615E-03 3.48740903E-06    3
+-3.32746709E-09 8.49953855E-13 1.62856394E+04 3.51742525E-01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCJ)
+C2H5(4)                 C 2  H 5            G100.000   5000.000  900.30        1
+ 5.15612067E+00 9.43138060E-03-1.81955154E-06 2.21217788E-10-1.43499804E-14    2
+ 1.20641180E+04-2.91049373E+00 3.82186929E+00-3.43402417E-03 5.09273273E-05    3
+-6.20234340E-08 2.37083980E-11 1.30660115E+04 7.61631583E+00                   4
+
+! Thermo library: primaryThermoLibrary
+H(5)                    H 1                 G100.000   5000.000  4570.96       1
+ 2.49829732E+00 1.45963990E-06-4.69032548E-10 6.69551836E-14-3.58258629E-18    2
+ 2.54758061E+04-4.34136157E-01 2.50000000E+00 1.77470207E-12-2.27500193E-15    3
+ 9.48631670E-19-1.21629755E-22 2.54742178E+04-4.44972895E-01                   4
+
+! Thermo library: primaryThermoLibrary
+CH2(6)                  C 1  H 2            G100.000   5000.000  1442.34       1
+ 2.62643769E+00 3.94768291E-03-1.49926921E-06 2.54545228E-10-1.62960572E-14    2
+ 5.06917715E+04 6.78400096E+00 4.10264543E+00-1.44070107E-03 5.45073715E-06    3
+-3.58006782E-09 7.56207805E-13 5.04005784E+04-4.11772077E-01                   4
+
+! Thermo library: primaryThermoLibrary
+C(7)                    C 1  H 4            G100.000   5000.000  1084.12       1
+ 9.08278050E-01 1.14540655E-02-4.57172682E-06 8.29189010E-10-5.66312716E-14    2
+-9.71997984E+03 1.39930246E+01 4.20541310E+00-5.35554899E-03 2.51122436E-05    3
+-2.13761821E-08 5.97519843E-12-1.01619432E+04-9.21271573E-01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsH) + gauche(Os(RR)) + other(R) + radical(HOOJ)
+HO2(8)                  H 1  O 2            G100.000   5000.000  932.15        1
+ 3.21023498E+00 3.67942616E-03-1.27701938E-06 2.18046135E-10-1.46338668E-14    2
+-9.10367031E+02 8.18293895E+00 4.04594605E+00-1.73466232E-03 1.03767059E-05    3
+-1.02203270E-08 3.34911978E-12-9.86754295E+02 4.63580878E+00                   4
+
+! Thermo library: primaryThermoLibrary
+CH2(9)                  C 1  H 2            G100.000   5000.000  1104.62       1
+ 3.14983365E+00 2.96674298E-03-9.76056078E-07 1.54115336E-10-9.50338598E-15    2
+ 4.60581391E+04 4.77807788E+00 4.01192383E+00-1.54978245E-04 3.26297700E-06    3
+-2.40421709E-09 5.69496413E-13 4.58676802E+04 5.33200686E-01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + radical(ROOJ)
+CH3O2(10)               C 1  H 3  O 2       G100.000   5000.000  2084.42       1
+ 6.57575152E+00 8.54654167E-03-3.32713354E-06 5.46735518E-10-3.32627942E-14    2
+-1.31786439E+03-9.27545690E+00 3.63256013E+00 1.09261862E-02-2.68761009E-06    3
+-4.10044194E-10 1.71712464E-13 6.19120107E+02 8.78863407E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + radical(ROOJ) + radical(CsJOOH)
+CH2O2(11)               C 1  H 2  O 2       G100.000   5000.000  852.70        1
+ 3.92666861E+00 9.89745976E-03-4.22332750E-06 7.66192322E-10-5.14864792E-14    2
+ 2.41718365E+04 7.18754831E+00 3.37297828E+00 1.50685486E-02-1.78473470E-05    3
+ 1.49575358E-08-5.24996802E-12 2.41726940E+04 9.22189567E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + radical(CsJOOH)
+CH3O2(12)               C 1  H 3  O 2       G100.000   5000.000  1630.16       1
+ 6.76119032E+00 9.55441393E-03-4.10306182E-06 7.51600462E-10-5.08674606E-14    2
+ 4.71508385E+03-9.97112605E+00 3.12221765E+00 1.84834811E-02-1.23191417E-05    3
+ 4.11161146E-09-5.66153068E-13 5.90151211E+03 9.36312070E+00                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + radical(H3COJ)
+CH3O(13)                C 1  H 3  O 1       G100.000   5000.000  969.04        1
+ 3.64758452E+00 7.88332466E-03-2.85537544E-06 5.35195014E-10-3.91043856E-14    2
+ 4.22993430E+02 5.48062593E+00 4.03424282E+00-5.05106134E-03 3.47171321E-05    3
+-3.73880779E-08 1.28597591E-11 8.80407350E+02 6.37419527E+00                   4
+
+! Thermo library: primaryThermoLibrary
+O(14)                   O 1                 G100.000   5000.000  4570.96       1
+ 2.49829732E+00 1.45963990E-06-4.69032548E-10 6.69551836E-14-3.58258629E-18    2
+ 2.92318324E+04 4.10187960E+00 2.50000000E+00 1.77470207E-12-2.27500193E-15    3
+ 9.48631670E-19-1.21629755E-22 2.92302441E+04 4.09104286E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R)
+COO(15)                 C 1  H 4  O 2       G100.000   5000.000  1449.15       1
+ 6.24762378E+00 1.24240580E-02-5.23416295E-06 9.48732779E-10-6.36570146E-14    2
+-1.89589170E+04-7.77553996E+00 3.13680715E+00 1.70438435E-02-5.91002399E-06    3
+-6.29293626E-10 5.34450100E-13-1.76407894E+04 9.82351560E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R)
+COOC(16)                C 2  H 6  O 2       G100.000   5000.000  1851.10       1
+ 1.04989216E+01 1.76805624E-02-7.85449272E-06 1.40595923E-09-9.13809918E-14    2
+-2.15605267E+04-3.16899621E+01 2.80878739E+00 2.76356367E-02-1.05226468E-05    3
+ 4.22542825E-10 3.04028192E-13-1.75720377E+04 1.32290886E+01                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Cds-OdHH) + other(R)
+CH2O(17)                C 1  H 2  O 1       G100.000   5000.000  1402.29       1
+ 3.18000182E+00 9.55591485E-03-6.27297722E-06 1.33553694E-09-9.68403800E-14    2
+-1.50752517E+04 4.31047357E+00 4.32289309E+00-5.06324280E-03 2.15154762E-05    3
+-1.76520604E-08 4.31812417E-12-1.42789563E+04 2.39243598E+00                   4
+
+! Thermo library: primaryThermoLibrary
+HO(18)                  H 1  O 1            G100.000   5000.000  1145.76       1
+ 3.07193412E+00 6.04024883E-04-1.39833939E-08-2.13434380E-11 2.48056143E-15    2
+ 3.57938933E+03 4.57803245E+00 3.51456882E+00 2.92686370E-05-5.32135048E-07    3
+ 1.01945685E-09-3.85932376E-13 3.41425416E+03 2.10434601E+00                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + radical(H3COJ) +
+! radical(CsJOH)
+CH2O(19)                C 1  H 2  O 1       G100.000   5000.000  920.02        1
+ 6.53780006E+00 5.96356444E-04 7.06043907E-07-1.50879075E-10 8.38338652E-15    2
+ 2.20967909E+04-8.79596059E+00 3.84621358E+00-2.27886720E-03 2.91608299E-05    3
+-3.79918354E-08 1.49707861E-11 2.32090051E+04 7.31793123E+00                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cs-OsOsHH) +
+! gauche(Cs(RRRR)) + other(R) + radical(CsOJ)
+CH3O2(20)               C 1  H 3  O 2       G100.000   5000.000  1817.68       1
+ 8.56903387E+00 9.44993702E-03-6.57153475E-06 1.34572591E-09-9.27032376E-14    2
+-2.48756448E+04-2.21659402E+01 4.15576697E+00 6.88881188E-03 5.67000112E-06    3
+-6.85871421E-09 1.54662293E-12-2.12437911E+04 7.33980820E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) +
+! gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(ROOJ)
+CH3O4(21)               C 1  H 3  O 4       G100.000   5000.000  814.38        1
+ 2.22056670E+00 2.78856514E-02-1.59372785E-05 3.22794432E-09-2.28727935E-13    2
+-1.28117935E+04 2.19035513E+01 2.13770151E+00 5.05704482E-02-9.87538788E-05    3
+ 1.04614384E-07-4.16645359E-11-1.35370378E+04 1.77506883E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R)
+CCOO(22)                C 2  H 6  O 2       G100.000   5000.000  1468.52       1
+ 1.01562069E+01 1.78603269E-02-8.89898390E-06 1.73724700E-09-1.21109831E-13    2
+-2.53442768E+04-2.83805464E+01 2.53381532E+00 2.91008551E-02-1.06547856E-05    3
+-1.88085432E-09 1.24647222E-12-2.20788615E+04 1.48176862E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) +
+! gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) +
+! gauche(Cs(RRRR)) + other(R)
+COOCOO(23)              C 2  H 6  O 4       G100.000   5000.000  3014.71       1
+ 5.57297990E+01-2.05990761E-02 4.25080885E-06-5.45287918E-10 3.31418225E-14    2
+-6.67105160E+04-3.00649638E+02 3.83119277E+00 4.04079463E-02-2.21962984E-05    3
+ 4.43906193E-09-3.08536502E-13-3.18498507E+04 1.29204319E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) +
+! gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R)
+OOCCOO(24)              C 2  H 6  O 4       G100.000   5000.000  2067.32       1
+ 1.41318831E+01 2.42710977E-02-1.45699156E-05 2.96891910E-09-2.08926562E-13    2
+-3.73254788E+04-4.55917401E+01 2.71614655E+00 4.63589173E-02-3.05962064E-05    3
+ 8.13701634E-09-8.33897181E-13-3.26054460E+04 1.77733925E+01                   4
+
+! Thermo library: primaryThermoLibrary
+O(25)                   H 2  O 1            G100.000   5000.000  1130.23       1
+ 2.84325453E+00 2.75107885E-03-7.81027808E-07 1.07242793E-10-5.79385352E-15    2
+-2.99586146E+04 5.91039675E+00 4.05763525E+00-7.87929251E-04 2.90875330E-06    3
+-1.47516282E-09 2.12832955E-13-3.02815866E+04-3.11361942E-01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R)
+CO(26)                  C 1  H 4  O 1       G100.000   5000.000  1022.86       1
+ 2.85942060E+00 1.18220381E-02-4.76158958E-06 8.93739307E-10-6.32884785E-14    2
+-2.57187107E+04 8.71963963E+00 3.92798187E+00-1.68568334E-03 2.87280200E-05    3
+-2.98504878E-08 9.63038532E-12-2.54492918E+04 5.92585435E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) +
+! gauche(Os(CsR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R)
+OCOO(27)                C 1  H 4  O 3       G100.000   5000.000  750.93        1
+ 1.70334000E+00 2.70086334E-02-1.54354419E-05 3.18856353E-09-2.30777922E-13    2
+-3.90904822E+04 2.09440313E+01 2.65289121E+00 3.55038899E-02-5.94775248E-05    3
+ 6.63230429E-08-2.92510025E-11-3.96152275E+04 1.40905852E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsH) + gauche(Os(RR)) + other(R)
+OO(28)                  H 2  O 2            G100.000   5000.000  908.87        1
+ 5.41579171E+00 2.61007327E-03-4.39887235E-07 4.91076127E-11-3.35179000E-15    2
+-1.83029542E+04-4.02250763E+00 3.73135660E+00 3.35072737E-03 9.35026153E-06    3
+-1.52098630E-08 6.41580667E-12-1.77211708E+04 5.45911338E+00                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Cds-OdHH) + other(R) + radical(HCdsJO)
+CHO(29)                 C 1  H 1  O 1       G100.000   5000.000  1565.71       1
+ 4.61848632E+00 5.04482170E-03-4.39253798E-06 9.73310191E-10-7.07457535E-14    2
+ 2.78760035E+03-2.22854297E+00 4.35602551E+00-3.47092292E-03 1.25665541E-05    3
+-9.99501804E-09 2.27892515E-12 3.99577028E+03 2.75110727E+00                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + other(R) + group(Ct-CtCs) + other(R)
+CO(30)                  C 1  O 1            G100.000   5000.000  884.73        1
+ 2.88122438E+00 2.31678310E-03-4.40230717E-07 4.75824885E-11-2.78443649E-15    2
+ 1.17348340E+03-9.65788237E+00 3.66968402E+00-5.50991488E-03 2.00552925E-05    3
+-2.08412334E-08 7.43840024E-12 1.20076933E+03-1.24225128E+01                   4
+
+! Thermo library: primaryThermoLibrary
+H2(31)                  H 2                 G100.000   5000.000  1959.07       1
+ 2.78817485E+00 5.87629226E-04 1.59015901E-07-5.52750034E-11 4.34319008E-15    2
+-5.96149590E+02 1.12679202E-01 3.43536403E+00 2.12711102E-04-2.78626742E-07    3
+ 3.40268499E-10-7.76035298E-14-1.03135984E+03-3.90841699E+00                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOH)
+CH3O(32)                C 1  H 3  O 1       G100.000   5000.000  942.76        1
+ 5.64929846E+00 4.70023328E-03-1.29319632E-06 2.29259473E-10-1.75682458E-14    2
+-4.00100856E+03-4.98880060E+00 3.74241277E+00 1.07505668E-03 2.31153086E-05    3
+-3.02125179E-08 1.15503623E-11-3.12080784E+03 6.85973699E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) +
+! gauche(Os(CsR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(ROOJ) + radical(CsOJ)
+CH2O3(33)               C 1  H 2  O 3       G100.000   5000.000  805.06        1
+ 3.89787446E-01 2.29030107E-02-1.35156518E-05 2.77868433E-09-1.98763379E-13    2
+ 5.92990178E+03 2.93227166E+01 2.99078992E+00 2.99854652E-02-6.39871724E-05    3
+ 7.54418521E-08-3.23489849E-11 4.86280910E+03 1.33119501E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsOJ)
+C2H5O(34)               C 2  H 5  O 1       G100.000   5000.000  1166.76       1
+ 5.66435303E+00 1.68916814E-02-8.59589689E-06 1.75623564E-09-1.28052977E-13    2
+-5.29614306E+03-5.62931203E+00 3.37666256E+00 8.81770355E-03 2.22471386E-05    3
+-2.75592545E-08 8.65864653E-12-3.67890917E+03 1.04030774E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + radical(CsJOCH3)
+C2H5O(35)               C 2  H 5  O 1       G100.000   5000.000  1048.49       1
+ 5.92599533E+00 1.45521375E-02-5.91555113E-06 1.10899684E-09-7.82838370E-14    2
+-2.04943004E+03-5.28207857E+00 3.13747570E+00 1.44605398E-02 9.56582394E-06    3
+-1.84948393E-08 6.92322025E-12-8.74898621E+02 1.11154917E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) +
+! gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsOJ)
+C2H5O3(36)              C 2  H 5  O 3       G100.000   5000.000  2285.82       1
+ 2.55911066E+01 4.65821422E-03-5.27874637E-06 1.07804079E-09-7.00659553E-14    2
+-2.70783292E+04-1.19481183E+02 3.77523594E+00 2.86617942E-02-1.17301277E-05    3
+ 2.47158229E-10 3.17468383E-13-1.34023762E+04 1.19024029E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-OsCs) +
+! gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsOJ)
+C2H5O3(37)              C 2  H 5  O 3       G100.000   5000.000  1973.19       1
+ 2.00578394E+01 8.92803393E-03-7.19839010E-06 1.51107115E-09-1.04603808E-13    2
+-2.29965716E+04-8.32136865E+01 2.79190367E+00 3.35725745E-02-1.80599975E-05    3
+ 2.52082861E-09 1.04475940E-13-1.41666348E+04 1.69281350E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-CsCs) +
+! gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOCH3)
+C2H5O3(38)              C 2  H 5  O 3       G100.000   5000.000  696.94        1
+ 4.19852507E+00 3.07386625E-02-1.71784499E-05 3.54519188E-09-2.57641797E-13    2
+-1.51901058E+04 1.01396494E+01 1.96485552E+00 5.04109511E-02-7.42665480E-05    3
+ 7.22608939E-08-2.99671405E-11-1.50451803E+04 1.89153974E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsCs) + gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsOJ) + radical(CsJOCH3)
+C2H4O2(39)              C 2  H 4  O 2       G100.000   5000.000  2114.74       1
+ 1.64908042E+01 6.01145498E-03-4.88524561E-06 9.97946758E-10-6.70387653E-14    2
+-4.15556853E+03-6.50726657E+01 3.49480186E+00 2.17241679E-02-9.73953265E-06    3
+ 5.45079503E-10 2.20943525E-13 3.32424289E+03 1.20475872E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsOJ) + radical(CsOJ)
+C2H4O2(40)              C 2  H 4  O 2       G100.000   5000.000  1513.38       1
+ 1.02115757E+01 1.46342262E-02-9.89375802E-06 2.10846811E-09-1.52166172E-13    2
+ 3.30679378E+02-2.92056136E+01 3.28158771E+00 1.70462062E-02 3.47965831E-06    3
+-1.07270702E-08 3.11534129E-12 4.24954178E+03 1.31163942E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOOC) + radical(CsJOOC)
+C2H4O2(41)              C 2  H 4  O 2       G100.000   5000.000  1735.09       1
+ 9.03249266E+00 1.46615295E-02-6.62372160E-06 1.23313332E-09-8.38346821E-14    2
+ 2.67818108E+04-2.11762308E+01 2.62672917E+00 2.94291211E-02-1.93904528E-05    3
+ 6.13845212E-09-7.90617573E-13 2.90047220E+04 1.32578190E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsCs) + other(R) + group(Os-OsCs) + other(R) + group(Cs-CsOsHH) + other(R) + group(Cs-CsOsHH) + other(R)
+! + ring(12dioxetane)
+C1COO1(42)              C 2  H 4  O 2       G100.000   5000.000  960.76        1
+ 8.06247532E+00 1.14739103E-02-3.82959754E-06 7.49124043E-10-5.86444749E-14    2
+-3.19780366E+03-1.88454604E+01 3.45814305E+00-1.07007639E-04 6.22609296E-05    3
+-7.84244850E-08 2.92117700E-11-8.93848475E+02 1.05694143E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + other(R) + group(Os-CsCs) + other(R) + group(Cs-OsOsHH) + other(R) + group(Cs-OsOsHH) + other(R)
+! + ring(Cyclobutane)
+C1OCO1(43)              C 2  H 4  O 2       G100.000   5000.000  1247.89       1
+ 5.46409746E+00 2.20542562E-02-1.36671576E-05 2.94056744E-09-2.17678277E-13    2
+-2.94731396E+04-7.68198806E+00 3.77926348E+00 4.55781428E-04 4.47484895E-05    3
+-4.56050046E-08 1.29812923E-11-2.69504556E+04 9.24243955E+00                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Os-Cs(Cds-Od)) + gauche(Os(CsR)) + other(R) + group(Cds-OdOsH) + other(R) + group
+! (Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOC(O)H)
+C2H3O2(44)              C 2  H 3  O 2       G100.000   5000.000  1894.86       1
+ 9.52305879E+00 1.11173004E-02-6.47981446E-06 1.32134562E-09-9.35562130E-14    2
+-2.22371483E+04-2.30872859E+01 3.07227944E+00 2.47348437E-02-1.72597611E-05    3
+ 5.11407573E-09-5.93957636E-13-1.97925045E+04 1.21569234E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsCs) + gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOCH3) + radical(Cs_P) + radical(CsOJ)
+C2H3O2(45)              C 2  H 3  O 2       G100.000   5000.000  2362.67       1
+ 2.06434183E+01-1.11267338E-03-2.17099743E-06 5.16256332E-10-3.47929790E-14    2
+ 1.77172545E+04-8.82536799E+01 3.88341056E+00 1.88320064E-02-9.48138403E-06    3
+ 1.06885359E-09 6.65277070E-14 2.79898377E+04 1.19931346E+01                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Os-Cs(Cds-Od)) + gauche(Os(CsR)) + other(R) + group(Cds-OdOsH) + other(R) + group
+! (Cs-OsHHH) + gauche(Cs(RRRR)) + other(R)
+C2H4O2(46)              C 2  H 4  O 2       G100.000   5000.000  1835.19       1
+ 1.05418158E+01 1.34950316E-02-7.67530531E-06 1.49295758E-09-1.00721751E-13    2
+-4.86840906E+04-3.23813608E+01 3.50215193E+00 1.80424834E-02-2.56783933E-06    3
+-3.56801682E-09 1.02539522E-12-4.42822082E+04 1.08083804E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsCs) + gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOCH3) + radical(Cs_P)
+C2H4O2(47)              C 2  H 4  O 2       G100.000   5000.000  2375.90       1
+ 2.12101044E+01 1.68795936E-04-2.51611810E-06 5.60188199E-10-3.69774730E-14    2
+-8.88887294E+03-9.15093245E+01 3.78364724E+00 2.10346969E-02-1.03403666E-05    3
+ 1.25466731E-09 4.78842357E-14 1.78323515E+03 1.26763316E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Os-CsCs) + gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + group(Cs-OsOsHH) + gauche(Cs(RRRR)) + other(R) + radical(Cs_P) + radical(CsOJ)
+C2H4O2(48)              C 2  H 4  O 2       G100.000   5000.000  2075.15       1
+ 1.56966584E+01 7.78649559E-03-6.05221198E-06 1.22105110E-09-8.14515490E-14    2
+-2.26450524E+03-6.09628479E+01 3.94486005E+00 1.75281721E-02-3.76148231E-06    3
+-2.51301512E-09 7.29599058E-13 5.39269042E+03 1.10099318E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(CsCs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-OsHHH) +
+! gauche(Cs(RRRR)) + other(R) + radical(CsJOCH3) + radical(CsJOCH3)
+C2H4O(49)               C 2  H 4  O 1       G100.000   5000.000  986.51        1
+ 7.72879585E+00 9.02374829E-03-3.35280615E-06 6.27948224E-10-4.55655756E-14    2
+ 2.02060127E+04-1.40022444E+01 3.04936074E+00 1.57620019E-02 5.00585999E-06    3
+-1.75932238E-08 7.75815295E-12 2.17246484E+04 1.15273560E+01                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cds-OdCsH) + other(R) + group(Cs
+! -(Cds-Od)OsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsOJ)
+C2H3O2(50)              C 2  H 3  O 2       G100.000   5000.000  982.35        1
+ 1.00174829E+01 6.34391566E-03-2.71570978E-06 6.51975550E-10-5.64521855E-14    2
+-1.45095191E+04-2.47119071E+01 3.39356583E+00 5.23393082E-04 5.62440910E-05    3
+-7.33419944E-08 2.74223462E-11-1.16258740E+04 1.51800714E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsOJ) + radical(CsOJ) + radical(CCsJOH)
+C2H3O2(51)              C 2  H 3  O 2       G100.000   5000.000  1960.66       1
+ 1.66588856E+01 4.01786039E-03-5.31783369E-06 1.19528250E-09-8.47073089E-14    2
+ 1.87118414E+04-6.49921421E+01 3.52330822E+00 2.01213284E-02-9.45575656E-06    3
+-1.79782386E-10 4.45356602E-13 2.59183733E+04 1.24655947E+01                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cds-OdCsH) + other(R) + group(Cs
+! -(Cds-Od)OsHH) + gauche(Cs(RRRR)) + other(R)
+C2H4O2(52)              C 2  H 4  O 2       G100.000   5000.000  981.95        1
+ 9.95884820E+00 8.40557013E-03-3.41648155E-06 7.66079788E-10-6.36973022E-14    2
+-4.07241204E+04-2.42298196E+01 3.29000745E+00 2.75378043E-03 5.53476654E-05    3
+-7.31645648E-08 2.74236337E-11-3.78322379E+04 1.58783328E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCsJOH) + radical(CsOJ)
+C2H4O2(53)              C 2  H 4  O 2       G100.000   5000.000  1972.18       1
+ 1.70002292E+01 5.54301043E-03-5.75965679E-06 1.25594590E-09-8.79590640E-14    2
+-7.73159690E+03-6.68684096E+01 3.41989925E+00 2.23553155E-02-1.03846258E-05    3
+ 6.02689239E-11 4.13357893E-13-2.88016643E+02 1.31628860E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsOJ) + radical(CCsJOH)
+C2H4O2(54)              C 2  H 4  O 2       G100.000   5000.000  1972.18       1
+ 1.70002292E+01 5.54301043E-03-5.75965679E-06 1.25594590E-09-8.79590640E-14    2
+-7.73159690E+03-6.68684096E+01 3.41989925E+00 2.23553155E-02-1.03846258E-05    3
+ 6.02689239E-11 4.13357893E-13-2.88016643E+02 1.31628860E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(Cs_P) + radical(CsOJ)
+C2H4O(55)               C 2  H 4  O 1       G100.000   5000.000  1247.06       1
+ 5.81352391E+00 1.40657040E-02-7.54926005E-06 1.55261102E-09-1.12667925E-13    2
+ 1.94380430E+04-3.90640493E+00 3.44474035E+00 9.14202215E-03 1.34345030E-05    3
+-1.77168054E-08 5.36443586E-12 2.10025045E+04 1.19484226E+01                   4
+
+! Thermo group additivity estimation: group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R)
+C2H4(56)                C 2  H 4            G100.000   5000.000  940.44        1
+ 5.20294372E+00 7.82451164E-03-2.12688492E-06 3.79702680E-10-2.94680849E-14    2
+ 3.93630185E+03-6.62382783E+00 3.97976020E+00-7.57579352E-03 5.52980432E-05    3
+-6.36231570E-08 2.31771655E-11 5.07746019E+03 4.04617155E+00                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCJ) +
+! radical(CCJ)
+C2H4(57)                C 2  H 4            G100.000   5000.000  845.15        1
+ 5.89975563E+00 4.41340193E-03 1.29147377E-06-4.58027305E-10 3.67900019E-14    2
+ 3.67747581E+04-4.58937296E+00 3.86538071E+00-3.70054475E-03 4.71819607E-05    3
+-6.14963768E-08 2.54398039E-11 3.77522845E+04 8.63180875E+00                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(ROOJ)
+C2H5O2(58)              C 2  H 5  O 2       G100.000   5000.000  1742.06       1
+ 1.01086982E+01 1.42868924E-02-7.06101176E-06 1.33666660E-09-9.00513982E-14    2
+-7.38572397E+03-2.75013227E+01 2.97224624E+00 2.35342115E-02-8.87642116E-06    3
+-3.20991481E-10 4.85425871E-13-3.81605371E+03 1.39982499E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R)
+CCC(59)                 C 3  H 8            G100.000   5000.000  986.58        1
+ 5.91325338E+00 2.18761012E-02-8.17651956E-06 1.49852440E-09-1.05989623E-13    2
+-1.60389161E+04-8.86606179E+00 3.05254283E+00 1.25102188E-02 3.79376286E-05    3
+-5.12008884E-08 1.87059205E-11-1.44541758E+04 1.00673284E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-OsHHH)
+! + gauche(Cs(RRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R)
+CCOOC(60)               C 3  H 8  O 2       G100.000   5000.000  1696.17       1
+ 1.39905371E+01 2.35875224E-02-1.17101277E-05 2.22759262E-09-1.50920473E-13    2
+-2.76651130E+04-4.97661376E+01 2.17600480E+00 3.99889401E-02-1.60798488E-05    3
+-3.83161743E-11 7.70168406E-13-2.20086647E+04 1.83342688E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R)
+CCCOO(61)               C 3  H 8  O 2       G100.000   5000.000  1805.25       1
+ 1.59650521E+01 1.93030561E-02-9.18621426E-06 1.71438499E-09-1.14660235E-13    2
+-3.10797675E+04-5.98460201E+01 1.87487460E+00 4.39128083E-02-2.41418222E-05    3
+ 5.20891241E-09-3.17686730E-13-2.49153177E+04 1.94374887E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R)
+CCO(62)                 C 2  H 6  O 1       G100.000   5000.000  1169.09       1
+ 5.64513928E+00 1.88891418E-02-9.26078242E-06 1.86205422E-09-1.34622585E-13    2
+-3.15283032E+04-5.37106286E+00 3.26737115E+00 1.11140034E-02 2.11290131E-05    3
+-2.71083695E-08 8.54972949E-12-2.98850230E+04 1.11220075E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(CsOJ)
+C3H7O(63)               C 3  H 7  O 1       G100.000   5000.000  1251.40       1
+ 7.88740762E+00 2.32185522E-02-1.12580202E-05 2.22480689E-09-1.58323782E-13    2
+-9.03759256E+03-1.60301565E+01 2.65025379E+00 2.44520900E-02 5.85050124E-06    3
+-1.67915663E-08 5.61888784E-12-6.51266908E+03 1.52618241E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(Cs(CsRR)Cs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsJOCC)
+C3H7O(64)               C 3  H 7  O 1       G100.000   5000.000  1107.87       1
+ 8.35085344E+00 2.11041028E-02-9.69717682E-06 1.92234931E-09-1.39167465E-13    2
+-7.75070125E+03-1.67624601E+01 2.60107016E+00 2.31086081E-02 1.29825710E-05    3
+-2.70061665E-08 9.83704982E-12-5.32571298E+03 1.67605187E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R)
+CCCC(65)                C 4  H 10           G100.000   5000.000  1025.39       1
+ 7.36808997E+00 2.93848829E-02-1.14713525E-05 2.10840172E-09-1.47485707E-13    2
+-1.94135552E+04-1.48588796E+01 2.31393854E+00 2.83759977E-02 2.03223720E-05    3
+-3.82741994E-08 1.45041113E-11-1.72875364E+04 1.49639545E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(ROOJ) + radical(CCsJOOH)
+C2H4O2(66)              C 2  H 4  O 2       G100.000   5000.000  2265.62       1
+ 1.56635814E+01 5.89648552E-03-3.80147925E-06 7.22847740E-10-4.63607409E-14    2
+ 1.16802501E+04-6.00958649E+01 3.45982700E+00 2.10925097E-02-9.65818224E-06    3
+ 1.20911779E-09 3.64884605E-14 1.88397876E+04 1.23576619E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CJCOOH) + radical(ROOJ)
+C2H4O2(67)              C 2  H 4  O 2       G100.000   5000.000  2725.41       1
+ 1.56506617E+01 4.85876966E-03-3.08788747E-06 5.93805093E-10-3.86521195E-14    2
+ 1.51282733E+04-5.73705746E+01 3.22154665E+00 2.31002130E-02-1.31273268E-05    3
+ 3.04951577E-09-2.63908036E-13 2.19033030E+04 1.50546481E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCsJOOH)
+C2H5O2(68)              C 2  H 5  O 2       G100.000   5000.000  2075.32       1
+ 1.53799987E+01 9.30096514E-03-5.32868390E-06 1.02262422E-09-6.77438250E-14    2
+-5.75730452E+03-5.85063041E+01 2.87206172E+00 2.80666846E-02-1.50308880E-05    3
+ 2.89893117E-09-1.44348416E-13 5.84726478E+02 1.37412126E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CJCOOH)
+C2H5O2(69)              C 2  H 5  O 2       G100.000   5000.000  2319.50       1
+ 1.55906466E+01 7.87671730E-03-4.40572156E-06 8.47926030E-10-5.65373363E-14    2
+-2.37175849E+03-5.70127010E+01 2.61073034E+00 3.02603925E-02-1.88808414E-05    3
+ 5.00828135E-09-5.04941819E-13 3.64970935E+03 1.65287482E+01                   4
+
+! Thermo group additivity estimation: group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + radical(Cds_P)
+C2H3(70)                C 2  H 3            G100.000   5000.000  931.97        1
+ 5.44799578E+00 4.98350870E-03-1.08817688E-06 1.79829928E-10-1.45090109E-14    2
+ 3.38297623E+04-4.87825197E+00 3.90669557E+00-4.06228810E-03 3.86775481E-05    3
+-4.62970100E-08 1.72897519E-11 3.47971787E+04 6.09792480E+00                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group
+! (Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(RCCJ)
+C3H7(71)                C 3  H 7            G100.000   5000.000  995.41        1
+ 5.69430152E+00 1.96033543E-02-7.42050458E-06 1.35883147E-09-9.56216475E-14    2
+ 8.87585173E+03-4.32885235E+00 3.09191508E+00 1.32172227E-02 2.75848448E-05    3
+-3.90849999E-08 1.43313800E-11 1.02284117E+04 1.24057799E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsCs) + gauche(Os(CsR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-OsHHH)
+! + gauche(Cs(RRRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CJCOOH)
+C3H7O2(72)              C 3  H 7  O 2       G100.000   5000.000  2162.43       1
+ 2.04979460E+01 1.25406831E-02-6.85225537E-06 1.28787175E-09-8.40879639E-14    2
+-5.49583323E+03-8.50306767E+01 2.33559073E+00 4.03340339E-02-2.21062947E-05    3
+ 4.74967014E-09-3.40842547E-13 3.71587140E+03 1.97366560E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! radical(RCCJ)
+C3H7O2(73)              C 3  H 7  O 2       G100.000   5000.000  2342.56       1
+ 1.79401250E+01 1.44619244E-02-7.33973321E-06 1.37482975E-09-9.08985774E-14    2
+-7.60601826E+03-6.92394904E+01 2.23543268E+00 4.12784771E-02-2.45112133E-05    3
+ 6.26169086E-09-6.12433661E-13-2.48253403E+02 1.98949489E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-
+! CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(Cs_P)
+C2H5O(74)               C 2  H 5  O 1       G100.000   5000.000  1251.81       1
+ 5.82146082E+00 1.60216314E-02-8.19199829E-06 1.65349682E-09-1.18846448E-13    2
+-6.80720469E+03-3.80417200E+00 3.33443721E+00 1.14481737E-02 1.22910934E-05    3
+-1.72450368E-08 5.25109694E-12-5.20356132E+03 1.26711280E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(RCCJ) + radical(CsOJ)
+C3H6O(75)               C 3  H 6  O 1       G100.000   5000.000  1375.64       1
+ 8.54561399E+00 1.96575413E-02-9.83712236E-06 1.94084787E-09-1.36756580E-13    2
+ 1.54337241E+04-1.72638502E+01 2.73641935E+00 2.45428590E-02-2.07245772E-06    3
+-8.16655754E-09 2.85309670E-12 1.81680283E+04 1.67439135E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(Cs(CsRR)Cs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CsJOCC) + radical(Cs_P)
+C3H6O(76)               C 3  H 6  O 1       G100.000   5000.000  1162.97       1
+ 8.39207238E+00 1.84256578E-02-8.72177623E-06 1.73328239E-09-1.24853846E-13    2
+ 1.70420189E+04-1.44072590E+01 2.64416028E+00 2.37362400E-02 3.07795706E-06    3
+-1.57214034E-08 5.92542040E-12 1.93567585E+04 1.83948140E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + other(R) + group(Cs-CsOsHH) + other(R) + group(Cs-CsOsHH) + other(R) + group(Cs-CsCsHH) +
+! other(R) + ring(Oxetane)
+C1COC1(77)              C 3  H 6  O 1       G100.000   5000.000  960.28        1
+ 8.00484775E+00 1.63202601E-02-5.47731974E-06 1.06298484E-09-8.24243149E-14    2
+-1.38376292E+04-1.94527207E+01 3.54685881E+00-5.88191948E-03 9.28908389E-05    3
+-1.11442855E-07 4.07182982E-11-1.11015929E+04 1.16618708E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + radical(RCCJ)
+C4H9(78)                C 4  H 9            G100.000   5000.000  1048.11       1
+ 7.21574898E+00 2.70036506E-02-1.06547116E-05 1.95471780E-09-1.35977652E-13    2
+ 5.47162385E+03-1.06997332E+01 2.34847952E+00 2.91324216E-02 9.83641513E-06    3
+-2.60505981E-08 1.01150982E-11 7.39526561E+03 1.73201945E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + radical(RCCJ) + radical(RCCJ)
+C4H8(79)                C 4  H 8            G100.000   5000.000  1093.20       1
+ 7.15000222E+00 2.44837223E-02-9.76152207E-06 1.78353389E-09-1.23053886E-13    2
+ 3.03174972E+04-8.41997471E+00 2.37804177E+00 2.99376000E-02-7.70500718E-07    3
+-1.37459570E-08 5.72580531E-12 3.20782939E+04 1.83086321E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + other(R) + group(Cs-CsCsHH) + other(R) + group(Cs-CsCsHH) + other(R) + group(Cs-CsCsHH) +
+! other(R) + ring(Cyclobutane)
+C1CCC1(80)              C 4  H 8            G100.000   5000.000  958.65        1
+ 9.08648143E+00 2.04708064E-02-6.80151686E-06 1.29485953E-09-9.89928972E-14    2
+-1.56564997E+03-2.86856006E+01 3.27030372E+00-2.31095907E-03 1.02464981E-04    3
+-1.25888938E-07 4.64200069E-11 1.71143247E+03 1.04045363E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsCsH) +
+! gauche(CsOsCdSs) + other(R) + group(Cs-(Cds-Cds)OsHH) + gauche(Cs(RRRR)) + other(R) + radical(CsOJ)
+C3H5O(81)               C 3  H 5  O 1       G100.000   5000.000  1107.27       1
+ 6.48144075E+00 1.79153112E-02-7.57750216E-06 1.43176937E-09-1.00721703E-13    2
+ 7.91026606E+03-6.49900344E+00 2.88093211E+00 1.97619479E-02 5.03933193E-06    3
+-1.52671017E-08 5.72472256E-12 9.39175868E+03 1.43275835E+01                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Cds-OdCsH) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs
+! -(Cds-Od)CsHH) + gauche(Cs(CsRRR)) + other(R) + radical(RCCJ)
+C3H5O(82)               C 3  H 5  O 1       G100.000   5000.000  2018.45       1
+ 1.27691830E+01 1.13895620E-02-5.88199987E-06 1.09571069E-09-7.16682988E-14    2
+-4.91089405E+03-4.28412044E+01 3.15874872E+00 2.36096980E-02-9.89133813E-06    3
+ 7.44732703E-10 1.79289747E-13 3.59051667E+02 1.37172826E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(Cs_S) + radical(RCCJ) + radical(CsOJ)
+C3H5O(83)               C 3  H 5  O 1       G100.000   5000.000  1634.23       1
+ 9.31988565E+00 1.65859512E-02-9.07765497E-06 1.79298859E-09-1.23920590E-13    2
+ 3.80008413E+04-1.96063293E+01 3.20764549E+00 1.99716178E-02-1.56112677E-06    3
+-5.60727216E-09 1.67114746E-12 4.15442639E+04 1.76128664E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + radical(CCsJOH) + radical(RCCJ) + radical(CsOJ)
+C3H5O(84)               C 3  H 5  O 1       G100.000   5000.000  2562.95       1
+ 1.96938408E+01 3.38135760E-03-2.76281471E-06 5.48465945E-10-3.55772733E-14    2
+ 3.07573600E+04-8.20168676E+01 2.94353923E+00 2.80169928E-02-1.62993907E-05    3
+ 3.84019928E-09-3.34292969E-13 3.98382124E+04 1.55236761E+01                   4
+
+! Thermo group additivity estimation: group(Od-Cd) + other(R) + group(Cds-OdCsH) + other(R) + group(Cs-CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs
+! -(Cds-Od)CsHH) + gauche(Cs(CsRRR)) + other(R)
+C3H6O(85)               C 3  H 6  O 1       G100.000   5000.000  1693.39       1
+ 9.77863941E+00 1.76514391E-02-8.42813465E-06 1.58079775E-09-1.06316905E-13    2
+-2.78489908E+04-2.75212210E+01 2.86859992E+00 2.56275740E-02-8.10032544E-06    3
+-1.45879378E-09 7.72115545E-13-2.43120346E+04 1.29888382E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(CsR)) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsCsH) +
+! gauche(CsOsCdSs) + other(R) + group(Cs-(Cds-Cds)OsHH) + gauche(Cs(RRRR)) + other(R)
+C3H6O(86)               C 3  H 6  O 1       G100.000   5000.000  1109.36       1
+ 6.44820681E+00 1.99348490E-02-8.25442160E-06 1.54031357E-09-1.07510247E-13    2
+-1.83153813E+04-6.16064042E+00 2.77258498E+00 2.20483362E-02 3.95012650E-06    3
+-1.48456010E-08 5.62497227E-12-1.68143979E+04 1.50430446E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(CsOJ) + radical(Cs_S)
+C3H6O(87)               C 3  H 6  O 1       G100.000   5000.000  1466.81       1
+ 7.95747173E+00 2.09886890E-02-1.08572056E-05 2.14206128E-09-1.49766687E-13    2
+ 1.39719821E+04-1.41473014E+01 3.01710599E+00 2.10105445E-02 2.87530565E-06    3
+-1.03509592E-08 3.04502019E-12 1.68682665E+04 1.65120709E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + radical(RCCJ) + radical(CCsJOH)
+C3H6O(88)               C 3  H 6  O 1       G100.000   5000.000  2745.42       1
+ 2.07384244E+01 4.14276494E-03-2.89896698E-06 5.55623873E-10-3.53683614E-14    2
+ 3.80555247E+03-8.81964380E+01 2.84491474E+00 3.02106021E-02-1.71401389E-05    3
+ 4.01345627E-09-3.50210904E-13 1.36315364E+04 1.62023871E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + radical(CCsJOH) + radical(CsOJ)
+C3H6O(89)               C 3  H 6  O 1       G100.000   5000.000  1813.47       1
+ 1.30739655E+01 1.37261339E-02-6.99070503E-06 1.33490071E-09-9.00909402E-14    2
+ 1.03325424E+04-4.46293001E+01 2.60105396E+00 3.05078601E-02-1.56452317E-05    3
+ 2.59514751E-09 1.04482226E-15 1.51699805E+04 1.49949774E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsH) + gauche(Os(Cs(CsRR)R)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group
+! (Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(RCCJ) + radical(Cs_S)
+C3H6O(90)               C 3  H 6  O 1       G100.000   5000.000  1644.47       1
+ 9.49712618E+00 1.83088689E-02-9.60605301E-06 1.87002623E-09-1.28304990E-13    2
+ 1.16625002E+04-2.04968490E+01 3.10003381E+00 2.22458869E-02-2.59506098E-06    3
+-5.27032970E-09 1.61062486E-12 1.53380869E+04 1.83259635E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(CsCsRR)) + other(R) + radical(RCCJ) + radical(RCCJ)
+C3H6(91)                C 3  H 6            G100.000   5000.000  1011.02       1
+ 5.48781880E+00 1.73100976E-02-6.65294380E-06 1.21645940E-09-8.50344385E-14    2
+ 3.37851513E+04-1.24857230E+00 3.13019184E+00 1.39358459E-02 1.71985071E-05    3
+-2.69377196E-08 9.94955590E-12 3.49110472E+04 1.33619429E+01                   4
+
+! Thermo group additivity estimation: group(Os-Cs(Cds-Cd)) + gauche(Os(CsR)) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-
+! CdsOsH) + gauche(CsOsCdSs) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + radical(CsJOC(O))
+C3H5O(92)               C 3  H 5  O 1       G100.000   5000.000  943.65        1
+ 1.35938221E+01 7.07407068E-03-1.57840951E-06 2.75891566E-10-2.31961735E-14    2
+ 6.32889553E+03-4.53051427E+01 2.23199205E+00 2.80364522E-02 8.33508163E-06    3
+-3.72722262E-08 1.80165269E-11 9.68420167E+03 1.52666603E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(Cs(CsRR)Cs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCsJOCs) + radical(Cs_P) + radical(CsJOCC)
+C3H5O(93)               C 3  H 5  O 1       G100.000   5000.000  1144.68       1
+ 1.07148608E+01 1.17788338E-02-5.45882846E-06 1.08984868E-09-7.92338582E-14    2
+ 3.84941147E+04-2.55018775E+01 2.31908448E+00 3.11037939E-02-1.76606439E-05    3
+ 5.54006731E-10 1.70687923E-12 4.10722351E+04 1.90029162E+01                   4
+
+! Thermo group additivity estimation: group(Os-Cs(Cds-Cd)) + gauche(Os(CsR)) + other(R) + group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-
+! CdsOsH) + gauche(CsOsCdSs) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R)
+C3H6O(94)               C 3  H 6  O 1       G100.000   5000.000  967.96        1
+ 9.95310305E+00 1.51386992E-02-5.29450496E-06 9.73163452E-10-7.07419052E-14    2
+-1.72345711E+04-2.67699121E+01 2.55157402E+00 2.23250529E-02 1.98307406E-05    3
+-4.13061229E-08 1.72993141E-11-1.47054837E+04 1.43596509E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(Cs(CsRR)Cs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(CCsJOCs) + radical(CsJOCC)
+C3H6O(95)               C 3  H 6  O 1       G100.000   5000.000  1076.02       1
+ 1.06782675E+01 1.44575835E-02-6.43756977E-06 1.28022669E-09-9.36876424E-14    2
+ 1.36965324E+04-2.78885677E+01 2.28923126E+00 3.03157042E-02-7.17755905E-06    3
+-1.14993584E-08 5.95118824E-12 1.63891999E+04 1.73214643E+01                   4
+
+! Thermo group additivity estimation: group(Os-CsCs) + gauche(Os(Cs(CsRR)Cs)) + other(R) + group(Cs-OsHHH) + gauche(Cs(RRRR)) + other(R) + group(Cs-
+! CsHHH) + gauche(Cs(CsRRR)) + other(R) + group(Cs-CsOsHH) + gauche(Cs(CsRRR)) + other(R) + radical(Cs_P) + radical(CCsJOCs)
+C3H6O(96)               C 3  H 6  O 1       G100.000   5000.000  2162.82       1
+ 1.51181949E+01 9.69390015E-03-4.71182127E-06 8.78672961E-10-5.81934236E-14    2
+ 1.29472861E+04-5.42998134E+01 2.31095814E+00 3.33798789E-02-2.11388304E-05    3
+ 5.94208355E-09-6.43467191E-13 1.84872831E+04 1.73674785E+01                   4
+
+! Thermo group additivity estimation: group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsCsH) + gauche(CsOsCdSs) + other(R) + group(Cs-CsHHH)
+! + gauche(Cs(CsRRR)) + other(R) + group(Cs-(Cds-Cds)CsHH) + gauche(Cs(CsRRR)) + other(R) + radical(RCCJ)
+C4H7(97)                C 4  H 7            G100.000   5000.000  1000.95       1
+ 7.59471914E+00 2.06425956E-02-7.89790375E-06 1.45966122E-09-1.03414888E-13    2
+ 2.08073397E+04-1.19155141E+01 2.68061422E+00 2.10825717E-02 2.02123278E-05    3
+-3.64243621E-08 1.41445056E-11 2.27528011E+04 1.66008558E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + radical(RCCJC) + radical(RCCJ) +
+! radical(RCCJ)
+C4H7(98)                C 4  H 7            G100.000   5000.000  1946.61       1
+ 9.19063087E+00 1.93112654E-02-7.49947537E-06 1.25568769E-09-7.83157480E-14    2
+ 5.19767966E+04-1.73535218E+01 2.81947299E+00 2.72005306E-02-9.56979541E-06    3
+ 5.91768437E-10 1.83276291E-13 5.54429261E+04 2.01592220E+01                   4
+
+! Thermo group additivity estimation: group(Cds-CdsHH) + gauche(CsOsCdSs) + other(R) + group(Cds-CdsCsH) + gauche(CsOsCdSs) + other(R) + group(Cs-CsHHH)
+! + gauche(Cs(CsRRR)) + other(R) + group(Cs-(Cds-Cds)CsHH) + gauche(Cs(CsRRR)) + other(R)
+C4H8(99)                C 4  H 8            G100.000   5000.000  991.80        1
+ 7.80835966E+00 2.29241016E-02-8.65885907E-06 1.60050218E-09-1.13876910E-13    2
+-4.10510661E+03-1.57295038E+01 2.64174062E+00 2.03702140E-02 3.05809318E-05    3
+-4.85557315E-08 1.85230858E-11-1.92980813E+03 1.49537323E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + radical(RCCJC) + radical(RCCJ)
+C4H8(100)               C 4  H 8            G100.000   5000.000  1492.35       1
+ 6.22713667E+00 2.57402173E-02-1.02051976E-05 1.78672213E-09-1.17176951E-13    2
+ 2.89186750E+04-2.36042717E+00 2.59222461E+00 2.86123678E-02-6.18622411E-06    3
+-3.09363938E-09 1.21718698E-12 3.07686709E+04 1.91945172E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) +
+! group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + radical(RCCJC) + radical(RCCJ)
+C4H8(101)               C 4  H 8            G100.000   5000.000  1492.35       1
+ 6.22713667E+00 2.57402173E-02-1.02051976E-05 1.78672213E-09-1.17176951E-13    2
+ 2.89186750E+04-2.36042717E+00 2.59222461E+00 2.86123678E-02-6.18622411E-06    3
+-3.09363938E-09 1.21718698E-12 3.07686709E+04 1.91945172E+01                   4
+
+END
+
+
+
+REACTIONS    KCAL/MOLE   MOLES
+
+! Reaction index: Chemkin #1; RMG #12
+! PDep reaction: PDepNetwork #3
+CH3(3)+CH3(3)(+M)=ethane(1)(+M)                     1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.298e+01    6.224e-01    -1.447e-01   1.776e-02   /
+    CHEB/ -1.148e+00   8.424e-01    -1.025e-01   -2.396e-02  /
+    CHEB/ -6.621e-01   3.937e-01    2.545e-02    -2.785e-02  /
+    CHEB/ -3.217e-01   1.480e-01    4.225e-02    -6.280e-03  /
+    CHEB/ -1.547e-01   4.315e-02    2.488e-02    4.196e-03   /
+    CHEB/ -7.153e-02   5.351e-03    9.588e-03    4.799e-03   /
+
+! Reaction index: Chemkin #2; RMG #20
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=CH3O2(10)(+M)                      1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 9.906e+00    1.649e+00    -2.717e-01   -8.152e-03  /
+    CHEB/ -1.260e-01   7.109e-01    1.753e-01    -2.709e-02  /
+    CHEB/ -4.554e-01   1.128e-01    7.054e-02    1.957e-02   /
+    CHEB/ -1.370e-01   -2.744e-03   8.533e-03    7.998e-03   /
+    CHEB/ -1.841e-02   -1.076e-02   -4.723e-03   2.076e-04   /
+    CHEB/ 2.646e-02    -1.206e-02   -4.031e-03   -7.600e-04  /
+
+! Reaction index: Chemkin #3; RMG #23
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=CH3O2(12)(+M)                      1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.330e+00    2.397e+00    -7.142e-02   -3.845e-02  /
+    CHEB/ 6.096e+00    1.186e-01    8.049e-02    4.173e-02   /
+    CHEB/ 3.893e-01    -1.521e-02   -8.781e-03   -3.003e-03  /
+    CHEB/ 3.430e-02    -1.000e-02   -7.319e-03   -4.324e-03  /
+    CHEB/ -1.551e-03   1.587e-04    -2.249e-04   -4.544e-04  /
+    CHEB/ 1.685e-03    -1.441e-03   -9.737e-04   -5.018e-04  /
+
+! Reaction index: Chemkin #4; RMG #58
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=CH3O2(10)(+M)                         1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -7.511e+00   4.881e+00    -8.210e-02   -4.396e-02  /
+    CHEB/ 1.076e+01    1.231e-01    8.274e-02    4.208e-02   /
+    CHEB/ -2.251e-01   -9.125e-03   -4.367e-03   -4.323e-04  /
+    CHEB/ -1.484e-01   -9.467e-03   -6.791e-03   -3.881e-03  /
+    CHEB/ -2.688e-02   -1.518e-03   -1.439e-03   -1.160e-03  /
+    CHEB/ 3.991e-02    -3.067e-03   -2.150e-03   -1.185e-03  /
+
+! Reaction index: Chemkin #5; RMG #60
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=HO(18)+CH2O(17)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 8.869e+00    2.496e+00    -2.791e-03   -1.701e-03  /
+    CHEB/ 2.424e-01    -5.637e-03   -4.201e-03   -2.558e-03  /
+    CHEB/ -2.131e-01   -3.440e-03   -2.560e-03   -1.555e-03  /
+    CHEB/ -1.197e-01   -2.006e-03   -1.491e-03   -9.034e-04  /
+    CHEB/ -3.184e-02   -1.323e-03   -9.818e-04   -5.939e-04  /
+    CHEB/ 7.953e-03    -9.325e-04   -6.915e-04   -4.179e-04  /
+
+! Reaction index: Chemkin #6; RMG #55
+! PDep reaction: PDepNetwork #4
+CH3O2(10)(+M)=HO(18)+CH2O(17)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -6.710e+00   2.382e+00    -8.157e-02   -4.368e-02  /
+    CHEB/ 1.320e+01    1.231e-01    8.275e-02    4.213e-02   /
+    CHEB/ -3.514e-01   -9.366e-03   -4.539e-03   -5.295e-04  /
+    CHEB/ -1.458e-01   -9.522e-03   -6.836e-03   -3.912e-03  /
+    CHEB/ -5.517e-02   -1.463e-03   -1.400e-03   -1.137e-03  /
+    CHEB/ -2.115e-03   -2.989e-03   -2.094e-03   -1.153e-03  /
+
+! Reaction index: Chemkin #7; RMG #52
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=HO(18)+CH2O(17)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 6.432e+00    -1.024e-01   -7.090e-02   -3.818e-02  /
+    CHEB/ 4.724e+00    1.183e-01    8.033e-02    4.168e-02   /
+    CHEB/ 1.301e-01    -1.552e-02   -9.009e-03   -3.137e-03  /
+    CHEB/ -8.150e-04   -9.987e-03   -7.318e-03   -4.330e-03  /
+    CHEB/ -3.841e-02   2.691e-04    -1.441e-04   -4.066e-04  /
+    CHEB/ -4.148e-02   -1.354e-03   -9.107e-04   -4.645e-04  /
+
+! Reaction index: Chemkin #8; RMG #67
+! Template reaction: H_Abstraction
+! Estimated using template (C/H3/Cs;O_pri_rad) for rate rule (C/H3/Cs\H3;O_pri_rad)
+! Multiplied by reaction path degeneracy 6
+ethane(1)+HO(18)=C2H5(4)+O(25)                      2.862e+09 1.152     2.680    
+
+! Reaction index: Chemkin #9; RMG #172
+! Template reaction: Disproportionation
+! Exact match found for rate rule (O_pri_rad;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+HO(18)=C2H4(56)+O(25)                       7.230e+13 0.000     0.000    
+
+! Reaction index: Chemkin #10; RMG #180
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_rad/H2/Cs;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+C2H5(4)=ethane(1)+C2H4(56)                  6.900e+13 -0.350    0.000    
+
+! Reaction index: Chemkin #11; RMG #253
+! PDep reaction: PDepNetwork #56
+H(5)+HO(18)(+M)=O(25)(+M)                           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.091e+01    2.403e+00    -6.633e-02   -3.467e-02  /
+    CHEB/ -8.119e-01   6.156e-02    4.191e-02    2.184e-02   /
+    CHEB/ -2.691e-01   6.583e-03    4.629e-03    2.561e-03   /
+    CHEB/ -1.010e-01   1.509e-03    1.014e-03    5.151e-04   /
+    CHEB/ -4.353e-02   5.752e-04    3.744e-04    1.783e-04   /
+    CHEB/ -1.973e-02   1.961e-04    1.268e-04    5.958e-05   /
+
+! Reaction index: Chemkin #12; RMG #254
+! PDep reaction: PDepNetwork #59
+C2H5(4)+H(5)(+M)=ethane(1)(+M)                      1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.263e+01    1.544e+00    -3.476e-01   -1.177e-02  /
+    CHEB/ -1.081e+00   6.828e-01    1.690e-01    -5.354e-02  /
+    CHEB/ -5.522e-01   2.004e-01    1.056e-01    1.543e-02   /
+    CHEB/ -2.785e-01   4.367e-02    3.733e-02    1.903e-02   /
+    CHEB/ -1.293e-01   -6.726e-03   5.540e-03    9.788e-03   /
+    CHEB/ -5.407e-02   -1.512e-02   -4.688e-03   2.432e-03   /
+
+! Reaction index: Chemkin #13; RMG #255
+! PDep reaction: PDepNetwork #59
+C2H5(4)+H(5)(+M)=CH3(3)+CH3(3)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.338e+01    -8.489e-01   -3.184e-01   -1.728e-02  /
+    CHEB/ 4.328e-01    7.345e-01    2.090e-01    -4.070e-02  /
+    CHEB/ 9.526e-03    1.562e-01    1.036e-01    3.017e-02   /
+    CHEB/ -7.024e-02   -6.181e-03   1.856e-02    2.236e-02   /
+    CHEB/ -6.369e-02   -3.064e-02   -9.400e-03   5.427e-03   /
+    CHEB/ -4.024e-02   -1.898e-02   -1.096e-02   -2.679e-03  /
+
+! Reaction index: Chemkin #14; RMG #257
+! PDep reaction: PDepNetwork #60
+H(5)+C2H4(56)(+M)=C2H5(4)(+M)                       1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.199e+01    9.208e-01    -1.769e-01   1.706e-02   /
+    CHEB/ -1.607e-01   9.815e-01    -1.668e-02   -3.901e-02  /
+    CHEB/ -4.416e-01   3.463e-01    7.163e-02    -1.287e-02  /
+    CHEB/ -2.054e-01   7.911e-02    3.818e-02    7.148e-03   /
+    CHEB/ -5.720e-02   -1.046e-02   9.901e-03    5.655e-03   /
+    CHEB/ 3.043e-03    -1.897e-02   -3.867e-03   1.705e-03   /
+
+! Reaction index: Chemkin #15; RMG #237
+! Template reaction: H_Abstraction
+! Estimated using template (C/H3/Cs;H_rad) for rate rule (C/H3/Cs\H3;H_rad)
+! Multiplied by reaction path degeneracy 6
+ethane(1)+H(5)=C2H5(4)+H2(31)                       6.180e+03 3.240     7.100    
+
+! Reaction index: Chemkin #16; RMG #249
+! Template reaction: Disproportionation
+! Exact match found for rate rule (H_rad;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 6
+C2H5(4)+H(5)=C2H4(56)+H2(31)                        2.166e+13 0.000     0.000    
+
+! Reaction index: Chemkin #17; RMG #250
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (H2;O_pri_rad)
+! Multiplied by reaction path degeneracy 2
+HO(18)+H2(31)=H(5)+O(25)                            1.820e+09 1.210     4.710    
+
+! Reaction index: Chemkin #18; RMG #332
+! PDep reaction: PDepNetwork #61
+H(5)+H(5)(+M)=H2(31)(+M)                            1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 8.580e+00    1.837e+00    -2.176e-01   -1.845e-02  /
+    CHEB/ 1.838e-02    2.326e-01    8.461e-02    -1.429e-02  /
+    CHEB/ -1.128e-01   4.510e-02    2.184e-03    -3.653e-03  /
+    CHEB/ -4.227e-02   1.131e-02    9.073e-04    1.155e-03   /
+    CHEB/ -1.677e-02   3.527e-03    1.245e-03    9.920e-04   /
+    CHEB/ -6.470e-03   1.265e-03    6.507e-04    5.358e-04   /
+
+! Reaction index: Chemkin #19; RMG #6
+! PDep reaction: PDepNetwork #1
+ethane(1)(+M)=>CH2(6)+C(7)(+M)                      1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.831e+01   2.147e+00    -2.111e-01   -8.313e-02  /
+    CHEB/ 3.360e+01    8.497e-02    6.156e-02    3.396e-02   /
+    CHEB/ -6.606e-01   1.231e-01    6.696e-02    1.931e-02   /
+    CHEB/ -3.379e-01   5.409e-02    2.734e-02    6.311e-03   /
+    CHEB/ -1.632e-01   1.406e-02    7.288e-03    2.255e-03   /
+    CHEB/ -7.510e-02   1.078e-04    4.917e-04    7.861e-04   /
+
+! Reaction index: Chemkin #20; RMG #7
+! Template reaction: H_Abstraction
+! Estimated using template (X_H;Y_rad) for rate rule (Orad_O_H;C_rad/H2/Cs\H3)
+C2H5(4)+HO2(8)=ethane(1)+O2(2)                      1.606e+04 2.560     9.244    
+
+! Reaction index: Chemkin #21; RMG #8
+! Template reaction: H_Abstraction
+! Estimated using template (C/H3/Cs;C_methyl) for rate rule (C/H3/Cs\H3;C_methyl)
+! Multiplied by reaction path degeneracy 6
+ethane(1)+CH3(3)=C2H5(4)+C(7)                       4.488e-05 4.990     8.000    
+
+! Reaction index: Chemkin #22; RMG #9
+! Template reaction: H_Abstraction
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (Orad_O_H;CH2_triplet)
+HO2(8)+CH2(9)=O2(2)+CH3(3)                          6.240e+07 1.524     5.169    
+
+! Reaction index: Chemkin #23; RMG #11
+! Template reaction: H_Abstraction
+! Estimated using template (Cs_H;CH2_triplet) for rate rule (C_methane;CH2_triplet)
+! Multiplied by reaction path degeneracy 4
+C(7)+CH2(9)=CH3(3)+CH3(3)                           3.629e+06 1.730     6.190    
+
+! Reaction index: Chemkin #24; RMG #14
+! PDep reaction: PDepNetwork #3
+CH3(3)+CH3(3)(+M)=>CH2(6)+C(7)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 5.876e+00    -6.656e-01   -3.049e-01   -4.882e-02  /
+    CHEB/ 5.219e+00    5.659e-01    2.196e-01    -2.306e-03  /
+    CHEB/ 3.663e-02    1.302e-01    8.482e-02    3.266e-02   /
+    CHEB/ 2.131e-02    -5.526e-04   1.307e-02    1.714e-02   /
+    CHEB/ -1.252e-02   -2.423e-02   -8.893e-03   2.473e-03   /
+    CHEB/ -1.649e-02   -1.604e-02   -9.514e-03   -3.216e-03  /
+
+! Reaction index: Chemkin #25; RMG #21
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=>H(5)+CH2O2(11)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.436e+01   -8.507e-04   -6.369e-04   -3.905e-04  /
+    CHEB/ 2.283e+01    8.703e-04    6.515e-04    3.994e-04   /
+    CHEB/ 2.888e-01    -8.568e-05   -6.406e-05   -3.920e-05  /
+    CHEB/ 1.283e-01    -3.572e-05   -2.675e-05   -1.641e-05  /
+    CHEB/ 2.753e-02    1.771e-05    1.324e-05    8.108e-06   /
+    CHEB/ 3.491e-02    -3.159e-05   -2.365e-05   -1.450e-05  /
+
+! Reaction index: Chemkin #26; RMG #22
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=>CH2(6)+HO2(8)(+M)                 1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.388e+01   -8.400e-04   -6.289e-04   -3.857e-04  /
+    CHEB/ 2.256e+01    8.483e-04    6.350e-04    3.893e-04   /
+    CHEB/ 7.996e-02    -7.572e-05   -5.660e-05   -3.463e-05  /
+    CHEB/ 6.293e-02    -3.381e-05   -2.532e-05   -1.554e-05  /
+    CHEB/ 3.045e-02    1.543e-05    1.154e-05    7.063e-06   /
+    CHEB/ 1.765e-02    -3.197e-05   -2.393e-05   -1.467e-05  /
+
+! Reaction index: Chemkin #27; RMG #24
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=>CH3O(13)+O(14)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.171e+00    -1.131e-02   -8.415e-03   -5.114e-03  /
+    CHEB/ 9.496e+00    1.288e-02    9.573e-03    5.803e-03   /
+    CHEB/ 6.759e-02    -1.332e-03   -9.727e-04   -5.734e-04  /
+    CHEB/ 6.058e-02    -6.135e-04   -4.593e-04   -2.817e-04  /
+    CHEB/ 3.105e-02    2.257e-04    1.651e-04    9.768e-05   /
+    CHEB/ 1.576e-02    -3.323e-04   -2.469e-04   -1.497e-04  /
+
+! Reaction index: Chemkin #28; RMG #26
+! Template reaction: H_Abstraction
+! Estimated using template (O/H/NonDeO;C_rad/H2/Cs) for rate rule (O/H/NonDeO;C_rad/H2/Cs\H3)
+C2H5(4)+COO(15)=ethane(1)+CH3O2(10)                 7.985e-01 3.338     1.162    
+
+! Reaction index: Chemkin #29; RMG #27
+! Template reaction: H_Abstraction
+! Estimated using template (X_H;Y_rad) for rate rule (Orad_O_H;C_rad/H2/O)
+HO2(8)+CH2O2(11)=O2(2)+CH3O2(10)                    1.606e+04 2.560     9.268    
+
+! Reaction index: Chemkin #30; RMG #28
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C/H3/O;C_methyl)
+! Multiplied by reaction path degeneracy 3
+CH3(3)+CH3O2(10)=C(7)+CH2O2(11)                     6.150e-04 4.900     6.720    
+
+! Reaction index: Chemkin #31; RMG #29
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;CH2_triplet) for rate rule (O/H/NonDeO;CH2_triplet)
+CH2(9)+COO(15)=CH3(3)+CH3O2(10)                     1.440e+01 3.100     6.940    
+
+! Reaction index: Chemkin #32; RMG #31
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;C_pri_rad) for rate rule (O/H/NonDeO;C_rad/H2/O)
+CH2O2(11)+COO(15)=CH3O2(10)+CH3O2(10)               2.959e-03 4.241     5.004    
+
+! Reaction index: Chemkin #33; RMG #33
+! PDep reaction: PDepNetwork #4
+CH3O2(10)(+M)=>H(5)+CH2O2(11)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.948e+01   2.499e+00    -6.439e-04   -3.949e-04  /
+    CHEB/ 3.186e+01    8.647e-04    6.473e-04    3.968e-04   /
+    CHEB/ 6.693e-03    -8.690e-05   -6.497e-05   -3.976e-05  /
+    CHEB/ 2.529e-02    -3.618e-05   -2.709e-05   -1.662e-05  /
+    CHEB/ -3.454e-03   1.709e-05    1.278e-05    7.825e-06   /
+    CHEB/ 5.728e-02    -3.265e-05   -2.444e-05   -1.499e-05  /
+
+! Reaction index: Chemkin #34; RMG #34
+! PDep reaction: PDepNetwork #4
+CH3O2(10)(+M)=>CH2(6)+HO2(8)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.900e+01   2.499e+00    -6.353e-04   -3.896e-04  /
+    CHEB/ 3.162e+01    8.422e-04    6.304e-04    3.865e-04   /
+    CHEB/ -1.970e-01   -7.729e-05   -5.778e-05   -3.536e-05  /
+    CHEB/ -3.895e-02   -3.430e-05   -2.569e-05   -1.576e-05  /
+    CHEB/ 1.501e-04    1.486e-05    1.111e-05    6.799e-06   /
+    CHEB/ 3.994e-02    -3.302e-05   -2.472e-05   -1.516e-05  /
+
+! Reaction index: Chemkin #35; RMG #36
+! PDep reaction: PDepNetwork #4
+CH3O2(10)(+M)=>CH3O(13)+O(14)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.295e+01   2.488e+00    -8.766e-03   -5.327e-03  /
+    CHEB/ 1.829e+01    1.286e-02    9.553e-03    5.789e-03   /
+    CHEB/ -3.409e-01   -1.189e-03   -8.659e-04   -5.082e-04  /
+    CHEB/ -9.934e-02   -5.392e-04   -4.035e-04   -2.473e-04  /
+    CHEB/ -2.172e-02   2.336e-04    1.711e-04    1.013e-04   /
+    CHEB/ 2.917e-02    -3.697e-04   -2.748e-04   -1.666e-04  /
+
+! Reaction index: Chemkin #36; RMG #41
+! Template reaction: H_Abstraction
+! Estimated using template (C_pri;C_pri_rad) for rate rule (C/H3/O;C_rad/H2/Cs\H3)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+COO(15)=ethane(1)+CH3O2(12)                 4.433e-03 4.368     13.235   
+
+! Reaction index: Chemkin #37; RMG #42
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (Orad_O_H;O_rad/NonDeO)
+HO2(8)+CH2O2(11)=O2(2)+CH3O2(12)                    1.750e+10 0.000     -3.275   
+
+! Reaction index: Chemkin #38; RMG #44
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C_methane;O_rad/NonDeO)
+! Multiplied by reaction path degeneracy 4
+C(7)+CH2O2(11)=CH3(3)+CH3O2(12)                     1.812e+11 0.000     18.580   
+
+! Reaction index: Chemkin #39; RMG #45
+! Template reaction: H_Abstraction
+! Estimated using template (Cs_H;CH2_triplet) for rate rule (C/H3/O;CH2_triplet)
+! Multiplied by reaction path degeneracy 3
+CH2(9)+COO(15)=CH3(3)+CH3O2(12)                     2.721e+06 1.730     6.190    
+
+! Reaction index: Chemkin #40; RMG #47
+! Template reaction: H_Abstraction
+! H2O2;OOCExact match found for rate rule (O/H/NonDeO;O_rad/NonDeO)
+! Multiplied by reaction path degeneracy 4
+CH2O2(11)+COO(15)=CH3O2(10)+CH3O2(12)               3.680e-01 3.960     6.630    
+
+! Reaction index: Chemkin #41; RMG #49
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;C_pri_rad) for rate rule (O/H/NonDeO;C_rad/H2/O)
+CH3O2(12)+CH3O2(12)=CH2O2(11)+COO(15)               2.959e-03 4.241     5.004    
+
+! Reaction index: Chemkin #42; RMG #53
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=>CH2O(19)+HO(18)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.804e+00    -1.957e-02   -1.448e-02   -8.723e-03  /
+    CHEB/ 9.585e+00    2.259e-02    1.666e-02    9.978e-03   /
+    CHEB/ 5.394e-01    -4.751e-03   -3.455e-03   -2.024e-03  /
+    CHEB/ 8.863e-02    -1.341e-03   -1.009e-03   -6.236e-04  /
+    CHEB/ -2.855e-02   8.733e-04    6.394e-04    3.787e-04   /
+    CHEB/ -2.580e-02   -1.710e-04   -1.219e-04   -6.904e-05  /
+
+! Reaction index: Chemkin #43; RMG #54
+! PDep reaction: PDepNetwork #2
+O2(2)+CH3(3)(+M)=>CH3O2(20)(+M)                     1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 3.639e-01    -8.967e-02   -6.234e-02   -3.381e-02  /
+    CHEB/ 6.879e+00    1.106e-01    7.567e-02    3.983e-02   /
+    CHEB/ 7.434e-01    -2.035e-02   -1.262e-02   -5.346e-03  /
+    CHEB/ 1.796e-01    -8.775e-03   -6.581e-03   -4.036e-03  /
+    CHEB/ 1.000e-02    2.077e-03    1.203e-03    4.122e-04   /
+    CHEB/ -2.832e-02   -4.504e-04   -2.416e-04   -6.102e-05  /
+
+! Reaction index: Chemkin #44; RMG #56
+! PDep reaction: PDepNetwork #4
+CH3O2(10)(+M)=>CH2O(19)+HO(18)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.217e+01   2.479e+00    -1.576e-02   -9.494e-03  /
+    CHEB/ 1.822e+01    2.273e-02    1.675e-02    1.002e-02   /
+    CHEB/ 1.430e-01    -4.644e-03   -3.373e-03   -1.972e-03  /
+    CHEB/ -2.342e-02   -1.724e-03   -1.292e-03   -7.930e-04  /
+    CHEB/ -5.110e-02   5.708e-04    4.130e-04    2.400e-04   /
+    CHEB/ -2.314e-03   -3.674e-04   -2.678e-04   -1.575e-04  /
+
+! Reaction index: Chemkin #45; RMG #57
+! PDep reaction: PDepNetwork #4
+CH3O2(10)(+M)=>CH3O2(20)(+M)                        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.292e+01   2.395e+00    -7.283e-02   -3.920e-02  /
+    CHEB/ 1.524e+01    1.190e-01    8.068e-02    4.172e-02   /
+    CHEB/ 2.592e-01    -1.442e-02   -8.208e-03   -2.671e-03  /
+    CHEB/ 5.826e-02    -9.992e-03   -7.296e-03   -4.294e-03  /
+    CHEB/ 6.767e-03    -1.610e-04   -4.574e-04   -5.904e-04  /
+    CHEB/ 1.275e-02    -1.719e-03   -1.178e-03   -6.222e-04  /
+
+! Reaction index: Chemkin #46; RMG #61
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=>CH2O(19)+HO(18)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -5.485e+00   2.499e+00    -9.024e-04   -5.519e-04  /
+    CHEB/ 1.451e+01    -1.978e-03   -1.477e-03   -9.031e-04  /
+    CHEB/ -1.804e-01   -1.164e-03   -8.684e-04   -5.299e-04  /
+    CHEB/ -2.161e-01   -4.798e-04   -3.570e-04   -2.169e-04  /
+    CHEB/ -1.132e-01   -1.109e-04   -8.145e-05   -4.849e-05  /
+    CHEB/ -3.900e-02   2.258e-05    1.791e-05    1.192e-05   /
+
+! Reaction index: Chemkin #47; RMG #62
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=>H(5)+CH2O2(11)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.568e+01   2.500e+00    -8.185e-05   -5.022e-05  /
+    CHEB/ 2.930e+01    -1.008e-04   -7.546e-05   -4.631e-05  /
+    CHEB/ -1.782e-01   -1.540e-05   -1.153e-05   -7.067e-06  /
+    CHEB/ -1.503e-01   2.562e-05    1.919e-05    1.177e-05   /
+    CHEB/ -4.148e-02   1.939e-05    1.452e-05    8.906e-06   /
+    CHEB/ 1.172e-02    2.251e-06    1.685e-06    1.034e-06   /
+
+! Reaction index: Chemkin #48; RMG #63
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=>CH3O2(20)(+M)                        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.515e+00   2.498e+00    -1.685e-03   -1.029e-03  /
+    CHEB/ 8.674e+00    -3.909e-03   -2.917e-03   -1.779e-03  /
+    CHEB/ 1.463e-01    -2.729e-03   -2.034e-03   -1.239e-03  /
+    CHEB/ -5.454e-02   -1.637e-03   -1.218e-03   -7.396e-04  /
+    CHEB/ -3.179e-02   -9.047e-04   -6.714e-04   -4.063e-04  /
+    CHEB/ -5.470e-03   -4.804e-04   -3.555e-04   -2.141e-04  /
+
+! Reaction index: Chemkin #49; RMG #64
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=>CH2(6)+HO2(8)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.701e+01   2.499e+00    -7.075e-04   -4.339e-04  /
+    CHEB/ 2.926e+01    7.286e-04    5.454e-04    3.343e-04   /
+    CHEB/ -1.928e-01   -8.982e-05   -6.716e-05   -4.111e-05  /
+    CHEB/ -1.441e-01   -5.261e-06   -3.939e-06   -2.416e-06  /
+    CHEB/ -4.032e-02   3.618e-05    2.708e-05    1.660e-05   /
+    CHEB/ 2.271e-02    -2.806e-05   -2.101e-05   -1.288e-05  /
+
+! Reaction index: Chemkin #50; RMG #65
+! PDep reaction: PDepNetwork #6
+CH3O2(12)(+M)=>CH3O(13)+O(14)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.219e+01   2.488e+00    -8.804e-03   -5.354e-03  /
+    CHEB/ 1.683e+01    1.138e-02    8.452e-03    5.119e-03   /
+    CHEB/ -3.734e-02   -2.191e-03   -1.615e-03   -9.657e-04  /
+    CHEB/ -1.624e-01   -7.980e-04   -5.968e-04   -3.654e-04  /
+    CHEB/ -9.324e-02   3.429e-04    2.535e-04    1.524e-04   /
+    CHEB/ -2.083e-02   -1.609e-04   -1.184e-04   -7.075e-05  /
+
+! Reaction index: Chemkin #51; RMG #68
+! Template reaction: H_Abstraction
+! Estimated using template (X_H;O_atom_triplet) for rate rule (Orad_O_H;O_atom_triplet)
+HO2(8)+O(14)=O2(2)+HO(18)                           1.700e+08 1.500     0.000    
+
+! Reaction index: Chemkin #52; RMG #69
+! Template reaction: H_Abstraction
+! Estimated using template (Cs_H;O_atom_triplet) for rate rule (C_methane;O_atom_triplet)
+! Multiplied by reaction path degeneracy 4
+C(7)+O(14)=CH3(3)+HO(18)                            1.279e+06 2.369     2.195    
+
+! Reaction index: Chemkin #53; RMG #70
+! Template reaction: H_Abstraction
+! Estimated using template (Xrad_H;Y_rad) for rate rule (CH3_rad_H;O_pri_rad)
+! Multiplied by reaction path degeneracy 3
+CH3(3)+HO(18)=CH2(9)+O(25)                          1.412e+10 1.068     5.022    
+
+! Reaction index: Chemkin #54; RMG #72
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;O_atom_triplet) for rate rule (O/H/NonDeO;O_atom_triplet)
+O(14)+COO(15)=CH3O2(10)+HO(18)                      6.611e+09 1.000     3.760    
+
+! Reaction index: Chemkin #55; RMG #73
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C/H3/O;O_pri_rad)
+! Multiplied by reaction path degeneracy 3
+CH3O2(10)+HO(18)=CH2O2(11)+O(25)                    2.442e+04 2.800     -0.420   
+
+! Reaction index: Chemkin #56; RMG #74
+! Template reaction: H_Abstraction
+! Estimated using template (C_pri;O_atom_triplet) for rate rule (C/H3/O;O_atom_triplet)
+! Multiplied by reaction path degeneracy 3
+O(14)+COO(15)=CH3O2(12)+HO(18)                      1.502e+07 2.017     3.981    
+
+! Reaction index: Chemkin #57; RMG #75
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;O_pri_rad) for rate rule (O/H/NonDeO;O_pri_rad)
+CH3O2(12)+HO(18)=CH2O2(11)+O(25)                    2.921e+04 2.467     -0.722   
+
+! Reaction index: Chemkin #58; RMG #77
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (O_pri;O_atom_triplet)
+! Multiplied by reaction path degeneracy 2
+O(14)+O(25)=HO(18)+HO(18)                           5.260e+09 1.200     17.830   
+
+! Reaction index: Chemkin #59; RMG #79
+! PDep reaction: PDepNetwork #11
+HO(18)(+M)=>H(5)+O(14)(+M)                          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.143e+01   2.475e+00    -1.874e-02   -1.130e-02  /
+    CHEB/ 3.313e+01    1.775e-02    1.308e-02    7.819e-03   /
+    CHEB/ -1.065e-01   1.870e-03    1.417e-03    8.846e-04   /
+    CHEB/ -4.577e-02   2.434e-04    1.878e-04    1.203e-04   /
+    CHEB/ -2.175e-02   5.427e-05    4.154e-05    2.633e-05   /
+    CHEB/ -1.037e-02   9.996e-06    7.690e-06    4.909e-06   /
+
+! Reaction index: Chemkin #60; RMG #82
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_rad/H2/Cs;O_Csrad)
+C2H5(4)+CH3O(32)=ethane(1)+CH2O(17)                 2.410e+12 0.000     0.000    
+
+! Reaction index: Chemkin #61; RMG #83
+! Template reaction: Disproportionation
+! Estimated using template (C_pri_rad;Cmethyl_Rrad) for rate rule (C_rad/H2/Cs;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CH3O(13)=ethane(1)+CH2O(17)                 3.451e+13 -0.233    -0.043   
+
+! Reaction index: Chemkin #62; RMG #85
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (CO_pri;O2b)
+! Multiplied by reaction path degeneracy 8
+O2(2)+CH2O(17)=HO2(8)+CHO(29)                       1.872e+08 2.050     37.930   
+
+! Reaction index: Chemkin #63; RMG #86
+! Template reaction: Disproportionation
+! Exact match found for rate rule (CH2_triplet;O_Csrad)
+CH2(9)+CH3O(32)=CH3(3)+CH2O(17)                     1.210e+12 0.000     0.000    
+
+! Reaction index: Chemkin #64; RMG #87
+! Template reaction: Disproportionation
+! Estimated using template (CH2_triplet;Cmethyl_Rrad) for rate rule (CH2_triplet;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 3
+CH2(9)+CH3O(13)=CH3(3)+CH2O(17)                     9.030e+13 0.000     0.000    
+
+! Reaction index: Chemkin #65; RMG #90
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (CO_pri;C_methyl)
+! Multiplied by reaction path degeneracy 2
+CH3(3)+CH2O(17)=C(7)+CHO(29)                        7.780e-08 6.100     1.970    
+
+! Reaction index: Chemkin #66; RMG #91
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_rad/H2/O;O_Csrad)
+CH2O2(11)+CH3O(32)=CH3O2(10)+CH2O(17)               4.820e+12 0.000     0.000    
+
+! Reaction index: Chemkin #67; RMG #92
+! Template reaction: Disproportionation
+! Estimated using template (C_pri_rad;Cmethyl_Rrad) for rate rule (C_rad/H2/O;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 3
+CH2O2(11)+CH3O(13)=CH3O2(10)+CH2O(17)               3.451e+13 -0.233    -0.043   
+
+! Reaction index: Chemkin #68; RMG #94
+! Template reaction: H_Abstraction
+! Estimated using template (CO_pri;O_rad/NonDeO) for rate rule (CO_pri;OOC)
+! Multiplied by reaction path degeneracy 2
+CH3O2(10)+CH2O(17)=COO(15)+CHO(29)                  4.120e+04 2.500     10.210   
+
+! Reaction index: Chemkin #69; RMG #97
+! Template reaction: H_Abstraction
+! Estimated using template (CO_pri;C_pri_rad) for rate rule (CO_pri;C_rad/H2/O)
+! Multiplied by reaction path degeneracy 2
+CH3O2(12)+CH2O(17)=COO(15)+CHO(29)                  1.836e+01 3.380     9.040    
+
+! Reaction index: Chemkin #70; RMG #99
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (CO_pri;O_pri_rad)
+! Multiplied by reaction path degeneracy 2
+HO(18)+CH2O(17)=O(25)+CHO(29)                       3.440e+09 1.180     -0.450   
+
+! Reaction index: Chemkin #71; RMG #100
+! Template reaction: Disproportionation
+! Estimated using template (CO_rad;XH_s_Rrad) for rate rule (CO_pri_rad;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 3
+CH3O(13)+CHO(29)=CH2O(17)+CH2O(17)                  5.430e+14 0.000     0.000    
+
+! Reaction index: Chemkin #72; RMG #101
+! Template reaction: Disproportionation
+! Exact match found for rate rule (CO_pri_rad;O_Csrad)
+CHO(29)+CH3O(32)=CH2O(17)+CH2O(17)                  1.810e+14 0.000     0.000    
+
+! Reaction index: Chemkin #73; RMG #108
+! PDep reaction: PDepNetwork #15
+CH2O(17)(+M)=>H(5)+CHO(29)(+M)                      1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.387e+01   8.067e-01    -3.357e-01   7.327e-02   /
+    CHEB/ 2.909e+01    3.825e-01    -1.194e-02   -5.534e-02  /
+    CHEB/ -3.127e-01   2.102e-01    1.082e-02    -2.863e-02  /
+    CHEB/ -1.491e-01   1.008e-01    1.477e-02    -1.124e-02  /
+    CHEB/ -7.136e-02   4.468e-02    1.098e-02    -3.100e-03  /
+    CHEB/ -3.380e-02   1.875e-02    6.452e-03    -1.750e-04  /
+
+! Reaction index: Chemkin #74; RMG #109
+! PDep reaction: PDepNetwork #15
+CH2O(17)(+M)=>CO(30)+H2(31)(+M)                     1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.938e+01   1.976e+00    -2.965e-01   -9.910e-02  /
+    CHEB/ 3.709e+01    1.833e-01    8.664e-02    1.061e-02   /
+    CHEB/ 2.774e-02    8.867e-02    4.591e-02    1.049e-02   /
+    CHEB/ -2.227e-02   3.755e-02    2.154e-02    7.340e-03   /
+    CHEB/ -1.935e-02   1.442e-02    9.257e-03    4.219e-03   /
+    CHEB/ -1.139e-02   4.928e-03    3.636e-03    2.122e-03   /
+
+! Reaction index: Chemkin #75; RMG #113
+! PDep reaction: PDepNetwork #23
+HO(18)+CH2O(17)(+M)=>CH2O(19)+HO(18)(+M)            1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.550e+01   -2.462e-02   -1.827e-02   -1.105e-02  /
+    CHEB/ 2.420e+01    1.109e-02    8.190e-03    4.918e-03   /
+    CHEB/ -2.345e-01   9.259e-04    7.113e-04    4.530e-04   /
+    CHEB/ -1.356e-01   1.066e-03    7.947e-04    4.840e-04   /
+    CHEB/ -7.431e-02   3.592e-04    2.699e-04    1.665e-04   /
+    CHEB/ -3.341e-02   -1.479e-04   -1.069e-04   -6.193e-05  /
+
+! Reaction index: Chemkin #76; RMG #114
+! PDep reaction: PDepNetwork #23
+HO(18)+CH2O(17)(+M)=>H(5)+CH2O2(11)(+M)             1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.768e+01   -2.089e-04   -1.564e-04   -9.597e-05  /
+    CHEB/ 4.001e+01    -4.195e-05   -3.142e-05   -1.928e-05  /
+    CHEB/ 5.966e-02    7.388e-06    5.538e-06    3.402e-06   /
+    CHEB/ 7.772e-03    1.468e-05    1.099e-05    6.746e-06   /
+    CHEB/ -3.579e-03   1.029e-05    7.702e-06    4.724e-06   /
+    CHEB/ -5.653e-03   3.530e-06    2.644e-06    1.622e-06   /
+
+! Reaction index: Chemkin #77; RMG #115
+! PDep reaction: PDepNetwork #23
+HO(18)+CH2O(17)(+M)=>CH3O2(20)(+M)                  1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.348e+01   -1.448e-02   -1.079e-02   -6.563e-03  /
+    CHEB/ 1.857e+01    -3.474e-03   -2.563e-03   -1.537e-03  /
+    CHEB/ 1.760e-01    -3.757e-03   -2.778e-03   -1.672e-03  /
+    CHEB/ 3.063e-02    -1.189e-03   -8.745e-04   -5.216e-04  /
+    CHEB/ -1.543e-02   -2.949e-04   -2.126e-04   -1.227e-04  /
+    CHEB/ -2.043e-02   -1.351e-04   -9.593e-05   -5.394e-05  /
+
+! Reaction index: Chemkin #78; RMG #116
+! PDep reaction: PDepNetwork #23
+HO(18)+CH2O(17)(+M)=>CH2(6)+HO2(8)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.900e+01   -1.054e-03   -7.893e-04   -4.841e-04  /
+    CHEB/ 3.997e+01    7.813e-04    5.848e-04    3.585e-04   /
+    CHEB/ 4.156e-02    -6.725e-05   -5.026e-05   -3.074e-05  /
+    CHEB/ 1.064e-02    -1.620e-05   -1.213e-05   -7.445e-06  /
+    CHEB/ -3.965e-03   2.634e-05    1.971e-05    1.208e-05   /
+    CHEB/ 5.120e-03    -2.822e-05   -2.113e-05   -1.295e-05  /
+
+! Reaction index: Chemkin #79; RMG #117
+! PDep reaction: PDepNetwork #23
+HO(18)+CH2O(17)(+M)=>CH3O(13)+O(14)(+M)             1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.237e+01   -3.233e-02   -2.402e-02   -1.456e-02  /
+    CHEB/ 2.648e+01    2.488e-02    1.845e-02    1.115e-02   /
+    CHEB/ -9.243e-02   5.492e-04    4.407e-04    2.978e-04   /
+    CHEB/ -5.834e-02   3.426e-04    2.532e-04    1.523e-04   /
+    CHEB/ -3.867e-02   5.468e-04    4.048e-04    2.439e-04   /
+    CHEB/ -1.209e-02   -4.229e-04   -3.128e-04   -1.882e-04  /
+
+! Reaction index: Chemkin #80; RMG #127
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(39)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.711e+01   2.490e+00    -7.148e-03   -4.359e-03  /
+    CHEB/ 2.074e+01    8.038e-03    5.983e-03    3.637e-03   /
+    CHEB/ 1.411e-01    1.526e-04    1.218e-04    8.169e-05   /
+    CHEB/ 3.433e-02    1.657e-04    1.238e-04    7.574e-05   /
+    CHEB/ 3.607e-03    9.469e-05    7.087e-05    4.345e-05   /
+    CHEB/ -8.649e-05   3.721e-05    2.788e-05    1.712e-05   /
+
+! Reaction index: Chemkin #81; RMG #128
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>H(5)+C2H3O2(44)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.718e+01   -7.960e-03   -5.941e-03   -3.627e-03  /
+    CHEB/ 2.489e+01    6.635e-03    4.945e-03    3.012e-03   /
+    CHEB/ 3.737e-01    4.225e-04    3.204e-04    2.003e-04   /
+    CHEB/ 1.075e-01    1.700e-04    1.274e-04    7.819e-05   /
+    CHEB/ 3.465e-02    3.519e-05    2.646e-05    1.634e-05   /
+    CHEB/ 1.594e-02    -1.039e-05   -7.710e-06   -4.667e-06  /
+
+! Reaction index: Chemkin #82; RMG #129
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>CH2O(19)+CH2O(17)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.451e+01   -5.315e-04   -3.980e-04   -2.441e-04  /
+    CHEB/ 4.961e+01    1.402e-05    1.050e-05    6.450e-06   /
+    CHEB/ 6.863e-02    2.096e-04    1.569e-04    9.623e-05   /
+    CHEB/ 3.707e-03    1.050e-04    7.859e-05    4.820e-05   /
+    CHEB/ 5.966e-03    2.001e-05    1.498e-05    9.193e-06   /
+    CHEB/ 9.150e-03    -5.853e-06   -4.377e-06   -2.680e-06  /
+DUPLICATE
+
+! Reaction index: Chemkin #83; RMG #130
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>H(5)+C2H3O2(45)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -5.308e+01   -3.989e-04   -2.987e-04   -1.833e-04  /
+    CHEB/ 5.467e+01    -5.906e-06   -4.418e-06   -2.706e-06  /
+    CHEB/ 2.052e-01    1.543e-04    1.155e-04    7.087e-05   /
+    CHEB/ 5.158e-02    8.256e-05    6.182e-05    3.792e-05   /
+    CHEB/ 2.412e-02    1.799e-05    1.347e-05    8.265e-06   /
+    CHEB/ 1.643e-02    -3.410e-06   -2.551e-06   -1.562e-06  /
+
+! Reaction index: Chemkin #84; RMG #131
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(46)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.086e+01   -8.022e-03   -5.988e-03   -3.655e-03  /
+    CHEB/ 2.457e+01    6.515e-03    4.855e-03    2.957e-03   /
+    CHEB/ 2.006e-01    4.195e-04    3.180e-04    1.987e-04   /
+    CHEB/ 5.132e-02    1.815e-04    1.359e-04    8.343e-05   /
+    CHEB/ 1.312e-02    5.194e-05    3.899e-05    2.400e-05   /
+    CHEB/ 6.657e-03    1.868e-06    1.459e-06    9.510e-07   /
+
+! Reaction index: Chemkin #85; RMG #132
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(47)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.375e+01   -5.690e-03   -4.252e-03   -2.599e-03  /
+    CHEB/ 2.990e+01    4.482e-03    3.345e-03    2.042e-03   /
+    CHEB/ 1.413e-01    5.751e-04    4.316e-04    2.657e-04   /
+    CHEB/ 3.875e-02    5.569e-05    4.216e-05    2.629e-05   /
+    CHEB/ 1.184e-02    9.065e-06    6.839e-06    4.243e-06   /
+    CHEB/ 7.886e-03    -9.229e-06   -6.886e-06   -4.201e-06  /
+
+! Reaction index: Chemkin #86; RMG #133
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(48)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.898e+01   -3.847e-03   -2.876e-03   -1.761e-03  /
+    CHEB/ 3.282e+01    2.617e-03    1.956e-03    1.196e-03   /
+    CHEB/ 3.018e-01    7.749e-04    5.798e-04    3.552e-04   /
+    CHEB/ 9.672e-02    5.257e-05    3.974e-05    2.473e-05   /
+    CHEB/ 3.633e-02    -1.747e-05   -1.296e-05   -7.841e-06  /
+    CHEB/ 1.862e-02    -1.434e-05   -1.072e-05   -6.566e-06  /
+
+! Reaction index: Chemkin #87; RMG #134
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>C1OCO1(43)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.431e+01   -9.113e-03   -6.799e-03   -4.147e-03  /
+    CHEB/ 2.162e+01    7.484e-03    5.573e-03    3.390e-03   /
+    CHEB/ 2.095e-01    2.708e-04    2.088e-04    1.337e-04   /
+    CHEB/ 5.622e-02    1.871e-04    1.399e-04    8.571e-05   /
+    CHEB/ 1.278e-02    8.639e-05    6.472e-05    3.973e-05   /
+    CHEB/ 4.326e-03    2.954e-05    2.215e-05    1.362e-05   /
+
+! Reaction index: Chemkin #88; RMG #135
+! PDep reaction: PDepNetwork #24
+CH2O(17)+CH2O(17)(+M)=>O(14)+C2H4O(49)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -5.122e+01   -4.447e-04   -3.330e-04   -2.043e-04  /
+    CHEB/ 5.266e+01    -8.478e-07   -6.293e-07   -3.809e-07  /
+    CHEB/ 1.548e-01    1.733e-04    1.298e-04    7.959e-05   /
+    CHEB/ 3.491e-02    9.081e-05    6.799e-05    4.170e-05   /
+    CHEB/ 1.781e-02    1.897e-05    1.420e-05    8.715e-06   /
+    CHEB/ 1.387e-02    -4.209e-06   -3.148e-06   -1.928e-06  /
+
+! Reaction index: Chemkin #89; RMG #145
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(40)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.817e+01   2.489e+00    -8.152e-03   -4.966e-03  /
+    CHEB/ 2.113e+01    9.014e-03    6.704e-03    4.070e-03   /
+    CHEB/ 1.073e-01    6.297e-05    5.707e-05    4.427e-05   /
+    CHEB/ 2.056e-02    1.549e-04    1.157e-04    7.062e-05   /
+    CHEB/ -1.249e-02   1.216e-04    9.099e-05    5.572e-05   /
+    CHEB/ -1.598e-02   7.254e-05    5.429e-05    3.328e-05   /
+
+! Reaction index: Chemkin #90; RMG #146
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>H(5)+C2H3O2(50)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.424e+01   -8.064e-03   -6.019e-03   -3.674e-03  /
+    CHEB/ 3.056e+01    6.789e-03    5.060e-03    3.081e-03   /
+    CHEB/ 3.281e-01    5.364e-04    4.055e-04    2.524e-04   /
+    CHEB/ 7.502e-02    1.698e-04    1.274e-04    7.836e-05   /
+    CHEB/ 6.900e-03    3.059e-05    2.302e-05    1.423e-05   /
+    CHEB/ -4.009e-03   -2.210e-05   -1.646e-05   -1.002e-05  /
+
+! Reaction index: Chemkin #91; RMG #147
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>CH2O(19)+CH2O(17)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.442e+01   -2.147e-03   -1.606e-03   -9.841e-04  /
+    CHEB/ 4.904e+01    1.956e-03    1.463e-03    8.957e-04   /
+    CHEB/ 1.746e-02    4.797e-05    3.633e-05    2.267e-05   /
+    CHEB/ -1.198e-02   8.239e-06    6.178e-06    3.798e-06   /
+    CHEB/ -1.613e-02   -6.915e-06   -5.173e-06   -3.168e-06  /
+    CHEB/ -9.440e-03   -7.098e-06   -5.314e-06   -3.258e-06  /
+DUPLICATE
+
+! Reaction index: Chemkin #92; RMG #148
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>H(5)+C2H3O2(51)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -5.139e+01   -1.616e-03   -1.210e-03   -7.415e-04  /
+    CHEB/ 5.266e+01    1.477e-03    1.105e-03    6.772e-04   /
+    CHEB/ 1.574e-01    3.017e-05    2.283e-05    1.423e-05   /
+    CHEB/ 3.616e-02    6.493e-06    4.865e-06    2.987e-06   /
+    CHEB/ 2.657e-03    -4.968e-06   -3.717e-06   -2.277e-06  /
+    CHEB/ -1.747e-03   -5.108e-06   -3.824e-06   -2.345e-06  /
+
+! Reaction index: Chemkin #93; RMG #149
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(52)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.167e+01   -9.123e-03   -6.807e-03   -4.153e-03  /
+    CHEB/ 2.498e+01    7.080e-03    5.273e-03    3.207e-03   /
+    CHEB/ 1.627e-01    4.608e-04    3.497e-04    2.188e-04   /
+    CHEB/ 2.834e-02    2.443e-04    1.829e-04    1.122e-04   /
+    CHEB/ -1.192e-02   1.239e-04    9.281e-05    5.693e-05   /
+    CHEB/ -1.501e-02   4.540e-05    3.405e-05    2.093e-05   /
+
+! Reaction index: Chemkin #94; RMG #150
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(53)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.470e+01   -8.188e-03   -6.111e-03   -3.729e-03  /
+    CHEB/ 2.993e+01    6.873e-03    5.122e-03    3.119e-03   /
+    CHEB/ 3.889e-01    5.575e-04    4.213e-04    2.621e-04   /
+    CHEB/ 9.414e-02    1.860e-04    1.395e-04    8.580e-05   /
+    CHEB/ 1.321e-02    3.645e-05    2.742e-05    1.694e-05   /
+    CHEB/ -1.857e-03   -2.219e-05   -1.652e-05   -1.005e-05  /
+
+! Reaction index: Chemkin #95; RMG #151
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(54)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.832e+01   -7.771e-03   -5.801e-03   -3.541e-03  /
+    CHEB/ 3.184e+01    6.630e-03    4.942e-03    3.011e-03   /
+    CHEB/ 2.755e-01    4.915e-04    3.718e-04    2.316e-04   /
+    CHEB/ 5.905e-02    1.351e-04    1.014e-04    6.248e-05   /
+    CHEB/ 2.438e-03    1.518e-05    1.148e-05    7.143e-06   /
+    CHEB/ -5.017e-03   -2.527e-05   -1.885e-05   -1.150e-05  /
+
+! Reaction index: Chemkin #96; RMG #152
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>C1COO1(42)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.543e+01   -1.034e-02   -7.707e-03   -4.698e-03  /
+    CHEB/ 2.202e+01    8.282e-03    6.162e-03    3.744e-03   /
+    CHEB/ 1.758e-01    2.189e-04    1.716e-04    1.125e-04   /
+    CHEB/ 4.127e-02    1.905e-04    1.424e-04    8.714e-05   /
+    CHEB/ -4.568e-03   1.202e-04    8.996e-05    5.515e-05   /
+    CHEB/ -1.255e-02   6.705e-05    5.020e-05    3.079e-05   /
+DUPLICATE
+
+! Reaction index: Chemkin #97; RMG #153
+! PDep reaction: PDepNetwork #25
+CH2O(17)+CH2O(17)(+M)=>O(14)+C2H4O(55)(+M)          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -5.015e+01   -1.754e-03   -1.313e-03   -8.044e-04  /
+    CHEB/ 5.133e+01    1.592e-03    1.191e-03    7.298e-04   /
+    CHEB/ 1.946e-02    3.749e-05    2.834e-05    1.764e-05   /
+    CHEB/ -1.048e-02   8.203e-06    6.147e-06    3.775e-06   /
+    CHEB/ -1.547e-02   -4.975e-06   -3.722e-06   -2.279e-06  /
+    CHEB/ -9.231e-03   -5.434e-06   -4.068e-06   -2.495e-06  /
+
+! Reaction index: Chemkin #98; RMG #156
+! PDep reaction: PDepNetwork #26
+CH2O(17)+CH2O(17)(+M)=>C2H4O2(41)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.810e+01   2.491e+00    -6.969e-03   -4.252e-03  /
+    CHEB/ 3.793e+01    6.609e-03    4.921e-03    2.993e-03   /
+    CHEB/ 3.637e-01    3.066e-04    2.341e-04    1.478e-04   /
+    CHEB/ 1.254e-01    2.599e-04    1.943e-04    1.189e-04   /
+    CHEB/ 3.922e-02    1.504e-04    1.126e-04    6.903e-05   /
+    CHEB/ 1.214e-02    8.373e-05    6.268e-05    3.843e-05   /
+
+! Reaction index: Chemkin #99; RMG #157
+! PDep reaction: PDepNetwork #26
+CH2O(17)+CH2O(17)(+M)=>CH2O(19)+CH2O(19)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.387e+01   -7.880e-03   -5.880e-03   -3.588e-03  /
+    CHEB/ 4.883e+01    7.234e-03    5.392e-03    3.284e-03   /
+    CHEB/ -9.626e-02   3.249e-04    2.480e-04    1.566e-04   /
+    CHEB/ -2.583e-02   2.248e-05    1.697e-05    1.053e-05   /
+    CHEB/ 1.036e-02    -4.871e-05   -3.636e-05   -2.220e-05  /
+    CHEB/ 2.439e-02    -3.310e-05   -2.477e-05   -1.517e-05  /
+
+! Reaction index: Chemkin #100; RMG #158
+! PDep reaction: PDepNetwork #26
+CH2O(17)+CH2O(17)(+M)=>C1COO1(42)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.656e+01   -9.303e-03   -6.942e-03   -4.235e-03  /
+    CHEB/ 3.877e+01    6.608e-03    4.921e-03    2.993e-03   /
+    CHEB/ 3.886e-01    3.283e-04    2.503e-04    1.577e-04   /
+    CHEB/ 1.302e-01    2.733e-04    2.043e-04    1.250e-04   /
+    CHEB/ 3.979e-02    1.548e-04    1.159e-04    7.106e-05   /
+    CHEB/ 1.223e-02    8.269e-05    6.191e-05    3.796e-05   /
+DUPLICATE
+
+! Reaction index: Chemkin #101; RMG #161
+! Template reaction: Disproportionation
+! Exact match found for rate rule (O2b;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 12
+O2(2)+C2H5(4)=HO2(8)+C2H4(56)                       8.676e+13 0.000     15.990   
+
+! Reaction index: Chemkin #102; RMG #163
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_methyl;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+CH3(3)+C2H5(4)=C(7)+C2H4(56)                        6.570e+14 -0.680    0.000    
+
+! Reaction index: Chemkin #103; RMG #164
+! Template reaction: H_Abstraction
+! Estimated using template (Cs_H;CH2_triplet) for rate rule (C/H3/Cs\H3;CH2_triplet)
+! Multiplied by reaction path degeneracy 6
+ethane(1)+CH2(9)=CH3(3)+C2H5(4)                     5.443e+06 1.730     6.190    
+
+! Reaction index: Chemkin #104; RMG #166
+! Template reaction: Disproportionation
+! Estimated using template (O_rad;XH_s_Rrad) for rate rule (O_rad/NonDeO;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CH3O2(10)=COO(15)+C2H4(56)                  2.056e+10 1.004     0.153    
+
+! Reaction index: Chemkin #105; RMG #167
+! Template reaction: H_Abstraction
+! Estimated using template (C_pri;C_pri_rad) for rate rule (C/H3/O;C_rad/H2/Cs\H3)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CH3O2(10)=ethane(1)+CH2O2(11)               4.433e-03 4.368     13.235   
+
+! Reaction index: Chemkin #106; RMG #169
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_rad/H2/O;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CH3O2(12)=COO(15)+C2H4(56)                  8.670e+12 0.000     0.000    
+
+! Reaction index: Chemkin #107; RMG #170
+! Template reaction: H_Abstraction
+! Estimated using template (O/H/NonDeO;C_rad/H2/Cs) for rate rule (O/H/NonDeO;C_rad/H2/Cs\H3)
+C2H5(4)+CH3O2(12)=ethane(1)+CH2O2(11)               7.985e-01 3.338     1.162    
+
+! Reaction index: Chemkin #108; RMG #173
+! Template reaction: H_Abstraction
+! Estimated using template (C/H3/Cs;O_atom_triplet) for rate rule (C/H3/Cs\H3;O_atom_triplet)
+! Multiplied by reaction path degeneracy 6
+ethane(1)+O(14)=C2H5(4)+HO(18)                      5.700e+03 3.050     3.123    
+
+! Reaction index: Chemkin #109; RMG #175
+! Template reaction: Disproportionation
+! Estimated using template (Y_rad;XH_Rrad) for rate rule (Y_rad;O_Csrad)
+! Multiplied by reaction path degeneracy 2
+C2H4(57)+CH3O(32)=C2H5(4)+CH2O(17)                  4.670e+09 0.969     -3.441   
+
+! Reaction index: Chemkin #110; RMG #176
+! Template reaction: Disproportionation
+! Estimated using template (Y_rad;XH_Rrad) for rate rule (Y_rad;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 6
+CH3O(13)+C2H4(57)=C2H5(4)+CH2O(17)                  1.401e+10 0.969     -3.787   
+
+! Reaction index: Chemkin #111; RMG #179
+! Template reaction: H_Abstraction
+! Estimated using template (CO_pri;C_rad/H2/Cs) for rate rule (CO_pri;C_rad/H2/Cs\H3)
+! Multiplied by reaction path degeneracy 2
+C2H5(4)+CH2O(17)=ethane(1)+CHO(29)                  5.500e+03 2.810     5.860    
+
+! Reaction index: Chemkin #112; RMG #183
+! PDep reaction: PDepNetwork #29
+C2H5(4)(+M)=>H(5)+C2H4(57)(+M)                      1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.893e+01   2.487e+00    -9.807e-03   -5.958e-03  /
+    CHEB/ 3.240e+01    1.319e-02    9.795e-03    5.932e-03   /
+    CHEB/ -2.541e-01   1.852e-04    1.562e-04    1.122e-04   /
+    CHEB/ -7.588e-02   -6.570e-04   -4.890e-04   -2.973e-04  /
+    CHEB/ 2.195e-02    -4.913e-04   -3.673e-04   -2.247e-04  /
+    CHEB/ 2.548e-02    -1.314e-04   -9.918e-05   -6.159e-05  /
+
+! Reaction index: Chemkin #113; RMG #185
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (O_pri;O2b)
+! Multiplied by reaction path degeneracy 8
+O2(2)+O(25)=HO2(8)+HO(18)                           1.860e+13 0.000     74.120   
+
+! Reaction index: Chemkin #114; RMG #186
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C_methane;O_pri_rad)
+! Multiplied by reaction path degeneracy 4
+C(7)+HO(18)=CH3(3)+O(25)                            1.540e+00 3.950     0.550    
+
+! Reaction index: Chemkin #115; RMG #187
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;O_pri_rad) for rate rule (O/H/NonDeO;O_pri_rad)
+COO(15)+HO(18)=CH3O2(10)+O(25)                      2.921e+04 2.467     -0.722   
+
+! Reaction index: Chemkin #116; RMG #188
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C/H3/O;O_pri_rad)
+! Multiplied by reaction path degeneracy 3
+COO(15)+HO(18)=CH3O2(12)+O(25)                      2.442e+04 2.800     -0.420   
+
+! Reaction index: Chemkin #117; RMG #199
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>C2H5O2(58)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.000e+01    1.222e+00    -2.753e-01   2.352e-02   /
+    CHEB/ -5.705e-01   8.097e-01    8.035e-02    -6.322e-02  /
+    CHEB/ -6.519e-01   2.894e-01    6.572e-02    -9.181e-03  /
+    CHEB/ -2.310e-01   4.010e-02    3.117e-02    5.933e-03   /
+    CHEB/ -7.100e-02   -2.030e-02   5.946e-03    5.031e-03   /
+    CHEB/ -2.602e-02   -1.388e-02   -2.043e-03   1.505e-03   /
+
+! Reaction index: Chemkin #118; RMG #200
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>CH3(3)+CH2O2(11)(+M)             1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -9.335e+00   -4.928e-03   -3.682e-03   -2.251e-03  /
+    CHEB/ 1.872e+01    -1.815e-03   -1.350e-03   -8.198e-04  /
+    CHEB/ -1.703e-01   -2.172e-04   -1.579e-04   -9.245e-05  /
+    CHEB/ -1.236e-01   -6.894e-04   -5.118e-04   -3.099e-04  /
+    CHEB/ -8.831e-02   -6.985e-04   -5.193e-04   -3.151e-04  /
+    CHEB/ -5.844e-02   -2.939e-04   -2.180e-04   -1.317e-04  /
+
+! Reaction index: Chemkin #119; RMG #201
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>H(5)+C2H4O2(66)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.374e+01   -3.437e-03   -2.570e-03   -1.573e-03  /
+    CHEB/ 2.162e+01    -1.539e-03   -1.148e-03   -6.995e-04  /
+    CHEB/ 2.283e-02    -3.685e-04   -2.729e-04   -1.647e-04  /
+    CHEB/ -6.080e-02   -5.853e-04   -4.357e-04   -2.649e-04  /
+    CHEB/ -6.500e-02   -5.368e-04   -3.999e-04   -2.433e-04  /
+    CHEB/ -4.921e-02   -2.358e-04   -1.753e-04   -1.064e-04  /
+
+! Reaction index: Chemkin #120; RMG #202
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>H(5)+C2H4O2(67)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.474e+01   -2.783e-03   -2.081e-03   -1.274e-03  /
+    CHEB/ 2.341e+01    -1.550e-03   -1.157e-03   -7.061e-04  /
+    CHEB/ -2.180e-02   -5.149e-04   -3.829e-04   -2.325e-04  /
+    CHEB/ -7.452e-02   -5.751e-04   -4.285e-04   -2.608e-04  /
+    CHEB/ -7.007e-02   -4.869e-04   -3.629e-04   -2.210e-04  /
+    CHEB/ -5.122e-02   -2.255e-04   -1.678e-04   -1.019e-04  /
+
+! Reaction index: Chemkin #121; RMG #203
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>CH2(6)+CH3O2(10)(+M)             1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.824e+01   -2.021e-03   -1.512e-03   -9.259e-04  /
+    CHEB/ 2.557e+01    -1.315e-03   -9.826e-04   -6.006e-04  /
+    CHEB/ -1.869e-01   -5.247e-04   -3.912e-04   -2.384e-04  /
+    CHEB/ -1.330e-01   -4.949e-04   -3.693e-04   -2.252e-04  /
+    CHEB/ -9.343e-02   -3.939e-04   -2.939e-04   -1.793e-04  /
+    CHEB/ -6.106e-02   -1.897e-04   -1.414e-04   -8.607e-05  /
+
+! Reaction index: Chemkin #122; RMG #204
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>C2H5O2(68)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 5.586e+00    -6.931e-01   -2.424e-01   -2.416e-02  /
+    CHEB/ 3.014e+00    7.187e-01    1.981e-01    -1.580e-02  /
+    CHEB/ 4.340e-01    2.921e-02    5.503e-02    2.770e-02   /
+    CHEB/ 5.089e-02    -6.315e-02   -1.361e-02   7.802e-03   /
+    CHEB/ -1.760e-02   -2.707e-02   -1.637e-02   -3.610e-03  /
+    CHEB/ -2.197e-02   -2.571e-04   -4.140e-03   -3.269e-03  /
+
+! Reaction index: Chemkin #123; RMG #205
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>C2H5O2(69)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 7.913e+00    -8.940e-01   -2.562e-01   -8.592e-03  /
+    CHEB/ 1.746e+00    8.301e-01    1.612e-01    -4.174e-02  /
+    CHEB/ 3.137e-02    1.045e-01    7.276e-02    1.933e-02   /
+    CHEB/ -1.031e-01   -6.074e-02   3.161e-03    1.298e-02   /
+    CHEB/ -7.971e-02   -3.923e-02   -1.401e-02   1.096e-03   /
+    CHEB/ -4.511e-02   -6.188e-03   -7.137e-03   -2.314e-03  /
+
+! Reaction index: Chemkin #124; RMG #206
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>HO2(8)+C2H4(56)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 9.519e+00    -9.461e-01   -2.491e-01   -1.371e-03  /
+    CHEB/ 1.585e+00    8.818e-01    1.560e-01    -4.642e-02  /
+    CHEB/ 6.168e-02    1.298e-01    7.520e-02    1.765e-02   /
+    CHEB/ -5.776e-02   -6.877e-02   6.160e-03    1.430e-02   /
+    CHEB/ -5.469e-02   -4.765e-02   -1.402e-02   1.989e-03   /
+    CHEB/ -3.365e-02   -7.812e-03   -8.274e-03   -2.283e-03  /
+
+! Reaction index: Chemkin #125; RMG #207
+! PDep reaction: PDepNetwork #30
+O2(2)+C2H5(4)(+M)=>O(14)+C2H5O(34)(+M)              1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 7.397e-01    -5.729e-02   -4.168e-02   -2.444e-02  /
+    CHEB/ 8.749e+00    2.383e-02    1.740e-02    1.026e-02   /
+    CHEB/ -8.228e-02   1.789e-02    1.276e-02    7.229e-03   /
+    CHEB/ -8.872e-02   -2.480e-03   -1.782e-03   -1.023e-03  /
+    CHEB/ -7.484e-02   -5.142e-03   -3.634e-03   -2.029e-03  /
+    CHEB/ -5.188e-02   -1.164e-03   -8.324e-04   -4.743e-04  /
+
+! Reaction index: Chemkin #126; RMG #211
+! Template reaction: H_Abstraction
+! Estimated using template (X_H;Y_rad) for rate rule (Orad_O_H;Cd_Cd\H2_pri_rad)
+HO2(8)+C2H3(70)=O2(2)+C2H4(56)                      1.606e+04 2.560     9.134    
+
+! Reaction index: Chemkin #127; RMG #212
+! Template reaction: Disproportionation
+! Exact match found for rate rule (CH2_triplet;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CH2(9)=CH3(3)+C2H4(56)                      9.030e+13 0.000     0.000    
+
+! Reaction index: Chemkin #128; RMG #214
+! Template reaction: H_Abstraction
+! Estimated using template (C_methane;Cd_pri_rad) for rate rule (C_methane;Cd_Cd\H2_pri_rad)
+! Multiplied by reaction path degeneracy 4
+C(7)+C2H3(70)=CH3(3)+C2H4(56)                       2.236e-02 4.340     5.700    
+
+! Reaction index: Chemkin #129; RMG #215
+! Template reaction: Disproportionation
+! Exact match found for rate rule (C_rad/H2/O;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CH2O2(11)=CH3O2(10)+C2H4(56)                8.670e+12 0.000     0.000    
+
+! Reaction index: Chemkin #130; RMG #217
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;Cd_pri_rad) for rate rule (O/H/NonDeO;Cd_Cd\H2_pri_rad)
+COO(15)+C2H3(70)=CH3O2(10)+C2H4(56)                 1.000e+00 3.520     -7.480   
+
+! Reaction index: Chemkin #131; RMG #219
+! Template reaction: H_Abstraction
+! Estimated using template (C_pri;Cd_pri_rad) for rate rule (C/H3/O;Cd_Cd\H2_pri_rad)
+! Multiplied by reaction path degeneracy 3
+COO(15)+C2H3(70)=CH3O2(12)+C2H4(56)                 5.400e-04 4.550     3.500    
+
+! Reaction index: Chemkin #132; RMG #221
+! Template reaction: H_Abstraction
+! Estimated using template (Cd_pri;O_pri_rad) for rate rule (Cd/H2/NonDeC;O_pri_rad)
+! Multiplied by reaction path degeneracy 4
+C2H4(56)+HO(18)=C2H3(70)+O(25)                      2.052e+13 0.000     5.940    
+
+! Reaction index: Chemkin #133; RMG #222
+! Template reaction: Disproportionation
+! Exact match found for rate rule (Cd_pri_rad;O_Csrad)
+C2H3(70)+CH3O(32)=C2H4(56)+CH2O(17)                 3.010e+13 0.000     0.000    
+
+! Reaction index: Chemkin #134; RMG #223
+! Template reaction: Disproportionation
+! Estimated using template (Cd_pri_rad;Cmethyl_Rrad) for rate rule (Cd_pri_rad;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 3
+CH3O(13)+C2H3(70)=C2H4(56)+CH2O(17)                 4.560e+14 -0.700    0.000    
+
+! Reaction index: Chemkin #135; RMG #224
+! Template reaction: Disproportionation
+! Estimated using template (CO_rad;XH_s_Rrad) for rate rule (CO_pri_rad;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+CHO(29)=C2H4(56)+CH2O(17)                   5.430e+14 0.000     0.000    
+
+! Reaction index: Chemkin #136; RMG #228
+! Template reaction: Disproportionation
+! Estimated using template (Y_rad;XH_Rrad) for rate rule (Y_rad;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 6
+C2H5(4)+C2H4(57)=C2H5(4)+C2H4(56)                   1.401e+10 0.969     -3.161   
+
+! Reaction index: Chemkin #137; RMG #230
+! Template reaction: H_Abstraction
+! Estimated using template (C/H3/Cs;Cd_Cd\H2_pri_rad) for rate rule (C/H3/Cs\H3;Cd_Cd\H2_pri_rad)
+! Multiplied by reaction path degeneracy 6
+ethane(1)+C2H3(70)=C2H5(4)+C2H4(56)                 1.080e-03 4.550     3.500    
+
+! Reaction index: Chemkin #138; RMG #232
+! Template reaction: Disproportionation
+! Exact match found for rate rule (Cd_pri_rad;Cmethyl_Csrad)
+! Multiplied by reaction path degeneracy 3
+C2H5(4)+C2H3(70)=C2H4(56)+C2H4(56)                  4.560e+14 -0.700    0.000    
+
+! Reaction index: Chemkin #139; RMG #235
+! PDep reaction: PDepNetwork #39
+C2H4(56)(+M)=>H(5)+C2H3(70)(+M)                     1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.901e+01   1.070e+00    -3.398e-01   5.413e-02   /
+    CHEB/ 3.559e+01    6.753e-01    4.127e-02    -7.375e-02  /
+    CHEB/ -5.242e-01   3.029e-01    7.517e-02    -2.303e-02  /
+    CHEB/ -3.053e-01   1.135e-01    5.042e-02    1.865e-03   /
+    CHEB/ -1.613e-01   2.815e-02    2.277e-02    7.346e-03   /
+    CHEB/ -7.847e-02   -1.545e-03   6.153e-03    5.108e-03   /
+
+! Reaction index: Chemkin #140; RMG #236
+! PDep reaction: PDepNetwork #39
+C2H4(56)(+M)=>C2H4(57)(+M)                          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.526e+01   1.317e-01    -5.448e-02   1.335e-02   /
+    CHEB/ 2.129e+01    2.417e-01    -9.687e-02   2.182e-02   /
+    CHEB/ -1.575e-01   1.911e-01    -7.005e-02   1.219e-02   /
+    CHEB/ -1.140e-01   1.313e-01    -4.058e-02   3.082e-03   /
+    CHEB/ -7.288e-02   7.889e-02    -1.747e-02   -2.341e-03  /
+    CHEB/ -4.302e-02   4.130e-02    -3.778e-03   -3.963e-03  /
+
+! Reaction index: Chemkin #141; RMG #239
+! Template reaction: H_Abstraction
+! Estimated using template (X_H;Y_1centerbirad) for rate rule (H2;CH2_triplet)
+! Multiplied by reaction path degeneracy 2
+CH2(9)+H2(31)=CH3(3)+H(5)                           1.248e+08 1.524     5.527    
+
+! Reaction index: Chemkin #142; RMG #241
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C/H3/O;H_rad)
+! Multiplied by reaction path degeneracy 3
+H(5)+CH3O2(10)=CH2O2(11)+H2(31)                     1.353e+03 3.200     3.490    
+
+! Reaction index: Chemkin #143; RMG #243
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;H_rad) for rate rule (O/H/NonDeO;H_rad)
+H(5)+CH3O2(12)=CH2O2(11)+H2(31)                     2.488e+05 2.388     5.497    
+
+! Reaction index: Chemkin #144; RMG #245
+! Template reaction: H_Abstraction
+! Estimated using template (Xrad_H;Y_rad) for rate rule (OH_rad_H;H_rad)
+H(5)+HO(18)=O(14)+H2(31)                            4.708e+09 1.068     5.022    
+
+! Reaction index: Chemkin #145; RMG #248
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (H2;CO_pri_rad)
+! Multiplied by reaction path degeneracy 2
+CHO(29)+H2(31)=H(5)+CH2O(17)                        1.800e+06 2.000     17.830   
+
+! Reaction index: Chemkin #146; RMG #251
+! Template reaction: H_Abstraction
+! Estimated using template (H2;Cd_pri_rad) for rate rule (H2;Cd_Cd\H2_pri_rad)
+! Multiplied by reaction path degeneracy 2
+C2H3(70)+H2(31)=H(5)+C2H4(56)                       9.460e+03 2.560     5.030    
+
+! Reaction index: Chemkin #147; RMG #256
+! PDep reaction: PDepNetwork #59
+C2H5(4)+H(5)(+M)=>CH2(6)+C(7)(+M)                   1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 9.466e+00    -5.927e-01   -2.778e-01   -5.010e-02  /
+    CHEB/ 2.638e+00    5.760e-01    2.354e-01    9.241e-03   /
+    CHEB/ 3.566e-01    7.691e-02    6.655e-02    3.763e-02   /
+    CHEB/ 6.789e-02    -3.106e-02   -4.697e-03   1.184e-02   /
+    CHEB/ -1.189e-02   -2.642e-02   -1.467e-02   -3.588e-03  /
+    CHEB/ -1.603e-02   -9.322e-03   -8.009e-03   -5.302e-03  /
+
+! Reaction index: Chemkin #148; RMG #258
+! PDep reaction: PDepNetwork #60
+H(5)+C2H4(56)(+M)=>H(5)+C2H4(57)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.056e+01   -3.753e-03   -2.806e-03   -1.718e-03  /
+    CHEB/ 2.151e+01    2.424e-03    1.812e-03    1.108e-03   /
+    CHEB/ 4.578e-02    7.422e-04    5.551e-04    3.399e-04   /
+    CHEB/ 3.428e-02    -5.576e-05   -4.146e-05   -2.515e-05  /
+    CHEB/ 3.794e-02    -2.969e-04   -2.218e-04   -1.357e-04  /
+    CHEB/ 1.170e-02    -1.321e-04   -9.888e-05   -6.062e-05  /
+
+! Reaction index: Chemkin #149; RMG #274
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(75)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.292e+01   2.490e+00    -7.428e-03   -4.528e-03  /
+    CHEB/ 1.767e+01    8.043e-03    5.986e-03    3.637e-03   /
+    CHEB/ 9.777e-02    1.918e-05    2.233e-05    2.115e-05   /
+    CHEB/ 1.911e-02    1.137e-04    8.488e-05    5.181e-05   /
+    CHEB/ -9.344e-03   9.923e-05    7.422e-05    4.545e-05   /
+    CHEB/ -1.516e-02   6.916e-05    5.175e-05    3.170e-05   /
+
+! Reaction index: Chemkin #150; RMG #275
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>H(5)+C3H5O(81)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.395e+01   -7.612e-03   -5.683e-03   -3.470e-03  /
+    CHEB/ 3.053e+01    6.118e-03    4.561e-03    2.779e-03   /
+    CHEB/ 3.016e-01    4.334e-04    3.279e-04    2.043e-04   /
+    CHEB/ 6.056e-02    2.393e-04    1.791e-04    1.098e-04   /
+    CHEB/ -2.556e-03   9.134e-05    6.846e-05    4.206e-05   /
+    CHEB/ -1.361e-02   1.846e-05    1.390e-05    8.591e-06   /
+
+! Reaction index: Chemkin #151; RMG #276
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>H(5)+C3H5O(82)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.793e+01   -8.034e-03   -5.997e-03   -3.661e-03  /
+    CHEB/ 2.620e+01    6.282e-03    4.682e-03    2.851e-03   /
+    CHEB/ 3.571e-01    3.964e-04    3.005e-04    1.878e-04   /
+    CHEB/ 8.383e-02    2.574e-04    1.926e-04    1.180e-04   /
+    CHEB/ 6.055e-03    1.247e-04    9.339e-05    5.731e-05   /
+    CHEB/ -1.162e-02   4.772e-05    3.578e-05    2.199e-05   /
+
+! Reaction index: Chemkin #152; RMG #277
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C2H4(56)+CH2O(19)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.021e+01   -7.904e-03   -5.900e-03   -3.602e-03  /
+    CHEB/ 2.755e+01    6.171e-03    4.599e-03    2.801e-03   /
+    CHEB/ 2.354e-01    4.015e-04    3.042e-04    1.899e-04   /
+    CHEB/ 4.369e-02    2.505e-04    1.875e-04    1.149e-04   /
+    CHEB/ -8.348e-03   1.163e-04    8.714e-05    5.348e-05   /
+    CHEB/ -1.668e-02   4.149e-05    3.112e-05    1.914e-05   /
+
+! Reaction index: Chemkin #153; RMG #278
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C2H4(57)+CH2O(17)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.612e+01   -8.231e-03   -6.144e-03   -3.750e-03  /
+    CHEB/ 2.445e+01    6.310e-03    4.702e-03    2.862e-03   /
+    CHEB/ 1.994e-01    3.442e-04    2.616e-04    1.641e-04   /
+    CHEB/ 3.648e-02    2.379e-04    1.779e-04    1.090e-04   /
+    CHEB/ -9.374e-03   1.263e-04    9.458e-05    5.802e-05   /
+    CHEB/ -1.712e-02   5.867e-05    4.396e-05    2.699e-05   /
+DUPLICATE
+
+! Reaction index: Chemkin #154; RMG #279
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C2H4(57)+CH2O(19)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.938e+01   -4.757e-03   -3.555e-03   -2.175e-03  /
+    CHEB/ 4.578e+01    4.259e-03    3.180e-03    1.943e-03   /
+    CHEB/ -7.382e-02   1.812e-04    1.375e-04    8.602e-05   /
+    CHEB/ -5.904e-02   4.817e-05    3.613e-05    2.221e-05   /
+    CHEB/ -3.986e-02   -1.001e-05   -7.447e-06   -4.524e-06  /
+    CHEB/ -2.305e-02   -1.866e-05   -1.396e-05   -8.547e-06  /
+DUPLICATE
+
+! Reaction index: Chemkin #155; RMG #280
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>H(5)+C3H5O(83)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.672e+01   -3.857e-03   -2.884e-03   -1.765e-03  /
+    CHEB/ 4.996e+01    3.499e-03    2.614e-03    1.598e-03   /
+    CHEB/ 2.283e-02    1.219e-04    9.253e-05    5.794e-05   /
+    CHEB/ -2.404e-02   2.818e-05    2.113e-05    1.299e-05   /
+    CHEB/ -2.466e-02   -1.249e-05   -9.321e-06   -5.691e-06  /
+    CHEB/ -1.621e-02   -1.559e-05   -1.166e-05   -7.148e-06  /
+
+! Reaction index: Chemkin #156; RMG #281
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>H(5)+C3H5O(84)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.597e+01   -4.086e-03   -3.054e-03   -1.869e-03  /
+    CHEB/ 4.915e+01    3.718e-03    2.777e-03    1.698e-03   /
+    CHEB/ 1.066e-01    1.298e-04    9.865e-05    6.184e-05   /
+    CHEB/ 3.856e-03    2.883e-05    2.163e-05    1.330e-05   /
+    CHEB/ -1.402e-02   -1.425e-05   -1.063e-05   -6.493e-06  /
+    CHEB/ -1.189e-02   -1.731e-05   -1.295e-05   -7.936e-06  /
+
+! Reaction index: Chemkin #157; RMG #282
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(85)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.666e+01   -8.674e-03   -6.473e-03   -3.950e-03  /
+    CHEB/ 2.151e+01    6.626e-03    4.936e-03    3.004e-03   /
+    CHEB/ 1.657e-01    2.693e-04    2.062e-04    1.308e-04   /
+    CHEB/ 3.306e-02    2.024e-04    1.514e-04    9.270e-05   /
+    CHEB/ -7.279e-03   1.190e-04    8.909e-05    5.463e-05   /
+    CHEB/ -1.530e-02   6.618e-05    4.956e-05    3.040e-05   /
+
+! Reaction index: Chemkin #158; RMG #283
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(86)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.666e+01   -8.674e-03   -6.473e-03   -3.950e-03  /
+    CHEB/ 2.151e+01    6.626e-03    4.936e-03    3.004e-03   /
+    CHEB/ 1.657e-01    2.693e-04    2.062e-04    1.308e-04   /
+    CHEB/ 3.306e-02    2.024e-04    1.514e-04    9.270e-05   /
+    CHEB/ -7.279e-03   1.190e-04    8.909e-05    5.463e-05   /
+    CHEB/ -1.530e-02   6.618e-05    4.956e-05    3.040e-05   /
+
+! Reaction index: Chemkin #159; RMG #284
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(87)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.531e+01   -7.587e-03   -5.664e-03   -3.459e-03  /
+    CHEB/ 3.077e+01    6.125e-03    4.566e-03    2.782e-03   /
+    CHEB/ 3.303e-01    4.375e-04    3.310e-04    2.062e-04   /
+    CHEB/ 6.991e-02    2.379e-04    1.781e-04    1.092e-04   /
+    CHEB/ 7.957e-04    8.814e-05    6.608e-05    4.060e-05   /
+    CHEB/ -1.221e-02   1.552e-05    1.170e-05    7.243e-06   /
+
+! Reaction index: Chemkin #160; RMG #285
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(88)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.964e+01   -7.999e-03   -5.971e-03   -3.645e-03  /
+    CHEB/ 2.652e+01    6.295e-03    4.692e-03    2.857e-03   /
+    CHEB/ 4.170e-01    4.094e-04    3.102e-04    1.938e-04   /
+    CHEB/ 1.031e-01    2.616e-04    1.957e-04    1.199e-04   /
+    CHEB/ 1.260e-02    1.234e-04    9.240e-05    5.671e-05   /
+    CHEB/ -9.194e-03   4.420e-05    3.315e-05    2.039e-05   /
+
+! Reaction index: Chemkin #161; RMG #286
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(89)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.325e+01   -7.815e-03   -5.834e-03   -3.562e-03  /
+    CHEB/ 2.844e+01    6.172e-03    4.601e-03    2.802e-03   /
+    CHEB/ 3.005e-01    4.201e-04    3.180e-04    1.984e-04   /
+    CHEB/ 6.280e-02    2.521e-04    1.887e-04    1.156e-04   /
+    CHEB/ -1.863e-03   1.101e-04    8.246e-05    5.063e-05   /
+    CHEB/ -1.408e-02   3.367e-05    2.527e-05    1.556e-05   /
+
+! Reaction index: Chemkin #162; RMG #287
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C3H6O(90)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.325e+01   -7.815e-03   -5.834e-03   -3.562e-03  /
+    CHEB/ 2.844e+01    6.172e-03    4.601e-03    2.802e-03   /
+    CHEB/ 3.005e-01    4.201e-04    3.180e-04    1.984e-04   /
+    CHEB/ 6.280e-02    2.521e-04    1.887e-04    1.156e-04   /
+    CHEB/ -1.863e-03   1.101e-04    8.246e-05    5.063e-05   /
+    CHEB/ -1.408e-02   3.367e-05    2.527e-05    1.556e-05   /
+
+! Reaction index: Chemkin #163; RMG #288
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>C1COC1(77)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.013e+01   -9.626e-03   -7.181e-03   -4.379e-03  /
+    CHEB/ 1.854e+01    7.647e-03    5.692e-03    3.460e-03   /
+    CHEB/ 1.685e-01    8.781e-05    7.272e-05    5.112e-05   /
+    CHEB/ 4.135e-02    1.408e-04    1.052e-04    6.425e-05   /
+    CHEB/ -9.215e-04   1.007e-04    7.537e-05    4.619e-05   /
+    CHEB/ -1.170e-02   6.783e-05    5.076e-05    3.111e-05   /
+DUPLICATE
+
+! Reaction index: Chemkin #164; RMG #289
+! PDep reaction: PDepNetwork #45
+C2H4(56)+CH2O(17)(+M)=>O(14)+C3H6(91)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.473e+01   -4.311e-03   -3.222e-03   -1.971e-03  /
+    CHEB/ 4.782e+01    3.888e-03    2.904e-03    1.775e-03   /
+    CHEB/ -2.716e-02   1.489e-04    1.130e-04    7.077e-05   /
+    CHEB/ -4.270e-02   3.691e-05    2.768e-05    1.702e-05   /
+    CHEB/ -3.256e-02   -1.192e-05   -8.887e-06   -5.417e-06  /
+    CHEB/ -1.972e-02   -1.733e-05   -1.296e-05   -7.941e-06  /
+
+! Reaction index: Chemkin #165; RMG #298
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C3H6O(76)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.336e+01   2.490e+00    -7.223e-03   -4.406e-03  /
+    CHEB/ 1.852e+01    6.668e-03    4.963e-03    3.017e-03   /
+    CHEB/ 1.409e-01    1.757e-04    1.363e-04    8.812e-05   /
+    CHEB/ 4.783e-02    1.277e-04    9.538e-05    5.827e-05   /
+    CHEB/ 1.675e-02    3.574e-05    2.681e-05    1.649e-05   /
+    CHEB/ 7.726e-03    1.395e-06    1.087e-06    7.057e-07   /
+
+! Reaction index: Chemkin #166; RMG #299
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>H(5)+C3H5O(92)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.404e+01   -5.030e-03   -3.761e-03   -2.302e-03  /
+    CHEB/ 3.115e+01    1.887e-03    1.409e-03    8.608e-04   /
+    CHEB/ 5.304e-01    7.831e-04    5.850e-04    3.576e-04   /
+    CHEB/ 1.889e-01    8.776e-05    6.590e-05    4.060e-05   /
+    CHEB/ 7.100e-02    1.405e-05    1.063e-05    6.625e-06   /
+    CHEB/ 2.724e-02    2.149e-05    1.609e-05    9.860e-06   /
+
+! Reaction index: Chemkin #167; RMG #300
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C2H4(57)+CH2O(17)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.400e+01   -9.342e-03   -6.971e-03   -4.253e-03  /
+    CHEB/ 2.273e+01    6.581e-03    4.900e-03    2.980e-03   /
+    CHEB/ -8.573e-02   1.274e-04    1.001e-04    6.588e-05   /
+    CHEB/ -2.562e-02   6.161e-05    4.605e-05    2.817e-05   /
+    CHEB/ -9.977e-03   4.090e-06    3.138e-06    1.995e-06   /
+    CHEB/ -3.324e-03   -1.527e-06   -1.125e-06   -6.727e-07  /
+DUPLICATE
+
+! Reaction index: Chemkin #168; RMG #301
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C2H4(57)+CH2O(19)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.974e+01   -1.361e-03   -1.018e-03   -6.244e-04  /
+    CHEB/ 4.668e+01    -8.679e-04   -6.494e-04   -3.980e-04  /
+    CHEB/ 1.229e-01    2.358e-05    1.771e-05    1.092e-05   /
+    CHEB/ 3.761e-03    2.170e-04    1.623e-04    9.946e-05   /
+    CHEB/ -1.353e-02   1.683e-04    1.259e-04    7.711e-05   /
+    CHEB/ -1.132e-02   9.367e-05    7.006e-05    4.290e-05   /
+DUPLICATE
+
+! Reaction index: Chemkin #169; RMG #302
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>H(5)+C3H5O(93)(+M)           1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.700e+01   -1.145e-03   -8.571e-04   -5.255e-04  /
+    CHEB/ 5.092e+01    -8.040e-04   -6.017e-04   -3.688e-04  /
+    CHEB/ 3.237e-01    -1.548e-05   -1.151e-05   -6.993e-06  /
+    CHEB/ 6.375e-02    1.967e-04    1.472e-04    9.021e-05   /
+    CHEB/ 3.988e-03    1.748e-04    1.308e-04    8.010e-05   /
+    CHEB/ -6.944e-03   1.078e-04    8.063e-05    4.939e-05   /
+
+! Reaction index: Chemkin #170; RMG #303
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C3H6O(94)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.699e+01   -9.505e-03   -7.093e-03   -4.327e-03  /
+    CHEB/ 2.233e+01    6.639e-03    4.943e-03    3.005e-03   /
+    CHEB/ 2.187e-01    1.760e-04    1.365e-04    8.808e-05   /
+    CHEB/ 7.738e-02    8.608e-05    6.435e-05    3.937e-05   /
+    CHEB/ 3.018e-02    6.412e-06    4.897e-06    3.094e-06   /
+    CHEB/ 1.366e-02    -5.743e-06   -4.267e-06   -2.586e-06  /
+
+! Reaction index: Chemkin #171; RMG #304
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C3H6O(95)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.484e+01   -4.523e-03   -3.382e-03   -2.070e-03  /
+    CHEB/ 3.145e+01    1.093e-03    8.168e-04    4.992e-04   /
+    CHEB/ 1.849e-01    8.932e-04    6.672e-04    4.077e-04   /
+    CHEB/ 7.019e-02    1.551e-04    1.161e-04    7.113e-05   /
+    CHEB/ 2.698e-02    6.122e-06    4.730e-06    3.038e-06   /
+    CHEB/ 1.008e-02    1.112e-05    8.354e-06    5.147e-06   /
+
+! Reaction index: Chemkin #172; RMG #305
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C3H6O(96)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.368e+01   -6.132e-03   -4.582e-03   -2.802e-03  /
+    CHEB/ 2.943e+01    3.017e-03    2.251e-03    1.374e-03   /
+    CHEB/ 3.978e-01    7.097e-04    5.306e-04    3.246e-04   /
+    CHEB/ 1.450e-01    3.042e-05    2.323e-05    1.468e-05   /
+    CHEB/ 5.466e-02    9.261e-06    7.014e-06    4.377e-06   /
+    CHEB/ 2.144e-02    1.660e-05    1.241e-05    7.597e-06   /
+
+! Reaction index: Chemkin #173; RMG #306
+! PDep reaction: PDepNetwork #46
+C2H4(56)+CH2O(17)(+M)=>C1COC1(77)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.182e+01   -9.649e-03   -7.199e-03   -4.392e-03  /
+    CHEB/ 1.937e+01    6.655e-03    4.954e-03    3.011e-03   /
+    CHEB/ 1.745e-01    1.810e-04    1.403e-04    9.048e-05   /
+    CHEB/ 5.955e-02    1.253e-04    9.360e-05    5.719e-05   /
+    CHEB/ 2.191e-02    3.032e-05    2.276e-05    1.402e-05   /
+    CHEB/ 1.022e-02    -1.746e-06   -1.261e-06   -7.306e-07  /
+DUPLICATE
+
+! Reaction index: Chemkin #174; RMG #315
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>C4H8(79)(+M)                 1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -8.191e+00   2.490e+00    -7.474e-03   -4.559e-03  /
+    CHEB/ 1.428e+01    6.771e-03    5.039e-03    3.062e-03   /
+    CHEB/ 1.164e-01    1.412e-04    1.108e-04    7.278e-05   /
+    CHEB/ 2.975e-02    1.385e-04    1.034e-04    6.317e-05   /
+    CHEB/ 3.021e-03    7.428e-05    5.559e-05    3.407e-05   /
+    CHEB/ -6.037e-03   4.597e-05    3.439e-05    2.106e-05   /
+
+! Reaction index: Chemkin #175; RMG #316
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>H(5)+C4H7(97)(+M)            1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.821e+01   -9.748e-03   -7.273e-03   -4.437e-03  /
+    CHEB/ 2.676e+01    6.723e-03    5.005e-03    3.042e-03   /
+    CHEB/ 3.612e-01    2.953e-04    2.257e-04    1.427e-04   /
+    CHEB/ 1.019e-01    2.445e-04    1.827e-04    1.117e-04   /
+    CHEB/ 2.383e-02    1.421e-04    1.063e-04    6.515e-05   /
+    CHEB/ -1.551e-03   8.538e-05    6.389e-05    3.915e-05   /
+
+! Reaction index: Chemkin #176; RMG #317
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>C2H4(56)+C2H4(57)(+M)        1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -3.430e+01   -9.284e-03   -6.928e-03   -4.226e-03  /
+    CHEB/ 4.269e+01    6.879e-03    5.122e-03    3.115e-03   /
+    CHEB/ -6.179e-02   4.627e-04    3.508e-04    2.192e-04   /
+    CHEB/ -5.882e-02   3.013e-04    2.253e-04    1.380e-04   /
+    CHEB/ -4.531e-02   1.403e-04    1.051e-04    6.451e-05   /
+    CHEB/ -3.260e-02   6.113e-05    4.582e-05    2.815e-05   /
+
+! Reaction index: Chemkin #177; RMG #318
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>H(5)+C4H7(98)(+M)            1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -4.112e+01   -9.056e-03   -6.757e-03   -4.123e-03  /
+    CHEB/ 4.658e+01    6.857e-03    5.107e-03    3.107e-03   /
+    CHEB/ 4.656e-02    4.823e-04    3.653e-04    2.280e-04   /
+    CHEB/ -2.494e-02   2.949e-04    2.206e-04    1.351e-04   /
+    CHEB/ -3.344e-02   1.266e-04    9.483e-05    5.823e-05   /
+    CHEB/ -2.805e-02   4.835e-05    3.627e-05    2.230e-05   /
+
+! Reaction index: Chemkin #178; RMG #319
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>C4H8(99)(+M)                 1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.154e+01   -9.912e-03   -7.395e-03   -4.511e-03  /
+    CHEB/ 1.811e+01    6.687e-03    4.977e-03    3.025e-03   /
+    CHEB/ 1.924e-01    1.785e-04    1.385e-04    8.952e-05   /
+    CHEB/ 5.371e-02    1.618e-04    1.208e-04    7.384e-05   /
+    CHEB/ 1.121e-02    8.911e-05    6.668e-05    4.086e-05   /
+    CHEB/ -3.301e-03   5.563e-05    4.162e-05    2.549e-05   /
+
+! Reaction index: Chemkin #179; RMG #320
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>C4H8(100)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -2.011e+01   -9.734e-03   -7.263e-03   -4.430e-03  /
+    CHEB/ 2.742e+01    6.737e-03    5.015e-03    3.049e-03   /
+    CHEB/ 3.995e-01    3.095e-04    2.363e-04    1.492e-04   /
+    CHEB/ 1.143e-01    2.539e-04    1.898e-04    1.161e-04   /
+    CHEB/ 2.791e-02    1.474e-04    1.103e-04    6.761e-05   /
+    CHEB/ -2.930e-04   8.787e-05    6.575e-05    4.029e-05   /
+
+! Reaction index: Chemkin #180; RMG #321
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>C4H8(101)(+M)                1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -1.807e+01   -9.776e-03   -7.294e-03   -4.450e-03  /
+    CHEB/ 2.507e+01    6.709e-03    4.994e-03    3.035e-03   /
+    CHEB/ 3.597e-01    2.732e-04    2.092e-04    1.327e-04   /
+    CHEB/ 1.037e-01    2.305e-04    1.722e-04    1.053e-04   /
+    CHEB/ 2.560e-02    1.346e-04    1.007e-04    6.173e-05   /
+    CHEB/ -2.889e-04   8.239e-05    6.164e-05    3.777e-05   /
+
+! Reaction index: Chemkin #181; RMG #322
+! PDep reaction: PDepNetwork #50
+C2H4(56)+C2H4(56)(+M)=>C1CCC1(80)(+M)               1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ -6.671e+00   -9.992e-03   -7.455e-03   -4.547e-03  /
+    CHEB/ 1.513e+01    6.747e-03    5.022e-03    3.052e-03   /
+    CHEB/ 1.500e-01    1.483e-04    1.161e-04    7.597e-05   /
+    CHEB/ 4.083e-02    1.436e-04    1.072e-04    6.548e-05   /
+    CHEB/ 7.350e-03    7.679e-05    5.747e-05    3.522e-05   /
+    CHEB/ -4.199e-03   4.766e-05    3.565e-05    2.183e-05   /
+
+! Reaction index: Chemkin #182; RMG #324
+! PDep reaction: PDepNetwork #52
+O2(2)+H(5)(+M)=>HO2(8)(+M)                          1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 1.091e+01    1.986e+00    -2.331e-01   -4.814e-02  /
+    CHEB/ -5.717e-01   3.124e-01    1.263e-01    1.240e-02   /
+    CHEB/ -3.076e-01   7.823e-02    2.390e-02    3.625e-03   /
+    CHEB/ -8.605e-02   -2.285e-02   8.186e-03    8.691e-03   /
+    CHEB/ -4.970e-02   2.724e-03    3.574e-03    6.500e-04   /
+    CHEB/ -2.656e-02   1.020e-02    -2.720e-03   -1.610e-03  /
+
+! Reaction index: Chemkin #183; RMG #325
+! PDep reaction: PDepNetwork #52
+O2(2)+H(5)(+M)=>O(14)+HO(18)(+M)                    1.000e+00 0.000     0.000    
+    TCHEB/ 300.000   3000.000 /
+    PCHEB/ 0.001     98.692   /
+    CHEB/ 6 4/
+    CHEB/ 7.203e+00    -8.113e-03   -6.058e-03   -3.700e-03  /
+    CHEB/ 5.312e+00    3.261e-03    2.433e-03    1.484e-03   /
+    CHEB/ -4.232e-02   1.356e-03    1.012e-03    6.180e-04   /
+    CHEB/ 1.065e-03    5.085e-04    3.799e-04    2.322e-04   /
+    CHEB/ -1.127e-02   2.807e-04    2.094e-04    1.278e-04   /
+    CHEB/ 1.036e-02    1.686e-05    1.276e-05    7.949e-06   /
+
+! Reaction index: Chemkin #184; RMG #326
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (H2;O2b)
+! Multiplied by reaction path degeneracy 8
+O2(2)+H2(31)=H(5)+HO2(8)                            5.800e+14 0.000     56.640   
+
+! Reaction index: Chemkin #185; RMG #327
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C_methane;H_rad)
+! Multiplied by reaction path degeneracy 4
+H(5)+C(7)=CH3(3)+H2(31)                             8.760e-01 4.340     8.200    
+
+! Reaction index: Chemkin #186; RMG #328
+! Template reaction: H_Abstraction
+! Estimated using template (O_sec;H_rad) for rate rule (O/H/NonDeO;H_rad)
+H(5)+COO(15)=CH3O2(10)+H2(31)                       2.488e+05 2.388     5.497    
+
+! Reaction index: Chemkin #187; RMG #329
+! Template reaction: H_Abstraction
+! Exact match found for rate rule (C/H3/O;H_rad)
+! Multiplied by reaction path degeneracy 3
+H(5)+COO(15)=CH3O2(12)+H2(31)                       1.353e+03 3.200     3.490    
+
+! Reaction index: Chemkin #188; RMG #330
+! Template reaction: Disproportionation
+! Exact match found for rate rule (H_rad;O_Csrad)
+! Multiplied by reaction path degeneracy 2
+H(5)+CH3O(32)=CH2O(17)+H2(31)                       4.000e+13 0.000     0.000    
+
+! Reaction index: Chemkin #189; RMG #331
+! Template reaction: Disproportionation
+! Exact match found for rate rule (H_rad;Cmethyl_Orad)
+! Multiplied by reaction path degeneracy 6
+H(5)+CH3O(13)=CH2O(17)+H2(31)                       1.086e+14 0.000     0.000    
+
+END
+

@@ -68,4 +68,5 @@ options(
     saveRestartPeriod=None,
     generateOutputHTML=False,
     generatePlots=False,
+    saveEdgeSpecies=True,
 )

@@ -58,4 +58,5 @@ options(
     generateOutputHTML=False,
     generatePlots=False,
     saveSimulationProfiles=True,
+    saveEdgeSpecies=True,
 )
