@@ -74,9 +74,12 @@ def check(name, chemkin, speciesDict):
     default chemkin model.
     """
 
+    filename_chemkin = os.path.split(chemkin)[-1]
+    filename_spcDict = os.path.split(speciesDict)[-1]
+
     folder = os.path.join(os.getcwd(),'testing/check/', name)
-    chemkinOrig = os.path.join(folder,'chem_annotated.inp')
-    speciesDictOrig = os.path.join(folder,'species_dictionary.txt')
+    chemkinOrig = os.path.join(folder,filename_chemkin)
+    speciesDictOrig = os.path.join(folder,filename_spcDict)
 
     kwargs = {
         'wd': os.getcwd(),
