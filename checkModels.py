@@ -87,12 +87,32 @@ def check(name, chemkin, speciesDict):
     commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReactions, uniqueReactionsTest, uniqueReactionsOrig = \
     execute(chemkin, speciesDict, thermo, chemkinOrig, speciesDictOrig, thermoOrig, **kwargs)
 
+    errorModel = checkModel(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReactions, uniqueReactionsTest, uniqueReactionsOrig)
+
     errorSpecies = checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig)
 
     errorReactions = checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig)
 
-    if any([errorSpecies, errorReactions]):
+    if any([errorModel, errorSpecies, errorReactions]):
         raise Exception
+
+def checkModel(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
+    """
+    Compare the species and reaction count of both models.
+    """
+
+    testModelSpecies = len(commonSpecies) + len(uniqueSpeciesTest)
+    origModelSpecies = len(commonSpecies) + len(uniqueSpeciesOrig)
+
+    logging.info('Test model has {} species.'.format(testModelSpecies))
+    logging.info('Original model has {} species.'.format(origModelSpecies))
+
+    testModelRxns = len(commonReactions) + len(uniqueReactionsTest)
+    origModelRxns = len(commonReactions) + len(uniqueReactionsOrig)
+    logging.info('Test model has {} reactions.'.format(testModelRxns))
+    logging.info('Original model has {} reactions.'.format(origModelRxns))
+
+    return (testModelSpecies != origModelSpecies) or (testModelRxns != origModelRxns)
 
 def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
 
