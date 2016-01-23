@@ -63,4 +63,5 @@ options(
     units='si',
     generateOutputHTML=False,
     generatePlots=False,
+    saveEdgeSpecies=True,
 )
