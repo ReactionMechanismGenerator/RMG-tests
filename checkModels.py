@@ -31,6 +31,7 @@
 import os
 
 import os.path
+import math
 
 import logging
 import argparse
@@ -101,16 +102,18 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
     if uniqueSpeciesOrig:
         error = True
         logging.error(
-            'The original model has species that the tested model does not have: {}'
-            .format(uniqueSpeciesOrig)
+            'The original model has {} species that the tested model does not have.'
+            .format(len(uniqueSpeciesOrig))
             )
+        printSpecies(uniqueSpeciesOrig)
 
     if uniqueSpeciesTest:
         error = True
         logging.error(
-            'The tested model has species that the original model does not have: {}'
-            .format(uniqueSpeciesTest)
+            'The tested model has {} species that the original model does not have.'
+            .format(len(uniqueSpeciesTest))
             )
+        printSpecies(uniqueSpeciesTest)
 
     # check for different thermo among common species::
     if commonSpecies:
@@ -119,31 +122,11 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
             if spec1.thermo and spec2.thermo:
                 if not spec1.thermo.isIdenticalTo(spec2.thermo):
                     error = True
-                    logging.error('Non-identical thermo for tested and original species: {} \n {}'
-                        .format(spec1, spec2))
-                    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f} {8:7.2f}'.format(
-                        spec1.thermo.getEnthalpy(300) / 4184.,
-                        spec1.thermo.getEntropy(300) / 4.184,
-                        spec1.thermo.getHeatCapacity(300) / 4.184,
-                        spec1.thermo.getHeatCapacity(400) / 4.184,
-                        spec1.thermo.getHeatCapacity(500) / 4.184,
-                        spec1.thermo.getHeatCapacity(600) / 4.184,
-                        spec1.thermo.getHeatCapacity(800) / 4.184,
-                        spec1.thermo.getHeatCapacity(1000) / 4.184,
-                        spec1.thermo.getHeatCapacity(1500) / 4.184,
-                    ))
-
-                    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f} {8:7.2f}'.format(
-                        spec2.thermo.getEnthalpy(300) / 4184.,
-                        spec2.thermo.getEntropy(300) / 4.184,
-                        spec2.thermo.getHeatCapacity(300) / 4.184,
-                        spec2.thermo.getHeatCapacity(400) / 4.184,
-                        spec2.thermo.getHeatCapacity(500) / 4.184,
-                        spec2.thermo.getHeatCapacity(600) / 4.184,
-                        spec2.thermo.getHeatCapacity(800) / 4.184,
-                        spec2.thermo.getHeatCapacity(1000) / 4.184,
-                        spec2.thermo.getHeatCapacity(1500) / 4.184,
-                    ))
+                    logging.error('Non-identical thermo for tested {} and original species {}.'
+                        .format(spec1.label, spec2.label)
+                    )
+                    printThermo(spec1)
+                    printThermo(spec2)
 
     return error
 
@@ -154,17 +137,23 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
     # check for unique reactions in one of the models:
     if uniqueReactionsOrig:
         error = True
+        
         logging.error(
-            'The original model has reactions that the tested model does not have: {}'
-            .format(uniqueReactionsOrig)
+            'The original model has {} reactions that the tested model does not have.'
+            .format(len(uniqueReactionsOrig))
             )
+        
+        printReactions(uniqueReactionsOrig)
 
     if uniqueReactionsTest:
         error = True
+        
         logging.error(
-            'The tested model has reactions that the original model does not have: {}'
-            .format(uniqueReactionsTest)
+            'The tested model has {} reactions that the original model does not have.'
+            .format(len(uniqueReactionsTest))
             )
+
+        printReactions(uniqueReactionsTest)
 
     if commonReactions:
         for rxn1, rxn2 in commonReactions:
@@ -173,32 +162,67 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
                 if not rxn1.kinetics.isIdenticalTo(rxn2.kinetics):
                     error = True
 
-                    logging.error('Non-identical kinetics for tested and original reaction: {} \n {}'
-                            .format(rxn1, rxn2))
+                    logging.error('Non-identical kinetics for\ntested {}\nand original {} reaction.'
+                        .format(rxn1, rxn2)
+                        )
 
-                    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f}'.format(
-                        math.log10(rxn1.kinetics.getRateCoefficient(300, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(400, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(500, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(600, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(800, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(1000, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(1500, 1e5)),
-                        math.log10(rxn1.kinetics.getRateCoefficient(2000, 1e5)),
-                    ))
+                    printKinetics(rxn1)
+                    printKinetics(rxn2)
 
-                    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f}'.format(
-                        math.log10(rxn2.kinetics.getRateCoefficient(300, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(400, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(500, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(600, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(800, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(1000, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(1500, 1e5)),
-                        math.log10(rxn2.kinetics.getRateCoefficient(2000, 1e5)),
-                    ))
     return error
 
+def printReactions(reactions):
+    """
+
+    """
+
+    for rxn in reactions:
+        logging.error(
+            'rxn: {}'.format(rxn)
+            )
+
+def printSpecies(spcs):
+    """
+
+    """
+
+    for spc in spcs:
+        logging.error(
+            'spc: {}'.format(spc)
+            )        
+
+def printKinetics(rxn):
+    """
+
+    """
+    logging.error('        k(300K,1bar) k(400K,1bar) k(500K,1bar) k(600K,1bar) k(800K,1bar) k(1000K,1bar) k(1500K,1bar) k(2000K,1bar) ')
+    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f}'.format(
+        math.log10(rxn.kinetics.getRateCoefficient(300, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(400, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(500, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(600, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(800, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(1000, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(1500, 1e5)),
+        math.log10(rxn.kinetics.getRateCoefficient(2000, 1e5)),
+    ))
+
+def printThermo(spec):
+    """
+
+    """
+    logging.error('        Hf(300K) S(300K) Cp(300K) Cp(400K) Cp(500K) Cp(600K) Cp(800K) Cp(1000K) Cp(1500K)')
+    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f} {8:7.2f}'.format(
+        spec.thermo.getEnthalpy(300) / 4184.,
+        spec.thermo.getEntropy(300) / 4.184,
+        spec.thermo.getHeatCapacity(300) / 4.184,
+        spec.thermo.getHeatCapacity(400) / 4.184,
+        spec.thermo.getHeatCapacity(500) / 4.184,
+        spec.thermo.getHeatCapacity(600) / 4.184,
+        spec.thermo.getHeatCapacity(800) / 4.184,
+        spec.thermo.getHeatCapacity(1000) / 4.184,
+        spec.thermo.getHeatCapacity(1500) / 4.184,
+    ))
 
 if __name__ == '__main__':
     main()
