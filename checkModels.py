@@ -27,9 +27,8 @@
 #
 ################################################################################
 
-
+import sys
 import os
-
 import os.path
 import math
 
@@ -59,8 +58,7 @@ def main():
     Driver function that parses command line arguments and passes them to the execute function.
     """
     args = parseCommandLineArguments()
-    logger = logging.getLogger()
-    logger.setLevel(logging.WARNING)
+    initializeLog(logging.WARNING, 'comparison.log')
 
     name = args.name[0]
     chemkin = os.path.join(os.getcwd(), args.chemkin[0])
@@ -96,9 +94,6 @@ def check(name, chemkin, speciesDict):
 
     errorReactions = checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig)
 
-    if any([errorModel, errorSpecies, errorReactions]):
-        raise Exception
-
 def checkModel(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
     """
     Compare the species and reaction count of both models.
@@ -107,13 +102,13 @@ def checkModel(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReacti
     testModelSpecies = len(commonSpecies) + len(uniqueSpeciesTest)
     origModelSpecies = len(commonSpecies) + len(uniqueSpeciesOrig)
 
-    logging.info('Test model has {} species.'.format(testModelSpecies))
-    logging.info('Original model has {} species.'.format(origModelSpecies))
+    logging.error('Test model has {} species.'.format(testModelSpecies))
+    logging.error('Original model has {} species.'.format(origModelSpecies))
 
     testModelRxns = len(commonReactions) + len(uniqueReactionsTest)
     origModelRxns = len(commonReactions) + len(uniqueReactionsOrig)
-    logging.info('Test model has {} reactions.'.format(testModelRxns))
-    logging.info('Original model has {} reactions.'.format(origModelRxns))
+    logging.error('Test model has {} reactions.'.format(testModelRxns))
+    logging.error('Original model has {} reactions.'.format(origModelRxns))
 
     return (testModelSpecies != origModelSpecies) or (testModelRxns != origModelRxns)
 
@@ -246,6 +241,47 @@ def printThermo(spec):
         spec.thermo.getHeatCapacity(1000) / 4.184,
         spec.thermo.getHeatCapacity(1500) / 4.184,
     ))
+
+
+def initializeLog(verbose, log_file_name):
+    """
+    Set up a logger for RMG to use to print output to stdout. The
+    `verbose` parameter is an integer specifying the amount of log text seen
+    at the console; the levels correspond to those of the :data:`logging` module.
+    """
+    # Create logger
+    logger = logging.getLogger()
+    logger.setLevel(verbose)
+
+    # Create console handler and set level to debug; send everything to stdout
+    # rather than stderr
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setLevel(verbose)
+
+    logging.addLevelName(logging.CRITICAL, 'Critical: ')
+    logging.addLevelName(logging.ERROR, 'Error: ')
+    logging.addLevelName(logging.WARNING, 'Warning: ')
+    logging.addLevelName(logging.INFO, '')
+    logging.addLevelName(logging.DEBUG, '')
+    logging.addLevelName(1, '')
+
+    # Create formatter and add to console handler
+    formatter = logging.Formatter('%(levelname)s%(message)s')
+    ch.setFormatter(formatter)
+
+    # create file handler
+    fh = logging.FileHandler(filename=log_file_name) #, backupCount=3)
+    fh.setLevel(min(logging.DEBUG,verbose)) # always at least VERBOSE in the file
+    fh.setFormatter(formatter)
+
+    # remove old handlers!
+    while logger.handlers:
+        logger.removeHandler(logger.handlers[0])
+
+    # Add console and file handlers to logger
+    logger.addHandler(ch)
+    logger.addHandler(fh)
+
 
 if __name__ == '__main__':
     main()
