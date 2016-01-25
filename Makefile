@@ -1,39 +1,7 @@
-eg1:
-	mkdir -p testing/$@
-	rm -rf testing/$@/*
-	cp examples/rmg/$@/input.py testing/$@/input.py
-	@ echo "Running $@ example"
-	python $(RMG)/rmg.py testing/$@/input.py
-	bash check.sh $@
-
-eg3:
-	mkdir -p testing/$@
-	rm -rf testing/$@/*
-	cp examples/rmg/$@/input.py testing/$@/input.py
-	@ echo "Running $@ example"
-	python $(RMG)/testing/$@/input.py
-	bash check.sh $@
-
-eg5:
-	mkdir -p testing/$@
-	rm -rf testing/$@/*
-	cp examples/rmg/$@/input.py testing/$@/input.py
-	@ echo "Running $@ example."
-	python $(RMG)/testing/$@/input.py
-	bash check.sh $@
-
-eg6:
-	mkdir -p testing/$@
-	rm -rf testing/$@/*
-	cp examples/rmg/$@/input.py testing/$@/input.py
-	@ echo "Running $@ example."
-	python $(RMG)/testing/$@/input.py
-	bash check.sh $@
-
-eg7:
-	mkdir -p testing/$@
-	rm -rf testing/$@/*
-	cp examples/rmg/$@/input.py testing/$@/input.py
-	@ echo "Running $@ example."
-	python $(RMG)/testing/$@/input.py
-	bash check.sh $@
+run:
+	mkdir -p testing/$(ARGS)
+	rm -rf testing/$(ARGS)/*
+	cp examples/rmg/$(ARGS)/input.py testing/$(ARGS)/input.py
+	@ echo "Running $(ARGS) example"
+	python $(RMG)/rmg.py testing/$(ARGS)/input.py
+	bash check.sh $(ARGS)
