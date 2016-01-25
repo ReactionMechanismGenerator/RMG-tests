@@ -29,7 +29,6 @@ before_install:
   - git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 
   - cd RMG-Py
-  - git checkout travisDiffModels
 
 install:
   - conda env create 
