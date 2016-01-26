@@ -20,7 +20,12 @@ before_install:
   - export PATH=/home/travis/anaconda/bin:$PATH
   # Update conda itself
   - conda update --yes conda
+
+  # commit message of current head of RMG-tests = SHA-ID of RMG-Py commit to be tested.
+  - REV=$(git log --format=%B -n 1 HEAD)
+  
   - cd ..
+
 
   - git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
   - export RMG=`pwd`/RMG-Py
@@ -29,6 +34,7 @@ before_install:
   - git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 
   - cd RMG-Py
+  - git checkout $REV
 
 install:
   - conda env create 
