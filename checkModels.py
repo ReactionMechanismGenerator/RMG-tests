@@ -141,7 +141,7 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
         for spec1, spec2 in commonSpecies:
             logger.info('    {0!s}'.format(spec1))
             if spec1.thermo and spec2.thermo:
-                if not spec1.thermo.isIdenticalTo(spec2.thermo):
+                if not spec1.thermo.isSimilarTo(spec2.thermo):
                     error = True
                     logger.error('')
                     logger.error('Non-identical thermo!')
@@ -187,7 +187,7 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
         for rxn1, rxn2 in commonReactions:
             logger.info('    {0!s}'.format(rxn1))
             if rxn1.kinetics and rxn2.kinetics:
-                if not rxn1.kinetics.isIdenticalTo(rxn2.kinetics):
+                if not rxn1.kinetics.isSimilarTo(rxn2.kinetics):
                     error = True
                     logger.error('')
                     logger.error('Non-identical kinetics!')
