@@ -58,9 +58,9 @@ def main():
     Driver function that parses command line arguments and passes them to the execute function.
     """
     args = parseCommandLineArguments()
-    initializeLog(logging.WARNING, 'comparison.log')
 
     name = args.name[0]
+    initializeLog(logging.WARNING, name + '.log')
     chemkin = os.path.join(os.getcwd(), args.chemkin[0])
     speciesDict = os.path.join(os.getcwd(), args.speciesDict[0])
 
