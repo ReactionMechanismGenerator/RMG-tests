@@ -243,7 +243,7 @@ def printThermo(spec):
     ))
 
 
-def initializeLog(verbose, log_file_name):
+def initializeLog(verbose, log_file_name='checkModels.log'):
     """
     Set up a logger for RMG to use to print output to stdout. The
     `verbose` parameter is an integer specifying the amount of log text seen
