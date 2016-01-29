@@ -183,7 +183,7 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
                 if not rxn1.kinetics.isIdenticalTo(rxn2.kinetics):
                     error = True
 
-                    logger.error('Non-identical kinetics for\ntested {}\nand original {} reaction.'
+                    logger.error('Non-identical kinetics for tested {} and original {} reaction.'
                         .format(rxn1, rxn2)
                         )
 
