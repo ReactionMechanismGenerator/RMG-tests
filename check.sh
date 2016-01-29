@@ -16,15 +16,18 @@ echo 'Source folder: '$SOURCE_FOLDER
 # check generated models:
 # core:
 python $TRAVIS_BUILD_DIR/checkModels.py $target $SOURCE_FOLDER/chemkin/chem_annotated.inp $SOURCE_FOLDER/chemkin/species_dictionary.txt
-grep "checkModels" $target.log > $target.core
-echo core for $target:
-cat $target.core
+
+if grep "checkModels" $target.log > $target.core ; then
+    echo core for $target:
+	cat $target.core
+fi
 
 # edge:
 python $TRAVIS_BUILD_DIR/checkModels.py $target $SOURCE_FOLDER/chemkin/chem_edge_annotated.inp $SOURCE_FOLDER/chemkin/species_edge_dictionary.txt
-grep "checkModels" $target.log > $target.edge
-echo edge for $target:
-cat $target.edge
+if grep "checkModels" $target.log > $target.edge ; then
+    echo edge for $target:
+	cat $target.edge
+fi
 
 echo 'Execution time, Tested:'
 grep "Execution time" $TRAVIS_BUILD_DIR/testing/$target/RMG.log | tail -1
