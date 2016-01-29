@@ -37,6 +37,9 @@ import argparse
 
 from rmgpy.tools.diff_models import execute
 
+logger = logging.getLogger('checkModels')
+
+
 def parseCommandLineArguments():
         
     
@@ -102,13 +105,13 @@ def checkModel(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReacti
     testModelSpecies = len(commonSpecies) + len(uniqueSpeciesTest)
     origModelSpecies = len(commonSpecies) + len(uniqueSpeciesOrig)
 
-    logging.error('Test model has {} species.'.format(testModelSpecies))
-    logging.error('Original model has {} species.'.format(origModelSpecies))
+    logger.error('Test model has {} species.'.format(testModelSpecies))
+    logger.error('Original model has {} species.'.format(origModelSpecies))
 
     testModelRxns = len(commonReactions) + len(uniqueReactionsTest)
     origModelRxns = len(commonReactions) + len(uniqueReactionsOrig)
-    logging.error('Test model has {} reactions.'.format(testModelRxns))
-    logging.error('Original model has {} reactions.'.format(origModelRxns))
+    logger.error('Test model has {} reactions.'.format(testModelRxns))
+    logger.error('Original model has {} reactions.'.format(origModelRxns))
 
     return (testModelSpecies != origModelSpecies) or (testModelRxns != origModelRxns)
 
@@ -119,7 +122,7 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
     # check for unique species in one of the models:
     if uniqueSpeciesOrig:
         error = True
-        logging.error(
+        logger.error(
             'The original model has {} species that the tested model does not have.'
             .format(len(uniqueSpeciesOrig))
             )
@@ -127,7 +130,7 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
 
     if uniqueSpeciesTest:
         error = True
-        logging.error(
+        logger.error(
             'The tested model has {} species that the original model does not have.'
             .format(len(uniqueSpeciesTest))
             )
@@ -136,11 +139,11 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
     # check for different thermo among common species::
     if commonSpecies:
         for spec1, spec2 in commonSpecies:
-            logging.info('    {0!s}'.format(spec1))
+            logger.info('    {0!s}'.format(spec1))
             if spec1.thermo and spec2.thermo:
                 if not spec1.thermo.isIdenticalTo(spec2.thermo):
                     error = True
-                    logging.error('Non-identical thermo for tested {} and original species {}.'
+                    logger.error('Non-identical thermo for tested {} and original species {}.'
                         .format(spec1.label, spec2.label)
                     )
                     printThermo(spec1)
@@ -156,7 +159,7 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
     if uniqueReactionsOrig:
         error = True
         
-        logging.error(
+        logger.error(
             'The original model has {} reactions that the tested model does not have.'
             .format(len(uniqueReactionsOrig))
             )
@@ -166,7 +169,7 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
     if uniqueReactionsTest:
         error = True
         
-        logging.error(
+        logger.error(
             'The tested model has {} reactions that the original model does not have.'
             .format(len(uniqueReactionsTest))
             )
@@ -175,12 +178,12 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
 
     if commonReactions:
         for rxn1, rxn2 in commonReactions:
-            logging.info('    {0!s}'.format(rxn1))
+            logger.info('    {0!s}'.format(rxn1))
             if rxn1.kinetics and rxn2.kinetics:
                 if not rxn1.kinetics.isIdenticalTo(rxn2.kinetics):
                     error = True
 
-                    logging.error('Non-identical kinetics for\ntested {}\nand original {} reaction.'
+                    logger.error('Non-identical kinetics for\ntested {}\nand original {} reaction.'
                         .format(rxn1, rxn2)
                         )
 
@@ -195,7 +198,7 @@ def printReactions(reactions):
     """
 
     for rxn in reactions:
-        logging.error(
+        logger.error(
             'rxn: {}'.format(rxn)
             )
 
@@ -205,7 +208,7 @@ def printSpecies(spcs):
     """
 
     for spc in spcs:
-        logging.error(
+        logger.error(
             'spc: {}'.format(spc)
             )        
 
@@ -213,8 +216,8 @@ def printKinetics(rxn):
     """
 
     """
-    logging.error('        k(300K,1bar) k(400K,1bar) k(500K,1bar) k(600K,1bar) k(800K,1bar) k(1000K,1bar) k(1500K,1bar) k(2000K,1bar) ')
-    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f}'.format(
+    logger.error('        k(300K,1bar) k(400K,1bar) k(500K,1bar) k(600K,1bar) k(800K,1bar) k(1000K,1bar) k(1500K,1bar) k(2000K,1bar) ')
+    logger.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f}'.format(
         math.log10(rxn.kinetics.getRateCoefficient(300, 1e5)),
         math.log10(rxn.kinetics.getRateCoefficient(400, 1e5)),
         math.log10(rxn.kinetics.getRateCoefficient(500, 1e5)),
@@ -229,8 +232,8 @@ def printThermo(spec):
     """
 
     """
-    logging.error('        Hf(300K) S(300K) Cp(300K) Cp(400K) Cp(500K) Cp(600K) Cp(800K) Cp(1000K) Cp(1500K)')
-    logging.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f} {8:7.2f}'.format(
+    logger.error('        Hf(300K) S(300K) Cp(300K) Cp(400K) Cp(500K) Cp(600K) Cp(800K) Cp(1000K) Cp(1500K)')
+    logger.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f} {8:7.2f}'.format(
         spec.thermo.getEnthalpy(300) / 4184.,
         spec.thermo.getEntropy(300) / 4.184,
         spec.thermo.getHeatCapacity(300) / 4.184,
