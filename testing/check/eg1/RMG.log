@@ -1,0 +1,1779 @@
+Global RMG Settings:
+   database.directory   = RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Fri Jan 22 20:08:49 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.1                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+The current git HEAD is:
+	08e397629757546f46d10d0bfabf371bf981a20a
+	Mon Oct 19 10:55:21 2015 -0400
+
+Reading input file "RMG-Py/testing/minimal/input.py"...
+
+Loading thermodynamics library from primaryThermoLibrary.py in RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in RMG-database/input/transport/libraries...
+Consistency checking of multiplicity of molecules with more than 2 unpaired electrons is not implemented yet!
+Loading transport library from PrimaryTransportLibrary.py in RMG-database/input/transport/libraries...
+Loading transport group database from RMG-database/input/transport/groups...
+Loading default kinetics families from RMG-database/input/kinetics/families
+Loading frequencies group database from RMG-database/input/statmech/groups...
+Loading Platts additivity group database from RMG-database/input/solvation/groups...
+Adding rate rules from training set in kinetics families...
+Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
+Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Filling in rate rules in kinetics families by averaging...
+Found thermo for Ar in thermo library: primarythermolibrary
+Found thermo for He in thermo library: primarythermolibrary
+Found thermo for Ne in thermo library: primarythermolibrary
+Found thermo for N2 in thermo library: primarythermolibrary
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 1 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 2 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 3 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 4 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+Adding species ethane(1) to model core
+Generating thermodynamics for new species...
+Found thermo for [H] in thermo library: primarythermolibrary
+Found thermo for [CH2] in thermo library: primarythermolibrary
+Found thermo for C in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    ethane(1)
+Created 5 new edge species
+    [CH3](2)
+    [H](4)
+    C[CH2](3)
+    C(6)
+    [CH2](5)
+Added 0 new core reactions
+Created 3 new edge reactions
+    [CH3](2) + [CH3](2) <=> ethane(1)
+    [H](4) + C[CH2](3) <=> ethane(1)
+    C(6) + [CH2](5) <=> ethane(1)
+
+After model enlargement:
+    The model core has 5 species and 0 reactions
+    The model edge has 5 species and 3 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 3 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 3 reactions.
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species [CH3](2) exceeded the minimum rate for moving to model core
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [CH3](2) rate: 3.5853e+03 mol/m^3*s
+    ethane(1) conversion: 0         
+At time 1.0000e-15 s, species [CH3](2) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [CH3](2) rate: 3.5853e+03 mol/m^3*s
+    ethane(1) conversion: 0         
+
+
+Adding species [CH3](2) to model core
+Generating thermodynamics for new species...
+Found thermo for [CH2] in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH3](2)
+Created 1 new edge species
+    [CH2](7)
+Moved 1 reactions from edge to core
+    [CH3](2) + [CH3](2) <=> ethane(1)
+Added 0 new core reactions
+Created 2 new edge reactions
+    ethane(1) + [CH3](2) <=> C(6) + C[CH2](3)
+    C(6) + [CH2](7) <=> [CH3](2) + [CH3](2)
+
+After model enlargement:
+    The model core has 6 species and 1 reactions
+    The model edge has 5 species and 4 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 5 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 133.22 MB
+
+Conducting simulation of reaction system 1...
+At time 1.1337e-06 s, species C[CH2](3) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.2483e+03 mol/m^3*s
+    C[CH2](3) rate: 3.3211e+02 mol/m^3*s (0.1022)
+    ethane(1) conversion: 0.0002129 
+At time 1.1337e-06 s, species C[CH2](3) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.2483e+03 mol/m^3*s
+    C[CH2](3) rate: 3.3211e+02 mol/m^3*s (0.1022)
+    ethane(1) conversion: 0.0002129 
+
+
+Adding species C[CH2](3) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C[CH2](3)
+Created 4 new edge species
+    C=C(8)
+    [CH2][CH2](9)
+    CCC(10)
+    CCCC(11)
+Added 0 new core reactions
+Created 7 new edge reactions
+    C=C(8) + [H](4) <=> C[CH2](3)
+    [H](4) + [CH2][CH2](9) <=> C[CH2](3)
+    [CH3](2) + C[CH2](3) <=> C(6) + C=C(8)
+    ethane(1) + [CH2](7) <=> [CH3](2) + C[CH2](3)
+    [CH3](2) + C[CH2](3) <=> CCC(10)
+    C[CH2](3) + C[CH2](3) <=> ethane(1) + C=C(8)
+    C[CH2](3) + C[CH2](3) <=> CCCC(11)
+
+After model enlargement:
+    The model core has 7 species and 1 reactions
+    The model edge has 8 species and 11 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 12 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 12 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:18
+    Memory used: 133.23 MB
+
+Conducting simulation of reaction system 1...
+At time 1.1871e-06 s, species C(6) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.1855e+03 mol/m^3*s
+    C(6) rate: 3.3421e+02 mol/m^3*s (0.1049)
+    ethane(1) conversion: 0.0002215 
+At time 1.1871e-06 s, species C(6) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.1855e+03 mol/m^3*s
+    C(6) rate: 3.3421e+02 mol/m^3*s (0.1049)
+    ethane(1) conversion: 0.0002215 
+
+
+Adding species C(6) to model core
+Generating thermodynamics for new species...
+Found thermo for [H][H] in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C(6)
+Created 1 new edge species
+    [H][H](12)
+Moved 1 reactions from edge to core
+    ethane(1) + [CH3](2) <=> C(6) + C[CH2](3)
+Added 0 new core reactions
+Created 2 new edge reactions
+    [H](4) + [CH3](2) <=> C(6)
+    [CH2](5) + [H][H](12) <=> C(6)
+
+After model enlargement:
+    The model core has 8 species and 2 reactions
+    The model edge has 8 species and 12 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 14 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 14 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:18
+    Memory used: 133.23 MB
+
+Conducting simulation of reaction system 1...
+At time 2.6393e-07 s, species [H](4) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9300e+03 mol/m^3*s
+    [H](4) rate: 3.9677e+02 mol/m^3*s (0.101)
+    ethane(1) conversion: 5.408e-05 
+At time 2.6393e-07 s, species [H](4) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9300e+03 mol/m^3*s
+    [H](4) rate: 3.9677e+02 mol/m^3*s (0.101)
+    ethane(1) conversion: 5.408e-05 
+
+
+Adding species [H](4) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [H](4)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    [H](4) + C[CH2](3) <=> ethane(1)
+    [H](4) + [CH3](2) <=> C(6)
+Added 0 new core reactions
+Created 5 new edge reactions
+    ethane(1) + [H](4) <=> C[CH2](3) + [H][H](12)
+    [H][H](12) + [CH2](7) <=> [H](4) + [CH3](2)
+    [H](4) + C[CH2](3) <=> C=C(8) + [H][H](12)
+    C(6) + [H](4) <=> [CH3](2) + [H][H](12)
+    [H](4) + [H](4) <=> [H][H](12)
+
+After model enlargement:
+    The model core has 9 species and 4 reactions
+    The model edge has 7 species and 15 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 4 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 4 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 19 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 19 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:19
+    Memory used: 133.23 MB
+
+Conducting simulation of reaction system 1...
+At time 2.3962e-07 s, species C=C(8) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9460e+03 mol/m^3*s
+    C=C(8) rate: 4.1982e+02 mol/m^3*s (0.1064)
+    ethane(1) conversion: 4.934e-05 
+At time 2.3962e-07 s, species C=C(8) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9460e+03 mol/m^3*s
+    C=C(8) rate: 4.1982e+02 mol/m^3*s (0.1064)
+    ethane(1) conversion: 4.934e-05 
+
+
+Adding species C=C(8) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C=C(8)
+Created 5 new edge species
+    [CH]=C(13)
+    [CH2]CC(14)
+    [CH2]CCC(15)
+    [CH2]CC[CH2](16)
+    C1CCC1(17)
+Moved 3 reactions from edge to core
+    C=C(8) + [H](4) <=> C[CH2](3)
+    [CH3](2) + C[CH2](3) <=> C(6) + C=C(8)
+    C[CH2](3) + C[CH2](3) <=> ethane(1) + C=C(8)
+Added 0 new core reactions
+Created 12 new edge reactions
+    [H](4) + [CH]=C(13) <=> C=C(8)
+    [CH2][CH2](9) <=> C=C(8)
+    C[CH2](3) + [CH2](7) <=> C=C(8) + [CH3](2)
+    C=C(8) + [CH3](2) <=> [CH2]CC(14)
+    C(6) + [CH]=C(13) <=> C=C(8) + [CH3](2)
+    C[CH2](3) + [CH2][CH2](9) <=> C=C(8) + C[CH2](3)
+    C=C(8) + C[CH2](3) <=> [CH2]CCC(15)
+    ethane(1) + [CH]=C(13) <=> C=C(8) + C[CH2](3)
+    [H][H](12) + [CH]=C(13) <=> C=C(8) + [H](4)
+    C[CH2](3) + [CH]=C(13) <=> C=C(8) + C=C(8)
+    [CH2]CC[CH2](16) <=> C=C(8) + C=C(8)
+    C=C(8) + C=C(8) <=> C1CCC1(17)
+
+After model enlargement:
+    The model core has 10 species and 7 reactions
+    The model edge has 11 species and 24 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 31 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 31 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 133.28 MB
+
+Conducting simulation of reaction system 1...
+At time 1.8068e-07 s, species [H][H](12) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9689e+03 mol/m^3*s
+    [H][H](12) rate: 4.0522e+02 mol/m^3*s (0.1021)
+    ethane(1) conversion: 3.708e-05 
+At time 1.8068e-07 s, species [H][H](12) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9689e+03 mol/m^3*s
+    [H][H](12) rate: 4.0522e+02 mol/m^3*s (0.1021)
+    ethane(1) conversion: 3.708e-05 
+
+
+Adding species [H][H](12) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [H][H](12)
+Created 0 new edge species
+Moved 4 reactions from edge to core
+    ethane(1) + [H](4) <=> C[CH2](3) + [H][H](12)
+    [H](4) + C[CH2](3) <=> C=C(8) + [H][H](12)
+    C(6) + [H](4) <=> [CH3](2) + [H][H](12)
+    [H](4) + [H](4) <=> [H][H](12)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 11 species and 11 reactions
+    The model edge has 10 species and 20 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 11 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 11 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 31 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 31 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 2.1060e-04 s, species [CH2]CC(14) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5522e+04 mol/m^3*s
+    [CH2]CC(14) rate: 1.5559e+03 mol/m^3*s (0.1002)
+    ethane(1) conversion: 0.4888    
+At time 2.1060e-04 s, species [CH2]CC(14) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5522e+04 mol/m^3*s
+    [CH2]CC(14) rate: 1.5559e+03 mol/m^3*s (0.1002)
+    ethane(1) conversion: 0.4888    
+
+
+Adding species [CH2]CC(14) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH2]CC(14)
+Created 7 new edge species
+    C=CC(18)
+    [CH2][CH]C(19)
+    [CH2]C[CH2](20)
+    C[CH]C(21)
+    CCCCC(22)
+    [CH2]CCCC(23)
+    CCCCCC(24)
+Moved 1 reactions from edge to core
+    C=C(8) + [CH3](2) <=> [CH2]CC(14)
+Added 0 new core reactions
+Created 27 new edge reactions
+    [H](4) + C=CC(18) <=> [CH2]CC(14)
+    [CH3](2) + [CH2][CH2](9) <=> [CH2]CC(14)
+    [H](4) + [CH2][CH]C(19) <=> [CH2]CC(14)
+    [H](4) + [CH2]C[CH2](20) <=> [CH2]CC(14)
+    [CH2](5) + C[CH2](3) <=> [CH2]CC(14)
+    [CH2]CC(14) <=> C[CH]C(21)
+    ethane(1) + [CH2]CC(14) <=> C[CH2](3) + CCC(10)
+    [CH3](2) + [CH2]CC(14) <=> C(6) + C=CC(18)
+    [CH3](2) + [CH2]CC(14) <=> C(6) + [CH2]C[CH2](20)
+    CCC(10) + [CH2](7) <=> [CH3](2) + [CH2]CC(14)
+    [CH3](2) + [CH2]CC(14) <=> CCCC(11)
+    C[CH2](3) + [CH2]CC(14) <=> C=C(8) + CCC(10)
+    C[CH2](3) + [CH2]CC(14) <=> ethane(1) + C=CC(18)
+    ethane(1) + [CH2]C[CH2](20) <=> C[CH2](3) + [CH2]CC(14)
+    C[CH2](3) + [CH2]CC(14) <=> CCCCC(22)
+    C(6) + [CH2]CC(14) <=> [CH3](2) + CCC(10)
+    [H](4) + [CH2]CC(14) <=> [H][H](12) + C=CC(18)
+    [H](4) + [CH2]CC(14) <=> [CH2]C[CH2](20) + [H][H](12)
+    [H](4) + [CH2]CC(14) <=> CCC(10)
+    C[CH2](3) + [CH2][CH]C(19) <=> C=C(8) + [CH2]CC(14)
+    C[CH2](3) + [CH2]C[CH2](20) <=> C=C(8) + [CH2]CC(14)
+    C=C(8) + [CH2]CC(14) <=> [CH2]CCCC(23)
+    CCC(10) + [CH]=C(13) <=> C=C(8) + [CH2]CC(14)
+    [H][H](12) + [CH2]CC(14) <=> [H](4) + CCC(10)
+    [CH2]CC(14) + [CH2]CC(14) <=> CCC(10) + C=CC(18)
+    [CH2]CC(14) + [CH2]CC(14) <=> [CH2]C[CH2](20) + CCC(10)
+    [CH2]CC(14) + [CH2]CC(14) <=> CCCCCC(24)
+
+After model enlargement:
+    The model core has 12 species and 12 reactions
+    The model edge has 16 species and 46 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 12 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 12 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 58 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 58 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:21
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 2.5920e-04 s, species [CH]=C(13) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2039e+04 mol/m^3*s
+    [CH]=C(13) rate: 1.2124e+03 mol/m^3*s (0.1007)
+    ethane(1) conversion: 0.5566    
+At time 2.5920e-04 s, species [CH]=C(13) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2039e+04 mol/m^3*s
+    [CH]=C(13) rate: 1.2124e+03 mol/m^3*s (0.1007)
+    ethane(1) conversion: 0.5566    
+
+
+Adding species [CH]=C(13) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH]=C(13)
+Created 7 new edge species
+    C#C(25)
+    [CH]=[CH](26)
+    [C]=C(27)
+    C=CCC(28)
+    [CH2]CC=C(29)
+    C=CCCC(30)
+    C=CC=C(31)
+Moved 5 reactions from edge to core
+    [H](4) + [CH]=C(13) <=> C=C(8)
+    C(6) + [CH]=C(13) <=> C=C(8) + [CH3](2)
+    ethane(1) + [CH]=C(13) <=> C=C(8) + C[CH2](3)
+    [H][H](12) + [CH]=C(13) <=> C=C(8) + [H](4)
+    C[CH2](3) + [CH]=C(13) <=> C=C(8) + C=C(8)
+Added 0 new core reactions
+Created 27 new edge reactions
+    [H](4) + C#C(25) <=> [CH]=C(13)
+    [H](4) + [CH]=[CH](26) <=> [CH]=C(13)
+    [CH3](2) + [CH]=C(13) <=> C(6) + C#C(25)
+    [CH3](2) + [CH]=C(13) <=> C(6) + [CH]=[CH](26)
+    [CH3](2) + [CH]=C(13) <=> C(6) + [C]=C(27)
+    C=C(8) + [CH2](7) <=> [CH3](2) + [CH]=C(13)
+    [CH3](2) + [CH]=C(13) <=> C=CC(18)
+    C[CH2](3) + [CH]=C(13) <=> ethane(1) + C#C(25)
+    ethane(1) + [CH]=[CH](26) <=> C[CH2](3) + [CH]=C(13)
+    C[CH2](3) + [CH]=C(13) <=> ethane(1) + [C]=C(27)
+    C[CH2](3) + [CH]=C(13) <=> C=CCC(28)
+    [H](4) + [CH]=C(13) <=> C#C(25) + [H][H](12)
+    [H](4) + [CH]=C(13) <=> [CH]=[CH](26) + [H][H](12)
+    [H](4) + [CH]=C(13) <=> [H][H](12) + [C]=C(27)
+    C[CH2](3) + [C]=C(27) <=> C=C(8) + [CH]=C(13)
+    C[CH2](3) + [CH]=[CH](26) <=> C=C(8) + [CH]=C(13)
+    C=C(8) + [CH]=C(13) <=> [CH2]CC=C(29)
+    [CH2]CC(14) + [CH]=C(13) <=> C=C(8) + C=CC(18)
+    [CH2]CC(14) + [CH]=C(13) <=> C#C(25) + CCC(10)
+    [CH]=[CH](26) + CCC(10) <=> [CH2]CC(14) + [CH]=C(13)
+    [CH2]CC(14) + [CH]=C(13) <=> CCC(10) + [C]=C(27)
+    [CH2]CC(14) + [CH]=C(13) <=> C=C(8) + [CH2]C[CH2](20)
+    [CH2]CC(14) + [CH]=C(13) <=> C=CCCC(30)
+    [CH]=C(13) + [CH]=C(13) <=> C=C(8) + C#C(25)
+    C=C(8) + [CH]=[CH](26) <=> [CH]=C(13) + [CH]=C(13)
+    [CH]=C(13) + [CH]=C(13) <=> C=C(8) + [C]=C(27)
+    [CH]=C(13) + [CH]=C(13) <=> C=CC=C(31)
+
+After model enlargement:
+    The model core has 13 species and 17 reactions
+    The model edge has 22 species and 68 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 17 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 17 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 85 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 85 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:22
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 6.3105e-06 s, species C#C(25) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.8510e+04 mol/m^3*s
+    C#C(25) rate: 3.8872e+03 mol/m^3*s (0.1009)
+    ethane(1) conversion: 0.01052   
+At time 6.3105e-06 s, species C#C(25) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.8510e+04 mol/m^3*s
+    C#C(25) rate: 3.8872e+03 mol/m^3*s (0.1009)
+    ethane(1) conversion: 0.01052   
+
+
+Adding species C#C(25) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C#C(25)
+Created 7 new edge species
+    [C]#C(32)
+    [CH]=CC(33)
+    [CH]=CCC(34)
+    [CH]=CC[CH2](35)
+    [CH]=CCCC(36)
+    [CH]=CC=C(37)
+    [CH]=CC=[CH](38)
+Moved 5 reactions from edge to core
+    [H](4) + C#C(25) <=> [CH]=C(13)
+    [CH3](2) + [CH]=C(13) <=> C(6) + C#C(25)
+    C[CH2](3) + [CH]=C(13) <=> ethane(1) + C#C(25)
+    [H](4) + [CH]=C(13) <=> C#C(25) + [H][H](12)
+    [CH]=C(13) + [CH]=C(13) <=> C=C(8) + C#C(25)
+Added 0 new core reactions
+Created 18 new edge reactions
+    [H](4) + [C]#C(32) <=> C#C(25)
+    [CH]=C(13) + [CH2](7) <=> [CH3](2) + C#C(25)
+    [CH3](2) + C#C(25) <=> [CH]=CC(33)
+    C(6) + [C]#C(32) <=> [CH3](2) + C#C(25)
+    [CH2][CH2](9) + [CH]=C(13) <=> C[CH2](3) + C#C(25)
+    C[CH2](3) + C#C(25) <=> [CH]=CCC(34)
+    ethane(1) + [C]#C(32) <=> C[CH2](3) + C#C(25)
+    [H][H](12) + [C]#C(32) <=> [H](4) + C#C(25)
+    [CH]=CC[CH2](35) <=> C=C(8) + C#C(25)
+    [CH2][CH]C(19) + [CH]=C(13) <=> C#C(25) + [CH2]CC(14)
+    [CH2]C[CH2](20) + [CH]=C(13) <=> C#C(25) + [CH2]CC(14)
+    C#C(25) + [CH2]CC(14) <=> [CH]=CCCC(36)
+    CCC(10) + [C]#C(32) <=> C#C(25) + [CH2]CC(14)
+    [C]=C(27) + [CH]=C(13) <=> C#C(25) + [CH]=C(13)
+    [CH]=[CH](26) + [CH]=C(13) <=> C#C(25) + [CH]=C(13)
+    C#C(25) + [CH]=C(13) <=> [CH]=CC=C(37)
+    C=C(8) + [C]#C(32) <=> C#C(25) + [CH]=C(13)
+    [CH]=CC=[CH](38) <=> C#C(25) + C#C(25)
+
+After model enlargement:
+    The model core has 14 species and 22 reactions
+    The model edge has 28 species and 81 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 22 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 22 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 103 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 103 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:23
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 7.3571e-04 s, species [CH2]CC=C(29) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.0100e+03 mol/m^3*s
+    [CH2]CC=C(29) rate: 2.0448e+02 mol/m^3*s (0.1017)
+    ethane(1) conversion: 0.8641    
+At time 7.3571e-04 s, species [CH2]CC=C(29) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.0100e+03 mol/m^3*s
+    [CH2]CC=C(29) rate: 2.0448e+02 mol/m^3*s (0.1017)
+    ethane(1) conversion: 0.8641    
+
+
+Adding species [CH2]CC=C(29) to model core
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2]C=C[CH2] gives H298=288587 J/mol
+Resonance isomer 2 [CH2][CH]C=C gives H298=344695 J/mol
+Resonance isomer 1 [CH2]C=CC gives H298=137557 J/mol
+Resonance isomer 2 C=C[CH]C gives H298=139691 J/mol
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH2]CC=C(29)
+Created 34 new edge species
+    [CH2]C1CC1(39)
+    [CH2]C[C]=C(40)
+    [CH2][CH]C=C(41)
+    [CH]1CCC1(42)
+    C=C[CH]C(43)
+    C=[C]CC(44)
+    [CH2][CH]C[CH2](45)
+    [CH2]C[CH]C(46)
+    [CH2]C[CH]CC(47)
+    [CH2]CC([CH2])C(48)
+    [CH2]C[CH]CCC(49)
+    [CH2]CC([CH2])CC(50)
+    C=CCCCC(51)
+    [CH2]CCCC=C(52)
+    [CH2]CC([CH2])C[CH2](53)
+    [CH2]C[CH]CC[CH2](54)
+    [CH2]CC1CCC1(55)
+    [CH2]C[CH]CCCC(56)
+    [CH2]CC([CH2])CCC(57)
+    C=CCCCCC(58)
+    [CH2]C[CH]CC=C(59)
+    [CH2]CC([CH2])C=C(60)
+    C=CCCC=C(61)
+    [CH]=CCCC=C(62)
+    [CH]=CC([CH2])C[CH2](63)
+    [CH]=CC[CH]C[CH2](64)
+    [CH2]C[CH]CCCC=C(65)
+    [CH2]CC([CH2])CCC=C(66)
+    C=CCCCCC=C(67)
+    [CH2]C[CH]CC([CH2])C[CH2](68)
+    [CH2]CC([CH2])C([CH2])C[CH2](69)
+    [CH2]C[CH]CC[CH]C[CH2](70)
+    [CH2]CC1CC(C[CH2])C1(71)
+    [CH2]CC1CCC1C[CH2](72)
+Moved 1 reactions from edge to core
+    C=C(8) + [CH]=C(13) <=> [CH2]CC=C(29)
+Added 0 new core reactions
+Created 99 new edge reactions
+    [CH2]CC=C(29) <=> [CH2]C1CC1(39)
+    [H](4) + C=CC=C(31) <=> [CH2]CC=C(29)
+    [H](4) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29)
+    [CH2][CH2](9) + [CH]=C(13) <=> [CH2]CC=C(29)
+    [H](4) + [CH2]C[C]=C(40) <=> [CH2]CC=C(29)
+    [H](4) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29)
+    [CH2]CC=C(29) <=> [CH]1CCC1(42)
+    C=C[CH]C(43) <=> [CH2]CC=C(29)
+    C=[C]CC(44) <=> [CH2]CC=C(29)
+    [CH]=CCC(34) <=> [CH2]CC=C(29)
+    [CH2][CH]C[CH2](45) <=> [CH2]CC=C(29)
+    C[CH2](3) + [CH2]C[CH]C(46) <=> ethane(1) + [CH2]CC=C(29)
+    C[CH2](3) + [CH2]CC[CH2](16) <=> ethane(1) + [CH2]CC=C(29)
+    ethane(1) + [CH2]CC=C(29) <=> C[CH2](3) + C=CCC(28)
+    [CH3](2) + [CH2]CC=C(29) <=> C(6) + C=CC=C(31)
+    [CH2]C[CH]C(46) + [CH2](7) <=> [CH3](2) + [CH2]CC=C(29)
+    [CH2]CC[CH2](16) + [CH2](7) <=> [CH3](2) + [CH2]CC=C(29)
+    [CH3](2) + [CH2]CC=C(29) <=> [CH2]C[CH]CC(47)
+    [CH3](2) + [CH2]CC=C(29) <=> [CH2]CC([CH2])C(48)
+    C(6) + [CH]=CC[CH2](35) <=> [CH3](2) + [CH2]CC=C(29)
+    [CH3](2) + [CH2]CC=C(29) <=> C(6) + [CH2]C[C]=C(40)
+    C=CCC(28) + [CH2](7) <=> [CH3](2) + [CH2]CC=C(29)
+    [CH3](2) + [CH2]CC=C(29) <=> C=CCCC(30)
+    C[CH2](3) + [CH2]CC=C(29) <=> C=C(8) + C=CCC(28)
+    C[CH2](3) + [CH2]CC=C(29) <=> ethane(1) + C=CC=C(31)
+    [CH2][CH2](9) + [CH2]C[CH]C(46) <=> C[CH2](3) + [CH2]CC=C(29)
+    [CH2]CC[CH2](16) + [CH2][CH2](9) <=> C[CH2](3) + [CH2]CC=C(29)
+    C[CH2](3) + [CH2]CC=C(29) <=> [CH2]C[CH]CCC(49)
+    C[CH2](3) + [CH2]CC=C(29) <=> [CH2]CC([CH2])CC(50)
+    ethane(1) + [CH]=CC[CH2](35) <=> C[CH2](3) + [CH2]CC=C(29)
+    ethane(1) + [CH2]C[C]=C(40) <=> C[CH2](3) + [CH2]CC=C(29)
+    C[CH2](3) + [CH2]CC=C(29) <=> C=CCCCC(51)
+    [CH3](2) + [CH2]C[CH]C(46) <=> C(6) + [CH2]CC=C(29)
+    [CH3](2) + [CH2]CC[CH2](16) <=> C(6) + [CH2]CC=C(29)
+    [CH3](2) + C=CCC(28) <=> C(6) + [CH2]CC=C(29)
+    [H](4) + [CH2]CC=C(29) <=> C=CC=C(31) + [H][H](12)
+    [H](4) + [CH2]CC=C(29) <=> [CH2]C[CH]C(46)
+    [H](4) + [CH2]CC=C(29) <=> [CH2]CC[CH2](16)
+    [H][H](12) + [CH]=CC[CH2](35) <=> [H](4) + [CH2]CC=C(29)
+    [H](4) + [CH2]CC=C(29) <=> [H][H](12) + [CH2]C[C]=C(40)
+    [H](4) + [CH2]CC=C(29) <=> C=CCC(28)
+    C[CH2](3) + [CH]=CC[CH2](35) <=> C=C(8) + [CH2]CC=C(29)
+    C[CH2](3) + [CH2][CH]C=C(41) <=> C=C(8) + [CH2]CC=C(29)
+    [CH]=C(13) + [CH2]C[CH]C(46) <=> C=C(8) + [CH2]CC=C(29)
+    [CH2]CC[CH2](16) + [CH]=C(13) <=> C=C(8) + [CH2]CC=C(29)
+    C=C(8) + [CH2]CC=C(29) <=> [CH2]CCCC=C(52)
+    C=CCC(28) + [CH]=C(13) <=> C=C(8) + [CH2]CC=C(29)
+    [CH2]CC([CH2])C[CH2](53) <=> C=C(8) + [CH2]CC=C(29)
+    [CH2]C[CH]CC[CH2](54) <=> C=C(8) + [CH2]CC=C(29)
+    C=C(8) + [CH2]CC=C(29) <=> [CH2]CC1CCC1(55)
+    [H](4) + [CH2]C[CH]C(46) <=> [CH2]CC=C(29) + [H][H](12)
+    [H](4) + [CH2]CC[CH2](16) <=> [CH2]CC=C(29) + [H][H](12)
+    [H](4) + C=CCC(28) <=> [CH2]CC=C(29) + [H][H](12)
+    [CH2]CC=C(29) + [CH2]CC(14) <=> C=CCC(28) + C=CC(18)
+    [CH2]CC=C(29) + [CH2]CC(14) <=> C=CC=C(31) + CCC(10)
+    [CH2][CH]C(19) + [CH2]C[CH]C(46) <=> [CH2]CC=C(29) + [CH2]CC(14)
+    [CH2]C[CH2](20) + [CH2]C[CH]C(46) <=> [CH2]CC=C(29) + [CH2]CC(14)
+    [CH2][CH]C(19) + [CH2]CC[CH2](16) <=> [CH2]CC=C(29) + [CH2]CC(14)
+    [CH2]C[CH2](20) + [CH2]CC[CH2](16) <=> [CH2]CC=C(29) + [CH2]CC(14)
+    [CH2]CC=C(29) + [CH2]CC(14) <=> [CH2]C[CH]CCCC(56)
+    [CH2]CC=C(29) + [CH2]CC(14) <=> [CH2]CC([CH2])CCC(57)
+    CCC(10) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + [CH2]CC(14)
+    [CH2]CC=C(29) + [CH2]CC(14) <=> CCC(10) + [CH2]C[C]=C(40)
+    [CH2]C[CH2](20) + C=CCC(28) <=> [CH2]CC=C(29) + [CH2]CC(14)
+    [CH2]CC=C(29) + [CH2]CC(14) <=> C=CCCCCC(58)
+    [CH2]CC=C(29) + [CH]=C(13) <=> C#C(25) + C=CCC(28)
+    [CH2]CC=C(29) + [CH]=C(13) <=> C=C(8) + C=CC=C(31)
+    [C]=C(27) + [CH2]C[CH]C(46) <=> [CH2]CC=C(29) + [CH]=C(13)
+    [CH]=[CH](26) + [CH2]C[CH]C(46) <=> [CH2]CC=C(29) + [CH]=C(13)
+    [CH2]CC[CH2](16) + [C]=C(27) <=> [CH2]CC=C(29) + [CH]=C(13)
+    [CH]=[CH](26) + [CH2]CC[CH2](16) <=> [CH2]CC=C(29) + [CH]=C(13)
+    [CH2]CC=C(29) + [CH]=C(13) <=> [CH2]C[CH]CC=C(59)
+    [CH2]CC=C(29) + [CH]=C(13) <=> [CH2]CC([CH2])C=C(60)
+    C=C(8) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + [CH]=C(13)
+    [CH2]CC=C(29) + [CH]=C(13) <=> C=C(8) + [CH2]C[C]=C(40)
+    C=CCC(28) + [CH]=[CH](26) <=> [CH2]CC=C(29) + [CH]=C(13)
+    [CH2]CC=C(29) + [CH]=C(13) <=> C=CCC(28) + [C]=C(27)
+    [CH2]CC=C(29) + [CH]=C(13) <=> C=CCCC=C(61)
+    [CH]=C(13) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + C#C(25)
+    [CH]=C(13) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + C#C(25)
+    [CH2]CC=C(29) + C#C(25) <=> [CH]=CCCC=C(62)
+    C=CCC(28) + [C]#C(32) <=> [CH2]CC=C(29) + C#C(25)
+    [CH]=CC([CH2])C[CH2](63) <=> [CH2]CC=C(29) + C#C(25)
+    [CH]=CC[CH]C[CH2](64) <=> [CH2]CC=C(29) + C#C(25)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> C=CC=C(31) + C=CCC(28)
+    [CH2]CC[CH2](16) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]C[CH]C(46) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]CC[CH2](16) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]C[CH]C(46) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> [CH2]C[CH]CCCC=C(65)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> [CH2]CC([CH2])CCC=C(66)
+    C=CCC(28) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> C=CCC(28) + [CH2]C[C]=C(40)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> C=CCCCCC=C(67)
+    [CH2]C[CH]CC([CH2])C[CH2](68) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]CC([CH2])C([CH2])C[CH2](69) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]C[CH]CC[CH]C[CH2](70) <=> [CH2]CC=C(29) + [CH2]CC=C(29)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> [CH2]CC1CC(C[CH2])C1(71)
+    [CH2]CC=C(29) + [CH2]CC=C(29) <=> [CH2]CC1CCC1C[CH2](72)
+
+After model enlargement:
+    The model core has 15 species and 23 reactions
+    The model edge has 61 species and 179 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 23 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 23 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 202 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 202 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:27
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0394e-04 s, species [CH2]C1CC1(39) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.0637e+04 mol/m^3*s
+    [CH2]C1CC1(39) rate: 3.0977e+03 mol/m^3*s (0.1011)
+    ethane(1) conversion: 0.3041    
+At time 1.0394e-04 s, species [CH2]C1CC1(39) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.0637e+04 mol/m^3*s
+    [CH2]C1CC1(39) rate: 3.0977e+03 mol/m^3*s (0.1011)
+    ethane(1) conversion: 0.3041    
+
+
+Adding species [CH2]C1CC1(39) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH2]C1CC1(39)
+Created 18 new edge species
+    C=C1CC1(73)
+    [CH2]C1[CH]C1(74)
+    [CH2][C]1CC1(75)
+    [CH2]C=C(76)
+    C[C]1CC1(77)
+    CC1[CH]C1(78)
+    [CH2]C([CH2])[CH2](79)
+    CC1CC1(80)
+    CCC1CC1(81)
+    CCCC1CC1(82)
+    [CH2]CCC1CC1(83)
+    CCCCC1CC1(84)
+    C=CCC1CC1(85)
+    [CH]=CCC1CC1(86)
+    [CH2]C[CH]CCC1CC1(87)
+    [CH2]CC([CH2])CC1CC1(88)
+    C=CCCCC1CC1(89)
+    C(CC1CC1)C1CC1(90)
+Moved 1 reactions from edge to core
+    [CH2]CC=C(29) <=> [CH2]C1CC1(39)
+Added 0 new core reactions
+Created 52 new edge reactions
+    [H](4) + C=C1CC1(73) <=> [CH2]C1CC1(39)
+    [H](4) + [CH2]C1[CH]C1(74) <=> [CH2]C1CC1(39)
+    [H](4) + [CH2][C]1CC1(75) <=> [CH2]C1CC1(39)
+    [CH2](5) + [CH2]C=C(76) <=> [CH2]C1CC1(39)
+    [CH2]C1CC1(39) <=> C[C]1CC1(77)
+    CC1[CH]C1(78) <=> [CH2]C1CC1(39)
+    [CH2][CH]C[CH2](45) <=> [CH2]C1CC1(39)
+    [CH2]C([CH2])[CH2](79) <=> [CH2]C1CC1(39)
+    ethane(1) + [CH2]C1CC1(39) <=> C[CH2](3) + CC1CC1(80)
+    [CH3](2) + [CH2]C1CC1(39) <=> C(6) + C=C1CC1(73)
+    C(6) + [CH2]C1[CH]C1(74) <=> [CH3](2) + [CH2]C1CC1(39)
+    [CH2](7) + CC1CC1(80) <=> [CH3](2) + [CH2]C1CC1(39)
+    [CH3](2) + [CH2]C1CC1(39) <=> CCC1CC1(81)
+    C[CH2](3) + [CH2]C1CC1(39) <=> C=C(8) + CC1CC1(80)
+    C[CH2](3) + [CH2]C1CC1(39) <=> ethane(1) + C=C1CC1(73)
+    ethane(1) + [CH2]C1[CH]C1(74) <=> C[CH2](3) + [CH2]C1CC1(39)
+    C[CH2](3) + [CH2]C1CC1(39) <=> CCCC1CC1(82)
+    C(6) + [CH2]C1CC1(39) <=> [CH3](2) + CC1CC1(80)
+    [H](4) + [CH2]C1CC1(39) <=> [H][H](12) + C=C1CC1(73)
+    [H](4) + [CH2]C1CC1(39) <=> [H][H](12) + [CH2]C1[CH]C1(74)
+    [H](4) + [CH2]C1CC1(39) <=> CC1CC1(80)
+    C[CH2](3) + [CH2]C1[CH]C1(74) <=> C=C(8) + [CH2]C1CC1(39)
+    C=C(8) + [CH2]C1CC1(39) <=> [CH2]CCC1CC1(83)
+    [CH]=C(13) + CC1CC1(80) <=> C=C(8) + [CH2]C1CC1(39)
+    [H][H](12) + [CH2]C1CC1(39) <=> [H](4) + CC1CC1(80)
+    [CH2]CC(14) + [CH2]C1CC1(39) <=> C=CC(18) + CC1CC1(80)
+    [CH2]CC(14) + [CH2]C1CC1(39) <=> CCC(10) + C=C1CC1(73)
+    [CH2]CC(14) + [CH2]C1CC1(39) <=> CCC(10) + [CH2]C1[CH]C1(74)
+    [CH2]CC(14) + [CH2]C1CC1(39) <=> [CH2]C[CH2](20) + CC1CC1(80)
+    [CH2]CC(14) + [CH2]C1CC1(39) <=> CCCCC1CC1(84)
+    [CH]=C(13) + [CH2]C1CC1(39) <=> C#C(25) + CC1CC1(80)
+    [CH]=C(13) + [CH2]C1CC1(39) <=> C=C(8) + C=C1CC1(73)
+    [CH]=C(13) + [CH2]C1CC1(39) <=> C=C(8) + [CH2]C1[CH]C1(74)
+    [CH]=[CH](26) + CC1CC1(80) <=> [CH]=C(13) + [CH2]C1CC1(39)
+    [CH]=C(13) + [CH2]C1CC1(39) <=> [C]=C(27) + CC1CC1(80)
+    [CH]=C(13) + [CH2]C1CC1(39) <=> C=CCC1CC1(85)
+    [CH]=C(13) + [CH2]C1[CH]C1(74) <=> C#C(25) + [CH2]C1CC1(39)
+    C#C(25) + [CH2]C1CC1(39) <=> [CH]=CCC1CC1(86)
+    [C]#C(32) + CC1CC1(80) <=> C#C(25) + [CH2]C1CC1(39)
+    [CH2]CC=C(29) + [CH2]C1CC1(39) <=> C=CC=C(31) + CC1CC1(80)
+    [CH2]CC=C(29) + [CH2]C1CC1(39) <=> C=CCC(28) + C=C1CC1(73)
+    [CH2]C[CH]C(46) + [CH2]C1[CH]C1(74) <=> [CH2]CC=C(29) + [CH2]C1CC1(39)
+    [CH2]CC[CH2](16) + [CH2]C1[CH]C1(74) <=> [CH2]CC=C(29) + [CH2]C1CC1(39)
+    [CH2]CC=C(29) + [CH2]C1CC1(39) <=> [CH2]C[CH]CCC1CC1(87)
+    [CH2]CC=C(29) + [CH2]C1CC1(39) <=> [CH2]CC([CH2])CC1CC1(88)
+    C=CCC(28) + [CH2]C1[CH]C1(74) <=> [CH2]CC=C(29) + [CH2]C1CC1(39)
+    [CH]=CC[CH2](35) + CC1CC1(80) <=> [CH2]CC=C(29) + [CH2]C1CC1(39)
+    [CH2]CC=C(29) + [CH2]C1CC1(39) <=> [CH2]C[C]=C(40) + CC1CC1(80)
+    [CH2]CC=C(29) + [CH2]C1CC1(39) <=> C=CCCCC1CC1(89)
+    [CH2]C1CC1(39) + [CH2]C1CC1(39) <=> C=C1CC1(73) + CC1CC1(80)
+    [CH2]C1CC1(39) + [CH2]C1CC1(39) <=> CC1CC1(80) + [CH2]C1[CH]C1(74)
+    [CH2]C1CC1(39) + [CH2]C1CC1(39) <=> C(CC1CC1)C1CC1(90)
+
+After model enlargement:
+    The model core has 16 species and 24 reactions
+    The model edge has 78 species and 230 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 24 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 24 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 254 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 254 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:30
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 7.6444e-04 s, species [CH]=CC(33) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.8772e+03 mol/m^3*s
+    [CH]=CC(33) rate: 1.8909e+02 mol/m^3*s (0.1007)
+    ethane(1) conversion: 0.8706    
+At time 7.6444e-04 s, species [CH]=CC(33) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.8772e+03 mol/m^3*s
+    [CH]=CC(33) rate: 1.8909e+02 mol/m^3*s (0.1007)
+    ethane(1) conversion: 0.8706    
+
+
+Adding species [CH]=CC(33) to model core
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH]C=C gives H298=390133 J/mol
+Resonance isomer 2 [CH]=C[CH2] gives H298=417747 J/mol
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH]=CC(33)
+Created 16 new edge species
+    C#CC(91)
+    [CH]=C[CH2](92)
+    [CH]=[C]C(93)
+    C=[C]C(94)
+    [C]=CC(95)
+    CC=CC(96)
+    CC=CCC(97)
+    [CH2]CC=CC(98)
+    CC=CCCC(99)
+    C=CC=CC(100)
+    [CH]=CC=CC(101)
+    [CH2]C[CH]CC=CC(102)
+    [CH2]CC([CH2])C=CC(103)
+    C=CCCC=CC(104)
+    CC=CCC1CC1(105)
+    CC=CC=CC(106)
+Moved 1 reactions from edge to core
+    [CH3](2) + C#C(25) <=> [CH]=CC(33)
+Added 0 new core reactions
+Created 76 new edge reactions
+    [H](4) + C#CC(91) <=> [CH]=CC(33)
+    [CH3](2) + [CH]=[CH](26) <=> [CH]=CC(33)
+    [H](4) + [CH]=C[CH2](92) <=> [CH]=CC(33)
+    [H](4) + [CH]=[C]C(93) <=> [CH]=CC(33)
+    [CH2](5) + [CH]=C(13) <=> [CH]=CC(33)
+    [CH]=CC(33) <=> C=[C]C(94)
+    [CH]=CC(33) <=> [CH2]C=C(76)
+    ethane(1) + [CH]=CC(33) <=> C[CH2](3) + C=CC(18)
+    [CH3](2) + [CH]=CC(33) <=> C(6) + C#CC(91)
+    [CH3](2) + [CH]=CC(33) <=> C(6) + [CH]=C[CH2](92)
+    [CH3](2) + [CH]=CC(33) <=> C(6) + [CH]=[C]C(93)
+    [CH3](2) + [CH]=CC(33) <=> C(6) + [C]=CC(95)
+    [CH3](2) + [CH]=CC(33) <=> C=CC(18) + [CH2](7)
+    [CH3](2) + [CH]=CC(33) <=> CC=CC(96)
+    C[CH2](3) + [CH]=CC(33) <=> C=C(8) + C=CC(18)
+    C[CH2](3) + [CH]=CC(33) <=> ethane(1) + C#CC(91)
+    C[CH2](3) + [CH]=CC(33) <=> ethane(1) + [CH]=C[CH2](92)
+    ethane(1) + [CH]=[C]C(93) <=> C[CH2](3) + [CH]=CC(33)
+    C[CH2](3) + [CH]=CC(33) <=> ethane(1) + [C]=CC(95)
+    C[CH2](3) + [CH]=CC(33) <=> CC=CCC(97)
+    C(6) + [CH]=CC(33) <=> [CH3](2) + C=CC(18)
+    [H](4) + [CH]=CC(33) <=> [H][H](12) + C#CC(91)
+    [H](4) + [CH]=CC(33) <=> [H][H](12) + [CH]=C[CH2](92)
+    [H](4) + [CH]=CC(33) <=> [H][H](12) + [CH]=[C]C(93)
+    [H](4) + [CH]=CC(33) <=> [H][H](12) + [C]=CC(95)
+    [H](4) + [CH]=CC(33) <=> C=CC(18)
+    C[CH2](3) + [C]=CC(95) <=> C=C(8) + [CH]=CC(33)
+    C[CH2](3) + [CH]=C[CH2](92) <=> C=C(8) + [CH]=CC(33)
+    C=C(8) + [CH]=CC(33) <=> [CH2]CC=CC(98)
+    C=C(8) + [CH]=CC(33) <=> C=CC(18) + [CH]=C(13)
+    [CH]=CC(33) + [H][H](12) <=> [H](4) + C=CC(18)
+    [CH]=CC(33) + [CH2]CC(14) <=> C=CC(18) + C=CC(18)
+    [CH]=CC(33) + [CH2]CC(14) <=> CCC(10) + C#CC(91)
+    [CH]=CC(33) + [CH2]CC(14) <=> CCC(10) + [CH]=C[CH2](92)
+    CCC(10) + [CH]=[C]C(93) <=> [CH]=CC(33) + [CH2]CC(14)
+    [CH]=CC(33) + [CH2]CC(14) <=> CCC(10) + [C]=CC(95)
+    [CH]=CC(33) + [CH2]CC(14) <=> [CH2]C[CH2](20) + C=CC(18)
+    [CH]=CC(33) + [CH2]CC(14) <=> CC=CCCC(99)
+    [CH]=CC(33) + [CH]=C(13) <=> C#C(25) + C=CC(18)
+    [CH]=CC(33) + [CH]=C(13) <=> C=C(8) + C#CC(91)
+    [CH]=CC(33) + [CH]=C(13) <=> C=C(8) + [CH]=C[CH2](92)
+    [CH]=CC(33) + [CH]=C(13) <=> C=C(8) + [CH]=[C]C(93)
+    [CH]=CC(33) + [CH]=C(13) <=> C=C(8) + [C]=CC(95)
+    [CH]=[CH](26) + C=CC(18) <=> [CH]=CC(33) + [CH]=C(13)
+    [CH]=CC(33) + [CH]=C(13) <=> C=CC(18) + [C]=C(27)
+    [CH]=CC(33) + [CH]=C(13) <=> C=CC=CC(100)
+    [CH]=C(13) + [C]=CC(95) <=> [CH]=CC(33) + C#C(25)
+    [CH]=C(13) + [CH]=C[CH2](92) <=> [CH]=CC(33) + C#C(25)
+    [CH]=CC(33) + C#C(25) <=> [CH]=CC=CC(101)
+    C=CC(18) + [C]#C(32) <=> [CH]=CC(33) + C#C(25)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CC=C(31) + C=CC(18)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CCC(28) + C#CC(91)
+    [CH2]C[CH]C(46) + [C]=CC(95) <=> [CH2]CC=C(29) + [CH]=CC(33)
+    [CH2]CC[CH2](16) + [C]=CC(95) <=> [CH2]CC=C(29) + [CH]=CC(33)
+    [CH2]C[CH]C(46) + [CH]=C[CH2](92) <=> [CH2]CC=C(29) + [CH]=CC(33)
+    [CH2]CC[CH2](16) + [CH]=C[CH2](92) <=> [CH2]CC=C(29) + [CH]=CC(33)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> [CH2]C[CH]CC=CC(102)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> [CH2]CC([CH2])C=CC(103)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CCC(28) + [CH]=C[CH2](92)
+    C=CCC(28) + [CH]=[C]C(93) <=> [CH2]CC=C(29) + [CH]=CC(33)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CCC(28) + [C]=CC(95)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CC(18) + [CH]=CC[CH2](35)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CC(18) + [CH2]C[C]=C(40)
+    [CH2]CC=C(29) + [CH]=CC(33) <=> C=CCCC=CC(104)
+    [CH]=CC(33) + [CH2]C1CC1(39) <=> C=CC(18) + C=C1CC1(73)
+    [CH]=CC(33) + [CH2]C1CC1(39) <=> CC1CC1(80) + C#CC(91)
+    [CH]=CC(33) + [CH2]C1CC1(39) <=> [CH]=C[CH2](92) + CC1CC1(80)
+    [CH]=[C]C(93) + CC1CC1(80) <=> [CH]=CC(33) + [CH2]C1CC1(39)
+    [CH]=CC(33) + [CH2]C1CC1(39) <=> [C]=CC(95) + CC1CC1(80)
+    [CH]=CC(33) + [CH2]C1CC1(39) <=> C=CC(18) + [CH2]C1[CH]C1(74)
+    [CH]=CC(33) + [CH2]C1CC1(39) <=> CC=CCC1CC1(105)
+    [CH]=CC(33) + [CH]=CC(33) <=> C=CC(18) + C#CC(91)
+    [CH]=CC(33) + [CH]=CC(33) <=> C=CC(18) + [CH]=C[CH2](92)
+    [CH]=CC(33) + [CH]=CC(33) <=> C=CC(18) + [CH]=[C]C(93)
+    [CH]=CC(33) + [CH]=CC(33) <=> C=CC(18) + [C]=CC(95)
+    [CH]=CC(33) + [CH]=CC(33) <=> CC=CC=CC(106)
+
+After model enlargement:
+    The model core has 17 species and 25 reactions
+    The model edge has 93 species and 305 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 25 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 25 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 330 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 330 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:33
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 7.9560e-04 s, species C=CC=C(31) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.7487e+03 mol/m^3*s
+    C=CC=C(31) rate: 1.7530e+02 mol/m^3*s (0.1002)
+    ethane(1) conversion: 0.8771    
+At time 7.9560e-04 s, species C=CC=C(31) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.7487e+03 mol/m^3*s
+    C=CC=C(31) rate: 1.7530e+02 mol/m^3*s (0.1002)
+    ethane(1) conversion: 0.8771    
+
+
+Adding species C=CC=C(31) to model core
+Generating thermodynamics for new species...
+Resonance isomer 1 C=[C]C=C gives H298=308683 J/mol
+Resonance isomer 2 [CH2]C=C=C gives H298=313578 J/mol
+Resonance isomer 1 [CH]C=CC gives H298=357205 J/mol
+Resonance isomer 2 [CH]=C[CH]C gives H298=386953 J/mol
+Resonance isomer 1 [CH2]C=CCC gives H298=117642 J/mol
+Resonance isomer 2 C=C[CH]CC gives H298=119064 J/mol
+Resonance isomer 1 [CH2]C=CCCC gives H298=97014 J/mol
+Resonance isomer 2 C=C[CH]CCC gives H298=98437 J/mol
+Resonance isomer 1 [CH2]C=CCC[CH2] gives H298=302018 J/mol
+Resonance isomer 2 [CH2]CC[CH]C=C gives H298=303440 J/mol
+Resonance isomer 1 [CH2]C=CCCCC gives H298=76387 J/mol
+Resonance isomer 2 C=C[CH]CCCC gives H298=77810 J/mol
+Resonance isomer 1 [CH2]C=CCC=C gives H298=224417 J/mol
+Resonance isomer 2 C=C[CH]CC=C gives H298=224585 J/mol
+Resonance isomer 1 [CH]=CCC=C[CH2] gives H298=471679 J/mol
+Resonance isomer 2 [CH]=CC[CH]C=C gives H298=471846 J/mol
+Resonance isomer 1 [CH2]C=CCCCC=C gives H298=181908 J/mol
+Resonance isomer 2 C=C[CH]CCCC=C gives H298=183330 J/mol
+Resonance isomer 1 [CH2]C=CCC([CH2])C[CH2] gives H298=459742 J/mol
+Resonance isomer 2 [CH2]CC([CH2])C[CH]C=C gives H298=464512 J/mol
+Resonance isomer 1 [CH2]C=CCC[CH]C[CH2] gives H298=454679 J/mol
+Resonance isomer 2 [CH2]C[CH]CC[CH]C=C gives H298=456102 J/mol
+Resonance isomer 1 [CH2]C=CCCC1CC1 gives H298=205673 J/mol
+Resonance isomer 2 C=C[CH]CCC1CC1 gives H298=207095 J/mol
+Resonance isomer 1 [CH2]C=CCC=CC gives H298=191489 J/mol
+Resonance isomer 2 C=C[CH]CC=CC gives H298=191656 J/mol
+Resonance isomer 1 [CH2]C=CCC([CH2])C=C gives H298=378585 J/mol
+Resonance isomer 2 [CH2]C(C=C)C[CH]C=C gives H298=380008 J/mol
+Resonance isomer 1 [CH2]C=CCCC=C[CH2] gives H298=320637 J/mol
+Resonance isomer 2 [CH2]C=CCC[CH]C=C gives H298=322059 J/mol
+Resonance isomer 3 C=C[CH]CC[CH]C=C gives H298=323482 J/mol
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C=CC=C(31)
+Created 35 new edge species
+    C=[C]C=C(107)
+    [CH]=C[CH]C(108)
+    C=C[CH]CC(109)
+    [CH2]C(C)C=C(110)
+    C=C[CH]CCC(111)
+    [CH2]C(C=C)CC(112)
+    [CH2]CC[CH]C=C(113)
+    C1=CCCCC1(114)
+    C=CC1CCC1(115)
+    C=C[CH]CCCC(116)
+    [CH2]C(C=C)CCC(117)
+    C=C[CH]CC=C(118)
+    [CH2]C(C=C)C=C(119)
+    [CH]=CC([CH2])C=C(120)
+    [CH]=CC[CH]C=C(121)
+    C1=CCC=CC1(122)
+    C=C[CH]CCCC=C(123)
+    [CH2]C(C=C)CCC=C(124)
+    [CH2]CC([CH2])C([CH2])C=C(125)
+    [CH2]C[CH]CC([CH2])C=C(126)
+    [CH2]CC([CH2])C[CH]C=C(127)
+    [CH2]C[CH]CC[CH]C=C(128)
+    [CH2]CC1CC=CCC1(129)
+    [CH2]CC1CCC1C=C(130)
+    [CH2]CC1CC(C=C)C1(131)
+    C=C[CH]CCC1CC1(132)
+    C=CC([CH2])CC1CC1(133)
+    C=C[CH]CC=CC(134)
+    [CH2]C(C=C)C=CC(135)
+    [CH2]C(C=C)C[CH]C=C(136)
+    [CH2]C(C=C)C([CH2])C=C(137)
+    C=C[CH]CC[CH]C=C(138)
+    C=CC1CC=CCC1(139)
+    C=CC1CC(C=C)C1(140)
+    C=CC1CCC1C=C(141)
+Moved 6 reactions from edge to core
+    [CH]=C(13) + [CH]=C(13) <=> C=CC=C(31)
+    [H](4) + C=CC=C(31) <=> [CH2]CC=C(29)
+    [CH3](2) + [CH2]CC=C(29) <=> C(6) + C=CC=C(31)
+    C[CH2](3) + [CH2]CC=C(29) <=> ethane(1) + C=CC=C(31)
+    [H](4) + [CH2]CC=C(29) <=> C=CC=C(31) + [H][H](12)
+    [CH2]CC=C(29) + [CH]=C(13) <=> C=C(8) + C=CC=C(31)
+Added 0 new core reactions
+Created 88 new edge reactions
+    [H](4) + [CH]=CC=C(37) <=> C=CC=C(31)
+    [H](4) + C=[C]C=C(107) <=> C=CC=C(31)
+    [CH]=CC[CH2](35) <=> C=CC=C(31)
+    [CH]=C[CH]C(108) <=> C=CC=C(31)
+    [CH2][CH]C=C(41) <=> C=CC=C(31)
+    C[CH2](3) + C=C[CH]C(43) <=> ethane(1) + C=CC=C(31)
+    C=C[CH]C(43) + [CH2](7) <=> [CH3](2) + C=CC=C(31)
+    [CH2]CC=C(29) + [CH2](7) <=> [CH3](2) + C=CC=C(31)
+    [CH3](2) + C=CC=C(31) <=> C=C[CH]CC(109)
+    [CH3](2) + C=CC=C(31) <=> [CH2]C(C)C=C(110)
+    C(6) + [CH]=CC=C(37) <=> [CH3](2) + C=CC=C(31)
+    [CH3](2) + C=CC=C(31) <=> C(6) + C=[C]C=C(107)
+    [CH2][CH2](9) + C=C[CH]C(43) <=> C[CH2](3) + C=CC=C(31)
+    [CH2]CC=C(29) + [CH2][CH2](9) <=> C[CH2](3) + C=CC=C(31)
+    C[CH2](3) + C=CC=C(31) <=> C=C[CH]CCC(111)
+    C[CH2](3) + C=CC=C(31) <=> [CH2]C(C=C)CC(112)
+    ethane(1) + [CH]=CC=C(37) <=> C[CH2](3) + C=CC=C(31)
+    C[CH2](3) + C=CC=C(31) <=> ethane(1) + C=[C]C=C(107)
+    [CH3](2) + C=C[CH]C(43) <=> C(6) + C=CC=C(31)
+    [H](4) + C=CC=C(31) <=> C=C[CH]C(43)
+    [H][H](12) + [CH]=CC=C(37) <=> [H](4) + C=CC=C(31)
+    [H](4) + C=CC=C(31) <=> [H][H](12) + C=[C]C=C(107)
+    C[CH2](3) + [CH]=CC=C(37) <=> C=C(8) + C=CC=C(31)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=C(8) + C=CC=C(31)
+    [CH2]CC([CH2])C=C(60) <=> C=C(8) + C=CC=C(31)
+    [CH2]CC[CH]C=C(113) <=> C=C(8) + C=CC=C(31)
+    C=C(8) + C=CC=C(31) <=> C1=CCCCC1(114)
+    C=C(8) + C=CC=C(31) <=> C=CC1CCC1(115)
+    [H](4) + C=C[CH]C(43) <=> C=CC=C(31) + [H][H](12)
+    [CH2][CH]C(19) + C=C[CH]C(43) <=> C=CC=C(31) + [CH2]CC(14)
+    [CH2]C[CH2](20) + C=C[CH]C(43) <=> C=CC=C(31) + [CH2]CC(14)
+    [CH2]CC=C(29) + [CH2][CH]C(19) <=> C=CC=C(31) + [CH2]CC(14)
+    [CH2]CC=C(29) + [CH2]C[CH2](20) <=> C=CC=C(31) + [CH2]CC(14)
+    C=CC=C(31) + [CH2]CC(14) <=> C=C[CH]CCCC(116)
+    C=CC=C(31) + [CH2]CC(14) <=> [CH2]C(C=C)CCC(117)
+    CCC(10) + [CH]=CC=C(37) <=> C=CC=C(31) + [CH2]CC(14)
+    C=CC=C(31) + [CH2]CC(14) <=> CCC(10) + C=[C]C=C(107)
+    [C]=C(27) + C=C[CH]C(43) <=> C=CC=C(31) + [CH]=C(13)
+    [CH]=[CH](26) + C=C[CH]C(43) <=> C=CC=C(31) + [CH]=C(13)
+    [CH2]CC=C(29) + [C]=C(27) <=> C=CC=C(31) + [CH]=C(13)
+    [CH2]CC=C(29) + [CH]=[CH](26) <=> C=CC=C(31) + [CH]=C(13)
+    C=CC=C(31) + [CH]=C(13) <=> C=C[CH]CC=C(118)
+    C=CC=C(31) + [CH]=C(13) <=> [CH2]C(C=C)C=C(119)
+    C=C(8) + [CH]=CC=C(37) <=> C=CC=C(31) + [CH]=C(13)
+    C=CC=C(31) + [CH]=C(13) <=> C=C(8) + C=[C]C=C(107)
+    [CH]=C(13) + [CH]=CC=C(37) <=> C=CC=C(31) + C#C(25)
+    [CH]=CC([CH2])C=C(120) <=> C=CC=C(31) + C#C(25)
+    [CH]=CC[CH]C=C(121) <=> C=CC=C(31) + C#C(25)
+    C=CC=C(31) + C#C(25) <=> C1=CCC=CC1(122)
+    [CH2]C[CH]C(46) + [CH]=CC=C(37) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC[CH2](16) + [CH]=CC=C(37) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH]=CC[CH2](35) + C=C[CH]C(43) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2][CH]C=C(41) + C=C[CH]C(43) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC=C(29) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC=C(29) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC=C(29) + C=CC=C(31) <=> C=C[CH]CCCC=C(123)
+    [CH2]CC=C(29) + C=CC=C(31) <=> [CH2]C(C=C)CCC=C(124)
+    C=CCC(28) + [CH]=CC=C(37) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC=C(29) + C=CC=C(31) <=> C=CCC(28) + C=[C]C=C(107)
+    [CH2]CC([CH2])C([CH2])C=C(125) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]C[CH]CC([CH2])C=C(126) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC([CH2])C[CH]C=C(127) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]C[CH]CC[CH]C=C(128) <=> [CH2]CC=C(29) + C=CC=C(31)
+    [CH2]CC=C(29) + C=CC=C(31) <=> [CH2]CC1CC=CCC1(129)
+    [CH2]CC=C(29) + C=CC=C(31) <=> [CH2]CC1CCC1C=C(130)
+    [CH2]CC=C(29) + C=CC=C(31) <=> [CH2]CC1CC(C=C)C1(131)
+    C=C[CH]C(43) + [CH2]C1[CH]C1(74) <=> C=CC=C(31) + [CH2]C1CC1(39)
+    [CH2]CC=C(29) + [CH2]C1[CH]C1(74) <=> C=CC=C(31) + [CH2]C1CC1(39)
+    C=CC=C(31) + [CH2]C1CC1(39) <=> C=C[CH]CCC1CC1(132)
+    C=CC=C(31) + [CH2]C1CC1(39) <=> C=CC([CH2])CC1CC1(133)
+    [CH]=CC=C(37) + CC1CC1(80) <=> C=CC=C(31) + [CH2]C1CC1(39)
+    C=CC=C(31) + [CH2]C1CC1(39) <=> C=[C]C=C(107) + CC1CC1(80)
+    C=C[CH]C(43) + [C]=CC(95) <=> [CH]=CC(33) + C=CC=C(31)
+    C=C[CH]C(43) + [CH]=C[CH2](92) <=> [CH]=CC(33) + C=CC=C(31)
+    [CH2]CC=C(29) + [C]=CC(95) <=> [CH]=CC(33) + C=CC=C(31)
+    [CH2]CC=C(29) + [CH]=C[CH2](92) <=> [CH]=CC(33) + C=CC=C(31)
+    [CH]=CC(33) + C=CC=C(31) <=> C=C[CH]CC=CC(134)
+    [CH]=CC(33) + C=CC=C(31) <=> [CH2]C(C=C)C=CC(135)
+    [CH]=CC(33) + C=CC=C(31) <=> C=CC(18) + [CH]=CC=C(37)
+    [CH]=CC(33) + C=CC=C(31) <=> C=CC(18) + C=[C]C=C(107)
+    [CH2]CC=C(29) + [CH]=CC=C(37) <=> C=CC=C(31) + C=CC=C(31)
+    [CH]=CC=C(37) + C=C[CH]C(43) <=> C=CC=C(31) + C=CC=C(31)
+    [CH2]C(C=C)C[CH]C=C(136) <=> C=CC=C(31) + C=CC=C(31)
+    [CH2]C(C=C)C([CH2])C=C(137) <=> C=CC=C(31) + C=CC=C(31)
+    C=C[CH]CC[CH]C=C(138) <=> C=CC=C(31) + C=CC=C(31)
+    C=CC=C(31) + C=CC=C(31) <=> C=CC1CC=CCC1(139)
+    C=CC=C(31) + C=CC=C(31) <=> C=CC1CC(C=C)C1(140)
+    C=CC=C(31) + C=CC=C(31) <=> C=CC1CCC1C=C(141)
+
+After model enlargement:
+    The model core has 18 species and 31 reactions
+    The model edge has 127 species and 387 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 31 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 31 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 418 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 418 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:38
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 5.1024e-04 s, species C=C[CH]C(43) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.8604e+03 mol/m^3*s
+    C=C[CH]C(43) rate: 3.9785e+02 mol/m^3*s (0.1031)
+    ethane(1) conversion: 0.7892    
+At time 5.1024e-04 s, species C=C[CH]C(43) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.8604e+03 mol/m^3*s
+    C=C[CH]C(43) rate: 3.9785e+02 mol/m^3*s (0.1031)
+    ethane(1) conversion: 0.7892    
+
+
+Adding species C=C[CH]C(43) to model core
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2][C]=CC gives H298=375614 J/mol
+Resonance isomer 2 C=[C][CH]C gives H298=377748 J/mol
+Resonance isomer 1 [CH2]C=[C]C gives H298=375614 J/mol
+Resonance isomer 2 C=C[C]C gives H298=447621 J/mol
+Resonance isomer 1 [CH2]C=CCCC=CC gives H298=169607 J/mol
+Resonance isomer 2 C=C[CH]CCC=CC gives H298=171029 J/mol
+Resonance isomer 1 [CH2][CH]C(C)CC=C[CH2] gives H298=448655 J/mol
+Resonance isomer 2 [CH2][CH]C(C)C[CH]C=C gives H298=453424 J/mol
+Resonance isomer 1 [CH2]C=CCC([CH2])[CH]C gives H298=448655 J/mol
+Resonance isomer 2 [CH2]C([CH]C)C[CH]C=C gives H298=453424 J/mol
+Resonance isomer 1 [CH2]C=CCC(C)C=C gives H298=173582 J/mol
+Resonance isomer 2 C=C[CH]CC(C)C=C gives H298=175004 J/mol
+Resonance isomer 1 [CH2]C=CCC[CH][CH]C gives H298=443592 J/mol
+Resonance isomer 2 C=C[CH]CC[CH][CH]C gives H298=445014 J/mol
+Generating kinetics for new reactions...
+For reaction C=C[CH]C(43) <=> CC1[CH]C1(78), Ea raised from 111.3 to 113.6 kJ/mol to match endothermicity of reaction.
+For reaction [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=CCC(28) + [CH2]C1[CH]C1(74), Ea raised from 87.5 to 87.8 kJ/mol to match endothermicity of reaction.
+For reaction C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2][CH]C(C)CC=CC(224), Ea raised from 25.2 to 27.0 kJ/mol to match endothermicity of reaction.
+For reaction C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2]C([CH]C)C(C)C=C(229), Ea raised from 30.9 to 34.5 kJ/mol to match endothermicity of reaction.
+For reaction C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2][CH]C(C)C(C)C=C(230), Ea raised from 29.8 to 34.6 kJ/mol to match endothermicity of reaction.
+For reaction C=C[CH]C(43) + C=C[CH]C(43) <=> C=CC(C)C[CH][CH]C(237), Ea raised from 25.2 to 26.1 kJ/mol to match endothermicity of reaction.
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C=C[CH]C(43)
+Created 100 new edge species
+    C=C=CC(142)
+    [CH2][C]=CC(143)
+    [CH2]C=[C]C(144)
+    C[C]=CC(145)
+    [CH2][CH]CC(146)
+    C[CH][CH]C(147)
+    [CH2]C(C)[CH]C(148)
+    [CH2][CH]C(C)C(149)
+    C[CH][CH]CC(150)
+    C=CC(C)C(151)
+    [CH2]C([CH]C)CC(152)
+    [CH2][CH]C(C)CC(153)
+    C[CH][CH]CCC(154)
+    C=CC(C)CC(155)
+    [CH2]CCC=CC(156)
+    [CH2][CH]C(C)C[CH2](157)
+    [CH2]CC([CH2])[CH]C(158)
+    [CH2]C1CCC1C(159)
+    [CH2]CC(C)C=C(160)
+    [CH2]CC[CH][CH]C(161)
+    C[CH]C1CCC1(162)
+    [CH2]C([CH]C)CCC(163)
+    [CH2][CH]C(C)CCC(164)
+    CC=CCCCC(165)
+    C[CH][CH]CCCC(166)
+    C=CC(C)CCC(167)
+    [CH2]C([CH]C)C=C(168)
+    [CH2][CH]C(C)C=C(169)
+    C=CCC=CC(170)
+    C=CC[CH][CH]C(171)
+    C=CC(C)C=C(172)
+    [CH]=CCC=CC(173)
+    [CH]=CC(C)[CH][CH2](174)
+    [CH]=CC([CH2])[CH]C(175)
+    [CH]=CC(C)C=C(176)
+    [CH]=CC[CH][CH]C(177)
+    [CH2]C([CH]C)CCC=C(178)
+    [CH2][CH]C(C)CCC=C(179)
+    [CH2]C[CH]CCC=CC(180)
+    [CH2]CC([CH2])CC=CC(181)
+    C=CCCCC=CC(182)
+    [CH2][CH]C(C)C([CH2])C[CH2](183)
+    [CH2][CH]C(C)C[CH]C[CH2](184)
+    [CH2]CC([CH2])C([CH2])[CH]C(185)
+    [CH2]C[CH]CC([CH2])[CH]C(186)
+    [CH2]CC1CC([CH2])C1C(187)
+    [CH2]CC1CC(C)C1[CH2](188)
+    C=CCCC[CH][CH]C(189)
+    [CH2]C[CH]CC(C)C=C(190)
+    [CH2]CC([CH2])C(C)C=C(191)
+    C=CCCC(C)C=C(192)
+    [CH2]CC([CH2])C[CH][CH]C(193)
+    [CH2]C[CH]CC[CH][CH]C(194)
+    [CH2]CC1CCC1[CH]C(195)
+    [CH2]CC1CC([CH]C)C1(196)
+    [CH2]C([CH]C)CC1CC1(197)
+    [CH2][CH]C(C)CC1CC1(198)
+    CC=CCCC1CC1(199)
+    C[CH][CH]CCC1CC1(200)
+    C=CC(C)CC1CC1(201)
+    [CH2]C([CH]C)C=CC(202)
+    [CH2][CH]C(C)C=CC(203)
+    CC=CCC=CC(204)
+    C[CH][CH]CC=CC(205)
+    C=CC(C)C=CC(206)
+    C=C[CH]CCC=CC(207)
+    [CH2]C(C=C)CC=CC(208)
+    [CH2][CH]C(C)C([CH2])C=C(209)
+    [CH2][CH]C(C)C[CH]C=C(210)
+    [CH2]C([CH]C)C([CH2])C=C(211)
+    [CH2]C([CH]C)C[CH]C=C(212)
+    [CH2]C1CC=CCC1C(213)
+    [CH2]C1CC(C=C)C1C(214)
+    [CH2]C1C(C)CC1C=C(215)
+    C=C[CH]CC(C)C=C(216)
+    [CH2]C(C=C)C(C)C=C(217)
+    [CH2]C(C=C)C[CH][CH]C(218)
+    C=C[CH]CC[CH][CH]C(219)
+    C[CH]C1CC=CCC1(220)
+    C=CC1CCC1[CH]C(221)
+    C=CC1CC([CH]C)C1(222)
+    [CH2]C([CH]C)CC=CC(223)
+    [CH2][CH]C(C)CC=CC(224)
+    CC=CCCC=CC(225)
+    [CH2][CH]C(C)C([CH2])[CH]C(226)
+    [CH2][CH]C(C)C(C)[CH][CH2](227)
+    [CH2]C([CH]C)C([CH2])[CH]C(228)
+    [CH2]C([CH]C)C(C)C=C(229)
+    [CH2][CH]C(C)C(C)C=C(230)
+    C[CH][CH]CCC=CC(231)
+    C=CC(C)CC=CC(232)
+    [CH2][CH]C(C)C[CH][CH]C(233)
+    [CH2]C([CH]C)C[CH][CH]C(234)
+    [CH2]C1CC([CH]C)C1C(235)
+    [CH2]C1C(C)CC1[CH]C(236)
+    C=CC(C)C[CH][CH]C(237)
+    C=CC(C)C(C)C=C(238)
+    C[CH][CH]CC[CH][CH]C(239)
+    C[CH]C1CC([CH]C)C1(240)
+    C[CH]C1CCC1[CH]C(241)
+Moved 6 reactions from edge to core
+    C=C[CH]C(43) <=> [CH2]CC=C(29)
+    C[CH2](3) + C=C[CH]C(43) <=> ethane(1) + C=CC=C(31)
+    [CH3](2) + C=C[CH]C(43) <=> C(6) + C=CC=C(31)
+    [H](4) + C=CC=C(31) <=> C=C[CH]C(43)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=C(8) + C=CC=C(31)
+    [H](4) + C=C[CH]C(43) <=> C=CC=C(31) + [H][H](12)
+Added 0 new core reactions
+Created 258 new edge reactions
+    [H](4) + C=C=CC(142) <=> C=C[CH]C(43)
+    [H](4) + [CH2][C]=CC(143) <=> C=C[CH]C(43)
+    [CH3](2) + [CH]=C[CH2](92) <=> C=C[CH]C(43)
+    [H](4) + [CH2][CH]C=C(41) <=> C=C[CH]C(43)
+    [H](4) + [CH2]C=[C]C(144) <=> C=C[CH]C(43)
+    C=C[CH]C(43) <=> CC1[CH]C1(78)
+    [CH2](5) + [CH2]C=C(76) <=> C=C[CH]C(43)
+    C[C]=CC(145) <=> C=C[CH]C(43)
+    [H](4) + [CH]=C[CH]C(108) <=> C=C[CH]C(43)
+    C=[C]CC(44) <=> C=C[CH]C(43)
+    [CH]=CCC(34) <=> C=C[CH]C(43)
+    C[CH2](3) + [CH2]C[CH]C(46) <=> ethane(1) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + C[CH2](3) <=> ethane(1) + C=C[CH]C(43)
+    C[CH2](3) + CC=CC(96) <=> ethane(1) + C=C[CH]C(43)
+    C[CH][CH]C(147) + C[CH2](3) <=> ethane(1) + C=C[CH]C(43)
+    C[CH2](3) + C=CCC(28) <=> ethane(1) + C=C[CH]C(43)
+    [CH3](2) + C=C[CH]C(43) <=> C(6) + C=C=CC(142)
+    [CH2]C[CH]C(46) + [CH2](7) <=> [CH3](2) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH2](7) <=> [CH3](2) + C=C[CH]C(43)
+    [CH3](2) + C=C[CH]C(43) <=> [CH2]C(C)[CH]C(148)
+    [CH3](2) + C=C[CH]C(43) <=> [CH2][CH]C(C)C(149)
+    [CH3](2) + C=C[CH]C(43) <=> C(6) + [CH2]C=[C]C(144)
+    [CH2](7) + CC=CC(96) <=> [CH3](2) + C=C[CH]C(43)
+    [CH3](2) + C=C[CH]C(43) <=> CC=CCC(97)
+    C[CH][CH]C(147) + [CH2](7) <=> [CH3](2) + C=C[CH]C(43)
+    [CH3](2) + C=C[CH]C(43) <=> C[CH][CH]CC(150)
+    C(6) + [CH]=C[CH]C(108) <=> [CH3](2) + C=C[CH]C(43)
+    C=CCC(28) + [CH2](7) <=> [CH3](2) + C=C[CH]C(43)
+    [CH3](2) + C=C[CH]C(43) <=> C=CC(C)C(151)
+    C[CH2](3) + C=C[CH]C(43) <=> C=C(8) + CC=CC(96)
+    C[CH2](3) + C=C[CH]C(43) <=> ethane(1) + C=C=CC(142)
+    [CH2][CH2](9) + [CH2]C[CH]C(46) <=> C[CH2](3) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH2][CH2](9) <=> C[CH2](3) + C=C[CH]C(43)
+    C[CH2](3) + C=C[CH]C(43) <=> [CH2]C([CH]C)CC(152)
+    C[CH2](3) + C=C[CH]C(43) <=> [CH2][CH]C(C)CC(153)
+    ethane(1) + [CH2]C=[C]C(144) <=> C[CH2](3) + C=C[CH]C(43)
+    C[CH2](3) + C=C[CH]C(43) <=> CC=CCCC(99)
+    C[CH2](3) + C=C[CH]C(43) <=> C=C(8) + C=CCC(28)
+    C[CH][CH]C(147) + [CH2][CH2](9) <=> C[CH2](3) + C=C[CH]C(43)
+    C[CH2](3) + C=C[CH]C(43) <=> C[CH][CH]CCC(154)
+    ethane(1) + [CH]=C[CH]C(108) <=> C[CH2](3) + C=C[CH]C(43)
+    C[CH2](3) + C=C[CH]C(43) <=> C=CC(C)CC(155)
+    [CH3](2) + [CH2]C[CH]C(46) <=> C(6) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH3](2) <=> C(6) + C=C[CH]C(43)
+    [CH3](2) + CC=CC(96) <=> C(6) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH3](2) <=> C(6) + C=C[CH]C(43)
+    C(6) + C=C[CH]C(43) <=> [CH3](2) + C=CCC(28)
+    [H](4) + C=C[CH]C(43) <=> C=C=CC(142) + [H][H](12)
+    [H](4) + C=C[CH]C(43) <=> [CH2]C[CH]C(46)
+    [H](4) + C=C[CH]C(43) <=> [CH2][CH]CC(146)
+    [H](4) + C=C[CH]C(43) <=> [H][H](12) + [CH2]C=[C]C(144)
+    [H](4) + C=C[CH]C(43) <=> CC=CC(96)
+    [H](4) + C=C[CH]C(43) <=> C[CH][CH]C(147)
+    [H][H](12) + [CH]=C[CH]C(108) <=> [H](4) + C=C[CH]C(43)
+    [H](4) + C=C[CH]C(43) <=> C=CCC(28)
+    C[CH2](3) + [CH2][CH]C=C(41) <=> C=C(8) + C=C[CH]C(43)
+    [CH]=C(13) + [CH2]C[CH]C(46) <=> C=C(8) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH]=C(13) <=> C=C(8) + C=C[CH]C(43)
+    C=C(8) + C=C[CH]C(43) <=> [CH2]CCC=CC(156)
+    [CH]=C(13) + CC=CC(96) <=> C=C(8) + C=C[CH]C(43)
+    [CH2][CH]C(C)C[CH2](157) <=> C=C(8) + C=C[CH]C(43)
+    [CH2]CC([CH2])[CH]C(158) <=> C=C(8) + C=C[CH]C(43)
+    C=C(8) + C=C[CH]C(43) <=> [CH2]C1CCC1C(159)
+    C[CH2](3) + [CH]=C[CH]C(108) <=> C=C(8) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH]=C(13) <=> C=C(8) + C=C[CH]C(43)
+    C=C(8) + C=C[CH]C(43) <=> [CH2]CC(C)C=C(160)
+    C=CCC(28) + [CH]=C(13) <=> C=C(8) + C=C[CH]C(43)
+    [CH2]CC[CH][CH]C(161) <=> C=C(8) + C=C[CH]C(43)
+    C=C(8) + C=C[CH]C(43) <=> C[CH]C1CCC1(162)
+    [H](4) + [CH2]C[CH]C(46) <=> [H][H](12) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [H](4) <=> [H][H](12) + C=C[CH]C(43)
+    [H](4) + CC=CC(96) <=> [H][H](12) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [H](4) <=> [H][H](12) + C=C[CH]C(43)
+    [H][H](12) + C=C[CH]C(43) <=> [H](4) + C=CCC(28)
+    [CH2]CC(14) + C=C[CH]C(43) <=> C=CC(18) + CC=CC(96)
+    [CH2]CC(14) + C=C[CH]C(43) <=> C=C=CC(142) + CCC(10)
+    [CH2][CH]C(19) + [CH2]C[CH]C(46) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2]C[CH2](20) + [CH2]C[CH]C(46) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH2][CH]C(19) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH2]C[CH2](20) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2]CC(14) + C=C[CH]C(43) <=> [CH2]C([CH]C)CCC(163)
+    [CH2]CC(14) + C=C[CH]C(43) <=> [CH2][CH]C(C)CCC(164)
+    [CH2]CC(14) + C=C[CH]C(43) <=> CCC(10) + [CH2]C=[C]C(144)
+    [CH2]C[CH2](20) + CC=CC(96) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2]CC(14) + C=C[CH]C(43) <=> CC=CCCCC(165)
+    [CH2]CC(14) + C=C[CH]C(43) <=> C=CCC(28) + C=CC(18)
+    [CH2]CC(14) + C=C[CH]C(43) <=> C=CC=C(31) + CCC(10)
+    C[CH][CH]C(147) + [CH2][CH]C(19) <=> [CH2]CC(14) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH2]C[CH2](20) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2]CC(14) + C=C[CH]C(43) <=> C[CH][CH]CCCC(166)
+    CCC(10) + [CH]=C[CH]C(108) <=> [CH2]CC(14) + C=C[CH]C(43)
+    [CH2]CC(14) + C=C[CH]C(43) <=> [CH2]C[CH2](20) + C=CCC(28)
+    [CH2]CC(14) + C=C[CH]C(43) <=> C=CC(C)CCC(167)
+    [CH]=C(13) + C=C[CH]C(43) <=> C#C(25) + CC=CC(96)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=C(8) + C=C=CC(142)
+    [C]=C(27) + [CH2]C[CH]C(46) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH]=[CH](26) + [CH2]C[CH]C(46) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [C]=C(27) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH]=[CH](26) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH]=C(13) + C=C[CH]C(43) <=> [CH2]C([CH]C)C=C(168)
+    [CH]=C(13) + C=C[CH]C(43) <=> [CH2][CH]C(C)C=C(169)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=C(8) + [CH2]C=[C]C(144)
+    [CH]=[CH](26) + CC=CC(96) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH]=C(13) + C=C[CH]C(43) <=> [C]=C(27) + CC=CC(96)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=CCC=CC(170)
+    [CH]=C(13) + C=C[CH]C(43) <=> C#C(25) + C=CCC(28)
+    C[CH][CH]C(147) + [C]=C(27) <=> [CH]=C(13) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH]=[CH](26) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=CC[CH][CH]C(171)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=C(8) + [CH]=C[CH]C(108)
+    C=CCC(28) + [CH]=[CH](26) <=> [CH]=C(13) + C=C[CH]C(43)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=CCC(28) + [C]=C(27)
+    [CH]=C(13) + C=C[CH]C(43) <=> C=CC(C)C=C(172)
+    [CH]=C(13) + [CH2][CH]C=C(41) <=> C#C(25) + C=C[CH]C(43)
+    C#C(25) + C=C[CH]C(43) <=> [CH]=CCC=CC(173)
+    [C]#C(32) + CC=CC(96) <=> C#C(25) + C=C[CH]C(43)
+    [CH]=CC(C)[CH][CH2](174) <=> C#C(25) + C=C[CH]C(43)
+    [CH]=CC([CH2])[CH]C(175) <=> C#C(25) + C=C[CH]C(43)
+    [CH]=C(13) + [CH]=C[CH]C(108) <=> C#C(25) + C=C[CH]C(43)
+    C#C(25) + C=C[CH]C(43) <=> [CH]=CC(C)C=C(176)
+    C=CCC(28) + [C]#C(32) <=> C#C(25) + C=C[CH]C(43)
+    [CH]=CC[CH][CH]C(177) <=> C#C(25) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CC=C(31) + CC=CC(96)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=C=CC(142) + C=CCC(28)
+    [CH2]C[CH]C(46) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC[CH2](16) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]C[CH]C(46) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]C([CH]C)CCC=C(178)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2][CH]C(C)CCC=C(179)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]C[CH]CCC=CC(180)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]CC([CH2])CC=CC(181)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CCC(28) + [CH2]C=[C]C(144)
+    [CH]=CC[CH2](35) + CC=CC(96) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]C[C]=C(40) + CC=CC(96) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CCCCC=CC(182)
+    [CH2][CH]C(C)C([CH2])C[CH2](183) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2][CH]C(C)C[CH]C[CH2](184) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC([CH2])C([CH2])[CH]C(185) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]C[CH]CC([CH2])[CH]C(186) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]CC1CC([CH2])C1C(187)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]CC1CC(C)C1[CH2](188)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CC=C(31) + C=CCC(28)
+    [CH2]C[CH]C(46) + [CH]=C[CH]C(108) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC[CH2](16) + [CH]=C[CH]C(108) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH2][CH]C=C(41) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CCCC[CH][CH]C(189)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]C[CH]CC(C)C=C(190)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]CC([CH2])C(C)C=C(191)
+    C=CCC(28) + [CH]=C[CH]C(108) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    C=CCC(28) + [CH]=CC[CH2](35) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CCC(28) + [CH2]C[C]=C(40)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> C=CCCC(C)C=C(192)
+    [CH2]CC([CH2])C[CH][CH]C(193) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]C[CH]CC[CH][CH]C(194) <=> [CH2]CC=C(29) + C=C[CH]C(43)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]CC1CCC1[CH]C(195)
+    [CH2]CC=C(29) + C=C[CH]C(43) <=> [CH2]CC1CC([CH]C)C1(196)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=C1CC1(73) + CC=CC(96)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=C=CC(142) + CC1CC1(80)
+    [CH2]C[CH]C(46) + [CH2]C1[CH]C1(74) <=> [CH2]C1CC1(39) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH2]C1[CH]C1(74) <=> [CH2]C1CC1(39) + C=C[CH]C(43)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> [CH2]C([CH]C)CC1CC1(197)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> [CH2][CH]C(C)CC1CC1(198)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> [CH2]C=[C]C(144) + CC1CC1(80)
+    CC=CC(96) + [CH2]C1[CH]C1(74) <=> [CH2]C1CC1(39) + C=C[CH]C(43)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> CC=CCCC1CC1(199)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=CCC(28) + C=C1CC1(73)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=CC=C(31) + CC1CC1(80)
+    C[CH][CH]C(147) + [CH2]C1[CH]C1(74) <=> [CH2]C1CC1(39) + C=C[CH]C(43)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C[CH][CH]CCC1CC1(200)
+    [CH]=C[CH]C(108) + CC1CC1(80) <=> [CH2]C1CC1(39) + C=C[CH]C(43)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=CCC(28) + [CH2]C1[CH]C1(74)
+    [CH2]C1CC1(39) + C=C[CH]C(43) <=> C=CC(C)CC1CC1(201)
+    [CH]=CC(33) + C=C[CH]C(43) <=> CC=CC(96) + C#CC(91)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=C=CC(142) + C=CC(18)
+    [CH2]C[CH]C(46) + [C]=CC(95) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH2]C[CH]C(46) + [CH]=C[CH2](92) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [C]=CC(95) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH]=C[CH2](92) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH]=CC(33) + C=C[CH]C(43) <=> [CH2]C([CH]C)C=CC(202)
+    [CH]=CC(33) + C=C[CH]C(43) <=> [CH2][CH]C(C)C=CC(203)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CC(18) + [CH2]C=[C]C(144)
+    [CH]=CC(33) + C=C[CH]C(43) <=> CC=CC(96) + [CH]=C[CH2](92)
+    CC=CC(96) + [CH]=[C]C(93) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH]=CC(33) + C=C[CH]C(43) <=> CC=CC(96) + [C]=CC(95)
+    [CH]=CC(33) + C=C[CH]C(43) <=> CC=CCC=CC(204)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CCC(28) + C#CC(91)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CC=C(31) + C=CC(18)
+    C[CH][CH]C(147) + [C]=CC(95) <=> [CH]=CC(33) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH]=C[CH2](92) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C[CH][CH]CC=CC(205)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CC(18) + [CH]=C[CH]C(108)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CCC(28) + [CH]=C[CH2](92)
+    C=CCC(28) + [CH]=[C]C(93) <=> [CH]=CC(33) + C=C[CH]C(43)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CCC(28) + [C]=CC(95)
+    [CH]=CC(33) + C=C[CH]C(43) <=> C=CC(C)C=CC(206)
+    [CH2][CH]C=C(41) + C=C[CH]C(43) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2]CC=C(29) + [CH2][CH]C=C(41) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2]C[CH]C(46) + [CH]=CC=C(37) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH]=CC=C(37) <=> C=CC=C(31) + C=C[CH]C(43)
+    C=CC=C(31) + C=C[CH]C(43) <=> C=C[CH]CCC=CC(207)
+    C=CC=C(31) + C=C[CH]C(43) <=> [CH2]C(C=C)CC=CC(208)
+    [CH]=CC=C(37) + CC=CC(96) <=> C=CC=C(31) + C=C[CH]C(43)
+    CC=CC(96) + C=[C]C=C(107) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2][CH]C(C)C([CH2])C=C(209) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2][CH]C(C)C[CH]C=C(210) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2]C([CH]C)C([CH2])C=C(211) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2]C([CH]C)C[CH]C=C(212) <=> C=CC=C(31) + C=C[CH]C(43)
+    C=CC=C(31) + C=C[CH]C(43) <=> [CH2]C1CC=CCC1C(213)
+    C=CC=C(31) + C=C[CH]C(43) <=> [CH2]C1CC(C=C)C1C(214)
+    C=CC=C(31) + C=C[CH]C(43) <=> [CH2]C1C(C)CC1C=C(215)
+    C=C[CH]C(43) + [CH]=C[CH]C(108) <=> C=CC=C(31) + C=C[CH]C(43)
+    [CH2]CC=C(29) + [CH]=C[CH]C(108) <=> C=CC=C(31) + C=C[CH]C(43)
+    C[CH][CH]C(147) + [CH]=CC=C(37) <=> C=CC=C(31) + C=C[CH]C(43)
+    C=CC=C(31) + C=C[CH]C(43) <=> C=C[CH]CC(C)C=C(216)
+    C=CC=C(31) + C=C[CH]C(43) <=> [CH2]C(C=C)C(C)C=C(217)
+    C=CCC(28) + [CH]=CC=C(37) <=> C=CC=C(31) + C=C[CH]C(43)
+    C=CC=C(31) + C=C[CH]C(43) <=> C=CCC(28) + C=[C]C=C(107)
+    [CH2]C(C=C)C[CH][CH]C(218) <=> C=CC=C(31) + C=C[CH]C(43)
+    C=C[CH]CC[CH][CH]C(219) <=> C=CC=C(31) + C=C[CH]C(43)
+    C=CC=C(31) + C=C[CH]C(43) <=> C[CH]C1CC=CCC1(220)
+    C=CC=C(31) + C=C[CH]C(43) <=> C=CC1CCC1[CH]C(221)
+    C=CC=C(31) + C=C[CH]C(43) <=> C=CC1CC([CH]C)C1(222)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=C=CC(142) + CC=CC(96)
+    [CH2][CH]CC(146) + [CH2][CH]C=C(41) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    [CH2]C[CH]C(46) + [CH2][CH]C=C(41) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2]C([CH]C)CC=CC(223)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2][CH]C(C)CC=CC(224)
+    CC=CC(96) + [CH2]C=[C]C(144) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> CC=CCCC=CC(225)
+    [CH2][CH]C(C)C([CH2])[CH]C(226) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    [CH2][CH]C(C)C(C)[CH][CH2](227) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    [CH2]C([CH]C)C([CH2])[CH]C(228) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=CC=C(31) + CC=CC(96)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=C=CC(142) + C=CCC(28)
+    C[CH][CH]C(147) + [CH2][CH]C=C(41) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    [CH2]C[CH]C(46) + [CH]=C[CH]C(108) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    [CH2][CH]CC(146) + [CH]=C[CH]C(108) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2]C([CH]C)C(C)C=C(229)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2][CH]C(C)C(C)C=C(230)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C[CH][CH]CCC=CC(231)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=CCC(28) + [CH2]C=[C]C(144)
+    CC=CC(96) + [CH]=C[CH]C(108) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=CC(C)CC=CC(232)
+    [CH2][CH]C(C)C[CH][CH]C(233) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    [CH2]C([CH]C)C[CH][CH]C(234) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2]C1CC([CH]C)C1C(235)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> [CH2]C1C(C)CC1[CH]C(236)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=CC=C(31) + C=CCC(28)
+    C[CH][CH]C(147) + [CH]=C[CH]C(108) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=CC(C)C[CH][CH]C(237)
+    C=CCC(28) + [CH]=C[CH]C(108) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C=CC(C)C(C)C=C(238)
+    C[CH][CH]CC[CH][CH]C(239) <=> C=C[CH]C(43) + C=C[CH]C(43)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C[CH]C1CC([CH]C)C1(240)
+    C=C[CH]C(43) + C=C[CH]C(43) <=> C[CH]C1CCC1[CH]C(241)
+
+After model enlargement:
+    The model core has 19 species and 37 reactions
+    The model edge has 226 species and 639 reactions
+
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 37 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 37 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 676 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 676 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:51
+    Memory used: 133.29 MB
+
+Conducting simulation of reaction system 1...
+At time 9.3708e-04 s, reached target termination conversion: 0.900000 of ethane(1)
+    ethane(1) conversion: 0.9007    
+
+Saving current model core to HTML file...
+Saving current model edge to HTML file...
+Saving current model core to Chemkin file...
+Chemkin file contains 37 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 37 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 676 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 676 reactions.
+Saving restart file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:57
+    Memory used: 139.01 MB
+
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:57
+    Memory used: 139.01 MB
+
+MODEL GENERATION COMPLETED
+
+The final model core has 19 species and 37 reactions
+The final model edge has 226 species and 639 reactions
+
+RMG execution terminated at Fri Jan 22 20:09:46 2016
