@@ -2,6 +2,8 @@
 
 target=$1
 
+if [ -z ${TRAVIS_BUILD_DIR+x} ]; then TRAVIS_BUILD_DIR=$PWD; fi
+
 echo 'Travis Build Dir: '$TRAVIS_BUILD_DIR
 
 SOURCE_FOLDER=$TRAVIS_BUILD_DIR/testing/$target/chemkin/
