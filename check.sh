@@ -28,10 +28,6 @@ cat $target.edge
 
 echo 'Execution time, Tested:'
 grep "Execution time" $TRAVIS_BUILD_DIR/testing/$target/RMG.log | tail -1
-echo 'Execution time, Original:'
-grep "Execution time" $ORIGINAL/RMG.log | tail -1
 
 echo 'Memory used, Tested:'
 grep "Memory used" $TRAVIS_BUILD_DIR/testing/$target/RMG.log | tail -1
-echo 'Memory used, Original:'
-grep "Memory used" $ORIGINAL/RMG.log | tail -1

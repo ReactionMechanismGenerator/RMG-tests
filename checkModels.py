@@ -143,11 +143,18 @@ def checkSpecies(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig):
             if spec1.thermo and spec2.thermo:
                 if not spec1.thermo.isIdenticalTo(spec2.thermo):
                     error = True
-                    logger.error('Non-identical thermo for tested {} and original species {}.'
-                        .format(spec1.label, spec2.label)
-                    )
+                    logger.error('')
+                    logger.error('Non-identical thermo!')
+                    logger.error('tested:\t{}'.format(spec1.label))
+                    logger.error('original:\t{}'.format(spec2.label))
+                    logger.error("{0:10}|{1:10}|{2:10}|{3:10}|{4:10}|{5:10}|{6:10}|{7:10}|{8:10}"
+                        .format('Hf(300K)','S(300K)','Cp(300K)','Cp(400K)','Cp(500K)','Cp(600K)','Cp(800K)','Cp(1000K)','Cp(1500K)')
+                        )
                     printThermo(spec1)
                     printThermo(spec2)
+
+                    printSpeciesComments(spec1)
+                    printSpeciesComments(spec2)
 
     return error
 
@@ -182,13 +189,19 @@ def checkReactions(commonReactions, uniqueReactionsTest, uniqueReactionsOrig):
             if rxn1.kinetics and rxn2.kinetics:
                 if not rxn1.kinetics.isIdenticalTo(rxn2.kinetics):
                     error = True
-
-                    logger.error('Non-identical kinetics for tested {} and original {} reaction.'
-                        .format(rxn1, rxn2)
+                    logger.error('')
+                    logger.error('Non-identical kinetics!')
+                    logger.error('tested:\t{}'.format(rxn1))
+                    logger.error('original:\t{}'.format(rxn2))
+                    
+                    logger.error("{0:7}|{1:7}|{2:7}|{3:7}|{4:7}|{5:7}|{6:7}|{7:7}|{8:7}"
+                        .format('k(1bar)','300K','400K','500K','600K','800K','1000K','1500K','2000K')
                         )
+                    printRates(rxn1)
+                    printRates(rxn2)
 
-                    printKinetics(rxn1)
-                    printKinetics(rxn2)
+                    printReactionComments(rxn1)
+                    printReactionComments(rxn2)
 
     return error
 
@@ -212,12 +225,13 @@ def printSpecies(spcs):
             'spc: {}'.format(spc)
             )        
 
-def printKinetics(rxn):
+def printRates(rxn):
     """
 
     """
-    logger.error('        k(300K,1bar) k(400K,1bar) k(500K,1bar) k(600K,1bar) k(800K,1bar) k(1000K,1bar) k(1500K,1bar) k(2000K,1bar) ')
-    logger.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f}'.format(
+    logger.error("{0:7}|{1:7.2f}|{2:7.2f}|{3:7.2f}|{4:7.2f}|{5:7.2f}|{6:7.2f}|{7:7.2f}|{8:7.2f}"
+        .format(
+        'k(T): ',
         math.log10(rxn.kinetics.getRateCoefficient(300, 1e5)),
         math.log10(rxn.kinetics.getRateCoefficient(400, 1e5)),
         math.log10(rxn.kinetics.getRateCoefficient(500, 1e5)),
@@ -232,8 +246,8 @@ def printThermo(spec):
     """
 
     """
-    logger.error('        Hf(300K) S(300K) Cp(300K) Cp(400K) Cp(500K) Cp(600K) Cp(800K) Cp(1000K) Cp(1500K)')
-    logger.error('        {0:7.2f} {1:7.2f} {2:7.2f} {3:7.2f} {4:7.2f} {5:7.2f} {6:7.2f} {7:7.2f} {8:7.2f}'.format(
+    logger.error("{0:10.2f}|{1:10.2f}|{2:10.2f}|{3:10.2f}|{4:10.2f}|{5:10.2f}|{6:10.2f}|{7:10.2f}|{8:10.2f}"
+        .format(
         spec.thermo.getEnthalpy(300) / 4184.,
         spec.thermo.getEntropy(300) / 4.184,
         spec.thermo.getHeatCapacity(300) / 4.184,
@@ -245,6 +259,12 @@ def printThermo(spec):
         spec.thermo.getHeatCapacity(1500) / 4.184,
     ))
 
+
+def printReactionComments(rxn):
+    logger.error('kinetics: {}'.format(rxn.kinetics.comment))
+
+def printSpeciesComments(spc):
+    logger.error('thermo: {}'.format(spc.thermo.comment))
 
 def initializeLog(verbose, log_file_name='checkModels.log'):
     """
