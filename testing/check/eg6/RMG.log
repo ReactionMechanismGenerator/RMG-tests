@@ -1,0 +1,2661 @@
+Global RMG Settings:
+   database.directory   = RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Fri Jan 22 20:16:20 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.1                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+The current git HEAD is:
+	08e397629757546f46d10d0bfabf371bf981a20a
+	Mon Oct 19 10:55:21 2015 -0400
+
+Reading input file "RMG-Py/testing/ethane-oxidation/input.py"...
+Warning: Initial mole fractions do not sum to one; renormalizing.
+
+Loading thermodynamics library from primaryThermoLibrary.py in RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in RMG-database/input/transport/libraries...
+Consistency checking of multiplicity of molecules with more than 2 unpaired electrons is not implemented yet!
+Loading transport library from PrimaryTransportLibrary.py in RMG-database/input/transport/libraries...
+Loading transport group database from RMG-database/input/transport/groups...
+Loading default kinetics families from RMG-database/input/kinetics/families
+Loading frequencies group database from RMG-database/input/statmech/groups...
+Loading Platts additivity group database from RMG-database/input/solvation/groups...
+Adding rate rules from training set in kinetics families...
+Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
+Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Filling in rate rules in kinetics families by averaging...
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for Ar in thermo library: primarythermolibrary
+Found thermo for He in thermo library: primarythermolibrary
+Found thermo for Ne in thermo library: primarythermolibrary
+Found thermo for N2 in thermo library: primarythermolibrary
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 1 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 2 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 3 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 4 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+Adding species ethane(1) to model core
+Generating thermodynamics for new species...
+Found thermo for [H] in thermo library: primarythermolibrary
+Found thermo for [CH2] in thermo library: primarythermolibrary
+Found thermo for C in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+For reaction [CH2](6) + C(7) <=> ethane(1) Ea raised from -1.5 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: For <Molecule "CC">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (6 frequencies) to compensate.
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "CC">.
+Warning: Statmech node <Entry index=-1 label="C_R1"> and all its parents have data=None
+Warning: For <Molecule "C[CH2]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (2 frequencies) to compensate.
+Warning: Statmech node <Entry index=-1 label="C_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="C_R0"> and all its parents have data=None
+========================================================================
+1 network information
+---------------------
+Isomers:
+    ethane(1)                                            -96.7435 kJ/mol
+Reactant channels:
+Product channels:
+    [CH3](3) + [CH3](3)                                   270.763 kJ/mol
+    C[CH2](4) + [H](5)                                    320.331 kJ/mol
+    [CH2](6) + C(7)                                       334.656 kJ/mol
+Path reactions:
+    [CH3](3) + [CH3](3) <=> ethane(1)                     274.947 kJ/mol
+    C[CH2](4) + [H](5) <=> ethane(1)                      320.331 kJ/mol
+    [CH2](6) + C(7) <=> ethane(1)                         334.656 kJ/mol
+========================================================================
+
+Calculating densities of states for 1 network...
+Using 685 grains from -96.74 to 1334.18 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2](6) + C(7) <=> ethane(1)...
+Using 256 grains from -96.74 to 436.72 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 259 grains from -96.74 to 442.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 267 grains from -96.74 to 459.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 282 grains from -96.74 to 491.11 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 311 grains from -96.74 to 551.78 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 367 grains from -96.74 to 668.93 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 479 grains from -96.74 to 903.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 647 grains from -96.74 to 1254.69 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    ethane(1)
+Created 5 new edge species
+    [CH3](3)
+    C[CH2](4)
+    [H](5)
+    [CH2](6)
+    C(7)
+Added 0 new core reactions
+Created 3 new edge reactions
+    ethane(1) => [CH3](3) + [CH3](3)
+    ethane(1) => C[CH2](4) + [H](5)
+    ethane(1) => [CH2](6) + C(7)
+
+After model enlargement:
+    The model core has 5 species and 0 reactions
+    The model edge has 5 species and 3 reactions
+
+
+Adding species O2(2) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 0 modified unimolecular reaction networks...
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    O2(2)
+Created 1 new edge species
+    [O]O(8)
+Added 0 new core reactions
+Created 1 new edge reactions
+    C[CH2](4) + [O]O(8) <=> ethane(1) + O2(2)
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 6 species and 4 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 0 reactions.
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species [CH3](3) exceeded the minimum rate for moving to model core
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [CH3](3) rate: 6.2688e+03 mol/m^3*s
+    PDepNetwork #1 leak rate: 0.0000e+00 mol/m^3*s
+    O2(2) conversion: 0         
+At time 1.0000e-15 s, species [CH3](3) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [CH3](3) rate: 6.2688e+03 mol/m^3*s
+    PDepNetwork #1 leak rate: 0.0000e+00 mol/m^3*s
+    O2(2) conversion: 0         
+
+
+Adding species [CH3](3) to model core
+Exploring isomer ethane(1) in pressure-dependent network #3
+Generating thermodynamics for new species...
+Found thermo for [CH2] in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+3 network information
+---------------------
+Isomers:
+    ethane(1)                                            -96.7435 kJ/mol
+Reactant channels:
+    [CH3](3) + [CH3](3)                                   270.763 kJ/mol
+Product channels:
+    C[CH2](4) + [H](5)                                    320.331 kJ/mol
+    [CH2](6) + C(7)                                       334.656 kJ/mol
+Path reactions:
+    [CH3](3) + [CH3](3) <=> ethane(1)                     274.947 kJ/mol
+    C[CH2](4) + [H](5) <=> ethane(1)                      320.331 kJ/mol
+    [CH2](6) + C(7) <=> ethane(1)                         334.656 kJ/mol
+========================================================================
+
+Calculating densities of states for 3 network...
+Using 685 grains from -96.74 to 1334.18 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2](6) + C(7) <=> ethane(1)...
+Using 256 grains from -96.74 to 436.72 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 259 grains from -96.74 to 442.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 267 grains from -96.74 to 459.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 282 grains from -96.74 to 491.11 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 311 grains from -96.74 to 551.78 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 367 grains from -96.74 to 668.93 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 479 grains from -96.74 to 903.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 647 grains from -96.74 to 1254.69 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH3](3)
+Created 2 new edge species
+    [CH2](9)
+    CO[O](10)
+Moved 1 reactions from edge to core
+    [CH3](3) + [CH3](3) <=> ethane(1)
+Added 0 new core reactions
+Created 5 new edge reactions
+    ethane(1) + [CH3](3) <=> C[CH2](4) + C(7)
+    [O]O(8) + [CH2](9) <=> O2(2) + [CH3](3)
+    C(7) + [CH2](9) <=> [CH3](3) + [CH3](3)
+    [CH3](3) + [CH3](3) => C[CH2](4) + [H](5)
+    [CH3](3) + [CH3](3) => [CH2](6) + C(7)
+
+After model enlargement:
+    The model core has 7 species and 1 reactions
+    The model edge has 7 species and 8 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:21
+    Memory used: 134.58 MB
+
+Conducting simulation of reaction system 1...
+At time 5.9985e-12 s, PDepNetwork #2 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1941e+04 mol/m^3*s
+    C[CH2](4) rate: 5.0826e+01 mol/m^3*s (0.004257)
+    PDepNetwork #2 leak rate: 6.2398e+03 mol/m^3*s (0.5226)
+    O2(2) conversion: 0         
+At time 5.9985e-12 s, PDepNetwork #2 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1941e+04 mol/m^3*s
+    C[CH2](4) rate: 5.0826e+01 mol/m^3*s (0.004257)
+    PDepNetwork #2 leak rate: 6.2398e+03 mol/m^3*s (0.5226)
+    O2(2) conversion: 0         
+
+
+Exploring isomer CO[O](10) in pressure-dependent network #2
+Generating thermodynamics for new species...
+Found thermo for [O] in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+For reaction [CH2](6) + [O]O(8) <=> CO[O](10) Ea raised from -5.1 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: For <Molecule "CO[O]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (1 frequencies) to compensate.
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: For <Molecule "[CH2]O[O]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (1 frequencies) to compensate.
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2]O[O]">.
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+========================================================================
+2 network information
+---------------------
+Isomers:
+    CO[O](10)                                              5.0596 kJ/mol
+Reactant channels:
+    O2(2) + [CH3](3)                                      126.755 kJ/mol
+Product channels:
+    [H](5) + [CH2]O[O](11)                                 412.61 kJ/mol
+    [CH2](6) + [O]O(8)                                    410.895 kJ/mol
+    [CH2]OO(12)                                            48.801 kJ/mol
+    C[O](13) + [O](14)                                    250.332 kJ/mol
+Path reactions:
+    CO[O](10) <=> O2(2) + [CH3](3)                        144.387 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> CO[O](10)                   412.61 kJ/mol
+    [CH2](6) + [O]O(8) <=> CO[O](10)                      410.895 kJ/mol
+    CO[O](10) <=> [CH2]OO(12)                             181.917 kJ/mol
+    C[O](13) + [O](14) <=> CO[O](10)                      250.332 kJ/mol
+========================================================================
+
+Calculating densities of states for 2 network...
+Using 691 grains from 5.06 to 1410.90 kJ/mol in steps of 2.04 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for C[O](13) + [O](14) <=> CO[O](10)...
+Using 250 grains from 5.06 to 513.25 kJ/mol in steps of 2.04 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 9.97253e-11
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.89626e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.6)
+Using 500 grains from 5.06 to 513.25 kJ/mol in steps of 1.02 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 250 grains from 5.06 to 520.57 kJ/mol in steps of 2.07 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 4.72244e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.78711e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.6)
+Using 500 grains from 5.06 to 520.57 kJ/mol in steps of 1.03 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 256 grains from 5.06 to 538.52 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.37871e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.81629e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 510 grains from 5.06 to 537.47 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 6.74307e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.78282e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.4)
+Using 1019 grains from 5.06 to 537.47 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.9971e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.76596e-10
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 271 grains from 5.06 to 569.90 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(470.374 K) = 0.17127
+Warning:       Actual kf(470.374 K) = 0.0907111
+Warning:     Expected Keq(470.374 K) = 8.44973e-07
+Warning:       Actual Keq(470.374 K) = 4.14409e-07
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 299 grains from 5.06 to 628.48 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(649.057 K) = 3372.74
+Warning:       Actual kf(649.057 K) = 1919.33
+Warning:     Expected Keq(649.057 K) = 0.00580955
+Warning:       Actual Keq(649.057 K) = 0.00158685
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 355 grains from 5.06 to 745.63 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1000.02 K) = 3.23618e+07
+Warning:       Actual kf(1000.02 K) = 1.99293e+07
+Warning:     Expected Keq(1000.02 K) = 18.1053
+Warning:       Actual Keq(1000.02 K) = 2.38471
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 468 grains from 5.06 to 982.02 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1706.11 K) = 3.80051e+10
+Warning:       Actual kf(1706.11 K) = 2.52982e+10
+Warning:     Expected Keq(1706.11 K) = 5955.86
+Warning:       Actual Keq(1706.11 K) = 334.777
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 635 grains from 5.06 to 1331.39 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(2761.25 K) = 1.82851e+12
+Warning:       Actual kf(2761.25 K) = 1.28808e+12
+Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:       Actual Keq(2761.25 K) = 2369.64
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 4 new edge species
+    [CH2]O[O](11)
+    [CH2]OO(12)
+    C[O](13)
+    [O](14)
+Added 0 new core reactions
+Created 5 new edge reactions
+    O2(2) + [CH3](3) => CO[O](10)
+    O2(2) + [CH3](3) => [H](5) + [CH2]O[O](11)
+    O2(2) + [CH3](3) => [CH2](6) + [O]O(8)
+    O2(2) + [CH3](3) => [CH2]OO(12)
+    O2(2) + [CH3](3) => C[O](13) + [O](14)
+
+After model enlargement:
+    The model core has 7 species and 1 reactions
+    The model edge has 11 species and 13 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:25
+    Memory used: 134.60 MB
+
+Conducting simulation of reaction system 1...
+At time 1.1858e-06 s, species CO[O](10) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.3098e+03 mol/m^3*s
+    CO[O](10) rate: 4.6774e+03 mol/m^3*s (0.5024)
+    PDepNetwork #2 leak rate: 2.3073e+03 mol/m^3*s (0.2478)
+    O2(2) conversion: 0         
+At time 1.1858e-06 s, species CO[O](10) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.3098e+03 mol/m^3*s
+    CO[O](10) rate: 4.6774e+03 mol/m^3*s (0.5024)
+    PDepNetwork #2 leak rate: 2.3073e+03 mol/m^3*s (0.2478)
+    O2(2) conversion: 0         
+
+
+Adding species CO[O](10) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+4 network information
+---------------------
+Isomers:
+    CO[O](10)                                              5.0596 kJ/mol
+Reactant channels:
+    O2(2) + [CH3](3)                                      126.755 kJ/mol
+Product channels:
+    [H](5) + [CH2]O[O](11)                                 412.61 kJ/mol
+    [CH2](6) + [O]O(8)                                    410.895 kJ/mol
+    [CH2]OO(12)                                            48.801 kJ/mol
+    C[O](13) + [O](14)                                    250.332 kJ/mol
+Path reactions:
+    CO[O](10) <=> O2(2) + [CH3](3)                        144.387 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> CO[O](10)                   412.61 kJ/mol
+    [CH2](6) + [O]O(8) <=> CO[O](10)                      410.895 kJ/mol
+    CO[O](10) <=> [CH2]OO(12)                             181.917 kJ/mol
+    C[O](13) + [O](14) <=> CO[O](10)                      250.332 kJ/mol
+========================================================================
+
+Calculating densities of states for 4 network...
+Using 691 grains from 5.06 to 1410.90 kJ/mol in steps of 2.04 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for C[O](13) + [O](14) <=> CO[O](10)...
+Using 250 grains from 5.06 to 513.25 kJ/mol in steps of 2.04 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 9.97253e-11
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.89626e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.6)
+Using 500 grains from 5.06 to 513.25 kJ/mol in steps of 1.02 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 250 grains from 5.06 to 520.57 kJ/mol in steps of 2.07 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 4.72244e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.78711e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.6)
+Using 500 grains from 5.06 to 520.57 kJ/mol in steps of 1.03 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 256 grains from 5.06 to 538.52 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.37871e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.81629e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 510 grains from 5.06 to 537.47 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 6.74307e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.78282e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.4)
+Using 1019 grains from 5.06 to 537.47 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.9971e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.76596e-10
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 271 grains from 5.06 to 569.90 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(470.374 K) = 0.17127
+Warning:       Actual kf(470.374 K) = 0.0907111
+Warning:     Expected Keq(470.374 K) = 8.44973e-07
+Warning:       Actual Keq(470.374 K) = 4.14409e-07
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 299 grains from 5.06 to 628.48 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(649.057 K) = 3372.74
+Warning:       Actual kf(649.057 K) = 1919.33
+Warning:     Expected Keq(649.057 K) = 0.00580955
+Warning:       Actual Keq(649.057 K) = 0.00158685
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 355 grains from 5.06 to 745.63 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1000.02 K) = 3.23618e+07
+Warning:       Actual kf(1000.02 K) = 1.99293e+07
+Warning:     Expected Keq(1000.02 K) = 18.1053
+Warning:       Actual Keq(1000.02 K) = 2.38471
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 468 grains from 5.06 to 982.02 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1706.11 K) = 3.80051e+10
+Warning:       Actual kf(1706.11 K) = 2.52982e+10
+Warning:     Expected Keq(1706.11 K) = 5955.86
+Warning:       Actual Keq(1706.11 K) = 334.777
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 635 grains from 5.06 to 1331.39 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(2761.25 K) = 1.82851e+12
+Warning:       Actual kf(2761.25 K) = 1.28808e+12
+Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:       Actual Keq(2761.25 K) = 2369.64
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    CO[O](10)
+Created 2 new edge species
+    COO(15)
+    COOC(16)
+Moved 1 reactions from edge to core
+    O2(2) + [CH3](3) <=> CO[O](10)
+Added 0 new core reactions
+Created 9 new edge reactions
+    C[CH2](4) + COO(15) <=> ethane(1) + CO[O](10)
+    [O]O(8) + [CH2]O[O](11) <=> O2(2) + CO[O](10)
+    [CH3](3) + CO[O](10) <=> C(7) + [CH2]O[O](11)
+    [CH2](9) + COO(15) <=> [CH3](3) + CO[O](10)
+    [CH2]O[O](11) + COO(15) <=> CO[O](10) + CO[O](10)
+    CO[O](10) => [H](5) + [CH2]O[O](11)
+    CO[O](10) => [CH2](6) + [O]O(8)
+    CO[O](10) => [CH2]OO(12)
+    CO[O](10) => C[O](13) + [O](14)
+
+After model enlargement:
+    The model core has 8 species and 2 reactions
+    The model edge has 12 species and 21 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 2 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:29
+    Memory used: 134.60 MB
+
+Conducting simulation of reaction system 1...
+At time 1.9126e-06 s, species [CH2]OO(12) exceeded the minimum rate for moving to model core
+    Characteristic rate: 6.5102e+03 mol/m^3*s
+    [CH2]OO(12) rate: 3.3140e+03 mol/m^3*s (0.5091)
+    PDepNetwork #2 leak rate: 3.3118e+03 mol/m^3*s (0.5087)
+    O2(2) conversion: 8.166e-06 
+At time 1.9126e-06 s, species [CH2]OO(12) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 6.5102e+03 mol/m^3*s
+    [CH2]OO(12) rate: 3.3140e+03 mol/m^3*s (0.5091)
+    PDepNetwork #2 leak rate: 3.3118e+03 mol/m^3*s (0.5087)
+    O2(2) conversion: 8.166e-06 
+
+
+Adding species [CH2]OO(12) to model core
+Exploring isomer [CH2]OO(12) in pressure-dependent network #2
+Exploring isomer [CH2]OO(12) in pressure-dependent network #4
+Exploring isomer CO[O](10) in pressure-dependent network #6
+Generating thermodynamics for new species...
+Found thermo for [OH] in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+For reaction [OH](18) + C=O(17) <=> [CH2]OO(12), Ea raised from 134.3 to 139.0 kJ/mol to match endothermicity of reaction.
+For reaction [CH2][O](19) + [OH](18) <=> [CH2]OO(12) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [CH3](3) + [CH2]OO(12) <=> CCOO(22) Ea raised from -0.3 to 0 kJ/mol.
+For reaction [CH2]OO(12) + [CH2]OO(12) <=> OOCCOO(24) Ea raised from -0.5 to 0 kJ/mol.
+Updating 3 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: For <Molecule "[CH2]OO">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 internal rotors to compensate.
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+========================================================================
+2 network information
+---------------------
+Isomers:
+    CO[O](10)                                              5.0596 kJ/mol
+    [CH2]OO(12)                                            48.801 kJ/mol
+Reactant channels:
+    O2(2) + [CH3](3)                                      126.755 kJ/mol
+Product channels:
+    [H](5) + [CH2]O[O](11)                                 412.61 kJ/mol
+    [CH2](6) + [O]O(8)                                    410.895 kJ/mol
+    C[O](13) + [O](14)                                    250.332 kJ/mol
+    [OH](18) + C=O(17)                                   -90.2145 kJ/mol
+    [CH2][O](19) + [OH](18)                               221.275 kJ/mol
+    [O]CO(20)                                            -176.509 kJ/mol
+Path reactions:
+    CO[O](10) <=> O2(2) + [CH3](3)                        144.387 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> CO[O](10)                   412.61 kJ/mol
+    [CH2](6) + [O]O(8) <=> CO[O](10)                      410.895 kJ/mol
+    CO[O](10) <=> [CH2]OO(12)                             181.917 kJ/mol
+    C[O](13) + [O](14) <=> CO[O](10)                      250.332 kJ/mol
+    [OH](18) + C=O(17) <=> [CH2]OO(12)                     48.801 kJ/mol
+    [CH2][O](19) + [OH](18) <=> [CH2]OO(12)               221.275 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> [CH2]OO(12)                413.238 kJ/mol
+    [CH2]OO(12) <=> [O]CO(20)                             143.778 kJ/mol
+========================================================================
+
+Calculating densities of states for 2 network...
+Using 760 grains from -176.51 to 1411.32 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]OO(12) <=> [O]CO(20)...
+Using 332 grains from -176.51 to 515.94 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.90073e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.69138e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 662 grains from -176.51 to 514.90 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.32611e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.7566e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1322 grains from -176.51 to 514.37 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 2.05752e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.78906e-14
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 335 grains from -176.51 to 522.22 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 8.43694e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.35548e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 669 grains from -176.51 to 522.22 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 5.9462e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.4945e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1336 grains from -176.51 to 521.70 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 9.08255e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.56346e-13
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 343 grains from -176.51 to 538.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.37871e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.73045e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 685 grains from -176.51 to 538.96 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 6.74307e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.76697e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.4)
+Using 1368 grains from -176.51 to 538.43 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.9971e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.78501e-10
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 358 grains from -176.51 to 570.34 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(470.374 K) = 0.17127
+Warning:       Actual kf(470.374 K) = 0.0907111
+Warning:     Expected Keq(470.374 K) = 8.44973e-07
+Warning:       Actual Keq(470.374 K) = 4.08181e-07
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 387 grains from -176.51 to 631.00 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(649.057 K) = 3372.74
+Warning:       Actual kf(649.057 K) = 1919.33
+Warning:     Expected Keq(649.057 K) = 0.00580955
+Warning:       Actual Keq(649.057 K) = 0.00159346
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 442 grains from -176.51 to 746.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1000.02 K) = 3.23618e+07
+Warning:       Actual kf(1000.02 K) = 1.99293e+07
+Warning:     Expected Keq(1000.02 K) = 18.1053
+Warning:       Actual Keq(1000.02 K) = 2.38804
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 555 grains from -176.51 to 982.46 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1706.11 K) = 3.80051e+10
+Warning:       Actual kf(1706.11 K) = 2.52982e+10
+Warning:     Expected Keq(1706.11 K) = 5955.86
+Warning:       Actual Keq(1706.11 K) = 330.253
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(2761.25 K) = 1.82851e+12
+Warning:       Actual kf(2761.25 K) = 1.28808e+12
+Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:       Actual Keq(2761.25 K) = 2317.42
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+========================================================================
+4 network information
+---------------------
+Isomers:
+    CO[O](10)                                              5.0596 kJ/mol
+    [CH2]OO(12)                                            48.801 kJ/mol
+Reactant channels:
+    O2(2) + [CH3](3)                                      126.755 kJ/mol
+Product channels:
+    [H](5) + [CH2]O[O](11)                                 412.61 kJ/mol
+    [CH2](6) + [O]O(8)                                    410.895 kJ/mol
+    C[O](13) + [O](14)                                    250.332 kJ/mol
+    [OH](18) + C=O(17)                                   -90.2145 kJ/mol
+    [CH2][O](19) + [OH](18)                               221.275 kJ/mol
+    [O]CO(20)                                            -176.509 kJ/mol
+Path reactions:
+    CO[O](10) <=> O2(2) + [CH3](3)                        144.387 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> CO[O](10)                   412.61 kJ/mol
+    [CH2](6) + [O]O(8) <=> CO[O](10)                      410.895 kJ/mol
+    CO[O](10) <=> [CH2]OO(12)                             181.917 kJ/mol
+    C[O](13) + [O](14) <=> CO[O](10)                      250.332 kJ/mol
+    [OH](18) + C=O(17) <=> [CH2]OO(12)                     48.801 kJ/mol
+    [CH2][O](19) + [OH](18) <=> [CH2]OO(12)               221.275 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> [CH2]OO(12)                413.238 kJ/mol
+    [CH2]OO(12) <=> [O]CO(20)                             143.778 kJ/mol
+========================================================================
+
+Calculating densities of states for 4 network...
+Using 760 grains from -176.51 to 1411.32 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]OO(12) <=> [O]CO(20)...
+Using 332 grains from -176.51 to 515.94 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.90073e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.69138e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 662 grains from -176.51 to 514.90 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.32611e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.7566e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1322 grains from -176.51 to 514.37 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 2.05752e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.78906e-14
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 335 grains from -176.51 to 522.22 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 8.43694e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.35548e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 669 grains from -176.51 to 522.22 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 5.9462e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.4945e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1336 grains from -176.51 to 521.70 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 9.08255e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.56346e-13
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 343 grains from -176.51 to 538.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.37871e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.73045e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 685 grains from -176.51 to 538.96 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 6.74307e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.76697e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.4)
+Using 1368 grains from -176.51 to 538.43 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.9971e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.78501e-10
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 358 grains from -176.51 to 570.34 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(470.374 K) = 0.17127
+Warning:       Actual kf(470.374 K) = 0.0907111
+Warning:     Expected Keq(470.374 K) = 8.44973e-07
+Warning:       Actual Keq(470.374 K) = 4.08181e-07
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 387 grains from -176.51 to 631.00 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(649.057 K) = 3372.74
+Warning:       Actual kf(649.057 K) = 1919.33
+Warning:     Expected Keq(649.057 K) = 0.00580955
+Warning:       Actual Keq(649.057 K) = 0.00159346
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 442 grains from -176.51 to 746.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1000.02 K) = 3.23618e+07
+Warning:       Actual kf(1000.02 K) = 1.99293e+07
+Warning:     Expected Keq(1000.02 K) = 18.1053
+Warning:       Actual Keq(1000.02 K) = 2.38804
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 555 grains from -176.51 to 982.46 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1706.11 K) = 3.80051e+10
+Warning:       Actual kf(1706.11 K) = 2.52982e+10
+Warning:     Expected Keq(1706.11 K) = 5955.86
+Warning:       Actual Keq(1706.11 K) = 330.253
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(2761.25 K) = 1.82851e+12
+Warning:       Actual kf(2761.25 K) = 1.28808e+12
+Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:       Actual Keq(2761.25 K) = 2317.42
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+========================================================================
+6 network information
+---------------------
+Isomers:
+    CO[O](10)                                              5.0596 kJ/mol
+    [CH2]OO(12)                                            48.801 kJ/mol
+Reactant channels:
+    O2(2) + [CH3](3)                                      126.755 kJ/mol
+Product channels:
+    [OH](18) + C=O(17)                                   -90.2145 kJ/mol
+    [CH2][O](19) + [OH](18)                               221.275 kJ/mol
+    [H](5) + [CH2]O[O](11)                                 412.61 kJ/mol
+    [O]CO(20)                                            -176.509 kJ/mol
+    [CH2](6) + [O]O(8)                                    410.895 kJ/mol
+    C[O](13) + [O](14)                                    250.332 kJ/mol
+Path reactions:
+    [OH](18) + C=O(17) <=> [CH2]OO(12)                     48.801 kJ/mol
+    [CH2][O](19) + [OH](18) <=> [CH2]OO(12)               221.275 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> [CH2]OO(12)                413.238 kJ/mol
+    CO[O](10) <=> [CH2]OO(12)                             181.917 kJ/mol
+    [CH2]OO(12) <=> [O]CO(20)                             143.778 kJ/mol
+    CO[O](10) <=> O2(2) + [CH3](3)                        144.387 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> CO[O](10)                   412.61 kJ/mol
+    [CH2](6) + [O]O(8) <=> CO[O](10)                      410.895 kJ/mol
+    C[O](13) + [O](14) <=> CO[O](10)                      250.332 kJ/mol
+========================================================================
+
+Calculating densities of states for 6 network...
+Using 760 grains from -176.51 to 1411.32 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for C[O](13) + [O](14) <=> CO[O](10)...
+Using 332 grains from -176.51 to 515.94 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.90073e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.69138e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 662 grains from -176.51 to 514.90 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.32611e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.7566e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1322 grains from -176.51 to 514.37 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 2.05752e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.78906e-14
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 335 grains from -176.51 to 522.22 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 8.43694e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.35548e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 669 grains from -176.51 to 522.22 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 5.9462e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.4945e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1336 grains from -176.51 to 521.70 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 9.08255e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.56346e-13
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 343 grains from -176.51 to 538.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.37871e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.73045e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 685 grains from -176.51 to 538.96 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 6.74307e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.76697e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.4)
+Using 1368 grains from -176.51 to 538.43 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.9971e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.78501e-10
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 358 grains from -176.51 to 570.34 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(470.374 K) = 0.17127
+Warning:       Actual kf(470.374 K) = 0.0907111
+Warning:     Expected Keq(470.374 K) = 8.44973e-07
+Warning:       Actual Keq(470.374 K) = 4.08181e-07
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 387 grains from -176.51 to 631.00 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(649.057 K) = 3372.74
+Warning:       Actual kf(649.057 K) = 1919.33
+Warning:     Expected Keq(649.057 K) = 0.00580955
+Warning:       Actual Keq(649.057 K) = 0.00159346
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 442 grains from -176.51 to 746.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1000.02 K) = 3.23618e+07
+Warning:       Actual kf(1000.02 K) = 1.99293e+07
+Warning:     Expected Keq(1000.02 K) = 18.1053
+Warning:       Actual Keq(1000.02 K) = 2.38804
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 555 grains from -176.51 to 982.46 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1706.11 K) = 3.80051e+10
+Warning:       Actual kf(1706.11 K) = 2.52982e+10
+Warning:     Expected Keq(1706.11 K) = 5955.86
+Warning:       Actual Keq(1706.11 K) = 330.253
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(2761.25 K) = 1.82851e+12
+Warning:       Actual kf(2761.25 K) = 1.28808e+12
+Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:       Actual Keq(2761.25 K) = 2317.42
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [CH2]OO(12)
+Created 8 new edge species
+    [OH](18)
+    C=O(17)
+    [CH2][O](19)
+    [O]CO(20)
+    [O]OCOO(21)
+    CCOO(22)
+    COOCOO(23)
+    OOCCOO(24)
+Moved 2 reactions from edge to core
+    O2(2) + [CH3](3) <=> [CH2]OO(12)
+    [CH2]OO(12) <=> CO[O](10)
+Added 0 new core reactions
+Created 18 new edge reactions
+    C[CH2](4) + COO(15) <=> ethane(1) + [CH2]OO(12)
+    [O]O(8) + [CH2]O[O](11) <=> O2(2) + [CH2]OO(12)
+    C(7) + [CH2]O[O](11) <=> [CH3](3) + [CH2]OO(12)
+    [CH2](9) + COO(15) <=> [CH3](3) + [CH2]OO(12)
+    [CH2]O[O](11) + COO(15) <=> CO[O](10) + [CH2]OO(12)
+    [CH2]OO(12) + [CH2]OO(12) <=> [CH2]O[O](11) + COO(15)
+    O2(2) + [CH3](3) => [OH](18) + C=O(17)
+    O2(2) + [CH3](3) => [CH2][O](19) + [OH](18)
+    O2(2) + [CH3](3) => [O]CO(20)
+    CO[O](10) => [OH](18) + C=O(17)
+    CO[O](10) => [CH2][O](19) + [OH](18)
+    CO[O](10) => [O]CO(20)
+    [CH2]OO(12) => [OH](18) + C=O(17)
+    [CH2]OO(12) => [CH2][O](19) + [OH](18)
+    [CH2]OO(12) => [H](5) + [CH2]O[O](11)
+    [CH2]OO(12) => [O]CO(20)
+    [CH2]OO(12) => [CH2](6) + [O]O(8)
+    [CH2]OO(12) => C[O](13) + [O](14)
+
+After model enlargement:
+    The model core has 9 species and 4 reactions
+    The model edge has 19 species and 37 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 4 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 4 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:31
+    Memory used: 134.60 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-06 s, species [OH](18) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.8930e+03 mol/m^3*s
+    [OH](18) rate: 5.2645e+03 mol/m^3*s (0.5321)
+    PDepNetwork #7 leak rate: 1.9532e+01 mol/m^3*s (0.001974)
+    O2(2) conversion: 4.893e-06 
+At time 1.0000e-06 s, species [OH](18) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.8930e+03 mol/m^3*s
+    [OH](18) rate: 5.2645e+03 mol/m^3*s (0.5321)
+    PDepNetwork #7 leak rate: 1.9532e+01 mol/m^3*s (0.001974)
+    O2(2) conversion: 4.893e-06 
+
+
+Adding species [OH](18) to model core
+Generating thermodynamics for new species...
+Found thermo for O in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+11 network information
+----------------------
+Isomers:
+    [OH](18)                                              28.3945 kJ/mol
+Reactant channels:
+Product channels:
+    [H](5) + [O](14)                                      454.839 kJ/mol
+Path reactions:
+    [H](5) + [O](14) <=> [OH](18)                         454.839 kJ/mol
+========================================================================
+
+Calculating densities of states for 11 network...
+Using 682 grains from 28.39 to 1453.05 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [O](14) <=> [OH](18)...
+Using 253 grains from 28.39 to 555.58 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 257 grains from 28.39 to 563.95 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 265 grains from 28.39 to 580.68 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 280 grains from 28.39 to 612.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 309 grains from 28.39 to 672.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 364 grains from 28.39 to 787.79 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 477 grains from 28.39 to 1024.19 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 644 grains from 28.39 to 1373.55 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [OH](18)
+Created 4 new edge species
+    O(25)
+    CO(26)
+    OCOO(27)
+    OO(28)
+Added 0 new core reactions
+Created 10 new edge reactions
+    ethane(1) + [OH](18) <=> C[CH2](4) + O(25)
+    [O]O(8) + [O](14) <=> O2(2) + [OH](18)
+    C(7) + [O](14) <=> [CH3](3) + [OH](18)
+    [CH3](3) + [OH](18) <=> [CH2](9) + O(25)
+    COO(15) + [O](14) <=> CO[O](10) + [OH](18)
+    CO[O](10) + [OH](18) <=> [CH2]O[O](11) + O(25)
+    COO(15) + [O](14) <=> [CH2]OO(12) + [OH](18)
+    [CH2]OO(12) + [OH](18) <=> [CH2]O[O](11) + O(25)
+    [O](14) + O(25) <=> [OH](18) + [OH](18)
+    [OH](18) => [H](5) + [O](14)
+
+After model enlargement:
+    The model core has 10 species and 4 reactions
+    The model edge has 22 species and 47 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 4 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 4 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:33
+    Memory used: 134.60 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-06 s, species C=O(17) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.8747e+03 mol/m^3*s
+    C=O(17) rate: 5.0491e+03 mol/m^3*s (0.5113)
+    PDepNetwork #7 leak rate: 1.9716e+01 mol/m^3*s (0.001997)
+    O2(2) conversion: 4.893e-06 
+At time 1.0000e-06 s, species C=O(17) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.8747e+03 mol/m^3*s
+    C=O(17) rate: 5.0491e+03 mol/m^3*s (0.5113)
+    PDepNetwork #7 leak rate: 1.9716e+01 mol/m^3*s (0.001997)
+    O2(2) conversion: 4.893e-06 
+
+
+Adding species C=O(17) to model core
+Exploring isomer [CH2]OO(12) in pressure-dependent network #23
+Exploring isomer CO[O](10) in pressure-dependent network #23
+Generating thermodynamics for new species...
+Found thermo for [H][H] in thermo library: primarythermolibrary
+Generating kinetics for new reactions...
+For reaction [H](5) + [CH]=O(29) <=> C=O(17) Ea raised from -19.0 to 0 kJ/mol.
+For reaction O2(2) + C=O(17) <=> [O]CO[O](33), Ea raised from 163.9 to 167.4 kJ/mol to match endothermicity of reaction.
+Updating 2 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: For <Molecule "[CH]=O">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (1 frequencies) to compensate.
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="C_R0"> and all its parents have data=None
+========================================================================
+15 network information
+----------------------
+Isomers:
+    C=O(17)                                              -118.609 kJ/mol
+Reactant channels:
+Product channels:
+    [H](5) + [CH]=O(29)                                   245.166 kJ/mol
+    [H][H](31) + [C-]#[O+](30)                            1.41715 kJ/mol
+Path reactions:
+    [H](5) + [CH]=O(29) <=> C=O(17)                       245.166 kJ/mol
+    [H][H](31) + [C-]#[O+](30) <=> C=O(17)                344.924 kJ/mol
+========================================================================
+
+Calculating densities of states for 15 network...
+Using 700 grains from -118.61 to 1343.70 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H][H](31) + [C-]#[O+](30) <=> C=O(17)...
+Using 271 grains from -118.61 to 446.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 275 grains from -118.61 to 454.60 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 283 grains from -118.61 to 471.33 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 298 grains from -118.61 to 502.71 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 326 grains from -118.61 to 561.29 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 382 grains from -118.61 to 678.44 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 494 grains from -118.61 to 912.75 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 662 grains from -118.61 to 1264.20 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+========================================================================
+23 network information
+----------------------
+Isomers:
+    [CH2]OO(12)                                            48.801 kJ/mol
+    CO[O](10)                                              5.0596 kJ/mol
+Reactant channels:
+    [OH](18) + C=O(17)                                   -90.2145 kJ/mol
+    O2(2) + [CH3](3)                                      126.755 kJ/mol
+Product channels:
+    [CH2][O](19) + [OH](18)                               221.275 kJ/mol
+    [H](5) + [CH2]O[O](11)                                 412.61 kJ/mol
+    [O]CO(20)                                            -176.509 kJ/mol
+    [CH2](6) + [O]O(8)                                    410.895 kJ/mol
+    C[O](13) + [O](14)                                    250.332 kJ/mol
+Path reactions:
+    [OH](18) + C=O(17) <=> [CH2]OO(12)                     48.801 kJ/mol
+    [CH2][O](19) + [OH](18) <=> [CH2]OO(12)               221.275 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> [CH2]OO(12)                413.238 kJ/mol
+    CO[O](10) <=> [CH2]OO(12)                             181.917 kJ/mol
+    [CH2]OO(12) <=> [O]CO(20)                             143.778 kJ/mol
+    CO[O](10) <=> O2(2) + [CH3](3)                        144.387 kJ/mol
+    [H](5) + [CH2]O[O](11) <=> CO[O](10)                   412.61 kJ/mol
+    [CH2](6) + [O]O(8) <=> CO[O](10)                      410.895 kJ/mol
+    C[O](13) + [O](14) <=> CO[O](10)                      250.332 kJ/mol
+========================================================================
+
+Calculating densities of states for 23 network...
+Using 760 grains from -176.51 to 1411.32 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for C[O](13) + [O](14) <=> CO[O](10)...
+Using 332 grains from -176.51 to 515.94 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.90073e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.69138e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 662 grains from -176.51 to 514.90 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 1.32611e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.7566e-14
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1322 grains from -176.51 to 514.37 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 302.617 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(302.617 K) = 4.06335e-10
+Warning:       Actual kf(302.617 K) = 2.05752e-10
+Warning:     Expected Keq(302.617 K) = 1.5368e-14
+Warning:       Actual Keq(302.617 K) = 1.78906e-14
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 335 grains from -176.51 to 522.22 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 8.43694e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.35548e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 669 grains from -176.51 to 522.22 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 5.9462e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.4945e-13
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.5)
+Using 1336 grains from -176.51 to 521.70 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 324.619 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(324.619 K) = 1.76394e-08
+Warning:       Actual kf(324.619 K) = 9.08255e-09
+Warning:     Expected Keq(324.619 K) = 4.52899e-13
+Warning:       Actual Keq(324.619 K) = 4.56346e-13
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 343 grains from -176.51 to 538.96 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.37871e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.73045e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.3)
+Using 685 grains from -176.51 to 538.96 kJ/mol in steps of 1.05 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 6.74307e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.76697e-10
+Warning: Increasing number of grains, decreasing grain size and trying again. (Current badness: 0.4)
+Using 1368 grains from -176.51 to 538.43 kJ/mol in steps of 0.52 kJ/mol to compute the k(T,P) values at 374.997 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(374.997 K) = 1.87913e-05
+Warning:       Actual kf(374.997 K) = 9.9971e-06
+Warning:     Expected Keq(374.997 K) = 2.36381e-10
+Warning:       Actual Keq(374.997 K) = 1.78501e-10
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 358 grains from -176.51 to 570.34 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(470.374 K) = 0.17127
+Warning:       Actual kf(470.374 K) = 0.0907111
+Warning:     Expected Keq(470.374 K) = 8.44973e-07
+Warning:       Actual Keq(470.374 K) = 4.08181e-07
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 387 grains from -176.51 to 631.00 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(649.057 K) = 3372.74
+Warning:       Actual kf(649.057 K) = 1919.33
+Warning:     Expected Keq(649.057 K) = 0.00580955
+Warning:       Actual Keq(649.057 K) = 0.00159346
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 442 grains from -176.51 to 746.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1000.02 K) = 3.23618e+07
+Warning:       Actual kf(1000.02 K) = 1.99293e+07
+Warning:     Expected Keq(1000.02 K) = 18.1053
+Warning:       Actual Keq(1000.02 K) = 2.38804
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 555 grains from -176.51 to 982.46 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(1706.11 K) = 3.80051e+10
+Warning:       Actual kf(1706.11 K) = 2.52982e+10
+Warning:     Expected Keq(1706.11 K) = 5955.86
+Warning:       Actual Keq(1706.11 K) = 330.253
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
+Warning:     Expected kf(2761.25 K) = 1.82851e+12
+Warning:       Actual kf(2761.25 K) = 1.28808e+12
+Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:       Actual Keq(2761.25 K) = 2317.42
+Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C=O(17)
+Created 15 new edge species
+    [CH]=O(29)
+    [H][H](31)
+    [C-]#[O+](30)
+    [CH2]O(32)
+    [O]CO[O](33)
+    CC[O](34)
+    [CH2]OC(35)
+    COOC[O](36)
+    [O]CCOO(37)
+    [CH2]OCOO(38)
+    [CH2]OC[O](39)
+    [O]CC[O](40)
+    [CH2]OO[CH2](41)
+    C1COO1(42)
+    C1OCO1(43)
+Moved 3 reactions from edge to core
+    O2(2) + [CH3](3) <=> [OH](18) + C=O(17)
+    CO[O](10) <=> [OH](18) + C=O(17)
+    [CH2]OO(12) <=> [OH](18) + C=O(17)
+Added 0 new core reactions
+Created 20 new edge reactions
+    C[CH2](4) + [CH2]O(32) <=> ethane(1) + C=O(17)
+    C[CH2](4) + C[O](13) <=> ethane(1) + C=O(17)
+    O2(2) + C=O(17) <=> [O]O(8) + [CH]=O(29)
+    [CH2](9) + [CH2]O(32) <=> [CH3](3) + C=O(17)
+    [CH2](9) + C[O](13) <=> [CH3](3) + C=O(17)
+    [CH3](3) + C=O(17) <=> C(7) + [CH]=O(29)
+    [CH2]O[O](11) + [CH2]O(32) <=> CO[O](10) + C=O(17)
+    [CH2]O[O](11) + C[O](13) <=> CO[O](10) + C=O(17)
+    CO[O](10) + C=O(17) <=> COO(15) + [CH]=O(29)
+    [CH2]OO(12) + C=O(17) <=> COO(15) + [CH]=O(29)
+    [OH](18) + C=O(17) <=> O(25) + [CH]=O(29)
+    C[O](13) + [CH]=O(29) <=> C=O(17) + C=O(17)
+    [CH2]O(32) + [CH]=O(29) <=> C=O(17) + C=O(17)
+    C=O(17) => [H](5) + [CH]=O(29)
+    C=O(17) => [H][H](31) + [C-]#[O+](30)
+    [OH](18) + C=O(17) => [CH2][O](19) + [OH](18)
+    [OH](18) + C=O(17) => [H](5) + [CH2]O[O](11)
+    [OH](18) + C=O(17) => [O]CO(20)
+    [OH](18) + C=O(17) => [CH2](6) + [O]O(8)
+    [OH](18) + C=O(17) => C[O](13) + [O](14)
+
+After model enlargement:
+    The model core has 11 species and 7 reactions
+    The model edge has 36 species and 64 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 7 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:02
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 1.6610e-07 s, PDepNetwork #24 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1586e+04 mol/m^3*s
+    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
+    PDepNetwork #24 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
+    O2(2) conversion: 3.171e-06 
+At time 1.6610e-07 s, PDepNetwork #24 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1586e+04 mol/m^3*s
+    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
+    PDepNetwork #24 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
+    O2(2) conversion: 3.171e-06 
+
+
+Exploring isomer [CH2]OC[O](39) in pressure-dependent network #24
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH2][O](19) + [CH2][O](19) <=> [CH2]OC[O](39) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [H](5) + [CH2]O[CH][O](45) <=> [CH2]OC[O](39) Ea raised from -0.8 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2]O[CH2]">.
+========================================================================
+24 network information
+----------------------
+Isomers:
+    [CH2]OC[O](39)                                        27.5692 kJ/mol
+Reactant channels:
+    C=O(17) + C=O(17)                                    -237.218 kJ/mol
+Product channels:
+    [H](5) + [CH2]OC=O(44)                                47.0016 kJ/mol
+    [CH2][O](19) + C=O(17)                                74.2719 kJ/mol
+    [CH2][O](19) + [CH2][O](19)                           385.762 kJ/mol
+    [H](5) + [CH2]O[CH][O](45)                             444.62 kJ/mol
+    COC=O(46)                                             -368.28 kJ/mol
+    [CH2]O[CH]O(47)                                       14.8921 kJ/mol
+    CO[CH][O](48)                                         44.9446 kJ/mol
+    C1OCO1(43)                                           -224.171 kJ/mol
+    [CH2]O[CH2](49) + [O](14)                              423.34 kJ/mol
+Path reactions:
+    [CH2]OC[O](39) <=> C=O(17) + C=O(17)                  27.5692 kJ/mol
+    [H](5) + [CH2]OC=O(44) <=> [CH2]OC[O](39)             64.4489 kJ/mol
+    [CH2][O](19) + C=O(17) <=> [CH2]OC[O](39)              95.704 kJ/mol
+    [CH2][O](19) + [CH2][O](19) <=> [CH2]OC[O](39)        385.762 kJ/mol
+    [H](5) + [CH2]O[CH][O](45) <=> [CH2]OC[O](39)          444.62 kJ/mol
+    [CH2]OC[O](39) <=> COC=O(46)                          71.5709 kJ/mol
+    [CH2]OC[O](39) <=> [CH2]O[CH]O(47)                    141.541 kJ/mol
+    CO[CH][O](48) <=> [CH2]OC[O](39)                      168.996 kJ/mol
+    [CH2]OC[O](39) <=> C1OCO1(43)                         34.2008 kJ/mol
+    [CH2]O[CH2](49) + [O](14) <=> [CH2]OC[O](39)           423.34 kJ/mol
+========================================================================
+
+Calculating densities of states for 24 network...
+Using 867 grains from -368.28 to 1443.39 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]O[CH2](49) + [O](14) <=> [CH2]OC[O](39)...
+Using 438 grains from -368.28 to 545.92 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 442 grains from -368.28 to 554.29 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 450 grains from -368.28 to 571.03 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 465 grains from -368.28 to 602.41 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 493 grains from -368.28 to 660.98 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 549 grains from -368.28 to 778.14 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 661 grains from -368.28 to 1012.44 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 829 grains from -368.28 to 1363.90 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 6 new edge species
+    [CH2]OC=O(44)
+    [CH2]O[CH][O](45)
+    COC=O(46)
+    [CH2]O[CH]O(47)
+    CO[CH][O](48)
+    [CH2]O[CH2](49)
+Added 0 new core reactions
+Created 9 new edge reactions
+    C=O(17) + C=O(17) => [CH2]OC[O](39)
+    C=O(17) + C=O(17) => [H](5) + [CH2]OC=O(44)
+    C=O(17) + C=O(17) => [CH2][O](19) + C=O(17)
+    C=O(17) + C=O(17) => [H](5) + [CH2]O[CH][O](45)
+    C=O(17) + C=O(17) => COC=O(46)
+    C=O(17) + C=O(17) => [CH2]O[CH]O(47)
+    C=O(17) + C=O(17) => CO[CH][O](48)
+    C=O(17) + C=O(17) => C1OCO1(43)
+    C=O(17) + C=O(17) => [CH2]O[CH2](49) + [O](14)
+
+After model enlargement:
+    The model core has 11 species and 7 reactions
+    The model edge has 42 species and 73 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 7 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:07
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 1.6610e-07 s, PDepNetwork #25 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1586e+04 mol/m^3*s
+    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
+    PDepNetwork #25 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
+    O2(2) conversion: 3.171e-06 
+At time 1.6610e-07 s, PDepNetwork #25 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1586e+04 mol/m^3*s
+    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
+    PDepNetwork #25 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
+    O2(2) conversion: 3.171e-06 
+
+
+Exploring isomer [O]CC[O](40) in pressure-dependent network #25
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH2][O](19) + [CH2][O](19) <=> [O]CC[O](40) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [H](5) + [O][CH]C[O](51) <=> [O]CC[O](40) Ea raised from -0.8 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[O][CH]C[O]">.
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+========================================================================
+25 network information
+----------------------
+Isomers:
+    [O]CC[O](40)                                          35.1288 kJ/mol
+Reactant channels:
+    C=O(17) + C=O(17)                                    -237.218 kJ/mol
+Product channels:
+    [H](5) + [O]CC=O(50)                                  114.865 kJ/mol
+    [CH2][O](19) + C=O(17)                                74.2719 kJ/mol
+    [CH2][O](19) + [CH2][O](19)                           385.762 kJ/mol
+    [H](5) + [O][CH]C[O](51)                              427.231 kJ/mol
+    O=CCO(52)                                            -314.863 kJ/mol
+    [O]C[CH]O(53)                                        -2.49673 kJ/mol
+    [O][CH]CO(54)                                        -2.49673 kJ/mol
+    C1COO1(42)                                           -7.68453 kJ/mol
+    [CH2]C[O](55) + [O](14)                               417.473 kJ/mol
+Path reactions:
+    [O]CC[O](40) <=> C=O(17) + C=O(17)                    35.1288 kJ/mol
+    [H](5) + [O]CC=O(50) <=> [O]CC[O](40)                  139.55 kJ/mol
+    [CH2][O](19) + C=O(17) <=> [O]CC[O](40)                99.503 kJ/mol
+    [CH2][O](19) + [CH2][O](19) <=> [O]CC[O](40)          385.762 kJ/mol
+    [H](5) + [O][CH]C[O](51) <=> [O]CC[O](40)             427.231 kJ/mol
+    [O]CC[O](40) <=> O=CCO(52)                            79.1305 kJ/mol
+    [O]C[CH]O(53) <=> [O]CC[O](40)                        126.789 kJ/mol
+    [O]CC[O](40) <=> [O][CH]CO(54)                         159.18 kJ/mol
+    [O]CC[O](40) <=> C1COO1(42)                           41.7604 kJ/mol
+    [CH2]C[O](55) + [O](14) <=> [O]CC[O](40)              417.473 kJ/mol
+========================================================================
+
+Calculating densities of states for 25 network...
+Using 833 grains from -314.86 to 1425.68 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]C[O](55) + [O](14) <=> [O]CC[O](40)...
+Using 404 grains from -314.86 to 528.21 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 408 grains from -314.86 to 536.58 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 416 grains from -314.86 to 553.32 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 431 grains from -314.86 to 584.70 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 459 grains from -314.86 to 643.27 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 515 grains from -314.86 to 760.42 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 627 grains from -314.86 to 994.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 795 grains from -314.86 to 1346.18 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+Warning: Marked reaction C=O(17) + C=O(17) => [CH2][O](19) + C=O(17) as duplicate for saving to Chemkin file.
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 6 new edge species
+    [O]CC=O(50)
+    [O][CH]C[O](51)
+    O=CCO(52)
+    [O]C[CH]O(53)
+    [O][CH]CO(54)
+    [CH2]C[O](55)
+Added 0 new core reactions
+Created 9 new edge reactions
+    C=O(17) + C=O(17) => [O]CC[O](40)
+    C=O(17) + C=O(17) => [H](5) + [O]CC=O(50)
+    C=O(17) + C=O(17) => [CH2][O](19) + C=O(17)
+    C=O(17) + C=O(17) => [H](5) + [O][CH]C[O](51)
+    C=O(17) + C=O(17) => O=CCO(52)
+    C=O(17) + C=O(17) => [O]C[CH]O(53)
+    C=O(17) + C=O(17) => [O][CH]CO(54)
+    C=O(17) + C=O(17) => C1COO1(42)
+    C=O(17) + C=O(17) => [CH2]C[O](55) + [O](14)
+
+After model enlargement:
+    The model core has 11 species and 7 reactions
+    The model edge has 48 species and 82 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 7 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:11
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 1.6610e-07 s, PDepNetwork #26 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1586e+04 mol/m^3*s
+    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
+    PDepNetwork #26 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
+    O2(2) conversion: 3.171e-06 
+At time 1.6610e-07 s, PDepNetwork #26 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1586e+04 mol/m^3*s
+    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
+    PDepNetwork #26 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
+    O2(2) conversion: 3.171e-06 
+
+
+Exploring isomer [CH2]OO[CH2](41) in pressure-dependent network #26
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH2][O](19) + [CH2][O](19) <=> [CH2]OO[CH2](41) Ea raised from -0.8 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: For <Molecule "[CH2]OO[CH2]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 internal rotors to compensate.
+========================================================================
+26 network information
+----------------------
+Isomers:
+    [CH2]OO[CH2](41)                                      240.746 kJ/mol
+Reactant channels:
+    C=O(17) + C=O(17)                                    -237.218 kJ/mol
+Product channels:
+    [CH2][O](19) + [CH2][O](19)                           385.762 kJ/mol
+    C1COO1(42)                                           -7.68453 kJ/mol
+Path reactions:
+    [CH2]OO[CH2](41) <=> C=O(17) + C=O(17)                240.746 kJ/mol
+    [CH2][O](19) + [CH2][O](19) <=> [CH2]OO[CH2](41)      385.762 kJ/mol
+    [CH2]OO[CH2](41) <=> C1COO1(42)                        249.03 kJ/mol
+========================================================================
+
+Calculating densities of states for 26 network...
+Using 776 grains from -237.22 to 1384.08 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]OO[CH2](41) <=> C1COO1(42)...
+Using 347 grains from -237.22 to 486.61 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 351 grains from -237.22 to 494.98 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 359 grains from -237.22 to 511.72 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 374 grains from -237.22 to 543.10 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 402 grains from -237.22 to 601.67 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 458 grains from -237.22 to 718.83 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 571 grains from -237.22 to 955.22 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 738 grains from -237.22 to 1304.59 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+Warning: Marked reaction C=O(17) + C=O(17) => C1COO1(42) as duplicate for saving to Chemkin file.
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 3 new edge reactions
+    C=O(17) + C=O(17) => [CH2]OO[CH2](41)
+    C=O(17) + C=O(17) => [CH2][O](19) + [CH2][O](19)
+    C=O(17) + C=O(17) => C1COO1(42)
+
+After model enlargement:
+    The model core has 11 species and 7 reactions
+    The model edge has 48 species and 85 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 7 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:14
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 6.3038e-07 s, species C[CH2](4) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.0390e+04 mol/m^3*s
+    C[CH2](4) rate: 5.6667e+03 mol/m^3*s (0.5454)
+    PDepNetwork #12 leak rate: 1.2641e+02 mol/m^3*s (0.01217)
+    O2(2) conversion: 3.605e-05 
+At time 6.3038e-07 s, species C[CH2](4) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.0390e+04 mol/m^3*s
+    C[CH2](4) rate: 5.6667e+03 mol/m^3*s (0.5454)
+    PDepNetwork #12 leak rate: 1.2641e+02 mol/m^3*s (0.01217)
+    O2(2) conversion: 3.605e-05 
+
+
+Adding species C[CH2](4) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [H](5) + [CH2][CH2](57) <=> C[CH2](4) Ea raised from -0.8 to 0 kJ/mol.
+For reaction C[CH2](4) + [CH2]OO(12) <=> CCCOO(61) Ea raised from -0.5 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: For <Molecule "[CH2][CH2]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (2 frequencies) to compensate.
+========================================================================
+29 network information
+----------------------
+Isomers:
+    C[CH2](4)                                             108.526 kJ/mol
+Reactant channels:
+Product channels:
+    [H](5) + C=C(56)                                      253.954 kJ/mol
+    [H](5) + [CH2][CH2](57)                               525.601 kJ/mol
+Path reactions:
+    [H](5) + C=C(56) <=> C[CH2](4)                         258.18 kJ/mol
+    [H](5) + [CH2][CH2](57) <=> C[CH2](4)                 525.601 kJ/mol
+========================================================================
+
+Calculating densities of states for 29 network...
+Using 684 grains from 108.53 to 1526.23 kJ/mol in steps of 2.08 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [CH2][CH2](57) <=> C[CH2](4)...
+Using 250 grains from 108.53 to 626.24 kJ/mol in steps of 2.08 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 252 grains from 108.53 to 633.62 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 260 grains from 108.53 to 650.35 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 276 grains from 108.53 to 683.83 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 304 grains from 108.53 to 742.40 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 360 grains from 108.53 to 859.55 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 472 grains from 108.53 to 1093.86 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 640 grains from 108.53 to 1445.31 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C[CH2](4)
+Created 10 new edge species
+    C=C(56)
+    [CH2][CH2](57)
+    CCO[O](58)
+    CCC(59)
+    CCOOC(60)
+    CCCOO(61)
+    CCO(62)
+    CCC[O](63)
+    [CH2]OCC(64)
+    CCCC(65)
+Added 0 new core reactions
+Created 15 new edge reactions
+    O2(2) + C[CH2](4) <=> C=C(56) + [O]O(8)
+    [CH3](3) + C[CH2](4) <=> C(7) + C=C(56)
+    ethane(1) + [CH2](9) <=> [CH3](3) + C[CH2](4)
+    C[CH2](4) + CO[O](10) <=> C=C(56) + COO(15)
+    C[CH2](4) + CO[O](10) <=> ethane(1) + [CH2]O[O](11)
+    C[CH2](4) + [CH2]OO(12) <=> C=C(56) + COO(15)
+    C[CH2](4) + [CH2]OO(12) <=> ethane(1) + [CH2]O[O](11)
+    C[CH2](4) + [OH](18) <=> C=C(56) + O(25)
+    ethane(1) + [O](14) <=> C[CH2](4) + [OH](18)
+    [CH2][CH2](57) + [CH2]O(32) <=> C[CH2](4) + C=O(17)
+    [CH2][CH2](57) + C[O](13) <=> C[CH2](4) + C=O(17)
+    C[CH2](4) + C=O(17) <=> ethane(1) + [CH]=O(29)
+    C[CH2](4) + C[CH2](4) <=> ethane(1) + C=C(56)
+    C[CH2](4) => [H](5) + C=C(56)
+    C[CH2](4) => [H](5) + [CH2][CH2](57)
+
+After model enlargement:
+    The model core has 12 species and 7 reactions
+    The model edge has 57 species and 100 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 7 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 7 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:16
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 6.6653e-07 s, species O(25) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.0283e+04 mol/m^3*s
+    O(25) rate: 5.8305e+03 mol/m^3*s (0.567)
+    PDepNetwork #12 leak rate: 1.4811e+02 mol/m^3*s (0.0144)
+    O2(2) conversion: 3.999e-05 
+At time 6.6653e-07 s, species O(25) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.0283e+04 mol/m^3*s
+    O(25) rate: 5.8305e+03 mol/m^3*s (0.567)
+    PDepNetwork #12 leak rate: 1.4811e+02 mol/m^3*s (0.0144)
+    O2(2) conversion: 3.999e-05 
+
+
+Adding species O(25) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+========================================================================
+38 network information
+----------------------
+Isomers:
+    O(25)                                                -251.755 kJ/mol
+Reactant channels:
+Product channels:
+    [H](5) + [OH](18)                                     240.199 kJ/mol
+Path reactions:
+    [H](5) + [OH](18) <=> O(25)                           240.827 kJ/mol
+========================================================================
+
+Calculating densities of states for 38 network...
+Using 714 grains from -251.75 to 1239.84 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [OH](18) <=> O(25)...
+Using 285 grains from -251.75 to 342.37 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 289 grains from -251.75 to 350.74 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 297 grains from -251.75 to 367.48 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 312 grains from -251.75 to 398.86 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 340 grains from -251.75 to 457.43 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 396 grains from -251.75 to 574.59 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 508 grains from -251.75 to 808.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 676 grains from -251.75 to 1160.35 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    O(25)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    ethane(1) + [OH](18) <=> C[CH2](4) + O(25)
+Added 0 new core reactions
+Created 5 new edge reactions
+    O2(2) + O(25) <=> [O]O(8) + [OH](18)
+    C(7) + [OH](18) <=> [CH3](3) + O(25)
+    COO(15) + [OH](18) <=> CO[O](10) + O(25)
+    COO(15) + [OH](18) <=> [CH2]OO(12) + O(25)
+    O(25) => [H](5) + [OH](18)
+
+After model enlargement:
+    The model core has 13 species and 8 reactions
+    The model edge has 56 species and 104 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 8 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 8 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:18
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 4.9105e-08 s, PDepNetwork #30 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1823e+04 mol/m^3*s
+    [O]O(8) rate: 4.0251e+01 mol/m^3*s (0.003404)
+    PDepNetwork #30 leak rate: 5.9249e+03 mol/m^3*s (0.5011)
+    O2(2) conversion: 4.024e-07 
+At time 4.9105e-08 s, PDepNetwork #30 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1823e+04 mol/m^3*s
+    [O]O(8) rate: 4.0251e+01 mol/m^3*s (0.003404)
+    PDepNetwork #30 leak rate: 5.9249e+03 mol/m^3*s (0.5011)
+    O2(2) conversion: 4.024e-07 
+
+
+Exploring isomer CCO[O](58) in pressure-dependent network #30
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH3](3) + [CH2]O[O](11) <=> CCO[O](58) Ea raised from -0.3 to 0 kJ/mol.
+For reaction [CH2](6) + CO[O](10) <=> CCO[O](58) Ea raised from -1.5 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2]CO[O]">.
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "C[CH]OO">.
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+========================================================================
+30 network information
+----------------------
+Isomers:
+    CCO[O](58)                                           -32.0288 kJ/mol
+Reactant channels:
+    O2(2) + C[CH2](4)                                     99.8996 kJ/mol
+Product channels:
+    [CH3](3) + [CH2]O[O](11)                              336.187 kJ/mol
+    [H](5) + C[CH]O[O](66)                                368.358 kJ/mol
+    [H](5) + [CH2]CO[O](67)                               393.738 kJ/mol
+    [CH2](6) + CO[O](10)                                  424.151 kJ/mol
+    C[CH]OO(68)                                           4.54904 kJ/mol
+    [CH2]COO(69)                                          29.9291 kJ/mol
+    C=C(56) + [O]O(8)                                     33.9533 kJ/mol
+    [O](14) + CC[O](34)                                   212.227 kJ/mol
+Path reactions:
+    CCO[O](58) <=> O2(2) + C[CH2](4)                      117.758 kJ/mol
+    [CH3](3) + [CH2]O[O](11) <=> CCO[O](58)               336.187 kJ/mol
+    [H](5) + C[CH]O[O](66) <=> CCO[O](58)                 368.358 kJ/mol
+    [H](5) + [CH2]CO[O](67) <=> CCO[O](58)                393.738 kJ/mol
+    [CH2](6) + CO[O](10) <=> CCO[O](58)                   424.151 kJ/mol
+    C[CH]OO(68) <=> CCO[O](58)                            110.111 kJ/mol
+    CCO[O](58) <=> [CH2]COO(69)                           111.106 kJ/mol
+    CCO[O](58) <=> C=C(56) + [O]O(8)                      92.6544 kJ/mol
+    [O](14) + CC[O](34) <=> CCO[O](58)                    212.227 kJ/mol
+========================================================================
+
+Calculating densities of states for 30 network...
+Using 696 grains from -32.03 to 1421.91 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [O](14) + CC[O](34) <=> CCO[O](58)...
+Using 268 grains from -32.03 to 526.53 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 271 grains from -32.03 to 532.81 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 279 grains from -32.03 to 549.55 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 294 grains from -32.03 to 580.93 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 323 grains from -32.03 to 641.60 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 379 grains from -32.03 to 758.75 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 491 grains from -32.03 to 993.05 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 659 grains from -32.03 to 1344.51 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 4 new edge species
+    C[CH]O[O](66)
+    [CH2]CO[O](67)
+    C[CH]OO(68)
+    [CH2]COO(69)
+Added 0 new core reactions
+Created 9 new edge reactions
+    O2(2) + C[CH2](4) => CCO[O](58)
+    O2(2) + C[CH2](4) => [CH3](3) + [CH2]O[O](11)
+    O2(2) + C[CH2](4) => [H](5) + C[CH]O[O](66)
+    O2(2) + C[CH2](4) => [H](5) + [CH2]CO[O](67)
+    O2(2) + C[CH2](4) => [CH2](6) + CO[O](10)
+    O2(2) + C[CH2](4) => C[CH]OO(68)
+    O2(2) + C[CH2](4) => [CH2]COO(69)
+    O2(2) + C[CH2](4) => C=C(56) + [O]O(8)
+    O2(2) + C[CH2](4) => [O](14) + CC[O](34)
+
+After model enlargement:
+    The model core has 13 species and 8 reactions
+    The model edge has 60 species and 113 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 8 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 8 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:21
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 6.0439e-07 s, species C=C(56) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.0955e+04 mol/m^3*s
+    C=C(56) rate: 5.5782e+03 mol/m^3*s (0.5092)
+    PDepNetwork #31 leak rate: 5.0901e+01 mol/m^3*s (0.004647)
+    O2(2) conversion: 3.334e-05 
+At time 6.0439e-07 s, species C=C(56) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.0955e+04 mol/m^3*s
+    C=C(56) rate: 5.5782e+03 mol/m^3*s (0.5092)
+    PDepNetwork #31 leak rate: 5.0901e+01 mol/m^3*s (0.004647)
+    O2(2) conversion: 3.334e-05 
+
+
+Adding species C=C(56) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction O2(2) + C=C(56) <=> [CH2]CO[O](67), Ea raised from 145.3 to 148.4 kJ/mol to match endothermicity of reaction.
+Updating 1 modified unimolecular reaction networks...
+Warning: For <Molecule "[CH]=C">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (1 frequencies) to compensate.
+========================================================================
+39 network information
+----------------------
+Isomers:
+    C=C(56)                                               42.1493 kJ/mol
+Reactant channels:
+Product channels:
+    [H](5) + [CH]=C(70)                                    501.05 kJ/mol
+    [CH2][CH2](57)                                        313.796 kJ/mol
+Path reactions:
+    [H](5) + [CH]=C(70) <=> C=C(56)                        501.05 kJ/mol
+    [CH2][CH2](57) <=> C=C(56)                            313.796 kJ/mol
+========================================================================
+
+Calculating densities of states for 39 network...
+Using 698 grains from 42.15 to 1500.27 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2][CH2](57) <=> C=C(56)...
+Using 269 grains from 42.15 to 602.81 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 272 grains from 42.15 to 609.08 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 280 grains from 42.15 to 625.82 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 296 grains from 42.15 to 659.29 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 324 grains from 42.15 to 717.87 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 380 grains from 42.15 to 835.02 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 492 grains from 42.15 to 1069.32 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 660 grains from 42.15 to 1420.78 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C=C(56)
+Created 11 new edge species
+    [CH]=C(70)
+    [CH2]CC(71)
+    [CH2]COOC(72)
+    [CH2]CCOO(73)
+    [CH2]CO(74)
+    [CH2]CC[O](75)
+    [CH2]CO[CH2](76)
+    C1COC1(77)
+    [CH2]CCC(78)
+    [CH2]CC[CH2](79)
+    C1CCC1(80)
+Moved 2 reactions from edge to core
+    C[CH2](4) + [OH](18) <=> C=C(56) + O(25)
+    C[CH2](4) + C[CH2](4) <=> ethane(1) + C=C(56)
+Added 0 new core reactions
+Created 15 new edge reactions
+    [CH]=C(70) + [O]O(8) <=> O2(2) + C=C(56)
+    C[CH2](4) + [CH2](9) <=> [CH3](3) + C=C(56)
+    C(7) + [CH]=C(70) <=> [CH3](3) + C=C(56)
+    C[CH2](4) + [CH2]O[O](11) <=> C=C(56) + CO[O](10)
+    [CH]=C(70) + COO(15) <=> C=C(56) + CO[O](10)
+    [CH]=C(70) + COO(15) <=> C=C(56) + [CH2]OO(12)
+    C=C(56) + [OH](18) <=> [CH]=C(70) + O(25)
+    [CH]=C(70) + [CH2]O(32) <=> C=C(56) + C=O(17)
+    [CH]=C(70) + C[O](13) <=> C=C(56) + C=O(17)
+    C[CH2](4) + [CH]=O(29) <=> C=C(56) + C=O(17)
+    C[CH2](4) + [CH2][CH2](57) <=> C[CH2](4) + C=C(56)
+    ethane(1) + [CH]=C(70) <=> C[CH2](4) + C=C(56)
+    C[CH2](4) + [CH]=C(70) <=> C=C(56) + C=C(56)
+    C=C(56) => [H](5) + [CH]=C(70)
+    C=C(56) => [CH2][CH2](57)
+
+After model enlargement:
+    The model core has 14 species and 10 reactions
+    The model edge has 70 species and 126 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 10 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 10 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:24
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 6.7640e-07 s, species [H](5) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.0815e+04 mol/m^3*s
+    [H](5) rate: 5.4884e+03 mol/m^3*s (0.5075)
+    PDepNetwork #45 leak rate: 1.2010e+03 mol/m^3*s (0.1111)
+    O2(2) conversion: 4.11e-05  
+At time 6.7640e-07 s, species [H](5) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.0815e+04 mol/m^3*s
+    [H](5) rate: 5.4884e+03 mol/m^3*s (0.5075)
+    PDepNetwork #45 leak rate: 1.2010e+03 mol/m^3*s (0.1111)
+    O2(2) conversion: 4.11e-05  
+
+
+Adding species [H](5) to model core
+Exploring isomer O(25) in pressure-dependent network #56
+Exploring isomer ethane(1) in pressure-dependent network #59
+Exploring isomer C[CH2](4) in pressure-dependent network #60
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 3 modified unimolecular reaction networks...
+========================================================================
+56 network information
+----------------------
+Isomers:
+    O(25)                                                -251.755 kJ/mol
+Reactant channels:
+    [H](5) + [OH](18)                                     240.199 kJ/mol
+Product channels:
+Path reactions:
+    [H](5) + [OH](18) <=> O(25)                           240.827 kJ/mol
+========================================================================
+
+Calculating densities of states for 56 network...
+Using 714 grains from -251.75 to 1239.84 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [OH](18) <=> O(25)...
+Using 285 grains from -251.75 to 342.37 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 289 grains from -251.75 to 350.74 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 297 grains from -251.75 to 367.48 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 312 grains from -251.75 to 398.86 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 340 grains from -251.75 to 457.43 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 396 grains from -251.75 to 574.59 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 508 grains from -251.75 to 808.89 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 676 grains from -251.75 to 1160.35 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+========================================================================
+59 network information
+----------------------
+Isomers:
+    ethane(1)                                            -96.7435 kJ/mol
+Reactant channels:
+    C[CH2](4) + [H](5)                                    320.331 kJ/mol
+    [CH3](3) + [CH3](3)                                   270.763 kJ/mol
+Product channels:
+    [CH2](6) + C(7)                                       334.656 kJ/mol
+Path reactions:
+    C[CH2](4) + [H](5) <=> ethane(1)                      320.331 kJ/mol
+    [CH3](3) + [CH3](3) <=> ethane(1)                     274.947 kJ/mol
+    [CH2](6) + C(7) <=> ethane(1)                         334.656 kJ/mol
+========================================================================
+
+Calculating densities of states for 59 network...
+Using 685 grains from -96.74 to 1334.18 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2](6) + C(7) <=> ethane(1)...
+Using 256 grains from -96.74 to 436.72 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 259 grains from -96.74 to 442.99 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 267 grains from -96.74 to 459.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 282 grains from -96.74 to 491.11 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 311 grains from -96.74 to 551.78 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 367 grains from -96.74 to 668.93 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 479 grains from -96.74 to 903.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 647 grains from -96.74 to 1254.69 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+========================================================================
+60 network information
+----------------------
+Isomers:
+    C[CH2](4)                                             108.526 kJ/mol
+Reactant channels:
+    [H](5) + C=C(56)                                      253.954 kJ/mol
+Product channels:
+    [H](5) + [CH2][CH2](57)                               525.601 kJ/mol
+Path reactions:
+    [H](5) + C=C(56) <=> C[CH2](4)                         258.18 kJ/mol
+    [H](5) + [CH2][CH2](57) <=> C[CH2](4)                 525.601 kJ/mol
+========================================================================
+
+Calculating densities of states for 60 network...
+Using 684 grains from 108.53 to 1526.23 kJ/mol in steps of 2.08 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [CH2][CH2](57) <=> C[CH2](4)...
+Using 250 grains from 108.53 to 626.24 kJ/mol in steps of 2.08 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 252 grains from 108.53 to 633.62 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 260 grains from 108.53 to 650.35 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 276 grains from 108.53 to 683.83 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 304 grains from 108.53 to 742.40 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 360 grains from 108.53 to 859.55 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 472 grains from 108.53 to 1093.86 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 640 grains from 108.53 to 1445.31 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [H](5)
+Created 0 new edge species
+Moved 4 reactions from edge to core
+    C[CH2](4) + [H](5) <=> ethane(1)
+    C[CH2](4) + [H](5) <=> [CH3](3) + [CH3](3)
+    [H](5) + C=C(56) <=> C[CH2](4)
+    [H](5) + [OH](18) <=> O(25)
+Added 0 new core reactions
+Created 11 new edge reactions
+    ethane(1) + [H](5) <=> C[CH2](4) + [H][H](31)
+    [CH2](9) + [H][H](31) <=> [CH3](3) + [H](5)
+    [H](5) + CO[O](10) <=> [CH2]O[O](11) + [H][H](31)
+    [H](5) + [CH2]OO(12) <=> [CH2]O[O](11) + [H][H](31)
+    [H](5) + [OH](18) <=> [O](14) + [H][H](31)
+    [H][H](31) + [CH]=O(29) <=> [H](5) + C=O(17)
+    C[CH2](4) + [H](5) <=> C=C(56) + [H][H](31)
+    [OH](18) + [H][H](31) <=> [H](5) + O(25)
+    [CH]=C(70) + [H][H](31) <=> [H](5) + C=C(56)
+    C[CH2](4) + [H](5) => [CH2](6) + C(7)
+    [H](5) + C=C(56) => [H](5) + [CH2][CH2](57)
+
+After model enlargement:
+    The model core has 15 species and 14 reactions
+    The model edge has 69 species and 133 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 14 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 14 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:29
+    Memory used: 134.64 MB
+
+Conducting simulation of reaction system 1...
+At time 2.2061e-07 s, PDepNetwork #45 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1603e+04 mol/m^3*s
+    [H][H](31) rate: 5.6168e+02 mol/m^3*s (0.04841)
+    PDepNetwork #45 leak rate: 6.2218e+03 mol/m^3*s (0.5362)
+    O2(2) conversion: 5.248e-06 
+At time 2.2061e-07 s, PDepNetwork #45 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1603e+04 mol/m^3*s
+    [H][H](31) rate: 5.6168e+02 mol/m^3*s (0.04841)
+    PDepNetwork #45 leak rate: 6.2218e+03 mol/m^3*s (0.5362)
+    O2(2) conversion: 5.248e-06 
+
+
+Exploring isomer [CH2]CC[O](75) in pressure-dependent network #45
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH2][CH2](57) + [CH2][O](19) <=> [CH2]CC[O](75) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [H](5) + [CH2][CH]C[O](83) <=> [CH2]CC[O](75) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [H](5) + [CH2]C[CH][O](84) <=> [CH2]CC[O](75) Ea raised from -0.8 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2][CH]C[O]">.
+Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
+========================================================================
+45 network information
+----------------------
+Isomers:
+    [CH2]CC[O](75)                                        150.659 kJ/mol
+Reactant channels:
+    C=C(56) + C=O(17)                                    -76.4597 kJ/mol
+Product channels:
+    [H](5) + C=CC[O](81)                                  289.524 kJ/mol
+    [H](5) + [CH2]CC=O(82)                                214.577 kJ/mol
+    C=C(56) + [CH2][O](19)                                 235.03 kJ/mol
+    [CH2][CH2](57) + C=O(17)                              195.187 kJ/mol
+    [CH2][CH2](57) + [CH2][O](19)                         506.677 kJ/mol
+    [H](5) + [CH2][CH]C[O](83)                            557.006 kJ/mol
+    [H](5) + [CH2]C[CH][O](84)                            542.761 kJ/mol
+    CCC=O(85)                                            -202.474 kJ/mol
+    C=CCO(86)                                            -140.204 kJ/mol
+    C[CH]C[O](87)                                         139.955 kJ/mol
+    [CH2]C[CH]O(88)                                       113.033 kJ/mol
+    CC[CH][O](89)                                          125.71 kJ/mol
+    [CH2][CH]CO(90)                                       127.277 kJ/mol
+    C1COC1(77)                                           -92.5587 kJ/mol
+    [CH2]C[CH2](91) + [O](14)                             533.003 kJ/mol
+Path reactions:
+    [CH2]CC[O](75) <=> C=C(56) + C=O(17)                  150.659 kJ/mol
+    [H](5) + C=CC[O](81) <=> [CH2]CC[O](75)               298.017 kJ/mol
+    [H](5) + [CH2]CC=O(82) <=> [CH2]CC[O](75)             239.262 kJ/mol
+    C=C(56) + [CH2][O](19) <=> [CH2]CC[O](75)             260.261 kJ/mol
+    [CH2][CH2](57) + C=O(17) <=> [CH2]CC[O](75)           220.419 kJ/mol
+    [CH2][CH2](57) + [CH2][O](19) <=> [CH2]CC[O](75)      506.677 kJ/mol
+    [H](5) + [CH2][CH]C[O](83) <=> [CH2]CC[O](75)         557.006 kJ/mol
+    [H](5) + [CH2]C[CH][O](84) <=> [CH2]CC[O](75)         542.761 kJ/mol
+    [CH2]CC[O](75) <=> CCC=O(85)                           194.66 kJ/mol
+    [CH2]CC[O](75) <=> C=CCO(86)                           194.66 kJ/mol
+    [CH2]CC[O](75) <=> C[CH]C[O](87)                      302.538 kJ/mol
+    [CH2]C[CH]O(88) <=> [CH2]CC[O](75)                    242.319 kJ/mol
+    [CH2]CC[O](75) <=> CC[CH][O](89)                       274.71 kJ/mol
+    [CH2]CC[O](75) <=> [CH2][CH]CO(90)                     274.71 kJ/mol
+    [CH2]CC[O](75) <=> C1COC1(77)                          157.29 kJ/mol
+    [CH2]C[CH2](91) + [O](14) <=> [CH2]CC[O](75)          533.003 kJ/mol
+========================================================================
+
+Calculating densities of states for 45 network...
+Using 841 grains from -202.47 to 1554.81 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]C[CH2](91) + [O](14) <=> [CH2]CC[O](75)...
+Using 413 grains from -202.47 to 659.43 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 416 grains from -202.47 to 665.71 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 424 grains from -202.47 to 682.44 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 439 grains from -202.47 to 713.82 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 468 grains from -202.47 to 774.49 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 524 grains from -202.47 to 891.64 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 636 grains from -202.47 to 1125.94 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 804 grains from -202.47 to 1477.40 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 11 new edge species
+    C=CC[O](81)
+    [CH2]CC=O(82)
+    [CH2][CH]C[O](83)
+    [CH2]C[CH][O](84)
+    CCC=O(85)
+    C=CCO(86)
+    C[CH]C[O](87)
+    [CH2]C[CH]O(88)
+    CC[CH][O](89)
+    [CH2][CH]CO(90)
+    [CH2]C[CH2](91)
+Added 0 new core reactions
+Created 16 new edge reactions
+    C=C(56) + C=O(17) => [CH2]CC[O](75)
+    C=C(56) + C=O(17) => [H](5) + C=CC[O](81)
+    C=C(56) + C=O(17) => [H](5) + [CH2]CC=O(82)
+    C=C(56) + C=O(17) => C=C(56) + [CH2][O](19)
+    C=C(56) + C=O(17) => [CH2][CH2](57) + C=O(17)
+    C=C(56) + C=O(17) => [CH2][CH2](57) + [CH2][O](19)
+    C=C(56) + C=O(17) => [H](5) + [CH2][CH]C[O](83)
+    C=C(56) + C=O(17) => [H](5) + [CH2]C[CH][O](84)
+    C=C(56) + C=O(17) => CCC=O(85)
+    C=C(56) + C=O(17) => C=CCO(86)
+    C=C(56) + C=O(17) => C[CH]C[O](87)
+    C=C(56) + C=O(17) => [CH2]C[CH]O(88)
+    C=C(56) + C=O(17) => CC[CH][O](89)
+    C=C(56) + C=O(17) => [CH2][CH]CO(90)
+    C=C(56) + C=O(17) => C1COC1(77)
+    C=C(56) + C=O(17) => [CH2]C[CH2](91) + [O](14)
+
+After model enlargement:
+    The model core has 15 species and 14 reactions
+    The model edge has 80 species and 149 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 14 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 14 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:34
+    Memory used: 134.71 MB
+
+Conducting simulation of reaction system 1...
+At time 2.2061e-07 s, PDepNetwork #46 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1603e+04 mol/m^3*s
+    [H][H](31) rate: 5.6168e+02 mol/m^3*s (0.04841)
+    PDepNetwork #46 leak rate: 6.2218e+03 mol/m^3*s (0.5362)
+    O2(2) conversion: 5.248e-06 
+At time 2.2061e-07 s, PDepNetwork #46 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1603e+04 mol/m^3*s
+    [H][H](31) rate: 5.6168e+02 mol/m^3*s (0.04841)
+    PDepNetwork #46 leak rate: 6.2218e+03 mol/m^3*s (0.5362)
+    O2(2) conversion: 5.248e-06 
+
+
+Exploring isomer [CH2]CO[CH2](76) in pressure-dependent network #46
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH2][CH2](57) + [CH2][O](19) <=> [CH2]CO[CH2](76) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [H](5) + [CH2][CH]O[CH2](93) <=> [CH2]CO[CH2](76) Ea raised from -0.8 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2][CH]O[CH2]">.
+========================================================================
+46 network information
+----------------------
+Isomers:
+    [CH2]CO[CH2](76)                                      160.494 kJ/mol
+Reactant channels:
+    C=C(56) + C=O(17)                                    -76.4597 kJ/mol
+Product channels:
+    [H](5) + [CH2]OC=C(92)                                291.712 kJ/mol
+    [CH2][CH2](57) + C=O(17)                              195.187 kJ/mol
+    [CH2][CH2](57) + [CH2][O](19)                         506.677 kJ/mol
+    [H](5) + [CH2][CH]O[CH2](93)                          552.755 kJ/mol
+    C=COC(94)                                            -122.773 kJ/mol
+    [CH2]O[CH]C(95)                                       135.704 kJ/mol
+    [CH2][CH]OC(96)                                       153.179 kJ/mol
+    C1COC1(77)                                           -92.5587 kJ/mol
+Path reactions:
+    [CH2]CO[CH2](76) <=> C=C(56) + C=O(17)                160.494 kJ/mol
+    [H](5) + [CH2]OC=C(92) <=> [CH2]CO[CH2](76)           298.482 kJ/mol
+    [CH2][CH2](57) + C=O(17) <=> [CH2]CO[CH2](76)         216.619 kJ/mol
+    [CH2][CH2](57) + [CH2][O](19) <=> [CH2]CO[CH2](76)      506.677 kJ/mol
+    [H](5) + [CH2][CH]O[CH2](93) <=> [CH2]CO[CH2](76)      552.755 kJ/mol
+    [CH2]CO[CH2](76) <=> C=COC(94)                        204.496 kJ/mol
+    [CH2]CO[CH2](76) <=> [CH2]O[CH]C(95)                  318.858 kJ/mol
+    [CH2]CO[CH2](76) <=> [CH2][CH]OC(96)                  284.545 kJ/mol
+    [CH2]CO[CH2](76) <=> C1COC1(77)                       168.778 kJ/mol
+========================================================================
+
+Calculating densities of states for 46 network...
+Using 801 grains from -122.77 to 1550.83 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]CO[CH2](76) <=> C1COC1(77)...
+Using 373 grains from -122.77 to 655.45 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 376 grains from -122.77 to 661.73 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 384 grains from -122.77 to 678.46 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 399 grains from -122.77 to 709.84 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 428 grains from -122.77 to 770.51 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 483 grains from -122.77 to 885.57 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 596 grains from -122.77 to 1121.97 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 763 grains from -122.77 to 1471.33 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+Warning: Marked reaction C=C(56) + C=O(17) => [CH2][CH2](57) + C=O(17) as duplicate for saving to Chemkin file.
+Warning: Marked reaction C=C(56) + C=O(17) => [CH2][CH2](57) + [CH2][O](19) as duplicate for saving to Chemkin file.
+Warning: Marked reaction C=C(56) + C=O(17) => C1COC1(77) as duplicate for saving to Chemkin file.
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 5 new edge species
+    [CH2]OC=C(92)
+    [CH2][CH]O[CH2](93)
+    C=COC(94)
+    [CH2]O[CH]C(95)
+    [CH2][CH]OC(96)
+Added 0 new core reactions
+Created 9 new edge reactions
+    C=C(56) + C=O(17) => [CH2]CO[CH2](76)
+    C=C(56) + C=O(17) => [H](5) + [CH2]OC=C(92)
+    C=C(56) + C=O(17) => [CH2][CH2](57) + C=O(17)
+    C=C(56) + C=O(17) => [CH2][CH2](57) + [CH2][O](19)
+    C=C(56) + C=O(17) => [H](5) + [CH2][CH]O[CH2](93)
+    C=C(56) + C=O(17) => C=COC(94)
+    C=C(56) + C=O(17) => [CH2]O[CH]C(95)
+    C=C(56) + C=O(17) => [CH2][CH]OC(96)
+    C=C(56) + C=O(17) => C1COC1(77)
+
+After model enlargement:
+    The model core has 15 species and 14 reactions
+    The model edge has 85 species and 158 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 14 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 14 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:40
+    Memory used: 134.71 MB
+
+Conducting simulation of reaction system 1...
+At time 2.6781e-07 s, PDepNetwork #50 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1535e+04 mol/m^3*s
+    [H][H](31) rate: 9.2408e+02 mol/m^3*s (0.08011)
+    PDepNetwork #50 leak rate: 6.2998e+03 mol/m^3*s (0.5461)
+    O2(2) conversion: 7.442e-06 
+At time 2.6781e-07 s, PDepNetwork #50 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1535e+04 mol/m^3*s
+    [H][H](31) rate: 9.2408e+02 mol/m^3*s (0.08011)
+    PDepNetwork #50 leak rate: 6.2998e+03 mol/m^3*s (0.5461)
+    O2(2) conversion: 7.442e-06 
+
+
+Exploring isomer [CH2]CC[CH2](79) in pressure-dependent network #50
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction [CH2][CH2](57) + [CH2][CH2](57) <=> [CH2]CC[CH2](79) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [H](5) + [CH2][CH]C[CH2](98) <=> [CH2]CC[CH2](79) Ea raised from -0.8 to 0 kJ/mol.
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+50 network information
+----------------------
+Isomers:
+    [CH2]CC[CH2](79)                                      266.189 kJ/mol
+Reactant channels:
+    C=C(56) + C=C(56)                                     84.2986 kJ/mol
+Product channels:
+    [H](5) + [CH2]CC=C(97)                                400.529 kJ/mol
+    [CH2][CH2](57) + C=C(56)                              355.946 kJ/mol
+    [CH2][CH2](57) + [CH2][CH2](57)                       627.593 kJ/mol
+    [H](5) + [CH2][CH]C[CH2](98)                           672.44 kJ/mol
+    C=CCC(99)                                            -16.5218 kJ/mol
+    [CH2]C[CH]C(100)                                      255.389 kJ/mol
+    [CH2][CH]CC(101)                                      255.389 kJ/mol
+    C1CCC1(80)                                             13.873 kJ/mol
+Path reactions:
+    [CH2]CC[CH2](79) <=> C=C(56) + C=C(56)                266.189 kJ/mol
+    [H](5) + [CH2]CC=C(97) <=> [CH2]CC[CH2](79)           409.023 kJ/mol
+    [CH2][CH2](57) + C=C(56) <=> [CH2]CC[CH2](79)         381.177 kJ/mol
+    [CH2][CH2](57) + [CH2][CH2](57) <=> [CH2]CC[CH2](79)      627.593 kJ/mol
+    [H](5) + [CH2][CH]C[CH2](98) <=> [CH2]CC[CH2](79)       672.44 kJ/mol
+    [CH2]CC[CH2](79) <=> C=CCC(99)                         310.19 kJ/mol
+    [CH2]CC[CH2](79) <=> [CH2]C[CH]C(100)                 418.068 kJ/mol
+    [CH2]CC[CH2](79) <=> [CH2][CH]CC(101)                  390.24 kJ/mol
+    [CH2]CC[CH2](79) <=> C1CCC1(80)                       274.473 kJ/mol
+========================================================================
+
+Calculating densities of states for 50 network...
+Using 808 grains from -16.52 to 1671.72 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [CH2]CC[CH2](79) <=> C1CCC1(80)...
+Using 379 grains from -16.52 to 774.25 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 382 grains from -16.52 to 780.53 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 390 grains from -16.52 to 797.27 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 406 grains from -16.52 to 830.74 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 434 grains from -16.52 to 889.31 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 490 grains from -16.52 to 1006.47 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 602 grains from -16.52 to 1240.77 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 770 grains from -16.52 to 1592.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 5 new edge species
+    [CH2]CC=C(97)
+    [CH2][CH]C[CH2](98)
+    C=CCC(99)
+    [CH2]C[CH]C(100)
+    [CH2][CH]CC(101)
+Added 0 new core reactions
+Created 8 new edge reactions
+    C=C(56) + C=C(56) => [CH2]CC[CH2](79)
+    C=C(56) + C=C(56) => [H](5) + [CH2]CC=C(97)
+    C=C(56) + C=C(56) => [CH2][CH2](57) + C=C(56)
+    C=C(56) + C=C(56) => [H](5) + [CH2][CH]C[CH2](98)
+    C=C(56) + C=C(56) => C=CCC(99)
+    C=C(56) + C=C(56) => [CH2]C[CH]C(100)
+    C=C(56) + C=C(56) => [CH2][CH]CC(101)
+    C=C(56) + C=C(56) => C1CCC1(80)
+
+After model enlargement:
+    The model core has 15 species and 14 reactions
+    The model edge has 90 species and 166 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 14 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 14 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:43
+    Memory used: 134.71 MB
+
+Conducting simulation of reaction system 1...
+At time 3.2091e-07 s, PDepNetwork #52 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1456e+04 mol/m^3*s
+    [H][H](31) rate: 1.4690e+03 mol/m^3*s (0.1282)
+    PDepNetwork #52 leak rate: 5.8294e+03 mol/m^3*s (0.5089)
+    O2(2) conversion: 1.035e-05 
+At time 3.2091e-07 s, PDepNetwork #52 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1456e+04 mol/m^3*s
+    [H][H](31) rate: 1.4690e+03 mol/m^3*s (0.1282)
+    PDepNetwork #52 leak rate: 5.8294e+03 mol/m^3*s (0.5089)
+    O2(2) conversion: 1.035e-05 
+
+
+Exploring isomer [O]O(8) in pressure-dependent network #52
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 1 modified unimolecular reaction networks...
+========================================================================
+52 network information
+----------------------
+Isomers:
+    [O]O(8)                                              -8.19602 kJ/mol
+Reactant channels:
+    O2(2) + [H](5)                                        203.178 kJ/mol
+Product channels:
+    [O](14) + [OH](18)                                    271.429 kJ/mol
+Path reactions:
+    O2(2) + [H](5) <=> [O]O(8)                            206.358 kJ/mol
+    [O](14) + [OH](18) <=> [O]O(8)                        271.429 kJ/mol
+========================================================================
+
+Calculating densities of states for 52 network...
+Using 840 grains from -8.20 to 1270.18 kJ/mol in steps of 1.52 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [O](14) + [OH](18) <=> [O]O(8)...
+Using 250 grains from -8.20 to 372.07 kJ/mol in steps of 1.53 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 250 grains from -8.20 to 379.39 kJ/mol in steps of 1.56 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 250 grains from -8.20 to 396.14 kJ/mol in steps of 1.62 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 250 grains from -8.20 to 427.86 kJ/mol in steps of 1.75 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 250 grains from -8.20 to 487.29 kJ/mol in steps of 1.99 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 294 grains from -8.20 to 604.76 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 406 grains from -8.20 to 839.06 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 574 grains from -8.20 to 1190.52 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 2 new edge reactions
+    O2(2) + [H](5) => [O]O(8)
+    O2(2) + [H](5) => [O](14) + [OH](18)
+
+After model enlargement:
+    The model core has 15 species and 14 reactions
+    The model edge has 90 species and 168 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 14 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 14 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:45
+    Memory used: 134.71 MB
+
+Conducting simulation of reaction system 1...
+At time 5.5924e-07 s, species [H][H](31) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.1056e+04 mol/m^3*s
+    [H][H](31) rate: 5.7828e+03 mol/m^3*s (0.5231)
+    PDepNetwork #53 leak rate: 1.7483e+02 mol/m^3*s (0.01581)
+    O2(2) conversion: 2.885e-05 
+At time 5.5924e-07 s, species [H][H](31) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1056e+04 mol/m^3*s
+    [H][H](31) rate: 5.7828e+03 mol/m^3*s (0.5231)
+    PDepNetwork #53 leak rate: 1.7483e+02 mol/m^3*s (0.01581)
+    O2(2) conversion: 2.885e-05 
+
+
+Adding species [H][H](31) to model core
+Exploring isomer [H][H](31) in pressure-dependent network #61
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Updating 2 modified unimolecular reaction networks...
+========================================================================
+61 network information
+----------------------
+Isomers:
+    [H][H](31)                                           -8.60349 kJ/mol
+Reactant channels:
+    [H](5) + [H](5)                                       423.609 kJ/mol
+Product channels:
+Path reactions:
+    [H](5) + [H](5) <=> [H][H](31)                        429.885 kJ/mol
+========================================================================
+
+Calculating densities of states for 61 network...
+Using 688 grains from -8.60 to 1428.60 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [H](5) <=> [H][H](31)...
+Using 259 grains from -8.60 to 531.13 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 263 grains from -8.60 to 539.50 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 271 grains from -8.60 to 556.24 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 286 grains from -8.60 to 587.62 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 314 grains from -8.60 to 646.19 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 370 grains from -8.60 to 763.34 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 482 grains from -8.60 to 997.65 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 650 grains from -8.60 to 1349.10 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+========================================================================
+62 network information
+----------------------
+Isomers:
+    [H][H](31)                                           -8.60349 kJ/mol
+Reactant channels:
+    [H](5) + [H](5)                                       423.609 kJ/mol
+Product channels:
+Path reactions:
+    [H](5) + [H](5) <=> [H][H](31)                        429.885 kJ/mol
+========================================================================
+
+Calculating densities of states for 62 network...
+Using 688 grains from -8.60 to 1428.60 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
+Calculating phenomenological rate coefficients for [H](5) + [H](5) <=> [H][H](31)...
+Using 259 grains from -8.60 to 531.13 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
+Using 263 grains from -8.60 to 539.50 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
+Using 271 grains from -8.60 to 556.24 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
+Using 286 grains from -8.60 to 587.62 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 470.374 K
+Using 314 grains from -8.60 to 646.19 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 649.057 K
+Using 370 grains from -8.60 to 763.34 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1000.02 K
+Using 482 grains from -8.60 to 997.65 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 1706.11 K
+Using 650 grains from -8.60 to 1349.10 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 2761.25 K
+
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    [H][H](31)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    ethane(1) + [H](5) <=> C[CH2](4) + [H][H](31)
+    C[CH2](4) + [H](5) <=> C=C(56) + [H][H](31)
+    [OH](18) + [H][H](31) <=> [H](5) + O(25)
+Added 1 new core reactions
+    [H](5) + [H](5) <=> [H][H](31)
+Created 6 new edge reactions
+    O2(2) + [H][H](31) <=> [H](5) + [O]O(8)
+    [H](5) + C(7) <=> [CH3](3) + [H][H](31)
+    [H](5) + COO(15) <=> CO[O](10) + [H][H](31)
+    [H](5) + COO(15) <=> [CH2]OO(12) + [H][H](31)
+    [H](5) + [CH2]O(32) <=> C=O(17) + [H][H](31)
+    [H](5) + C[O](13) <=> C=O(17) + [H][H](31)
+
+After model enlargement:
+    The model core has 16 species and 18 reactions
+    The model edge has 89 species and 171 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 18 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 18 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:48
+    Memory used: 134.71 MB
+
+Conducting simulation of reaction system 1...
+At time 4.3819e-06 s, reached target termination conversion: 0.001000 of O2(2)
+    O2(2) conversion: 0.00101   
+
+Saving current model core to Chemkin file...
+Chemkin file contains 18 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 18 reactions.
+Saving restart file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:50
+    Memory used: 138.63 MB
+
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:50
+    Memory used: 138.63 MB
+
+MODEL GENERATION COMPLETED
+
+The final model core has 16 species and 18 reactions
+The final model edge has 89 species and 171 reactions
+
+RMG execution terminated at Fri Jan 22 20:19:11 2016

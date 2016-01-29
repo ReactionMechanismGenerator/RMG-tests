@@ -1,0 +1,699 @@
+Global RMG Settings:
+   database.directory   = RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Fri Jan 22 20:15:35 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.1                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+The current git HEAD is:
+	08e397629757546f46d10d0bfabf371bf981a20a
+	Mon Oct 19 10:55:21 2015 -0400
+
+Reading input file "RMG-Py/testing/gri_mech_rxn_lib/input.py"...
+
+Loading thermodynamics library from primaryThermoLibrary.py in RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in RMG-database/input/transport/libraries...
+Consistency checking of multiplicity of molecules with more than 2 unpaired electrons is not implemented yet!
+Loading transport library from PrimaryTransportLibrary.py in RMG-database/input/transport/libraries...
+Loading transport group database from RMG-database/input/transport/groups...
+Loading default kinetics families from RMG-database/input/kinetics/families
+Loading kinetics library GRI-Mech3.0 from RMG-database/input/kinetics/libraries/GRI-Mech3.0/reactions.py...
+Consistency checking of multiplicity of molecules with more than 2 unpaired electrons is not implemented yet!
+Loading frequencies group database from RMG-database/input/statmech/groups...
+Loading Platts additivity group database from RMG-database/input/solvation/groups...
+Adding rate rules from training set in kinetics families...
+Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
+Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Filling in rate rules in kinetics families by averaging...
+Adding reaction library GRI-Mech3.0 to model edge...
+Found thermo for O in thermo library: primarythermolibrary
+Found thermo for H2 in thermo library: primarythermolibrary
+Found thermo for H in thermo library: primarythermolibrary
+Found thermo for OH in thermo library: primarythermolibrary
+Found thermo for O2 in thermo library: primarythermolibrary
+Found thermo for CH2 in thermo library: primarythermolibrary
+Found thermo for CH2(S) in thermo library: primarythermolibrary
+Found thermo for CH4 in thermo library: primarythermolibrary
+Resonance isomer 1 [CH]=C=O gives H298=199815 J/mol
+Resonance isomer 2 C#C[O] gives H298=302867 J/mol
+Found thermo for H2O in thermo library: primarythermolibrary
+Found thermo for C in thermo library: primarythermolibrary
+Resonance isomer 1 C=C[O] gives H298=26305 J/mol
+Resonance isomer 2 [CH2]C=O gives H298=41074 J/mol
+
+Summary of Model Enlargement
+----------------------------
+Added 0 new core species
+Created 32 new edge species
+    O(2)
+    H2(3)
+    H(4)
+    OH(5)
+    HO2(6)
+    O2(7)
+    H2O2(8)
+    CH(9)
+    CO(10)
+    CH2(11)
+    HCO(12)
+    CH2(S)(13)
+    CH3(14)
+    CH2O(15)
+    CH4(16)
+    CO2(17)
+    CH2OH(18)
+    CH3O(19)
+    CH3OH(20)
+    C2H(21)
+    C2H2(22)
+    HCCO(23)
+    C2H3(24)
+    CH2CO(25)
+    C2H4(26)
+    C2H5(27)
+    H2O(28)
+    C(29)
+    HCCOH(30)
+    CH2CHO(31)
+    CH3CHO(32)
+    C3H8(33)
+Added 0 new core reactions
+Created 199 new edge reactions
+    H2(3) + O(2) <=> OH(5) + H(4)
+    HO2(6) + O(2) <=> O2(7) + OH(5)
+    O(2) + H2O2(8) <=> HO2(6) + OH(5)
+    CH(9) + O(2) <=> CO(10) + H(4)
+    O(2) + CH2(11) <=> HCO(12) + H(4)
+    CH2(S)(13) + O(2) <=> H2(3) + CO(10)
+    CH2(S)(13) + O(2) <=> HCO(12) + H(4)
+    CH3(14) + O(2) <=> CH2O(15) + H(4)
+    CH4(16) + O(2) <=> CH3(14) + OH(5)
+    HCO(12) + O(2) <=> CO(10) + OH(5)
+    HCO(12) + O(2) <=> CO2(17) + H(4)
+    CH2O(15) + O(2) <=> HCO(12) + OH(5)
+    CH2OH(18) + O(2) <=> CH2O(15) + OH(5)
+    CH3O(19) + O(2) <=> CH2O(15) + OH(5)
+    CH3OH(20) + O(2) <=> CH2OH(18) + OH(5)
+    CH3OH(20) + O(2) <=> CH3O(19) + OH(5)
+    C2H(21) + O(2) <=> CH(9) + CO(10)
+    C2H2(22) + O(2) <=> HCCO(23) + H(4)
+    C2H2(22) + O(2) <=> C2H(21) + OH(5)
+    C2H2(22) + O(2) <=> CO(10) + CH2(11)
+    C2H3(24) + O(2) <=> CH2CO(25) + H(4)
+    C2H4(26) + O(2) <=> HCO(12) + CH3(14)
+    C2H5(27) + O(2) <=> CH3(14) + CH2O(15)
+    ethane(1) + O(2) <=> C2H5(27) + OH(5)
+    HCCO(23) + O(2) <=> CO(10) + CO(10) + H(4)
+    CH2CO(25) + O(2) <=> HCCO(23) + OH(5)
+    CH2CO(25) + O(2) <=> CO2(17) + CH2(11)
+    O2(7) + CO(10) <=> CO2(17) + O(2)
+    CH2O(15) + O2(7) <=> HCO(12) + HO2(6)
+    O2(7) + O2(7) + H(4) <=> O2(7) + HO2(6)
+    H2O(28) + O2(7) + H(4) <=> H2O(28) + HO2(6)
+    O2(7) + H(4) <=> O(2) + OH(5)
+    H2(3) + H(4) + H(4) <=> H2(3) + H2(3)
+    H2O(28) + H(4) + H(4) <=> H2O(28) + H2(3)
+    CO2(17) + H(4) + H(4) <=> CO2(17) + H2(3)
+    HO2(6) + H(4) <=> H2O(28) + O(2)
+    HO2(6) + H(4) <=> H2(3) + O2(7)
+    HO2(6) + H(4) <=> OH(5) + OH(5)
+    H2O2(8) + H(4) <=> H2(3) + HO2(6)
+    H2O2(8) + H(4) <=> H2O(28) + OH(5)
+    CH(9) + H(4) <=> C(29) + H2(3)
+    CH2(S)(13) + H(4) <=> H2(3) + CH(9)
+    CH4(16) + H(4) <=> CH3(14) + H2(3)
+    HCO(12) + H(4) <=> H2(3) + CO(10)
+    CH2O(15) + H(4) <=> HCO(12) + H2(3)
+    CH2OH(18) + H(4) <=> CH2O(15) + H2(3)
+    CH2OH(18) + H(4) <=> CH3(14) + OH(5)
+    CH2OH(18) + H(4) <=> CH2(S)(13) + H2O(28)
+    CH3O(19) + H(4) <=> CH2OH(18) + H(4)
+    CH3O(19) + H(4) <=> CH2O(15) + H2(3)
+    CH3O(19) + H(4) <=> CH3(14) + OH(5)
+    CH3O(19) + H(4) <=> CH2(S)(13) + H2O(28)
+    CH3OH(20) + H(4) <=> CH2OH(18) + H2(3)
+    CH3OH(20) + H(4) <=> CH3O(19) + H2(3)
+    C2H3(24) + H(4) <=> C2H2(22) + H2(3)
+    C2H4(26) + H(4) <=> C2H3(24) + H2(3)
+    C2H5(27) + H(4) <=> C2H4(26) + H2(3)
+    ethane(1) + H(4) <=> C2H5(27) + H2(3)
+    HCCO(23) + H(4) <=> CH2(S)(13) + CO(10)
+    CH2CO(25) + H(4) <=> HCCO(23) + H2(3)
+    CH2CO(25) + H(4) <=> CH3(14) + CO(10)
+    HCCOH(30) + H(4) <=> CH2CO(25) + H(4)
+    H2(3) + OH(5) <=> H2O(28) + H(4)
+    OH(5) + OH(5) <=> H2O(28) + O(2)
+    HO2(6) + OH(5) <=> H2O(28) + O2(7)
+    OH(5) + H2O2(8) <=> H2O(28) + HO2(6)
+    C(29) + OH(5) <=> CO(10) + H(4)
+    CH(9) + OH(5) <=> HCO(12) + H(4)
+    CH2(11) + OH(5) <=> CH2O(15) + H(4)
+    CH2(11) + OH(5) <=> H2O(28) + CH(9)
+    CH2(S)(13) + OH(5) <=> CH2O(15) + H(4)
+    CH3(14) + OH(5) <=> H2O(28) + CH2(11)
+    CH3(14) + OH(5) <=> CH2(S)(13) + H2O(28)
+    CH4(16) + OH(5) <=> CH3(14) + H2O(28)
+    CO(10) + OH(5) <=> CO2(17) + H(4)
+    HCO(12) + OH(5) <=> H2O(28) + CO(10)
+    CH2O(15) + OH(5) <=> HCO(12) + H2O(28)
+    CH2OH(18) + OH(5) <=> CH2O(15) + H2O(28)
+    CH3O(19) + OH(5) <=> CH2O(15) + H2O(28)
+    CH3OH(20) + OH(5) <=> CH2OH(18) + H2O(28)
+    CH3OH(20) + OH(5) <=> CH3O(19) + H2O(28)
+    C2H(21) + OH(5) <=> HCCO(23) + H(4)
+    C2H2(22) + OH(5) <=> CH2CO(25) + H(4)
+    C2H2(22) + OH(5) <=> HCCOH(30) + H(4)
+    C2H2(22) + OH(5) <=> C2H(21) + H2O(28)
+    C2H2(22) + OH(5) <=> CH3(14) + CO(10)
+    C2H3(24) + OH(5) <=> C2H2(22) + H2O(28)
+    C2H4(26) + OH(5) <=> C2H3(24) + H2O(28)
+    ethane(1) + OH(5) <=> C2H5(27) + H2O(28)
+    CH2CO(25) + OH(5) <=> HCCO(23) + H2O(28)
+    HO2(6) + HO2(6) <=> O2(7) + H2O2(8)
+    HO2(6) + CH2(11) <=> CH2O(15) + OH(5)
+    CH3(14) + HO2(6) <=> CH4(16) + O2(7)
+    CH3(14) + HO2(6) <=> CH3O(19) + OH(5)
+    CO(10) + HO2(6) <=> CO2(17) + OH(5)
+    CH2O(15) + HO2(6) <=> HCO(12) + H2O2(8)
+    C(29) + O2(7) <=> CO(10) + O(2)
+    C(29) + CH2(11) <=> C2H(21) + H(4)
+    CH3(14) + C(29) <=> C2H2(22) + H(4)
+    O2(7) + CH(9) <=> HCO(12) + O(2)
+    H2(3) + CH(9) <=> CH2(11) + H(4)
+    H2O(28) + CH(9) <=> CH2O(15) + H(4)
+    CH(9) + CH2(11) <=> C2H2(22) + H(4)
+    CH3(14) + CH(9) <=> C2H3(24) + H(4)
+    CH4(16) + CH(9) <=> C2H4(26) + H(4)
+    CO2(17) + CH(9) <=> HCO(12) + CO(10)
+    CH2O(15) + CH(9) <=> CH2CO(25) + H(4)
+    HCCO(23) + CH(9) <=> C2H2(22) + CO(10)
+    O2(7) + CH2(11) => CO(10) + OH(5) + H(4)
+    H2(3) + CH2(11) <=> CH3(14) + H(4)
+    CH2(11) + CH2(11) <=> C2H2(22) + H2(3)
+    CH3(14) + CH2(11) <=> C2H4(26) + H(4)
+    CH4(16) + CH2(11) <=> CH3(14) + CH3(14)
+    HCCO(23) + CH2(11) <=> C2H3(24) + CO(10)
+    CH2(S)(13) + O2(7) <=> CO(10) + OH(5) + H(4)
+    CH2(S)(13) + O2(7) <=> H2O(28) + CO(10)
+    CH2(S)(13) + H2(3) <=> CH3(14) + H(4)
+    CH2(S)(13) + H2O(28) <=> H2O(28) + CH2(11)
+    CH2(S)(13) + CH3(14) <=> C2H4(26) + H(4)
+    CH2(S)(13) + CH4(16) <=> CH3(14) + CH3(14)
+    CH2(S)(13) + CO(10) <=> CO(10) + CH2(11)
+    CH2(S)(13) + CO2(17) <=> CO2(17) + CH2(11)
+    CH2(S)(13) + CO2(17) <=> CH2O(15) + CO(10)
+    ethane(1) + CH2(S)(13) <=> CH3(14) + C2H5(27)
+    CH3(14) + O2(7) <=> CH3O(19) + O(2)
+    CH3(14) + O2(7) <=> CH2O(15) + OH(5)
+    CH3(14) + H2O2(8) <=> CH4(16) + HO2(6)
+    CH3(14) + CH3(14) <=> C2H5(27) + H(4)
+    HCO(12) + CH3(14) <=> CH4(16) + CO(10)
+    CH3(14) + CH2O(15) <=> HCO(12) + CH4(16)
+    CH3(14) + CH3OH(20) <=> CH4(16) + CH2OH(18)
+    CH3(14) + CH3OH(20) <=> CH4(16) + CH3O(19)
+    CH3(14) + C2H4(26) <=> CH4(16) + C2H3(24)
+    ethane(1) + CH3(14) <=> CH4(16) + C2H5(27)
+    HCO(12) + H2O(28) <=> H2O(28) + CO(10) + H(4)
+    HCO(12) + O2(7) <=> CO(10) + HO2(6)
+    CH2OH(18) + O2(7) <=> CH2O(15) + HO2(6)
+    CH3O(19) + O2(7) <=> CH2O(15) + HO2(6)
+    C2H(21) + O2(7) <=> HCO(12) + CO(10)
+    C2H(21) + H2(3) <=> C2H2(22) + H(4)
+    C2H3(24) + O2(7) <=> HCO(12) + CH2O(15)
+    C2H5(27) + O2(7) <=> C2H4(26) + HO2(6)
+    HCCO(23) + O2(7) <=> CO(10) + CO(10) + OH(5)
+    HCCO(23) + HCCO(23) <=> C2H2(22) + CO(10) + CO(10)
+    CH3(14) + O(2) => H2(3) + CO(10) + H(4)
+    C2H4(26) + O(2) <=> CH2CHO(31) + H(4)
+    C2H5(27) + O(2) <=> CH3CHO(32) + H(4)
+    CH3(14) + OH(5) => CH2O(15) + H2(3)
+    O2(7) + CH2(11) => CO2(17) + H(4) + H(4)
+    O2(7) + CH2(11) <=> CH2O(15) + O(2)
+    CH2(11) + CH2(11) => C2H2(22) + H(4) + H(4)
+    CH2(S)(13) + H2O(28) => CH2O(15) + H2(3)
+    C2H3(24) + O2(7) <=> CH2CHO(31) + O(2)
+    C2H3(24) + O2(7) <=> C2H2(22) + HO2(6)
+    CH3CHO(32) + O(2) <=> CH2CHO(31) + OH(5)
+    CH3CHO(32) + O(2) => CH3(14) + CO(10) + OH(5)
+    CH3CHO(32) + O2(7) => CH3(14) + CO(10) + HO2(6)
+    CH3CHO(32) + H(4) <=> CH2CHO(31) + H2(3)
+    CH3CHO(32) + H(4) => CH3(14) + H2(3) + CO(10)
+    CH3CHO(32) + OH(5) => CH3(14) + H2O(28) + CO(10)
+    CH3CHO(32) + HO2(6) => CH3(14) + CO(10) + H2O2(8)
+    CH3(14) + CH3CHO(32) => CH3(14) + CH4(16) + CO(10)
+    CH2CHO(31) + O(2) => CO2(17) + CH2(11) + H(4)
+    CH2CHO(31) + O2(7) => CH2O(15) + CO(10) + OH(5)
+    CH2CHO(31) + O2(7) => HCO(12) + HCO(12) + OH(5)
+    CH2CHO(31) + H(4) <=> HCO(12) + CH3(14)
+    CH2CHO(31) + H(4) <=> CH2CO(25) + H2(3)
+    CH2CHO(31) + OH(5) <=> CH2CO(25) + H2O(28)
+    CH2CHO(31) + OH(5) <=> HCO(12) + CH2OH(18)
+    O(2) + O(2) <=> O2(7)
+    O(2) + H(4) <=> OH(5)
+    O2(7) + H(4) <=> HO2(6)
+    H(4) + H(4) <=> H2(3)
+    OH(5) + H(4) <=> H2O(28)
+    HCO(12) <=> CO(10) + H(4)
+    CO(10) + O(2) <=> CO2(17)
+    CH2(11) + H(4) <=> CH3(14)
+    CH3(14) + H(4) <=> CH4(16)
+    HCO(12) + H(4) <=> CH2O(15)
+    CH2O(15) + H(4) <=> CH2OH(18)
+    CH2O(15) + H(4) <=> CH3O(19)
+    CH2OH(18) + H(4) <=> CH3OH(20)
+    CH3O(19) + H(4) <=> CH3OH(20)
+    C2H(21) + H(4) <=> C2H2(22)
+    C2H2(22) + H(4) <=> C2H3(24)
+    C2H3(24) + H(4) <=> C2H4(26)
+    C2H4(26) + H(4) <=> C2H5(27)
+    C2H5(27) + H(4) <=> ethane(1)
+    H2(3) + CO(10) <=> CH2O(15)
+    OH(5) + OH(5) <=> H2O2(8)
+    CH3(14) + OH(5) <=> CH3OH(20)
+    CH(9) + CO(10) <=> HCCO(23)
+    CO(10) + CH2(11) <=> CH2CO(25)
+    CH2(S)(13) + H2O(28) <=> CH3OH(20)
+    CH3(14) + CH3(14) <=> ethane(1)
+    C2H4(26) <=> C2H2(22) + H2(3)
+    H2(3) + CH(9) <=> CH3(14)
+    CH2CO(25) + H(4) <=> CH2CHO(31)
+    CH3(14) + C2H5(27) <=> C3H8(33)
+
+After model enlargement:
+    The model core has 0 species and 0 reactions
+    The model edge has 32 species and 199 reactions
+
+Found thermo for Ar in thermo library: primarythermolibrary
+Found thermo for He in thermo library: primarythermolibrary
+Found thermo for Ne in thermo library: primarythermolibrary
+Found thermo for N2 in thermo library: primarythermolibrary
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 1 species and 0 reactions
+    The model edge has 32 species and 199 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 2 species and 0 reactions
+    The model edge has 32 species and 199 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 3 species and 0 reactions
+    The model edge has 32 species and 199 reactions
+
+
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 4 species and 0 reactions
+    The model edge has 32 species and 199 reactions
+
+
+Adding species ethane(1) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    ethane(1)
+Created 0 new edge species
+Added 0 new core reactions
+Created 1 new edge reactions
+    CH2(S)(13) + CH4(16) <=> ethane(1)
+
+After model enlargement:
+    The model core has 5 species and 0 reactions
+    The model edge has 32 species and 200 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 203 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 203 reactions.
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CH3(14) exceeded the minimum rate for moving to model core
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    CH3(14) rate: 7.4484e+02 mol/m^3*s
+    ethane(1) conversion: 0         
+At time 1.0000e-15 s, species CH3(14) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    CH3(14) rate: 7.4484e+02 mol/m^3*s
+    ethane(1) conversion: 0         
+
+
+Adding species CH3(14) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    CH3(14)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    CH3(14) + CH3(14) <=> ethane(1)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 6 species and 1 reactions
+    The model edge has 31 species and 199 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 203 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 203 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 131.33 MB
+
+Conducting simulation of reaction system 1...
+At time 3.6326e-07 s, species C2H5(27) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.3193e+02 mol/m^3*s
+    C2H5(27) rate: 8.6147e+01 mol/m^3*s (0.1036)
+    ethane(1) conversion: 1.518e-05 
+At time 3.6326e-07 s, species C2H5(27) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.3193e+02 mol/m^3*s
+    C2H5(27) rate: 8.6147e+01 mol/m^3*s (0.1036)
+    ethane(1) conversion: 1.518e-05 
+
+
+Adding species C2H5(27) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C2H5(27)
+Created 2 new edge species
+    [CH2][CH2](34)
+    CCCC(35)
+Added 0 new core reactions
+Created 5 new edge reactions
+    H(4) + [CH2][CH2](34) <=> C2H5(27)
+    CH3(14) + C2H5(27) <=> CH4(16) + C2H4(26)
+    ethane(1) + CH2(11) <=> CH3(14) + C2H5(27)
+    C2H5(27) + C2H5(27) <=> ethane(1) + C2H4(26)
+    C2H5(27) + C2H5(27) <=> CCCC(35)
+
+After model enlargement:
+    The model core has 7 species and 1 reactions
+    The model edge has 32 species and 204 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 208 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 208 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:18
+    Memory used: 131.33 MB
+
+Conducting simulation of reaction system 1...
+At time 4.2952e-07 s, species CH4(16) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.3161e+02 mol/m^3*s
+    CH4(16) rate: 1.0013e+02 mol/m^3*s (0.1204)
+    ethane(1) conversion: 1.795e-05 
+At time 4.2952e-07 s, species CH4(16) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.3161e+02 mol/m^3*s
+    CH4(16) rate: 1.0013e+02 mol/m^3*s (0.1204)
+    ethane(1) conversion: 1.795e-05 
+
+
+Adding species CH4(16) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    CH4(16)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    ethane(1) + CH3(14) <=> CH4(16) + C2H5(27)
+Added 0 new core reactions
+Created 1 new edge reactions
+    CH2(S)(13) + H2(3) <=> CH4(16)
+
+After model enlargement:
+    The model core has 8 species and 2 reactions
+    The model edge has 31 species and 204 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 209 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 209 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:18
+    Memory used: 131.34 MB
+
+Conducting simulation of reaction system 1...
+At time 1.5552e-06 s, species H(4) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.9003e+02 mol/m^3*s
+    H(4) rate: 9.9629e+01 mol/m^3*s (0.1119)
+    ethane(1) conversion: 9.162e-05 
+At time 1.5552e-06 s, species H(4) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.9003e+02 mol/m^3*s
+    H(4) rate: 9.9629e+01 mol/m^3*s (0.1119)
+    ethane(1) conversion: 9.162e-05 
+
+
+Adding species H(4) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    H(4)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    CH3(14) + CH3(14) <=> C2H5(27) + H(4)
+    CH3(14) + H(4) <=> CH4(16)
+    C2H5(27) + H(4) <=> ethane(1)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 9 species and 5 reactions
+    The model edge has 30 species and 201 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 209 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 209 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:18
+    Memory used: 131.34 MB
+
+Conducting simulation of reaction system 1...
+At time 8.6037e-07 s, species H2(3) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.2631e+02 mol/m^3*s
+    H2(3) rate: 9.2758e+01 mol/m^3*s (0.1123)
+    ethane(1) conversion: 4.492e-05 
+At time 8.6037e-07 s, species H2(3) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.2631e+02 mol/m^3*s
+    H2(3) rate: 9.2758e+01 mol/m^3*s (0.1123)
+    ethane(1) conversion: 4.492e-05 
+
+
+Adding species H2(3) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    H2(3)
+Created 0 new edge species
+Moved 4 reactions from edge to core
+    H2(3) + H(4) + H(4) <=> H2(3) + H2(3)
+    CH4(16) + H(4) <=> CH3(14) + H2(3)
+    ethane(1) + H(4) <=> C2H5(27) + H2(3)
+    H(4) + H(4) <=> H2(3)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 10 species and 9 reactions
+    The model edge has 29 species and 197 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 9 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 9 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 209 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 209 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:19
+    Memory used: 131.34 MB
+
+Conducting simulation of reaction system 1...
+At time 1.4481e-06 s, species C2H4(26) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.8203e+02 mol/m^3*s
+    C2H4(26) rate: 8.8919e+01 mol/m^3*s (0.1008)
+    ethane(1) conversion: 8.45e-05  
+At time 1.4481e-06 s, species C2H4(26) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.8203e+02 mol/m^3*s
+    C2H4(26) rate: 8.8919e+01 mol/m^3*s (0.1008)
+    ethane(1) conversion: 8.45e-05  
+
+
+Adding species C2H4(26) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+----------------------------
+Added 1 new core species
+    C2H4(26)
+Created 4 new edge species
+    [CH2]CC(36)
+    [CH2]CCC(37)
+    [CH2]CC[CH2](38)
+    C1CCC1(39)
+Moved 4 reactions from edge to core
+    C2H5(27) + H(4) <=> C2H4(26) + H2(3)
+    C2H4(26) + H(4) <=> C2H5(27)
+    CH3(14) + C2H5(27) <=> CH4(16) + C2H4(26)
+    C2H5(27) + C2H5(27) <=> ethane(1) + C2H4(26)
+Added 0 new core reactions
+Created 9 new edge reactions
+    [CH2][CH2](34) <=> C2H4(26)
+    C2H5(27) + CH2(11) <=> CH3(14) + C2H4(26)
+    CH3(14) + C2H4(26) <=> [CH2]CC(36)
+    C2H5(27) + [CH2][CH2](34) <=> C2H4(26) + C2H5(27)
+    C2H4(26) + C2H5(27) <=> [CH2]CCC(37)
+    ethane(1) + C2H3(24) <=> C2H4(26) + C2H5(27)
+    C2H3(24) + C2H5(27) <=> C2H4(26) + C2H4(26)
+    [CH2]CC[CH2](38) <=> C2H4(26) + C2H4(26)
+    C2H4(26) + C2H4(26) <=> C1CCC1(39)
+
+After model enlargement:
+    The model core has 11 species and 13 reactions
+    The model edge has 32 species and 202 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 13 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 13 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 218 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 218 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 131.38 MB
+
+Conducting simulation of reaction system 1...
+At time 2.7507e-04 s, reached target termination conversion: 0.100000 of ethane(1)
+    ethane(1) conversion: 0.1014    
+
+Saving current model core to Chemkin file...
+Chemkin file contains 13 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 13 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 218 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 218 reactions.
+Saving restart file...
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:22
+    Memory used: 131.40 MB
+
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:22
+    Memory used: 131.40 MB
+
+MODEL GENERATION COMPLETED
+
+The final model core has 11 species and 13 reactions
+The final model edge has 32 species and 202 reactions
+
+RMG execution terminated at Fri Jan 22 20:15:57 2016
