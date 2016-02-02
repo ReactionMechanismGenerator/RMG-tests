@@ -105,13 +105,13 @@ def checkModel(commonSpecies, uniqueSpeciesTest, uniqueSpeciesOrig, commonReacti
     testModelSpecies = len(commonSpecies) + len(uniqueSpeciesTest)
     origModelSpecies = len(commonSpecies) + len(uniqueSpeciesOrig)
 
-    logger.info('Test model has {} species.'.format(testModelSpecies))
-    logger.info('Original model has {} species.'.format(origModelSpecies))
+    logger.error('Test model has {} species.'.format(testModelSpecies))
+    logger.error('Original model has {} species.'.format(origModelSpecies))
 
     testModelRxns = len(commonReactions) + len(uniqueReactionsTest)
     origModelRxns = len(commonReactions) + len(uniqueReactionsOrig)
-    logger.info('Test model has {} reactions.'.format(testModelRxns))
-    logger.info('Original model has {} reactions.'.format(origModelRxns))
+    logger.error('Test model has {} reactions.'.format(testModelRxns))
+    logger.error('Original model has {} reactions.'.format(origModelRxns))
 
     return (testModelSpecies != origModelSpecies) or (testModelRxns != origModelRxns)
 
@@ -275,7 +275,7 @@ def initializeLog(verbose, log_file_name='checkModels.log'):
     logging.basicConfig(
         filename=log_file_name,
         filemode='w',
-        format='%(levelname)s: %(name)s:%(message)s',
+        format='%(name)s:%(message)s',
         level=verbose
         )
 
