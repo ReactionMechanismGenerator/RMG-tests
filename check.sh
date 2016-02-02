@@ -18,14 +18,14 @@ echo 'Source folder: '$SOURCE_FOLDER
 python $TRAVIS_BUILD_DIR/checkModels.py $target $SOURCE_FOLDER/chemkin/chem_annotated.inp $SOURCE_FOLDER/chemkin/species_dictionary.txt
 
 echo core for $target:
-if grep "checkModels" $target.log > $target.core ; then
+if grep "checkModels" $target.log | cut -f2- -d'=' > $target.core ; then
 	cat $target.core
 fi
 
 # edge:
 python $TRAVIS_BUILD_DIR/checkModels.py $target $SOURCE_FOLDER/chemkin/chem_edge_annotated.inp $SOURCE_FOLDER/chemkin/species_edge_dictionary.txt
 echo edge for $target:
-if grep "checkModels" $target.log > $target.edge ; then
+if grep "checkModels" $target.log | cut -f2- -d'=' > $target.edge ; then
 	cat $target.edge
 fi
 
