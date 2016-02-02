@@ -32,7 +32,9 @@ before_install:
   - export PYTHONPATH=$RMG:$PYTHONPATH
 
   - git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
-
+  - cd RMG-database
+  - git checkout tags/1.0.2
+  - cd ..
   - cd RMG-Py
   - git checkout $REV
 
