@@ -57,3 +57,7 @@ cache:
   apt: true
   # directories:
   #   - $HOME/anaconda/pkgs
+
+branches:
+  only:
+    - /^rmgpy-.*$/
