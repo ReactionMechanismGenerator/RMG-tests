@@ -12,40 +12,15 @@ addons:
     packages:
     - git
 
-before_install:
-  # Set up anaconda
-  - wget http://repo.continuum.io/miniconda/Miniconda-2.2.2-Linux-x86_64.sh -O miniconda.sh
-  - chmod +x miniconda.sh
-  - ./miniconda.sh -b
-  - export PATH=/home/travis/anaconda/bin:$PATH
-  # Update conda itself
-  - conda update --yes conda
+before_install: 
+  - chmod +x before_install.sh
+  - . ./before_install.sh
 
-  # commit message of current head of RMG-tests = SHA-ID of RMG-Py commit to be tested.
-  - REV=$(git log --format=%B -n 1 HEAD)
-  
-  - cd ..
-
-
-  - git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
-  - export RMG=`pwd`/RMG-Py
-  - export PYTHONPATH=$RMG:$PYTHONPATH
-
-  - git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
-  - cd RMG-database
-  - git checkout tags/1.0.2
-  - cd ..
-  - cd RMG-Py
-  - git checkout $REV
-
-install:
-  - conda env create 
-  - source activate rmg_env
-  - make
+install: 
+  - chmod +x install.sh
+  - . ./install.sh
 
 script: 
-  # go to RMG-tests folder:
-  - cd $TRAVIS_BUILD_DIR
   - make ARGS="eg1" run
   - make ARGS="eg3" run
   - make ARGS="eg5" run
