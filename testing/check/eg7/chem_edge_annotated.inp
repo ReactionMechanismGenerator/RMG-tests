@@ -327,7 +327,7 @@ REACTIONS    KCAL/MOLE   MOLES
 ! Reaction index: Chemkin #1; RMG #195
 ! Library reaction: GRI-Mech3.0
 CH3(14)+CH3(14)(+M)=ethane(1)(+M)                   6.770e+16 -1.180    0.654    
-CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
+CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 3.400e+41 -7.030    2.762    /
     TROE/ 6.190e-01 73.2      1.18e+03  1e+04    /
 
@@ -337,19 +337,19 @@ ethane(1)+CH3(14)=CH4(16)+C2H5(27)                  6.140e+06 1.740     10.450
 
 ! Reaction index: Chemkin #3; RMG #128
 ! Library reaction: GRI-Mech3.0
-CH3(14)+CH3(14)=C2H5(27)+H(4)                       6.840e+12 0.100     10.600   
+CH3(14)+CH3(14)=H(4)+C2H5(27)                       6.840e+12 0.100     10.600   
 
 ! Reaction index: Chemkin #4; RMG #178
 ! Library reaction: GRI-Mech3.0
 H(4)+CH3(14)(+M)=CH4(16)(+M)                        1.390e+16 -0.534    0.536    
-CO2(17)/2.00/ CH4(16)/3.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
+CH4(16)/3.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
     LOW/ 2.620e+33 -4.760    2.440    /
     TROE/ 7.830e-01 74        2.94e+03  6.96e+03 /
 
 ! Reaction index: Chemkin #5; RMG #188
 ! Library reaction: GRI-Mech3.0
-C2H5(27)+H(4)(+M)=ethane(1)(+M)                     5.210e+17 -0.990    1.580    
-CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
+H(4)+C2H5(27)(+M)=ethane(1)(+M)                     5.210e+17 -0.990    1.580    
+CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
     LOW/ 1.990e+41 -7.080    6.685    /
     TROE/ 8.422e-01 125       2.22e+03  6.88e+03 /
 
@@ -359,25 +359,25 @@ H2(3)+H(4)+H(4)=H2(3)+H2(3)                         9.000e+16 -0.600    0.000
 
 ! Reaction index: Chemkin #7; RMG #43
 ! Library reaction: GRI-Mech3.0
-CH4(16)+H(4)=H2(3)+CH3(14)                          6.600e+08 1.620     10.840   
+H(4)+CH4(16)=H2(3)+CH3(14)                          6.600e+08 1.620     10.840   
 
 ! Reaction index: Chemkin #8; RMG #58
 ! Library reaction: GRI-Mech3.0
-ethane(1)+H(4)=C2H5(27)+H2(3)                       1.150e+08 1.900     7.530    
+ethane(1)+H(4)=H2(3)+C2H5(27)                       1.150e+08 1.900     7.530    
 
 ! Reaction index: Chemkin #9; RMG #173
 ! Library reaction: GRI-Mech3.0
 H(4)+H(4)+M=H2(3)+M                                 1.000e+18 -1.000    0.000    
-CH4(16)/2.00/ H2(3)/0.00/ CO2(17)/0.00/ H2O(28)/0.00/ ethane(1)/3.00/ Ar/0.63/ 
+CH4(16)/2.00/ CO2(17)/0.00/ ethane(1)/3.00/ H2O(28)/0.00/ H2(3)/0.00/ Ar/0.63/ 
 
 ! Reaction index: Chemkin #10; RMG #57
 ! Library reaction: GRI-Mech3.0
-C2H5(27)+H(4)=C2H4(26)+H2(3)                        2.000e+12 0.000     0.000    
+H(4)+C2H5(27)=H2(3)+C2H4(26)                        2.000e+12 0.000     0.000    
 
 ! Reaction index: Chemkin #11; RMG #187
 ! Library reaction: GRI-Mech3.0
-C2H4(26)+H(4)(+M)=C2H5(27)(+M)                      5.400e+11 0.454     1.820    
-CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
+H(4)+C2H4(26)(+M)=C2H5(27)(+M)                      5.400e+11 0.454     1.820    
+CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ H2O(28)/6.00/ 
     LOW/ 6.000e+41 -7.620    6.970    /
     TROE/ 9.753e-01 210       984       4.37e+03 /
 
@@ -385,7 +385,7 @@ CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/
 ! Template reaction: Disproportionation
 ! Exact match found for rate rule (C_methyl;Cmethyl_Csrad)
 ! Multiplied by reaction path degeneracy 3
-C2H5(27)+CH3(14)=CH4(16)+C2H4(26)                   6.570e+14 -0.680    0.000    
+CH3(14)+C2H5(27)=CH4(16)+C2H4(26)                   6.570e+14 -0.680    0.000    
 
 ! Reaction index: Chemkin #13; RMG #204
 ! Template reaction: Disproportionation
@@ -423,11 +423,11 @@ O(2)+CH2(S)(13)=H(4)+HCO(12)                        1.500e+13 0.000     0.000
 
 ! Reaction index: Chemkin #21; RMG #8
 ! Library reaction: GRI-Mech3.0
-O(2)+CH3(14)=CH2O(15)+H(4)                          5.060e+13 0.000     0.000    
+O(2)+CH3(14)=H(4)+CH2O(15)                          5.060e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #22; RMG #9
 ! Library reaction: GRI-Mech3.0
-CH4(16)+O(2)=OH(5)+CH3(14)                          1.020e+09 1.500     8.600    
+O(2)+CH4(16)=OH(5)+CH3(14)                          1.020e+09 1.500     8.600    
 
 ! Reaction index: Chemkin #23; RMG #10
 ! Library reaction: GRI-Mech3.0
@@ -435,79 +435,79 @@ O(2)+HCO(12)=OH(5)+CO(10)                           3.000e+13 0.000     0.000
 
 ! Reaction index: Chemkin #24; RMG #11
 ! Library reaction: GRI-Mech3.0
-O(2)+HCO(12)=CO2(17)+H(4)                           3.000e+13 0.000     0.000    
+O(2)+HCO(12)=H(4)+CO2(17)                           3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #25; RMG #12
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+O(2)=OH(5)+HCO(12)                         3.900e+13 0.000     3.540    
+O(2)+CH2O(15)=OH(5)+HCO(12)                         3.900e+13 0.000     3.540    
 
 ! Reaction index: Chemkin #26; RMG #13
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+O(2)=CH2O(15)+OH(5)                       1.000e+13 0.000     0.000    
+O(2)+CH2OH(18)=OH(5)+CH2O(15)                       1.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #27; RMG #14
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+O(2)=CH2O(15)+OH(5)                        1.000e+13 0.000     0.000    
+O(2)+CH3O(19)=OH(5)+CH2O(15)                        1.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #28; RMG #15
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+O(2)=CH2OH(18)+OH(5)                      3.880e+05 2.500     3.100    
+O(2)+CH3OH(20)=OH(5)+CH2OH(18)                      3.880e+05 2.500     3.100    
 
 ! Reaction index: Chemkin #29; RMG #16
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+O(2)=CH3O(19)+OH(5)                       1.300e+05 2.500     5.000    
+O(2)+CH3OH(20)=OH(5)+CH3O(19)                       1.300e+05 2.500     5.000    
 
 ! Reaction index: Chemkin #30; RMG #17
 ! Library reaction: GRI-Mech3.0
-C2H(21)+O(2)=CH(9)+CO(10)                           5.000e+13 0.000     0.000    
+O(2)+C2H(21)=CH(9)+CO(10)                           5.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #31; RMG #18
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+O(2)=HCCO(23)+H(4)                         1.350e+07 2.000     1.900    
+O(2)+C2H2(22)=H(4)+HCCO(23)                         1.350e+07 2.000     1.900    
 
 ! Reaction index: Chemkin #32; RMG #19
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+O(2)=C2H(21)+OH(5)                         4.600e+19 -1.410    28.950   
+O(2)+C2H2(22)=OH(5)+C2H(21)                         4.600e+19 -1.410    28.950   
 
 ! Reaction index: Chemkin #33; RMG #20
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+O(2)=CO(10)+CH2(11)                        6.940e+06 2.000     1.900    
+O(2)+C2H2(22)=CO(10)+CH2(11)                        6.940e+06 2.000     1.900    
 
 ! Reaction index: Chemkin #34; RMG #21
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+O(2)=CH2CO(25)+H(4)                        3.000e+13 0.000     0.000    
+O(2)+C2H3(24)=H(4)+CH2CO(25)                        3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #35; RMG #22
 ! Library reaction: GRI-Mech3.0
-C2H4(26)+O(2)=HCO(12)+CH3(14)                       1.250e+07 1.830     0.220    
+O(2)+C2H4(26)=HCO(12)+CH3(14)                       1.250e+07 1.830     0.220    
 
 ! Reaction index: Chemkin #36; RMG #23
 ! Library reaction: GRI-Mech3.0
-C2H5(27)+O(2)=CH2O(15)+CH3(14)                      2.240e+13 0.000     0.000    
+O(2)+C2H5(27)=CH3(14)+CH2O(15)                      2.240e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #37; RMG #24
 ! Library reaction: GRI-Mech3.0
-ethane(1)+O(2)=C2H5(27)+OH(5)                       8.980e+07 1.920     5.690    
+ethane(1)+O(2)=OH(5)+C2H5(27)                       8.980e+07 1.920     5.690    
 
 ! Reaction index: Chemkin #38; RMG #25
 ! Library reaction: GRI-Mech3.0
-HCCO(23)+O(2)=H(4)+CO(10)+CO(10)                    1.000e+14 0.000     0.000    
+O(2)+HCCO(23)=H(4)+CO(10)+CO(10)                    1.000e+14 0.000     0.000    
 
 ! Reaction index: Chemkin #39; RMG #26
 ! Library reaction: GRI-Mech3.0
-CH2CO(25)+O(2)=HCCO(23)+OH(5)                       1.000e+13 0.000     8.000    
+O(2)+CH2CO(25)=OH(5)+HCCO(23)                       1.000e+13 0.000     8.000    
 
 ! Reaction index: Chemkin #40; RMG #27
 ! Library reaction: GRI-Mech3.0
-CH2CO(25)+O(2)=CO2(17)+CH2(11)                      1.750e+12 0.000     1.350    
+O(2)+CH2CO(25)=CH2(11)+CO2(17)                      1.750e+12 0.000     1.350    
 
 ! Reaction index: Chemkin #41; RMG #28
 ! Library reaction: GRI-Mech3.0
-O2(7)+CO(10)=CO2(17)+O(2)                           2.500e+12 0.000     47.800   
+O2(7)+CO(10)=O(2)+CO2(17)                           2.500e+12 0.000     47.800   
 
 ! Reaction index: Chemkin #42; RMG #29
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+O2(7)=HO2(6)+HCO(12)                       1.000e+14 0.000     40.000   
+O2(7)+CH2O(15)=HO2(6)+HCO(12)                       1.000e+14 0.000     40.000   
 
 ! Reaction index: Chemkin #43; RMG #30
 ! Library reaction: GRI-Mech3.0
@@ -515,7 +515,7 @@ H(4)+O2(7)+O2(7)=HO2(6)+O2(7)                       2.080e+19 -1.240    0.000
 
 ! Reaction index: Chemkin #44; RMG #31
 ! Library reaction: GRI-Mech3.0
-H2O(28)+H(4)+O2(7)=H2O(28)+HO2(6)                   1.126e+19 -0.760    0.000    
+H(4)+O2(7)+H2O(28)=HO2(6)+H2O(28)                   1.126e+19 -0.760    0.000    
 
 ! Reaction index: Chemkin #45; RMG #32
 ! Library reaction: GRI-Mech3.0
@@ -523,15 +523,15 @@ H(4)+O2(7)=O(2)+OH(5)                               2.650e+16 -0.671    17.041
 
 ! Reaction index: Chemkin #46; RMG #34
 ! Library reaction: GRI-Mech3.0
-H2O(28)+H(4)+H(4)=H2O(28)+H2(3)                     6.000e+19 -1.250    0.000    
+H(4)+H(4)+H2O(28)=H2(3)+H2O(28)                     6.000e+19 -1.250    0.000    
 
 ! Reaction index: Chemkin #47; RMG #35
 ! Library reaction: GRI-Mech3.0
-CO2(17)+H(4)+H(4)=CO2(17)+H2(3)                     5.500e+20 -2.000    0.000    
+H(4)+H(4)+CO2(17)=H2(3)+CO2(17)                     5.500e+20 -2.000    0.000    
 
 ! Reaction index: Chemkin #48; RMG #36
 ! Library reaction: GRI-Mech3.0
-H(4)+HO2(6)=H2O(28)+O(2)                            3.970e+12 0.000     0.671    
+H(4)+HO2(6)=O(2)+H2O(28)                            3.970e+12 0.000     0.671    
 
 ! Reaction index: Chemkin #49; RMG #37
 ! Library reaction: GRI-Mech3.0
@@ -547,11 +547,11 @@ H(4)+H2O2(8)=H2(3)+HO2(6)                           1.210e+07 2.000     5.200
 
 ! Reaction index: Chemkin #52; RMG #40
 ! Library reaction: GRI-Mech3.0
-H(4)+H2O2(8)=H2O(28)+OH(5)                          1.000e+13 0.000     3.600    
+H(4)+H2O2(8)=OH(5)+H2O(28)                          1.000e+13 0.000     3.600    
 
 ! Reaction index: Chemkin #53; RMG #41
 ! Library reaction: GRI-Mech3.0
-H(4)+CH(9)=C(29)+H2(3)                              1.650e+14 0.000     0.000    
+H(4)+CH(9)=H2(3)+C(29)                              1.650e+14 0.000     0.000    
 
 ! Reaction index: Chemkin #54; RMG #42
 ! Library reaction: GRI-Mech3.0
@@ -563,99 +563,99 @@ H(4)+HCO(12)=H2(3)+CO(10)                           7.340e+13 0.000     0.000
 
 ! Reaction index: Chemkin #56; RMG #45
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+H(4)=H2(3)+HCO(12)                         5.740e+07 1.900     2.742    
+H(4)+CH2O(15)=H2(3)+HCO(12)                         5.740e+07 1.900     2.742    
 
 ! Reaction index: Chemkin #57; RMG #46
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+H(4)=CH2O(15)+H2(3)                       2.000e+13 0.000     0.000    
+H(4)+CH2OH(18)=H2(3)+CH2O(15)                       2.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #58; RMG #47
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+H(4)=OH(5)+CH3(14)                        1.650e+11 0.650     -0.284   
+H(4)+CH2OH(18)=OH(5)+CH3(14)                        1.650e+11 0.650     -0.284   
 
 ! Reaction index: Chemkin #59; RMG #48
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+H(4)=H2O(28)+CH2(S)(13)                   3.280e+13 -0.090    0.610    
+H(4)+CH2OH(18)=CH2(S)(13)+H2O(28)                   3.280e+13 -0.090    0.610    
 
 ! Reaction index: Chemkin #60; RMG #49
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+H(4)=CH2OH(18)+H(4)                        4.150e+07 1.630     1.924    
+H(4)+CH3O(19)=H(4)+CH2OH(18)                        4.150e+07 1.630     1.924    
 
 ! Reaction index: Chemkin #61; RMG #50
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+H(4)=CH2O(15)+H2(3)                        2.000e+13 0.000     0.000    
+H(4)+CH3O(19)=H2(3)+CH2O(15)                        2.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #62; RMG #51
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+H(4)=OH(5)+CH3(14)                         1.500e+12 0.500     -0.110   
+H(4)+CH3O(19)=OH(5)+CH3(14)                         1.500e+12 0.500     -0.110   
 
 ! Reaction index: Chemkin #63; RMG #52
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+H(4)=H2O(28)+CH2(S)(13)                    2.620e+14 -0.230    1.070    
+H(4)+CH3O(19)=CH2(S)(13)+H2O(28)                    2.620e+14 -0.230    1.070    
 
 ! Reaction index: Chemkin #64; RMG #53
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+H(4)=CH2OH(18)+H2(3)                      1.700e+07 2.100     4.870    
+H(4)+CH3OH(20)=H2(3)+CH2OH(18)                      1.700e+07 2.100     4.870    
 
 ! Reaction index: Chemkin #65; RMG #54
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+H(4)=CH3O(19)+H2(3)                       4.200e+06 2.100     4.870    
+H(4)+CH3OH(20)=H2(3)+CH3O(19)                       4.200e+06 2.100     4.870    
 
 ! Reaction index: Chemkin #66; RMG #55
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+H(4)=C2H2(22)+H2(3)                        3.000e+13 0.000     0.000    
+H(4)+C2H3(24)=H2(3)+C2H2(22)                        3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #67; RMG #56
 ! Library reaction: GRI-Mech3.0
-C2H4(26)+H(4)=C2H3(24)+H2(3)                        1.325e+06 2.530     12.240   
+H(4)+C2H4(26)=H2(3)+C2H3(24)                        1.325e+06 2.530     12.240   
 
 ! Reaction index: Chemkin #68; RMG #59
 ! Library reaction: GRI-Mech3.0
-HCCO(23)+H(4)=CO(10)+CH2(S)(13)                     1.000e+14 0.000     0.000    
+H(4)+HCCO(23)=CO(10)+CH2(S)(13)                     1.000e+14 0.000     0.000    
 
 ! Reaction index: Chemkin #69; RMG #60
 ! Library reaction: GRI-Mech3.0
-CH2CO(25)+H(4)=HCCO(23)+H2(3)                       5.000e+13 0.000     8.000    
+H(4)+CH2CO(25)=H2(3)+HCCO(23)                       5.000e+13 0.000     8.000    
 
 ! Reaction index: Chemkin #70; RMG #61
 ! Library reaction: GRI-Mech3.0
-CH2CO(25)+H(4)=CO(10)+CH3(14)                       1.130e+13 0.000     3.428    
+H(4)+CH2CO(25)=CO(10)+CH3(14)                       1.130e+13 0.000     3.428    
 
 ! Reaction index: Chemkin #71; RMG #62
 ! Library reaction: GRI-Mech3.0
-HCCOH(30)+H(4)=CH2CO(25)+H(4)                       1.000e+13 0.000     0.000    
+H(4)+HCCOH(30)=H(4)+CH2CO(25)                       1.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #72; RMG #63
 ! Library reaction: GRI-Mech3.0
-H2(3)+OH(5)=H2O(28)+H(4)                            2.160e+08 1.510     3.430    
+H2(3)+OH(5)=H(4)+H2O(28)                            2.160e+08 1.510     3.430    
 
 ! Reaction index: Chemkin #73; RMG #64
 ! Library reaction: GRI-Mech3.0
-OH(5)+OH(5)=H2O(28)+O(2)                            3.570e+04 2.400     -2.110   
+OH(5)+OH(5)=O(2)+H2O(28)                            3.570e+04 2.400     -2.110   
 
 ! Reaction index: Chemkin #74; RMG #65
 ! Library reaction: GRI-Mech3.0
-OH(5)+HO2(6)=H2O(28)+O2(7)                          1.450e+13 0.000     -0.500   
+OH(5)+HO2(6)=O2(7)+H2O(28)                          1.450e+13 0.000     -0.500   
 DUPLICATE
 ! Reaction index: Chemkin #75; RMG #65
 ! Library reaction: GRI-Mech3.0
-OH(5)+HO2(6)=H2O(28)+O2(7)                          5.000e+15 0.000     17.330   
+OH(5)+HO2(6)=O2(7)+H2O(28)                          5.000e+15 0.000     17.330   
 DUPLICATE
 
 
 ! Reaction index: Chemkin #76; RMG #66
 ! Library reaction: GRI-Mech3.0
-OH(5)+H2O2(8)=H2O(28)+HO2(6)                        2.000e+12 0.000     0.427    
+OH(5)+H2O2(8)=HO2(6)+H2O(28)                        2.000e+12 0.000     0.427    
 DUPLICATE
 ! Reaction index: Chemkin #77; RMG #66
 ! Library reaction: GRI-Mech3.0
-OH(5)+H2O2(8)=H2O(28)+HO2(6)                        1.700e+18 0.000     29.410   
+OH(5)+H2O2(8)=HO2(6)+H2O(28)                        1.700e+18 0.000     29.410   
 DUPLICATE
 
 
 ! Reaction index: Chemkin #78; RMG #67
 ! Library reaction: GRI-Mech3.0
-C(29)+OH(5)=H(4)+CO(10)                             5.000e+13 0.000     0.000    
+OH(5)+C(29)=H(4)+CO(10)                             5.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #79; RMG #68
 ! Library reaction: GRI-Mech3.0
@@ -663,83 +663,83 @@ OH(5)+CH(9)=H(4)+HCO(12)                            3.000e+13 0.000     0.000
 
 ! Reaction index: Chemkin #80; RMG #69
 ! Library reaction: GRI-Mech3.0
-OH(5)+CH2(11)=CH2O(15)+H(4)                         2.000e+13 0.000     0.000    
+OH(5)+CH2(11)=H(4)+CH2O(15)                         2.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #81; RMG #70
 ! Library reaction: GRI-Mech3.0
-OH(5)+CH2(11)=H2O(28)+CH(9)                         1.130e+07 2.000     3.000    
+OH(5)+CH2(11)=CH(9)+H2O(28)                         1.130e+07 2.000     3.000    
 
 ! Reaction index: Chemkin #82; RMG #71
 ! Library reaction: GRI-Mech3.0
-OH(5)+CH2(S)(13)=CH2O(15)+H(4)                      3.000e+13 0.000     0.000    
+OH(5)+CH2(S)(13)=H(4)+CH2O(15)                      3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #83; RMG #72
 ! Library reaction: GRI-Mech3.0
-OH(5)+CH3(14)=H2O(28)+CH2(11)                       5.600e+07 1.600     5.420    
+OH(5)+CH3(14)=CH2(11)+H2O(28)                       5.600e+07 1.600     5.420    
 
 ! Reaction index: Chemkin #84; RMG #73
 ! Library reaction: GRI-Mech3.0
-OH(5)+CH3(14)=H2O(28)+CH2(S)(13)                    6.440e+17 -1.340    1.417    
+OH(5)+CH3(14)=CH2(S)(13)+H2O(28)                    6.440e+17 -1.340    1.417    
 
 ! Reaction index: Chemkin #85; RMG #74
 ! Library reaction: GRI-Mech3.0
-CH4(16)+OH(5)=H2O(28)+CH3(14)                       1.000e+08 1.600     3.120    
+OH(5)+CH4(16)=CH3(14)+H2O(28)                       1.000e+08 1.600     3.120    
 
 ! Reaction index: Chemkin #86; RMG #75
 ! Library reaction: GRI-Mech3.0
-OH(5)+CO(10)=CO2(17)+H(4)                           4.760e+07 1.228     0.070    
+OH(5)+CO(10)=H(4)+CO2(17)                           4.760e+07 1.228     0.070    
 
 ! Reaction index: Chemkin #87; RMG #76
 ! Library reaction: GRI-Mech3.0
-OH(5)+HCO(12)=H2O(28)+CO(10)                        5.000e+13 0.000     0.000    
+OH(5)+HCO(12)=CO(10)+H2O(28)                        5.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #88; RMG #77
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+OH(5)=H2O(28)+HCO(12)                      3.430e+09 1.180     -0.447   
+OH(5)+CH2O(15)=HCO(12)+H2O(28)                      3.430e+09 1.180     -0.447   
 
 ! Reaction index: Chemkin #89; RMG #78
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+OH(5)=CH2O(15)+H2O(28)                    5.000e+12 0.000     0.000    
+OH(5)+CH2OH(18)=CH2O(15)+H2O(28)                    5.000e+12 0.000     0.000    
 
 ! Reaction index: Chemkin #90; RMG #79
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+OH(5)=CH2O(15)+H2O(28)                     5.000e+12 0.000     0.000    
+OH(5)+CH3O(19)=CH2O(15)+H2O(28)                     5.000e+12 0.000     0.000    
 
 ! Reaction index: Chemkin #91; RMG #80
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+OH(5)=CH2OH(18)+H2O(28)                   1.440e+06 2.000     -0.840   
+OH(5)+CH3OH(20)=CH2OH(18)+H2O(28)                   1.440e+06 2.000     -0.840   
 
 ! Reaction index: Chemkin #92; RMG #81
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+OH(5)=CH3O(19)+H2O(28)                    6.300e+06 2.000     1.500    
+OH(5)+CH3OH(20)=CH3O(19)+H2O(28)                    6.300e+06 2.000     1.500    
 
 ! Reaction index: Chemkin #93; RMG #82
 ! Library reaction: GRI-Mech3.0
-C2H(21)+OH(5)=HCCO(23)+H(4)                         2.000e+13 0.000     0.000    
+OH(5)+C2H(21)=H(4)+HCCO(23)                         2.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #94; RMG #83
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+OH(5)=CH2CO(25)+H(4)                       2.180e-04 4.500     -1.000   
+OH(5)+C2H2(22)=H(4)+CH2CO(25)                       2.180e-04 4.500     -1.000   
 
 ! Reaction index: Chemkin #95; RMG #84
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+OH(5)=HCCOH(30)+H(4)                       5.040e+05 2.300     13.500   
+OH(5)+C2H2(22)=H(4)+HCCOH(30)                       5.040e+05 2.300     13.500   
 
 ! Reaction index: Chemkin #96; RMG #85
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+OH(5)=C2H(21)+H2O(28)                      3.370e+07 2.000     14.000   
+OH(5)+C2H2(22)=C2H(21)+H2O(28)                      3.370e+07 2.000     14.000   
 
 ! Reaction index: Chemkin #97; RMG #86
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+OH(5)=CO(10)+CH3(14)                       4.830e-04 4.000     -2.000   
+OH(5)+C2H2(22)=CO(10)+CH3(14)                       4.830e-04 4.000     -2.000   
 
 ! Reaction index: Chemkin #98; RMG #87
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+OH(5)=C2H2(22)+H2O(28)                     5.000e+12 0.000     0.000    
+OH(5)+C2H3(24)=C2H2(22)+H2O(28)                     5.000e+12 0.000     0.000    
 
 ! Reaction index: Chemkin #99; RMG #88
 ! Library reaction: GRI-Mech3.0
-C2H4(26)+OH(5)=C2H3(24)+H2O(28)                     3.600e+06 2.000     2.500    
+OH(5)+C2H4(26)=C2H3(24)+H2O(28)                     3.600e+06 2.000     2.500    
 
 ! Reaction index: Chemkin #100; RMG #89
 ! Library reaction: GRI-Mech3.0
@@ -747,7 +747,7 @@ ethane(1)+OH(5)=C2H5(27)+H2O(28)                    3.540e+06 2.120     0.870
 
 ! Reaction index: Chemkin #101; RMG #90
 ! Library reaction: GRI-Mech3.0
-CH2CO(25)+OH(5)=HCCO(23)+H2O(28)                    7.500e+12 0.000     2.000    
+OH(5)+CH2CO(25)=HCCO(23)+H2O(28)                    7.500e+12 0.000     2.000    
 
 ! Reaction index: Chemkin #102; RMG #91
 ! Library reaction: GRI-Mech3.0
@@ -761,35 +761,35 @@ DUPLICATE
 
 ! Reaction index: Chemkin #104; RMG #92
 ! Library reaction: GRI-Mech3.0
-HO2(6)+CH2(11)=CH2O(15)+OH(5)                       2.000e+13 0.000     0.000    
+HO2(6)+CH2(11)=OH(5)+CH2O(15)                       2.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #105; RMG #93
 ! Library reaction: GRI-Mech3.0
-HO2(6)+CH3(14)=CH4(16)+O2(7)                        1.000e+12 0.000     0.000    
+HO2(6)+CH3(14)=O2(7)+CH4(16)                        1.000e+12 0.000     0.000    
 
 ! Reaction index: Chemkin #106; RMG #94
 ! Library reaction: GRI-Mech3.0
-HO2(6)+CH3(14)=CH3O(19)+OH(5)                       3.780e+13 0.000     0.000    
+HO2(6)+CH3(14)=OH(5)+CH3O(19)                       3.780e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #107; RMG #95
 ! Library reaction: GRI-Mech3.0
-HO2(6)+CO(10)=CO2(17)+OH(5)                         1.500e+14 0.000     23.600   
+HO2(6)+CO(10)=OH(5)+CO2(17)                         1.500e+14 0.000     23.600   
 
 ! Reaction index: Chemkin #108; RMG #96
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+HO2(6)=H2O2(8)+HCO(12)                     5.600e+06 2.000     12.000   
+HO2(6)+CH2O(15)=H2O2(8)+HCO(12)                     5.600e+06 2.000     12.000   
 
 ! Reaction index: Chemkin #109; RMG #97
 ! Library reaction: GRI-Mech3.0
-C(29)+O2(7)=O(2)+CO(10)                             5.800e+13 0.000     0.576    
+O2(7)+C(29)=O(2)+CO(10)                             5.800e+13 0.000     0.576    
 
 ! Reaction index: Chemkin #110; RMG #98
 ! Library reaction: GRI-Mech3.0
-C(29)+CH2(11)=C2H(21)+H(4)                          5.000e+13 0.000     0.000    
+CH2(11)+C(29)=H(4)+C2H(21)                          5.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #111; RMG #99
 ! Library reaction: GRI-Mech3.0
-C(29)+CH3(14)=C2H2(22)+H(4)                         5.000e+13 0.000     0.000    
+CH3(14)+C(29)=H(4)+C2H2(22)                         5.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #112; RMG #100
 ! Library reaction: GRI-Mech3.0
@@ -801,31 +801,31 @@ H2(3)+CH(9)=H(4)+CH2(11)                            1.080e+14 0.000     3.110
 
 ! Reaction index: Chemkin #114; RMG #102
 ! Library reaction: GRI-Mech3.0
-H2O(28)+CH(9)=CH2O(15)+H(4)                         5.710e+12 0.000     -0.755   
+CH(9)+H2O(28)=H(4)+CH2O(15)                         5.710e+12 0.000     -0.755   
 
 ! Reaction index: Chemkin #115; RMG #103
 ! Library reaction: GRI-Mech3.0
-CH(9)+CH2(11)=C2H2(22)+H(4)                         4.000e+13 0.000     0.000    
+CH(9)+CH2(11)=H(4)+C2H2(22)                         4.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #116; RMG #104
 ! Library reaction: GRI-Mech3.0
-CH(9)+CH3(14)=C2H3(24)+H(4)                         3.000e+13 0.000     0.000    
+CH(9)+CH3(14)=H(4)+C2H3(24)                         3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #117; RMG #105
 ! Library reaction: GRI-Mech3.0
-CH4(16)+CH(9)=C2H4(26)+H(4)                         6.000e+13 0.000     0.000    
+CH(9)+CH4(16)=H(4)+C2H4(26)                         6.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #118; RMG #106
 ! Library reaction: GRI-Mech3.0
-CO2(17)+CH(9)=CO(10)+HCO(12)                        1.900e+14 0.000     15.792   
+CH(9)+CO2(17)=CO(10)+HCO(12)                        1.900e+14 0.000     15.792   
 
 ! Reaction index: Chemkin #119; RMG #107
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+CH(9)=CH2CO(25)+H(4)                       9.460e+13 0.000     -0.515   
+CH(9)+CH2O(15)=H(4)+CH2CO(25)                       9.460e+13 0.000     -0.515   
 
 ! Reaction index: Chemkin #120; RMG #108
 ! Library reaction: GRI-Mech3.0
-HCCO(23)+CH(9)=C2H2(22)+CO(10)                      5.000e+13 0.000     0.000    
+CH(9)+HCCO(23)=CO(10)+C2H2(22)                      5.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #121; RMG #109
 ! Library reaction: GRI-Mech3.0
@@ -837,19 +837,19 @@ H2(3)+CH2(11)=H(4)+CH3(14)                          5.000e+05 2.000     7.230
 
 ! Reaction index: Chemkin #123; RMG #111
 ! Library reaction: GRI-Mech3.0
-CH2(11)+CH2(11)=C2H2(22)+H2(3)                      1.600e+15 0.000     11.944   
+CH2(11)+CH2(11)=H2(3)+C2H2(22)                      1.600e+15 0.000     11.944   
 
 ! Reaction index: Chemkin #124; RMG #112
 ! Library reaction: GRI-Mech3.0
-CH2(11)+CH3(14)=C2H4(26)+H(4)                       4.000e+13 0.000     0.000    
+CH2(11)+CH3(14)=H(4)+C2H4(26)                       4.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #125; RMG #113
 ! Library reaction: GRI-Mech3.0
-CH4(16)+CH2(11)=CH3(14)+CH3(14)                     2.460e+06 2.000     8.270    
+CH2(11)+CH4(16)=CH3(14)+CH3(14)                     2.460e+06 2.000     8.270    
 
 ! Reaction index: Chemkin #126; RMG #114
 ! Library reaction: GRI-Mech3.0
-HCCO(23)+CH2(11)=C2H3(24)+CO(10)                    3.000e+13 0.000     0.000    
+CH2(11)+HCCO(23)=CO(10)+C2H3(24)                    3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #127; RMG #115
 ! Library reaction: GRI-Mech3.0
@@ -857,7 +857,7 @@ O2(7)+CH2(S)(13)=H(4)+OH(5)+CO(10)                  2.800e+13 0.000     0.000
 
 ! Reaction index: Chemkin #128; RMG #116
 ! Library reaction: GRI-Mech3.0
-O2(7)+CH2(S)(13)=H2O(28)+CO(10)                     1.200e+13 0.000     0.000    
+O2(7)+CH2(S)(13)=CO(10)+H2O(28)                     1.200e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #129; RMG #117
 ! Library reaction: GRI-Mech3.0
@@ -865,15 +865,15 @@ H2(3)+CH2(S)(13)=H(4)+CH3(14)                       7.000e+13 0.000     0.000
 
 ! Reaction index: Chemkin #130; RMG #118
 ! Library reaction: GRI-Mech3.0
-H2O(28)+CH2(S)(13)=H2O(28)+CH2(11)                  3.000e+13 0.000     0.000    
+CH2(S)(13)+H2O(28)=CH2(11)+H2O(28)                  3.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #131; RMG #119
 ! Library reaction: GRI-Mech3.0
-CH2(S)(13)+CH3(14)=C2H4(26)+H(4)                    1.200e+13 0.000     -0.570   
+CH2(S)(13)+CH3(14)=H(4)+C2H4(26)                    1.200e+13 0.000     -0.570   
 
 ! Reaction index: Chemkin #132; RMG #120
 ! Library reaction: GRI-Mech3.0
-CH4(16)+CH2(S)(13)=CH3(14)+CH3(14)                  1.600e+13 0.000     -0.570   
+CH2(S)(13)+CH4(16)=CH3(14)+CH3(14)                  1.600e+13 0.000     -0.570   
 
 ! Reaction index: Chemkin #133; RMG #121
 ! Library reaction: GRI-Mech3.0
@@ -881,51 +881,51 @@ CO(10)+CH2(S)(13)=CO(10)+CH2(11)                    9.000e+12 0.000     0.000
 
 ! Reaction index: Chemkin #134; RMG #122
 ! Library reaction: GRI-Mech3.0
-CO2(17)+CH2(S)(13)=CO2(17)+CH2(11)                  7.000e+12 0.000     0.000    
+CH2(S)(13)+CO2(17)=CH2(11)+CO2(17)                  7.000e+12 0.000     0.000    
 
 ! Reaction index: Chemkin #135; RMG #123
 ! Library reaction: GRI-Mech3.0
-CO2(17)+CH2(S)(13)=CH2O(15)+CO(10)                  1.400e+13 0.000     0.000    
+CH2(S)(13)+CO2(17)=CO(10)+CH2O(15)                  1.400e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #136; RMG #124
 ! Library reaction: GRI-Mech3.0
-ethane(1)+CH2(S)(13)=C2H5(27)+CH3(14)               4.000e+13 0.000     -0.550   
+ethane(1)+CH2(S)(13)=CH3(14)+C2H5(27)               4.000e+13 0.000     -0.550   
 
 ! Reaction index: Chemkin #137; RMG #125
 ! Library reaction: GRI-Mech3.0
-O2(7)+CH3(14)=CH3O(19)+O(2)                         3.560e+13 0.000     30.480   
+O2(7)+CH3(14)=O(2)+CH3O(19)                         3.560e+13 0.000     30.480   
 
 ! Reaction index: Chemkin #138; RMG #126
 ! Library reaction: GRI-Mech3.0
-O2(7)+CH3(14)=CH2O(15)+OH(5)                        2.310e+12 0.000     20.315   
+O2(7)+CH3(14)=OH(5)+CH2O(15)                        2.310e+12 0.000     20.315   
 
 ! Reaction index: Chemkin #139; RMG #127
 ! Library reaction: GRI-Mech3.0
-H2O2(8)+CH3(14)=CH4(16)+HO2(6)                      2.450e+04 2.470     5.180    
+H2O2(8)+CH3(14)=HO2(6)+CH4(16)                      2.450e+04 2.470     5.180    
 
 ! Reaction index: Chemkin #140; RMG #129
 ! Library reaction: GRI-Mech3.0
-HCO(12)+CH3(14)=CH4(16)+CO(10)                      2.648e+13 0.000     0.000    
+HCO(12)+CH3(14)=CO(10)+CH4(16)                      2.648e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #141; RMG #130
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+CH3(14)=CH4(16)+HCO(12)                    3.320e+03 2.810     5.860    
+CH3(14)+CH2O(15)=HCO(12)+CH4(16)                    3.320e+03 2.810     5.860    
 
 ! Reaction index: Chemkin #142; RMG #131
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+CH3(14)=CH4(16)+CH2OH(18)                 3.000e+07 1.500     9.940    
+CH3(14)+CH3OH(20)=CH4(16)+CH2OH(18)                 3.000e+07 1.500     9.940    
 
 ! Reaction index: Chemkin #143; RMG #132
 ! Library reaction: GRI-Mech3.0
-CH3OH(20)+CH3(14)=CH4(16)+CH3O(19)                  1.000e+07 1.500     9.940    
+CH3(14)+CH3OH(20)=CH4(16)+CH3O(19)                  1.000e+07 1.500     9.940    
 
 ! Reaction index: Chemkin #144; RMG #133
 ! Library reaction: GRI-Mech3.0
-C2H4(26)+CH3(14)=CH4(16)+C2H3(24)                   2.270e+05 2.000     9.200    
+CH3(14)+C2H4(26)=CH4(16)+C2H3(24)                   2.270e+05 2.000     9.200    
 
 ! Reaction index: Chemkin #145; RMG #135
 ! Library reaction: GRI-Mech3.0
-H2O(28)+HCO(12)=H2O(28)+H(4)+CO(10)                 1.500e+18 -1.000    17.000   
+HCO(12)+H2O(28)=H(4)+CO(10)+H2O(28)                 1.500e+18 -1.000    17.000   
 
 ! Reaction index: Chemkin #146; RMG #136
 ! Library reaction: GRI-Mech3.0
@@ -933,35 +933,35 @@ O2(7)+HCO(12)=HO2(6)+CO(10)                         1.345e+13 0.000     0.400
 
 ! Reaction index: Chemkin #147; RMG #137
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+O2(7)=CH2O(15)+HO2(6)                     1.800e+13 0.000     0.900    
+O2(7)+CH2OH(18)=HO2(6)+CH2O(15)                     1.800e+13 0.000     0.900    
 
 ! Reaction index: Chemkin #148; RMG #138
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+O2(7)=CH2O(15)+HO2(6)                      4.280e-13 7.600     -3.530   
+O2(7)+CH3O(19)=HO2(6)+CH2O(15)                      4.280e-13 7.600     -3.530   
 
 ! Reaction index: Chemkin #149; RMG #139
 ! Library reaction: GRI-Mech3.0
-C2H(21)+O2(7)=CO(10)+HCO(12)                        1.000e+13 0.000     -0.755   
+O2(7)+C2H(21)=CO(10)+HCO(12)                        1.000e+13 0.000     -0.755   
 
 ! Reaction index: Chemkin #150; RMG #140
 ! Library reaction: GRI-Mech3.0
-C2H(21)+H2(3)=C2H2(22)+H(4)                         5.680e+10 0.900     1.993    
+H2(3)+C2H(21)=H(4)+C2H2(22)                         5.680e+10 0.900     1.993    
 
 ! Reaction index: Chemkin #151; RMG #141
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+O2(7)=CH2O(15)+HCO(12)                     4.580e+16 -1.390    1.015    
+O2(7)+C2H3(24)=HCO(12)+CH2O(15)                     4.580e+16 -1.390    1.015    
 
 ! Reaction index: Chemkin #152; RMG #142
 ! Library reaction: GRI-Mech3.0
-C2H5(27)+O2(7)=C2H4(26)+HO2(6)                      8.400e+11 0.000     3.875    
+O2(7)+C2H5(27)=HO2(6)+C2H4(26)                      8.400e+11 0.000     3.875    
 
 ! Reaction index: Chemkin #153; RMG #143
 ! Library reaction: GRI-Mech3.0
-HCCO(23)+O2(7)=OH(5)+CO(10)+CO(10)                  3.200e+12 0.000     0.854    
+O2(7)+HCCO(23)=OH(5)+CO(10)+CO(10)                  3.200e+12 0.000     0.854    
 
 ! Reaction index: Chemkin #154; RMG #144
 ! Library reaction: GRI-Mech3.0
-HCCO(23)+HCCO(23)=C2H2(22)+CO(10)+CO(10)            1.000e+13 0.000     0.000    
+HCCO(23)+HCCO(23)=CO(10)+CO(10)+C2H2(22)            1.000e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #155; RMG #145
 ! Library reaction: GRI-Mech3.0
@@ -969,109 +969,109 @@ O(2)+CH3(14)=>H2(3)+H(4)+CO(10)                     3.370e+13 0.000     0.000
 
 ! Reaction index: Chemkin #156; RMG #146
 ! Library reaction: GRI-Mech3.0
-C2H4(26)+O(2)=CH2CHO(31)+H(4)                       6.700e+06 1.830     0.220    
+O(2)+C2H4(26)=H(4)+CH2CHO(31)                       6.700e+06 1.830     0.220    
 
 ! Reaction index: Chemkin #157; RMG #147
 ! Library reaction: GRI-Mech3.0
-C2H5(27)+O(2)=CH3CHO(32)+H(4)                       1.096e+14 0.000     0.000    
+O(2)+C2H5(27)=H(4)+CH3CHO(32)                       1.096e+14 0.000     0.000    
 
 ! Reaction index: Chemkin #158; RMG #148
 ! Library reaction: GRI-Mech3.0
-OH(5)+CH3(14)=>CH2O(15)+H2(3)                       8.000e+09 0.500     -1.755   
+OH(5)+CH3(14)=>H2(3)+CH2O(15)                       8.000e+09 0.500     -1.755   
 
 ! Reaction index: Chemkin #159; RMG #149
 ! Library reaction: GRI-Mech3.0
-O2(7)+CH2(11)=>CO2(17)+H(4)+H(4)                    5.800e+12 0.000     1.500    
+O2(7)+CH2(11)=>H(4)+H(4)+CO2(17)                    5.800e+12 0.000     1.500    
 
 ! Reaction index: Chemkin #160; RMG #150
 ! Library reaction: GRI-Mech3.0
-O2(7)+CH2(11)=CH2O(15)+O(2)                         2.400e+12 0.000     1.500    
+O2(7)+CH2(11)=O(2)+CH2O(15)                         2.400e+12 0.000     1.500    
 
 ! Reaction index: Chemkin #161; RMG #151
 ! Library reaction: GRI-Mech3.0
-CH2(11)+CH2(11)=>C2H2(22)+H(4)+H(4)                 2.000e+14 0.000     10.989   
+CH2(11)+CH2(11)=>H(4)+H(4)+C2H2(22)                 2.000e+14 0.000     10.989   
 
 ! Reaction index: Chemkin #162; RMG #152
 ! Library reaction: GRI-Mech3.0
-H2O(28)+CH2(S)(13)=>CH2O(15)+H2(3)                  6.820e+10 0.250     -0.935   
+CH2(S)(13)+H2O(28)=>H2(3)+CH2O(15)                  6.820e+10 0.250     -0.935   
 
 ! Reaction index: Chemkin #163; RMG #153
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+O2(7)=CH2CHO(31)+O(2)                      3.030e+11 0.290     0.011    
+O2(7)+C2H3(24)=O(2)+CH2CHO(31)                      3.030e+11 0.290     0.011    
 
 ! Reaction index: Chemkin #164; RMG #154
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+O2(7)=C2H2(22)+HO2(6)                      1.337e+06 1.610     -0.384   
+O2(7)+C2H3(24)=HO2(6)+C2H2(22)                      1.337e+06 1.610     -0.384   
 
 ! Reaction index: Chemkin #165; RMG #155
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+O(2)=CH2CHO(31)+OH(5)                    2.920e+12 0.000     1.808    
+O(2)+CH3CHO(32)=OH(5)+CH2CHO(31)                    2.920e+12 0.000     1.808    
 
 ! Reaction index: Chemkin #166; RMG #156
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+O(2)=>OH(5)+CO(10)+CH3(14)               2.920e+12 0.000     1.808    
+O(2)+CH3CHO(32)=>OH(5)+CO(10)+CH3(14)               2.920e+12 0.000     1.808    
 
 ! Reaction index: Chemkin #167; RMG #157
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+O2(7)=>HO2(6)+CO(10)+CH3(14)             3.010e+13 0.000     39.150   
+O2(7)+CH3CHO(32)=>HO2(6)+CO(10)+CH3(14)             3.010e+13 0.000     39.150   
 
 ! Reaction index: Chemkin #168; RMG #158
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+H(4)=CH2CHO(31)+H2(3)                    2.050e+09 1.160     2.405    
+H(4)+CH3CHO(32)=H2(3)+CH2CHO(31)                    2.050e+09 1.160     2.405    
 
 ! Reaction index: Chemkin #169; RMG #159
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+H(4)=>H2(3)+CO(10)+CH3(14)               2.050e+09 1.160     2.405    
+H(4)+CH3CHO(32)=>H2(3)+CO(10)+CH3(14)               2.050e+09 1.160     2.405    
 
 ! Reaction index: Chemkin #170; RMG #160
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+OH(5)=>H2O(28)+CO(10)+CH3(14)            2.343e+10 0.730     -1.113   
+OH(5)+CH3CHO(32)=>CO(10)+CH3(14)+H2O(28)            2.343e+10 0.730     -1.113   
 
 ! Reaction index: Chemkin #171; RMG #161
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+HO2(6)=>H2O2(8)+CO(10)+CH3(14)           3.010e+12 0.000     11.923   
+HO2(6)+CH3CHO(32)=>H2O2(8)+CO(10)+CH3(14)           3.010e+12 0.000     11.923   
 
 ! Reaction index: Chemkin #172; RMG #162
 ! Library reaction: GRI-Mech3.0
-CH3CHO(32)+CH3(14)=>CH4(16)+CO(10)+CH3(14)          2.720e+06 1.770     5.920    
+CH3(14)+CH3CHO(32)=>CO(10)+CH3(14)+CH4(16)          2.720e+06 1.770     5.920    
 
 ! Reaction index: Chemkin #173; RMG #163
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+O(2)=>CO2(17)+H(4)+CH2(11)               1.500e+14 0.000     0.000    
+O(2)+CH2CHO(31)=>H(4)+CH2(11)+CO2(17)               1.500e+14 0.000     0.000    
 
 ! Reaction index: Chemkin #174; RMG #164
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+O2(7)=>CH2O(15)+OH(5)+CO(10)             1.810e+10 0.000     0.000    
+O2(7)+CH2CHO(31)=>OH(5)+CO(10)+CH2O(15)             1.810e+10 0.000     0.000    
 
 ! Reaction index: Chemkin #175; RMG #165
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+O2(7)=>OH(5)+HCO(12)+HCO(12)             2.350e+10 0.000     0.000    
+O2(7)+CH2CHO(31)=>OH(5)+HCO(12)+HCO(12)             2.350e+10 0.000     0.000    
 
 ! Reaction index: Chemkin #176; RMG #166
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+H(4)=HCO(12)+CH3(14)                     2.200e+13 0.000     0.000    
+H(4)+CH2CHO(31)=HCO(12)+CH3(14)                     2.200e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #177; RMG #167
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+H(4)=CH2CO(25)+H2(3)                     1.100e+13 0.000     0.000    
+H(4)+CH2CHO(31)=H2(3)+CH2CO(25)                     1.100e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #178; RMG #168
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+OH(5)=CH2CO(25)+H2O(28)                  1.200e+13 0.000     0.000    
+OH(5)+CH2CHO(31)=CH2CO(25)+H2O(28)                  1.200e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #179; RMG #169
 ! Library reaction: GRI-Mech3.0
-CH2CHO(31)+OH(5)=CH2OH(18)+HCO(12)                  3.010e+13 0.000     0.000    
+OH(5)+CH2CHO(31)=HCO(12)+CH2OH(18)                  3.010e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #180; RMG #170
 ! Library reaction: GRI-Mech3.0
 O(2)+O(2)+M=O2(7)+M                                 1.200e+17 -1.000    0.000    
-H2O(28)/15.40/ ethane(1)/3.00/ Ar/0.83/ CO2(17)/3.60/ H2(3)/2.40/ CH4(16)/2.00/ 
+CH4(16)/2.00/ H2(3)/2.40/ CO2(17)/3.60/ H2O(28)/15.40/ ethane(1)/3.00/ Ar/0.83/ 
 
 ! Reaction index: Chemkin #181; RMG #171
 ! Library reaction: GRI-Mech3.0
 O(2)+H(4)+M=OH(5)+M                                 5.000e+17 -1.000    0.000    
-CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
+CH4(16)/2.00/ H2(3)/2.00/ CO2(17)/2.00/ H2O(28)/6.00/ ethane(1)/3.00/ Ar/0.70/ 
 
 ! Reaction index: Chemkin #182; RMG #172
 ! Library reaction: GRI-Mech3.0
@@ -1097,7 +1097,7 @@ O2(7)/6.00/ CH4(16)/2.00/ H2(3)/2.00/ ethane(1)/3.00/ CO2(17)/3.50/ H2O(28)/6.00
 ! Reaction index: Chemkin #186; RMG #177
 ! Library reaction: GRI-Mech3.0
 H(4)+CH2(11)(+M)=CH3(14)(+M)                        6.000e+14 0.000     0.000    
-CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
+CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ H2O(28)/6.00/ 
     LOW/ 1.040e+26 -2.760    1.600    /
     TROE/ 5.620e-01 91        5.84e+03  8.55e+03 /
 
@@ -1110,49 +1110,49 @@ CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/
 
 ! Reaction index: Chemkin #188; RMG #180
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+H(4)(+M)=CH2OH(18)(+M)                     5.400e+11 0.454     3.600    
-CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ 
+H(4)+CH2O(15)(+M)=CH2OH(18)(+M)                     5.400e+11 0.454     3.600    
+CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ 
     LOW/ 1.270e+32 -4.820    6.530    /
     TROE/ 7.187e-01 103       1.29e+03  4.16e+03 /
 
 ! Reaction index: Chemkin #189; RMG #181
 ! Library reaction: GRI-Mech3.0
-CH2O(15)+H(4)(+M)=CH3O(19)(+M)                      5.400e+11 0.454     2.600    
+H(4)+CH2O(15)(+M)=CH3O(19)(+M)                      5.400e+11 0.454     2.600    
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ 
     LOW/ 2.200e+30 -4.800    5.560    /
     TROE/ 7.580e-01 94        1.56e+03  4.2e+03  /
 
 ! Reaction index: Chemkin #190; RMG #182
 ! Library reaction: GRI-Mech3.0
-CH2OH(18)+H(4)(+M)=CH3OH(20)(+M)                    1.055e+12 0.500     0.086    
+H(4)+CH2OH(18)(+M)=CH3OH(20)(+M)                    1.055e+12 0.500     0.086    
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ 
     LOW/ 4.360e+31 -4.650    5.080    /
     TROE/ 6.000e-01 100       9e+04     1e+04    /
 
 ! Reaction index: Chemkin #191; RMG #183
 ! Library reaction: GRI-Mech3.0
-CH3O(19)+H(4)(+M)=CH3OH(20)(+M)                     2.430e+12 0.515     0.050    
-CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ 
+H(4)+CH3O(19)(+M)=CH3OH(20)(+M)                     2.430e+12 0.515     0.050    
+CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ 
     LOW/ 4.660e+41 -7.440    14.080   /
     TROE/ 7.000e-01 100       9e+04     1e+04    /
 
 ! Reaction index: Chemkin #192; RMG #184
 ! Library reaction: GRI-Mech3.0
-C2H(21)+H(4)(+M)=C2H2(22)(+M)                       1.000e+17 -1.000    0.000    
+H(4)+C2H(21)(+M)=C2H2(22)(+M)                       1.000e+17 -1.000    0.000    
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 3.750e+33 -4.800    1.900    /
     TROE/ 6.464e-01 132       1.32e+03  5.57e+03 /
 
 ! Reaction index: Chemkin #193; RMG #185
 ! Library reaction: GRI-Mech3.0
-C2H2(22)+H(4)(+M)=C2H3(24)(+M)                      5.600e+12 0.000     2.400    
-CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
+H(4)+C2H2(22)(+M)=C2H3(24)(+M)                      5.600e+12 0.000     2.400    
+CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 3.800e+40 -7.270    7.220    /
     TROE/ 7.507e-01 98.5      1.3e+03   4.17e+03 /
 
 ! Reaction index: Chemkin #194; RMG #186
 ! Library reaction: GRI-Mech3.0
-C2H3(24)+H(4)(+M)=C2H4(26)(+M)                      6.080e+12 0.270     0.280    
+H(4)+C2H3(24)(+M)=C2H4(26)(+M)                      6.080e+12 0.270     0.280    
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 1.400e+30 -3.860    3.320    /
     TROE/ 7.820e-01 208       2.66e+03  6.1e+03  /
@@ -1167,7 +1167,7 @@ CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/
 ! Reaction index: Chemkin #196; RMG #190
 ! Library reaction: GRI-Mech3.0
 OH(5)+OH(5)(+M)=H2O2(8)(+M)                         7.400e+13 -0.370    0.000    
-CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
+CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 2.300e+18 -0.900    -1.700   /
     TROE/ 7.346e-01 94        1.76e+03  5.18e+03 /
 
@@ -1194,14 +1194,14 @@ CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/
 
 ! Reaction index: Chemkin #200; RMG #194
 ! Library reaction: GRI-Mech3.0
-H2O(28)+CH2(S)(13)(+M)=CH3OH(20)(+M)                4.820e+17 -1.160    1.145    
+CH2(S)(13)+H2O(28)(+M)=CH3OH(20)(+M)                4.820e+17 -1.160    1.145    
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ 
     LOW/ 1.880e+38 -6.360    5.040    /
     TROE/ 6.027e-01 208       3.92e+03  1.02e+04 /
 
 ! Reaction index: Chemkin #201; RMG #196
 ! Library reaction: GRI-Mech3.0
-C2H4(26)(+M)=C2H2(22)+H2(3)(+M)                     8.000e+12 0.440     86.770   
+C2H4(26)(+M)=H2(3)+C2H2(22)(+M)                     8.000e+12 0.440     86.770   
 CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/ 
     LOW/ 1.580e+51 -9.300    97.800   /
     TROE/ 7.345e-01 180       1.04e+03  5.42e+03 /
@@ -1209,20 +1209,20 @@ CH4(16)/2.00/ CO2(17)/2.00/ ethane(1)/3.00/ H2O(28)/6.00/ H2(3)/2.00/ Ar/0.70/
 ! Reaction index: Chemkin #202; RMG #197
 ! Library reaction: GRI-Mech3.0
 H2(3)+CH(9)(+M)=CH3(14)(+M)                         1.970e+12 0.430     -0.370   
-CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
+CO2(17)/2.00/ H2O(28)/6.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ Ar/0.70/ 
     LOW/ 4.820e+25 -2.800    0.590    /
     TROE/ 5.780e-01 122       2.54e+03  9.36e+03 /
 
 ! Reaction index: Chemkin #203; RMG #198
 ! Library reaction: GRI-Mech3.0
-CH2CO(25)+H(4)(+M)=CH2CHO(31)(+M)                   4.865e+11 0.422     -1.755   
+H(4)+CH2CO(25)(+M)=CH2CHO(31)(+M)                   4.865e+11 0.422     -1.755   
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 1.012e+42 -7.630    3.854    /
     TROE/ 4.650e-01 201       1.77e+03  5.33e+03 /
 
 ! Reaction index: Chemkin #204; RMG #199
 ! Library reaction: GRI-Mech3.0
-C2H5(27)+CH3(14)(+M)=C3H8(33)(+M)                   9.430e+12 0.000     0.000    
+CH3(14)+C2H5(27)(+M)=C3H8(33)(+M)                   9.430e+12 0.000     0.000    
 CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/ 
     LOW/ 2.710e+74 -16.820   13.065   /
     TROE/ 1.527e-01 291       2.74e+03  7.75e+03 /
@@ -1231,19 +1231,19 @@ CO2(17)/2.00/ CH4(16)/2.00/ ethane(1)/3.00/ H2(3)/2.00/ H2O(28)/6.00/ Ar/0.70/
 ! Template reaction: 1,2_Insertion_carbene
 ! Estimated using template (carbene;Cs_H) for rate rule (carbene;C_methane)
 ! Multiplied by reaction path degeneracy 8
-CH4(16)+CH2(S)(13)=ethane(1)                        3.494e+12 0.189     -0.354   
+CH2(S)(13)+CH4(16)=ethane(1)                        3.494e+12 0.189     -0.354   
 
 ! Reaction index: Chemkin #206; RMG #201
 ! Template reaction: R_Recombination
 ! Estimated using template (Y_rad;Y_rad) for rate rule (Y_rad;H_rad)
 ! Multiplied by reaction path degeneracy 2
-H(4)+C2H4(34)=C2H5(27)                              1.441e+13 0.101     -0.195   
+C2H4(34)+H(4)=C2H5(27)                              1.441e+13 0.101     -0.195   
 
 ! Reaction index: Chemkin #207; RMG #203
 ! Template reaction: H_Abstraction
 ! Estimated using template (Cs_H;CH2_triplet) for rate rule (C/H3/Cs\H3;CH2_triplet)
 ! Multiplied by reaction path degeneracy 6
-ethane(1)+CH2(11)=C2H5(27)+CH3(14)                  5.443e+06 1.730     6.190    
+ethane(1)+CH2(11)=CH3(14)+C2H5(27)                  5.443e+06 1.730     6.190    
 
 ! Reaction index: Chemkin #208; RMG #205
 ! Template reaction: R_Recombination
@@ -1266,19 +1266,19 @@ C2H4(34)=C2H4(26)                                   8.000e+08 0.000     0.000
 ! Template reaction: Disproportionation
 ! Exact match found for rate rule (CH2_triplet;Cmethyl_Csrad)
 ! Multiplied by reaction path degeneracy 3
-C2H5(27)+CH2(11)=C2H4(26)+CH3(14)                   9.030e+13 0.000     0.000    
+CH2(11)+C2H5(27)=CH3(14)+C2H4(26)                   9.030e+13 0.000     0.000    
 
 ! Reaction index: Chemkin #212; RMG #209
 ! Template reaction: R_Addition_MultipleBond
 ! Exact match found for rate rule (Cds-HH_Cds-HH;CsJ-HHH)
 ! Multiplied by reaction path degeneracy 2
-C2H4(26)+CH3(14)=C3H7(36)                           4.180e+04 2.410     5.630    
+CH3(14)+C2H4(26)=C3H7(36)                           4.180e+04 2.410     5.630    
 
 ! Reaction index: Chemkin #213; RMG #210
 ! Template reaction: Disproportionation
 ! Estimated using template (Y_rad;XH_Rrad) for rate rule (Y_rad;Cmethyl_Csrad)
 ! Multiplied by reaction path degeneracy 6
-C2H5(27)+C2H4(34)=C2H4(26)+C2H5(27)                 1.401e+10 0.969     -3.161   
+C2H4(34)+C2H5(27)=C2H4(26)+C2H5(27)                 1.401e+10 0.969     -3.161   
 
 ! Reaction index: Chemkin #214; RMG #211
 ! Template reaction: R_Addition_MultipleBond
