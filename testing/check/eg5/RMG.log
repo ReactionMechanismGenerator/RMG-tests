@@ -1,6 +1,6 @@
 Global RMG Settings:
-   database.directory   = RMG-database/input (Default, relative to RMG-Py source code)
-RMG execution initiated at Fri Jan 22 20:19:28 2016
+   database.directory   = /vagrant_data/Code/RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Thu Feb  4 03:06:26 2016
 
 #########################################################
 # RMG-Py - Reaction Mechanism Generator in Python       #
@@ -15,17 +15,17 @@ The current git HEAD is:
 	08e397629757546f46d10d0bfabf371bf981a20a
 	Mon Oct 19 10:55:21 2015 -0400
 
-Reading input file "RMG-Py/testing/heptane-eg5/input.py"...
+Reading input file "/vagrant_data/Code/RMG-Py/testing/heptane-eg5/input.py"...
 
-Loading thermodynamics library from primaryThermoLibrary.py in RMG-database/input/thermo/libraries...
-Loading thermodynamics group database from RMG-database/input/thermo/groups...
-Loading transport library from GRI-Mech.py in RMG-database/input/transport/libraries...
+Loading thermodynamics library from primaryThermoLibrary.py in /vagrant_data/Code/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /vagrant_data/Code/RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in /vagrant_data/Code/RMG-database/input/transport/libraries...
 Consistency checking of multiplicity of molecules with more than 2 unpaired electrons is not implemented yet!
-Loading transport library from PrimaryTransportLibrary.py in RMG-database/input/transport/libraries...
-Loading transport group database from RMG-database/input/transport/groups...
-Loading default kinetics families from RMG-database/input/kinetics/families
-Loading frequencies group database from RMG-database/input/statmech/groups...
-Loading Platts additivity group database from RMG-database/input/solvation/groups...
+Loading transport library from PrimaryTransportLibrary.py in /vagrant_data/Code/RMG-database/input/transport/libraries...
+Loading transport group database from /vagrant_data/Code/RMG-database/input/transport/groups...
+Loading default kinetics families from /vagrant_data/Code/RMG-database/input/kinetics/families
+Loading frequencies group database from /vagrant_data/Code/RMG-database/input/statmech/groups...
+Loading Platts additivity group database from /vagrant_data/Code/RMG-database/input/solvation/groups...
 Adding rate rules from training set in kinetics families...
 Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
 Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
@@ -228,6 +228,7 @@ For reaction [H](5) + [CH2][CH]CCC(20) <=> [CH2]CCCC(6) Ea raised from -0.8 to 0
 For reaction [CH2]CCC(9) + [CH2](13) <=> [CH2]CCCC(6) Ea raised from -1.5 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 Warning: For <Molecule "[CH2][CH2]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (2 frequencies) to compensate.
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2][CH2]">.
 ========================================================================
 2 network information
 ---------------------
@@ -349,8 +350,8 @@ Chemkin file contains 0 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 0 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:25
-    Memory used: 134.53 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:12
+    Memory used: 178.48 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-15 s, species C[CH2](7) exceeded the minimum rate for moving to model core
@@ -446,7 +447,7 @@ Moved 1 reactions from edge to core
     [CH2]CCCC(6) + C[CH2](7) <=> n-heptane(1)
 Added 0 new core reactions
 Created 19 new edge reactions
-    n-heptane(1) + C[CH2](7) <=> [CH2]CCCCCC(4) + CC(27)
+    [CH2]CCCCCC(4) + CC(27) <=> n-heptane(1) + C[CH2](7)
     n-heptane(1) + C[CH2](7) <=> C[CH]CCCCC(8) + CC(27)
     n-heptane(1) + C[CH2](7) <=> CC[CH]CCCC(11) + CC(27)
     n-heptane(1) + C[CH2](7) <=> CCC[CH]CCC(12) + CC(27)
@@ -476,19 +477,19 @@ Chemkin file contains 1 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 1 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:29
-    Memory used: 134.57 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:14
+    Memory used: 178.77 MB
 
 Conducting simulation of reaction system 1...
-At time 6.2354e-19 s, species [CH2]CC(10) exceeded the minimum rate for moving to model core
-    Characteristic rate: 8.3336e+00 mol/m^3*s
-    [CH2]CC(10) rate: 3.8116e+00 mol/m^3*s (0.4574)
-    PDepNetwork #2 leak rate: 6.5498e-13 mol/m^3*s (7.86e-14)
+At time 5.8158e-19 s, species [CH2]CC(10) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.9350e+00 mol/m^3*s
+    [CH2]CC(10) rate: 3.8116e+00 mol/m^3*s (0.4266)
+    PDepNetwork #2 leak rate: 6.0792e-13 mol/m^3*s (6.804e-14)
     n-heptane(1) conversion: 4.663e-15 
-At time 6.2354e-19 s, species [CH2]CC(10) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 8.3336e+00 mol/m^3*s
-    [CH2]CC(10) rate: 3.8116e+00 mol/m^3*s (0.4574)
-    PDepNetwork #2 leak rate: 6.5498e-13 mol/m^3*s (7.86e-14)
+At time 5.8158e-19 s, species [CH2]CC(10) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.9350e+00 mol/m^3*s
+    [CH2]CC(10) rate: 3.8116e+00 mol/m^3*s (0.4266)
+    PDepNetwork #2 leak rate: 6.0792e-13 mol/m^3*s (6.804e-14)
     n-heptane(1) conversion: 4.663e-15 
 
 
@@ -560,7 +561,7 @@ Created 22 new edge reactions
     C[CH2](7) + [CH2]CC(10) <=> C=C(16) + CCC(32)
     C[CH2](7) + [CH2]CC(10) <=> CC(27) + C=CC(29)
     [CH2]C[CH2](21) + CC(27) <=> C[CH2](7) + [CH2]CC(10)
-    [CH2]CC(10) + [CH2]CC(10) <=> CCC(32) + C=CC(29)
+    [CH2]CC(10) + [CH2]CC(10) <=> C=CC(29) + CCC(32)
     [CH2]CC(10) + [CH2]CC(10) <=> [CH2]C[CH2](21) + CCC(32)
     [CH2]CC(10) => [H](5) + C=CC(29)
     [CH2]CC(10) => [CH3](3) + C=C(16)
@@ -580,19 +581,19 @@ Chemkin file contains 1 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 1 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:33
-    Memory used: 134.57 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:15
+    Memory used: 178.76 MB
 
 Conducting simulation of reaction system 1...
-At time 6.6659e-19 s, species [CH2]CCC(9) exceeded the minimum rate for moving to model core
-    Characteristic rate: 8.3336e+00 mol/m^3*s
-    [CH2]CCC(9) rate: 3.8116e+00 mol/m^3*s (0.4574)
-    PDepNetwork #2 leak rate: 7.0021e-13 mol/m^3*s (8.402e-14)
+At time 6.2173e-19 s, species [CH2]CCC(9) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.9350e+00 mol/m^3*s
+    [CH2]CCC(9) rate: 3.8116e+00 mol/m^3*s (0.4266)
+    PDepNetwork #2 leak rate: 6.4990e-13 mol/m^3*s (7.274e-14)
     n-heptane(1) conversion: 4.996e-15 
-At time 6.6659e-19 s, species [CH2]CCC(9) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 8.3336e+00 mol/m^3*s
-    [CH2]CCC(9) rate: 3.8116e+00 mol/m^3*s (0.4574)
-    PDepNetwork #2 leak rate: 7.0021e-13 mol/m^3*s (8.402e-14)
+At time 6.2173e-19 s, species [CH2]CCC(9) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.9350e+00 mol/m^3*s
+    [CH2]CCC(9) rate: 3.8116e+00 mol/m^3*s (0.4266)
+    PDepNetwork #2 leak rate: 6.4990e-13 mol/m^3*s (7.274e-14)
     n-heptane(1) conversion: 4.996e-15 
 
 
@@ -604,6 +605,7 @@ For reaction C[CH2](7) + [CH2][CH2](19) <=> [CH2]CCC(9) Ea raised from -0.8 to 0
 For reaction [H](5) + [CH2][CH]CC(34) <=> [CH2]CCC(9) Ea raised from -0.8 to 0 kJ/mol.
 For reaction [CH2]CC(10) + [CH2](13) <=> [CH2]CCC(9) Ea raised from -1.5 to 0 kJ/mol.
 Updating 2 modified unimolecular reaction networks...
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "C[CH]CC">.
 ========================================================================
 9 network information
 ---------------------
@@ -696,29 +698,29 @@ Moved 2 reactions from edge to core
     [CH2]CCC(9) + [CH2]CC(10) <=> [CH2]CCCC(6) + C[CH2](7)
 Added 0 new core reactions
 Created 38 new edge reactions
-    [CH2]CCCCCC(4) + CCCC(28) <=> n-heptane(1) + [CH2]CCC(9)
+    n-heptane(1) + [CH2]CCC(9) <=> [CH2]CCCCCC(4) + CCCC(28)
     n-heptane(1) + [CH2]CCC(9) <=> C[CH]CCCCC(8) + CCCC(28)
     n-heptane(1) + [CH2]CCC(9) <=> CC[CH]CCCC(11) + CCCC(28)
     n-heptane(1) + [CH2]CCC(9) <=> CCC[CH]CCC(12) + CCCC(28)
     [CH2]CCCC(6) + [CH2]CCC(9) <=> C=CCCC(15) + CCCC(28)
     [CH2]CCCC(6) + [CH2]CCC(9) <=> CCCCC(26) + C=CCC(33)
     [CH2]CC[CH2](17) + CCCCC(26) <=> [CH2]CCCC(6) + [CH2]CCC(9)
-    [CH2]CCCC(6) + [CH2]CCC(9) <=> CCCCC(26) + [CH2]C[CH]C(35)
+    [CH2]CCCC(6) + [CH2]CCC(9) <=> [CH2]C[CH]C(35) + CCCCC(26)
     [CH2]CCC[CH2](18) + CCCC(28) <=> [CH2]CCCC(6) + [CH2]CCC(9)
     [CH2]CCCC(6) + [CH2]CCC(9) <=> [CH2]C[CH]CC(22) + CCCC(28)
     [CH2]CCCC(6) + [CH2]CCC(9) <=> [CH2]CC[CH]C(23) + CCCC(28)
     C[CH2](7) + [CH2]CCC(9) <=> C=C(16) + CCCC(28)
     C[CH2](7) + [CH2]CCC(9) <=> CC(27) + C=CCC(33)
     [CH2]CC[CH2](17) + CC(27) <=> C[CH2](7) + [CH2]CCC(9)
-    C[CH2](7) + [CH2]CCC(9) <=> CC(27) + [CH2]C[CH]C(35)
+    C[CH2](7) + [CH2]CCC(9) <=> [CH2]C[CH]C(35) + CC(27)
     [CH2]CCC(9) + [CH2]CC(10) <=> CCCC(28) + C=CC(29)
     [CH2]CCC(9) + [CH2]CC(10) <=> CCC(32) + C=CCC(33)
     [CH2]CC[CH2](17) + CCC(32) <=> [CH2]CCC(9) + [CH2]CC(10)
-    [CH2]CCC(9) + [CH2]CC(10) <=> CCC(32) + [CH2]C[CH]C(35)
+    [CH2]CCC(9) + [CH2]CC(10) <=> [CH2]C[CH]C(35) + CCC(32)
     [CH2]CCC(9) + [CH2]CC(10) <=> [CH2]C[CH2](21) + CCCC(28)
     [CH2]CCC(9) + [CH2]CCC(9) <=> CCCC(28) + C=CCC(33)
     [CH2]CC[CH2](17) + CCCC(28) <=> [CH2]CCC(9) + [CH2]CCC(9)
-    [CH2]CCC(9) + [CH2]CCC(9) <=> CCCC(28) + [CH2]C[CH]C(35)
+    [CH2]CCC(9) + [CH2]CCC(9) <=> [CH2]C[CH]C(35) + CCCC(28)
     [CH2]CCC(9) => [H](5) + C=CCC(33)
     [CH2]CCC(9) => C[CH2](7) + C=C(16)
     [CH2]CCC(9) => [CH3](3) + [CH2]C[CH2](21)
@@ -745,19 +747,19 @@ Chemkin file contains 3 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 3 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:38
-    Memory used: 134.57 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 178.98 MB
 
 Conducting simulation of reaction system 1...
-At time 5.3822e-19 s, species [CH3](3) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.2621e+01 mol/m^3*s
-    [CH3](3) rate: 1.4947e+00 mol/m^3*s (0.1184)
-    PDepNetwork #2 leak rate: 5.6536e-13 mol/m^3*s (4.48e-14)
+At time 5.2988e-19 s, species [CH3](3) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2770e+01 mol/m^3*s
+    [CH3](3) rate: 1.4947e+00 mol/m^3*s (0.117)
+    PDepNetwork #2 leak rate: 5.5388e-13 mol/m^3*s (4.337e-14)
     n-heptane(1) conversion: 7.438e-15 
-At time 5.3822e-19 s, species [CH3](3) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.2621e+01 mol/m^3*s
-    [CH3](3) rate: 1.4947e+00 mol/m^3*s (0.1184)
-    PDepNetwork #2 leak rate: 5.6536e-13 mol/m^3*s (4.48e-14)
+At time 5.2988e-19 s, species [CH3](3) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2770e+01 mol/m^3*s
+    [CH3](3) rate: 1.4947e+00 mol/m^3*s (0.117)
+    PDepNetwork #2 leak rate: 5.5388e-13 mol/m^3*s (4.337e-14)
     n-heptane(1) conversion: 7.438e-15 
 
 
@@ -782,19 +784,19 @@ Created 19 new edge reactions
     n-heptane(1) + [CH3](3) <=> C[CH]CCCCC(8) + C(37)
     n-heptane(1) + [CH3](3) <=> CC[CH]CCCC(11) + C(37)
     n-heptane(1) + [CH3](3) <=> CCC[CH]CCC(12) + C(37)
-    [CH3](3) + [CH2]CCCC(6) <=> C=CCCC(15) + C(37)
-    CCCCC(26) + [CH2](38) <=> [CH3](3) + [CH2]CCCC(6)
-    [CH2]CCC[CH2](18) + C(37) <=> [CH3](3) + [CH2]CCCC(6)
-    [CH3](3) + [CH2]CCCC(6) <=> [CH2]C[CH]CC(22) + C(37)
-    [CH3](3) + [CH2]CCCC(6) <=> [CH2]CC[CH]C(23) + C(37)
-    [CH3](3) + C[CH2](7) <=> C=C(16) + C(37)
-    CC(27) + [CH2](38) <=> [CH3](3) + C[CH2](7)
-    [CH3](3) + [CH2]CC(10) <=> C=CC(29) + C(37)
-    CCC(32) + [CH2](38) <=> [CH3](3) + [CH2]CC(10)
-    [CH3](3) + [CH2]CC(10) <=> [CH2]C[CH2](21) + C(37)
-    [CH3](3) + [CH2]CCC(9) <=> C=CCC(33) + C(37)
-    CCCC(28) + [CH2](38) <=> [CH3](3) + [CH2]CCC(9)
-    [CH2]CC[CH2](17) + C(37) <=> [CH3](3) + [CH2]CCC(9)
+    [CH3](3) + [CH2]CCCC(6) <=> C(37) + C=CCCC(15)
+    [CH2](38) + CCCCC(26) <=> [CH3](3) + [CH2]CCCC(6)
+    C(37) + [CH2]CCC[CH2](18) <=> [CH3](3) + [CH2]CCCC(6)
+    [CH3](3) + [CH2]CCCC(6) <=> C(37) + [CH2]C[CH]CC(22)
+    [CH3](3) + [CH2]CCCC(6) <=> C(37) + [CH2]CC[CH]C(23)
+    [CH3](3) + C[CH2](7) <=> C(37) + C=C(16)
+    [CH2](38) + CC(27) <=> [CH3](3) + C[CH2](7)
+    [CH3](3) + [CH2]CC(10) <=> C(37) + C=CC(29)
+    [CH2](38) + CCC(32) <=> [CH3](3) + [CH2]CC(10)
+    [CH3](3) + [CH2]CC(10) <=> C(37) + [CH2]C[CH2](21)
+    [CH3](3) + [CH2]CCC(9) <=> C(37) + C=CCC(33)
+    [CH2](38) + CCCC(28) <=> [CH3](3) + [CH2]CCC(9)
+    C(37) + [CH2]CC[CH2](17) <=> [CH3](3) + [CH2]CCC(9)
     [CH3](3) + [CH2]CCC(9) <=> [CH2]C[CH]C(35) + C(37)
     [CH2](38) + C(37) <=> [CH3](3) + [CH3](3)
 
@@ -808,20 +810,20 @@ Chemkin file contains 3 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 3 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:39
-    Memory used: 134.57 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 178.98 MB
 
 Conducting simulation of reaction system 1...
-At time 5.6733e-19 s, species [CH2]CCCCC(2) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.2621e+01 mol/m^3*s
-    [CH2]CCCCC(2) rate: 1.4947e+00 mol/m^3*s (0.1184)
-    PDepNetwork #2 leak rate: 5.9594e-13 mol/m^3*s (4.722e-14)
-    n-heptane(1) conversion: 7.994e-15 
-At time 5.6733e-19 s, species [CH2]CCCCC(2) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.2621e+01 mol/m^3*s
-    [CH2]CCCCC(2) rate: 1.4947e+00 mol/m^3*s (0.1184)
-    PDepNetwork #2 leak rate: 5.9594e-13 mol/m^3*s (4.722e-14)
-    n-heptane(1) conversion: 7.994e-15 
+At time 5.5854e-19 s, species [CH2]CCCCC(2) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2770e+01 mol/m^3*s
+    [CH2]CCCCC(2) rate: 1.4947e+00 mol/m^3*s (0.117)
+    PDepNetwork #2 leak rate: 5.8385e-13 mol/m^3*s (4.572e-14)
+    n-heptane(1) conversion: 7.772e-15 
+At time 5.5854e-19 s, species [CH2]CCCCC(2) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2770e+01 mol/m^3*s
+    [CH2]CCCCC(2) rate: 1.4947e+00 mol/m^3*s (0.117)
+    PDepNetwork #2 leak rate: 5.8385e-13 mol/m^3*s (4.572e-14)
+    n-heptane(1) conversion: 7.772e-15 
 
 
 Adding species [CH2]CCCCC(2) to model core
@@ -832,7 +834,6 @@ For reaction [CH2]CCC(9) + [CH2][CH2](19) <=> [CH2]CCCCC(2) Ea raised from -0.8 
 For reaction [H](5) + [CH2][CH]CCCC(41) <=> [CH2]CCCCC(2) Ea raised from -0.8 to 0 kJ/mol.
 For reaction [CH2]CCCC(6) + [CH2](13) <=> [CH2]CCCCC(2) Ea raised from -1.5 to 0 kJ/mol.
 Updating 2 modified unimolecular reaction networks...
-Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "C=CCCCC">.
 Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2]CCCC[CH2]">.
 Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2][CH]CCCC">.
 Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2]CCC[CH]C">.
@@ -975,40 +976,40 @@ Created 64 new edge reactions
     n-heptane(1) + [CH2]CCCCC(2) <=> CC[CH]CCCC(11) + CCCCCC(14)
     n-heptane(1) + [CH2]CCCCC(2) <=> CCC[CH]CCC(12) + CCCCCC(14)
     [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCCC(14) + C=CCCC(15)
-    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCC(26) + C=CCCCC(39)
-    CCCCC(26) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + [CH2]CCCC(6)
-    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCC(26) + [CH2]CCC[CH]C(42)
-    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCC(26) + [CH2]C[CH]CCC(43)
-    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCC(26) + [CH2]CC[CH]CC(44)
+    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> C=CCCCC(39) + CCCCC(26)
+    [CH2]CCCC[CH2](40) + CCCCC(26) <=> [CH2]CCCCC(2) + [CH2]CCCC(6)
+    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> [CH2]CCC[CH]C(42) + CCCCC(26)
+    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> [CH2]C[CH]CCC(43) + CCCCC(26)
+    [CH2]CCCCC(2) + [CH2]CCCC(6) <=> [CH2]CC[CH]CC(44) + CCCCC(26)
     CCCCCC(14) + [CH2]CCC[CH2](18) <=> [CH2]CCCCC(2) + [CH2]CCCC(6)
     [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCCC(14) + [CH2]C[CH]CC(22)
     [CH2]CCCCC(2) + [CH2]CCCC(6) <=> CCCCCC(14) + [CH2]CC[CH]C(23)
     [CH2]CCCCC(2) + C[CH2](7) <=> CCCCCC(14) + C=C(16)
-    [CH2]CCCCC(2) + C[CH2](7) <=> CC(27) + C=CCCCC(39)
-    CC(27) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + C[CH2](7)
-    [CH2]CCCCC(2) + C[CH2](7) <=> CC(27) + [CH2]CCC[CH]C(42)
-    [CH2]CCCCC(2) + C[CH2](7) <=> CC(27) + [CH2]C[CH]CCC(43)
-    [CH2]CCCCC(2) + C[CH2](7) <=> CC(27) + [CH2]CC[CH]CC(44)
+    [CH2]CCCCC(2) + C[CH2](7) <=> C=CCCCC(39) + CC(27)
+    [CH2]CCCC[CH2](40) + CC(27) <=> [CH2]CCCCC(2) + C[CH2](7)
+    [CH2]CCCCC(2) + C[CH2](7) <=> [CH2]CCC[CH]C(42) + CC(27)
+    [CH2]CCCCC(2) + C[CH2](7) <=> [CH2]C[CH]CCC(43) + CC(27)
+    [CH2]CCCCC(2) + C[CH2](7) <=> [CH2]CC[CH]CC(44) + CC(27)
     [CH2]CCCCC(2) + [CH2]CC(10) <=> CCCCCC(14) + C=CC(29)
-    [CH2]CCCCC(2) + [CH2]CC(10) <=> CCC(32) + C=CCCCC(39)
-    CCC(32) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + [CH2]CC(10)
-    [CH2]CCCCC(2) + [CH2]CC(10) <=> CCC(32) + [CH2]CCC[CH]C(42)
-    [CH2]CCCCC(2) + [CH2]CC(10) <=> CCC(32) + [CH2]C[CH]CCC(43)
-    [CH2]CCCCC(2) + [CH2]CC(10) <=> CCC(32) + [CH2]CC[CH]CC(44)
+    [CH2]CCCCC(2) + [CH2]CC(10) <=> C=CCCCC(39) + CCC(32)
+    [CH2]CCCC[CH2](40) + CCC(32) <=> [CH2]CCCCC(2) + [CH2]CC(10)
+    [CH2]CCCCC(2) + [CH2]CC(10) <=> [CH2]CCC[CH]C(42) + CCC(32)
+    [CH2]CCCCC(2) + [CH2]CC(10) <=> [CH2]C[CH]CCC(43) + CCC(32)
+    [CH2]CCCCC(2) + [CH2]CC(10) <=> [CH2]CC[CH]CC(44) + CCC(32)
     [CH2]CCCCC(2) + [CH2]CC(10) <=> CCCCCC(14) + [CH2]C[CH2](21)
     [CH2]CCCCC(2) + [CH2]CCC(9) <=> CCCCCC(14) + C=CCC(33)
-    [CH2]CCCCC(2) + [CH2]CCC(9) <=> CCCC(28) + C=CCCCC(39)
-    CCCC(28) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + [CH2]CCC(9)
-    [CH2]CCCCC(2) + [CH2]CCC(9) <=> CCCC(28) + [CH2]CCC[CH]C(42)
-    [CH2]CCCCC(2) + [CH2]CCC(9) <=> CCCC(28) + [CH2]C[CH]CCC(43)
-    [CH2]CCCCC(2) + [CH2]CCC(9) <=> CCCC(28) + [CH2]CC[CH]CC(44)
+    [CH2]CCCCC(2) + [CH2]CCC(9) <=> C=CCCCC(39) + CCCC(28)
+    [CH2]CCCC[CH2](40) + CCCC(28) <=> [CH2]CCCCC(2) + [CH2]CCC(9)
+    [CH2]CCCCC(2) + [CH2]CCC(9) <=> [CH2]CCC[CH]C(42) + CCCC(28)
+    [CH2]CCCCC(2) + [CH2]CCC(9) <=> [CH2]C[CH]CCC(43) + CCCC(28)
+    [CH2]CCCCC(2) + [CH2]CCC(9) <=> [CH2]CC[CH]CC(44) + CCCC(28)
     CCCCCC(14) + [CH2]CC[CH2](17) <=> [CH2]CCCCC(2) + [CH2]CCC(9)
     [CH2]CCCCC(2) + [CH2]CCC(9) <=> CCCCCC(14) + [CH2]C[CH]C(35)
     [CH2]CCCCC(2) + [CH3](3) <=> C(37) + C=CCCCC(39)
     C(37) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + [CH3](3)
-    [CH2]CCCCC(2) + [CH3](3) <=> [CH2]CCC[CH]C(42) + C(37)
-    [CH2]CCCCC(2) + [CH3](3) <=> [CH2]C[CH]CCC(43) + C(37)
-    [CH2]CCCCC(2) + [CH3](3) <=> [CH2]CC[CH]CC(44) + C(37)
+    [CH2]CCCCC(2) + [CH3](3) <=> C(37) + [CH2]CCC[CH]C(42)
+    [CH2]CCCCC(2) + [CH3](3) <=> C(37) + [CH2]C[CH]CCC(43)
+    [CH2]CCCCC(2) + [CH3](3) <=> C(37) + [CH2]CC[CH]CC(44)
     CCCCCC(14) + [CH2](38) <=> [CH2]CCCCC(2) + [CH3](3)
     [CH2]CCCCC(2) + [CH2]CCCCC(2) <=> CCCCCC(14) + C=CCCCC(39)
     CCCCCC(14) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + [CH2]CCCCC(2)
@@ -1045,20 +1046,20 @@ Chemkin file contains 6 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 6 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:48
-    Memory used: 134.57 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:22
+    Memory used: 185.38 MB
 
 Conducting simulation of reaction system 1...
-At time 2.7256e-08 s, species C=C(16) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.4494e+01 mol/m^3*s
-    C=C(16) rate: 1.4984e+00 mol/m^3*s (0.1034)
-    PDepNetwork #2 leak rate: 2.8624e-02 mol/m^3*s (0.001975)
-    n-heptane(1) conversion: 0.0004682 
-At time 2.7256e-08 s, species C=C(16) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.4494e+01 mol/m^3*s
-    C=C(16) rate: 1.4984e+00 mol/m^3*s (0.1034)
-    PDepNetwork #2 leak rate: 2.8624e-02 mol/m^3*s (0.001975)
-    n-heptane(1) conversion: 0.0004682 
+At time 2.7053e-08 s, species C=C(16) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.4616e+01 mol/m^3*s
+    C=C(16) rate: 1.4737e+00 mol/m^3*s (0.1008)
+    PDepNetwork #2 leak rate: 2.8272e-02 mol/m^3*s (0.001934)
+    n-heptane(1) conversion: 0.0004669 
+At time 2.7053e-08 s, species C=C(16) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.4616e+01 mol/m^3*s
+    C=C(16) rate: 1.4737e+00 mol/m^3*s (0.1008)
+    PDepNetwork #2 leak rate: 2.8272e-02 mol/m^3*s (0.001934)
+    n-heptane(1) conversion: 0.0004669 
 
 
 Adding species C=C(16) to model core
@@ -1335,16 +1336,16 @@ Created 67 new edge reactions
     C[CH2](7) + [CH2][CH]CCC(20) <=> [CH2]CCCC(6) + C=C(16)
     C[CH2](7) + [CH2]C[CH]CC(22) <=> [CH2]CCCC(6) + C=C(16)
     C[CH2](7) + [CH2]CC[CH]C(23) <=> [CH2]CCCC(6) + C=C(16)
-    CCCCC(26) + [CH]=C(47) <=> [CH2]CCCC(6) + C=C(16)
+    [CH]=C(47) + CCCCC(26) <=> [CH2]CCCC(6) + C=C(16)
     C[CH2](7) + [CH2][CH2](19) <=> C[CH2](7) + C=C(16)
-    CC(27) + [CH]=C(47) <=> C[CH2](7) + C=C(16)
+    [CH]=C(47) + CC(27) <=> C[CH2](7) + C=C(16)
     C[CH2](7) + [CH2]C[CH2](21) <=> [CH2]CC(10) + C=C(16)
     C[CH2](7) + [CH2][CH]C(30) <=> [CH2]CC(10) + C=C(16)
-    CCC(32) + [CH]=C(47) <=> [CH2]CC(10) + C=C(16)
+    [CH]=C(47) + CCC(32) <=> [CH2]CC(10) + C=C(16)
     C[CH2](7) + [CH2]CC[CH2](17) <=> [CH2]CCC(9) + C=C(16)
     C[CH2](7) + [CH2][CH]CC(34) <=> [CH2]CCC(9) + C=C(16)
     C[CH2](7) + [CH2]C[CH]C(35) <=> [CH2]CCC(9) + C=C(16)
-    CCCC(28) + [CH]=C(47) <=> [CH2]CCC(9) + C=C(16)
+    [CH]=C(47) + CCCC(28) <=> [CH2]CCC(9) + C=C(16)
     C[CH2](7) + [CH2](38) <=> [CH3](3) + C=C(16)
     C(37) + [CH]=C(47) <=> [CH3](3) + C=C(16)
     C[CH2](7) + [CH2]CCCC[CH2](40) <=> [CH2]CCCCC(2) + C=C(16)
@@ -1405,20 +1406,20 @@ Chemkin file contains 10 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 10 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:00
-    Memory used: 134.61 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:26
+    Memory used: 186.82 MB
 
 Conducting simulation of reaction system 1...
-At time 1.2519e-07 s, PDepNetwork #25 exceeded the minimum rate for exploring
-    Characteristic rate: 1.6264e+01 mol/m^3*s
-    [H](5) rate: 3.1526e-01 mol/m^3*s (0.01938)
-    PDepNetwork #25 leak rate: 1.8208e+00 mol/m^3*s (0.112)
-    n-heptane(1) conversion: 0.002149  
-At time 1.2519e-07 s, PDepNetwork #25 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.6264e+01 mol/m^3*s
-    [H](5) rate: 3.1526e-01 mol/m^3*s (0.01938)
-    PDepNetwork #25 leak rate: 1.8208e+00 mol/m^3*s (0.112)
-    n-heptane(1) conversion: 0.002149  
+At time 1.2532e-07 s, PDepNetwork #25 exceeded the minimum rate for exploring
+    Characteristic rate: 1.6313e+01 mol/m^3*s
+    [H](5) rate: 3.2143e-01 mol/m^3*s (0.0197)
+    PDepNetwork #25 leak rate: 1.7720e+00 mol/m^3*s (0.1086)
+    n-heptane(1) conversion: 0.002161  
+At time 1.2532e-07 s, PDepNetwork #25 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.6313e+01 mol/m^3*s
+    [H](5) rate: 3.2143e-01 mol/m^3*s (0.0197)
+    PDepNetwork #25 leak rate: 1.7720e+00 mol/m^3*s (0.1086)
+    n-heptane(1) conversion: 0.002161  
 
 
 Exploring isomer [CH2]CC[CH2](17) in pressure-dependent network #25
@@ -1495,20 +1496,20 @@ Chemkin file contains 10 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 10 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:04
-    Memory used: 134.61 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:27
+    Memory used: 186.87 MB
 
 Conducting simulation of reaction system 1...
-At time 1.7718e-06 s, species [H](5) exceeded the minimum rate for moving to model core
-    Characteristic rate: 2.7306e+01 mol/m^3*s
-    [H](5) rate: 2.7678e+00 mol/m^3*s (0.1014)
-    PDepNetwork #2 leak rate: 1.7542e-01 mol/m^3*s (0.006424)
-    n-heptane(1) conversion: 0.02998   
-At time 1.7718e-06 s, species [H](5) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 2.7306e+01 mol/m^3*s
-    [H](5) rate: 2.7678e+00 mol/m^3*s (0.1014)
-    PDepNetwork #2 leak rate: 1.7542e-01 mol/m^3*s (0.006424)
-    n-heptane(1) conversion: 0.02998   
+At time 1.7442e-06 s, species [H](5) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.7378e+01 mol/m^3*s
+    [H](5) rate: 2.7731e+00 mol/m^3*s (0.1013)
+    PDepNetwork #2 leak rate: 1.9195e-01 mol/m^3*s (0.007011)
+    n-heptane(1) conversion: 0.02966   
+At time 1.7442e-06 s, species [H](5) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.7378e+01 mol/m^3*s
+    [H](5) rate: 2.7731e+00 mol/m^3*s (0.1013)
+    PDepNetwork #2 leak rate: 1.9195e-01 mol/m^3*s (0.007011)
+    n-heptane(1) conversion: 0.02966   
 
 
 Adding species [H](5) to model core
@@ -1587,20 +1588,20 @@ Chemkin file contains 11 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 11 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:07
-    Memory used: 134.61 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:28
+    Memory used: 187.05 MB
 
 Conducting simulation of reaction system 1...
-At time 1.7297e-05 s, species [H][H](51) exceeded the minimum rate for moving to model core
-    Characteristic rate: 2.7551e+01 mol/m^3*s
-    [H][H](51) rate: 2.8078e+00 mol/m^3*s (0.1019)
-    PDepNetwork #31 leak rate: 2.5403e+00 mol/m^3*s (0.0922)
-    n-heptane(1) conversion: 0.2571    
-At time 1.7297e-05 s, species [H][H](51) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 2.7551e+01 mol/m^3*s
-    [H][H](51) rate: 2.8078e+00 mol/m^3*s (0.1019)
-    PDepNetwork #31 leak rate: 2.5403e+00 mol/m^3*s (0.0922)
-    n-heptane(1) conversion: 0.2571    
+At time 1.7460e-05 s, species [H][H](51) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.7600e+01 mol/m^3*s
+    [H][H](51) rate: 2.8515e+00 mol/m^3*s (0.1033)
+    PDepNetwork #31 leak rate: 2.6191e+00 mol/m^3*s (0.09489)
+    n-heptane(1) conversion: 0.2602    
+At time 1.7460e-05 s, species [H][H](51) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.7600e+01 mol/m^3*s
+    [H][H](51) rate: 2.8515e+00 mol/m^3*s (0.1033)
+    PDepNetwork #31 leak rate: 2.6191e+00 mol/m^3*s (0.09489)
+    n-heptane(1) conversion: 0.2602    
 
 
 Adding species [H][H](51) to model core
@@ -1683,20 +1684,20 @@ Chemkin file contains 13 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 13 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:11
-    Memory used: 134.62 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:29
+    Memory used: 187.23 MB
 
 Conducting simulation of reaction system 1...
-At time 1.8219e-05 s, PDepNetwork #31 exceeded the minimum rate for exploring
-    Characteristic rate: 2.7277e+01 mol/m^3*s
-    C[CH]CCCCC(8) rate: 1.0593e+00 mol/m^3*s (0.03884)
-    PDepNetwork #31 leak rate: 2.8230e+00 mol/m^3*s (0.1035)
-    n-heptane(1) conversion: 0.2688    
-At time 1.8219e-05 s, PDepNetwork #31 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 2.7277e+01 mol/m^3*s
-    C[CH]CCCCC(8) rate: 1.0593e+00 mol/m^3*s (0.03884)
-    PDepNetwork #31 leak rate: 2.8230e+00 mol/m^3*s (0.1035)
-    n-heptane(1) conversion: 0.2688    
+At time 1.8282e-05 s, PDepNetwork #31 exceeded the minimum rate for exploring
+    Characteristic rate: 2.7352e+01 mol/m^3*s
+    C[CH]CCCCC(8) rate: 1.0672e+00 mol/m^3*s (0.03902)
+    PDepNetwork #31 leak rate: 2.8703e+00 mol/m^3*s (0.1049)
+    n-heptane(1) conversion: 0.2707    
+At time 1.8282e-05 s, PDepNetwork #31 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.7352e+01 mol/m^3*s
+    C[CH]CCCCC(8) rate: 1.0672e+00 mol/m^3*s (0.03902)
+    PDepNetwork #31 leak rate: 2.8703e+00 mol/m^3*s (0.1049)
+    n-heptane(1) conversion: 0.2707    
 
 
 Exploring isomer C(37) in pressure-dependent network #31
@@ -1752,20 +1753,20 @@ Chemkin file contains 13 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 13 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:13
-    Memory used: 134.62 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:30
+    Memory used: 187.27 MB
 
 Conducting simulation of reaction system 1...
-At time 4.0419e-05 s, PDepNetwork #16 exceeded the minimum rate for exploring
-    Characteristic rate: 1.9346e+01 mol/m^3*s
-    C[CH]CCCCC(8) rate: 1.7586e+00 mol/m^3*s (0.0909)
-    PDepNetwork #16 leak rate: 1.9741e+00 mol/m^3*s (0.102)
-    n-heptane(1) conversion: 0.5007    
-At time 4.0419e-05 s, PDepNetwork #16 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.9346e+01 mol/m^3*s
-    C[CH]CCCCC(8) rate: 1.7586e+00 mol/m^3*s (0.0909)
-    PDepNetwork #16 leak rate: 1.9741e+00 mol/m^3*s (0.102)
-    n-heptane(1) conversion: 0.5007    
+At time 4.0324e-05 s, PDepNetwork #16 exceeded the minimum rate for exploring
+    Characteristic rate: 1.9409e+01 mol/m^3*s
+    C[CH]CCCCC(8) rate: 1.7583e+00 mol/m^3*s (0.09059)
+    PDepNetwork #16 leak rate: 1.9794e+00 mol/m^3*s (0.102)
+    n-heptane(1) conversion: 0.5015    
+At time 4.0324e-05 s, PDepNetwork #16 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.9409e+01 mol/m^3*s
+    C[CH]CCCCC(8) rate: 1.7583e+00 mol/m^3*s (0.09059)
+    PDepNetwork #16 leak rate: 1.9794e+00 mol/m^3*s (0.102)
+    n-heptane(1) conversion: 0.5015    
 
 
 Exploring isomer CC(27) in pressure-dependent network #16
@@ -1823,12 +1824,12 @@ Chemkin file contains 14 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:16
-    Memory used: 134.62 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:31
+    Memory used: 187.40 MB
 
 Conducting simulation of reaction system 1...
-At time 4.0378e-05 s, reached target termination conversion: 0.500000 of n-heptane(1)
-    n-heptane(1) conversion: 0.5003    
+At time 4.0555e-05 s, reached target termination conversion: 0.500000 of n-heptane(1)
+    n-heptane(1) conversion: 0.5035    
 
 Saving current model core to Chemkin file...
 Chemkin file contains 14 reactions.
@@ -1836,16 +1837,16 @@ Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Saving restart file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:18
-    Memory used: 138.16 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:32
+    Memory used: 217.79 MB
 
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:18
-    Memory used: 138.16 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:32
+    Memory used: 217.79 MB
 
 MODEL GENERATION COMPLETED
 
 The final model core has 14 species and 14 reactions
 The final model edge has 41 species and 285 reactions
 
-RMG execution terminated at Fri Jan 22 20:20:46 2016
+RMG execution terminated at Thu Feb  4 03:06:59 2016

@@ -1,6 +1,6 @@
 Global RMG Settings:
-   database.directory   = RMG-database/input (Default, relative to RMG-Py source code)
-RMG execution initiated at Fri Jan 22 20:16:20 2016
+   database.directory   = /vagrant_data/Code/RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Thu Feb  4 03:07:01 2016
 
 #########################################################
 # RMG-Py - Reaction Mechanism Generator in Python       #
@@ -15,18 +15,18 @@ The current git HEAD is:
 	08e397629757546f46d10d0bfabf371bf981a20a
 	Mon Oct 19 10:55:21 2015 -0400
 
-Reading input file "RMG-Py/testing/ethane-oxidation/input.py"...
+Reading input file "/vagrant_data/Code/RMG-Py/testing/ethane-oxidation/input.py"...
 Warning: Initial mole fractions do not sum to one; renormalizing.
 
-Loading thermodynamics library from primaryThermoLibrary.py in RMG-database/input/thermo/libraries...
-Loading thermodynamics group database from RMG-database/input/thermo/groups...
-Loading transport library from GRI-Mech.py in RMG-database/input/transport/libraries...
+Loading thermodynamics library from primaryThermoLibrary.py in /vagrant_data/Code/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /vagrant_data/Code/RMG-database/input/thermo/groups...
+Loading transport library from GRI-Mech.py in /vagrant_data/Code/RMG-database/input/transport/libraries...
 Consistency checking of multiplicity of molecules with more than 2 unpaired electrons is not implemented yet!
-Loading transport library from PrimaryTransportLibrary.py in RMG-database/input/transport/libraries...
-Loading transport group database from RMG-database/input/transport/groups...
-Loading default kinetics families from RMG-database/input/kinetics/families
-Loading frequencies group database from RMG-database/input/statmech/groups...
-Loading Platts additivity group database from RMG-database/input/solvation/groups...
+Loading transport library from PrimaryTransportLibrary.py in /vagrant_data/Code/RMG-database/input/transport/libraries...
+Loading transport group database from /vagrant_data/Code/RMG-database/input/transport/groups...
+Loading default kinetics families from /vagrant_data/Code/RMG-database/input/kinetics/families
+Loading frequencies group database from /vagrant_data/Code/RMG-database/input/statmech/groups...
+Loading Platts additivity group database from /vagrant_data/Code/RMG-database/input/solvation/groups...
 Adding rate rules from training set in kinetics families...
 Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
 Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
@@ -124,11 +124,11 @@ Generating kinetics for new reactions...
 For reaction [CH2](6) + C(7) <=> ethane(1) Ea raised from -1.5 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 Warning: For <Molecule "CC">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (6 frequencies) to compensate.
-Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "CC">.
 Warning: Statmech node <Entry index=-1 label="C_R1"> and all its parents have data=None
 Warning: For <Molecule "C[CH2]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (2 frequencies) to compensate.
 Warning: Statmech node <Entry index=-1 label="C_R0"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="C_R0"> and all its parents have data=None
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "C">.
 ========================================================================
 1 network information
 ---------------------
@@ -279,8 +279,8 @@ Chemkin file contains 1 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 1 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:21
-    Memory used: 134.58 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:09
+    Memory used: 178.38 MB
 
 Conducting simulation of reaction system 1...
 At time 5.9985e-12 s, PDepNetwork #2 exceeded the minimum rate for exploring
@@ -403,7 +403,7 @@ Using 635 grains from 5.06 to 1331.39 kJ/mol in steps of 2.09 kJ/mol to compute 
 Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
 Warning:     Expected kf(2761.25 K) = 1.82851e+12
 Warning:       Actual kf(2761.25 K) = 1.28808e+12
-Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:     Expected Keq(2761.25 K) = 84516.7
 Warning:       Actual Keq(2761.25 K) = 2369.64
 Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
 
@@ -434,8 +434,8 @@ Chemkin file contains 1 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 1 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:25
-    Memory used: 134.60 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:11
+    Memory used: 178.55 MB
 
 Conducting simulation of reaction system 1...
 At time 1.1858e-06 s, species CO[O](10) exceeded the minimum rate for moving to model core
@@ -546,7 +546,7 @@ Using 635 grains from 5.06 to 1331.39 kJ/mol in steps of 2.09 kJ/mol to compute 
 Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
 Warning:     Expected kf(2761.25 K) = 1.82851e+12
 Warning:       Actual kf(2761.25 K) = 1.28808e+12
-Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:     Expected Keq(2761.25 K) = 84516.7
 Warning:       Actual Keq(2761.25 K) = 2369.64
 Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
 
@@ -582,20 +582,20 @@ Chemkin file contains 2 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 2 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:00:29
-    Memory used: 134.60 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:12
+    Memory used: 178.55 MB
 
 Conducting simulation of reaction system 1...
-At time 1.9126e-06 s, species [CH2]OO(12) exceeded the minimum rate for moving to model core
-    Characteristic rate: 6.5102e+03 mol/m^3*s
-    [CH2]OO(12) rate: 3.3140e+03 mol/m^3*s (0.5091)
-    PDepNetwork #2 leak rate: 3.3118e+03 mol/m^3*s (0.5087)
-    O2(2) conversion: 8.166e-06 
-At time 1.9126e-06 s, species [CH2]OO(12) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 6.5102e+03 mol/m^3*s
-    [CH2]OO(12) rate: 3.3140e+03 mol/m^3*s (0.5091)
-    PDepNetwork #2 leak rate: 3.3118e+03 mol/m^3*s (0.5087)
-    O2(2) conversion: 8.166e-06 
+At time 1.9099e-06 s, species [CH2]OO(12) exceeded the minimum rate for moving to model core
+    Characteristic rate: 6.5204e+03 mol/m^3*s
+    [CH2]OO(12) rate: 3.3109e+03 mol/m^3*s (0.5078)
+    PDepNetwork #2 leak rate: 3.3087e+03 mol/m^3*s (0.5074)
+    O2(2) conversion: 8.158e-06 
+At time 1.9099e-06 s, species [CH2]OO(12) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 6.5204e+03 mol/m^3*s
+    [CH2]OO(12) rate: 3.3109e+03 mol/m^3*s (0.5078)
+    PDepNetwork #2 leak rate: 3.3087e+03 mol/m^3*s (0.5074)
+    O2(2) conversion: 8.158e-06 
 
 
 Adding species [CH2]OO(12) to model core
@@ -740,7 +740,7 @@ Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compu
 Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
 Warning:     Expected kf(2761.25 K) = 1.82851e+12
 Warning:       Actual kf(2761.25 K) = 1.28808e+12
-Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:     Expected Keq(2761.25 K) = 84516.7
 Warning:       Actual Keq(2761.25 K) = 2317.42
 Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
 ========================================================================
@@ -868,7 +868,7 @@ Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compu
 Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
 Warning:     Expected kf(2761.25 K) = 1.82851e+12
 Warning:       Actual kf(2761.25 K) = 1.28808e+12
-Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:     Expected Keq(2761.25 K) = 84516.7
 Warning:       Actual Keq(2761.25 K) = 2317.42
 Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
 ========================================================================
@@ -996,7 +996,7 @@ Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compu
 Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
 Warning:     Expected kf(2761.25 K) = 1.82851e+12
 Warning:       Actual kf(2761.25 K) = 1.28808e+12
-Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:     Expected Keq(2761.25 K) = 84516.7
 Warning:       Actual Keq(2761.25 K) = 2317.42
 Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
 
@@ -1048,18 +1048,18 @@ Chemkin file contains 4 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 4 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:31
-    Memory used: 134.60 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:19
+    Memory used: 205.17 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-06 s, species [OH](18) exceeded the minimum rate for moving to model core
     Characteristic rate: 9.8930e+03 mol/m^3*s
-    [OH](18) rate: 5.2645e+03 mol/m^3*s (0.5321)
+    [OH](18) rate: 5.2645e+03 mol/m^3*s (0.5322)
     PDepNetwork #7 leak rate: 1.9532e+01 mol/m^3*s (0.001974)
     O2(2) conversion: 4.893e-06 
 At time 1.0000e-06 s, species [OH](18) exceeded the minimum rate for simulation interruption
     Characteristic rate: 9.8930e+03 mol/m^3*s
-    [OH](18) rate: 5.2645e+03 mol/m^3*s (0.5321)
+    [OH](18) rate: 5.2645e+03 mol/m^3*s (0.5322)
     PDepNetwork #7 leak rate: 1.9532e+01 mol/m^3*s (0.001974)
     O2(2) conversion: 4.893e-06 
 
@@ -1109,9 +1109,9 @@ Created 10 new edge reactions
     [O]O(8) + [O](14) <=> O2(2) + [OH](18)
     C(7) + [O](14) <=> [CH3](3) + [OH](18)
     [CH3](3) + [OH](18) <=> [CH2](9) + O(25)
-    COO(15) + [O](14) <=> CO[O](10) + [OH](18)
+    [O](14) + COO(15) <=> CO[O](10) + [OH](18)
     CO[O](10) + [OH](18) <=> [CH2]O[O](11) + O(25)
-    COO(15) + [O](14) <=> [CH2]OO(12) + [OH](18)
+    [O](14) + COO(15) <=> [CH2]OO(12) + [OH](18)
     [CH2]OO(12) + [OH](18) <=> [CH2]O[O](11) + O(25)
     [O](14) + O(25) <=> [OH](18) + [OH](18)
     [OH](18) => [H](5) + [O](14)
@@ -1126,19 +1126,19 @@ Chemkin file contains 4 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 4 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:01:33
-    Memory used: 134.60 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 205.17 MB
 
 Conducting simulation of reaction system 1...
 At time 1.0000e-06 s, species C=O(17) exceeded the minimum rate for moving to model core
-    Characteristic rate: 9.8747e+03 mol/m^3*s
-    C=O(17) rate: 5.0491e+03 mol/m^3*s (0.5113)
-    PDepNetwork #7 leak rate: 1.9716e+01 mol/m^3*s (0.001997)
+    Characteristic rate: 9.8085e+03 mol/m^3*s
+    C=O(17) rate: 5.1906e+03 mol/m^3*s (0.5292)
+    PDepNetwork #7 leak rate: 2.0387e+01 mol/m^3*s (0.002078)
     O2(2) conversion: 4.893e-06 
 At time 1.0000e-06 s, species C=O(17) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 9.8747e+03 mol/m^3*s
-    C=O(17) rate: 5.0491e+03 mol/m^3*s (0.5113)
-    PDepNetwork #7 leak rate: 1.9716e+01 mol/m^3*s (0.001997)
+    Characteristic rate: 9.8085e+03 mol/m^3*s
+    C=O(17) rate: 5.1906e+03 mol/m^3*s (0.5292)
+    PDepNetwork #7 leak rate: 2.0387e+01 mol/m^3*s (0.002078)
     O2(2) conversion: 4.893e-06 
 
 
@@ -1163,15 +1163,15 @@ Isomers:
 Reactant channels:
 Product channels:
     [H](5) + [CH]=O(29)                                   245.166 kJ/mol
-    [H][H](31) + [C-]#[O+](30)                            1.41715 kJ/mol
+    [C-]#[O+](30) + [H][H](31)                            1.41715 kJ/mol
 Path reactions:
     [H](5) + [CH]=O(29) <=> C=O(17)                       245.166 kJ/mol
-    [H][H](31) + [C-]#[O+](30) <=> C=O(17)                344.924 kJ/mol
+    [C-]#[O+](30) + [H][H](31) <=> C=O(17)                344.924 kJ/mol
 ========================================================================
 
 Calculating densities of states for 15 network...
 Using 700 grains from -118.61 to 1343.70 kJ/mol in steps of 2.09 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for [H][H](31) + [C-]#[O+](30) <=> C=O(17)...
+Calculating phenomenological rate coefficients for [C-]#[O+](30) + [H][H](31) <=> C=O(17)...
 Using 271 grains from -118.61 to 446.23 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 302.617 K
 Using 275 grains from -118.61 to 454.60 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
 Using 283 grains from -118.61 to 471.33 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
@@ -1305,7 +1305,7 @@ Using 722 grains from -176.51 to 1331.82 kJ/mol in steps of 2.09 kJ/mol to compu
 Warning: For path reaction CO[O](10) <=> O2(2) + [CH3](3):
 Warning:     Expected kf(2761.25 K) = 1.82851e+12
 Warning:       Actual kf(2761.25 K) = 1.28808e+12
-Warning:     Expected Keq(2761.25 K) = 84516.8
+Warning:     Expected Keq(2761.25 K) = 84516.7
 Warning:       Actual Keq(2761.25 K) = 2317.42
 Warning: Significant corrections to k(E) to be consistent with high-pressure limit for path reaction "CO[O](10) <=> O2(2) + [CH3](3)".
 
@@ -1316,8 +1316,8 @@ Added 1 new core species
     C=O(17)
 Created 15 new edge species
     [CH]=O(29)
-    [H][H](31)
     [C-]#[O+](30)
+    [H][H](31)
     [CH2]O(32)
     [O]CO[O](33)
     CC[O](34)
@@ -1348,9 +1348,9 @@ Created 20 new edge reactions
     [CH2]OO(12) + C=O(17) <=> COO(15) + [CH]=O(29)
     [OH](18) + C=O(17) <=> O(25) + [CH]=O(29)
     C[O](13) + [CH]=O(29) <=> C=O(17) + C=O(17)
-    [CH2]O(32) + [CH]=O(29) <=> C=O(17) + C=O(17)
+    [CH]=O(29) + [CH2]O(32) <=> C=O(17) + C=O(17)
     C=O(17) => [H](5) + [CH]=O(29)
-    C=O(17) => [H][H](31) + [C-]#[O+](30)
+    C=O(17) => [C-]#[O+](30) + [H][H](31)
     [OH](18) + C=O(17) => [CH2][O](19) + [OH](18)
     [OH](18) + C=O(17) => [H](5) + [CH2]O[O](11)
     [OH](18) + C=O(17) => [O]CO(20)
@@ -1367,27 +1367,27 @@ Chemkin file contains 7 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 7 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:02
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:23
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
-At time 1.6610e-07 s, PDepNetwork #24 exceeded the minimum rate for exploring
-    Characteristic rate: 1.1586e+04 mol/m^3*s
-    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
-    PDepNetwork #24 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
-    O2(2) conversion: 3.171e-06 
-At time 1.6610e-07 s, PDepNetwork #24 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1586e+04 mol/m^3*s
-    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
-    PDepNetwork #24 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
-    O2(2) conversion: 3.171e-06 
+At time 1.6681e-07 s, PDepNetwork #24 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1584e+04 mol/m^3*s
+    C[CH2](4) rate: 5.4094e+02 mol/m^3*s (0.0467)
+    PDepNetwork #24 leak rate: 6.0058e+03 mol/m^3*s (0.5184)
+    O2(2) conversion: 3.194e-06 
+At time 1.6681e-07 s, PDepNetwork #24 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1584e+04 mol/m^3*s
+    C[CH2](4) rate: 5.4094e+02 mol/m^3*s (0.0467)
+    PDepNetwork #24 leak rate: 6.0058e+03 mol/m^3*s (0.5184)
+    O2(2) conversion: 3.194e-06 
 
 
 Exploring isomer [CH2]OC[O](39) in pressure-dependent network #24
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
 For reaction [CH2][O](19) + [CH2][O](19) <=> [CH2]OC[O](39) Ea raised from -0.8 to 0 kJ/mol.
-For reaction [H](5) + [CH2]O[CH][O](45) <=> [CH2]OC[O](39) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [CH2]O[CH][O](45) + [H](5) <=> [CH2]OC[O](39) Ea raised from -0.8 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
@@ -1407,10 +1407,10 @@ Isomers:
 Reactant channels:
     C=O(17) + C=O(17)                                    -237.218 kJ/mol
 Product channels:
-    [H](5) + [CH2]OC=O(44)                                47.0016 kJ/mol
+    [CH2]OC=O(44) + [H](5)                                47.0016 kJ/mol
     [CH2][O](19) + C=O(17)                                74.2719 kJ/mol
     [CH2][O](19) + [CH2][O](19)                           385.762 kJ/mol
-    [H](5) + [CH2]O[CH][O](45)                             444.62 kJ/mol
+    [CH2]O[CH][O](45) + [H](5)                             444.62 kJ/mol
     COC=O(46)                                             -368.28 kJ/mol
     [CH2]O[CH]O(47)                                       14.8921 kJ/mol
     CO[CH][O](48)                                         44.9446 kJ/mol
@@ -1418,10 +1418,10 @@ Product channels:
     [CH2]O[CH2](49) + [O](14)                              423.34 kJ/mol
 Path reactions:
     [CH2]OC[O](39) <=> C=O(17) + C=O(17)                  27.5692 kJ/mol
-    [H](5) + [CH2]OC=O(44) <=> [CH2]OC[O](39)             64.4489 kJ/mol
+    [CH2]OC=O(44) + [H](5) <=> [CH2]OC[O](39)             64.4489 kJ/mol
     [CH2][O](19) + C=O(17) <=> [CH2]OC[O](39)              95.704 kJ/mol
     [CH2][O](19) + [CH2][O](19) <=> [CH2]OC[O](39)        385.762 kJ/mol
-    [H](5) + [CH2]O[CH][O](45) <=> [CH2]OC[O](39)          444.62 kJ/mol
+    [CH2]O[CH][O](45) + [H](5) <=> [CH2]OC[O](39)          444.62 kJ/mol
     [CH2]OC[O](39) <=> COC=O(46)                          71.5709 kJ/mol
     [CH2]OC[O](39) <=> [CH2]O[CH]O(47)                    141.541 kJ/mol
     CO[CH][O](48) <=> [CH2]OC[O](39)                      168.996 kJ/mol
@@ -1455,9 +1455,9 @@ Created 6 new edge species
 Added 0 new core reactions
 Created 9 new edge reactions
     C=O(17) + C=O(17) => [CH2]OC[O](39)
-    C=O(17) + C=O(17) => [H](5) + [CH2]OC=O(44)
+    C=O(17) + C=O(17) => [CH2]OC=O(44) + [H](5)
     C=O(17) + C=O(17) => [CH2][O](19) + C=O(17)
-    C=O(17) + C=O(17) => [H](5) + [CH2]O[CH][O](45)
+    C=O(17) + C=O(17) => [CH2]O[CH][O](45) + [H](5)
     C=O(17) + C=O(17) => COC=O(46)
     C=O(17) + C=O(17) => [CH2]O[CH]O(47)
     C=O(17) + C=O(17) => CO[CH][O](48)
@@ -1474,27 +1474,27 @@ Chemkin file contains 7 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 7 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:07
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:25
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
-At time 1.6610e-07 s, PDepNetwork #25 exceeded the minimum rate for exploring
-    Characteristic rate: 1.1586e+04 mol/m^3*s
-    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
-    PDepNetwork #25 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
-    O2(2) conversion: 3.171e-06 
-At time 1.6610e-07 s, PDepNetwork #25 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1586e+04 mol/m^3*s
-    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
-    PDepNetwork #25 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
-    O2(2) conversion: 3.171e-06 
+At time 1.6681e-07 s, PDepNetwork #25 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1584e+04 mol/m^3*s
+    C[CH2](4) rate: 5.4094e+02 mol/m^3*s (0.0467)
+    PDepNetwork #25 leak rate: 6.0058e+03 mol/m^3*s (0.5184)
+    O2(2) conversion: 3.194e-06 
+At time 1.6681e-07 s, PDepNetwork #25 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1584e+04 mol/m^3*s
+    C[CH2](4) rate: 5.4094e+02 mol/m^3*s (0.0467)
+    PDepNetwork #25 leak rate: 6.0058e+03 mol/m^3*s (0.5184)
+    O2(2) conversion: 3.194e-06 
 
 
 Exploring isomer [O]CC[O](40) in pressure-dependent network #25
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
 For reaction [CH2][O](19) + [CH2][O](19) <=> [O]CC[O](40) Ea raised from -0.8 to 0 kJ/mol.
-For reaction [H](5) + [O][CH]C[O](51) <=> [O]CC[O](40) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [O][CH]C[O](51) + [H](5) <=> [O]CC[O](40) Ea raised from -0.8 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
@@ -1502,7 +1502,6 @@ Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have da
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
-Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[O][CH]C[O]">.
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 ========================================================================
@@ -1513,10 +1512,10 @@ Isomers:
 Reactant channels:
     C=O(17) + C=O(17)                                    -237.218 kJ/mol
 Product channels:
-    [H](5) + [O]CC=O(50)                                  114.865 kJ/mol
+    [O]CC=O(50) + [H](5)                                  114.865 kJ/mol
     [CH2][O](19) + C=O(17)                                74.2719 kJ/mol
     [CH2][O](19) + [CH2][O](19)                           385.762 kJ/mol
-    [H](5) + [O][CH]C[O](51)                              427.231 kJ/mol
+    [O][CH]C[O](51) + [H](5)                              427.231 kJ/mol
     O=CCO(52)                                            -314.863 kJ/mol
     [O]C[CH]O(53)                                        -2.49673 kJ/mol
     [O][CH]CO(54)                                        -2.49673 kJ/mol
@@ -1524,10 +1523,10 @@ Product channels:
     [CH2]C[O](55) + [O](14)                               417.473 kJ/mol
 Path reactions:
     [O]CC[O](40) <=> C=O(17) + C=O(17)                    35.1288 kJ/mol
-    [H](5) + [O]CC=O(50) <=> [O]CC[O](40)                  139.55 kJ/mol
+    [O]CC=O(50) + [H](5) <=> [O]CC[O](40)                  139.55 kJ/mol
     [CH2][O](19) + C=O(17) <=> [O]CC[O](40)                99.503 kJ/mol
     [CH2][O](19) + [CH2][O](19) <=> [O]CC[O](40)          385.762 kJ/mol
-    [H](5) + [O][CH]C[O](51) <=> [O]CC[O](40)             427.231 kJ/mol
+    [O][CH]C[O](51) + [H](5) <=> [O]CC[O](40)             427.231 kJ/mol
     [O]CC[O](40) <=> O=CCO(52)                            79.1305 kJ/mol
     [O]C[CH]O(53) <=> [O]CC[O](40)                        126.789 kJ/mol
     [O]CC[O](40) <=> [O][CH]CO(54)                         159.18 kJ/mol
@@ -1562,9 +1561,9 @@ Created 6 new edge species
 Added 0 new core reactions
 Created 9 new edge reactions
     C=O(17) + C=O(17) => [O]CC[O](40)
-    C=O(17) + C=O(17) => [H](5) + [O]CC=O(50)
+    C=O(17) + C=O(17) => [O]CC=O(50) + [H](5)
     C=O(17) + C=O(17) => [CH2][O](19) + C=O(17)
-    C=O(17) + C=O(17) => [H](5) + [O][CH]C[O](51)
+    C=O(17) + C=O(17) => [O][CH]C[O](51) + [H](5)
     C=O(17) + C=O(17) => O=CCO(52)
     C=O(17) + C=O(17) => [O]C[CH]O(53)
     C=O(17) + C=O(17) => [O][CH]CO(54)
@@ -1581,20 +1580,20 @@ Chemkin file contains 7 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 7 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:11
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:26
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
-At time 1.6610e-07 s, PDepNetwork #26 exceeded the minimum rate for exploring
-    Characteristic rate: 1.1586e+04 mol/m^3*s
-    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
-    PDepNetwork #26 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
-    O2(2) conversion: 3.171e-06 
-At time 1.6610e-07 s, PDepNetwork #26 exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.1586e+04 mol/m^3*s
-    C[CH2](4) rate: 5.3728e+02 mol/m^3*s (0.04637)
-    PDepNetwork #26 leak rate: 5.9049e+03 mol/m^3*s (0.5097)
-    O2(2) conversion: 3.171e-06 
+At time 1.6681e-07 s, PDepNetwork #26 exceeded the minimum rate for exploring
+    Characteristic rate: 1.1584e+04 mol/m^3*s
+    C[CH2](4) rate: 5.4094e+02 mol/m^3*s (0.0467)
+    PDepNetwork #26 leak rate: 6.0058e+03 mol/m^3*s (0.5184)
+    O2(2) conversion: 3.194e-06 
+At time 1.6681e-07 s, PDepNetwork #26 exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1584e+04 mol/m^3*s
+    C[CH2](4) rate: 5.4094e+02 mol/m^3*s (0.0467)
+    PDepNetwork #26 leak rate: 6.0058e+03 mol/m^3*s (0.5184)
+    O2(2) conversion: 3.194e-06 
 
 
 Exploring isomer [CH2]OO[CH2](41) in pressure-dependent network #26
@@ -1653,29 +1652,30 @@ Chemkin file contains 7 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 7 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:14
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:26
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
-At time 6.3038e-07 s, species C[CH2](4) exceeded the minimum rate for moving to model core
-    Characteristic rate: 1.0390e+04 mol/m^3*s
-    C[CH2](4) rate: 5.6667e+03 mol/m^3*s (0.5454)
-    PDepNetwork #12 leak rate: 1.2641e+02 mol/m^3*s (0.01217)
-    O2(2) conversion: 3.605e-05 
-At time 6.3038e-07 s, species C[CH2](4) exceeded the minimum rate for simulation interruption
-    Characteristic rate: 1.0390e+04 mol/m^3*s
-    C[CH2](4) rate: 5.6667e+03 mol/m^3*s (0.5454)
-    PDepNetwork #12 leak rate: 1.2641e+02 mol/m^3*s (0.01217)
-    O2(2) conversion: 3.605e-05 
+At time 6.2060e-07 s, species C[CH2](4) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.0418e+04 mol/m^3*s
+    C[CH2](4) rate: 5.5048e+03 mol/m^3*s (0.5284)
+    PDepNetwork #12 leak rate: 1.2090e+02 mol/m^3*s (0.0116)
+    O2(2) conversion: 3.502e-05 
+At time 6.2060e-07 s, species C[CH2](4) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.0418e+04 mol/m^3*s
+    C[CH2](4) rate: 5.5048e+03 mol/m^3*s (0.5284)
+    PDepNetwork #12 leak rate: 1.2090e+02 mol/m^3*s (0.0116)
+    O2(2) conversion: 3.502e-05 
 
 
 Adding species C[CH2](4) to model core
 Generating thermodynamics for new species...
 Generating kinetics for new reactions...
-For reaction [H](5) + [CH2][CH2](57) <=> C[CH2](4) Ea raised from -0.8 to 0 kJ/mol.
+For reaction [CH2][CH2](57) + [H](5) <=> C[CH2](4) Ea raised from -0.8 to 0 kJ/mol.
 For reaction C[CH2](4) + [CH2]OO(12) <=> CCCOO(61) Ea raised from -0.5 to 0 kJ/mol.
 Updating 1 modified unimolecular reaction networks...
 Warning: For <Molecule "[CH2][CH2]">, more characteristic frequencies were generated than vibrational modes allowed. Removed 1 groups (2 frequencies) to compensate.
+Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2][CH2]">.
 ========================================================================
 29 network information
 ----------------------
@@ -1683,16 +1683,16 @@ Isomers:
     C[CH2](4)                                             108.526 kJ/mol
 Reactant channels:
 Product channels:
-    [H](5) + C=C(56)                                      253.954 kJ/mol
-    [H](5) + [CH2][CH2](57)                               525.601 kJ/mol
+    C=C(56) + [H](5)                                      253.954 kJ/mol
+    [CH2][CH2](57) + [H](5)                               525.601 kJ/mol
 Path reactions:
-    [H](5) + C=C(56) <=> C[CH2](4)                         258.18 kJ/mol
-    [H](5) + [CH2][CH2](57) <=> C[CH2](4)                 525.601 kJ/mol
+    C=C(56) + [H](5) <=> C[CH2](4)                         258.18 kJ/mol
+    [CH2][CH2](57) + [H](5) <=> C[CH2](4)                 525.601 kJ/mol
 ========================================================================
 
 Calculating densities of states for 29 network...
 Using 684 grains from 108.53 to 1526.23 kJ/mol in steps of 2.08 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for [H](5) + [CH2][CH2](57) <=> C[CH2](4)...
+Calculating phenomenological rate coefficients for [CH2][CH2](57) + [H](5) <=> C[CH2](4)...
 Using 250 grains from 108.53 to 626.24 kJ/mol in steps of 2.08 kJ/mol to compute the k(T,P) values at 302.617 K
 Using 252 grains from 108.53 to 633.62 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
 Using 260 grains from 108.53 to 650.35 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
@@ -1721,7 +1721,7 @@ Created 10 new edge species
 Added 0 new core reactions
 Created 15 new edge reactions
     O2(2) + C[CH2](4) <=> C=C(56) + [O]O(8)
-    [CH3](3) + C[CH2](4) <=> C(7) + C=C(56)
+    [CH3](3) + C[CH2](4) <=> C=C(56) + C(7)
     ethane(1) + [CH2](9) <=> [CH3](3) + C[CH2](4)
     C[CH2](4) + CO[O](10) <=> C=C(56) + COO(15)
     C[CH2](4) + CO[O](10) <=> ethane(1) + [CH2]O[O](11)
@@ -1733,8 +1733,8 @@ Created 15 new edge reactions
     [CH2][CH2](57) + C[O](13) <=> C[CH2](4) + C=O(17)
     C[CH2](4) + C=O(17) <=> ethane(1) + [CH]=O(29)
     C[CH2](4) + C[CH2](4) <=> ethane(1) + C=C(56)
-    C[CH2](4) => [H](5) + C=C(56)
-    C[CH2](4) => [H](5) + [CH2][CH2](57)
+    C[CH2](4) => C=C(56) + [H](5)
+    C[CH2](4) => [CH2][CH2](57) + [H](5)
 
 After model enlargement:
     The model core has 12 species and 7 reactions
@@ -1746,19 +1746,19 @@ Chemkin file contains 7 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 7 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:16
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:27
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
-At time 6.6653e-07 s, species O(25) exceeded the minimum rate for moving to model core
+At time 6.6654e-07 s, species O(25) exceeded the minimum rate for moving to model core
     Characteristic rate: 1.0283e+04 mol/m^3*s
     O(25) rate: 5.8305e+03 mol/m^3*s (0.567)
-    PDepNetwork #12 leak rate: 1.4811e+02 mol/m^3*s (0.0144)
+    PDepNetwork #12 leak rate: 1.4812e+02 mol/m^3*s (0.0144)
     O2(2) conversion: 3.999e-05 
-At time 6.6653e-07 s, species O(25) exceeded the minimum rate for simulation interruption
+At time 6.6654e-07 s, species O(25) exceeded the minimum rate for simulation interruption
     Characteristic rate: 1.0283e+04 mol/m^3*s
     O(25) rate: 5.8305e+03 mol/m^3*s (0.567)
-    PDepNetwork #12 leak rate: 1.4811e+02 mol/m^3*s (0.0144)
+    PDepNetwork #12 leak rate: 1.4812e+02 mol/m^3*s (0.0144)
     O2(2) conversion: 3.999e-05 
 
 
@@ -1817,8 +1817,8 @@ Chemkin file contains 8 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 8 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:18
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:28
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
 At time 4.9105e-08 s, PDepNetwork #30 exceeded the minimum rate for exploring
@@ -1844,7 +1844,6 @@ Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have da
 Warning: Statmech node <Entry index=-1 label="O_R1"> and all its parents have data=None
 Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2]CO[O]">.
 Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
-Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "C[CH]OO">.
 Warning: Statmech node <Entry index=-1 label="Oxy"> and all its parents have data=None
 ========================================================================
 30 network information
@@ -1917,8 +1916,8 @@ Chemkin file contains 8 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 8 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:21
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:29
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
 At time 6.0439e-07 s, species C=C(56) exceeded the minimum rate for moving to model core
@@ -1987,18 +1986,18 @@ Moved 2 reactions from edge to core
     C[CH2](4) + C[CH2](4) <=> ethane(1) + C=C(56)
 Added 0 new core reactions
 Created 15 new edge reactions
-    [CH]=C(70) + [O]O(8) <=> O2(2) + C=C(56)
-    C[CH2](4) + [CH2](9) <=> [CH3](3) + C=C(56)
-    C(7) + [CH]=C(70) <=> [CH3](3) + C=C(56)
+    [O]O(8) + [CH]=C(70) <=> O2(2) + C=C(56)
+    C[CH2](4) + [CH2](9) <=> C=C(56) + [CH3](3)
+    C(7) + [CH]=C(70) <=> C=C(56) + [CH3](3)
     C[CH2](4) + [CH2]O[O](11) <=> C=C(56) + CO[O](10)
-    [CH]=C(70) + COO(15) <=> C=C(56) + CO[O](10)
-    [CH]=C(70) + COO(15) <=> C=C(56) + [CH2]OO(12)
+    COO(15) + [CH]=C(70) <=> C=C(56) + CO[O](10)
+    COO(15) + [CH]=C(70) <=> C=C(56) + [CH2]OO(12)
     C=C(56) + [OH](18) <=> [CH]=C(70) + O(25)
     [CH]=C(70) + [CH2]O(32) <=> C=C(56) + C=O(17)
-    [CH]=C(70) + C[O](13) <=> C=C(56) + C=O(17)
+    C[O](13) + [CH]=C(70) <=> C=C(56) + C=O(17)
     C[CH2](4) + [CH]=O(29) <=> C=C(56) + C=O(17)
-    C[CH2](4) + [CH2][CH2](57) <=> C[CH2](4) + C=C(56)
-    ethane(1) + [CH]=C(70) <=> C[CH2](4) + C=C(56)
+    [CH2][CH2](57) + C[CH2](4) <=> C=C(56) + C[CH2](4)
+    ethane(1) + [CH]=C(70) <=> C=C(56) + C[CH2](4)
     C[CH2](4) + [CH]=C(70) <=> C=C(56) + C=C(56)
     C=C(56) => [H](5) + [CH]=C(70)
     C=C(56) => [CH2][CH2](57)
@@ -2013,19 +2012,19 @@ Chemkin file contains 10 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 10 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:24
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:30
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
 At time 6.7640e-07 s, species [H](5) exceeded the minimum rate for moving to model core
     Characteristic rate: 1.0815e+04 mol/m^3*s
     [H](5) rate: 5.4884e+03 mol/m^3*s (0.5075)
-    PDepNetwork #45 leak rate: 1.2010e+03 mol/m^3*s (0.1111)
+    PDepNetwork #45 leak rate: 1.2010e+03 mol/m^3*s (0.111)
     O2(2) conversion: 4.11e-05  
 At time 6.7640e-07 s, species [H](5) exceeded the minimum rate for simulation interruption
     Characteristic rate: 1.0815e+04 mol/m^3*s
     [H](5) rate: 5.4884e+03 mol/m^3*s (0.5075)
-    PDepNetwork #45 leak rate: 1.2010e+03 mol/m^3*s (0.1111)
+    PDepNetwork #45 leak rate: 1.2010e+03 mol/m^3*s (0.111)
     O2(2) conversion: 4.11e-05  
 
 
@@ -2092,17 +2091,17 @@ Using 647 grains from -96.74 to 1254.69 kJ/mol in steps of 2.09 kJ/mol to comput
 Isomers:
     C[CH2](4)                                             108.526 kJ/mol
 Reactant channels:
-    [H](5) + C=C(56)                                      253.954 kJ/mol
+    C=C(56) + [H](5)                                      253.954 kJ/mol
 Product channels:
-    [H](5) + [CH2][CH2](57)                               525.601 kJ/mol
+    [CH2][CH2](57) + [H](5)                               525.601 kJ/mol
 Path reactions:
-    [H](5) + C=C(56) <=> C[CH2](4)                         258.18 kJ/mol
-    [H](5) + [CH2][CH2](57) <=> C[CH2](4)                 525.601 kJ/mol
+    C=C(56) + [H](5) <=> C[CH2](4)                         258.18 kJ/mol
+    [CH2][CH2](57) + [H](5) <=> C[CH2](4)                 525.601 kJ/mol
 ========================================================================
 
 Calculating densities of states for 60 network...
 Using 684 grains from 108.53 to 1526.23 kJ/mol in steps of 2.08 kJ/mol to compute densities of states
-Calculating phenomenological rate coefficients for [H](5) + [CH2][CH2](57) <=> C[CH2](4)...
+Calculating phenomenological rate coefficients for [CH2][CH2](57) + [H](5) <=> C[CH2](4)...
 Using 250 grains from 108.53 to 626.24 kJ/mol in steps of 2.08 kJ/mol to compute the k(T,P) values at 302.617 K
 Using 252 grains from 108.53 to 633.62 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 324.619 K
 Using 260 grains from 108.53 to 650.35 kJ/mol in steps of 2.09 kJ/mol to compute the k(T,P) values at 374.997 K
@@ -2121,7 +2120,7 @@ Created 0 new edge species
 Moved 4 reactions from edge to core
     C[CH2](4) + [H](5) <=> ethane(1)
     C[CH2](4) + [H](5) <=> [CH3](3) + [CH3](3)
-    [H](5) + C=C(56) <=> C[CH2](4)
+    C=C(56) + [H](5) <=> C[CH2](4)
     [H](5) + [OH](18) <=> O(25)
 Added 0 new core reactions
 Created 11 new edge reactions
@@ -2130,12 +2129,12 @@ Created 11 new edge reactions
     [H](5) + CO[O](10) <=> [CH2]O[O](11) + [H][H](31)
     [H](5) + [CH2]OO(12) <=> [CH2]O[O](11) + [H][H](31)
     [H](5) + [OH](18) <=> [O](14) + [H][H](31)
-    [H][H](31) + [CH]=O(29) <=> [H](5) + C=O(17)
+    [CH]=O(29) + [H][H](31) <=> [H](5) + C=O(17)
     C[CH2](4) + [H](5) <=> C=C(56) + [H][H](31)
     [OH](18) + [H][H](31) <=> [H](5) + O(25)
-    [CH]=C(70) + [H][H](31) <=> [H](5) + C=C(56)
+    [CH]=C(70) + [H][H](31) <=> C=C(56) + [H](5)
     C[CH2](4) + [H](5) => [CH2](6) + C(7)
-    [H](5) + C=C(56) => [H](5) + [CH2][CH2](57)
+    C=C(56) + [H](5) => [CH2][CH2](57) + [H](5)
 
 After model enlargement:
     The model core has 15 species and 14 reactions
@@ -2147,8 +2146,8 @@ Chemkin file contains 14 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:29
-    Memory used: 134.64 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:31
+    Memory used: 205.32 MB
 
 Conducting simulation of reaction system 1...
 At time 2.2061e-07 s, PDepNetwork #45 exceeded the minimum rate for exploring
@@ -2275,8 +2274,8 @@ Chemkin file contains 14 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:34
-    Memory used: 134.71 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:33
+    Memory used: 205.39 MB
 
 Conducting simulation of reaction system 1...
 At time 2.2061e-07 s, PDepNetwork #46 exceeded the minimum rate for exploring
@@ -2300,7 +2299,6 @@ Updating 1 modified unimolecular reaction networks...
 Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
 Warning: Statmech node <Entry index=-1 label="O_R0"> and all its parents have data=None
-Warning: Maximum number of iterations reached when fitting spectral data for <Molecule "[CH2][CH]O[CH2]">.
 ========================================================================
 46 network information
 ----------------------
@@ -2376,19 +2374,19 @@ Chemkin file contains 14 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:40
-    Memory used: 134.71 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:34
+    Memory used: 205.39 MB
 
 Conducting simulation of reaction system 1...
 At time 2.6781e-07 s, PDepNetwork #50 exceeded the minimum rate for exploring
     Characteristic rate: 1.1535e+04 mol/m^3*s
     [H][H](31) rate: 9.2408e+02 mol/m^3*s (0.08011)
-    PDepNetwork #50 leak rate: 6.2998e+03 mol/m^3*s (0.5461)
+    PDepNetwork #50 leak rate: 6.2999e+03 mol/m^3*s (0.5461)
     O2(2) conversion: 7.442e-06 
 At time 2.6781e-07 s, PDepNetwork #50 exceeded the minimum rate for simulation interruption
     Characteristic rate: 1.1535e+04 mol/m^3*s
     [H][H](31) rate: 9.2408e+02 mol/m^3*s (0.08011)
-    PDepNetwork #50 leak rate: 6.2998e+03 mol/m^3*s (0.5461)
+    PDepNetwork #50 leak rate: 6.2999e+03 mol/m^3*s (0.5461)
     O2(2) conversion: 7.442e-06 
 
 
@@ -2469,8 +2467,8 @@ Chemkin file contains 14 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:43
-    Memory used: 134.71 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:35
+    Memory used: 205.39 MB
 
 Conducting simulation of reaction system 1...
 At time 3.2091e-07 s, PDepNetwork #52 exceeded the minimum rate for exploring
@@ -2535,8 +2533,8 @@ Chemkin file contains 14 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 14 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:45
-    Memory used: 134.71 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:36
+    Memory used: 205.39 MB
 
 Conducting simulation of reaction system 1...
 At time 5.5924e-07 s, species [H][H](31) exceeded the minimum rate for moving to model core
@@ -2633,8 +2631,8 @@ Chemkin file contains 18 reactions.
 Saving current model to verbose Chemkin file...
 Chemkin file contains 18 reactions.
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:48
-    Memory used: 134.71 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:37
+    Memory used: 205.39 MB
 
 Conducting simulation of reaction system 1...
 At time 4.3819e-06 s, reached target termination conversion: 0.001000 of O2(2)
@@ -2646,16 +2644,16 @@ Saving current model to verbose Chemkin file...
 Chemkin file contains 18 reactions.
 Saving restart file...
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:50
-    Memory used: 138.63 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:38
+    Memory used: 231.70 MB
 
 Updating RMG execution statistics...
-    Execution time (DD:HH:MM:SS): 00:00:02:50
-    Memory used: 138.63 MB
+    Execution time (DD:HH:MM:SS): 00:00:00:38
+    Memory used: 231.70 MB
 
 MODEL GENERATION COMPLETED
 
 The final model core has 16 species and 18 reactions
 The final model edge has 89 species and 171 reactions
 
-RMG execution terminated at Fri Jan 22 20:19:11 2016
+RMG execution terminated at Thu Feb  4 03:07:40 2016
