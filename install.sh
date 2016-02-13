@@ -78,3 +78,6 @@ fi
 
 # go to RMG-tests folder:
 cd $TRAVIS_BUILD_DIR
+
+# install cantera via conda:
+conda install -c bryanwweber cantera -y
