@@ -1,0 +1,1599 @@
+Global RMG Settings:
+   database.directory   = C:\Code\RMG-database\input (Default, relative to RMG-Py source code)
+RMG execution initiated at Fri Feb 19 12:39:34 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.3                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+The current git HEAD for RMG-Py is:
+	643719b76c846031f64ddf3c74346af9591329d6
+	Thu Feb 4 17:12:47 2016 -0500
+
+The current git HEAD for RMG-database is:
+	ad20f0b70485cf6dce8d77bc0056c7e5234891cf
+	Sun Jan 31 09:29:09 2016 -0500
+
+Reading input file "C:\Users\User1\PycharmProjects\viscosity\input.py"...
+database(
+    thermoLibraries = ['primaryThermoLibrary'],
+    reactionLibraries = [],
+    seedMechanisms = [],
+    kineticsDepositories = 'default',
+    kineticsFamilies = 'default',
+    kineticsEstimator = 'rate rules',
+)
+
+species(
+    label = "oxygen",
+    reactive = True,
+    structure = adjacencyList(
+"""
+multiplicity 3
+1 O u1 p2 c0 {2,S}
+2 O u1 p2 c0 {1,S}
+"""),
+)
+
+species(
+    label = "hexane",
+    reactive = True,
+    structure = adjacencyList(
+"""
+1  C u0 p0 c0 {2,S} {7,S} {8,S} {9,S}
+2  C u0 p0 c0 {1,S} {3,S} {10,S} {11,S}
+3  C u0 p0 c0 {2,S} {4,S} {12,S} {13,S}
+4  C u0 p0 c0 {3,S} {5,S} {14,S} {15,S}
+5  C u0 p0 c0 {4,S} {6,S} {16,S} {17,S}
+6  C u0 p0 c0 {5,S} {18,S} {19,S} {20,S}
+7  H u0 p0 c0 {1,S}
+8  H u0 p0 c0 {1,S}
+9  H u0 p0 c0 {1,S}
+10 H u0 p0 c0 {2,S}
+11 H u0 p0 c0 {2,S}
+12 H u0 p0 c0 {3,S}
+13 H u0 p0 c0 {3,S}
+14 H u0 p0 c0 {4,S}
+15 H u0 p0 c0 {4,S}
+16 H u0 p0 c0 {5,S}
+17 H u0 p0 c0 {5,S}
+18 H u0 p0 c0 {6,S}
+19 H u0 p0 c0 {6,S}
+20 H u0 p0 c0 {6,S}
+"""),
+)
+
+liquidReactor(
+    temperature = (400,"K"),
+    initialConcentrations={
+        "hexane": (7.598e-3,'mol/cm^3'),
+        "oxygen": (4.953e-6,'mol/cm^3'),
+    },
+    terminationTime = (10,"s"),
+)
+
+solvation(
+    solvent='hexane'
+)
+
+simulator(
+    atol = 1e-16,
+    rtol = 1e-08,
+)
+
+model(
+    toleranceMoveToCore = 0.001,
+    toleranceKeepInEdge = 1e-9,
+    toleranceInterruptSimulation = 0.1,
+    maximumEdgeSpecies = 100000,
+    minCoreSizeForPrune = 50,
+    minSpeciesExistIterationsForPrune = 2,
+    filterReactions = 0,
+)
+
+options(
+    units = "si",
+    saveRestartPeriod = None,
+    generateOutputHTML = False,
+    generatePlots = False,
+    saveSimulationProfiles = False,
+    saveEdgeSpecies = True,
+    verboseComments = False,
+)
+
+Loading thermodynamics library from primaryThermoLibrary.py in C:\Code\RMG-database\input\thermo\libraries...
+Loading thermodynamics group database from C:\Code\RMG-database\input\thermo\groups...
+Loading transport library from GRI-Mech.py in C:\Code\RMG-database\input\transport\libraries...
+Loading transport library from PrimaryTransportLibrary.py in C:\Code\RMG-database\input\transport\libraries...
+Loading transport group database from C:\Code\RMG-database\input\transport\groups...
+Loading default kinetics families from C:\Code\RMG-database\input\kinetics\families
+Loading frequencies group database from C:\Code\RMG-database\input\statmech\groups...
+Loading Platts additivity group database from C:\Code\RMG-database\input\solvation\groups...
+Adding rate rules from training set in kinetics families...
+Resonance isomer 1 [CH2]C(=O)OO gives H298=-149381 J/mol
+Resonance isomer 2 C=C([O])OO gives H298=-264 J/mol
+Found thermo for O2 in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for O2 in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for O2 in thermo library corrected for liquid phase: primarythermolibrary
+Filling in rate rules in kinetics families by averaging...
+Enabling diffusion-limited kinetics...
+Setting solvent data for hexane
+Found thermo for oxygen in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for Ar in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for He in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for Ne in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for N2 in thermo library corrected for liquid phase: primarythermolibrary
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 1 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 2 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 3 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 4 species and 0 reactions
+    The model edge has 2 species and 0 reactions
+
+
+Adding species oxygen(1) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    oxygen(1)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 5 species and 0 reactions
+    The model edge has 1 species and 0 reactions
+
+
+Adding species hexane(2) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    hexane(2)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 0 species and 0 reactions
+
+
+Generating thermodynamics for new species...
+Found thermo for [H] in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for [CH2] in thermo library corrected for liquid phase: primarythermolibrary
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 12 new edge species
+    [CH2]CC(3)
+    [CH2]CCC(4)
+    C[CH2](5)
+    CC[CH]CCC(6)
+    [H](7)
+    [CH2]CCCC(8)
+    [CH3](9)
+    C[CH]CCCC(10)
+    [CH2]CCCCC(11)
+    [CH2](12)
+    CCCCC(13)
+    [O]O(14)
+Added 0 new core reactions
+Created 10 new edge reactions
+    [CH2]CC(3) + [CH2]CC(3) <=> hexane(2)
+    [CH2]CCC(4) + C[CH2](5) <=> hexane(2)
+    CC[CH]CCC(6) + [H](7) <=> hexane(2)
+    [CH2]CCCC(8) + [CH3](9) <=> hexane(2)
+    [H](7) + C[CH]CCCC(10) <=> hexane(2)
+    [H](7) + [CH2]CCCCC(11) <=> hexane(2)
+    [CH2](12) + CCCCC(13) <=> hexane(2)
+    oxygen(1) + hexane(2) <=> CC[CH]CCC(6) + [O]O(14)
+    oxygen(1) + hexane(2) <=> C[CH]CCCC(10) + [O]O(14)
+    [CH2]CCCCC(11) + [O]O(14) <=> oxygen(1) + hexane(2)
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 12 species and 10 reactions
+
+
+Completed initial enlarge edge step...
+Saving current model core to Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 10 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 10 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:09
+    Memory used: 225.89 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species [O]O(14) exceeded the minimum rate for moving to model core
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [O]O(14) rate: 2.1003e-13 mol/m^3*s
+At time 1.0000e-15 s, species [O]O(14) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [O]O(14) rate: 2.1003e-13 mol/m^3*s
+
+
+Adding species [O]O(14) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [O]O(14)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 7 species and 0 reactions
+    The model edge has 11 species and 10 reactions
+
+
+Generating thermodynamics for new species...
+Found thermo for [OH] in thermo library corrected for liquid phase: primarythermolibrary
+Found thermo for [O] in thermo library corrected for liquid phase: primarythermolibrary
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 3 new edge species
+    [OH](15)
+    [O](16)
+    OO(17)
+Added 0 new core reactions
+Created 6 new edge reactions
+    oxygen(1) + [H](7) <=> [O]O(14)
+    [OH](15) + [O](16) <=> [O]O(14)
+    CC[CH]CCC(6) + OO(17) <=> hexane(2) + [O]O(14)
+    C[CH]CCCC(10) + OO(17) <=> hexane(2) + [O]O(14)
+    [CH2]CCCCC(11) + OO(17) <=> hexane(2) + [O]O(14)
+    [O]O(14) + [O]O(14) <=> oxygen(1) + OO(17)
+
+After model enlargement:
+    The model core has 7 species and 0 reactions
+    The model edge has 14 species and 16 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 16 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 16 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:10
+    Memory used: 226.30 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species C[CH]CCCC(10) exceeded the minimum rate for moving to model core
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    C[CH]CCCC(10) rate: 1.0501e-13 mol/m^3*s
+At time 1.0000e-15 s, species C[CH]CCCC(10) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    C[CH]CCCC(10) rate: 1.0501e-13 mol/m^3*s
+
+
+Adding species C[CH]CCCC(10) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C[CH]CCCC(10)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    oxygen(1) + hexane(2) <=> C[CH]CCCC(10) + [O]O(14)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 8 species and 1 reactions
+    The model edge has 13 species and 15 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 15 new edge species
+    CC=CCCC(18)
+    C=CCCCC(19)
+    C=CC(20)
+    [CH2]C[CH]C(21)
+    [CH2][CH]C(22)
+    C[CH]C[CH]CC(23)
+    [CH2]CC[CH]C(24)
+    C[CH]CC[CH]C(25)
+    C[CH][CH]CCC(26)
+    [CH2]CCC[CH]C(27)
+    [CH2][CH]CCCC(28)
+    C[CH]CCC(29)
+    CCCCC(C)O[O](30)
+    CCCCC(C)OO(31)
+    CCCCC(C)C(C)CCCC(32)
+Added 0 new core reactions
+Created 34 new edge reactions
+    [H](7) + CC=CCCC(18) <=> C[CH]CCCC(10)
+    [H](7) + C=CCCCC(19) <=> C[CH]CCCC(10)
+    [CH2]CC(3) + C=CC(20) <=> C[CH]CCCC(10)
+    C[CH2](5) + [CH2]C[CH]C(21) <=> C[CH]CCCC(10)
+    [CH2]CC(3) + [CH2][CH]C(22) <=> C[CH]CCCC(10)
+    [H](7) + C[CH]C[CH]CC(23) <=> C[CH]CCCC(10)
+    [CH3](9) + [CH2]CC[CH]C(24) <=> C[CH]CCCC(10)
+    [H](7) + C[CH]CC[CH]C(25) <=> C[CH]CCCC(10)
+    [H](7) + C[CH][CH]CCC(26) <=> C[CH]CCCC(10)
+    [H](7) + [CH2]CCC[CH]C(27) <=> C[CH]CCCC(10)
+    [H](7) + [CH2][CH]CCCC(28) <=> C[CH]CCCC(10)
+    [CH2](12) + C[CH]CCC(29) <=> C[CH]CCCC(10)
+    CC[CH]CCC(6) <=> C[CH]CCCC(10)
+    C[CH]CCCC(10) <=> [CH2]CCCCC(11)
+    oxygen(1) + C[CH]CCCC(10) <=> [O]O(14) + CC=CCCC(18)
+    oxygen(1) + C[CH]CCCC(10) <=> [O]O(14) + C=CCCCC(19)
+    oxygen(1) + C[CH]CCCC(10) <=> [O]O(14) + C[CH]C[CH]CC(23)
+    oxygen(1) + C[CH]CCCC(10) <=> [O]O(14) + C[CH]CC[CH]C(25)
+    [O]O(14) + [CH2]CCC[CH]C(27) <=> oxygen(1) + C[CH]CCCC(10)
+    oxygen(1) + C[CH]CCCC(10) <=> CCCCC(C)O[O](30)
+    hexane(2) + CC[CH]CCC(6) <=> hexane(2) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CCCC(10)
+    C[CH]CCCC(10) + [O]O(14) <=> OO(17) + CC=CCCC(18)
+    C[CH]CCCC(10) + [O]O(14) <=> OO(17) + C=CCCCC(19)
+    OO(17) + C[CH]C[CH]CC(23) <=> C[CH]CCCC(10) + [O]O(14)
+    OO(17) + C[CH]CC[CH]C(25) <=> C[CH]CCCC(10) + [O]O(14)
+    OO(17) + [CH2]CCC[CH]C(27) <=> C[CH]CCCC(10) + [O]O(14)
+    C[CH]CCCC(10) + [O]O(14) <=> CCCCC(C)OO(31)
+    C[CH]CCCC(10) + C[CH]CCCC(10) <=> hexane(2) + CC=CCCC(18)
+    C[CH]CCCC(10) + C[CH]CCCC(10) <=> hexane(2) + C=CCCCC(19)
+    hexane(2) + C[CH]C[CH]CC(23) <=> C[CH]CCCC(10) + C[CH]CCCC(10)
+    hexane(2) + C[CH]CC[CH]C(25) <=> C[CH]CCCC(10) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCC[CH]C(27) <=> C[CH]CCCC(10) + C[CH]CCCC(10)
+    C[CH]CCCC(10) + C[CH]CCCC(10) <=> CCCCC(C)C(C)CCCC(32)
+
+After model enlargement:
+    The model core has 8 species and 1 reactions
+    The model edge has 28 species and 49 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 50 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 50 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:10
+    Memory used: 226.30 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CCCCC(C)O[O](30) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.1003e-13 mol/m^3*s
+    CCCCC(C)O[O](30) rate: 3.4798e-13 mol/m^3*s (1.657)
+At time 1.0000e-15 s, species CCCCC(C)O[O](30) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.1003e-13 mol/m^3*s
+    CCCCC(C)O[O](30) rate: 3.4798e-13 mol/m^3*s (1.657)
+
+
+Adding species CCCCC(C)O[O](30) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CCCCC(C)O[O](30)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    oxygen(1) + C[CH]CCCC(10) <=> CCCCC(C)O[O](30)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 9 species and 2 reactions
+    The model edge has 27 species and 48 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 21 new edge species
+    [CH2]C(C)O[O](33)
+    C[CH]O[O](34)
+    CCC[CH]C(C)O[O](35)
+    [CH2]CC(C)O[O](36)
+    CC[CH]CC(C)O[O](37)
+    CCCC[CH]O[O](38)
+    CCCC[C](C)O[O](39)
+    [CH2]CCC(C)O[O](40)
+    C[CH]CCC(C)O[O](41)
+    [CH2]C(CCCC)O[O](42)
+    [CH2]CCCC(C)O[O](43)
+    CCCCCO[O](44)
+    CCCC(C)O[O](45)
+    CCCC[C](C)OO(46)
+    CCC[CH]C(C)OO(47)
+    [CH2]C(CCCC)OO(48)
+    CC[CH]CC(C)OO(49)
+    C[CH]CCC(C)OO(50)
+    [CH2]CCCC(C)OO(51)
+    CCCCC(C)[O](52)
+    CCCCC(C)OOC(C)CCCC(53)
+Added 0 new core reactions
+Created 56 new edge reactions
+    [CH2]CC(3) + [CH2]C(C)O[O](33) <=> CCCCC(C)O[O](30)
+    [CH2]CCC(4) + C[CH]O[O](34) <=> CCCCC(C)O[O](30)
+    [H](7) + CCC[CH]C(C)O[O](35) <=> CCCCC(C)O[O](30)
+    C[CH2](5) + [CH2]CC(C)O[O](36) <=> CCCCC(C)O[O](30)
+    [H](7) + CC[CH]CC(C)O[O](37) <=> CCCCC(C)O[O](30)
+    CCCC[CH]O[O](38) + [CH3](9) <=> CCCCC(C)O[O](30)
+    CCCC[C](C)O[O](39) + [H](7) <=> CCCCC(C)O[O](30)
+    [CH2]CCC(C)O[O](40) + [CH3](9) <=> CCCCC(C)O[O](30)
+    C[CH]CCC(C)O[O](41) + [H](7) <=> CCCCC(C)O[O](30)
+    [CH2]C(CCCC)O[O](42) + [H](7) <=> CCCCC(C)O[O](30)
+    [CH2]CCCC(C)O[O](43) + [H](7) <=> CCCCC(C)O[O](30)
+    CCCCCO[O](44) + [CH2](12) <=> CCCCC(C)O[O](30)
+    CCCC(C)O[O](45) + [CH2](12) <=> CCCCC(C)O[O](30)
+    CCCCC(C)O[O](30) <=> CCCC[C](C)OO(46)
+    CCC[CH]C(C)OO(47) <=> CCCCC(C)O[O](30)
+    CCCCC(C)O[O](30) <=> [CH2]C(CCCC)OO(48)
+    CC[CH]CC(C)OO(49) <=> CCCCC(C)O[O](30)
+    C[CH]CCC(C)OO(50) <=> CCCCC(C)O[O](30)
+    CCCCC(C)O[O](30) <=> [CH2]CCCC(C)OO(51)
+    CCCCC(C)O[O](30) <=> [O]O(14) + CC=CCCC(18)
+    CCCCC(C)O[O](30) <=> [O]O(14) + C=CCCCC(19)
+    CCCCC(C)[O](52) + [O](16) <=> CCCCC(C)O[O](30)
+    [O]O(14) + CCC[CH]C(C)O[O](35) <=> oxygen(1) + CCCCC(C)O[O](30)
+    [O]O(14) + CC[CH]CC(C)O[O](37) <=> oxygen(1) + CCCCC(C)O[O](30)
+    CCCC[C](C)O[O](39) + [O]O(14) <=> oxygen(1) + CCCCC(C)O[O](30)
+    oxygen(1) + CCCCC(C)O[O](30) <=> C[CH]CCC(C)O[O](41) + [O]O(14)
+    [CH2]C(CCCC)O[O](42) + [O]O(14) <=> oxygen(1) + CCCCC(C)O[O](30)
+    [CH2]CCCC(C)O[O](43) + [O]O(14) <=> oxygen(1) + CCCCC(C)O[O](30)
+    CC[CH]CCC(6) + CCCCC(C)OO(31) <=> hexane(2) + CCCCC(C)O[O](30)
+    C[CH]CCCC(10) + CCCCC(C)OO(31) <=> hexane(2) + CCCCC(C)O[O](30)
+    [CH2]CCCCC(11) + CCCCC(C)OO(31) <=> hexane(2) + CCCCC(C)O[O](30)
+    [O]O(14) + CCCCC(C)O[O](30) <=> oxygen(1) + CCCCC(C)OO(31)
+    OO(17) + CCC[CH]C(C)O[O](35) <=> [O]O(14) + CCCCC(C)O[O](30)
+    OO(17) + CC[CH]CC(C)O[O](37) <=> [O]O(14) + CCCCC(C)O[O](30)
+    CCCC[C](C)O[O](39) + OO(17) <=> [O]O(14) + CCCCC(C)O[O](30)
+    C[CH]CCC(C)O[O](41) + OO(17) <=> [O]O(14) + CCCCC(C)O[O](30)
+    [CH2]C(CCCC)O[O](42) + OO(17) <=> [O]O(14) + CCCCC(C)O[O](30)
+    [CH2]CCCC(C)O[O](43) + OO(17) <=> [O]O(14) + CCCCC(C)O[O](30)
+    C[CH]CCCC(10) + CCCCC(C)O[O](30) <=> CC=CCCC(18) + CCCCC(C)OO(31)
+    C[CH]CCCC(10) + CCCCC(C)O[O](30) <=> C=CCCCC(19) + CCCCC(C)OO(31)
+    C[CH]C[CH]CC(23) + CCCCC(C)OO(31) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    C[CH]CC[CH]C(25) + CCCCC(C)OO(31) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    [CH2]CCC[CH]C(27) + CCCCC(C)OO(31) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    hexane(2) + CCC[CH]C(C)O[O](35) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    hexane(2) + CC[CH]CC(C)O[O](37) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    C[CH]CCCC(10) + CCCCC(C)O[O](30) <=> hexane(2) + CCCC[C](C)O[O](39)
+    hexane(2) + C[CH]CCC(C)O[O](41) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    hexane(2) + [CH2]C(CCCC)O[O](42) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    hexane(2) + [CH2]CCCC(C)O[O](43) <=> C[CH]CCCC(10) + CCCCC(C)O[O](30)
+    C[CH]CCCC(10) + CCCCC(C)O[O](30) <=> CCCCC(C)OOC(C)CCCC(53)
+    CCCCC(C)OO(31) + CCC[CH]C(C)O[O](35) <=> CCCCC(C)O[O](30) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CC[CH]CC(C)O[O](37) <=> CCCCC(C)O[O](30) + CCCCC(C)O[O](30)
+    CCCC[C](C)O[O](39) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)O[O](30)
+    C[CH]CCC(C)O[O](41) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)O[O](30)
+    [CH2]C(CCCC)O[O](42) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)O[O](30)
+    [CH2]CCCC(C)O[O](43) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)O[O](30)
+
+After model enlargement:
+    The model core has 9 species and 2 reactions
+    The model edge has 48 species and 104 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 106 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 106 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:12
+    Memory used: 226.81 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CC[CH]CCC(6) exceeded the minimum rate for moving to model core
+    Characteristic rate: 2.1003e-13 mol/m^3*s
+    CC[CH]CCC(6) rate: 1.0764e-13 mol/m^3*s (0.5125)
+At time 1.0000e-15 s, species CC[CH]CCC(6) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 2.1003e-13 mol/m^3*s
+    CC[CH]CCC(6) rate: 1.0764e-13 mol/m^3*s (0.5125)
+
+
+Adding species CC[CH]CCC(6) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CC[CH]CCC(6)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    oxygen(1) + hexane(2) <=> CC[CH]CCC(6) + [O]O(14)
+    CC[CH]CCC(6) <=> C[CH]CCCC(10)
+    hexane(2) + CC[CH]CCC(6) <=> hexane(2) + C[CH]CCCC(10)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 10 species and 5 reactions
+    The model edge has 47 species and 101 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 15 new edge species
+    CCC=CCC(54)
+    C=CCC(55)
+    C=CCCC(56)
+    [CH2][CH]CC(57)
+    CC[CH][CH]CC(58)
+    [CH2]C[CH]CC(59)
+    [CH2][CH]CCC(60)
+    [CH2]CC[CH]CC(61)
+    [CH2]C[CH]CCC(62)
+    CC[CH]CC(63)
+    CCCC(CC)O[O](64)
+    CCCC(CC)OO(65)
+    CCCCC(C)C(CC)CCC(66)
+    CCCCC(C)OOC(CC)CCC(67)
+    CCCC(CC)C(CC)CCC(68)
+Added 0 new core reactions
+Created 55 new edge reactions
+    CCC=CCC(54) + [H](7) <=> CC[CH]CCC(6)
+    [H](7) + CC=CCCC(18) <=> CC[CH]CCC(6)
+    C=CCC(55) + C[CH2](5) <=> CC[CH]CCC(6)
+    C=CCCC(56) + [CH3](9) <=> CC[CH]CCC(6)
+    [CH2][CH]CC(57) + C[CH2](5) <=> CC[CH]CCC(6)
+    CC[CH][CH]CC(58) + [H](7) <=> CC[CH]CCC(6)
+    [CH2]C[CH]CC(59) + [CH3](9) <=> CC[CH]CCC(6)
+    [H](7) + C[CH]C[CH]CC(23) <=> CC[CH]CCC(6)
+    [CH2][CH]CCC(60) + [CH3](9) <=> CC[CH]CCC(6)
+    [H](7) + C[CH][CH]CCC(26) <=> CC[CH]CCC(6)
+    [CH2]CC[CH]CC(61) + [H](7) <=> CC[CH]CCC(6)
+    [CH2]C[CH]CCC(62) + [H](7) <=> CC[CH]CCC(6)
+    CC[CH]CC(63) + [CH2](12) <=> CC[CH]CCC(6)
+    [CH2](12) + C[CH]CCC(29) <=> CC[CH]CCC(6)
+    [CH2]CCCCC(11) <=> CC[CH]CCC(6)
+    oxygen(1) + CC[CH]CCC(6) <=> CCC=CCC(54) + [O]O(14)
+    oxygen(1) + CC[CH]CCC(6) <=> [O]O(14) + CC=CCCC(18)
+    oxygen(1) + CC[CH]CCC(6) <=> [O]O(14) + C[CH]C[CH]CC(23)
+    [CH2]CC[CH]CC(61) + [O]O(14) <=> oxygen(1) + CC[CH]CCC(6)
+    oxygen(1) + CC[CH]CCC(6) <=> [CH2]C[CH]CCC(62) + [O]O(14)
+    oxygen(1) + CC[CH]CCC(6) <=> CCCC(CC)O[O](64)
+    hexane(2) + [CH2]CCCCC(11) <=> hexane(2) + CC[CH]CCC(6)
+    CC[CH]CCC(6) + [O]O(14) <=> CCC=CCC(54) + OO(17)
+    CC[CH]CCC(6) + [O]O(14) <=> OO(17) + CC=CCCC(18)
+    OO(17) + C[CH]C[CH]CC(23) <=> CC[CH]CCC(6) + [O]O(14)
+    [CH2]CC[CH]CC(61) + OO(17) <=> CC[CH]CCC(6) + [O]O(14)
+    [CH2]C[CH]CCC(62) + OO(17) <=> CC[CH]CCC(6) + [O]O(14)
+    CC[CH]CCC(6) + [O]O(14) <=> CCCC(CC)OO(65)
+    CC[CH]CCC(6) + C[CH]CCCC(10) <=> hexane(2) + CCC=CCC(54)
+    CC[CH]CCC(6) + C[CH]CCCC(10) <=> hexane(2) + CC=CCCC(18)
+    CC[CH]CCC(6) + C[CH]CCCC(10) <=> hexane(2) + C=CCCCC(19)
+    hexane(2) + C[CH]C[CH]CC(23) <=> CC[CH]CCC(6) + C[CH]CCCC(10)
+    hexane(2) + C[CH]CC[CH]C(25) <=> CC[CH]CCC(6) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCC[CH]C(27) <=> CC[CH]CCC(6) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CC[CH]CC(61) <=> CC[CH]CCC(6) + C[CH]CCCC(10)
+    hexane(2) + [CH2]C[CH]CCC(62) <=> CC[CH]CCC(6) + C[CH]CCCC(10)
+    CC[CH]CCC(6) + C[CH]CCCC(10) <=> CCCCC(C)C(CC)CCC(66)
+    CC[CH]CCC(6) + CCCCC(C)O[O](30) <=> CCC=CCC(54) + CCCCC(C)OO(31)
+    CC[CH]CCC(6) + CCCCC(C)O[O](30) <=> CC=CCCC(18) + CCCCC(C)OO(31)
+    hexane(2) + CCC[CH]C(C)O[O](35) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    hexane(2) + CC[CH]CC(C)O[O](37) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    CC[CH]CCC(6) + CCCCC(C)O[O](30) <=> hexane(2) + CCCC[C](C)O[O](39)
+    hexane(2) + C[CH]CCC(C)O[O](41) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    hexane(2) + [CH2]C(CCCC)O[O](42) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    hexane(2) + [CH2]CCCC(C)O[O](43) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    C[CH]C[CH]CC(23) + CCCCC(C)OO(31) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    [CH2]CC[CH]CC(61) + CCCCC(C)OO(31) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    [CH2]C[CH]CCC(62) + CCCCC(C)OO(31) <=> CC[CH]CCC(6) + CCCCC(C)O[O](30)
+    CC[CH]CCC(6) + CCCCC(C)O[O](30) <=> CCCCC(C)OOC(CC)CCC(67)
+    CC[CH]CCC(6) + CC[CH]CCC(6) <=> hexane(2) + CCC=CCC(54)
+    CC[CH]CCC(6) + CC[CH]CCC(6) <=> hexane(2) + CC=CCCC(18)
+    hexane(2) + C[CH]C[CH]CC(23) <=> CC[CH]CCC(6) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CC[CH]CC(61) <=> CC[CH]CCC(6) + CC[CH]CCC(6)
+    hexane(2) + [CH2]C[CH]CCC(62) <=> CC[CH]CCC(6) + CC[CH]CCC(6)
+    CC[CH]CCC(6) + CC[CH]CCC(6) <=> CCCC(CC)C(CC)CCC(68)
+
+After model enlargement:
+    The model core has 10 species and 5 reactions
+    The model edge has 62 species and 156 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 161 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 161 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:14
+    Memory used: 229.41 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CCCC(CC)O[O](64) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCC(CC)O[O](64) rate: 3.4798e-13 mol/m^3*s (0.8856)
+At time 1.0000e-15 s, species CCCC(CC)O[O](64) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCC(CC)O[O](64) rate: 3.4798e-13 mol/m^3*s (0.8856)
+
+
+Adding species CCCC(CC)O[O](64) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CCCC(CC)O[O](64)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    oxygen(1) + CC[CH]CCC(6) <=> CCCC(CC)O[O](64)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 11 species and 6 reactions
+    The model edge has 61 species and 155 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 20 new edge species
+    CC[CH]O[O](69)
+    CCC[CH]O[O](70)
+    CCC[C](CC)O[O](71)
+    [CH2]C(CC)O[O](72)
+    CC[CH]C(CC)O[O](73)
+    [CH2]C(CCC)O[O](74)
+    C[CH]C(CCC)O[O](75)
+    [CH2]CC(CC)O[O](76)
+    C[CH]CC(CC)O[O](77)
+    [CH2]CC(CCC)O[O](78)
+    [CH2]CCC(CC)O[O](79)
+    CCC(CC)O[O](80)
+    CCC[C](CC)OO(81)
+    CC[CH]C(CC)OO(82)
+    C[CH]C(CCC)OO(83)
+    C[CH]CC(CC)OO(84)
+    [CH2]CC(CCC)OO(85)
+    [CH2]CCC(CC)OO(86)
+    CCCC([O])CC(87)
+    CCCC(CC)OOC(CC)CCC(88)
+Added 0 new core reactions
+Created 80 new edge reactions
+    CC[CH]O[O](69) + [CH2]CC(3) <=> CCCC(CC)O[O](64)
+    CCC[CH]O[O](70) + C[CH2](5) <=> CCCC(CC)O[O](64)
+    CCC[C](CC)O[O](71) + [H](7) <=> CCCC(CC)O[O](64)
+    [CH2]C(CC)O[O](72) + C[CH2](5) <=> CCCC(CC)O[O](64)
+    CC[CH]C(CC)O[O](73) + [H](7) <=> CCCC(CC)O[O](64)
+    [CH2]C(CCC)O[O](74) + [CH3](9) <=> CCCC(CC)O[O](64)
+    C[CH]C(CCC)O[O](75) + [H](7) <=> CCCC(CC)O[O](64)
+    [CH2]CC(CC)O[O](76) + [CH3](9) <=> CCCC(CC)O[O](64)
+    C[CH]CC(CC)O[O](77) + [H](7) <=> CCCC(CC)O[O](64)
+    [CH2]CC(CCC)O[O](78) + [H](7) <=> CCCC(CC)O[O](64)
+    [CH2]CCC(CC)O[O](79) + [H](7) <=> CCCC(CC)O[O](64)
+    CCCC(C)O[O](45) + [CH2](12) <=> CCCC(CC)O[O](64)
+    CCC(CC)O[O](80) + [CH2](12) <=> CCCC(CC)O[O](64)
+    CCCC(CC)O[O](64) <=> CCC[C](CC)OO(81)
+    CC[CH]C(CC)OO(82) <=> CCCC(CC)O[O](64)
+    C[CH]C(CCC)OO(83) <=> CCCC(CC)O[O](64)
+    CCCC(CC)O[O](64) <=> C[CH]CC(CC)OO(84)
+    CCCC(CC)O[O](64) <=> [CH2]CC(CCC)OO(85)
+    [CH2]CCC(CC)OO(86) <=> CCCC(CC)O[O](64)
+    CCCC(CC)O[O](64) <=> CCC=CCC(54) + [O]O(14)
+    CCCC(CC)O[O](64) <=> [O]O(14) + CC=CCCC(18)
+    CCCC([O])CC(87) + [O](16) <=> CCCC(CC)O[O](64)
+    CCC[C](CC)O[O](71) + [O]O(14) <=> oxygen(1) + CCCC(CC)O[O](64)
+    CC[CH]C(CC)O[O](73) + [O]O(14) <=> oxygen(1) + CCCC(CC)O[O](64)
+    C[CH]C(CCC)O[O](75) + [O]O(14) <=> oxygen(1) + CCCC(CC)O[O](64)
+    C[CH]CC(CC)O[O](77) + [O]O(14) <=> oxygen(1) + CCCC(CC)O[O](64)
+    [CH2]CC(CCC)O[O](78) + [O]O(14) <=> oxygen(1) + CCCC(CC)O[O](64)
+    [CH2]CCC(CC)O[O](79) + [O]O(14) <=> oxygen(1) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CC[CH]CCC(6) <=> hexane(2) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + C[CH]CCCC(10) <=> hexane(2) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + [CH2]CCCCC(11) <=> hexane(2) + CCCC(CC)O[O](64)
+    CCCC(CC)O[O](64) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    CCC[C](CC)O[O](71) + OO(17) <=> CCCC(CC)O[O](64) + [O]O(14)
+    CC[CH]C(CC)O[O](73) + OO(17) <=> CCCC(CC)O[O](64) + [O]O(14)
+    C[CH]C(CCC)O[O](75) + OO(17) <=> CCCC(CC)O[O](64) + [O]O(14)
+    C[CH]CC(CC)O[O](77) + OO(17) <=> CCCC(CC)O[O](64) + [O]O(14)
+    [CH2]CC(CCC)O[O](78) + OO(17) <=> CCCC(CC)O[O](64) + [O]O(14)
+    [CH2]CCC(CC)O[O](79) + OO(17) <=> CCCC(CC)O[O](64) + [O]O(14)
+    CCCC(CC)O[O](64) + C[CH]CCCC(10) <=> CCCC(CC)OO(65) + CC=CCCC(18)
+    CCCC(CC)O[O](64) + C[CH]CCCC(10) <=> CCCC(CC)OO(65) + C=CCCCC(19)
+    CCCC(CC)OO(65) + C[CH]C[CH]CC(23) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    CCCC(CC)OO(65) + C[CH]CC[CH]C(25) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    CCCC(CC)OO(65) + [CH2]CCC[CH]C(27) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    CCCC(CC)O[O](64) + C[CH]CCCC(10) <=> hexane(2) + CCC[C](CC)O[O](71)
+    hexane(2) + CC[CH]C(CC)O[O](73) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    hexane(2) + C[CH]C(CCC)O[O](75) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    hexane(2) + C[CH]CC(CC)O[O](77) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CC(CCC)O[O](78) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCC(CC)O[O](79) <=> CCCC(CC)O[O](64) + C[CH]CCCC(10)
+    CCCC(CC)O[O](64) + C[CH]CCCC(10) <=> CCCCC(C)OOC(CC)CCC(67)
+    CCCC(CC)OO(65) + CCC[CH]C(C)O[O](35) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCCC(CC)OO(65) + CC[CH]CC(C)O[O](37) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCCC(CC)OO(65) + CCCC[C](C)O[O](39) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCCC(CC)OO(65) + C[CH]CCC(C)O[O](41) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCCC(CC)OO(65) + [CH2]C(CCCC)O[O](42) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCCC(CC)OO(65) + [CH2]CCCC(C)O[O](43) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCC[C](CC)O[O](71) + CCCCC(C)OO(31) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CC[CH]C(CC)O[O](73) + CCCCC(C)OO(31) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    C[CH]C(CCC)O[O](75) + CCCCC(C)OO(31) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    C[CH]CC(CC)O[O](77) + CCCCC(C)OO(31) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    [CH2]CC(CCC)O[O](78) + CCCCC(C)OO(31) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    [CH2]CCC(CC)O[O](79) + CCCCC(C)OO(31) <=> CCCC(CC)O[O](64) + CCCCC(C)O[O](30)
+    CCCC(CC)O[O](64) + CC[CH]CCC(6) <=> CCCC(CC)OO(65) + CCC=CCC(54)
+    CCCC(CC)O[O](64) + CC[CH]CCC(6) <=> CCCC(CC)OO(65) + CC=CCCC(18)
+    CCCC(CC)OO(65) + C[CH]C[CH]CC(23) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    [CH2]CC[CH]CC(61) + CCCC(CC)OO(65) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    [CH2]C[CH]CCC(62) + CCCC(CC)OO(65) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    CCCC(CC)O[O](64) + CC[CH]CCC(6) <=> hexane(2) + CCC[C](CC)O[O](71)
+    hexane(2) + CC[CH]C(CC)O[O](73) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    hexane(2) + C[CH]C(CCC)O[O](75) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    hexane(2) + C[CH]CC(CC)O[O](77) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CC(CCC)O[O](78) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CCC(CC)O[O](79) <=> CCCC(CC)O[O](64) + CC[CH]CCC(6)
+    CCCC(CC)O[O](64) + CC[CH]CCC(6) <=> CCCC(CC)OOC(CC)CCC(88)
+    CCCC(CC)OO(65) + CCC[C](CC)O[O](71) <=> CCCC(CC)O[O](64) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CC[CH]C(CC)O[O](73) <=> CCCC(CC)O[O](64) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + C[CH]C(CCC)O[O](75) <=> CCCC(CC)O[O](64) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + C[CH]CC(CC)O[O](77) <=> CCCC(CC)O[O](64) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + [CH2]CC(CCC)O[O](78) <=> CCCC(CC)O[O](64) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + [CH2]CCC(CC)O[O](79) <=> CCCC(CC)O[O](64) + CCCC(CC)O[O](64)
+
+After model enlargement:
+    The model core has 11 species and 6 reactions
+    The model edge has 81 species and 235 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 6 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 6 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 241 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 241 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:17
+    Memory used: 234.95 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CCCC(CC)OO(65) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCC(CC)OO(65) rate: 5.6498e-15 mol/m^3*s (0.01438)
+At time 1.0000e-15 s, species CCCC(CC)OO(65) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCC(CC)OO(65) rate: 5.6498e-15 mol/m^3*s (0.01438)
+
+
+Adding species CCCC(CC)OO(65) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CCCC(CC)OO(65)
+Created 0 new edge species
+Moved 4 reactions from edge to core
+    CC[CH]CCC(6) + [O]O(14) <=> CCCC(CC)OO(65)
+    CCCC(CC)OO(65) + CC[CH]CCC(6) <=> hexane(2) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + C[CH]CCCC(10) <=> hexane(2) + CCCC(CC)O[O](64)
+    CCCC(CC)O[O](64) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 12 species and 10 reactions
+    The model edge has 80 species and 231 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 7 new edge species
+    CC[CH]OO(89)
+    CCC[CH]OO(90)
+    [CH2]C(CC)OO(91)
+    [CH2]C(CCC)OO(92)
+    [CH2]CC(CC)OO(93)
+    CCCC(C)OO(94)
+    CCC(CC)OO(95)
+Added 0 new core reactions
+Created 53 new edge reactions
+    CC[CH]OO(89) + [CH2]CC(3) <=> CCCC(CC)OO(65)
+    CCC[CH]OO(90) + C[CH2](5) <=> CCCC(CC)OO(65)
+    CCC[C](CC)OO(81) + [H](7) <=> CCCC(CC)OO(65)
+    [CH2]C(CC)OO(91) + C[CH2](5) <=> CCCC(CC)OO(65)
+    CC[CH]C(CC)OO(82) + [H](7) <=> CCCC(CC)OO(65)
+    [CH2]C(CCC)OO(92) + [CH3](9) <=> CCCC(CC)OO(65)
+    C[CH]C(CCC)OO(83) + [H](7) <=> CCCC(CC)OO(65)
+    [CH2]CC(CC)OO(93) + [CH3](9) <=> CCCC(CC)OO(65)
+    C[CH]CC(CC)OO(84) + [H](7) <=> CCCC(CC)OO(65)
+    [CH2]CC(CCC)OO(85) + [H](7) <=> CCCC(CC)OO(65)
+    [CH2]CCC(CC)OO(86) + [H](7) <=> CCCC(CC)OO(65)
+    CCCC([O])CC(87) + [OH](15) <=> CCCC(CC)OO(65)
+    CCCC(CC)O[O](64) + [H](7) <=> CCCC(CC)OO(65)
+    CCCC(C)OO(94) + [CH2](12) <=> CCCC(CC)OO(65)
+    CCC(CC)OO(95) + [CH2](12) <=> CCCC(CC)OO(65)
+    CCC[C](CC)OO(81) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    CC[CH]C(CC)OO(82) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    C[CH]C(CCC)OO(83) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    C[CH]CC(CC)OO(84) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    [CH2]CC(CCC)OO(85) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    [CH2]CCC(CC)OO(86) + [O]O(14) <=> oxygen(1) + CCCC(CC)OO(65)
+    CCC[C](CC)OO(81) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    CC[CH]C(CC)OO(82) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    C[CH]C(CCC)OO(83) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    C[CH]CC(CC)OO(84) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    [CH2]CC(CCC)OO(85) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    [CH2]CCC(CC)OO(86) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    CCCC(CC)O[O](64) + OO(17) <=> CCCC(CC)OO(65) + [O]O(14)
+    CCCC(CC)OO(65) + C[CH]CCCC(10) <=> hexane(2) + CCC[C](CC)OO(81)
+    hexane(2) + CC[CH]C(CC)OO(82) <=> CCCC(CC)OO(65) + C[CH]CCCC(10)
+    hexane(2) + C[CH]C(CCC)OO(83) <=> CCCC(CC)OO(65) + C[CH]CCCC(10)
+    hexane(2) + C[CH]CC(CC)OO(84) <=> CCCC(CC)OO(65) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CC(CCC)OO(85) <=> CCCC(CC)OO(65) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCC(CC)OO(86) <=> CCCC(CC)OO(65) + C[CH]CCCC(10)
+    CCC[C](CC)OO(81) + CCCCC(C)OO(31) <=> CCCC(CC)OO(65) + CCCCC(C)O[O](30)
+    CC[CH]C(CC)OO(82) + CCCCC(C)OO(31) <=> CCCC(CC)OO(65) + CCCCC(C)O[O](30)
+    C[CH]C(CCC)OO(83) + CCCCC(C)OO(31) <=> CCCC(CC)OO(65) + CCCCC(C)O[O](30)
+    C[CH]CC(CC)OO(84) + CCCCC(C)OO(31) <=> CCCC(CC)OO(65) + CCCCC(C)O[O](30)
+    [CH2]CC(CCC)OO(85) + CCCCC(C)OO(31) <=> CCCC(CC)OO(65) + CCCCC(C)O[O](30)
+    [CH2]CCC(CC)OO(86) + CCCCC(C)OO(31) <=> CCCC(CC)OO(65) + CCCCC(C)O[O](30)
+    CCCC(CC)OO(65) + CCCCC(C)O[O](30) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + CC[CH]CCC(6) <=> hexane(2) + CCC[C](CC)OO(81)
+    hexane(2) + CC[CH]C(CC)OO(82) <=> CCCC(CC)OO(65) + CC[CH]CCC(6)
+    hexane(2) + C[CH]C(CCC)OO(83) <=> CCCC(CC)OO(65) + CC[CH]CCC(6)
+    hexane(2) + C[CH]CC(CC)OO(84) <=> CCCC(CC)OO(65) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CC(CCC)OO(85) <=> CCCC(CC)OO(65) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CCC(CC)OO(86) <=> CCCC(CC)OO(65) + CC[CH]CCC(6)
+    CCCC(CC)OO(65) + CCC[C](CC)OO(81) <=> CCCC(CC)O[O](64) + CCCC(CC)OO(65)
+    CCCC(CC)OO(65) + CC[CH]C(CC)OO(82) <=> CCCC(CC)O[O](64) + CCCC(CC)OO(65)
+    CCCC(CC)OO(65) + C[CH]C(CCC)OO(83) <=> CCCC(CC)O[O](64) + CCCC(CC)OO(65)
+    CCCC(CC)OO(65) + C[CH]CC(CC)OO(84) <=> CCCC(CC)O[O](64) + CCCC(CC)OO(65)
+    CCCC(CC)OO(65) + [CH2]CC(CCC)OO(85) <=> CCCC(CC)O[O](64) + CCCC(CC)OO(65)
+    CCCC(CC)OO(65) + [CH2]CCC(CC)OO(86) <=> CCCC(CC)O[O](64) + CCCC(CC)OO(65)
+
+After model enlargement:
+    The model core has 12 species and 10 reactions
+    The model edge has 87 species and 284 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 10 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 10 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 294 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 294 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:18
+    Memory used: 239.57 MB
+
+Conducting simulation of reaction system 1...
+At time 3.3554e-08 s, species CCCCC(C)OO(31) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.7816e-13 mol/m^3*s
+    CCCCC(C)OO(31) rate: 5.6570e-16 mol/m^3*s (0.001183)
+At time 3.3554e-08 s, species CCCCC(C)OO(31) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.7816e-13 mol/m^3*s
+    CCCCC(C)OO(31) rate: 5.6570e-16 mol/m^3*s (0.001183)
+
+
+Adding species CCCCC(C)OO(31) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CCCCC(C)OO(31)
+Created 0 new edge species
+Moved 5 reactions from edge to core
+    C[CH]CCCC(10) + [O]O(14) <=> CCCCC(C)OO(31)
+    CC[CH]CCC(6) + CCCCC(C)OO(31) <=> hexane(2) + CCCCC(C)O[O](30)
+    C[CH]CCCC(10) + CCCCC(C)OO(31) <=> hexane(2) + CCCCC(C)O[O](30)
+    [O]O(14) + CCCCC(C)O[O](30) <=> oxygen(1) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + CCCCC(C)O[O](30) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 13 species and 15 reactions
+    The model edge has 86 species and 279 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 6 new edge species
+    [CH2]C(C)OO(96)
+    C[CH]OO(97)
+    [CH2]CC(C)OO(98)
+    CCCC[CH]OO(99)
+    [CH2]CCC(C)OO(100)
+    CCCCCOO(101)
+Added 0 new core reactions
+Created 52 new edge reactions
+    [CH2]C(C)OO(96) + [CH2]CC(3) <=> CCCCC(C)OO(31)
+    C[CH]OO(97) + [CH2]CCC(4) <=> CCCCC(C)OO(31)
+    CCC[CH]C(C)OO(47) + [H](7) <=> CCCCC(C)OO(31)
+    [CH2]CC(C)OO(98) + C[CH2](5) <=> CCCCC(C)OO(31)
+    CC[CH]CC(C)OO(49) + [H](7) <=> CCCCC(C)OO(31)
+    CCCC[CH]OO(99) + [CH3](9) <=> CCCCC(C)OO(31)
+    CCCC[C](C)OO(46) + [H](7) <=> CCCCC(C)OO(31)
+    [CH2]CCC(C)OO(100) + [CH3](9) <=> CCCCC(C)OO(31)
+    C[CH]CCC(C)OO(50) + [H](7) <=> CCCCC(C)OO(31)
+    [CH2]C(CCCC)OO(48) + [H](7) <=> CCCCC(C)OO(31)
+    [CH2]CCCC(C)OO(51) + [H](7) <=> CCCCC(C)OO(31)
+    CCCCC(C)[O](52) + [OH](15) <=> CCCCC(C)OO(31)
+    [H](7) + CCCCC(C)O[O](30) <=> CCCCC(C)OO(31)
+    CCCCCOO(101) + [CH2](12) <=> CCCCC(C)OO(31)
+    CCCC(C)OO(94) + [CH2](12) <=> CCCCC(C)OO(31)
+    CCC[CH]C(C)OO(47) + [O]O(14) <=> oxygen(1) + CCCCC(C)OO(31)
+    CC[CH]CC(C)OO(49) + [O]O(14) <=> oxygen(1) + CCCCC(C)OO(31)
+    CCCC[C](C)OO(46) + [O]O(14) <=> oxygen(1) + CCCCC(C)OO(31)
+    oxygen(1) + CCCCC(C)OO(31) <=> C[CH]CCC(C)OO(50) + [O]O(14)
+    [CH2]C(CCCC)OO(48) + [O]O(14) <=> oxygen(1) + CCCCC(C)OO(31)
+    [CH2]CCCC(C)OO(51) + [O]O(14) <=> oxygen(1) + CCCCC(C)OO(31)
+    CCC[CH]C(C)OO(47) + OO(17) <=> [O]O(14) + CCCCC(C)OO(31)
+    CC[CH]CC(C)OO(49) + OO(17) <=> [O]O(14) + CCCCC(C)OO(31)
+    CCCC[C](C)OO(46) + OO(17) <=> [O]O(14) + CCCCC(C)OO(31)
+    C[CH]CCC(C)OO(50) + OO(17) <=> [O]O(14) + CCCCC(C)OO(31)
+    [CH2]C(CCCC)OO(48) + OO(17) <=> [O]O(14) + CCCCC(C)OO(31)
+    [CH2]CCCC(C)OO(51) + OO(17) <=> [O]O(14) + CCCCC(C)OO(31)
+    OO(17) + CCCCC(C)O[O](30) <=> [O]O(14) + CCCCC(C)OO(31)
+    hexane(2) + CCC[CH]C(C)OO(47) <=> C[CH]CCCC(10) + CCCCC(C)OO(31)
+    hexane(2) + CC[CH]CC(C)OO(49) <=> C[CH]CCCC(10) + CCCCC(C)OO(31)
+    C[CH]CCCC(10) + CCCCC(C)OO(31) <=> hexane(2) + CCCC[C](C)OO(46)
+    hexane(2) + C[CH]CCC(C)OO(50) <=> C[CH]CCCC(10) + CCCCC(C)OO(31)
+    hexane(2) + [CH2]C(CCCC)OO(48) <=> C[CH]CCCC(10) + CCCCC(C)OO(31)
+    hexane(2) + [CH2]CCCC(C)OO(51) <=> C[CH]CCCC(10) + CCCCC(C)OO(31)
+    CCC[CH]C(C)OO(47) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)OO(31)
+    CC[CH]CC(C)OO(49) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)OO(31)
+    CCCC[C](C)OO(46) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)OO(31)
+    C[CH]CCC(C)OO(50) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)OO(31)
+    [CH2]C(CCCC)OO(48) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)OO(31)
+    [CH2]CCCC(C)OO(51) + CCCCC(C)OO(31) <=> CCCCC(C)O[O](30) + CCCCC(C)OO(31)
+    hexane(2) + CCC[CH]C(C)OO(47) <=> CC[CH]CCC(6) + CCCCC(C)OO(31)
+    hexane(2) + CC[CH]CC(C)OO(49) <=> CC[CH]CCC(6) + CCCCC(C)OO(31)
+    CC[CH]CCC(6) + CCCCC(C)OO(31) <=> hexane(2) + CCCC[C](C)OO(46)
+    hexane(2) + C[CH]CCC(C)OO(50) <=> CC[CH]CCC(6) + CCCCC(C)OO(31)
+    hexane(2) + [CH2]C(CCCC)OO(48) <=> CC[CH]CCC(6) + CCCCC(C)OO(31)
+    hexane(2) + [CH2]CCCC(C)OO(51) <=> CC[CH]CCC(6) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + CCC[CH]C(C)OO(47) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + CC[CH]CC(C)OO(49) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + CCCC[C](C)OO(46) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + C[CH]CCC(C)OO(50) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + [CH2]C(CCCC)OO(48) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+    CCCC(CC)OO(65) + [CH2]CCCC(C)OO(51) <=> CCCC(CC)O[O](64) + CCCCC(C)OO(31)
+
+After model enlargement:
+    The model core has 13 species and 15 reactions
+    The model edge has 92 species and 331 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 15 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 15 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 346 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 346 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:20
+    Memory used: 243.94 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-06 s, species [CH2]CCCCC(11) exceeded the minimum rate for moving to model core
+    Characteristic rate: 6.7111e-13 mol/m^3*s
+    [CH2]CCCCC(11) rate: 8.6578e-16 mol/m^3*s (0.00129)
+At time 1.0000e-06 s, species [CH2]CCCCC(11) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 6.7111e-13 mol/m^3*s
+    [CH2]CCCCC(11) rate: 8.6578e-16 mol/m^3*s (0.00129)
+
+
+Adding species [CH2]CCCCC(11) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CCCCC(11)
+Created 0 new edge species
+Moved 7 reactions from edge to core
+    [CH2]CCCCC(11) + [O]O(14) <=> oxygen(1) + hexane(2)
+    C[CH]CCCC(10) <=> [CH2]CCCCC(11)
+    hexane(2) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CCCC(10)
+    [CH2]CCCCC(11) + CCCCC(C)OO(31) <=> hexane(2) + CCCCC(C)O[O](30)
+    [CH2]CCCCC(11) <=> CC[CH]CCC(6)
+    hexane(2) + [CH2]CCCCC(11) <=> hexane(2) + CC[CH]CCC(6)
+    CCCC(CC)OO(65) + [CH2]CCCCC(11) <=> hexane(2) + CCCC(CC)O[O](64)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 14 species and 22 reactions
+    The model edge has 91 species and 324 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 13 new edge species
+    C=C(102)
+    [CH2]C[CH2](103)
+    [CH2]CC[CH2](104)
+    [CH2][CH2](105)
+    [CH2]CCC[CH2](106)
+    [CH2]CCCC[CH2](107)
+    CCCCCCO[O](108)
+    CCCCCCOO(109)
+    CCCCCCC(C)CCCC(110)
+    CCCCCCOOC(C)CCCC(111)
+    CCCCCCC(CC)CCC(112)
+    CCCCCCOOC(CC)CCC(113)
+    CCCCCCCCCCCC(114)
+Added 0 new core reactions
+Created 84 new edge reactions
+    [H](7) + C=CCCCC(19) <=> [CH2]CCCCC(11)
+    C=C(102) + [CH2]CCC(4) <=> [CH2]CCCCC(11)
+    [CH2]C[CH2](103) + [CH2]CC(3) <=> [CH2]CCCCC(11)
+    [CH2]CC[CH2](104) + C[CH2](5) <=> [CH2]CCCCC(11)
+    [CH2]CC[CH]CC(61) + [H](7) <=> [CH2]CCCCC(11)
+    [CH2][CH2](105) + [CH2]CCC(4) <=> [CH2]CCCCC(11)
+    [CH2]C[CH]CCC(62) + [H](7) <=> [CH2]CCCCC(11)
+    [CH2]CCC[CH2](106) + [CH3](9) <=> [CH2]CCCCC(11)
+    [H](7) + [CH2]CCC[CH]C(27) <=> [CH2]CCCCC(11)
+    [H](7) + [CH2][CH]CCCC(28) <=> [CH2]CCCCC(11)
+    [CH2]CCCC[CH2](107) + [H](7) <=> [CH2]CCCCC(11)
+    [CH2]CCCC(8) + [CH2](12) <=> [CH2]CCCCC(11)
+    oxygen(1) + [CH2]CCCCC(11) <=> [O]O(14) + C=CCCCC(19)
+    oxygen(1) + [CH2]CCCCC(11) <=> [CH2]CC[CH]CC(61) + [O]O(14)
+    oxygen(1) + [CH2]CCCCC(11) <=> [CH2]C[CH]CCC(62) + [O]O(14)
+    oxygen(1) + [CH2]CCCCC(11) <=> [O]O(14) + [CH2]CCC[CH]C(27)
+    [CH2]CCCC[CH2](107) + [O]O(14) <=> oxygen(1) + [CH2]CCCCC(11)
+    oxygen(1) + [CH2]CCCCC(11) <=> CCCCCCO[O](108)
+    [CH2]CCCCC(11) + [O]O(14) <=> OO(17) + C=CCCCC(19)
+    [CH2]CC[CH]CC(61) + OO(17) <=> [CH2]CCCCC(11) + [O]O(14)
+    [CH2]C[CH]CCC(62) + OO(17) <=> [CH2]CCCCC(11) + [O]O(14)
+    OO(17) + [CH2]CCC[CH]C(27) <=> [CH2]CCCCC(11) + [O]O(14)
+    [CH2]CCCC[CH2](107) + OO(17) <=> [CH2]CCCCC(11) + [O]O(14)
+    [CH2]CCCCC(11) + [O]O(14) <=> CCCCCCOO(109)
+    C[CH]CCCC(10) + [CH2]CCCCC(11) <=> hexane(2) + C=CCCCC(19)
+    C[CH]CCCC(10) + [CH2]CCCCC(11) <=> hexane(2) + CC=CCCC(18)
+    C[CH]CCCC(10) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]C[CH]CC(23)
+    C[CH]CCCC(10) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CC[CH]C(25)
+    hexane(2) + [CH2]CCC[CH]C(27) <=> C[CH]CCCC(10) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]CC[CH]CC(61) <=> C[CH]CCCC(10) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]C[CH]CCC(62) <=> C[CH]CCCC(10) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]CCCC[CH2](107) <=> C[CH]CCCC(10) + [CH2]CCCCC(11)
+    C[CH]CCCC(10) + [CH2]CCCCC(11) <=> CCCCCCC(C)CCCC(110)
+    [CH2]CCCCC(11) + CCCCC(C)O[O](30) <=> C=CCCCC(19) + CCCCC(C)OO(31)
+    [CH2]CCCCC(11) + CCCCC(C)O[O](30) <=> hexane(2) + CCC[CH]C(C)O[O](35)
+    [CH2]CCCCC(11) + CCCCC(C)O[O](30) <=> hexane(2) + CC[CH]CC(C)O[O](37)
+    [CH2]CCCCC(11) + CCCCC(C)O[O](30) <=> hexane(2) + CCCC[C](C)O[O](39)
+    [CH2]CCCCC(11) + CCCCC(C)O[O](30) <=> hexane(2) + C[CH]CCC(C)O[O](41)
+    hexane(2) + [CH2]C(CCCC)O[O](42) <=> [CH2]CCCCC(11) + CCCCC(C)O[O](30)
+    hexane(2) + [CH2]CCCC(C)O[O](43) <=> [CH2]CCCCC(11) + CCCCC(C)O[O](30)
+    [CH2]CC[CH]CC(61) + CCCCC(C)OO(31) <=> [CH2]CCCCC(11) + CCCCC(C)O[O](30)
+    [CH2]C[CH]CCC(62) + CCCCC(C)OO(31) <=> [CH2]CCCCC(11) + CCCCC(C)O[O](30)
+    [CH2]CCC[CH]C(27) + CCCCC(C)OO(31) <=> [CH2]CCCCC(11) + CCCCC(C)O[O](30)
+    [CH2]CCCC[CH2](107) + CCCCC(C)OO(31) <=> [CH2]CCCCC(11) + CCCCC(C)O[O](30)
+    [CH2]CCCCC(11) + CCCCC(C)O[O](30) <=> CCCCCCOOC(C)CCCC(111)
+    CC[CH]CCC(6) + [CH2]CCCCC(11) <=> hexane(2) + C=CCCCC(19)
+    CC[CH]CCC(6) + [CH2]CCCCC(11) <=> hexane(2) + CCC=CCC(54)
+    CC[CH]CCC(6) + [CH2]CCCCC(11) <=> hexane(2) + CC=CCCC(18)
+    CC[CH]CCC(6) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]C[CH]CC(23)
+    hexane(2) + [CH2]CC[CH]CC(61) <=> CC[CH]CCC(6) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]C[CH]CCC(62) <=> CC[CH]CCC(6) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]CCC[CH]C(27) <=> CC[CH]CCC(6) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]CCCC[CH2](107) <=> CC[CH]CCC(6) + [CH2]CCCCC(11)
+    CC[CH]CCC(6) + [CH2]CCCCC(11) <=> CCCCCCC(CC)CCC(112)
+    CCCC(CC)O[O](64) + [CH2]CCCCC(11) <=> CCCC(CC)OO(65) + C=CCCCC(19)
+    CCCC(CC)O[O](64) + [CH2]CCCCC(11) <=> hexane(2) + CCC[C](CC)O[O](71)
+    CCCC(CC)O[O](64) + [CH2]CCCCC(11) <=> hexane(2) + CC[CH]C(CC)O[O](73)
+    CCCC(CC)O[O](64) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]C(CCC)O[O](75)
+    CCCC(CC)O[O](64) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CC(CC)O[O](77)
+    hexane(2) + [CH2]CC(CCC)O[O](78) <=> CCCC(CC)O[O](64) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]CCC(CC)O[O](79) <=> CCCC(CC)O[O](64) + [CH2]CCCCC(11)
+    [CH2]CC[CH]CC(61) + CCCC(CC)OO(65) <=> CCCC(CC)O[O](64) + [CH2]CCCCC(11)
+    [CH2]C[CH]CCC(62) + CCCC(CC)OO(65) <=> CCCC(CC)O[O](64) + [CH2]CCCCC(11)
+    CCCC(CC)OO(65) + [CH2]CCC[CH]C(27) <=> CCCC(CC)O[O](64) + [CH2]CCCCC(11)
+    [CH2]CCCC[CH2](107) + CCCC(CC)OO(65) <=> CCCC(CC)O[O](64) + [CH2]CCCCC(11)
+    CCCC(CC)O[O](64) + [CH2]CCCCC(11) <=> CCCCCCOOC(CC)CCC(113)
+    CCCC(CC)OO(65) + [CH2]CCCCC(11) <=> hexane(2) + CCC[C](CC)OO(81)
+    CCCC(CC)OO(65) + [CH2]CCCCC(11) <=> hexane(2) + CC[CH]C(CC)OO(82)
+    CCCC(CC)OO(65) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]C(CCC)OO(83)
+    CCCC(CC)OO(65) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CC(CC)OO(84)
+    hexane(2) + [CH2]CC(CCC)OO(85) <=> CCCC(CC)OO(65) + [CH2]CCCCC(11)
+    hexane(2) + [CH2]CCC(CC)OO(86) <=> CCCC(CC)OO(65) + [CH2]CCCCC(11)
+    [CH2]CCCCC(11) + CCCCC(C)OO(31) <=> hexane(2) + CCC[CH]C(C)OO(47)
+    [CH2]CCCCC(11) + CCCCC(C)OO(31) <=> hexane(2) + CC[CH]CC(C)OO(49)
+    [CH2]CCCCC(11) + CCCCC(C)OO(31) <=> hexane(2) + CCCC[C](C)OO(46)
+    [CH2]CCCCC(11) + CCCCC(C)OO(31) <=> hexane(2) + C[CH]CCC(C)OO(50)
+    hexane(2) + [CH2]C(CCCC)OO(48) <=> [CH2]CCCCC(11) + CCCCC(C)OO(31)
+    hexane(2) + [CH2]CCCC(C)OO(51) <=> [CH2]CCCCC(11) + CCCCC(C)OO(31)
+    [CH2]CCCCC(11) + [CH2]CCCCC(11) <=> hexane(2) + C=CCCCC(19)
+    [CH2]CCCCC(11) + [CH2]CCCCC(11) <=> hexane(2) + [CH2]CC[CH]CC(61)
+    [CH2]CCCCC(11) + [CH2]CCCCC(11) <=> hexane(2) + [CH2]C[CH]CCC(62)
+    [CH2]CCCCC(11) + [CH2]CCCCC(11) <=> hexane(2) + [CH2]CCC[CH]C(27)
+    hexane(2) + [CH2]CCCC[CH2](107) <=> [CH2]CCCCC(11) + [CH2]CCCCC(11)
+    [CH2]CCCCC(11) + [CH2]CCCCC(11) <=> CCCCCCCCCCCC(114)
+
+After model enlargement:
+    The model core has 14 species and 22 reactions
+    The model edge has 104 species and 408 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 22 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 22 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 430 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 430 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:22
+    Memory used: 247.80 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CCCCCCO[O](108) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCCCCO[O](108) rate: 4.7611e-15 mol/m^3*s (0.01212)
+At time 1.0000e-15 s, species CCCCCCO[O](108) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCCCCO[O](108) rate: 4.7611e-15 mol/m^3*s (0.01212)
+
+
+Adding species CCCCCCO[O](108) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CCCCCCO[O](108)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    oxygen(1) + [CH2]CCCCC(11) <=> CCCCCCO[O](108)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 15 species and 23 reactions
+    The model edge has 103 species and 407 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 18 new edge species
+    [CH2]CCO[O](115)
+    [CH2]CO[O](116)
+    CCC[CH]CCO[O](117)
+    [CH2]CCCO[O](118)
+    CC[CH]CCCO[O](119)
+    [CH2]O[O](120)
+    CCCC[CH]CO[O](121)
+    [CH2]CCCCO[O](122)
+    C[CH]CCCCO[O](123)
+    CCCCC[CH]O[O](124)
+    [CH2]CCCCCO[O](125)
+    CCCCC[CH]OO(126)
+    CCCC[CH]COO(127)
+    CCC[CH]CCOO(128)
+    CC[CH]CCCOO(129)
+    C[CH]CCCCOO(130)
+    CCCCCC[O](131)
+    CCCCCCOOCCCCCC(132)
+Added 0 new core reactions
+Created 115 new edge reactions
+    [CH2]CC(3) + [CH2]CCO[O](115) <=> CCCCCCO[O](108)
+    [CH2]CCC(4) + [CH2]CO[O](116) <=> CCCCCCO[O](108)
+    [H](7) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108)
+    C[CH2](5) + [CH2]CCCO[O](118) <=> CCCCCCO[O](108)
+    [H](7) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108)
+    [CH2]CCCC(8) + [CH2]O[O](120) <=> CCCCCCO[O](108)
+    [H](7) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108)
+    [CH3](9) + [CH2]CCCCO[O](122) <=> CCCCCCO[O](108)
+    [H](7) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108)
+    [H](7) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108)
+    [H](7) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108)
+    CCCCCO[O](44) + [CH2](12) <=> CCCCCCO[O](108)
+    CCCCC[CH]OO(126) <=> CCCCCCO[O](108)
+    CCCC[CH]COO(127) <=> CCCCCCO[O](108)
+    CCC[CH]CCOO(128) <=> CCCCCCO[O](108)
+    CC[CH]CCCOO(129) <=> CCCCCCO[O](108)
+    C[CH]CCCCOO(130) <=> CCCCCCO[O](108)
+    CCCCCCO[O](108) <=> [O]O(14) + C=CCCCC(19)
+    [O](16) + CCCCCC[O](131) <=> CCCCCCO[O](108)
+    [O]O(14) + CCC[CH]CCO[O](117) <=> oxygen(1) + CCCCCCO[O](108)
+    oxygen(1) + CCCCCCO[O](108) <=> [O]O(14) + CC[CH]CCCO[O](119)
+    [O]O(14) + CCCC[CH]CO[O](121) <=> oxygen(1) + CCCCCCO[O](108)
+    oxygen(1) + CCCCCCO[O](108) <=> [O]O(14) + C[CH]CCCCO[O](123)
+    [O]O(14) + CCCCC[CH]O[O](124) <=> oxygen(1) + CCCCCCO[O](108)
+    [O]O(14) + [CH2]CCCCCO[O](125) <=> oxygen(1) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CC[CH]CCC(6) <=> hexane(2) + CCCCCCO[O](108)
+    CCCCCCOO(109) + C[CH]CCCC(10) <=> hexane(2) + CCCCCCO[O](108)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + CCCCCCO[O](108)
+    CCCCCCO[O](108) + [O]O(14) <=> oxygen(1) + CCCCCCOO(109)
+    OO(17) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108) + [O]O(14)
+    OO(17) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108) + [O]O(14)
+    OO(17) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108) + [O]O(14)
+    OO(17) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108) + [O]O(14)
+    OO(17) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108) + [O]O(14)
+    OO(17) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + [O]O(14)
+    CCCCCCO[O](108) + C[CH]CCCC(10) <=> CCCCCCOO(109) + CC=CCCC(18)
+    CCCCCCO[O](108) + C[CH]CCCC(10) <=> CCCCCCOO(109) + C=CCCCC(19)
+    CCCCCCOO(109) + C[CH]C[CH]CC(23) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    CCCCCCOO(109) + C[CH]CC[CH]C(25) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    CCCCCCOO(109) + [CH2]CCC[CH]C(27) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    hexane(2) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    hexane(2) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    hexane(2) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    hexane(2) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    hexane(2) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + C[CH]CCCC(10)
+    CCCCCCO[O](108) + C[CH]CCCC(10) <=> CCCCCCOOC(C)CCCC(111)
+    CCCCCCOO(109) + CCC[CH]C(C)O[O](35) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCCCOO(109) + CC[CH]CC(C)O[O](37) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCCCOO(109) + CCCC[C](C)O[O](39) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCCCOO(109) + C[CH]CCC(C)O[O](41) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCCCOO(109) + [CH2]C(CCCC)O[O](42) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCCCOO(109) + [CH2]CCCC(C)O[O](43) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + CCCCC(C)O[O](30)
+    CCCCCCO[O](108) + CC[CH]CCC(6) <=> CCCCCCOO(109) + CCC=CCC(54)
+    CCCCCCO[O](108) + CC[CH]CCC(6) <=> CCCCCCOO(109) + CC=CCCC(18)
+    CCCCCCOO(109) + C[CH]C[CH]CC(23) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    CCCCCCOO(109) + [CH2]CC[CH]CC(61) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    CCCCCCOO(109) + [CH2]C[CH]CCC(62) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    hexane(2) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    hexane(2) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    hexane(2) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    hexane(2) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    hexane(2) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + CC[CH]CCC(6)
+    CCCCCCO[O](108) + CC[CH]CCC(6) <=> CCCCCCOOC(CC)CCC(113)
+    CCCCCCOO(109) + CCC[C](CC)O[O](71) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + CC[CH]C(CC)O[O](73) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + C[CH]C(CCC)O[O](75) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + C[CH]CC(CC)O[O](77) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + [CH2]CC(CCC)O[O](78) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + [CH2]CCC(CC)O[O](79) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + CCC[C](CC)OO(81) <=> CCCCCCO[O](108) + CCCC(CC)OO(65)
+    CCCCCCOO(109) + CC[CH]C(CC)OO(82) <=> CCCCCCO[O](108) + CCCC(CC)OO(65)
+    CCCCCCOO(109) + C[CH]C(CCC)OO(83) <=> CCCCCCO[O](108) + CCCC(CC)OO(65)
+    CCCCCCOO(109) + C[CH]CC(CC)OO(84) <=> CCCCCCO[O](108) + CCCC(CC)OO(65)
+    CCCCCCOO(109) + [CH2]CC(CCC)OO(85) <=> CCCCCCO[O](108) + CCCC(CC)OO(65)
+    CCCCCCOO(109) + [CH2]CCC(CC)OO(86) <=> CCCCCCO[O](108) + CCCC(CC)OO(65)
+    CCCCCCO[O](108) + CCCC(CC)OO(65) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + CCC[CH]C(C)OO(47) <=> CCCCCCO[O](108) + CCCCC(C)OO(31)
+    CCCCCCOO(109) + CC[CH]CC(C)OO(49) <=> CCCCCCO[O](108) + CCCCC(C)OO(31)
+    CCCCCCOO(109) + CCCC[C](C)OO(46) <=> CCCCCCO[O](108) + CCCCC(C)OO(31)
+    CCCCCCOO(109) + C[CH]CCC(C)OO(50) <=> CCCCCCO[O](108) + CCCCC(C)OO(31)
+    CCCCCCOO(109) + [CH2]C(CCCC)OO(48) <=> CCCCCCO[O](108) + CCCCC(C)OO(31)
+    CCCCCCOO(109) + [CH2]CCCC(C)OO(51) <=> CCCCCCO[O](108) + CCCCC(C)OO(31)
+    CCCCCCO[O](108) + CCCCC(C)OO(31) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> CCCCCCOO(109) + C=CCCCC(19)
+    CCCCCCOO(109) + [CH2]CC[CH]CC(61) <=> CCCCCCO[O](108) + [CH2]CCCCC(11)
+    CCCCCCOO(109) + [CH2]C[CH]CCC(62) <=> CCCCCCO[O](108) + [CH2]CCCCC(11)
+    CCCCCCOO(109) + [CH2]CCC[CH]C(27) <=> CCCCCCO[O](108) + [CH2]CCCCC(11)
+    CCCCCCOO(109) + [CH2]CCCC[CH2](107) <=> CCCCCCO[O](108) + [CH2]CCCCC(11)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> hexane(2) + CCC[CH]CCO[O](117)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> hexane(2) + CC[CH]CCCO[O](119)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> hexane(2) + CCCC[CH]CO[O](121)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CCCCO[O](123)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> hexane(2) + CCCCC[CH]O[O](124)
+    hexane(2) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + [CH2]CCCCC(11)
+    CCCCCCO[O](108) + [CH2]CCCCC(11) <=> CCCCCCOOCCCCCC(132)
+    CCCCCCOO(109) + CCC[CH]CCO[O](117) <=> CCCCCCO[O](108) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CC[CH]CCCO[O](119) <=> CCCCCCO[O](108) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CCCC[CH]CO[O](121) <=> CCCCCCO[O](108) + CCCCCCO[O](108)
+    CCCCCCOO(109) + C[CH]CCCCO[O](123) <=> CCCCCCO[O](108) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CCCCC[CH]O[O](124) <=> CCCCCCO[O](108) + CCCCCCO[O](108)
+    CCCCCCOO(109) + [CH2]CCCCCO[O](125) <=> CCCCCCO[O](108) + CCCCCCO[O](108)
+
+After model enlargement:
+    The model core has 15 species and 23 reactions
+    The model edge has 121 species and 522 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 23 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 23 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 545 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 545 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:27
+    Memory used: 248.27 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species CCCCCCOO(109) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCCCCOO(109) rate: 5.6502e-15 mol/m^3*s (0.01438)
+At time 1.0000e-15 s, species CCCCCCOO(109) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.9292e-13 mol/m^3*s
+    CCCCCCOO(109) rate: 5.6502e-15 mol/m^3*s (0.01438)
+
+
+Adding species CCCCCCOO(109) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CCCCCCOO(109)
+Created 0 new edge species
+Moved 7 reactions from edge to core
+    [CH2]CCCCC(11) + [O]O(14) <=> CCCCCCOO(109)
+    CCCCCCOO(109) + CC[CH]CCC(6) <=> hexane(2) + CCCCCCO[O](108)
+    CCCCCCOO(109) + C[CH]CCCC(10) <=> hexane(2) + CCCCCCO[O](108)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + CCCCCCO[O](108)
+    CCCCCCO[O](108) + [O]O(14) <=> oxygen(1) + CCCCCCOO(109)
+    CCCCCCO[O](108) + CCCC(CC)OO(65) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCCCCO[O](108) + CCCCC(C)OO(31) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 16 species and 30 reactions
+    The model edge has 120 species and 515 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 6 new edge species
+    [CH2]CCOO(133)
+    [CH2]COO(134)
+    [CH2]CCCOO(135)
+    [CH2]OO(136)
+    [CH2]CCCCOO(137)
+    [CH2]CCCCCOO(138)
+Added 0 new core reactions
+Created 63 new edge reactions
+    [CH2]CC(3) + [CH2]CCOO(133) <=> CCCCCCOO(109)
+    [CH2]CCC(4) + [CH2]COO(134) <=> CCCCCCOO(109)
+    [H](7) + CCC[CH]CCOO(128) <=> CCCCCCOO(109)
+    C[CH2](5) + [CH2]CCCOO(135) <=> CCCCCCOO(109)
+    [H](7) + CC[CH]CCCOO(129) <=> CCCCCCOO(109)
+    [CH2]OO(136) + [CH2]CCCC(8) <=> CCCCCCOO(109)
+    [H](7) + CCCC[CH]COO(127) <=> CCCCCCOO(109)
+    [CH2]CCCCOO(137) + [CH3](9) <=> CCCCCCOO(109)
+    [H](7) + C[CH]CCCCOO(130) <=> CCCCCCOO(109)
+    [H](7) + CCCCC[CH]OO(126) <=> CCCCCCOO(109)
+    [CH2]CCCCCOO(138) + [H](7) <=> CCCCCCOO(109)
+    [OH](15) + CCCCCC[O](131) <=> CCCCCCOO(109)
+    CCCCCCO[O](108) + [H](7) <=> CCCCCCOO(109)
+    CCCCCOO(101) + [CH2](12) <=> CCCCCCOO(109)
+    [O]O(14) + CCC[CH]CCOO(128) <=> oxygen(1) + CCCCCCOO(109)
+    oxygen(1) + CCCCCCOO(109) <=> [O]O(14) + CC[CH]CCCOO(129)
+    [O]O(14) + CCCC[CH]COO(127) <=> oxygen(1) + CCCCCCOO(109)
+    oxygen(1) + CCCCCCOO(109) <=> [O]O(14) + C[CH]CCCCOO(130)
+    [O]O(14) + CCCCC[CH]OO(126) <=> oxygen(1) + CCCCCCOO(109)
+    [CH2]CCCCCOO(138) + [O]O(14) <=> oxygen(1) + CCCCCCOO(109)
+    OO(17) + CCC[CH]CCOO(128) <=> CCCCCCOO(109) + [O]O(14)
+    OO(17) + CC[CH]CCCOO(129) <=> CCCCCCOO(109) + [O]O(14)
+    OO(17) + CCCC[CH]COO(127) <=> CCCCCCOO(109) + [O]O(14)
+    OO(17) + C[CH]CCCCOO(130) <=> CCCCCCOO(109) + [O]O(14)
+    OO(17) + CCCCC[CH]OO(126) <=> CCCCCCOO(109) + [O]O(14)
+    [CH2]CCCCCOO(138) + OO(17) <=> CCCCCCOO(109) + [O]O(14)
+    CCCCCCO[O](108) + OO(17) <=> CCCCCCOO(109) + [O]O(14)
+    hexane(2) + CCC[CH]CCOO(128) <=> CCCCCCOO(109) + C[CH]CCCC(10)
+    hexane(2) + CC[CH]CCCOO(129) <=> CCCCCCOO(109) + C[CH]CCCC(10)
+    hexane(2) + CCCC[CH]COO(127) <=> CCCCCCOO(109) + C[CH]CCCC(10)
+    hexane(2) + C[CH]CCCCOO(130) <=> CCCCCCOO(109) + C[CH]CCCC(10)
+    hexane(2) + CCCCC[CH]OO(126) <=> CCCCCCOO(109) + C[CH]CCCC(10)
+    hexane(2) + [CH2]CCCCCOO(138) <=> CCCCCCOO(109) + C[CH]CCCC(10)
+    CCCCC(C)OO(31) + CCC[CH]CCOO(128) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CC[CH]CCCOO(129) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CCCC[CH]COO(127) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + C[CH]CCCCOO(130) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    CCCCC(C)OO(31) + CCCCC[CH]OO(126) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    [CH2]CCCCCOO(138) + CCCCC(C)OO(31) <=> CCCCCCOO(109) + CCCCC(C)O[O](30)
+    hexane(2) + CCC[CH]CCOO(128) <=> CCCCCCOO(109) + CC[CH]CCC(6)
+    hexane(2) + CC[CH]CCCOO(129) <=> CCCCCCOO(109) + CC[CH]CCC(6)
+    hexane(2) + CCCC[CH]COO(127) <=> CCCCCCOO(109) + CC[CH]CCC(6)
+    hexane(2) + C[CH]CCCCOO(130) <=> CCCCCCOO(109) + CC[CH]CCC(6)
+    hexane(2) + CCCCC[CH]OO(126) <=> CCCCCCOO(109) + CC[CH]CCC(6)
+    hexane(2) + [CH2]CCCCCOO(138) <=> CCCCCCOO(109) + CC[CH]CCC(6)
+    CCCC(CC)OO(65) + CCC[CH]CCOO(128) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CC[CH]CCCOO(129) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CCCC[CH]COO(127) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + C[CH]CCCCOO(130) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + CCCCC[CH]OO(126) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCC(CC)OO(65) + [CH2]CCCCCOO(138) <=> CCCCCCOO(109) + CCCC(CC)O[O](64)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + CCC[CH]CCOO(128)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + CC[CH]CCCOO(129)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + CCCC[CH]COO(127)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + C[CH]CCCCOO(130)
+    CCCCCCOO(109) + [CH2]CCCCC(11) <=> hexane(2) + CCCCC[CH]OO(126)
+    hexane(2) + [CH2]CCCCCOO(138) <=> CCCCCCOO(109) + [CH2]CCCCC(11)
+    CCCCCCOO(109) + CCC[CH]CCOO(128) <=> CCCCCCOO(109) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CC[CH]CCCOO(129) <=> CCCCCCOO(109) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CCCC[CH]COO(127) <=> CCCCCCOO(109) + CCCCCCO[O](108)
+    CCCCCCOO(109) + C[CH]CCCCOO(130) <=> CCCCCCOO(109) + CCCCCCO[O](108)
+    CCCCCCOO(109) + CCCCC[CH]OO(126) <=> CCCCCCOO(109) + CCCCCCO[O](108)
+    CCCCCCOO(109) + [CH2]CCCCCOO(138) <=> CCCCCCOO(109) + CCCCCCO[O](108)
+
+After model enlargement:
+    The model core has 16 species and 30 reactions
+    The model edge has 126 species and 578 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 30 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 30 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 608 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 608 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:29
+    Memory used: 249.48 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e+01 s, reached target termination time.
+
+Saving current model core to Chemkin file...
+Chemkin file contains 30 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 30 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 608 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 608 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:00:29
+    Memory used: 249.59 MB
+
+
+MODEL GENERATION COMPLETED
+
+The final model core has 16 species and 30 reactions
+The final model edge has 126 species and 578 reactions
+
+RMG execution terminated at Fri Feb 19 12:40:04 2016

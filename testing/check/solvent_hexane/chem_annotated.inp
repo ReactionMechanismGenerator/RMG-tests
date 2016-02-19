@@ -1,0 +1,347 @@
+ELEMENTS H C O N Ne Ar He Si S Cl END
+
+SPECIES
+    Ar                  ! Ar
+    He                  ! He
+    Ne                  ! Ne
+    N2                  ! N2
+    oxygen(1)           ! oxygen(1)
+    hexane(2)           ! hexane(2)
+    C6H13(6)            ! CC[CH]CCC(6)
+    C6H13(10)           ! C[CH]CCCC(10)
+    C6H13(11)           ! [CH2]CCCCC(11)
+    HO2(14)             ! [O]O(14)
+    S(30)               ! CCCCC(C)O[O](30)
+    S(31)               ! CCCCC(C)OO(31)
+    S(64)               ! CCCC(CC)O[O](64)
+    S(65)               ! CCCC(CC)OO(65)
+    S(108)              ! CCCCCCO[O](108)
+    S(109)              ! CCCCCCOO(109)
+END
+
+
+
+THERM ALL
+    300.000  1000.000  5000.000
+
+! Thermo library corrected for liquid phase: primaryThermoLibrary
+Ar                      Ar1                 G100.000   5000.000  4950.76       1
+ 2.77499054E+00-2.12693169E-04 6.15680832E-08-7.90364645E-12 3.79566382E-16    2
+-1.83607017E+03 5.66500699E-01 2.50000000E+00-1.06332631E-12 1.30802314E-15    3
+-5.21436096E-19 6.38303448E-23-1.55216105E+03 2.34477209E+00                   4
+
+! Thermo library corrected for liquid phase: primaryThermoLibrary
+He                      He1                 G100.000   5000.000  4950.76       1
+ 2.77499054E+00-2.12693169E-04 6.15680832E-08-7.90364645E-12 3.79566382E-16    2
+-1.83607017E+03-2.88444530E+00 2.50000000E+00-1.06332631E-12 1.30802314E-15    3
+-5.21436096E-19 6.38303448E-23-1.55216105E+03-1.10617391E+00                   4
+
+! Thermo library corrected for liquid phase: primaryThermoLibrary
+Ne                      Ne1                 G100.000   5000.000  4950.76       1
+ 2.77499054E+00-2.12693169E-04 6.15680832E-08-7.90364645E-12 3.79566382E-16    2
+-1.83607017E+03-4.57849301E-01 2.50000000E+00-1.06332631E-12 1.30802314E-15    3
+-5.21436096E-19 6.38303448E-23-1.55216105E+03 1.32042209E+00                   4
+
+! Thermo library corrected for liquid phase: primaryThermoLibrary
+N2                      N 2                 G100.000   5000.000  1476.54       1
+ 2.83319634E+00 1.60013737E-03-6.09966653E-07 1.06346344E-10-6.90890348E-15    2
+-5.88269286E+02 5.96901890E+00 3.54135937E+00-6.93366231E-04 2.10100234E-06    3
+-1.28970814E-09 2.58592001E-13-7.56510413E+02 2.41501867E+00                   4
+
+! Thermo library corrected for liquid phase: primaryThermoLibrary
+oxygen(1)               O 2                 G100.000   5000.000  1074.55       1
+ 3.15382087E+00 1.67804361E-03-7.69974182E-07 1.51275449E-10-1.08782403E-14    2
+-1.04073107E+03 5.21027518E+00 3.53732242E+00-1.21571635E-03 5.31620213E-06    3
+-4.89446383E-09 1.45846238E-12-1.03850225E+03 3.72639906E+00                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R)
+hexane(2)               C 6  H 14           G100.000   5000.000  1144.97       1
+ 1.10308133E+01 4.31956599E-02-1.73946623E-05 3.17575936E-09-2.18145334E-13    2
+-3.02887609E+04-3.71437011E+01 7.93269099E-01 6.05339029E-02-1.59681875E-05    3
+-1.17110732E-08 6.10148052E-12-2.67365757E+04 1.89070696E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(RCCJCC)
+C6H13(6)                C 6  H 13           G100.000   5000.000  2003.80       1
+ 1.70743186E+01 3.29275112E-02-1.28645264E-05 2.16253505E-09-1.35165048E-13    2
+-1.11885688E+04-7.02617011E+01 1.33686476E+00 5.73244276E-02-2.58737836E-05    3
+ 4.74281289E-09-2.39013351E-13-3.47262356E+03 2.01164844E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(RCCJC)
+C6H13(10)               C 6  H 13           G100.000   5000.000  1919.42       1
+ 1.59937054E+01 3.37699516E-02-1.29499582E-05 2.17604691E-09-1.36863838E-13    2
+-1.02282115E+04-6.31500424E+01 1.10038683E+00 5.91158037E-02-2.83097193E-05    3
+ 5.96610546E-09-4.29302179E-13-3.46252828E+03 2.11433762E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + radical(RCCJ)
+C6H13(11)               C 6  H 13           G100.000   5000.000  1257.33       1
+ 1.17157499E+01 3.95164902E-02-1.58790801E-05 2.86525339E-09-1.94133649E-13    2
+-5.89721503E+03-3.78991488E+01 7.95678908E-01 6.15833820E-02-2.70853844E-05    3
+ 7.90380970E-10 1.81241016E-12-2.14941008E+03 2.12682142E+01                   4
+
+! Thermo group additivity estimation: group(Os-OsH) + gauche(Os(RR)) + other(R) + group(Os-OsH) + gauche(Os(RR)) + other(R) + radical(HOOJ)
+HO2(14)                 H 1  O 2            G100.000   5000.000  932.14        1
+ 3.21022708E+00 3.67943991E-03-1.27702744E-06 2.18048060E-10-1.46340279E-14    2
+-3.22868492E+03 4.25496786E+00 4.04594863E+00-1.73469427E-03 1.03768247E-05    3
+-1.02204913E-08 3.34919447E-12-3.30507552E+03 7.07784249E-01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsOsH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsCsR)R)) + other(R) + group
+! (Os-OsH) + gauche(Os(RR)) + other(R) + radical(ROOJ)
+S(30)                   C 6  H 13 O 2       G100.000   5000.000  1341.53       1
+ 1.34771156E+01 4.45636725E-02-1.80889072E-05 3.27251525E-09-2.22099273E-13    2
+-2.59309330E+04-4.36744855E+01 1.51263466E-02 8.47031721E-02-6.29702597E-05    3
+ 2.55762401E-08-4.37852601E-12-2.23190264E+04 2.52270118E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsOsH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsCsR)R)) + other(R) + group
+! (Os-OsH) + gauche(Os(RR)) + other(R)
+S(31)                   C 6  H 14 O 2       G100.000   5000.000  1475.95       1
+ 1.71511728E+01 4.28989486E-02-1.72494026E-05 3.09535265E-09-2.08448690E-13    2
+-4.57779849E+04-6.56334730E+01-4.56989188E-01 9.06200048E-02-6.57489113E-05    3
+ 2.50023125E-08-3.91916843E-12-4.05803235E+04 2.61703086E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsOsH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR))
+! + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsCsR)R)) + other(R) + group
+! (Os-OsH) + gauche(Os(RR)) + other(R) + radical(ROOJ)
+S(64)                   C 6  H 13 O 2       G100.000   5000.000  1341.53       1
+ 1.34771156E+01 4.45636725E-02-1.80889072E-05 3.27251525E-09-2.22099273E-13    2
+-2.59309330E+04-4.36744855E+01 1.51263466E-02 8.47031721E-02-6.29702597E-05    3
+ 2.55762401E-08-4.37852601E-12-2.23190264E+04 2.52270118E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsOsH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR))
+! + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsHHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsCsR)R)) + other(R) + group
+! (Os-OsH) + gauche(Os(RR)) + other(R)
+S(65)                   C 6  H 14 O 2       G100.000   5000.000  1475.95       1
+ 1.71511728E+01 4.28989486E-02-1.72494026E-05 3.09535265E-09-2.08448690E-13    2
+-4.57779849E+04-6.56334730E+01-4.56989188E-01 9.06200048E-02-6.57489113E-05    3
+ 2.50023125E-08-3.91916843E-12-4.05803235E+04 2.61703086E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsOsHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group
+! (Os-OsH) + gauche(Os(RR)) + other(R) + radical(ROOJ)
+S(108)                  C 6  H 13 O 2       G100.000   5000.000  1550.99       1
+ 1.09354321E+01 5.15749177E-02-2.39567779E-05 4.57865981E-09-3.18122445E-13    2
+-2.34736452E+04-3.02622396E+01 8.87934055E-01 7.74871922E-02-4.90169708E-05    3
+ 1.53502734E-08-2.05435696E-12-2.03569071E+04 2.26209897E+01                   4
+
+! Thermo group additivity estimation: group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)Cs(CsRR)RR)) +
+! other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsCsHH) + gauche(Cs(Cs(CsRR)CsRR)) + other(R) + group(Cs-CsOsHH) +
+! gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Cs-CsHHH) + gauche(Cs(Cs(CsRR)RRR)) + other(R) + group(Os-OsCs) + gauche(Os(Cs(CsRR)R)) + other(R) + group
+! (Os-OsH) + gauche(Os(RR)) + other(R)
+S(109)                  C 6  H 14 O 2       G100.000   5000.000  1774.34       1
+ 1.68005718E+01 4.67056240E-02-2.14659053E-05 4.04327784E-09-2.76654364E-13    2
+-4.44406416E+04-6.49249568E+01 3.90787582E-01 8.36994547E-02-5.27401628E-05    3
+ 1.57939360E-08-1.93230479E-12-3.86173784E+04 2.36524801E+01                   4
+
+END
+
+
+
+REACTIONS    KCAL/MOLE   MOLES
+
+! Reaction index: Chemkin #1; RMG #9
+! Template reaction: H_Abstraction
+! Flux pairs: oxygen(1), HO2(14); hexane(2), C6H13(10); 
+! Exact match found for rate rule (C/H2/NonDeC;O2b)
+! Multiplied by reaction path degeneracy 16
+oxygen(1)+hexane(2)=C6H13(10)+HO2(14)               3.176e+14 0.000     47.690   
+
+! Reaction index: Chemkin #2; RMG #36
+! Template reaction: R_Recombination
+! Flux pairs: oxygen(1), S(30); C6H13(10), S(30); 
+! Estimated using template (O2_birad;C_sec_rad) for rate rule (O2_birad;C_rad/H/NonDeC)
+! Multiplied by reaction path degeneracy 2
+oxygen(1)+C6H13(10)=S(30)                           7.540e+12 0.000     0.000    
+
+! Reaction index: Chemkin #3; RMG #8
+! Template reaction: H_Abstraction
+! Flux pairs: oxygen(1), HO2(14); hexane(2), C6H13(6); 
+! Exact match found for rate rule (C/H2/NonDeC;O2b)
+! Multiplied by reaction path degeneracy 16
+oxygen(1)+hexane(2)=C6H13(6)+HO2(14)                3.176e+14 0.000     47.690   
+
+! Reaction index: Chemkin #4; RMG #29
+! Template reaction: intra_H_migration
+! Flux pairs: C6H13(6), C6H13(10); 
+! Exact match found for rate rule (R2H_S;C_rad_out_H/NonDeC;Cs_H_out_H/NonDeC)
+! Multiplied by reaction path degeneracy 4
+C6H13(6)=C6H13(10)                                  1.352e+10 0.880     38.000   
+
+! Reaction index: Chemkin #5; RMG #37
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(6), hexane(2); hexane(2), C6H13(10); 
+! Exact match found for rate rule (C/H2/NonDeC;C_rad/H/NonDeC)
+! Multiplied by reaction path degeneracy 4
+hexane(2)+C6H13(6)=hexane(2)+C6H13(10)              3.460e-03 4.340     7.500    
+
+! Reaction index: Chemkin #6; RMG #127
+! Template reaction: R_Recombination
+! Flux pairs: oxygen(1), S(64); C6H13(6), S(64); 
+! Estimated using template (O2_birad;C_sec_rad) for rate rule (O2_birad;C_rad/H/NonDeC)
+! Multiplied by reaction path degeneracy 2
+oxygen(1)+C6H13(6)=S(64)                            7.540e+12 0.000     0.000    
+
+! Reaction index: Chemkin #7; RMG #134
+! Template reaction: R_Recombination
+! Flux pairs: HO2(14), S(65); C6H13(6), S(65); 
+! Exact match found for rate rule (O_rad/NonDe;C_rad/H/NonDeC)
+C6H13(6)+HO2(14)=S(65)                              6.030e+12 0.000     0.000    
+
+! Reaction index: Chemkin #8; RMG #190
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(6), hexane(2); S(65), S(64); 
+! Exact match found for rate rule (ROOH_sec;C_rad/H/NonDeC)
+S(65)+C6H13(6)=hexane(2)+S(64)                      2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #9; RMG #191
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(10), hexane(2); S(65), S(64); 
+! Exact match found for rate rule (ROOH_sec;C_rad/H/NonDeC)
+S(65)+C6H13(10)=hexane(2)+S(64)                     2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #10; RMG #193
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(14), oxygen(1); S(64), S(65); 
+! Estimated using template (Orad_O_H;O_rad/NonDeO) for rate rule (Orad_O_H;OOC)
+S(64)+HO2(14)=oxygen(1)+S(65)                       1.750e+10 0.000     -3.275   
+
+! Reaction index: Chemkin #11; RMG #44
+! Template reaction: R_Recombination
+! Flux pairs: HO2(14), S(31); C6H13(10), S(31); 
+! Exact match found for rate rule (O_rad/NonDe;C_rad/H/NonDeC)
+C6H13(10)+HO2(14)=S(31)                             6.030e+12 0.000     0.000    
+
+! Reaction index: Chemkin #12; RMG #79
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(6), hexane(2); S(31), S(30); 
+! Exact match found for rate rule (ROOH_sec;C_rad/H/NonDeC)
+C6H13(6)+S(31)=hexane(2)+S(30)                      2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #13; RMG #80
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(10), hexane(2); S(31), S(30); 
+! Exact match found for rate rule (ROOH_sec;C_rad/H/NonDeC)
+C6H13(10)+S(31)=hexane(2)+S(30)                     2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #14; RMG #82
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(14), oxygen(1); S(30), S(31); 
+! Estimated using template (Orad_O_H;O_rad/NonDeO) for rate rule (Orad_O_H;OOC)
+HO2(14)+S(30)=oxygen(1)+S(31)                       1.750e+10 0.000     -3.275   
+
+! Reaction index: Chemkin #15; RMG #282
+! Template reaction: H_Abstraction
+! Flux pairs: S(30), S(31); S(65), S(64); 
+! Estimated using template (O/H/NonDeO;O_rad/NonDeO) for rate rule (ROOH_sec;OOC)
+S(65)+S(30)=S(64)+S(31)                             9.200e-02 3.960     6.630    
+
+! Reaction index: Chemkin #16; RMG #10
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(14), oxygen(1); C6H13(11), hexane(2); 
+! Estimated using template (X_H;Y_rad) for rate rule (Orad_O_H;C_rad/H2/Cs)
+C6H13(11)+HO2(14)=oxygen(1)+hexane(2)               1.606e+04 2.560     9.297    
+
+! Reaction index: Chemkin #17; RMG #30
+! Template reaction: intra_H_migration
+! Flux pairs: C6H13(10), C6H13(11); 
+! Exact match found for rate rule (R2H_S;C_rad_out_H/NonDeC;Cs_H_out_2H)
+! Multiplied by reaction path degeneracy 6
+C6H13(10)=C6H13(11)                                 4.860e+09 1.320     40.300   
+
+! Reaction index: Chemkin #18; RMG #38
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(11), hexane(2); hexane(2), C6H13(10); 
+! Exact match found for rate rule (C/H2/NonDeC;C_rad/H2/Cs)
+! Multiplied by reaction path degeneracy 4
+hexane(2)+C6H13(11)=hexane(2)+C6H13(10)             3.680e-03 4.340     7.000    
+
+! Reaction index: Chemkin #19; RMG #81
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(11), hexane(2); S(31), S(30); 
+! Exact match found for rate rule (ROOH_sec;C_rad/H2/Cs)
+C6H13(11)+S(31)=hexane(2)+S(30)                     2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #20; RMG #121
+! Template reaction: intra_H_migration
+! Flux pairs: C6H13(11), C6H13(6); 
+! Estimated using template (R3H_SS;C_rad_out_2H;Cs_H_out_H/NonDeC) for rate rule (R3H_SS_Cs;C_rad_out_2H;Cs_H_out_H/(NonDeC/Cs))
+! Multiplied by reaction path degeneracy 4
+C6H13(11)=C6H13(6)                                  2.360e+10 0.820     35.100   
+
+! Reaction index: Chemkin #21; RMG #128
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(11), hexane(2); hexane(2), C6H13(6); 
+! Exact match found for rate rule (C/H2/NonDeC;C_rad/H2/Cs)
+! Multiplied by reaction path degeneracy 4
+hexane(2)+C6H13(11)=hexane(2)+C6H13(6)              3.680e-03 4.340     7.000    
+
+! Reaction index: Chemkin #22; RMG #192
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(11), hexane(2); S(65), S(64); 
+! Exact match found for rate rule (ROOH_sec;C_rad/H2/Cs)
+S(65)+C6H13(11)=hexane(2)+S(64)                     2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #23; RMG #364
+! Template reaction: R_Recombination
+! Flux pairs: oxygen(1), S(108); C6H13(11), S(108); 
+! Exact match found for rate rule (O2_birad;C_rad/H2/Cs)
+! Multiplied by reaction path degeneracy 2
+oxygen(1)+C6H13(11)=S(108)                          4.230e+15 -1.156    3.090    
+
+! Reaction index: Chemkin #24; RMG #370
+! Template reaction: R_Recombination
+! Flux pairs: HO2(14), S(109); C6H13(11), S(109); 
+! Estimated using template (O_rad;Cs_rad) for rate rule (O_rad/NonDe;C_rad/H2/Cs)
+C6H13(11)+HO2(14)=S(109)                            1.983e+13 0.000     0.000    
+
+! Reaction index: Chemkin #25; RMG #456
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(6), hexane(2); S(109), S(108); 
+! Exact match found for rate rule (ROOH_pri;C_rad/H/NonDeC)
+S(109)+C6H13(6)=hexane(2)+S(108)                    2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #26; RMG #457
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(10), hexane(2); S(109), S(108); 
+! Exact match found for rate rule (ROOH_pri;C_rad/H/NonDeC)
+S(109)+C6H13(10)=hexane(2)+S(108)                   2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #27; RMG #458
+! Template reaction: H_Abstraction
+! Flux pairs: C6H13(11), hexane(2); S(109), S(108); 
+! Exact match found for rate rule (ROOH_pri;C_rad/H2/Cs)
+S(109)+C6H13(11)=hexane(2)+S(108)                   2.510e-11 6.770     -8.600   
+
+! Reaction index: Chemkin #28; RMG #459
+! Template reaction: H_Abstraction
+! Flux pairs: HO2(14), oxygen(1); S(108), S(109); 
+! Estimated using template (Orad_O_H;O_rad/NonDeO) for rate rule (Orad_O_H;OOC)
+S(108)+HO2(14)=oxygen(1)+S(109)                     1.750e+10 0.000     -3.275   
+
+! Reaction index: Chemkin #29; RMG #520
+! Template reaction: H_Abstraction
+! Flux pairs: S(65), S(64); S(108), S(109); 
+! Estimated using template (O/H/NonDeO;O_rad/NonDeO) for rate rule (ROOH_sec;OOC)
+S(108)+S(65)=S(109)+S(64)                           9.200e-02 3.960     6.630    
+
+! Reaction index: Chemkin #30; RMG #527
+! Template reaction: H_Abstraction
+! Flux pairs: S(31), S(30); S(108), S(109); 
+! Estimated using template (O/H/NonDeO;O_rad/NonDeO) for rate rule (ROOH_sec;OOC)
+S(108)+S(31)=S(109)+S(30)                           9.200e-02 3.960     6.630    
+
+END
+
