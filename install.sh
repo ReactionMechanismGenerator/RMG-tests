@@ -80,4 +80,4 @@ fi
 cd $TRAVIS_BUILD_DIR
 
 # install cantera via conda:
-conda install -c bryanwweber cantera -y
+conda install -n rmg_env -c bryanwweber cantera -y
