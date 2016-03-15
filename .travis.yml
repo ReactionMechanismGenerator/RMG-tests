@@ -26,6 +26,7 @@ script:
   - make ARGS="eg5" run
   - make ARGS="eg6" run
   - make ARGS="eg7" run
+  - make ARGS="NC" run
 
 cache:
   pip: true
