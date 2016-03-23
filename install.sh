@@ -5,7 +5,8 @@ MESSAGE=$(git log --format=%B -n 1 HEAD)
 echo "Message: "$MESSAGE
 
 # version of RMG-Py/database to use when the SHA1 is of RMG-database/Py respectively:
-VERSION="1.0.2"
+RMG_VERSION="1.0.2"
+DB_VERSION="1.1.0"
 
 # split the message on the '-' delimiter
 IFS='-' read -a pieces <<< "$MESSAGE"
@@ -19,8 +20,8 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   SHA1=${pieces[1]}
   echo "SHA1: "$SHA1
   
-  # use $VERSION of RMG-Py binary:
-  conda create -c rmg --name rmg_env rmg=$VERSION -y
+  # use $RMG_VERSION of RMG-Py binary:
+  conda create -c rmg --name rmg_env rmg=$RMG_VERSION -y
   
   # clone entire RMG-database:
   git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
@@ -46,8 +47,8 @@ else
   SHA1=${pieces[0]}
   echo "SHA1: "$SHA1
 
-  # use $VERSION of RMG-database:
-  git clone -b $VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
+  # use $DB_VERSION of RMG-database:
+  git clone -b $DB_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
 
   # clone entire RMG-Py:
   git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
