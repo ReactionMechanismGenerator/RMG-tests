@@ -38,3 +38,12 @@ echo 'Memory used, Benchmark:'
 grep "Memory used:" $benchmarkmodel/RMG.log | tail -1
 echo 'Memory used, Tested:'
 grep "Memory used:" $testmodel/RMG.log | tail -1
+
+# regression testing
+regr=examples/rmg/$target/regression_input.py
+if [ -f "$regr" ];
+then
+	python $RMG/rmgpy/tools/regression.py $regr $benchmarkmodel/chemkin $testmodel/chemkin/
+else
+	echo "Regression input file not found. Not running a regression test."
+fi
