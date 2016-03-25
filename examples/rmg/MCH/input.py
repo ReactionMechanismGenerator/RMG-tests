@@ -1,7 +1,7 @@
 # Data sources
 database(
-    thermoLibraries = ['primaryThermoLibrary'],
-    reactionLibraries = [],
+    thermoLibraries = ['KlippensteinH2O2', 'primaryThermoLibrary','DFT_QCI_thermo','CBS_QB3_1dHR'],
+    reactionLibraries = [('KlippensteinH2O2', False), ('combustion_core/version5', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
@@ -34,7 +34,7 @@ species(
 
 # Reaction systems
 simpleReactor(
-    temperature=(1000,'K'),
+    temperature=(2000,'K'),
     pressure=(20.0,'bar'),
     initialMoleFractions={
         "MCH": 0.01,
@@ -56,6 +56,7 @@ model(
     toleranceKeepInEdge=0.0,
     toleranceMoveToCore=0.1,
     toleranceInterruptSimulation=0.1,
+    filterReactions=True,
     maximumEdgeSpecies=100000,
 )
 
