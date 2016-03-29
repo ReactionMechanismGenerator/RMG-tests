@@ -18,9 +18,13 @@ cd $benchmark
 
 # create benchmark versions of RMG-Py and RMG-database in the benchmark code folder
 conda create -c rmg --name rmg_env rmg=$RMG_VERSION -y
+
+# activate environment:
+source activate rmg_env
+
 # set the BENCHMARK_RMG environment variable to the path with the rmg.py binary:
 export BENCHMARK_RMG=$CONDA_ENV_PATH/bin
-echo "RMG: "$RMG
+echo "Benchmark version of RMG: "$RMG
 
 git clone -b $DB_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
 export BENCHMARK_DB=$benchmark/RMG-database
@@ -43,9 +47,6 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   # check out the SHA-ID of the RMG-database commit:
   cd RMG-database
   git checkout $SHA1
-
-  # activate environment:
-  source activate rmg_env
 
   # set the RMG environment variable to the path with the rmg.py binary:
   export RMG=$BENCHMARK_RMG
@@ -71,15 +72,9 @@ else
   cd RMG-Py
   git checkout $SHA1
 
-  # create the conda environment based on the RMG-Py environment yaml:
-  conda env create
-
-  # activate environment:
-  source activate rmg_env
-
   # set the RMG environment variable and add RMG-Py path to $PYTHONPATH:
   export RMG=`pwd`
-  echo "RMG: "$RMG
+  echo "test version of RMG: "$RMG
   
   export PYTHONPATH=$RMG:$PYTHONPATH
 
