@@ -28,11 +28,12 @@ script:
   - make ARGS="eg7" run
   - make ARGS="NC" run
   - make ARGS="MCH" run
+  - make ARGS="solvent_hexane" run
 
 after_script:
   - chmod +x after_install.sh
   - . ./after_install.sh
-
+  
 cache:
   pip: true
   apt: true
