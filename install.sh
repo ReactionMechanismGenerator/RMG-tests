@@ -1,12 +1,29 @@
 #!/bin/bash
 
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
-MESSAGE=$(git log --format=%B -n 1 HEAD)
+# MESSAGE=$(git log --format=%B -n 1 HEAD)
+MESSAGE=master
 echo "Message: "$MESSAGE
 
 # version of RMG-Py/database to use when the SHA1 is of RMG-database/Py respectively:
 RMG_VERSION="1.0.2"
 DB_VERSION="1.1.0"
+
+# create a folder with benchmark version of RMG-Py and RMG-database:
+# go to parent-folder of the RMG-tests repo:
+cd ..
+benchmark=$PWD/code/benchmark
+mkdir -p $benchmark
+cd $benchmark
+
+# create benchmark versions of RMG-Py and RMG-database in the benchmark code folder
+conda create -c rmg --name rmg_env rmg=$RMG_VERSION -y
+# set the BENCHMARK_RMG environment variable to the path with the rmg.py binary:
+export BENCHMARK_RMG=$CONDA_ENV_PATH/bin
+echo "RMG: "$RMG
+
+git clone -b $DB_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
+export BENCHMARK_DB=$benchmark/RMG-database
 
 # split the message on the '-' delimiter
 IFS='-' read -a pieces <<< "$MESSAGE"
@@ -20,9 +37,6 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   SHA1=${pieces[1]}
   echo "SHA1: "$SHA1
   
-  # use $RMG_VERSION of RMG-Py binary:
-  conda create -c rmg --name rmg_env rmg=$RMG_VERSION -y
-  
   # clone entire RMG-database:
   git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 
@@ -34,7 +48,7 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   source activate rmg_env
 
   # set the RMG environment variable to the path with the rmg.py binary:
-  export RMG=$CONDA_ENV_PATH/bin
+  export RMG=$BENCHMARK_RMG
   echo "RMG: "$RMG
 
   # return to parent directory:
