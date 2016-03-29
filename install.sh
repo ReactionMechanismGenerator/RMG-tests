@@ -6,7 +6,7 @@ MESSAGE=master
 echo "Message: "$MESSAGE
 
 # version of RMG-Py/database to use when the SHA1 is of RMG-database/Py respectively:
-RMG_VERSION="1.0.2"
+RMG_VERSION="1.0.4"
 DB_VERSION="1.1.0"
 
 # create a folder with benchmark version of RMG-Py and RMG-database:
