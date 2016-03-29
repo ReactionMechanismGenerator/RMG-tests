@@ -29,6 +29,7 @@ script:
   - make ARGS="NC" run
   - make ARGS="MCH" run
   - make ARGS="solvent_hexane" run
+  - make ARGS="methane" run
 
 after_script:
   - chmod +x after_install.sh
