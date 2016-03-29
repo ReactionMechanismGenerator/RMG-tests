@@ -1,0 +1,4923 @@
+Global RMG Settings:
+   database.directory   = /home/zhangp/RMG_v102/RMG-database/input (Default, relative to RMG-Py source code)
+RMG execution initiated at Fri Mar 25 15:07:42 2016
+
+#########################################################
+# RMG-Py - Reaction Mechanism Generator in Python       #
+# Version: 1.0.3                                        #
+# Authors: RMG Developers (rmg_dev@mit.edu)             #
+# P.I.s:   William H. Green (whgreen@mit.edu)           #
+#          Richard H. West (r.west@neu.edu)             #
+# Website: http://reactionmechanismgenerator.github.io/ #
+#########################################################
+
+Reading input file "/home/zhangp/learn/MCH_oxida/MCH_testing/input.py"...
+# Data sources
+database(
+    thermoLibraries = ['KlippensteinH2O2', 'primaryThermoLibrary','DFT_QCI_thermo','CBS_QB3_1dHR'],
+    reactionLibraries = [('KlippensteinH2O2', False), ('combustion_core/version5', False)],
+    seedMechanisms = [],
+    kineticsDepositories = ['training'],
+    kineticsFamilies = 'default',
+    kineticsEstimator = 'rate rules',
+)
+
+# List of species
+species(
+    label='MCH',
+    reactive=True,
+    structure=SMILES("CC1CCCCC1"),
+)
+
+species(
+    label='O2',
+    reactive=True,
+    structure=adjacencyList(
+        """
+        multiplicity 3
+        1 O u1 p2 c0 {2,S}
+        2 O u1 p2 c0 {1,S}
+        """),
+)
+
+species(
+    label='N2',
+    reactive=False,
+    structure=InChI("InChI=1/N2/c1-2"),
+)
+
+# Reaction systems
+simpleReactor(
+    temperature=(2000,'K'),
+    pressure=(20.0,'bar'),
+    initialMoleFractions={
+        "MCH": 0.01,
+        "O2": 0.105,
+        "N2": 0.885,
+    },
+    terminationConversion={
+        'MCH': 0.95,
+    },
+    terminationTime=(100,'s'),
+)
+
+simulator(
+    atol=1e-16,
+    rtol=1e-8,
+)
+
+model(
+    toleranceKeepInEdge=0.0,
+    toleranceMoveToCore=0.1,
+    toleranceInterruptSimulation=0.1,
+    filterReactions=True,
+    maximumEdgeSpecies=100000,
+)
+
+options(
+    units='si',
+    saveRestartPeriod=None,
+    generateOutputHTML=False,
+    generatePlots=False,
+    saveEdgeSpecies=True,
+    saveSimulationProfiles=True,
+)
+
+generatedSpeciesConstraints(
+    allowed=['input species', 'seed mechanisms', 'reaction libraries'],
+    maximumCarbonAtoms=7,
+)
+
+
+Loading thermodynamics library from CBS_QB3_1dHR.py in /home/zhangp/RMG_v102/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from KlippensteinH2O2.py in /home/zhangp/RMG_v102/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from DFT_QCI_thermo.py in /home/zhangp/RMG_v102/RMG-database/input/thermo/libraries...
+Loading thermodynamics library from primaryThermoLibrary.py in /home/zhangp/RMG_v102/RMG-database/input/thermo/libraries...
+Loading thermodynamics group database from /home/zhangp/RMG_v102/RMG-database/input/thermo/groups...
+Loading transport library from PrimaryTransportLibrary.py in /home/zhangp/RMG_v102/RMG-database/input/transport/libraries...
+Loading transport library from GRI-Mech.py in /home/zhangp/RMG_v102/RMG-database/input/transport/libraries...
+Loading transport group database from /home/zhangp/RMG_v102/RMG-database/input/transport/groups...
+Loading default kinetics families from /home/zhangp/RMG_v102/RMG-database/input/kinetics/families
+Loading kinetics library KlippensteinH2O2 from /home/zhangp/RMG_v102/RMG-database/input/kinetics/libraries/KlippensteinH2O2/reactions.py...
+Loading kinetics library combustion_core/version5 from /home/zhangp/RMG_v102/RMG-database/input/kinetics/libraries/combustion_core/version5/reactions.py...
+Loading frequencies group database from /home/zhangp/RMG_v102/RMG-database/input/statmech/groups...
+Loading Platts additivity group database from /home/zhangp/RMG_v102/RMG-database/input/solvation/groups...
+Adding rate rules from training set in kinetics families...
+Found thermo for C2H3O3 in thermo library: dft_qci_thermo
+Found thermo for C2H2O in thermo library: dft_qci_thermo
+Found thermo for HO2 in thermo library: klippensteinh2o2
+Found thermo for CH3O2 in thermo library: dft_qci_thermo
+Found thermo for O2 in thermo library: klippensteinh2o2
+Found thermo for CH3 in thermo library: dft_qci_thermo
+Found thermo for C2H5O2 in thermo library: dft_qci_thermo
+Found thermo for O2 in thermo library: klippensteinh2o2
+Found thermo for C2H5 in thermo library: dft_qci_thermo
+Found thermo for C3H7O2 in thermo library: dft_qci_thermo
+Found thermo for O2 in thermo library: klippensteinh2o2
+Found thermo for C3H7 in thermo library: dft_qci_thermo
+Filling in rate rules in kinetics families by averaging...
+Adding reaction library KlippensteinH2O2 to model edge...
+Found thermo for H in thermo library: klippensteinh2o2
+Found thermo for O in thermo library: klippensteinh2o2
+Found thermo for OH in thermo library: klippensteinh2o2
+Found thermo for H2 in thermo library: klippensteinh2o2
+Found thermo for H2O in thermo library: klippensteinh2o2
+Found thermo for HO2 in thermo library: klippensteinh2o2
+Found thermo for H2O2 in thermo library: klippensteinh2o2
+
+Summary of Model Enlargement
+---------------------------------
+Added 0 new core species
+Created 7 new edge species
+    H(3)
+    O(4)
+    OH(5)
+    H2(6)
+    H2O(7)
+    HO2(8)
+    H2O2(9)
+Added 0 new core reactions
+Created 20 new edge reactions
+    O2(2) + H(3) <=> O(4) + OH(5)
+    O(4) + H2(6) <=> H(3) + OH(5)
+    OH(5) + H2(6) <=> H(3) + H2O(7)
+    OH(5) + OH(5) <=> O(4) + H2O(7)
+    H2O(7) + H2O(7) <=> H(3) + OH(5) + H2O(7)
+    H(3) + HO2(8) <=> O2(2) + H2(6)
+    H(3) + HO2(8) <=> OH(5) + OH(5)
+    O(4) + HO2(8) <=> O2(2) + OH(5)
+    OH(5) + HO2(8) <=> O2(2) + H2O(7)
+    HO2(8) + HO2(8) <=> O2(2) + H2O2(9)
+    H(3) + H2O2(9) <=> OH(5) + H2O(7)
+    H(3) + H2O2(9) <=> H2(6) + HO2(8)
+    O(4) + H2O2(9) <=> OH(5) + HO2(8)
+    OH(5) + H2O2(9) <=> H2O(7) + HO2(8)
+    H2(6) <=> H(3) + H(3)
+    O(4) + O(4) <=> O2(2)
+    H(3) + O(4) <=> OH(5)
+    H2O(7) <=> H(3) + OH(5)
+    O2(2) + H(3) <=> HO2(8)
+    H2O2(9) <=> OH(5) + OH(5)
+
+After model enlargement:
+    The model core has 0 species and 0 reactions
+    The model edge has 10 species and 20 reactions
+
+Adding reaction library combustion_core/version5 to model edge...
+This library reaction was not new: H(3) + H2O2(9) <=> OH(5) + H2O(7)
+This library reaction was not new: H(3) + HO2(8) <=> OH(5) + OH(5)
+This library reaction was not new: OH(5) + OH(5) <=> O(4) + H2O(7)
+This library reaction was not new: O(4) + H2(6) <=> H(3) + OH(5)
+This library reaction was not new: H(3) + H2O(7) <=> OH(5) + H2(6)
+This library reaction was not new: H(3) + H2O2(9) <=> H2(6) + HO2(8)
+This library reaction was not new: O(4) + H2O2(9) <=> OH(5) + HO2(8)
+This library reaction was not new: OH(5) + H2O2(9) <=> H2O(7) + HO2(8)
+This library reaction was not new: H(3) + HO2(8) <=> O2(2) + H2(6)
+This library reaction was not new: O(4) + HO2(8) <=> O2(2) + OH(5)
+This library reaction was not new: OH(5) + HO2(8) <=> O2(2) + H2O(7)
+This library reaction was not new: HO2(8) + HO2(8) <=> O2(2) + H2O2(9)
+This library reaction was not new: O2(2) + H(3) <=> O(4) + OH(5)
+This library reaction was not new: O(4) + O(4) <=> O2(2)
+This library reaction was not new: O2(2) + H(3) <=> HO2(8)
+This library reaction was not new: H(3) + H(3) <=> H2(6)
+This library reaction was not new: H(3) + O(4) <=> OH(5)
+This library reaction was not new: H(3) + OH(5) <=> H2O(7)
+This library reaction was not new: OH(5) + OH(5) <=> H2O2(9)
+Warning: Species C3H2 from reaction library combustion_core/version5 is globally forbidden.  It will behave as an inert unless found in a seed mechanism or reaction library.
+Found thermo for C2H2 in thermo library: dft_qci_thermo
+Found thermo for CH2 in thermo library: primarythermolibrary
+Found thermo for CO in thermo library: klippensteinh2o2
+Found thermo for HCCO in thermo library: dft_qci_thermo
+Found thermo for CO2 in thermo library: klippensteinh2o2
+Found thermo for CH2O in thermo library: dft_qci_thermo
+Found thermo for CH2(S) in thermo library: primarythermolibrary
+Found thermo for HCO in thermo library: dft_qci_thermo
+Found thermo for CH2CO in thermo library: dft_qci_thermo
+Found thermo for CH3 in thermo library: dft_qci_thermo
+Found thermo for CH2OH in thermo library: dft_qci_thermo
+Found thermo for CH4 in thermo library: primarythermolibrary
+Found thermo for C2H in thermo library: dft_qci_thermo
+Found thermo for C2H3 in thermo library: dft_qci_thermo
+Found thermo for H2CCCH in thermo library: dft_qci_thermo
+Found thermo for C2H4 in thermo library: dft_qci_thermo
+Found thermo for C3H4 in thermo library: dft_qci_thermo
+Found thermo for C3H6 in thermo library: dft_qci_thermo
+Found thermo for C2H6 in thermo library: dft_qci_thermo
+Found thermo for C2H5 in thermo library: dft_qci_thermo
+Found thermo for H2CCCCH in thermo library: dft_qci_thermo
+Found thermo for CH2HCO in thermo library: dft_qci_thermo
+Found thermo for C4H2 in thermo library: dft_qci_thermo
+Found thermo for C3H2 in thermo library: primarythermolibrary
+Found thermo for CH3O in thermo library: dft_qci_thermo
+Found thermo for C4H10 in thermo library: dft_qci_thermo
+Found thermo for C4H9_1 in thermo library: dft_qci_thermo
+Found thermo for C4H9_2 in thermo library: dft_qci_thermo
+
+Summary of Model Enlargement
+---------------------------------
+Added 0 new core species
+Created 28 new edge species
+    C2H2(10)
+    CH2(11)
+    CO(12)
+    HCCO(13)
+    CO2(14)
+    CH2O(15)
+    CH2(S)(16)
+    HCO(17)
+    CH2CO(18)
+    CH3(19)
+    CH2OH(20)
+    CH4(21)
+    C2H(22)
+    C2H3(23)
+    H2CCCH(24)
+    C2H4(25)
+    C3H4(26)
+    C3H6(27)
+    C2H6(28)
+    C2H5(29)
+    H2CCCCH(30)
+    CH2HCO(31)
+    C4H2(32)
+    C3H2(33)
+    CH3O(34)
+    C4H10(35)
+    C4H9_1(36)
+    C4H9_2(37)
+Added 0 new core reactions
+Created 110 new edge reactions
+    O(4) + C2H2(10) <=> CH2(11) + CO(12)
+    O(4) + C2H2(10) <=> H(3) + HCCO(13)
+    O2(2) + CO(12) <=> O(4) + CO2(14)
+    O2(2) + CH2(11) <=> H2(6) + CO2(14)
+    O2(2) + CH2(11) <=> H(3) + H(3) + CO2(14)
+    O2(2) + CH2(11) <=> H(3) + OH(5) + CO(12)
+    O2(2) + CH2(11) <=> H2O(7) + CO(12)
+    O2(2) + CH2(11) <=> O(4) + CH2O(15)
+    O2(2) + CH2(S)(16) <=> H(3) + OH(5) + CO(12)
+    O2(2) + HCO(17) <=> HO2(8) + CO(12)
+    O2(2) + HCCO(13) <=> OH(5) + CO(12) + CO(12)
+    OH(5) + CO(12) <=> H(3) + CO2(14)
+    HO2(8) + CO(12) <=> OH(5) + CO2(14)
+    CH2(11) + CO2(14) <=> CO(12) + CH2O(15)
+    H(3) + CH2CO(18) <=> CO(12) + CH3(19)
+    O(4) + CH2CO(18) <=> CH2(11) + CO2(14)
+    O(4) + CH2CO(18) <=> CO(12) + CH2O(15)
+    O(4) + CH2CO(18) <=> H(3) + CO(12) + HCO(17)
+    O(4) + CH2CO(18) <=> HCO(17) + HCO(17)
+    OH(5) + CH2CO(18) <=> CO2(14) + CH3(19)
+    OH(5) + CH2CO(18) <=> CH2OH(20) + CO(12)
+    H(3) + HCO(17) <=> H2(6) + CO(12)
+    HCO(17) + CH3(19) <=> CH4(21) + CO(12)
+    C2H(22) + OH(5) <=> CH2(11) + CO(12)
+    C2H3(23) + O(4) <=> CO(12) + CH3(19)
+    H2CCCH(24) + O(4) <=> H(3) + C2H2(10) + CO(12)
+    O(4) + HCO(17) <=> OH(5) + CO(12)
+    O(4) + HCCO(13) <=> H(3) + CO(12) + CO(12)
+    OH(5) + HCO(17) <=> H2O(7) + CO(12)
+    OH(5) + HCCO(13) <=> HCO(17) + HCO(17)
+    OH(5) + HCCO(13) <=> CO(12) + CH2O(15)
+    HCO(17) + HCO(17) <=> CO(12) + CH2O(15)
+    HCCO(13) + HCCO(13) <=> C2H2(10) + CO(12) + CO(12)
+    O(4) + CH2(11) <=> H(3) + H(3) + CO(12)
+    O(4) + CH2(11) <=> H2(6) + CO(12)
+    CH2(11) + HCO(17) <=> CO(12) + CH3(19)
+    CH2(11) + HCCO(13) <=> C2H3(23) + CO(12)
+    O(4) + HCO(17) <=> H(3) + CO2(14)
+    CH2(11) + CH2(11) <=> H2(6) + C2H2(10)
+    CH2(11) + CH2(11) <=> H(3) + H(3) + C2H2(10)
+    CH2(11) + CH3(19) <=> C2H4(25) + H(3)
+    C2H3(23) + CH2(11) <=> C2H2(10) + CH3(19)
+    OH(5) + CH2(11) <=> H(3) + CH2O(15)
+    CH2(11) + HCCO(13) <=> C2H(22) + CH2O(15)
+    CH4(21) + CH2(11) <=> CH3(19) + CH3(19)
+    CH4(21) + CH2(S)(16) <=> CH3(19) + CH3(19)
+    C2H2(10) + CH2(11) <=> C3H4(26)
+    C2H2(10) + CH2(S)(16) <=> H2CCCH(24) + H(3)
+    H(3) + CH2(S)(16) <=> H(3) + CH2(11)
+    H2(6) + CH2(S)(16) <=> H(3) + CH3(19)
+    C2H4(25) + CH2(S)(16) <=> C3H6(27)
+    C2H6(28) + CH2(S)(16) <=> C2H5(29) + CH3(19)
+    C2H2(10) + C2H2(10) <=> H2CCCCH(30) + H(3)
+    C2H4(25) + O(4) <=> CH2HCO(31) + H(3)
+    C2H4(25) + O(4) <=> HCO(17) + CH3(19)
+    C2H4(25) + O(4) <=> H2(6) + CH2CO(18)
+    C4H2(32) + OH(5) <=> C3H2(33) + HCO(17)
+    O2(2) + H(3) + H2O(7) <=> H2O(7) + HO2(8)
+    O2(2) + CH3(19) <=> OH(5) + CH2O(15)
+    O2(2) + C2H(22) <=> O(4) + HCCO(13)
+    O2(2) + C3H2(33) <=> HCCO(13) + HCO(17)
+    O2(2) + H2CCCH(24) <=> HCO(17) + CH2CO(18)
+    CH3(19) + CH3(19) <=> C2H5(29) + H(3)
+    H(3) + HO2(8) <=> O(4) + H2O(7)
+    CH2OH(20) + H(3) <=> OH(5) + CH3(19)
+    O(4) + CH3(19) <=> H(3) + CH2O(15)
+    HO2(8) + CH3(19) <=> CH3O(34) + OH(5)
+    C2H(22) + OH(5) <=> H(3) + HCCO(13)
+    C2H5(29) + O(4) <=> CH2O(15) + CH3(19)
+    O2(2) + CH3(19) <=> CH3O(34) + O(4)
+    CH4(21) + O(4) <=> OH(5) + CH3(19)
+    CH4(21) + OH(5) <=> H2O(7) + CH3(19)
+    OH(5) + C2H2(10) <=> C2H(22) + H2O(7)
+    C2H4(25) + H(3) <=> C2H3(23) + H2(6)
+    C2H4(25) + OH(5) <=> C2H3(23) + H2O(7)
+    C2H6(28) + H(3) <=> C2H5(29) + H2(6)
+    C2H6(28) + CH3(19) <=> CH4(21) + C2H5(29)
+    C2H6(28) + O(4) <=> C2H5(29) + OH(5)
+    C2H6(28) + OH(5) <=> C2H5(29) + H2O(7)
+    C2H6(28) + HO2(8) <=> C2H5(29) + H2O2(9)
+    O2(2) + CH2O(15) <=> HO2(8) + HCO(17)
+    O2(2) + CH3O(34) <=> HO2(8) + CH2O(15)
+    H(3) + CH2O(15) <=> H2(6) + HCO(17)
+    CH2O(15) + CH3(19) <=> CH4(21) + HCO(17)
+    O(4) + CH2O(15) <=> OH(5) + HCO(17)
+    OH(5) + CH2O(15) <=> H2O(7) + HCO(17)
+    CH3O(34) + H(3) <=> H2(6) + CH2O(15)
+    C4H10(35) + HO2(8) <=> C4H9_1(36) + H2O2(9)
+    C4H10(35) + HO2(8) <=> C4H9_2(37) + H2O2(9)
+    C4H10(35) + OH(5) <=> C4H9_1(36) + H2O(7)
+    C4H10(35) + OH(5) <=> C4H9_2(37) + H2O(7)
+    O2(2) + C2H3(23) <=> CH2O(15) + HCO(17)
+    C4H2(32) + O(4) <=> C3H2(33) + CO(12)
+    C2H(22) + C2H2(10) <=> C4H2(32) + H(3)
+    O(4) + CO(12) <=> CO2(14)
+    CH2O(15) <=> H(3) + HCO(17)
+    CH2O(15) <=> H2(6) + CO(12)
+    CH2CO(18) <=> CH2(11) + CO(12)
+    CH2(S)(16) <=> CH2(11)
+    CH3(19) <=> H(3) + CH2(11)
+    C2H4(25) <=> H2(6) + C2H2(10)
+    C2H4(25) <=> C2H3(23) + H(3)
+    CH3O(34) <=> H(3) + CH2O(15)
+    CH2OH(20) <=> H(3) + CH2O(15)
+    H(3) + C2H2(10) <=> C2H3(23)
+    C2H4(25) + H(3) <=> C2H5(29)
+    H(3) + CH3(19) <=> CH4(21)
+    CH3(19) + CH3(19) <=> C2H6(28)
+    HCO(17) <=> H(3) + CO(12)
+    OH(5) + CH3(19) <=> H2O(7) + CH2(S)(16)
+
+After model enlargement:
+    The model core has 0 species and 0 reactions
+    The model edge has 38 species and 130 reactions
+
+Found thermo for O2 in thermo library: klippensteinh2o2
+Found thermo for N2 in thermo library: primarythermolibrary
+Found thermo for Ar in thermo library: primarythermolibrary
+Found thermo for He in thermo library: primarythermolibrary
+Found thermo for Ne in thermo library: primarythermolibrary
+NOT generating reactions for unreactive species N2
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    N2
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 1 species and 0 reactions
+    The model edge has 37 species and 130 reactions
+
+
+NOT generating reactions for unreactive species Ar
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ar
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 2 species and 0 reactions
+    The model edge has 37 species and 130 reactions
+
+
+NOT generating reactions for unreactive species He
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    He
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 3 species and 0 reactions
+    The model edge has 37 species and 130 reactions
+
+
+NOT generating reactions for unreactive species Ne
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    Ne
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 4 species and 0 reactions
+    The model edge has 37 species and 130 reactions
+
+
+Adding species MCH(1) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    MCH(1)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 5 species and 0 reactions
+    The model edge has 36 species and 130 reactions
+
+
+Adding species O2(2) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    O2(2)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 35 species and 130 reactions
+
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 10 new edge species
+    C1CCCCC1(38)
+    [CH2]CCCC[CH]C(39)
+    [CH2]CCC(C)C[CH2](40)
+    [CH2]CCCC([CH2])C(41)
+    [CH]1CCCCC1(42)
+    C[C]1CCCCC1(43)
+    CC1C[CH]CCC1(44)
+    CC1[CH]CCCC1(45)
+    CC1CC[CH]CC1(46)
+    [CH2]C1CCCCC1(47)
+Added 0 new core reactions
+Created 15 new edge reactions
+    C1CCCCC1(38) + CH2(S)(16) <=> MCH(1)
+    [CH2]CCCC[CH]C(39) <=> MCH(1)
+    [CH2]CCC(C)C[CH2](40) <=> MCH(1)
+    [CH2]CCCC([CH2])C(41) <=> MCH(1)
+    CH3(19) + [CH]1CCCCC1(42) <=> MCH(1)
+    H(3) + C[C]1CCCCC1(43) <=> MCH(1)
+    H(3) + CC1C[CH]CCC1(44) <=> MCH(1)
+    H(3) + CC1[CH]CCCC1(45) <=> MCH(1)
+    H(3) + CC1CC[CH]CC1(46) <=> MCH(1)
+    H(3) + [CH2]C1CCCCC1(47) <=> MCH(1)
+    MCH(1) + O2(2) <=> HO2(8) + C[C]1CCCCC1(43)
+    MCH(1) + O2(2) <=> HO2(8) + CC1C[CH]CCC1(44)
+    MCH(1) + O2(2) <=> HO2(8) + CC1[CH]CCCC1(45)
+    MCH(1) + O2(2) <=> HO2(8) + CC1CC[CH]CC1(46)
+    HO2(8) + [CH2]C1CCCCC1(47) <=> MCH(1) + O2(2)
+
+After model enlargement:
+    The model core has 6 species and 0 reactions
+    The model edge has 45 species and 145 reactions
+
+
+Completed initial enlarge edge step...
+Saving current model core to Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 0 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 148 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 148 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:12
+    Memory used: 203.74 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0000e-15 s, species [CH2]CCCC[CH]C(39) exceeded the minimum rate for moving to model core
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [CH2]CCCC[CH]C(39) rate: 4.6696e+08 mol/m^3*s
+    MCH(1) conversion: 0         
+At time 1.0000e-15 s, species [CH2]CCCC[CH]C(39) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 0.0000e+00 mol/m^3*s
+    [CH2]CCCC[CH]C(39) rate: 4.6696e+08 mol/m^3*s
+    MCH(1) conversion: 0         
+
+
+Adding species [CH2]CCCC[CH]C(39) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CCCC[CH]C(39)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    [CH2]CCCC[CH]C(39) <=> MCH(1)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 7 species and 1 reactions
+    The model edge has 44 species and 144 reactions
+
+
+At time 1.0000e+02 s, reached target termination time.
+    MCH(1) conversion: 0.0007448 
+
+Generating thermodynamics for new species...
+Found thermo for [CH2][CH]C in thermo library: dft_qci_thermo
+Found thermo for [CH2][CH2] in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 29 new edge species
+    [CH2]CCCC=CC(48)
+    C=CCCC[CH]C(49)
+    [CH2]CCCCC=C(50)
+    [CH2]CC[CH2](51)
+    [CH2]CC[CH]C(52)
+    CC=CCCCC(53)
+    C=CCCCCC(54)
+    [CH2]CCC[CH]CC(55)
+    C[CH]CCC[CH]C(56)
+    [CH2]CCCCC[CH2](57)
+    [CH2]CC[CH]CCC(58)
+    C[CH]CC[CH]CC(59)
+    [CH2]C[CH]CCCC(60)
+    C[CH]C[CH]CCC(61)
+    [CH2][CH]CCCCC(62)
+    C[CH][CH]CCCC(63)
+    [CH2]C[CH2](64)
+    [CH2]C[CH]C(65)
+    [CH2][CH]C(66)
+    [CH2]CC[CH]C[CH]C(67)
+    [CH2][CH2](68)
+    [CH2]C[CH]CC[CH]C(69)
+    [CH2]CCC[CH][CH]C(70)
+    [CH2][CH]CCC[CH]C(71)
+    [CH2][CH]CCCC[CH2](72)
+    [CH2]CCCCCC(73)
+    C[CH]CCCCC(74)
+    [CH2]CCCCC(C)O[O](75)
+    C[CH]CCCCCO[O](76)
+Added 0 new core reactions
+Created 51 new edge reactions
+    H(3) + [CH2]CCCC=CC(48) <=> [CH2]CCCC[CH]C(39)
+    H(3) + C=CCCC[CH]C(49) <=> [CH2]CCCC[CH]C(39)
+    H(3) + [CH2]CCCCC=C(50) <=> [CH2]CCCC[CH]C(39)
+    C3H6(27) + [CH2]CC[CH2](51) <=> [CH2]CCCC[CH]C(39)
+    C2H4(25) + [CH2]CC[CH]C(52) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) <=> CC=CCCCC(53)
+    [CH2]CCCC[CH]C(39) <=> C=CCCCCC(54)
+    [CH2]CCC[CH]CC(55) <=> [CH2]CCCC[CH]C(39)
+    C[CH]CCC[CH]C(56) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) <=> [CH2]CCCCC[CH2](57)
+    [CH2]CC[CH]CCC(58) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) <=> C[CH]CC[CH]CC(59)
+    [CH2]C[CH]CCCC(60) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) <=> C[CH]C[CH]CCC(61)
+    [CH2][CH]CCCCC(62) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) <=> C[CH][CH]CCCC(63)
+    [CH2]C[CH2](64) + [CH2]C[CH]C(65) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CC[CH2](51) + [CH2][CH]C(66) <=> [CH2]CCCC[CH]C(39)
+    H(3) + [CH2]CC[CH]C[CH]C(67) <=> [CH2]CCCC[CH]C(39)
+    [CH2]CC[CH]C(52) + [CH2][CH2](68) <=> [CH2]CCCC[CH]C(39)
+    H(3) + [CH2]C[CH]CC[CH]C(69) <=> [CH2]CCCC[CH]C(39)
+    H(3) + [CH2]CCC[CH][CH]C(70) <=> [CH2]CCCC[CH]C(39)
+    H(3) + [CH2][CH]CCC[CH]C(71) <=> [CH2]CCCC[CH]C(39)
+    H(3) + [CH2][CH]CCCC[CH2](72) <=> [CH2]CCCC[CH]C(39)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> C[C]1CCCCC1(43) + [CH2]CCCCCC(73)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> C[C]1CCCCC1(43) + C[CH]CCCCC(74)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> CC1C[CH]CCC1(44) + [CH2]CCCCCC(73)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> CC1C[CH]CCC1(44) + C[CH]CCCCC(74)
+    CC1[CH]CCCC1(45) + [CH2]CCCCCC(73) <=> MCH(1) + [CH2]CCCC[CH]C(39)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> CC1[CH]CCCC1(45) + C[CH]CCCCC(74)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> CC1CC[CH]CC1(46) + [CH2]CCCCCC(73)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> CC1CC[CH]CC1(46) + C[CH]CCCCC(74)
+    [CH2]C1CCCCC1(47) + [CH2]CCCCCC(73) <=> MCH(1) + [CH2]CCCC[CH]C(39)
+    MCH(1) + [CH2]CCCC[CH]C(39) <=> [CH2]C1CCCCC1(47) + C[CH]CCCCC(74)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> HO2(8) + [CH2]CCCC=CC(48)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> HO2(8) + C=CCCC[CH]C(49)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> HO2(8) + [CH2]CCCCC=C(50)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> HO2(8) + [CH2]CC[CH]C[CH]C(67)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> HO2(8) + [CH2]C[CH]CC[CH]C(69)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> [CH2]CCCCC(C)O[O](75)
+    O2(2) + [CH2]CCCC[CH]C(39) <=> C[CH]CCCCCO[O](76)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> [CH2]CCCC=CC(48) + [CH2]CCCCCC(73)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> C=CCCC[CH]C(49) + [CH2]CCCCCC(73)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> [CH2]CCCCC=C(50) + [CH2]CCCCCC(73)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> [CH2]CCCC=CC(48) + C[CH]CCCCC(74)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> C=CCCC[CH]C(49) + C[CH]CCCCC(74)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> [CH2]CCCCC=C(50) + C[CH]CCCCC(74)
+    [CH2]CC[CH]C[CH]C(67) + [CH2]CCCCCC(73) <=> [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> [CH2]CC[CH]C[CH]C(67) + C[CH]CCCCC(74)
+    [CH2]C[CH]CC[CH]C(69) + [CH2]CCCCCC(73) <=> [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC[CH]C(39) <=> [CH2]C[CH]CC[CH]C(69) + C[CH]CCCCC(74)
+
+After model enlargement:
+    The model core has 7 species and 1 reactions
+    The model edge has 73 species and 195 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 199 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 199 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:16
+    Memory used: 204.17 MB
+
+Conducting simulation of reaction system 1...
+At time 3.4073e-23 s, species CH3(19) exceeded the minimum rate for moving to model core
+    Characteristic rate: 6.6038e+08 mol/m^3*s
+    CH3(19) rate: 6.8610e+07 mol/m^3*s (0.1039)
+    MCH(1) conversion: 1.332e-14 
+At time 3.4073e-23 s, species CH3(19) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 6.6038e+08 mol/m^3*s
+    CH3(19) rate: 6.8610e+07 mol/m^3*s (0.1039)
+    MCH(1) conversion: 1.332e-14 
+
+
+Adding species CH3(19) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CH3(19)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 8 species and 1 reactions
+    The model edge has 72 species and 195 reactions
+
+
+At time 1.0000e+02 s, reached target termination time.
+    MCH(1) conversion: 0.0007448 
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 8 species and 1 reactions
+    The model edge has 72 species and 195 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 1 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 199 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 199 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:17
+    Memory used: 204.17 MB
+
+Conducting simulation of reaction system 1...
+At time 3.6425e-23 s, species [CH]1CCCCC1(42) exceeded the minimum rate for moving to model core
+    Characteristic rate: 6.6038e+08 mol/m^3*s
+    [CH]1CCCCC1(42) rate: 6.8610e+07 mol/m^3*s (0.1039)
+    MCH(1) conversion: 1.41e-14  
+At time 3.6425e-23 s, species [CH]1CCCCC1(42) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 6.6038e+08 mol/m^3*s
+    [CH]1CCCCC1(42) rate: 6.8610e+07 mol/m^3*s (0.1039)
+    MCH(1) conversion: 1.41e-14  
+
+
+Adding species [CH]1CCCCC1(42) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH]1CCCCC1(42)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    CH3(19) + [CH]1CCCCC1(42) <=> MCH(1)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 9 species and 2 reactions
+    The model edge has 71 species and 194 reactions
+
+
+At time 1.0000e+02 s, reached target termination time.
+    MCH(1) conversion: 0.864     
+
+Generating thermodynamics for new species...
+Found thermo for CO[O] in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 7 new edge species
+    C1=CCCCC1(77)
+    [CH2]CCCC=C(78)
+    [CH]1C[CH]CCC1(79)
+    [CH]1CC[CH]CC1(80)
+    [CH]1[CH]CCCC1(81)
+    CO[O](82)
+    [O]OC1CCCCC1(83)
+Added 0 new core reactions
+Created 46 new edge reactions
+    H(3) + C1=CCCCC1(77) <=> [CH]1CCCCC1(42)
+    [CH2]CCCC=C(78) <=> [CH]1CCCCC1(42)
+    H(3) + [CH]1C[CH]CCC1(79) <=> [CH]1CCCCC1(42)
+    H(3) + [CH]1CC[CH]CC1(80) <=> [CH]1CCCCC1(42)
+    [CH]1[CH]CCCC1(81) + H(3) <=> [CH]1CCCCC1(42)
+    MCH(1) + CH3(19) <=> CH4(21) + C[C]1CCCCC1(43)
+    MCH(1) + CH3(19) <=> CH4(21) + CC1C[CH]CCC1(44)
+    MCH(1) + CH3(19) <=> CH4(21) + CC1[CH]CCCC1(45)
+    MCH(1) + CH3(19) <=> CH4(21) + CC1CC[CH]CC1(46)
+    CH4(21) + [CH2]C1CCCCC1(47) <=> MCH(1) + CH3(19)
+    C1CCCCC1(38) + C[C]1CCCCC1(43) <=> MCH(1) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + CC1C[CH]CCC1(44) <=> MCH(1) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + CC1[CH]CCCC1(45) <=> MCH(1) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + CC1CC[CH]CC1(46) <=> MCH(1) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + [CH2]C1CCCCC1(47) <=> MCH(1) + [CH]1CCCCC1(42)
+    HO2(8) + CH2(11) <=> O2(2) + CH3(19)
+    CO[O](82) <=> O2(2) + CH3(19)
+    O2(2) + [CH]1CCCCC1(42) <=> HO2(8) + C1=CCCCC1(77)
+    O2(2) + [CH]1CCCCC1(42) <=> HO2(8) + [CH]1C[CH]CCC1(79)
+    O2(2) + [CH]1CCCCC1(42) <=> HO2(8) + [CH]1CC[CH]CC1(80)
+    O2(2) + [CH]1CCCCC1(42) <=> [O]OC1CCCCC1(83)
+    CH3(19) + [CH2]CCCC[CH]C(39) <=> CH4(21) + [CH2]CCCC=CC(48)
+    CH3(19) + [CH2]CCCC[CH]C(39) <=> CH4(21) + C=CCCC[CH]C(49)
+    CH3(19) + [CH2]CCCC[CH]C(39) <=> CH4(21) + [CH2]CCCCC=C(50)
+    CH3(19) + [CH2]CCCC[CH]C(39) <=> CH4(21) + [CH2]CC[CH]C[CH]C(67)
+    CH3(19) + [CH2]CCCC[CH]C(39) <=> CH4(21) + [CH2]C[CH]CC[CH]C(69)
+    CH2(11) + [CH2]CCCCCC(73) <=> CH3(19) + [CH2]CCCC[CH]C(39)
+    CH2(11) + C[CH]CCCCC(74) <=> CH3(19) + [CH2]CCCC[CH]C(39)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> [CH2]CCCCCC(73) + C1=CCCCC1(77)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> C[CH]CCCCC(74) + C1=CCCCC1(77)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + [CH2]CCCC=CC(48)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + C=CCCC[CH]C(49)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + [CH2]CCCCC=C(50)
+    C1CCCCC1(38) + [CH2]CC[CH]C[CH]C(67) <=> [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + [CH2]C[CH]CC[CH]C(69) <=> [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> [CH2]CCCCCC(73) + [CH]1C[CH]CCC1(79)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> [CH2]CCCCCC(73) + [CH]1CC[CH]CC1(80)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> C[CH]CCCCC(74) + [CH]1C[CH]CCC1(79)
+    [CH2]CCCC[CH]C(39) + [CH]1CCCCC1(42) <=> C[CH]CCCCC(74) + [CH]1CC[CH]CC1(80)
+    CH3(19) + [CH]1CCCCC1(42) <=> CH4(21) + C1=CCCCC1(77)
+    C1CCCCC1(38) + CH2(11) <=> CH3(19) + [CH]1CCCCC1(42)
+    CH3(19) + [CH]1CCCCC1(42) <=> CH4(21) + [CH]1C[CH]CCC1(79)
+    CH3(19) + [CH]1CCCCC1(42) <=> CH4(21) + [CH]1CC[CH]CC1(80)
+    [CH]1CCCCC1(42) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + C1=CCCCC1(77)
+    C1CCCCC1(38) + [CH]1C[CH]CCC1(79) <=> [CH]1CCCCC1(42) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + [CH]1CC[CH]CC1(80) <=> [CH]1CCCCC1(42) + [CH]1CCCCC1(42)
+
+After model enlargement:
+    The model core has 9 species and 2 reactions
+    The model edge has 78 species and 240 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 245 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 245 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:19
+    Memory used: 204.10 MB
+
+Conducting simulation of reaction system 1...
+At time 3.7245e-12 s, species H(3) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.7957e+08 mol/m^3*s
+    H(3) rate: 1.8278e+07 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.0008502 
+At time 3.7245e-12 s, species H(3) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.7957e+08 mol/m^3*s
+    H(3) rate: 1.8278e+07 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.0008502 
+
+
+Adding species H(3) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    H(3)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 10 species and 2 reactions
+    The model edge has 77 species and 240 reactions
+
+
+At time 1.0000e+02 s, reached target termination time.
+    MCH(1) conversion: 0.864     
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 10 species and 2 reactions
+    The model edge has 77 species and 240 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 2 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 245 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 245 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:19
+    Memory used: 204.10 MB
+
+Conducting simulation of reaction system 1...
+At time 3.9471e-12 s, species [CH2]CCCC([CH2])C(41) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.7140e+08 mol/m^3*s
+    [CH2]CCCC([CH2])C(41) rate: 1.7335e+07 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.0008746 
+At time 3.9471e-12 s, species [CH2]CCCC([CH2])C(41) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.7140e+08 mol/m^3*s
+    [CH2]CCCC([CH2])C(41) rate: 1.7335e+07 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.0008746 
+
+
+Adding species [CH2]CCCC([CH2])C(41) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CCCC([CH2])C(41)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    [CH2]CCCC([CH2])C(41) <=> MCH(1)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 11 species and 3 reactions
+    The model edge has 76 species and 239 reactions
+
+
+At time 1.0000e+02 s, reached target termination time.
+    MCH(1) conversion: 0.864     
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 26 new edge species
+    [CH2]CCCC(=C)C(84)
+    [CH2]C(C)CCC=C(85)
+    [CH2]CC([CH2])C(86)
+    C=C(C)CCCC(87)
+    C=CCCC(C)C(88)
+    [CH2]CCCC[CH2](89)
+    [CH2]CCC[C](C)C(90)
+    [CH2]C(C)CC[CH]C(91)
+    [CH2]CC[CH]C(C)C(92)
+    [CH2]C(C)C[CH]CC(93)
+    [CH2]C[CH]CC(C)C(94)
+    [CH2]C(C)[CH]CCC(95)
+    [CH2][CH]CCC(C)C(96)
+    [CH2][C](C)CCCC(97)
+    [CH2]C([CH2])CCCC(98)
+    [CH2]C([CH2])C(99)
+    [CH2]CC[CH]C([CH2])C(100)
+    [CH2][CH]CCC[CH2](101)
+    [CH2]CCC[C]([CH2])C(102)
+    [CH2]C[CH]CC([CH2])C(103)
+    [CH2][CH]CCC([CH2])C(104)
+    [CH2]CCCC([CH2])[CH2](105)
+    [CH2]CCCC(C)C(106)
+    [CH2]C(C)CCCC(107)
+    [CH2]CCCC(C)CO[O](108)
+    [CH2]C(C)CCCCO[O](109)
+Added 0 new core reactions
+Created 91 new edge reactions
+    [CH2]CCCC(=C)C(84) + H(3) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]C(C)CCC=C(85) + H(3) <=> [CH2]CCCC([CH2])C(41)
+    C3H6(27) + [CH2]CC[CH2](51) <=> [CH2]CCCC([CH2])C(41)
+    CH3(19) + [CH2]CCCC=C(78) <=> [CH2]CCCC([CH2])C(41)
+    C2H4(25) + [CH2]CC([CH2])C(86) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CCCC([CH2])C(41) <=> C=C(C)CCCC(87)
+    [CH2]CCCC([CH2])C(41) <=> C=CCCC(C)C(88)
+    [CH2]CCCC[CH2](89) + CH2(S)(16) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CCCC([CH2])C(41) <=> [CH2]CCC[C](C)C(90)
+    [CH2]C(C)CC[CH]C(91) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C(C)C(92)
+    [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)C[CH]CC(93)
+    [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC(C)C(94)
+    [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)[CH]CCC(95)
+    [CH2]CCCC([CH2])C(41) <=> [CH2][CH]CCC(C)C(96)
+    [CH2]CCCC([CH2])C(41) <=> [CH2][C](C)CCCC(97)
+    [CH2]CCCC([CH2])C(41) <=> [CH2]C([CH2])CCCC(98)
+    [CH2]CC[CH2](51) + [CH2][CH]C(66) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]C([CH2])C(99) + [CH2]C[CH2](64) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CC[CH]C([CH2])C(100) + H(3) <=> [CH2]CCCC([CH2])C(41)
+    [CH2][CH]CCC[CH2](101) + CH3(19) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CCC[C]([CH2])C(102) + H(3) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CC([CH2])C(86) + [CH2][CH2](68) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]C[CH]CC([CH2])C(103) + H(3) <=> [CH2]CCCC([CH2])C(41)
+    H(3) + [CH2][CH]CCC([CH2])C(104) <=> [CH2]CCCC([CH2])C(41)
+    H(3) + [CH2]CCCC([CH2])[CH2](105) <=> [CH2]CCCC([CH2])C(41)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> C[C]1CCCCC1(43) + [CH2]CCCC(C)C(106)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> C[C]1CCCCC1(43) + [CH2]C(C)CCCC(107)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> CC1C[CH]CCC1(44) + [CH2]CCCC(C)C(106)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> CC1C[CH]CCC1(44) + [CH2]C(C)CCCC(107)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> CC1[CH]CCCC1(45) + [CH2]CCCC(C)C(106)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> CC1[CH]CCCC1(45) + [CH2]C(C)CCCC(107)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> CC1CC[CH]CC1(46) + [CH2]CCCC(C)C(106)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> CC1CC[CH]CC1(46) + [CH2]C(C)CCCC(107)
+    [CH2]C1CCCCC1(47) + [CH2]CCCC(C)C(106) <=> MCH(1) + [CH2]CCCC([CH2])C(41)
+    MCH(1) + [CH2]CCCC([CH2])C(41) <=> [CH2]C1CCCCC1(47) + [CH2]C(C)CCCC(107)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(=C)C(84) + HO2(8)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)CCC=C(85) + HO2(8)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C([CH2])C(100) + HO2(8)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC([CH2])C(103) + HO2(8)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> HO2(8) + [CH2]CCCC([CH2])[CH2](105)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(C)CO[O](108)
+    O2(2) + [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)CCCCO[O](109)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(=C)C(84) + [CH2]CCCCCC(73)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)CCC=C(85) + [CH2]CCCCCC(73)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(=C)C(84) + C[CH]CCCCC(74)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)CCC=C(85) + C[CH]CCCCC(74)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC=CC(48) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC=CC(48) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> C=CCCC[CH]C(49) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> C=CCCC[CH]C(49) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCCC=C(50) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCCC=C(50) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C[CH]C(67) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C[CH]C(67) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC[CH]C(69) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC[CH]C(69) + [CH2]C(C)CCCC(107)
+    [CH2]CC[CH]C([CH2])C(100) + [CH2]CCCCCC(73) <=> [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41)
+    [CH2]C[CH]CC([CH2])C(103) + [CH2]CCCCCC(73) <=> [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41)
+    [CH2]CCCCCC(73) + [CH2]CCCC([CH2])[CH2](105) <=> [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C([CH2])C(100) + C[CH]CCCCC(74)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC([CH2])C(103) + C[CH]CCCCC(74)
+    [CH2]CCCC[CH]C(39) + [CH2]CCCC([CH2])C(41) <=> C[CH]CCCCC(74) + [CH2]CCCC([CH2])[CH2](105)
+    CH3(19) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(=C)C(84) + CH4(21)
+    CH3(19) + [CH2]CCCC([CH2])C(41) <=> CH4(21) + [CH2]C(C)CCC=C(85)
+    CH2(11) + [CH2]CCCC(C)C(106) <=> CH3(19) + [CH2]CCCC([CH2])C(41)
+    CH2(11) + [CH2]C(C)CCCC(107) <=> CH3(19) + [CH2]CCCC([CH2])C(41)
+    CH3(19) + [CH2]CCCC([CH2])C(41) <=> CH4(21) + [CH2]CC[CH]C([CH2])C(100)
+    CH3(19) + [CH2]CCCC([CH2])C(41) <=> CH4(21) + [CH2]C[CH]CC([CH2])C(103)
+    CH3(19) + [CH2]CCCC([CH2])C(41) <=> CH4(21) + [CH2]CCCC([CH2])[CH2](105)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> [CH2]CCCC(=C)C(84) + C1CCCCC1(38)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + [CH2]C(C)CCC=C(85)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> C1=CCCCC1(77) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> C1=CCCCC1(77) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> [CH]1C[CH]CCC1(79) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> [CH]1C[CH]CCC1(79) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> [CH]1CC[CH]CC1(80) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42) <=> [CH]1CC[CH]CC1(80) + [CH2]C(C)CCCC(107)
+    C1CCCCC1(38) + [CH2]CC[CH]C([CH2])C(100) <=> [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + [CH2]C[CH]CC([CH2])C(103) <=> [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42)
+    C1CCCCC1(38) + [CH2]CCCC([CH2])[CH2](105) <=> [CH2]CCCC([CH2])C(41) + [CH]1CCCCC1(42)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(=C)C(84) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)CCC=C(85) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC(=C)C(84) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]C(C)CCC=C(85) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C([CH2])C(100) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]CC[CH]C([CH2])C(100) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC([CH2])C(103) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]C[CH]CC([CH2])C(103) + [CH2]C(C)CCCC(107)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC([CH2])[CH2](105) + [CH2]CCCC(C)C(106)
+    [CH2]CCCC([CH2])C(41) + [CH2]CCCC([CH2])C(41) <=> [CH2]CCCC([CH2])[CH2](105) + [CH2]C(C)CCCC(107)
+
+After model enlargement:
+    The model core has 11 species and 3 reactions
+    The model edge has 102 species and 330 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 3 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 3 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 336 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 336 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:32
+    Memory used: 212.74 MB
+
+Conducting simulation of reaction system 1...
+At time 4.6666e-12 s, species C2H4(25) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5996e+08 mol/m^3*s
+    C2H4(25) rate: 1.6400e+07 mol/m^3*s (0.1025)
+    MCH(1) conversion: 0.0009983 
+At time 4.6666e-12 s, species C2H4(25) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5996e+08 mol/m^3*s
+    C2H4(25) rate: 1.6400e+07 mol/m^3*s (0.1025)
+    MCH(1) conversion: 0.0009983 
+
+
+Adding species C2H4(25) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C2H4(25)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 12 species and 3 reactions
+    The model edge has 101 species and 330 reactions
+
+
+At time 1.0000e+02 s, reached target termination time.
+    MCH(1) conversion: 0.864     
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 12 species and 3 reactions
+    The model edge has 101 species and 330 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 3 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 3 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 336 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 336 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:33
+    Memory used: 212.75 MB
+
+Conducting simulation of reaction system 1...
+At time 5.1000e-12 s, species [CH2]CC[CH]C(52) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5146e+08 mol/m^3*s
+    [CH2]CC[CH]C(52) rate: 1.5511e+07 mol/m^3*s (0.1024)
+    MCH(1) conversion: 0.00104   
+At time 5.1000e-12 s, species [CH2]CC[CH]C(52) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5146e+08 mol/m^3*s
+    [CH2]CC[CH]C(52) rate: 1.5511e+07 mol/m^3*s (0.1024)
+    MCH(1) conversion: 0.00104   
+
+
+Adding species [CH2]CC[CH]C(52) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CC[CH]C(52)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    C2H4(25) + [CH2]CC[CH]C(52) <=> [CH2]CCCC[CH]C(39)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 13 species and 4 reactions
+    The model edge has 100 species and 329 reactions
+
+
+At time 2.5893e-07 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9503    
+
+Generating thermodynamics for new species...
+Found thermo for [CH2]CC in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+For reaction O2(2) + C2H4(25) <=> [CH2]CO[O](126), Ea raised from 151.7 to 155.1 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 23 new edge species
+    [CH2]CC=CC(110)
+    C=CC[CH]C(111)
+    [CH2]CCC=C(112)
+    C=CCCC(113)
+    CC=CCC(114)
+    [CH2]C[CH]CC(115)
+    C[CH]C[CH]C(116)
+    [CH2]CCC[CH2](117)
+    [CH2][CH]CCC(118)
+    C[CH][CH]CC(119)
+    CC1CCC1(120)
+    [CH2]C[CH][CH]C(121)
+    [CH2][CH]C[CH]C(122)
+    [CH2][CH]CC[CH2](123)
+    [CH2]CCCC(124)
+    C[CH]CCC(125)
+    [CH2]CO[O](126)
+    [CH2]CCC(C)O[O](127)
+    C[CH]CCCO[O](128)
+    [CH2]CC(129)
+    [CH2]CCC(C)C(130)
+    C[CH]CCCC(131)
+    C1CCC1(132)
+Added 0 new core reactions
+Created 78 new edge reactions
+    [CH2][CH2](68) <=> C2H4(25)
+    H(3) + [CH2]CC=CC(110) <=> [CH2]CC[CH]C(52)
+    H(3) + C=CC[CH]C(111) <=> [CH2]CC[CH]C(52)
+    H(3) + [CH2]CCC=C(112) <=> [CH2]CC[CH]C(52)
+    C3H6(27) + [CH2][CH2](68) <=> [CH2]CC[CH]C(52)
+    C2H4(25) + [CH2][CH]C(66) <=> [CH2]CC[CH]C(52)
+    [CH2]CC[CH]C(52) <=> C=CCCC(113)
+    [CH2]CC[CH]C(52) <=> CC=CCC(114)
+    [CH2]CC[CH]C(52) <=> C2H4(25) + C3H6(27)
+    [CH2]C[CH]CC(115) <=> [CH2]CC[CH]C(52)
+    [CH2]CC[CH]C(52) <=> C[CH]C[CH]C(116)
+    [CH2]CC[CH]C(52) <=> [CH2]CCC[CH2](117)
+    [CH2]CC[CH]C(52) <=> [CH2][CH]CCC(118)
+    [CH2]CC[CH]C(52) <=> C[CH][CH]CC(119)
+    [CH2]CC[CH]C(52) <=> CC1CCC1(120)
+    [CH2][CH]C(66) + [CH2][CH2](68) <=> [CH2]CC[CH]C(52)
+    H(3) + [CH2]C[CH][CH]C(121) <=> [CH2]CC[CH]C(52)
+    H(3) + [CH2][CH]C[CH]C(122) <=> [CH2]CC[CH]C(52)
+    H(3) + [CH2][CH]CC[CH2](123) <=> [CH2]CC[CH]C(52)
+    C2H5(29) + CC1C[CH]CCC1(44) <=> MCH(1) + C2H4(25)
+    C2H5(29) + CC1[CH]CCCC1(45) <=> MCH(1) + C2H4(25)
+    C2H5(29) + CC1CC[CH]CC1(46) <=> MCH(1) + C2H4(25)
+    C2H5(29) + [CH2]C1CCCCC1(47) <=> MCH(1) + C2H4(25)
+    MCH(1) + [CH2]CC[CH]C(52) <=> C[C]1CCCCC1(43) + [CH2]CCCC(124)
+    MCH(1) + [CH2]CC[CH]C(52) <=> C[C]1CCCCC1(43) + C[CH]CCC(125)
+    MCH(1) + [CH2]CC[CH]C(52) <=> CC1C[CH]CCC1(44) + [CH2]CCCC(124)
+    MCH(1) + [CH2]CC[CH]C(52) <=> CC1C[CH]CCC1(44) + C[CH]CCC(125)
+    CC1[CH]CCCC1(45) + [CH2]CCCC(124) <=> MCH(1) + [CH2]CC[CH]C(52)
+    MCH(1) + [CH2]CC[CH]C(52) <=> CC1[CH]CCCC1(45) + C[CH]CCC(125)
+    MCH(1) + [CH2]CC[CH]C(52) <=> CC1CC[CH]CC1(46) + [CH2]CCCC(124)
+    MCH(1) + [CH2]CC[CH]C(52) <=> CC1CC[CH]CC1(46) + C[CH]CCC(125)
+    [CH2]C1CCCCC1(47) + [CH2]CCCC(124) <=> MCH(1) + [CH2]CC[CH]C(52)
+    MCH(1) + [CH2]CC[CH]C(52) <=> [CH2]C1CCCCC1(47) + C[CH]CCC(125)
+    O2(2) + C2H4(25) <=> [CH2]CO[O](126)
+    C2H3(23) + HO2(8) <=> O2(2) + C2H4(25)
+    O2(2) + [CH2]CC[CH]C(52) <=> HO2(8) + [CH2]CC=CC(110)
+    O2(2) + [CH2]CC[CH]C(52) <=> HO2(8) + C=CC[CH]C(111)
+    O2(2) + [CH2]CC[CH]C(52) <=> HO2(8) + [CH2]CCC=C(112)
+    O2(2) + [CH2]CC[CH]C(52) <=> [CH2]CCC(C)O[O](127)
+    O2(2) + [CH2]CC[CH]C(52) <=> C[CH]CCCO[O](128)
+    C2H5(29) + CH2(11) <=> C2H4(25) + CH3(19)
+    C2H4(25) + CH3(19) <=> [CH2]CC(129)
+    CH4(21) + C2H3(23) <=> C2H4(25) + CH3(19)
+    CH3(19) + [CH2]CC[CH]C(52) <=> CH4(21) + [CH2]CC=CC(110)
+    CH3(19) + [CH2]CC[CH]C(52) <=> CH4(21) + C=CC[CH]C(111)
+    CH3(19) + [CH2]CC[CH]C(52) <=> CH4(21) + [CH2]CCC=C(112)
+    CH2(11) + [CH2]CCCC(124) <=> CH3(19) + [CH2]CC[CH]C(52)
+    CH2(11) + C[CH]CCC(125) <=> CH3(19) + [CH2]CC[CH]C(52)
+    CH3(19) + [CH2]CC[CH]C(52) <=> [CH2]CCC(C)C(130)
+    CH3(19) + [CH2]CC[CH]C(52) <=> C[CH]CCCC(131)
+    C2H5(29) + [CH]1C[CH]CCC1(79) <=> C2H4(25) + [CH]1CCCCC1(42)
+    C2H5(29) + [CH]1CC[CH]CC1(80) <=> C2H4(25) + [CH]1CCCCC1(42)
+    C2H5(29) + [CH]1[CH]CCCC1(81) <=> C2H4(25) + [CH]1CCCCC1(42)
+    C2H3(23) + C1CCCCC1(38) <=> C2H4(25) + [CH]1CCCCC1(42)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> C1CCCCC1(38) + [CH2]CC=CC(110)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> C1CCCCC1(38) + C=CC[CH]C(111)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> C1CCCCC1(38) + [CH2]CCC=C(112)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> C1=CCCCC1(77) + [CH2]CCCC(124)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> C1=CCCCC1(77) + C[CH]CCC(125)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> [CH]1C[CH]CCC1(79) + [CH2]CCCC(124)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> [CH]1C[CH]CCC1(79) + C[CH]CCC(125)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> [CH]1CC[CH]CC1(80) + [CH2]CCCC(124)
+    [CH]1CCCCC1(42) + [CH2]CC[CH]C(52) <=> [CH]1CC[CH]CC1(80) + C[CH]CCC(125)
+    C2H3(23) + C2H5(29) <=> C2H4(25) + C2H4(25)
+    [CH2]CC[CH2](51) <=> C2H4(25) + C2H4(25)
+    C2H4(25) + C2H4(25) <=> C1CCC1(132)
+    C2H5(29) + [CH2]C[CH][CH]C(121) <=> C2H4(25) + [CH2]CC[CH]C(52)
+    C2H5(29) + [CH2][CH]C[CH]C(122) <=> C2H4(25) + [CH2]CC[CH]C(52)
+    C2H5(29) + [CH2][CH]CC[CH2](123) <=> C2H4(25) + [CH2]CC[CH]C(52)
+    C2H4(25) + [CH2]CC[CH]C(52) <=> [CH2]CCC(C)C[CH2](40)
+    C2H3(23) + [CH2]CCCC(124) <=> C2H4(25) + [CH2]CC[CH]C(52)
+    C2H3(23) + C[CH]CCC(125) <=> C2H4(25) + [CH2]CC[CH]C(52)
+    [CH2]CC[CH]C(52) + [CH2]CC[CH]C(52) <=> [CH2]CCCC(124) + [CH2]CC=CC(110)
+    [CH2]CC[CH]C(52) + [CH2]CC[CH]C(52) <=> [CH2]CCCC(124) + C=CC[CH]C(111)
+    [CH2]CC[CH]C(52) + [CH2]CC[CH]C(52) <=> [CH2]CCCC(124) + [CH2]CCC=C(112)
+    [CH2]CC[CH]C(52) + [CH2]CC[CH]C(52) <=> [CH2]CC=CC(110) + C[CH]CCC(125)
+    [CH2]CC[CH]C(52) + [CH2]CC[CH]C(52) <=> C=CC[CH]C(111) + C[CH]CCC(125)
+    [CH2]CC[CH]C(52) + [CH2]CC[CH]C(52) <=> [CH2]CCC=C(112) + C[CH]CCC(125)
+
+After model enlargement:
+    The model core has 13 species and 4 reactions
+    The model edge has 123 species and 407 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 4 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 4 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 414 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 414 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:36
+    Memory used: 216.00 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0845e-12 s, species C3H6(27) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.4793e+08 mol/m^3*s
+    C3H6(27) rate: 4.7892e+07 mol/m^3*s (0.1069)
+    MCH(1) conversion: 0.0003988 
+At time 1.0845e-12 s, species C3H6(27) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.4793e+08 mol/m^3*s
+    C3H6(27) rate: 4.7892e+07 mol/m^3*s (0.1069)
+    MCH(1) conversion: 0.0003988 
+
+
+Adding species C3H6(27) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C3H6(27)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    [CH2]CC[CH]C(52) <=> C2H4(25) + C3H6(27)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 14 species and 5 reactions
+    The model edge has 122 species and 406 reactions
+
+
+At time 2.5114e-07 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Found thermo for [CH2]C=C in thermo library: dft_qci_thermo
+Found thermo for [CH]=CC in thermo library: dft_qci_thermo
+Found thermo for C=[C]C in thermo library: dft_qci_thermo
+Found thermo for C[CH]C in thermo library: dft_qci_thermo
+Found thermo for [CH2]C(C)C in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+For reaction O2(2) + C3H6(27) <=> C[CH]CO[O](137), Ea raised from 150.9 to 154.2 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C3H6(27) <=> [CH2]C(C)O[O](138), Ea raised from 146.3 to 148.6 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 12 new edge species
+    [CH2]C=C(133)
+    [CH]=CC(134)
+    C=[C]C(135)
+    C[CH]C(136)
+    C[CH]CO[O](137)
+    [CH2]C(C)O[O](138)
+    [CH2]C(C)C(139)
+    [CH2]C(C)C([CH2])C(140)
+    [CH2]C(C)C[CH]C(141)
+    C[CH]CC[CH]C(142)
+    CC1CCC1C(143)
+    CC1CC(C)C1(144)
+Added 0 new core reactions
+Created 49 new edge reactions
+    [CH2][CH]C(66) <=> C3H6(27)
+    C2H3(23) + CH3(19) <=> C3H6(27)
+    H(3) + [CH2]C=C(133) <=> C3H6(27)
+    H(3) + [CH]=CC(134) <=> C3H6(27)
+    H(3) + C=[C]C(135) <=> C3H6(27)
+    CC1C[CH]CCC1(44) + C[CH]C(136) <=> MCH(1) + C3H6(27)
+    CC1C[CH]CCC1(44) + [CH2]CC(129) <=> MCH(1) + C3H6(27)
+    CC1[CH]CCCC1(45) + C[CH]C(136) <=> MCH(1) + C3H6(27)
+    CC1[CH]CCCC1(45) + [CH2]CC(129) <=> MCH(1) + C3H6(27)
+    CC1CC[CH]CC1(46) + C[CH]C(136) <=> MCH(1) + C3H6(27)
+    CC1CC[CH]CC1(46) + [CH2]CC(129) <=> MCH(1) + C3H6(27)
+    [CH2]C1CCCCC1(47) + C[CH]C(136) <=> MCH(1) + C3H6(27)
+    [CH2]C1CCCCC1(47) + [CH2]CC(129) <=> MCH(1) + C3H6(27)
+    O2(2) + C3H6(27) <=> C[CH]CO[O](137)
+    O2(2) + C3H6(27) <=> [CH2]C(C)O[O](138)
+    HO2(8) + [CH2]C=C(133) <=> O2(2) + C3H6(27)
+    HO2(8) + [CH]=CC(134) <=> O2(2) + C3H6(27)
+    HO2(8) + C=[C]C(135) <=> O2(2) + C3H6(27)
+    CH2(11) + C[CH]C(136) <=> C3H6(27) + CH3(19)
+    CH2(11) + [CH2]CC(129) <=> C3H6(27) + CH3(19)
+    C3H6(27) + CH3(19) <=> C4H9_2(37)
+    C3H6(27) + CH3(19) <=> [CH2]C(C)C(139)
+    C3H6(27) + CH3(19) <=> CH4(21) + [CH2]C=C(133)
+    CH4(21) + [CH]=CC(134) <=> C3H6(27) + CH3(19)
+    C3H6(27) + CH3(19) <=> CH4(21) + C=[C]C(135)
+    [CH]1C[CH]CCC1(79) + C[CH]C(136) <=> C3H6(27) + [CH]1CCCCC1(42)
+    [CH]1C[CH]CCC1(79) + [CH2]CC(129) <=> C3H6(27) + [CH]1CCCCC1(42)
+    [CH]1CC[CH]CC1(80) + C[CH]C(136) <=> C3H6(27) + [CH]1CCCCC1(42)
+    [CH]1CC[CH]CC1(80) + [CH2]CC(129) <=> C3H6(27) + [CH]1CCCCC1(42)
+    [CH]1[CH]CCCC1(81) + C[CH]C(136) <=> C3H6(27) + [CH]1CCCCC1(42)
+    [CH]1[CH]CCCC1(81) + [CH2]CC(129) <=> C3H6(27) + [CH]1CCCCC1(42)
+    C3H6(27) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + [CH2]C=C(133)
+    C1CCCCC1(38) + [CH]=CC(134) <=> C3H6(27) + [CH]1CCCCC1(42)
+    C3H6(27) + [CH]1CCCCC1(42) <=> C1CCCCC1(38) + C=[C]C(135)
+    C2H3(23) + C[CH]C(136) <=> C2H4(25) + C3H6(27)
+    C2H3(23) + [CH2]CC(129) <=> C2H4(25) + C3H6(27)
+    C2H5(29) + [CH2]C=C(133) <=> C2H4(25) + C3H6(27)
+    C2H5(29) + [CH]=CC(134) <=> C2H4(25) + C3H6(27)
+    [CH2]CC([CH2])C(86) <=> C2H4(25) + C3H6(27)
+    C2H4(25) + C3H6(27) <=> CC1CCC1(120)
+    C[CH]C(136) + [CH2]C=C(133) <=> C3H6(27) + C3H6(27)
+    [CH2]CC(129) + [CH2]C=C(133) <=> C3H6(27) + C3H6(27)
+    C[CH]C(136) + [CH]=CC(134) <=> C3H6(27) + C3H6(27)
+    [CH2]CC(129) + [CH]=CC(134) <=> C3H6(27) + C3H6(27)
+    [CH2]C(C)C([CH2])C(140) <=> C3H6(27) + C3H6(27)
+    [CH2]C(C)C[CH]C(141) <=> C3H6(27) + C3H6(27)
+    C[CH]CC[CH]C(142) <=> C3H6(27) + C3H6(27)
+    C3H6(27) + C3H6(27) <=> CC1CCC1C(143)
+    C3H6(27) + C3H6(27) <=> CC1CC(C)C1(144)
+
+After model enlargement:
+    The model core has 14 species and 5 reactions
+    The model edge has 134 species and 455 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 5 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 463 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 463 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:37
+    Memory used: 217.79 MB
+
+Conducting simulation of reaction system 1...
+At time 1.0813e-11 s, species [CH2]CC[CH2](51) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3798e+08 mol/m^3*s
+    [CH2]CC[CH2](51) rate: 1.3799e+07 mol/m^3*s (0.1)
+    MCH(1) conversion: 0.001545  
+At time 1.0813e-11 s, species [CH2]CC[CH2](51) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3798e+08 mol/m^3*s
+    [CH2]CC[CH2](51) rate: 1.3799e+07 mol/m^3*s (0.1)
+    MCH(1) conversion: 0.001545  
+
+
+Adding species [CH2]CC[CH2](51) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CC[CH2](51)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    C3H6(27) + [CH2]CC[CH2](51) <=> [CH2]CCCC[CH]C(39)
+    C3H6(27) + [CH2]CC[CH2](51) <=> [CH2]CCCC([CH2])C(41)
+    [CH2]CC[CH2](51) <=> C2H4(25) + C2H4(25)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 15 species and 8 reactions
+    The model edge has 133 species and 452 reactions
+
+
+At time 6.7195e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Found thermo for [CH2]CC=C in thermo library: dft_qci_thermo
+Found thermo for C=CCC in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 4 new edge species
+    [CH2]CC=C(145)
+    C=CCC(146)
+    [CH2][CH]CC(147)
+    [CH2][CH]C[CH2](148)
+Added 0 new core reactions
+Created 8 new edge reactions
+    H(3) + [CH2]CC=C(145) <=> [CH2]CC[CH2](51)
+    C2H4(25) + [CH2][CH2](68) <=> [CH2]CC[CH2](51)
+    [CH2]CC[CH2](51) <=> C=CCC(146)
+    [CH2]CC[CH2](51) <=> [CH2]C[CH]C(65)
+    [CH2]CC[CH2](51) <=> [CH2][CH]CC(147)
+    [CH2]CC[CH2](51) <=> C1CCC1(132)
+    [CH2][CH2](68) + [CH2][CH2](68) <=> [CH2]CC[CH2](51)
+    H(3) + [CH2][CH]C[CH2](148) <=> [CH2]CC[CH2](51)
+
+After model enlargement:
+    The model core has 15 species and 8 reactions
+    The model edge has 137 species and 460 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 8 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 8 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 471 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 471 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:38
+    Memory used: 217.79 MB
+
+Conducting simulation of reaction system 1...
+At time 2.0704e-11 s, species C1=CCCCC1(77) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5347e+08 mol/m^3*s
+    C1=CCCCC1(77) rate: 1.5451e+07 mol/m^3*s (0.1007)
+    MCH(1) conversion: 0.002438  
+At time 2.0704e-11 s, species C1=CCCCC1(77) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5347e+08 mol/m^3*s
+    C1=CCCCC1(77) rate: 1.5451e+07 mol/m^3*s (0.1007)
+    MCH(1) conversion: 0.002438  
+
+
+Adding species C1=CCCCC1(77) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C1=CCCCC1(77)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    H(3) + C1=CCCCC1(77) <=> [CH]1CCCCC1(42)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 16 species and 9 reactions
+    The model edge has 136 species and 459 reactions
+
+
+At time 3.6752e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9503    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2]C=CCC[CH2] gives H298=302018 J/mol
+Resonance isomer 2 [CH2]CC[CH]C=C gives H298=303440 J/mol
+Found thermo for C=CC=C in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+For reaction O2(2) + C1=CCCCC1(77) <=> [O]OC1[CH]CCCC1(156), Ea raised from 131.9 to 134.9 kJ/mol to match endothermicity of reaction.
+Warning: Marked reaction [CH]1[CH]CCCC1(81) <=> C1=CCCCC1(77) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 8 new edge species
+    [CH2]C=CCC[CH2](149)
+    [CH2]CC=CC[CH2](150)
+    [CH]=CCCC[CH2](151)
+    C=CC=C(152)
+    [CH]1CC=CCC1(153)
+    [CH]1C=CCCC1(154)
+    [C]1=CCCCC1(155)
+    [O]OC1[CH]CCCC1(156)
+Added 0 new core reactions
+Created 40 new edge reactions
+    [CH]1CC[CH]CC1(80) <=> C1=CCCCC1(77)
+    [CH]1C[CH]CCC1(79) <=> C1=CCCCC1(77)
+    [CH]1[CH]CCCC1(81) <=> C1=CCCCC1(77)
+    [CH2]C=CCC[CH2](149) <=> C1=CCCCC1(77)
+    [CH2]CC=CC[CH2](150) <=> C1=CCCCC1(77)
+    [CH]=CCCC[CH2](151) <=> C1=CCCCC1(77)
+    C2H4(25) + C=CC=C(152) <=> C1=CCCCC1(77)
+    [CH]1[CH]CCCC1(81) <=> C1=CCCCC1(77)
+    H(3) + [CH]1CC=CCC1(153) <=> C1=CCCCC1(77)
+    H(3) + [CH]1C=CCCC1(154) <=> C1=CCCCC1(77)
+    H(3) + [C]1=CCCCC1(155) <=> C1=CCCCC1(77)
+    O2(2) + C1=CCCCC1(77) <=> [O]OC1[CH]CCCC1(156)
+    O2(2) + C1=CCCCC1(77) <=> HO2(8) + [CH]1CC=CCC1(153)
+    HO2(8) + [CH]1C=CCCC1(154) <=> O2(2) + C1=CCCCC1(77)
+    HO2(8) + [C]1=CCCCC1(155) <=> O2(2) + C1=CCCCC1(77)
+    H2(6) + CH2(11) <=> H(3) + CH3(19)
+    CH2(11) + [CH]1CCCCC1(42) <=> CH3(19) + C1=CCCCC1(77)
+    CH3(19) + C1=CCCCC1(77) <=> CC1[CH]CCCC1(45)
+    CH3(19) + C1=CCCCC1(77) <=> CH4(21) + [CH]1CC=CCC1(153)
+    CH3(19) + C1=CCCCC1(77) <=> CH4(21) + [CH]1C=CCCC1(154)
+    CH3(19) + C1=CCCCC1(77) <=> CH4(21) + [C]1=CCCCC1(155)
+    C3H6(27) + H(3) <=> C[CH]C(136)
+    C3H6(27) + H(3) <=> [CH2]CC(129)
+    C3H6(27) + H(3) <=> H2(6) + [CH2]C=C(133)
+    H2(6) + [CH]=CC(134) <=> C3H6(27) + H(3)
+    C3H6(27) + H(3) <=> H2(6) + C=[C]C(135)
+    H(3) + C1=CCCCC1(77) <=> H2(6) + [CH]1CC=CCC1(153)
+    H(3) + C1=CCCCC1(77) <=> H2(6) + [CH]1C=CCCC1(154)
+    H(3) + C1=CCCCC1(77) <=> H2(6) + [C]1=CCCCC1(155)
+    C2H3(23) + [CH]1CCCCC1(42) <=> C2H4(25) + C1=CCCCC1(77)
+    C2H5(29) + [CH]1CC=CCC1(153) <=> C2H4(25) + C1=CCCCC1(77)
+    C2H5(29) + [CH]1C=CCCC1(154) <=> C2H4(25) + C1=CCCCC1(77)
+    [CH]1CCCCC1(42) + [CH2]C=C(133) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1CCCCC1(42) + [CH]=CC(134) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1CC=CCC1(153) + C[CH]C(136) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1C=CCCC1(154) + C[CH]C(136) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1CC=CCC1(153) + [CH2]CC(129) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1C=CCCC1(154) + [CH2]CC(129) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1CCCCC1(42) + [CH]1CC=CCC1(153) <=> C1=CCCCC1(77) + C1=CCCCC1(77)
+    [CH]1CCCCC1(42) + [CH]1C=CCCC1(154) <=> C1=CCCCC1(77) + C1=CCCCC1(77)
+
+After model enlargement:
+    The model core has 16 species and 9 reactions
+    The model edge has 144 species and 499 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 9 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 9 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 511 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 511 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:43
+    Memory used: 219.41 MB
+
+Conducting simulation of reaction system 1...
+At time 1.1554e-10 s, species [CH2]CCCC=C(78) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5349e+08 mol/m^3*s
+    [CH2]CCCC=C(78) rate: 1.5377e+07 mol/m^3*s (0.1002)
+    MCH(1) conversion: 0.01015   
+At time 1.1554e-10 s, species [CH2]CCCC=C(78) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5349e+08 mol/m^3*s
+    [CH2]CCCC=C(78) rate: 1.5377e+07 mol/m^3*s (0.1002)
+    MCH(1) conversion: 0.01015   
+
+
+Adding species [CH2]CCCC=C(78) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CCCC=C(78)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    [CH2]CCCC=C(78) <=> [CH]1CCCCC1(42)
+    CH3(19) + [CH2]CCCC=C(78) <=> [CH2]CCCC([CH2])C(41)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 17 species and 11 reactions
+    The model edge has 143 species and 497 reactions
+
+
+At time 3.5072e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9511    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2]C=CCCC gives H298=97014 J/mol
+Resonance isomer 2 C=C[CH]CCC gives H298=98437 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + [CH2]CCCC=C(78) <=> [CH2]CCCC([CH2])O[O](170), Ea raised from 138.6 to 141.3 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + [CH2]CCCC=C(78) <=> [CH2]CCC[CH]CO[O](171), Ea raised from 143.2 to 146.0 kJ/mol to match endothermicity of reaction.
+Warning: Marked reaction [CH2][CH]CCC[CH2](101) <=> [CH2]CCCC=C(78) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 16 new edge species
+    [CH2]C1CCCC1(157)
+    C=CCCC=C(158)
+    [CH2]C[CH]CC[CH2](159)
+    [CH2]C[CH]C[CH]C(160)
+    [CH2][CH]CC[CH]C(161)
+    C=CCC[CH]C(162)
+    C=CC[CH]CC(163)
+    C=C[CH]CCC(164)
+    C=[C]CCCC(165)
+    [CH]=CCCCC(166)
+    [CH2]C[CH]CC=C(167)
+    [CH2][CH]CCC=C(168)
+    [CH2]CCC[C]=C(169)
+    [CH2]CCCC([CH2])O[O](170)
+    [CH2]CCC[CH]CO[O](171)
+    C=CCCCCO[O](172)
+Added 0 new core reactions
+Created 29 new edge reactions
+    [CH2]CCCC=C(78) <=> [CH2]C1CCCC1(157)
+    H(3) + C=CCCC=C(158) <=> [CH2]CCCC=C(78)
+    C2H4(25) + [CH2]CC=C(145) <=> [CH2]CCCC=C(78)
+    [CH2]C[CH]CC[CH2](159) <=> [CH2]CCCC=C(78)
+    [CH2]C[CH]C[CH]C(160) <=> [CH2]CCCC=C(78)
+    [CH2][CH]CCC[CH2](101) <=> [CH2]CCCC=C(78)
+    [CH2][CH]CC[CH]C(161) <=> [CH2]CCCC=C(78)
+    C=CCC[CH]C(162) <=> [CH2]CCCC=C(78)
+    [CH2]CCCC=C(78) <=> C=CC[CH]CC(163)
+    [CH2]CCCC=C(78) <=> C=C[CH]CCC(164)
+    C=[C]CCCC(165) <=> [CH2]CCCC=C(78)
+    [CH]=CCCCC(166) <=> [CH2]CCCC=C(78)
+    [CH2][CH]CCC[CH2](101) <=> [CH2]CCCC=C(78)
+    [CH2]C[CH2](64) + [CH2]C=C(133) <=> [CH2]CCCC=C(78)
+    [CH2][CH2](68) + [CH2]CC=C(145) <=> [CH2]CCCC=C(78)
+    H(3) + [CH2]C[CH]CC=C(167) <=> [CH2]CCCC=C(78)
+    C2H3(23) + [CH2]CC[CH2](51) <=> [CH2]CCCC=C(78)
+    H(3) + [CH2]C=CCC[CH2](149) <=> [CH2]CCCC=C(78)
+    H(3) + [CH2][CH]CCC=C(168) <=> [CH2]CCCC=C(78)
+    H(3) + [CH2]CCC[C]=C(169) <=> [CH2]CCCC=C(78)
+    H(3) + [CH]=CCCC[CH2](151) <=> [CH2]CCCC=C(78)
+    O2(2) + [CH2]CCCC=C(78) <=> HO2(8) + C=CCCC=C(158)
+    O2(2) + [CH2]CCCC=C(78) <=> [CH2]CCCC([CH2])O[O](170)
+    O2(2) + [CH2]CCCC=C(78) <=> [CH2]CCC[CH]CO[O](171)
+    O2(2) + [CH2]CCCC=C(78) <=> HO2(8) + [CH2]C[CH]CC=C(167)
+    HO2(8) + [CH2]C=CCC[CH2](149) <=> O2(2) + [CH2]CCCC=C(78)
+    HO2(8) + [CH2]CCC[C]=C(169) <=> O2(2) + [CH2]CCCC=C(78)
+    HO2(8) + [CH]=CCCC[CH2](151) <=> O2(2) + [CH2]CCCC=C(78)
+    O2(2) + [CH2]CCCC=C(78) <=> C=CCCCCO[O](172)
+
+After model enlargement:
+    The model core has 17 species and 11 reactions
+    The model edge has 159 species and 526 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 11 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 11 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 540 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 540 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:45
+    Memory used: 219.76 MB
+
+Conducting simulation of reaction system 1...
+At time 1.9267e-10 s, species C=CCCC=C(158) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.6138e+08 mol/m^3*s
+    C=CCCC=C(158) rate: 1.6218e+07 mol/m^3*s (0.1005)
+    MCH(1) conversion: 0.01715   
+At time 1.9267e-10 s, species C=CCCC=C(158) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.6138e+08 mol/m^3*s
+    C=CCCC=C(158) rate: 1.6218e+07 mol/m^3*s (0.1005)
+    MCH(1) conversion: 0.01715   
+
+
+Adding species C=CCCC=C(158) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C=CCCC=C(158)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    H(3) + C=CCCC=C(158) <=> [CH2]CCCC=C(78)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 18 species and 12 reactions
+    The model edge has 158 species and 525 reactions
+
+
+At time 3.5149e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9515    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2]C=CCC=C gives H298=224417 J/mol
+Resonance isomer 2 C=C[CH]CC=C gives H298=224585 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + C=CCCC=C(158) <=> [CH2]C(CCC=C)O[O](178), Ea raised from 138.6 to 141.3 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C=CCCC=C(158) <=> C=CCC[CH]CO[O](179), Ea raised from 143.2 to 146.0 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 8 new edge species
+    C=[C]CC[CH]C(173)
+    [CH]=CCC[CH]C(174)
+    C=C[CH]CC=C(175)
+    C=[C]CCC=C(176)
+    [CH]=CCCC=C(177)
+    [CH2]C(CCC=C)O[O](178)
+    C=CCC[CH]CO[O](179)
+    C=CCC[CH]CC(180)
+Added 0 new core reactions
+Created 37 new edge reactions
+    [CH2]CCC[C]=C(169) <=> C=CCCC=C(158)
+    C=[C]CC[CH]C(173) <=> C=CCCC=C(158)
+    [CH]=CCCC[CH2](151) <=> C=CCCC=C(158)
+    [CH]=CCC[CH]C(174) <=> C=CCCC=C(158)
+    [CH2][CH]CCC=C(168) <=> C=CCCC=C(158)
+    [CH2]C=C(133) + [CH2]C=C(133) <=> C=CCCC=C(158)
+    C2H3(23) + [CH2]CC=C(145) <=> C=CCCC=C(158)
+    H(3) + C=C[CH]CC=C(175) <=> C=CCCC=C(158)
+    H(3) + C=[C]CCC=C(176) <=> C=CCCC=C(158)
+    H(3) + [CH]=CCCC=C(177) <=> C=CCCC=C(158)
+    [CH]1CC[CH]CC1(80) <=> C=CCCC=C(158)
+    O2(2) + C=CCCC=C(158) <=> [CH2]C(CCC=C)O[O](178)
+    O2(2) + C=CCCC=C(158) <=> C=CCC[CH]CO[O](179)
+    HO2(8) + C=C[CH]CC=C(175) <=> O2(2) + C=CCCC=C(158)
+    HO2(8) + C=[C]CCC=C(176) <=> O2(2) + C=CCCC=C(158)
+    HO2(8) + [CH]=CCCC=C(177) <=> O2(2) + C=CCCC=C(158)
+    CH2(11) + [CH2]CCCC=C(78) <=> CH3(19) + C=CCCC=C(158)
+    CH2(11) + C=CCC[CH]C(162) <=> CH3(19) + C=CCCC=C(158)
+    CH3(19) + C=CCCC=C(158) <=> [CH2]C(C)CCC=C(85)
+    CH3(19) + C=CCCC=C(158) <=> C=CCC[CH]CC(180)
+    CH3(19) + C=CCCC=C(158) <=> CH4(21) + C=C[CH]CC=C(175)
+    CH3(19) + C=CCCC=C(158) <=> CH4(21) + C=[C]CCC=C(176)
+    CH4(21) + [CH]=CCCC=C(177) <=> CH3(19) + C=CCCC=C(158)
+    H(3) + C=CCCC=C(158) <=> C=CCC[CH]C(162)
+    H(3) + C=CCCC=C(158) <=> H2(6) + C=C[CH]CC=C(175)
+    H(3) + C=CCCC=C(158) <=> H2(6) + C=[C]CCC=C(176)
+    H2(6) + [CH]=CCCC=C(177) <=> H(3) + C=CCCC=C(158)
+    C2H3(23) + [CH2]CCCC=C(78) <=> C2H4(25) + C=CCCC=C(158)
+    C2H3(23) + C=CCC[CH]C(162) <=> C2H4(25) + C=CCCC=C(158)
+    C2H5(29) + C=C[CH]CC=C(175) <=> C2H4(25) + C=CCCC=C(158)
+    C2H5(29) + [CH]=CCCC=C(177) <=> C2H4(25) + C=CCCC=C(158)
+    [CH2]CCCC=C(78) + [CH]1CC=CCC1(153) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+    [CH]1CC=CCC1(153) + C=CCC[CH]C(162) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+    [CH2]CCCC=C(78) + [CH]1C=CCCC1(154) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+    [CH]1C=CCCC1(154) + C=CCC[CH]C(162) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+    [CH]1CCCCC1(42) + C=C[CH]CC=C(175) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+    [CH]1CCCCC1(42) + [CH]=CCCC=C(177) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+
+After model enlargement:
+    The model core has 18 species and 12 reactions
+    The model edge has 166 species and 562 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 12 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 12 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 577 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 577 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:48
+    Memory used: 221.33 MB
+
+Conducting simulation of reaction system 1...
+At time 1.8998e-09 s, species [CH2]C=C(133) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.4706e+08 mol/m^3*s
+    [CH2]C=C(133) rate: 1.5212e+07 mol/m^3*s (0.1034)
+    MCH(1) conversion: 0.1516    
+At time 1.8998e-09 s, species [CH2]C=C(133) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.4706e+08 mol/m^3*s
+    [CH2]C=C(133) rate: 1.5212e+07 mol/m^3*s (0.1034)
+    MCH(1) conversion: 0.1516    
+
+
+Adding species [CH2]C=C(133) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]C=C(133)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    H(3) + [CH2]C=C(133) <=> C3H6(27)
+    [CH]1CCCCC1(42) + [CH2]C=C(133) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH2]C=C(133) + [CH2]C=C(133) <=> C=CCCC=C(158)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 19 species and 15 reactions
+    The model edge has 165 species and 559 reactions
+
+
+At time 3.4815e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Found thermo for [CH]1CC1 in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH]C=C gives H298=389953 J/mol
+Resonance isomer 2 [CH]=C[CH2] gives H298=417567 J/mol
+Found thermo for C=CCO[O] in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+For reaction [CH2]C=C(133) <=> [CH]1CC1(181), Ea raised from 122.6 to 123.7 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + [CH2]C=C(133) <=> [CH2][CH]CO[O](184), Ea raised from 205.4 to 208.5 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + [CH2]C=C(133) <=> [CH2]C([CH2])O[O](185), Ea raised from 209.8 to 211.6 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 6 new edge species
+    [CH]1CC1(181)
+    [CH]=C[CH2](182)
+    [CH2][C]=C(183)
+    [CH2][CH]CO[O](184)
+    [CH2]C([CH2])O[O](185)
+    C=CCO[O](186)
+Added 0 new core reactions
+Created 11 new edge reactions
+    C3H4(26) + H(3) <=> [CH2]C=C(133)
+    C=[C]C(135) <=> [CH2]C=C(133)
+    [CH]=CC(134) <=> [CH2]C=C(133)
+    [CH2]C=C(133) <=> [CH]1CC1(181)
+    H(3) + [CH]=C[CH2](182) <=> [CH2]C=C(133)
+    H(3) + [CH2][C]=C(183) <=> [CH2]C=C(133)
+    O2(2) + [CH2]C=C(133) <=> C3H4(26) + HO2(8)
+    O2(2) + [CH2]C=C(133) <=> [CH2][CH]CO[O](184)
+    O2(2) + [CH2]C=C(133) <=> [CH2]C([CH2])O[O](185)
+    HO2(8) + [CH]=C[CH2](182) <=> O2(2) + [CH2]C=C(133)
+    O2(2) + [CH2]C=C(133) <=> C=CCO[O](186)
+
+After model enlargement:
+    The model core has 19 species and 15 reactions
+    The model edge has 171 species and 570 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 15 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 15 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 588 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 588 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:49
+    Memory used: 221.33 MB
+
+Conducting simulation of reaction system 1...
+At time 2.4626e-09 s, species CO[O](82) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.4009e+08 mol/m^3*s
+    CO[O](82) rate: 1.4164e+07 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.1917    
+At time 2.4626e-09 s, species CO[O](82) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.4009e+08 mol/m^3*s
+    CO[O](82) rate: 1.4164e+07 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.1917    
+
+
+Adding species CO[O](82) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CO[O](82)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    CO[O](82) <=> O2(2) + CH3(19)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 20 species and 16 reactions
+    The model edge has 170 species and 569 reactions
+
+
+At time 3.4842e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9502    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Warning: Marked reaction CO[O](82) <=> O2(2) + CH3(19) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 2 new edge species
+    [CH2]OO(187)
+    [CH2]O[O](188)
+Added 1 new core reactions
+    CO[O](82) <=> O2(2) + CH3(19)
+Created 4 new edge reactions
+    CH3O(34) + O(4) <=> CO[O](82)
+    HO2(8) + CH2(S)(16) <=> CO[O](82)
+    CO[O](82) <=> [CH2]OO(187)
+    H(3) + [CH2]O[O](188) <=> CO[O](82)
+
+After model enlargement:
+    The model core has 20 species and 17 reactions
+    The model edge has 172 species and 573 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 17 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 17 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 593 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 593 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:51
+    Memory used: 221.04 MB
+
+Conducting simulation of reaction system 1...
+At time 2.5443e-09 s, species [CH2]C=CCC[CH2](149) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3909e+08 mol/m^3*s
+    [CH2]C=CCC[CH2](149) rate: 1.4161e+07 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.1974    
+At time 2.5443e-09 s, species [CH2]C=CCC[CH2](149) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3909e+08 mol/m^3*s
+    [CH2]C=CCC[CH2](149) rate: 1.4161e+07 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.1974    
+
+
+Adding species [CH2]C=CCC[CH2](149) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]C=CCC[CH2](149)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    [CH2]C=CCC[CH2](149) <=> C1=CCCCC1(77)
+    H(3) + [CH2]C=CCC[CH2](149) <=> [CH2]CCCC=C(78)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 21 species and 19 reactions
+    The model edge has 171 species and 571 reactions
+
+
+At time 3.4858e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9503    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2]C=C[CH2] gives H298=290604 J/mol
+Resonance isomer 2 [CH2][CH]C=C gives H298=345096 J/mol
+Resonance isomer 1 [CH2]C=CC[CH]C gives H298=290930 J/mol
+Resonance isomer 2 C=C[CH]C[CH]C gives H298=292353 J/mol
+Resonance isomer 1 [CH2]C=C[CH]CC gives H298=237166 J/mol
+Resonance isomer 2 [CH2][CH]C=CCC gives H298=291851 J/mol
+Resonance isomer 3 C=C[CH][CH]CC gives H298=292353 J/mol
+Resonance isomer 1 [CH2]C=[C]CCC gives H298=335071 J/mol
+Resonance isomer 2 C=C[C]CCC gives H298=406367 J/mol
+Resonance isomer 1 [CH2]C[CH]C=CC gives H298=291139 J/mol
+Resonance isomer 2 [CH2]CC=C[CH]C gives H298=291851 J/mol
+Resonance isomer 1 [CH2][C]=CCCC gives H298=335071 J/mol
+Resonance isomer 2 C=[C][CH]CCC gives H298=336494 J/mol
+Resonance isomer 1 [CH2]C=C[CH]C[CH2] gives H298=442169 J/mol
+Resonance isomer 2 [CH2][CH]C=CC[CH2] gives H298=496854 J/mol
+Resonance isomer 3 [CH2]C[CH][CH]C=C gives H298=497356 J/mol
+Resonance isomer 1 [CH2][CH]CC=C[CH2] gives H298=495934 J/mol
+Resonance isomer 2 [CH2][CH]C[CH]C=C gives H298=497356 J/mol
+Resonance isomer 1 [CH2]C=[C]CC[CH2] gives H298=540075 J/mol
+Resonance isomer 2 [CH2]CC[C]C=C gives H298=611370 J/mol
+Resonance isomer 1 [CH2][C]=CCC[CH2] gives H298=540075 J/mol
+Resonance isomer 2 [CH2]CC[CH][C]=C gives H298=541497 J/mol
+Resonance isomer 1 [CH]C=CCCC gives H298=316662 J/mol
+Resonance isomer 2 [CH]=C[CH]CCC gives H298=345699 J/mol
+Resonance isomer 1 [CH]C=CCC[CH2] gives H298=521665 J/mol
+Resonance isomer 2 [CH]=C[CH]CC[CH2] gives H298=550702 J/mol
+Generating kinetics for new reactions...
+For reaction [CH2]C=CCC[CH2](149) <=> [CH2]CCC1[CH]C1(202), Ea raised from 110.5 to 112.4 kJ/mol to match endothermicity of reaction.
+Warning: Marked reaction [CH2]C=CCC[CH2](149) <=> [CH2]C1[CH]CCC1(203) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 23 new edge species
+    [CH2][CH]C1CCC1(189)
+    [CH2]CCC=C=C(190)
+    [CH2]C=C[CH2](191)
+    [CH2][CH]CC[CH][CH2](192)
+    [CH2][CH]C[CH]C[CH2](193)
+    [CH2]C=CC[CH]C(194)
+    [CH2]CCC=[C]C(195)
+    [CH2]C=C[CH]CC(196)
+    [CH2]CC[C]=CC(197)
+    [CH2]C=[C]CCC(198)
+    [CH2]C[CH]C=CC(199)
+    [CH2][C]=CCCC(200)
+    [CH2][CH]CC=CC(201)
+    [CH2]CCC1[CH]C1(202)
+    [CH2]C1[CH]CCC1(203)
+    [CH2]C=C[CH]C[CH2](204)
+    [CH2][CH]CC=C[CH2](205)
+    [CH2]C=[C]CC[CH2](206)
+    [CH2][C]=CCC[CH2](207)
+    [CH2]CC=CC=C(208)
+    [CH]=C[CH]CCC(209)
+    C=CC1CCC1(210)
+    [CH]=C[CH]CC[CH2](211)
+Added 0 new core reactions
+Created 34 new edge reactions
+    [CH2]C=CCC[CH2](149) <=> [CH2][CH]C1CCC1(189)
+    H(3) + C=C[CH]CC=C(175) <=> [CH2]C=CCC[CH2](149)
+    H(3) + [CH2]CCC=C=C(190) <=> [CH2]C=CCC[CH2](149)
+    C2H4(25) + [CH2]C=C[CH2](191) <=> [CH2]C=CCC[CH2](149)
+    [CH2][CH]CC[CH][CH2](192) <=> [CH2]C=CCC[CH2](149)
+    [CH2][CH]C[CH]C[CH2](193) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH2]C=CC[CH]C(194)
+    [CH2]CCC=[C]C(195) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH2]C=C[CH]CC(196)
+    [CH2]CC[C]=CC(197) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=[C]CCC(198) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH2]C[CH]C=CC(199)
+    [CH2][C]=CCCC(200) <=> [CH2]C=CCC[CH2](149)
+    [CH2][CH]CC=CC(201) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH2]CCC1[CH]C1(202)
+    [CH2]C=CCC[CH2](149) <=> [CH2]C1[CH]CCC1(203)
+    [CH2][CH2](68) + [CH2]C=C[CH2](191) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C[CH2](64) + [CH]=C[CH2](182) <=> [CH2]C=CCC[CH2](149)
+    H(3) + [CH2]C=C[CH]C[CH2](204) <=> [CH2]C=CCC[CH2](149)
+    H(3) + [CH2][CH]CC=C[CH2](205) <=> [CH2]C=CCC[CH2](149)
+    H(3) + [CH2]C=[C]CC[CH2](206) <=> [CH2]C=CCC[CH2](149)
+    H(3) + [CH2][C]=CCC[CH2](207) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH2]C1[CH]CCC1(203)
+    H(3) + [CH2]CC=CC=C(208) <=> [CH2]C=CCC[CH2](149)
+    [CH2][CH2](68) + C=CC=C(152) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> C2H4(25) + C=CC=C(152)
+    [CH2]C=CCC[CH2](149) <=> [CH2]C[CH]CC=C(167)
+    [CH2]CCC[C]=C(169) <=> [CH2]C=CCC[CH2](149)
+    [CH2][CH]CCC=C(168) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH]=CCCC[CH2](151)
+    [CH]=C[CH]CCC(209) <=> [CH2]C=CCC[CH2](149)
+    [CH2]C=CCC[CH2](149) <=> [CH]1[CH]CCCC1(81)
+    [CH2]C=CCC[CH2](149) <=> C=CC1CCC1(210)
+    H(3) + [CH]=C[CH]CC[CH2](211) <=> [CH2]C=CCC[CH2](149)
+
+After model enlargement:
+    The model core has 21 species and 19 reactions
+    The model edge has 194 species and 605 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 19 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 19 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 627 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 627 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:56
+    Memory used: 221.63 MB
+
+Conducting simulation of reaction system 1...
+At time 2.1503e-10 s, species C=CC=C(152) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.6525e+08 mol/m^3*s
+    C=CC=C(152) rate: 1.6818e+07 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.01904   
+At time 2.1503e-10 s, species C=CC=C(152) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.6525e+08 mol/m^3*s
+    C=CC=C(152) rate: 1.6818e+07 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.01904   
+
+
+Adding species C=CC=C(152) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C=CC=C(152)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    C2H4(25) + C=CC=C(152) <=> C1=CCCCC1(77)
+    [CH2]C=CCC[CH2](149) <=> C2H4(25) + C=CC=C(152)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 22 species and 21 reactions
+    The model edge has 193 species and 603 reactions
+
+
+At time 3.4954e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9507    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH]C=CC gives H298=359222 J/mol
+Resonance isomer 2 [CH]=C[CH]C gives H298=387355 J/mol
+Found thermo for C=[C]C=C in thermo library: dft_qci_thermo
+Found thermo for [CH]=CC=C in thermo library: dft_qci_thermo
+Resonance isomer 1 C=C[CH]CO[O] gives H298=208715 J/mol
+Resonance isomer 2 [CH2]C=CCO[O] gives H298=212187 J/mol
+Found thermo for C=C[CH]C in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH2]C=CCC gives H298=117642 J/mol
+Resonance isomer 2 C=C[CH]CC gives H298=119064 J/mol
+Resonance isomer 1 [CH2]C=CCC([CH2])C gives H298=272019 J/mol
+Resonance isomer 2 [CH2]C(C)C[CH]C=C gives H298=276788 J/mol
+Resonance isomer 1 [CH2]C=CCC[CH]C gives H298=270303 J/mol
+Resonance isomer 2 C=C[CH]CC[CH]C gives H298=271726 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + C=CC=C(152) <=> [CH2]C(C=C)O[O](216), Ea raised from 157.8 to 160.3 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C=CC=C(152) <=> C=C[CH]CO[O](217), Ea raised from 98.7 to 101.5 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 17 new edge species
+    [CH]=CC[CH2](212)
+    [CH]=C[CH]C(213)
+    C=[C]C=C(214)
+    [CH]=CC=C(215)
+    [CH2]C(C=C)O[O](216)
+    C=C[CH]CO[O](217)
+    C=C[CH]C(218)
+    [CH2]C(C)C=C(219)
+    C=C[CH]CC(220)
+    [CH2]CC([CH2])C=C(221)
+    [CH2]C(C)C[CH]C=C(222)
+    [CH2]C(C)C([CH2])C=C(223)
+    C=C[CH]CC[CH]C(224)
+    [CH2]C(C=C)C[CH]C(225)
+    CC1CC=CCC1(226)
+    C=CC1CC(C)C1(227)
+    C=CC1CCC1C(228)
+Added 0 new core reactions
+Created 40 new edge reactions
+    [CH]=CC[CH2](212) <=> C=CC=C(152)
+    [CH]=C[CH]C(213) <=> C=CC=C(152)
+    [CH2]C=C[CH2](191) <=> C=CC=C(152)
+    C2H3(23) + C2H3(23) <=> C=CC=C(152)
+    H(3) + C=[C]C=C(214) <=> C=CC=C(152)
+    H(3) + [CH]=CC=C(215) <=> C=CC=C(152)
+    O2(2) + C=CC=C(152) <=> [CH2]C(C=C)O[O](216)
+    O2(2) + C=CC=C(152) <=> C=C[CH]CO[O](217)
+    HO2(8) + C=[C]C=C(214) <=> O2(2) + C=CC=C(152)
+    HO2(8) + [CH]=CC=C(215) <=> O2(2) + C=CC=C(152)
+    CH2(11) + [CH2]CC=C(145) <=> CH3(19) + C=CC=C(152)
+    CH2(11) + C=C[CH]C(218) <=> CH3(19) + C=CC=C(152)
+    CH3(19) + C=CC=C(152) <=> [CH2]C(C)C=C(219)
+    CH3(19) + C=CC=C(152) <=> C=C[CH]CC(220)
+    CH3(19) + C=CC=C(152) <=> CH4(21) + C=[C]C=C(214)
+    CH4(21) + [CH]=CC=C(215) <=> CH3(19) + C=CC=C(152)
+    H(3) + C=CC=C(152) <=> [CH2]CC=C(145)
+    H(3) + C=CC=C(152) <=> C=C[CH]C(218)
+    H(3) + C=CC=C(152) <=> H2(6) + C=[C]C=C(214)
+    H2(6) + [CH]=CC=C(215) <=> H(3) + C=CC=C(152)
+    C2H3(23) + [CH2]CC=C(145) <=> C2H4(25) + C=CC=C(152)
+    C2H3(23) + C=C[CH]C(218) <=> C2H4(25) + C=CC=C(152)
+    C2H5(29) + [CH]=CC=C(215) <=> C2H4(25) + C=CC=C(152)
+    [CH2]CC([CH2])C=C(221) <=> C2H4(25) + C=CC=C(152)
+    C2H4(25) + C=CC=C(152) <=> C=CC1CCC1(210)
+    [CH2]C=C(133) + [CH2]CC=C(145) <=> C3H6(27) + C=CC=C(152)
+    [CH2]C=C(133) + C=C[CH]C(218) <=> C3H6(27) + C=CC=C(152)
+    [CH]=CC(134) + [CH2]CC=C(145) <=> C3H6(27) + C=CC=C(152)
+    [CH]=CC(134) + C=C[CH]C(218) <=> C3H6(27) + C=CC=C(152)
+    C[CH]C(136) + [CH]=CC=C(215) <=> C3H6(27) + C=CC=C(152)
+    [CH2]CC(129) + [CH]=CC=C(215) <=> C3H6(27) + C=CC=C(152)
+    [CH2]C(C)C[CH]C=C(222) <=> C3H6(27) + C=CC=C(152)
+    [CH2]C(C)C([CH2])C=C(223) <=> C3H6(27) + C=CC=C(152)
+    C=C[CH]CC[CH]C(224) <=> C3H6(27) + C=CC=C(152)
+    [CH2]C(C=C)C[CH]C(225) <=> C3H6(27) + C=CC=C(152)
+    C3H6(27) + C=CC=C(152) <=> CC1CC=CCC1(226)
+    C3H6(27) + C=CC=C(152) <=> C=CC1CC(C)C1(227)
+    C3H6(27) + C=CC=C(152) <=> C=CC1CCC1C(228)
+    [CH2]CC=C(145) + [CH]=CC=C(215) <=> C=CC=C(152) + C=CC=C(152)
+    C=C[CH]C(218) + [CH]=CC=C(215) <=> C=CC=C(152) + C=CC=C(152)
+
+After model enlargement:
+    The model core has 22 species and 21 reactions
+    The model edge has 210 species and 643 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 21 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 21 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 667 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 667 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:58
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 3.4340e-09 s, species C3H4(26) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3148e+08 mol/m^3*s
+    C3H4(26) rate: 1.3856e+07 mol/m^3*s (0.1054)
+    MCH(1) conversion: 0.2566    
+At time 3.4340e-09 s, species C3H4(26) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3148e+08 mol/m^3*s
+    C3H4(26) rate: 1.3856e+07 mol/m^3*s (0.1054)
+    MCH(1) conversion: 0.2566    
+
+
+Adding species C3H4(26) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C3H4(26)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    C3H4(26) + H(3) <=> [CH2]C=C(133)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 23 species and 22 reactions
+    The model edge has 209 species and 642 reactions
+
+
+At time 3.4800e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction O2(2) + C3H4(26) <=> C=[C]CO[O](230), Ea raised from 150.7 to 152.7 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 4 new edge species
+    [CH2]C(=C)O[O](229)
+    C=[C]CO[O](230)
+    [CH2]CC[C]=C(231)
+    [CH2]CC([CH2])=C(232)
+Added 0 new core reactions
+Created 11 new edge reactions
+    H2CCCH(24) + H(3) <=> C3H4(26)
+    O2(2) + C3H4(26) <=> [CH2]C(=C)O[O](229)
+    O2(2) + C3H4(26) <=> C=[C]CO[O](230)
+    H2CCCH(24) + HO2(8) <=> O2(2) + C3H4(26)
+    C3H4(26) + H(3) <=> C=[C]C(135)
+    C3H4(26) + H(3) <=> H2CCCH(24) + H2(6)
+    C2H3(23) + [CH2]C=C(133) <=> C2H4(25) + C3H4(26)
+    C2H3(23) + C=[C]C(135) <=> C2H4(25) + C3H4(26)
+    H2CCCH(24) + C2H5(29) <=> C2H4(25) + C3H4(26)
+    [CH2]CC[C]=C(231) <=> C2H4(25) + C3H4(26)
+    [CH2]CC([CH2])=C(232) <=> C2H4(25) + C3H4(26)
+
+After model enlargement:
+    The model core has 23 species and 22 reactions
+    The model edge has 213 species and 653 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 22 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 22 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 678 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 678 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:01:59
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 4.0368e-09 s, species H2(6) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2979e+08 mol/m^3*s
+    H2(6) rate: 1.3245e+07 mol/m^3*s (0.102)
+    MCH(1) conversion: 0.2942    
+At time 4.0368e-09 s, species H2(6) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2979e+08 mol/m^3*s
+    H2(6) rate: 1.3245e+07 mol/m^3*s (0.102)
+    MCH(1) conversion: 0.2942    
+
+
+Adding species H2(6) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    H2(6)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    H2(6) <=> H(3) + H(3)
+    C3H6(27) + H(3) <=> H2(6) + [CH2]C=C(133)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 24 species and 24 reactions
+    The model edge has 212 species and 651 reactions
+
+
+At time 3.4809e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Found thermo for [CH2]C(=C)C in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 2 new edge species
+    [CH2]C(=C)C(233)
+    C=[C]CC(234)
+Added 0 new core reactions
+Created 6 new edge reactions
+    CH2(11) + [CH2]C=C(133) <=> C3H4(26) + CH3(19)
+    CH2(11) + C=[C]C(135) <=> C3H4(26) + CH3(19)
+    C3H4(26) + CH3(19) <=> [CH2]C(=C)C(233)
+    C3H4(26) + CH3(19) <=> C=[C]CC(234)
+    C3H4(26) + CH3(19) <=> CH4(21) + H2CCCH(24)
+    C2H5(29) + H(3) <=> C2H4(25) + H2(6)
+
+After model enlargement:
+    The model core has 24 species and 24 reactions
+    The model edge has 214 species and 657 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 24 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 24 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 684 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 684 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:00
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 6.4812e-09 s, species OH(5) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.1086e+08 mol/m^3*s
+    OH(5) rate: 1.1367e+07 mol/m^3*s (0.1025)
+    MCH(1) conversion: 0.4282    
+At time 6.4812e-09 s, species OH(5) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1086e+08 mol/m^3*s
+    OH(5) rate: 1.1367e+07 mol/m^3*s (0.1025)
+    MCH(1) conversion: 0.4282    
+
+
+Adding species OH(5) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    OH(5)
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 25 species and 24 reactions
+    The model edge has 213 species and 657 reactions
+
+
+At time 3.4860e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9503    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 25 species and 24 reactions
+    The model edge has 213 species and 657 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 24 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 24 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 684 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 684 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:01
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 6.4485e-09 s, species O(4) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.1109e+08 mol/m^3*s
+    O(4) rate: 1.1244e+07 mol/m^3*s (0.1012)
+    MCH(1) conversion: 0.4266    
+At time 6.4485e-09 s, species O(4) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1109e+08 mol/m^3*s
+    O(4) rate: 1.1244e+07 mol/m^3*s (0.1012)
+    MCH(1) conversion: 0.4266    
+
+
+Adding species O(4) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    O(4)
+Created 0 new edge species
+Moved 4 reactions from edge to core
+    O2(2) + H(3) <=> O(4) + OH(5)
+    O(4) + H2(6) <=> H(3) + OH(5)
+    O(4) + O(4) <=> O2(2)
+    H(3) + O(4) <=> OH(5)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 26 species and 28 reactions
+    The model edge has 212 species and 653 reactions
+
+
+At time 3.4781e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.95      
+
+Generating thermodynamics for new species...
+Found thermo for CO in thermo library: dft_qci_thermo
+Found thermo for [CH2]CO in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 3 new edge species
+    CO(235)
+    [CH2]CO(236)
+    [CH2]C[O](237)
+Added 0 new core reactions
+Created 7 new edge reactions
+    OH(5) + CH3(19) <=> H2O(7) + CH2(11)
+    OH(5) + CH3(19) <=> CO(235)
+    OH(5) + CH2(11) <=> O(4) + CH3(19)
+    O(4) + CH3(19) <=> CH3O(34)
+    C2H4(25) + OH(5) <=> [CH2]CO(236)
+    C2H4(25) + O(4) <=> [CH2]C[O](237)
+    C2H3(23) + OH(5) <=> C2H4(25) + O(4)
+
+After model enlargement:
+    The model core has 26 species and 28 reactions
+    The model edge has 215 species and 660 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 29 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 29 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 691 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 691 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:02
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 6.7974e-09 s, species H2CCCH(24) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.0576e+08 mol/m^3*s
+    H2CCCH(24) rate: 1.1343e+07 mol/m^3*s (0.1073)
+    MCH(1) conversion: 0.4436    
+At time 6.7974e-09 s, species H2CCCH(24) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.0576e+08 mol/m^3*s
+    H2CCCH(24) rate: 1.1343e+07 mol/m^3*s (0.1073)
+    MCH(1) conversion: 0.4436    
+
+
+Adding species H2CCCH(24) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    H2CCCH(24)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    H2CCCH(24) + H(3) <=> C3H4(26)
+    C3H4(26) + H(3) <=> H2CCCH(24) + H2(6)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 27 species and 30 reactions
+    The model edge has 214 species and 658 reactions
+
+
+At time 3.5068e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9512    
+
+Generating thermodynamics for new species...
+Found thermo for [C]#C[CH2] in thermo library: dft_qci_thermo
+Found thermo for [CH]=C=[CH] in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH]C(=C)O[O] gives H298=438784 J/mol
+Resonance isomer 2 [CH]=C([CH2])O[O] gives H298=466399 J/mol
+Resonance isomer 1 [CH2][C]=CO[O] gives H298=476173 J/mol
+Resonance isomer 2 C=[C][CH]O[O] gives H298=527937 J/mol
+Resonance isomer 1 [CH]C(=C)C gives H298=353443 J/mol
+Resonance isomer 2 [CH]=C([CH2])C gives H298=381058 J/mol
+Resonance isomer 1 [CH2][C]=CC gives H298=377631 J/mol
+Resonance isomer 2 C=[C][CH]C gives H298=378150 J/mol
+Found thermo for C#CC in thermo library: dft_qci_thermo
+Found thermo for C#CCC in thermo library: dft_qci_thermo
+Found thermo for C=C=CC in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH2][C]=CC[CH2] gives H298=560702 J/mol
+Resonance isomer 2 [CH2]C[CH][C]=C gives H298=562125 J/mol
+Resonance isomer 1 [CH]C(=C)C[CH2] gives H298=539866 J/mol
+Resonance isomer 2 [CH]=C([CH2])C[CH2] gives H298=567480 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + H2CCCH(24) <=> [CH]=C([CH2])O[O](242), Ea raised from 86.5 to 90.3 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + H2CCCH(24) <=> [CH2][C]=CO[O](243), Ea raised from 123.9 to 128.8 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + H2CCCH(24) <=> [CH]=[C]CO[O](245), Ea raised from 234.3 to 237.2 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 21 new edge species
+    [C]#CC(238)
+    [C]1=CC1(239)
+    [C]#C[CH2](240)
+    [CH]=C=[CH](241)
+    [CH]=C([CH2])O[O](242)
+    [CH2][C]=CO[O](243)
+    C#CCO[O](244)
+    [CH]=[C]CO[O](245)
+    C=C=CO[O](246)
+    [CH]=C([CH2])C(247)
+    [CH2][C]=CC(248)
+    C#CC(249)
+    C#CCC(250)
+    [CH]=[C]C(251)
+    [CH]=[C]CC(252)
+    C=C=CC(253)
+    C#CCC[CH2](254)
+    [CH2][C]=CC[CH2](255)
+    [CH]=C([CH2])C[CH2](256)
+    [CH2]CC=C=C(257)
+    [CH]=[C]CC[CH2](258)
+Added 0 new core reactions
+Created 35 new edge reactions
+    [C]#CC(238) <=> H2CCCH(24)
+    H2CCCH(24) <=> [C]1=CC1(239)
+    H(3) + [C]#C[CH2](240) <=> H2CCCH(24)
+    H(3) + [CH]=C=[CH](241) <=> H2CCCH(24)
+    O2(2) + H2CCCH(24) <=> [CH]=C([CH2])O[O](242)
+    O2(2) + H2CCCH(24) <=> [CH2][C]=CO[O](243)
+    HO2(8) + [C]#C[CH2](240) <=> O2(2) + H2CCCH(24)
+    O2(2) + H2CCCH(24) <=> C#CCO[O](244)
+    O2(2) + H2CCCH(24) <=> [CH]=[C]CO[O](245)
+    HO2(8) + [CH]=C=[CH](241) <=> O2(2) + H2CCCH(24)
+    O2(2) + H2CCCH(24) <=> C=C=CO[O](246)
+    CH4(21) + H(3) <=> H2(6) + CH3(19)
+    CH2(11) + [CH]=C[CH2](182) <=> H2CCCH(24) + CH3(19)
+    CH2(11) + [CH2][C]=C(183) <=> H2CCCH(24) + CH3(19)
+    H2CCCH(24) + CH3(19) <=> [CH]=C([CH2])C(247)
+    H2CCCH(24) + CH3(19) <=> [CH2][C]=CC(248)
+    CH2(11) + C#CC(249) <=> H2CCCH(24) + CH3(19)
+    CH4(21) + [C]#C[CH2](240) <=> H2CCCH(24) + CH3(19)
+    H2CCCH(24) + CH3(19) <=> C#CCC(250)
+    CH2(11) + [CH]=[C]C(251) <=> H2CCCH(24) + CH3(19)
+    H2CCCH(24) + CH3(19) <=> [CH]=[C]CC(252)
+    C3H4(26) + CH2(11) <=> H2CCCH(24) + CH3(19)
+    H2CCCH(24) + CH3(19) <=> CH4(21) + [CH]=C=[CH](241)
+    H2CCCH(24) + CH3(19) <=> C=C=CC(253)
+    C2H3(23) + [CH]=C[CH2](182) <=> H2CCCH(24) + C2H4(25)
+    C2H3(23) + [CH2][C]=C(183) <=> H2CCCH(24) + C2H4(25)
+    H2CCCH(24) + C2H4(25) <=> C#CCC[CH2](254)
+    C2H3(23) + C#CC(249) <=> H2CCCH(24) + C2H4(25)
+    [CH2][C]=CC[CH2](255) <=> H2CCCH(24) + C2H4(25)
+    [CH]=C([CH2])C[CH2](256) <=> H2CCCH(24) + C2H4(25)
+    C2H3(23) + [CH]=[C]C(251) <=> H2CCCH(24) + C2H4(25)
+    C2H5(29) + [CH]=C=[CH](241) <=> H2CCCH(24) + C2H4(25)
+    H2CCCH(24) + C2H4(25) <=> [CH2]CC=C=C(257)
+    C2H3(23) + C3H4(26) <=> H2CCCH(24) + C2H4(25)
+    [CH]=[C]CC[CH2](258) <=> H2CCCH(24) + C2H4(25)
+
+After model enlargement:
+    The model core has 27 species and 30 reactions
+    The model edge has 235 species and 693 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 31 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 31 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 726 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 726 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:04
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 7.4649e-09 s, species C[CH]C(136) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.8581e+07 mol/m^3*s
+    C[CH]C(136) rate: 1.0062e+07 mol/m^3*s (0.1021)
+    MCH(1) conversion: 0.4747    
+At time 7.4649e-09 s, species C[CH]C(136) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.8581e+07 mol/m^3*s
+    C[CH]C(136) rate: 1.0062e+07 mol/m^3*s (0.1021)
+    MCH(1) conversion: 0.4747    
+
+
+Adding species C[CH]C(136) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C[CH]C(136)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    C[CH]C(136) + [CH2]C=C(133) <=> C3H6(27) + C3H6(27)
+    C3H6(27) + H(3) <=> C[CH]C(136)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 28 species and 32 reactions
+    The model edge has 234 species and 691 reactions
+
+
+At time 3.4982e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9509    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 2 new edge reactions
+    [CH2]CC(129) <=> C[CH]C(136)
+    H(3) + [CH2][CH]C(66) <=> C[CH]C(136)
+
+After model enlargement:
+    The model core has 28 species and 32 reactions
+    The model edge has 234 species and 693 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 33 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 33 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 728 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 728 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:07
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 7.8630e-09 s, species [CH]1CC=CCC1(153) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.6029e+07 mol/m^3*s
+    [CH]1CC=CCC1(153) rate: 9.8109e+06 mol/m^3*s (0.1022)
+    MCH(1) conversion: 0.4924    
+At time 7.8630e-09 s, species [CH]1CC=CCC1(153) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.6029e+07 mol/m^3*s
+    [CH]1CC=CCC1(153) rate: 9.8109e+06 mol/m^3*s (0.1022)
+    MCH(1) conversion: 0.4924    
+
+
+Adding species [CH]1CC=CCC1(153) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH]1CC=CCC1(153)
+Created 0 new edge species
+Moved 5 reactions from edge to core
+    H(3) + [CH]1CC=CCC1(153) <=> C1=CCCCC1(77)
+    H(3) + C1=CCCCC1(77) <=> H2(6) + [CH]1CC=CCC1(153)
+    [CH]1CC=CCC1(153) + C[CH]C(136) <=> C3H6(27) + C1=CCCCC1(77)
+    [CH]1CCCCC1(42) + [CH]1CC=CCC1(153) <=> C1=CCCCC1(77) + C1=CCCCC1(77)
+    [CH2]CCCC=C(78) + [CH]1CC=CCC1(153) <=> C1=CCCCC1(77) + C=CCCC=C(158)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 29 species and 37 reactions
+    The model edge has 233 species and 688 reactions
+
+
+At time 3.4940e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9507    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH]1C=C[CH]CC1 gives H298=270973 J/mol
+Resonance isomer 2 [CH]1[CH]CCC=C1 gives H298=327247 J/mol
+Generating kinetics for new reactions...
+For reaction [CH]1CC=CCC1(153) <=> [CH]1CC2CCC12(260), Ea raised from 116.1 to 118.2 kJ/mol to match endothermicity of reaction.
+Warning: Marked reaction [CH]1CC=CCC1(153) <=> [CH]1CC2CCC12(260) as duplicate for saving to Chemkin file.
+Warning: Marked reaction [CH]1CC=CCC1(153) <=> [CH]1CCC2CC12(259) as duplicate for saving to Chemkin file.
+Warning: Marked reaction [CH]1[CH]CC[CH]C1(263) <=> [CH]1CC=CCC1(153) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 13 new edge species
+    [CH]1CCC2CC12(259)
+    [CH]1CC2CCC12(260)
+    C1=CCC=CC1(261)
+    C1C=CCCC=1(262)
+    [CH]1[CH]CC[CH]C1(263)
+    [CH]1C=CC[CH]C1(264)
+    [CH]1[CH]CC=CC1(265)
+    [CH]1[CH]CCC=C1(266)
+    [C]1=CCC[CH]C1(267)
+    [C]1=CC[CH]CC1(268)
+    [O]OC1[CH]CC[CH]C1(269)
+    [O]OC1[CH]C[CH]CC1(270)
+    [O]OC1CC=CCC1(271)
+Added 0 new core reactions
+Created 27 new edge reactions
+    [CH]1CC=CCC1(153) <=> [CH]1CCC2CC12(259)
+    [CH]1CC=CCC1(153) <=> [CH]1CC2CCC12(260)
+    H(3) + C1=CCC=CC1(261) <=> [CH]1CC=CCC1(153)
+    H(3) + C1C=CCCC=1(262) <=> [CH]1CC=CCC1(153)
+    [CH]1[CH]CC[CH]C1(263) <=> [CH]1CC=CCC1(153)
+    [CH]1CC=CCC1(153) <=> [CH]1C=CCCC1(154)
+    [C]1=CCCCC1(155) <=> [CH]1CC=CCC1(153)
+    [CH]1CC=CCC1(153) <=> [CH]1CC2CCC12(260)
+    [CH]1CC=CCC1(153) <=> [CH]1CCC2CC12(259)
+    C=C[CH]CC=C(175) <=> [CH]1CC=CCC1(153)
+    [CH]=CCCC=C(177) <=> [CH]1CC=CCC1(153)
+    [CH]1[CH]CC[CH]C1(263) <=> [CH]1CC=CCC1(153)
+    H(3) + [CH]1C=CC[CH]C1(264) <=> [CH]1CC=CCC1(153)
+    H(3) + [CH]1[CH]CC=CC1(265) <=> [CH]1CC=CCC1(153)
+    H(3) + [CH]1[CH]CCC=C1(266) <=> [CH]1CC=CCC1(153)
+    H(3) + [C]1=CCC[CH]C1(267) <=> [CH]1CC=CCC1(153)
+    H(3) + [C]1=CC[CH]CC1(268) <=> [CH]1CC=CCC1(153)
+    O2(2) + [CH]1CC=CCC1(153) <=> HO2(8) + C1=CCC=CC1(261)
+    O2(2) + [CH]1CC=CCC1(153) <=> HO2(8) + C1C=CCCC=1(262)
+    O2(2) + [CH]1CC=CCC1(153) <=> [O]OC1[CH]CC[CH]C1(269)
+    O2(2) + [CH]1CC=CCC1(153) <=> [O]OC1[CH]C[CH]CC1(270)
+    HO2(8) + [CH]1C=CC[CH]C1(264) <=> O2(2) + [CH]1CC=CCC1(153)
+    HO2(8) + [C]1=CCC[CH]C1(267) <=> O2(2) + [CH]1CC=CCC1(153)
+    HO2(8) + [C]1=CC[CH]CC1(268) <=> O2(2) + [CH]1CC=CCC1(153)
+    O2(2) + [CH]1CC=CCC1(153) <=> [O]OC1CC=CCC1(271)
+    H(3) + [CH2]CC=C(145) <=> H2(6) + C=CC=C(152)
+    H(3) + C=C[CH]C(218) <=> H2(6) + C=CC=C(152)
+
+After model enlargement:
+    The model core has 29 species and 37 reactions
+    The model edge has 246 species and 715 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 38 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 38 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 755 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 755 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:12
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 5.0198e-10 s, species [CH]1CCC2CC12(259) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.6557e+08 mol/m^3*s
+    [CH]1CCC2CC12(259) rate: 1.7078e+07 mol/m^3*s (0.1031)
+    MCH(1) conversion: 0.04299   
+At time 5.0198e-10 s, species [CH]1CCC2CC12(259) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.6557e+08 mol/m^3*s
+    [CH]1CCC2CC12(259) rate: 1.7078e+07 mol/m^3*s (0.1031)
+    MCH(1) conversion: 0.04299   
+
+
+Adding species [CH]1CCC2CC12(259) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH]1CCC2CC12(259)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    [CH]1CC=CCC1(153) <=> [CH]1CCC2CC12(259)
+    [CH]1CC=CCC1(153) <=> [CH]1CCC2CC12(259)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 30 species and 39 reactions
+    The model edge has 245 species and 713 reactions
+
+
+At time 3.4824e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9502    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+Warning: Marked reaction [CH2]C1C=CCC1(272) <=> [CH]1CCC2CC12(259) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 16 new edge species
+    [CH2]C1C=CCC1(272)
+    C1CCC2CC=12(273)
+    C1=CC2CC2C1(274)
+    [CH]1C=CCC1(275)
+    C1C[C]2CC2C1(276)
+    [CH]1CC2CC2C1(277)
+    [CH]1C2CCCC12(278)
+    [CH2]C1CC1C=C(279)
+    [CH2]C1[CH]CC[CH]1(280)
+    [CH2]C1[CH][CH]CC1(281)
+    [CH]1CC[C]2CC12(282)
+    [CH]1CCC2C[C]12(283)
+    [CH]1CCC2[CH]C12(284)
+    [CH]1C[CH]C2CC12(285)
+    [CH]1[CH]C2CC2C1(286)
+    [O]OC1CCC2CC21(287)
+Added 0 new core reactions
+Created 23 new edge reactions
+    [CH2]C1C=CCC1(272) <=> [CH]1CCC2CC12(259)
+    H(3) + C1CCC2CC=12(273) <=> [CH]1CCC2CC12(259)
+    H(3) + C1=CC2CC2C1(274) <=> [CH]1CCC2CC12(259)
+    CH2(S)(16) + [CH]1C=CCC1(275) <=> [CH]1CCC2CC12(259)
+    C1C[C]2CC2C1(276) <=> [CH]1CCC2CC12(259)
+    [CH]1CC2CC2C1(277) <=> [CH]1CCC2CC12(259)
+    [CH]1C2CCCC12(278) <=> [CH]1CCC2CC12(259)
+    [CH2]C1CC1C=C(279) <=> [CH]1CCC2CC12(259)
+    [CH2]C1C=CCC1(272) <=> [CH]1CCC2CC12(259)
+    [CH2]C1[CH]CC[CH]1(280) <=> [CH]1CCC2CC12(259)
+    [CH]1[CH]CC[CH]C1(263) <=> [CH]1CCC2CC12(259)
+    [CH2]C1[CH][CH]CC1(281) <=> [CH]1CCC2CC12(259)
+    H(3) + [CH]1CC[C]2CC12(282) <=> [CH]1CCC2CC12(259)
+    H(3) + [CH]1CCC2C[C]12(283) <=> [CH]1CCC2CC12(259)
+    H(3) + [CH]1CCC2[CH]C12(284) <=> [CH]1CCC2CC12(259)
+    H(3) + [CH]1C[CH]C2CC12(285) <=> [CH]1CCC2CC12(259)
+    H(3) + [CH]1[CH]C2CC2C1(286) <=> [CH]1CCC2CC12(259)
+    O2(2) + [CH]1CCC2CC12(259) <=> HO2(8) + C1CCC2CC=12(273)
+    O2(2) + [CH]1CCC2CC12(259) <=> HO2(8) + C1=CC2CC2C1(274)
+    O2(2) + [CH]1CCC2CC12(259) <=> HO2(8) + [CH]1CC[C]2CC12(282)
+    O2(2) + [CH]1CCC2CC12(259) <=> HO2(8) + [CH]1CCC2[CH]C12(284)
+    O2(2) + [CH]1CCC2CC12(259) <=> HO2(8) + [CH]1C[CH]C2CC12(285)
+    O2(2) + [CH]1CCC2CC12(259) <=> [O]OC1CCC2CC21(287)
+
+After model enlargement:
+    The model core has 30 species and 39 reactions
+    The model edge has 261 species and 736 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 40 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 40 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 778 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 778 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:14
+    Memory used: 221.36 MB
+
+Conducting simulation of reaction system 1...
+At time 9.9605e-10 s, species [CH2]C1C=CCC1(272) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5868e+08 mol/m^3*s
+    [CH2]C1C=CCC1(272) rate: 1.6912e+07 mol/m^3*s (0.1066)
+    MCH(1) conversion: 0.08287   
+At time 9.9605e-10 s, species [CH2]C1C=CCC1(272) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5868e+08 mol/m^3*s
+    [CH2]C1C=CCC1(272) rate: 1.6912e+07 mol/m^3*s (0.1066)
+    MCH(1) conversion: 0.08287   
+
+
+Adding species [CH2]C1C=CCC1(272) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]C1C=CCC1(272)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    [CH2]C1C=CCC1(272) <=> [CH]1CCC2CC12(259)
+    [CH2]C1C=CCC1(272) <=> [CH]1CCC2CC12(259)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 31 species and 41 reactions
+    The model edge has 260 species and 734 reactions
+
+
+At time 3.4974e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9508    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 CC1=C[CH]CC1 gives H298=127390 J/mol
+Resonance isomer 2 C[C]1C=CCC1 gives H298=138394 J/mol
+Resonance isomer 1 CC1[CH]C=CC1 gives H298=132746 J/mol
+Resonance isomer 2 CC1C=C[CH]C1 gives H298=133792 J/mol
+Resonance isomer 1 [CH2]C=CC([CH2])[CH2] gives H298=498695 J/mol
+Resonance isomer 2 [CH2]C([CH2])[CH]C=C gives H298=499072 J/mol
+Resonance isomer 1 [CH2]C1=C[CH]CC1 gives H298=278420 J/mol
+Resonance isomer 2 C=C1[CH][CH]CC1 gives H298=335657 J/mol
+Resonance isomer 3 [CH2][C]1C=CCC1 gives H298=343398 J/mol
+Resonance isomer 1 [CH2]C1[CH]C=CC1 gives H298=337749 J/mol
+Resonance isomer 2 [CH2]C1C=C[CH]C1 gives H298=338795 J/mol
+Generating kinetics for new reactions...
+For reaction [CH2]C1C=CCC1(272) <=> [CH]1C2CCC1C2(288), Ea raised from 31.4 to 34.6 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + [CH2]C1C=CCC1(272) <=> [CH2]C1CC[CH]C1O[O](307), Ea raised from 136.8 to 140.7 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + [CH2]C1C=CCC1(272) <=> [CH2]C1[CH]C(CC1)O[O](308), Ea raised from 136.8 to 140.7 kJ/mol to match endothermicity of reaction.
+Warning: Marked reaction [CH2]C1C=CCC1(272) <=> [CH]1C2CCC1C2(288) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 22 new edge species
+    [CH]1C2CCC1C2(288)
+    C=C1C=CCC1(289)
+    [CH2]C1[CH]C[CH]C1(290)
+    [CH2]C1C[CH][CH]C1(291)
+    [CH2][C]1[CH]CCC1(292)
+    [CH2][C]1C[CH]CC1(293)
+    C[C]1C=CCC1(294)
+    CC1[CH]CC=C1(295)
+    CC1[C]=CCC1(296)
+    CC1C=C[CH]C1(297)
+    CC1C=[C]CC1(298)
+    [CH2]C=CC([CH2])[CH2](299)
+    [CH]=CCC[CH][CH2](300)
+    [CH]=CC([CH2])C[CH2](301)
+    [CH2]C1[CH]CC=C1(302)
+    [CH2][C]1C=CCC1(303)
+    [CH2]C1C=C[CH]C1(304)
+    [CH2]C1[C]=CCC1(305)
+    [CH2]C1C=[C]CC1(306)
+    [CH2]C1CC[CH]C1O[O](307)
+    [CH2]C1[CH]C(CC1)O[O](308)
+    [O]OCC1C=CCC1(309)
+Added 0 new core reactions
+Created 33 new edge reactions
+    [CH2]C1C=CCC1(272) <=> [CH]1C2CCC1C2(288)
+    [CH2]CC=CC=C(208) <=> [CH2]C1C=CCC1(272)
+    [CH]=CCCC=C(177) <=> [CH2]C1C=CCC1(272)
+    H(3) + C=C1C=CCC1(289) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1[CH]C[CH]C1(290) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1[CH]CC[CH]1(280) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1C[CH][CH]C1(291) <=> [CH2]C1C=CCC1(272)
+    [CH2][C]1[CH]CCC1(292) <=> [CH2]C1C=CCC1(272)
+    [CH2][C]1C[CH]CC1(293) <=> [CH2]C1C=CCC1(272)
+    C[C]1C=CCC1(294) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1C=CCC1(272) <=> CC1[CH]CC=C1(295)
+    CC1[C]=CCC1(296) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1C=CCC1(272) <=> CC1C=C[CH]C1(297)
+    CC1C=[C]CC1(298) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1C=CCC1(272) <=> [CH]1C2CCC1C2(288)
+    [CH2]C=CC([CH2])[CH2](299) <=> [CH2]C1C=CCC1(272)
+    [CH2]C=C[CH]C[CH2](204) <=> [CH2]C1C=CCC1(272)
+    [CH]=CCC[CH][CH2](300) <=> [CH2]C1C=CCC1(272)
+    [CH]=CC([CH2])C[CH2](301) <=> [CH2]C1C=CCC1(272)
+    [CH2]C1[CH][CH]CC1(281) <=> [CH2]C1C=CCC1(272)
+    H(3) + [CH2]C1[CH]CC=C1(302) <=> [CH2]C1C=CCC1(272)
+    H(3) + [CH2][C]1C=CCC1(303) <=> [CH2]C1C=CCC1(272)
+    H(3) + [CH2]C1C=C[CH]C1(304) <=> [CH2]C1C=CCC1(272)
+    H(3) + [CH2]C1[C]=CCC1(305) <=> [CH2]C1C=CCC1(272)
+    H(3) + [CH2]C1C=[C]CC1(306) <=> [CH2]C1C=CCC1(272)
+    O2(2) + [CH2]C1C=CCC1(272) <=> HO2(8) + C=C1C=CCC1(289)
+    O2(2) + [CH2]C1C=CCC1(272) <=> [CH2]C1CC[CH]C1O[O](307)
+    O2(2) + [CH2]C1C=CCC1(272) <=> [CH2]C1[CH]C(CC1)O[O](308)
+    O2(2) + [CH2]C1C=CCC1(272) <=> HO2(8) + [CH2]C1[CH]CC=C1(302)
+    HO2(8) + [CH2]C1C=C[CH]C1(304) <=> O2(2) + [CH2]C1C=CCC1(272)
+    HO2(8) + [CH2]C1[C]=CCC1(305) <=> O2(2) + [CH2]C1C=CCC1(272)
+    HO2(8) + [CH2]C1C=[C]CC1(306) <=> O2(2) + [CH2]C1C=CCC1(272)
+    O2(2) + [CH2]C1C=CCC1(272) <=> [O]OCC1C=CCC1(309)
+
+After model enlargement:
+    The model core has 31 species and 41 reactions
+    The model edge has 282 species and 767 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 42 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 42 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 811 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 811 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:18
+    Memory used: 219.55 MB
+
+Conducting simulation of reaction system 1...
+At time 1.2243e-09 s, species C1=CCC=CC1(261) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.5556e+08 mol/m^3*s
+    C1=CCC=CC1(261) rate: 1.5713e+07 mol/m^3*s (0.101)
+    MCH(1) conversion: 0.1007    
+At time 1.2243e-09 s, species C1=CCC=CC1(261) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.5556e+08 mol/m^3*s
+    C1=CCC=CC1(261) rate: 1.5713e+07 mol/m^3*s (0.101)
+    MCH(1) conversion: 0.1007    
+
+
+Adding species C1=CCC=CC1(261) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C1=CCC=CC1(261)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    H(3) + C1=CCC=CC1(261) <=> [CH]1CC=CCC1(153)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 32 species and 42 reactions
+    The model edge has 281 species and 766 reactions
+
+
+At time 3.5110e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9514    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH]=CCC=C[CH2] gives H298=471679 J/mol
+Resonance isomer 2 [CH]=CC[CH]C=C gives H298=471846 J/mol
+Resonance isomer 1 [CH]1C=CCC=C1 gives H298=210024 J/mol
+Resonance isomer 2 [CH]1C=CC=CC1 gives H298=244751 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + C1=CCC=CC1(261) <=> [O]OC1[CH]CC=CC1(313), Ea raised from 136.7 to 140.4 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 4 new edge species
+    [CH]=CCC=C[CH2](310)
+    [CH]1C=CCC=C1(311)
+    [C]1=CCC=CC1(312)
+    [O]OC1[CH]CC=CC1(313)
+Added 0 new core reactions
+Created 11 new edge reactions
+    [C]1=CC[CH]CC1(268) <=> C1=CCC=CC1(261)
+    [C]1=CCC[CH]C1(267) <=> C1=CCC=CC1(261)
+    [CH]=CCC=C[CH2](310) <=> C1=CCC=CC1(261)
+    C2H2(10) + C=CC=C(152) <=> C1=CCC=CC1(261)
+    [CH]1[CH]CC=CC1(265) <=> C1=CCC=CC1(261)
+    [CH]1C=CCC=C1(311) + H(3) <=> C1=CCC=CC1(261)
+    [C]1=CCC=CC1(312) + H(3) <=> C1=CCC=CC1(261)
+    [CH]1C[CH]C2CC12(285) <=> C1=CCC=CC1(261)
+    O2(2) + C1=CCC=CC1(261) <=> [O]OC1[CH]CC=CC1(313)
+    [CH]1C=CCC=C1(311) + HO2(8) <=> O2(2) + C1=CCC=CC1(261)
+    [C]1=CCC=CC1(312) + HO2(8) <=> O2(2) + C1=CCC=CC1(261)
+
+After model enlargement:
+    The model core has 32 species and 42 reactions
+    The model edge has 285 species and 777 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 43 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 43 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 822 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 822 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:21
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 8.3682e-09 s, species [CH2]CC=C(145) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.2388e+07 mol/m^3*s
+    [CH2]CC=C(145) rate: 9.3009e+06 mol/m^3*s (0.1007)
+    MCH(1) conversion: 0.514     
+At time 8.3682e-09 s, species [CH2]CC=C(145) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.2388e+07 mol/m^3*s
+    [CH2]CC=C(145) rate: 9.3009e+06 mol/m^3*s (0.1007)
+    MCH(1) conversion: 0.514     
+
+
+Adding species [CH2]CC=C(145) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]CC=C(145)
+Created 0 new edge species
+Moved 5 reactions from edge to core
+    H(3) + [CH2]CC=C(145) <=> [CH2]CC[CH2](51)
+    C2H4(25) + [CH2]CC=C(145) <=> [CH2]CCCC=C(78)
+    H(3) + C=CC=C(152) <=> [CH2]CC=C(145)
+    [CH2]C=C(133) + [CH2]CC=C(145) <=> C3H6(27) + C=CC=C(152)
+    H(3) + [CH2]CC=C(145) <=> H2(6) + C=CC=C(152)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 33 species and 47 reactions
+    The model edge has 284 species and 772 reactions
+
+
+At time 3.4813e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Found thermo for [CH]=CCC in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 4 new edge species
+    [CH2]C1CC1(314)
+    [CH]=CCC(315)
+    [CH]1CCC1(316)
+    [CH2]C[C]=C(317)
+Added 0 new core reactions
+Created 11 new edge reactions
+    [CH2]CC=C(145) <=> [CH2]C1CC1(314)
+    C2H3(23) + C2H4(25) <=> [CH2]CC=C(145)
+    C=C[CH]C(218) <=> [CH2]CC=C(145)
+    C=[C]CC(234) <=> [CH2]CC=C(145)
+    [CH]=CCC(315) <=> [CH2]CC=C(145)
+    [CH2]CC=C(145) <=> [CH]1CCC1(316)
+    [CH2][CH]C[CH2](148) <=> [CH2]CC=C(145)
+    C2H3(23) + [CH2][CH2](68) <=> [CH2]CC=C(145)
+    H(3) + [CH2]C=C[CH2](191) <=> [CH2]CC=C(145)
+    H(3) + [CH2]C[C]=C(317) <=> [CH2]CC=C(145)
+    H(3) + [CH]=CC[CH2](212) <=> [CH2]CC=C(145)
+
+After model enlargement:
+    The model core has 33 species and 47 reactions
+    The model edge has 288 species and 783 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 48 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 48 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 833 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 833 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:24
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 4.4888e-09 s, species [CH2]C1CC1(314) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.2222e+08 mol/m^3*s
+    [CH2]C1CC1(314) rate: 1.2227e+07 mol/m^3*s (0.1)
+    MCH(1) conversion: 0.3212    
+At time 4.4888e-09 s, species [CH2]C1CC1(314) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.2222e+08 mol/m^3*s
+    [CH2]C1CC1(314) rate: 1.2227e+07 mol/m^3*s (0.1)
+    MCH(1) conversion: 0.3212    
+
+
+Adding species [CH2]C1CC1(314) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH2]C1CC1(314)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    [CH2]CC=C(145) <=> [CH2]C1CC1(314)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 34 species and 48 reactions
+    The model edge has 287 species and 782 reactions
+
+
+At time 3.5018e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.951     
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 6 new edge species
+    C=C1CC1(318)
+    C[C]1CC1(319)
+    CC1[CH]C1(320)
+    [CH2]C([CH2])[CH2](321)
+    [CH2][C]1CC1(322)
+    [CH2]C1[CH]C1(323)
+Added 0 new core reactions
+Created 8 new edge reactions
+    C=C1CC1(318) + H(3) <=> [CH2]C1CC1(314)
+    CH2(S)(16) + [CH2]C=C(133) <=> [CH2]C1CC1(314)
+    [CH2]C1CC1(314) <=> C[C]1CC1(319)
+    CC1[CH]C1(320) <=> [CH2]C1CC1(314)
+    [CH2][CH]C[CH2](148) <=> [CH2]C1CC1(314)
+    [CH2]C([CH2])[CH2](321) <=> [CH2]C1CC1(314)
+    [CH2][C]1CC1(322) + H(3) <=> [CH2]C1CC1(314)
+    [CH2]C1[CH]C1(323) + H(3) <=> [CH2]C1CC1(314)
+
+After model enlargement:
+    The model core has 34 species and 48 reactions
+    The model edge has 293 species and 790 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 49 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 49 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 841 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 841 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:26
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 5.7136e-09 s, species C2H3(23) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.1179e+08 mol/m^3*s
+    C2H3(23) rate: 1.1331e+07 mol/m^3*s (0.1014)
+    MCH(1) conversion: 0.3891    
+At time 5.7136e-09 s, species C2H3(23) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.1179e+08 mol/m^3*s
+    C2H3(23) rate: 1.1331e+07 mol/m^3*s (0.1014)
+    MCH(1) conversion: 0.3891    
+
+
+Adding species C2H3(23) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C2H3(23)
+Created 0 new edge species
+Moved 14 reactions from edge to core
+    C2H4(25) + H(3) <=> C2H3(23) + H2(6)
+    C2H4(25) <=> C2H3(23) + H(3)
+    C2H3(23) + CH3(19) <=> C3H6(27)
+    C2H3(23) + C[CH]C(136) <=> C2H4(25) + C3H6(27)
+    C2H3(23) + [CH]1CCCCC1(42) <=> C2H4(25) + C1=CCCCC1(77)
+    C2H3(23) + [CH2]CC[CH2](51) <=> [CH2]CCCC=C(78)
+    C2H3(23) + [CH2]CC=C(145) <=> C=CCCC=C(158)
+    C2H3(23) + [CH2]CCCC=C(78) <=> C2H4(25) + C=CCCC=C(158)
+    C2H3(23) + C2H3(23) <=> C=CC=C(152)
+    C2H3(23) + [CH2]CC=C(145) <=> C2H4(25) + C=CC=C(152)
+    C2H3(23) + [CH2]C=C(133) <=> C2H4(25) + C3H4(26)
+    C2H3(23) + OH(5) <=> C2H4(25) + O(4)
+    C2H3(23) + C3H4(26) <=> H2CCCH(24) + C2H4(25)
+    C2H3(23) + C2H4(25) <=> [CH2]CC=C(145)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 35 species and 62 reactions
+    The model edge has 292 species and 776 reactions
+
+
+At time 3.4813e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9502    
+
+Generating thermodynamics for new species...
+Found thermo for [CH]=[CH] in thermo library: dft_qci_thermo
+Found thermo for C=CO[O] in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 2 new edge species
+    [CH]=[CH](324)
+    C=CO[O](325)
+Added 0 new core reactions
+Created 4 new edge reactions
+    H(3) + [CH]=[CH](324) <=> C2H3(23)
+    O2(2) + C2H3(23) <=> HO2(8) + C2H2(10)
+    O2(2) + C2H3(23) <=> HO2(8) + [CH]=[CH](324)
+    O2(2) + C2H3(23) <=> C=CO[O](325)
+
+After model enlargement:
+    The model core has 35 species and 62 reactions
+    The model edge has 294 species and 780 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 63 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 63 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 845 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 845 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:27
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 8.1543e-09 s, species C2H2(10) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.2362e+07 mol/m^3*s
+    C2H2(10) rate: 9.5008e+06 mol/m^3*s (0.1029)
+    MCH(1) conversion: 0.5049    
+At time 8.1543e-09 s, species C2H2(10) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.2362e+07 mol/m^3*s
+    C2H2(10) rate: 9.5008e+06 mol/m^3*s (0.1029)
+    MCH(1) conversion: 0.5049    
+
+
+Adding species C2H2(10) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C2H2(10)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    C2H4(25) <=> H2(6) + C2H2(10)
+    H(3) + C2H2(10) <=> C2H3(23)
+    C2H2(10) + C=CC=C(152) <=> C1=CCC=CC1(261)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 36 species and 65 reactions
+    The model edge has 293 species and 777 reactions
+
+
+At time 3.4955e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9508    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction O2(2) + C2H2(10) <=> [CH]=CO[O](326), Ea raised from 131.2 to 135.3 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 1 new edge species
+    [CH]=CO[O](326)
+Added 1 new core reactions
+    C2H3(23) + C2H3(23) <=> C2H4(25) + C2H2(10)
+Created 4 new edge reactions
+    C2H(22) + H(3) <=> C2H2(10)
+    O2(2) + C2H2(10) <=> [CH]=CO[O](326)
+    C2H(22) + HO2(8) <=> O2(2) + C2H2(10)
+    [CH]=CC[CH2](212) <=> C2H4(25) + C2H2(10)
+
+After model enlargement:
+    The model core has 36 species and 66 reactions
+    The model edge has 294 species and 781 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 67 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 67 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 850 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 850 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:29
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 8.7127e-09 s, species C=C[CH]C(218) exceeded the minimum rate for moving to model core
+    Characteristic rate: 8.9952e+07 mol/m^3*s
+    C=C[CH]C(218) rate: 9.0915e+06 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.5282    
+At time 8.7127e-09 s, species C=C[CH]C(218) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 8.9952e+07 mol/m^3*s
+    C=C[CH]C(218) rate: 9.0915e+06 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.5282    
+
+
+Adding species C=C[CH]C(218) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C=C[CH]C(218)
+Created 0 new edge species
+Moved 5 reactions from edge to core
+    H(3) + C=CC=C(152) <=> C=C[CH]C(218)
+    C2H3(23) + C=C[CH]C(218) <=> C2H4(25) + C=CC=C(152)
+    [CH2]C=C(133) + C=C[CH]C(218) <=> C3H6(27) + C=CC=C(152)
+    H(3) + C=C[CH]C(218) <=> H2(6) + C=CC=C(152)
+    C=C[CH]C(218) <=> [CH2]CC=C(145)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 37 species and 71 reactions
+    The model edge has 293 species and 776 reactions
+
+
+At time 3.5335e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9523    
+
+Generating thermodynamics for new species...
+Found thermo for C[C]=CC in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH2]C=[C]C gives H298=377631 J/mol
+Resonance isomer 2 C=C[C]C gives H298=448023 J/mol
+Generating kinetics for new reactions...
+For reaction C=C[CH]C(218) <=> CC1[CH]C1(320), Ea raised from 111.1 to 113.3 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 2 new edge species
+    C[C]=CC(327)
+    [CH2]C=[C]C(328)
+Added 0 new core reactions
+Created 11 new edge reactions
+    H(3) + C=C=CC(253) <=> C=C[CH]C(218)
+    C=[C]CC(234) <=> C=C[CH]C(218)
+    [CH]=CCC(315) <=> C=C[CH]C(218)
+    C=C[CH]C(218) <=> CC1[CH]C1(320)
+    H(3) + [CH2]C=C[CH2](191) <=> C=C[CH]C(218)
+    H(3) + [CH2][C]=CC(248) <=> C=C[CH]C(218)
+    H(3) + [CH]=C[CH]C(213) <=> C=C[CH]C(218)
+    CH2(S)(16) + [CH2]C=C(133) <=> C=C[CH]C(218)
+    C[C]=CC(327) <=> C=C[CH]C(218)
+    CH3(19) + [CH]=C[CH2](182) <=> C=C[CH]C(218)
+    H(3) + [CH2]C=[C]C(328) <=> C=C[CH]C(218)
+
+After model enlargement:
+    The model core has 37 species and 71 reactions
+    The model edge has 295 species and 787 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 72 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 72 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 861 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 861 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:30
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 1.1970e-08 s, species CH4(21) exceeded the minimum rate for moving to model core
+    Characteristic rate: 7.2337e+07 mol/m^3*s
+    CH4(21) rate: 7.2455e+06 mol/m^3*s (0.1002)
+    MCH(1) conversion: 0.6436    
+At time 1.1970e-08 s, species CH4(21) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 7.2337e+07 mol/m^3*s
+    CH4(21) rate: 7.2455e+06 mol/m^3*s (0.1002)
+    MCH(1) conversion: 0.6436    
+
+
+Adding species CH4(21) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CH4(21)
+Created 0 new edge species
+Moved 8 reactions from edge to core
+    CH4(21) + O(4) <=> OH(5) + CH3(19)
+    H(3) + CH3(19) <=> CH4(21)
+    CH3(19) + [CH]1CCCCC1(42) <=> CH4(21) + C1=CCCCC1(77)
+    CH4(21) + C2H3(23) <=> C2H4(25) + CH3(19)
+    C3H6(27) + CH3(19) <=> CH4(21) + [CH2]C=C(133)
+    CH3(19) + C1=CCCCC1(77) <=> CH4(21) + [CH]1CC=CCC1(153)
+    C3H4(26) + CH3(19) <=> CH4(21) + H2CCCH(24)
+    CH4(21) + H(3) <=> H2(6) + CH3(19)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 38 species and 79 reactions
+    The model edge has 294 species and 779 reactions
+
+
+At time 3.5206e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9518    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 2 new edge reactions
+    H2(6) + CH2(S)(16) <=> CH4(21)
+    O2(2) + CH4(21) <=> HO2(8) + CH3(19)
+
+After model enlargement:
+    The model core has 38 species and 79 reactions
+    The model edge has 294 species and 781 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 80 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 80 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 863 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 863 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:32
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 1.5601e-08 s, species CO(235) exceeded the minimum rate for moving to model core
+    Characteristic rate: 5.6047e+07 mol/m^3*s
+    CO(235) rate: 5.6922e+06 mol/m^3*s (0.1016)
+    MCH(1) conversion: 0.7393    
+At time 1.5601e-08 s, species CO(235) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 5.6047e+07 mol/m^3*s
+    CO(235) rate: 5.6922e+06 mol/m^3*s (0.1016)
+    MCH(1) conversion: 0.7393    
+
+
+Adding species CO(235) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CO(235)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    OH(5) + CH3(19) <=> CO(235)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 39 species and 80 reactions
+    The model edge has 293 species and 780 reactions
+
+
+At time 3.4836e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9503    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 5 new edge reactions
+    H2O(7) + CH2(S)(16) <=> CO(235)
+    CH2OH(20) + H(3) <=> CO(235)
+    CH3O(34) + H(3) <=> CO(235)
+    CH2OH(20) + HO2(8) <=> O2(2) + CO(235)
+    O2(2) + CO(235) <=> CH3O(34) + HO2(8)
+
+After model enlargement:
+    The model core has 39 species and 80 reactions
+    The model edge has 293 species and 785 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 81 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 81 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 868 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 868 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:34
+    Memory used: 219.19 MB
+
+Conducting simulation of reaction system 1...
+At time 1.5705e-08 s, species CH2O(15) exceeded the minimum rate for moving to model core
+    Characteristic rate: 5.3832e+07 mol/m^3*s
+    CH2O(15) rate: 5.4306e+06 mol/m^3*s (0.1009)
+    MCH(1) conversion: 0.7416    
+At time 1.5705e-08 s, species CH2O(15) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 5.3832e+07 mol/m^3*s
+    CH2O(15) rate: 5.4306e+06 mol/m^3*s (0.1009)
+    MCH(1) conversion: 0.7416    
+
+
+Adding species CH2O(15) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CH2O(15)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    O2(2) + CH3(19) <=> OH(5) + CH2O(15)
+    O(4) + CH3(19) <=> H(3) + CH2O(15)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 40 species and 82 reactions
+    The model edge has 292 species and 783 reactions
+
+
+At time 3.4849e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9503    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction O2(2) + CH2O(15) <=> [O]CO[O](329), Ea raised from 162.8 to 166.2 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 1 new edge species
+    [O]CO[O](329)
+Added 0 new core reactions
+Created 1 new edge reactions
+    O2(2) + CH2O(15) <=> [O]CO[O](329)
+
+After model enlargement:
+    The model core has 40 species and 82 reactions
+    The model edge has 293 species and 784 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 83 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 83 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 869 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 869 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:35
+    Memory used: 218.94 MB
+
+Conducting simulation of reaction system 1...
+At time 1.6286e-08 s, species C=C=CO[O](246) exceeded the minimum rate for moving to model core
+    Characteristic rate: 5.2409e+07 mol/m^3*s
+    C=C=CO[O](246) rate: 5.2566e+06 mol/m^3*s (0.1003)
+    MCH(1) conversion: 0.7542    
+At time 1.6286e-08 s, species C=C=CO[O](246) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 5.2409e+07 mol/m^3*s
+    C=C=CO[O](246) rate: 5.2566e+06 mol/m^3*s (0.1003)
+    MCH(1) conversion: 0.7542    
+
+
+Adding species C=C=CO[O](246) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C=C=CO[O](246)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    O2(2) + H2CCCH(24) <=> C=C=CO[O](246)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 41 species and 83 reactions
+    The model edge has 292 species and 783 reactions
+
+
+At time 3.4863e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9504    
+
+Generating thermodynamics for new species...
+Found thermo for C=C=C[O] in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH2]C#COO gives H298=321109 J/mol
+Resonance isomer 2 C=C=[C]OO gives H298=363703 J/mol
+Resonance isomer 1 [CH]=C=COO gives H298=270818 J/mol
+Resonance isomer 2 C#C[CH]OO gives H298=297512 J/mol
+Resonance isomer 1 [CH2]C1=COO1 gives H298=245510 J/mol
+Resonance isomer 2 C=C1[CH]OO1 gives H298=291905 J/mol
+Resonance isomer 1 [CH2]C#CO[O] gives H298=472139 J/mol
+Resonance isomer 2 C=C=[C]O[O] gives H298=514732 J/mol
+Resonance isomer 1 [CH]=C=CO[O] gives H298=421848 J/mol
+Resonance isomer 2 C#C[CH]O[O] gives H298=448542 J/mol
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 7 new edge species
+    C=[C]C1OO1(330)
+    C=C=C[O](331)
+    C=C=[C]OO(332)
+    [CH]=C=COO(333)
+    C=C1[CH]OO1(334)
+    C=C=[C]O[O](335)
+    [CH]=C=CO[O](336)
+Added 0 new core reactions
+Created 7 new edge reactions
+    C=C=CO[O](246) <=> C=[C]C1OO1(330)
+    O(4) + C=C=C[O](331) <=> C=C=CO[O](246)
+    C=C=[C]OO(332) <=> C=C=CO[O](246)
+    C=C=CO[O](246) <=> [CH]=C=COO(333)
+    C=C=CO[O](246) <=> C=C1[CH]OO1(334)
+    H(3) + C=C=[C]O[O](335) <=> C=C=CO[O](246)
+    H(3) + [CH]=C=CO[O](336) <=> C=C=CO[O](246)
+
+After model enlargement:
+    The model core has 41 species and 83 reactions
+    The model edge has 299 species and 790 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 84 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 84 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 876 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 876 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:39
+    Memory used: 218.29 MB
+
+Conducting simulation of reaction system 1...
+At time 1.8345e-08 s, species C#CCO[O](244) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.7011e+07 mol/m^3*s
+    C#CCO[O](244) rate: 4.7729e+06 mol/m^3*s (0.1015)
+    MCH(1) conversion: 0.7942    
+At time 1.8345e-08 s, species C#CCO[O](244) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.7011e+07 mol/m^3*s
+    C#CCO[O](244) rate: 4.7729e+06 mol/m^3*s (0.1015)
+    MCH(1) conversion: 0.7942    
+
+
+Adding species C#CCO[O](244) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C#CCO[O](244)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    O2(2) + H2CCCH(24) <=> C#CCO[O](244)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 42 species and 84 reactions
+    The model edge has 298 species and 789 reactions
+
+
+At time 3.5188e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9517    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+For reaction C#CCO[O](244) <=> [CH]=C1COO1(337), Ea raised from 91.8 to 95.5 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 5 new edge species
+    [CH]=C1COO1(337)
+    C#CC[O](338)
+    [C]#CCOO(339)
+    [C]1=COOC1(340)
+    [C]#CCO[O](341)
+Added 0 new core reactions
+Created 8 new edge reactions
+    C#CCO[O](244) <=> [CH]=C1COO1(337)
+    O(4) + C#CC[O](338) <=> C#CCO[O](244)
+    [CH]=C=COO(333) <=> C#CCO[O](244)
+    [C]#CCOO(339) <=> C#CCO[O](244)
+    C#CCO[O](244) <=> [C]1=COOC1(340)
+    C2H(22) + [CH2]O[O](188) <=> C#CCO[O](244)
+    H(3) + [CH]=C=CO[O](336) <=> C#CCO[O](244)
+    H(3) + [C]#CCO[O](341) <=> C#CCO[O](244)
+
+After model enlargement:
+    The model core has 42 species and 84 reactions
+    The model edge has 303 species and 797 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 85 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 85 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 884 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 884 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:43
+    Memory used: 216.97 MB
+
+Conducting simulation of reaction system 1...
+At time 1.9109e-08 s, species C=[C]C=C(214) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.5333e+07 mol/m^3*s
+    C=[C]C=C(214) rate: 4.5864e+06 mol/m^3*s (0.1012)
+    MCH(1) conversion: 0.8073    
+At time 1.9109e-08 s, species C=[C]C=C(214) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.5333e+07 mol/m^3*s
+    C=[C]C=C(214) rate: 4.5864e+06 mol/m^3*s (0.1012)
+    MCH(1) conversion: 0.8073    
+
+
+Adding species C=[C]C=C(214) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C=[C]C=C(214)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    H(3) + C=[C]C=C(214) <=> C=CC=C(152)
+    CH3(19) + C=CC=C(152) <=> CH4(21) + C=[C]C=C(214)
+    H(3) + C=CC=C(152) <=> H2(6) + C=[C]C=C(214)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 43 species and 87 reactions
+    The model edge has 302 species and 794 reactions
+
+
+At time 3.4785e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.95      
+
+Generating thermodynamics for new species...
+Found thermo for C=C=C=C in thermo library: dft_qci_thermo
+Found thermo for C#CC=C in thermo library: dft_qci_thermo
+Resonance isomer 1 C=C1[CH]C1 gives H298=340983 J/mol
+Resonance isomer 2 [CH2]C1=CC1 gives H298=401694 J/mol
+Resonance isomer 1 C=[C][C]=C gives H298=509992 J/mol
+Resonance isomer 2 [CH2][C]=C=C gives H298=550263 J/mol
+Resonance isomer 3 [CH2]C#C[CH2] gives H298=457286 J/mol
+Resonance isomer 1 [CH]C=C=C gives H298=531853 J/mol
+Resonance isomer 2 [CH]=C[C]=C gives H298=557690 J/mol
+Resonance isomer 1 [CH]=C=C[CH2] gives H298=466583 J/mol
+Resonance isomer 2 C#C[CH][CH2] gives H298=518732 J/mol
+Resonance isomer 3 [CH]=[C]C=C gives H298=557690 J/mol
+Resonance isomer 1 C=C=[C]C gives H298=399233 J/mol
+Resonance isomer 2 [CH2]C#CC gives H298=301235 J/mol
+Found thermo for [CH]=C=CC in thermo library: dft_qci_thermo
+Resonance isomer 1 C=[C][CH]CO[O] gives H298=446772 J/mol
+Resonance isomer 2 [CH2][C]=CCO[O] gives H298=450244 J/mol
+Resonance isomer 1 [CH2]C=C([CH2])O[O] gives H298=355017 J/mol
+Resonance isomer 2 [CH2][CH]C(=C)O[O] gives H298=411124 J/mol
+Resonance isomer 3 [CH2][C](C=C)O[O] gives H298=455391 J/mol
+Resonance isomer 1 [CH2]C=[C]CO[O] gives H298=450244 J/mol
+Resonance isomer 2 C=C[C]CO[O] gives H298=516645 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + C=[C]C=C(214) <=> [CH2]C([C]=C)O[O](350), Ea raised from 187.8 to 191.2 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C=[C]C=C(214) <=> C=[C][CH]CO[O](351), Ea raised from 127.9 to 132.4 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C=[C]C=C(214) <=> [CH2]C=[C]CO[O](354), Ea raised from 131.4 to 135.0 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 14 new edge species
+    C=C=C=C(342)
+    C#CC=C(343)
+    C=C1[CH]C1(344)
+    C=[C][C]=C(345)
+    [CH]=C[C]=C(346)
+    [CH]=[C]C=C(347)
+    C=C=[C]C(348)
+    [CH]=C=CC(349)
+    [CH2]C([C]=C)O[O](350)
+    C=[C][CH]CO[O](351)
+    C=CC(=C)O[O](352)
+    [CH2][CH]C(=C)O[O](353)
+    [CH2]C=[C]CO[O](354)
+    C=C=CCO[O](355)
+Added 0 new core reactions
+Created 19 new edge reactions
+    H(3) + C=C=C=C(342) <=> C=[C]C=C(214)
+    H(3) + C#CC=C(343) <=> C=[C]C=C(214)
+    [CH]=CC=C(215) <=> C=[C]C=C(214)
+    C=[C]C=C(214) <=> C=C1[CH]C1(344)
+    H(3) + C=[C][C]=C(345) <=> C=[C]C=C(214)
+    H(3) + [CH]=C[C]=C(346) <=> C=[C]C=C(214)
+    H(3) + [CH]=[C]C=C(347) <=> C=[C]C=C(214)
+    C=C=[C]C(348) <=> C=[C]C=C(214)
+    C=[C]C=C(214) <=> [CH]=C=CC(349)
+    O2(2) + C=[C]C=C(214) <=> HO2(8) + C=C=C=C(342)
+    O2(2) + C=[C]C=C(214) <=> HO2(8) + C#CC=C(343)
+    O2(2) + C=[C]C=C(214) <=> [CH2]C([C]=C)O[O](350)
+    O2(2) + C=[C]C=C(214) <=> C=[C][CH]CO[O](351)
+    HO2(8) + [CH]=C[C]=C(346) <=> O2(2) + C=[C]C=C(214)
+    O2(2) + C=[C]C=C(214) <=> HO2(8) + [CH]=[C]C=C(347)
+    O2(2) + C=[C]C=C(214) <=> C=CC(=C)O[O](352)
+    O2(2) + C=[C]C=C(214) <=> [CH2][CH]C(=C)O[O](353)
+    O2(2) + C=[C]C=C(214) <=> [CH2]C=[C]CO[O](354)
+    O2(2) + C=[C]C=C(214) <=> C=C=CCO[O](355)
+
+After model enlargement:
+    The model core has 43 species and 87 reactions
+    The model edge has 316 species and 813 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 88 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 88 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 903 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 903 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:46
+    Memory used: 215.56 MB
+
+Conducting simulation of reaction system 1...
+At time 7.1608e-09 s, species C#CC=C(343) exceeded the minimum rate for moving to model core
+    Characteristic rate: 9.7051e+07 mol/m^3*s
+    C#CC=C(343) rate: 1.0120e+07 mol/m^3*s (0.1043)
+    MCH(1) conversion: 0.4607    
+At time 7.1608e-09 s, species C#CC=C(343) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 9.7051e+07 mol/m^3*s
+    C#CC=C(343) rate: 1.0120e+07 mol/m^3*s (0.1043)
+    MCH(1) conversion: 0.4607    
+
+
+Adding species C#CC=C(343) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C#CC=C(343)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    H(3) + C#CC=C(343) <=> C=[C]C=C(214)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 44 species and 88 reactions
+    The model edge has 315 species and 812 reactions
+
+
+At time 3.5034e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9511    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [C]=C=CC gives H298=523067 J/mol
+Resonance isomer 2 [C]#C[CH]C gives H298=650947 J/mol
+Found thermo for [CH]=CC#C in thermo library: dft_qci_thermo
+Resonance isomer 1 C#C[CH]CO[O] gives H298=380510 J/mol
+Resonance isomer 2 [CH]=C=CCO[O] gives H298=391555 J/mol
+Resonance isomer 1 C=C[C]=CO[O] gives H298=380677 J/mol
+Resonance isomer 2 [CH2]C=C=CO[O] gives H298=385572 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + C#CC=C(343) <=> C#CC([CH2])O[O](360), Ea raised from 145.7 to 148.5 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C#CC=C(343) <=> [CH]=C(C=C)O[O](362), Ea raised from 135.2 to 138.1 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + C#CC=C(343) <=> C=C[C]=CO[O](363), Ea raised from 91.9 to 95.1 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 8 new edge species
+    [C]#CC[CH2](356)
+    [C]#C[CH]C(357)
+    [CH]=CC#C(358)
+    [C]#CC=C(359)
+    C#CC([CH2])O[O](360)
+    C#C[CH]CO[O](361)
+    [CH]=C(C=C)O[O](362)
+    C=C[C]=CO[O](363)
+Added 0 new core reactions
+Created 14 new edge reactions
+    [C]#CC[CH2](356) <=> C#CC=C(343)
+    [C]#C[CH]C(357) <=> C#CC=C(343)
+    [CH]=[C]C=C(347) <=> C#CC=C(343)
+    C2H(22) + C2H3(23) <=> C#CC=C(343)
+    H2CCCCH(30) + H(3) <=> C#CC=C(343)
+    H(3) + [CH]=CC#C(358) <=> C#CC=C(343)
+    H(3) + [C]#CC=C(359) <=> C#CC=C(343)
+    O2(2) + C#CC=C(343) <=> C#CC([CH2])O[O](360)
+    O2(2) + C#CC=C(343) <=> C#C[CH]CO[O](361)
+    O2(2) + C#CC=C(343) <=> [CH]=C(C=C)O[O](362)
+    O2(2) + C#CC=C(343) <=> C=C[C]=CO[O](363)
+    H2CCCCH(30) + HO2(8) <=> O2(2) + C#CC=C(343)
+    HO2(8) + [CH]=CC#C(358) <=> O2(2) + C#CC=C(343)
+    HO2(8) + [C]#CC=C(359) <=> O2(2) + C#CC=C(343)
+
+After model enlargement:
+    The model core has 44 species and 88 reactions
+    The model edge has 323 species and 826 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 89 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 89 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 917 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 917 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:50
+    Memory used: 215.38 MB
+
+Conducting simulation of reaction system 1...
+At time 2.0757e-08 s, species C2H5(29) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.3779e+07 mol/m^3*s
+    C2H5(29) rate: 4.3947e+06 mol/m^3*s (0.1004)
+    MCH(1) conversion: 0.8328    
+At time 2.0757e-08 s, species C2H5(29) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.3779e+07 mol/m^3*s
+    C2H5(29) rate: 4.3947e+06 mol/m^3*s (0.1004)
+    MCH(1) conversion: 0.8328    
+
+
+Adding species C2H5(29) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C2H5(29)
+Created 0 new edge species
+Moved 8 reactions from edge to core
+    CH3(19) + CH3(19) <=> C2H5(29) + H(3)
+    C2H5(29) + O(4) <=> CH2O(15) + CH3(19)
+    C2H4(25) + H(3) <=> C2H5(29)
+    C2H3(23) + C2H5(29) <=> C2H4(25) + C2H4(25)
+    C2H5(29) + [CH2]C=C(133) <=> C2H4(25) + C3H6(27)
+    C2H5(29) + [CH]1CC=CCC1(153) <=> C2H4(25) + C1=CCCCC1(77)
+    H2CCCH(24) + C2H5(29) <=> C2H4(25) + C3H4(26)
+    C2H5(29) + H(3) <=> C2H4(25) + H2(6)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 45 species and 96 reactions
+    The model edge has 322 species and 818 reactions
+
+
+At time 3.4992e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9509    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 1 new edge reactions
+    H(3) + [CH2][CH2](68) <=> C2H5(29)
+
+After model enlargement:
+    The model core has 45 species and 96 reactions
+    The model edge has 322 species and 819 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 97 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 97 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 918 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 918 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:51
+    Memory used: 215.35 MB
+
+Conducting simulation of reaction system 1...
+At time 2.0977e-08 s, species CH2(11) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.3079e+07 mol/m^3*s
+    CH2(11) rate: 4.3230e+06 mol/m^3*s (0.1004)
+    MCH(1) conversion: 0.8359    
+At time 2.0977e-08 s, species CH2(11) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.3079e+07 mol/m^3*s
+    CH2(11) rate: 4.3230e+06 mol/m^3*s (0.1004)
+    MCH(1) conversion: 0.8359    
+
+
+Adding species CH2(11) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CH2(11)
+Created 0 new edge species
+Moved 19 reactions from edge to core
+    O2(2) + CH2(11) <=> O(4) + CH2O(15)
+    CH2(11) + CH2(11) <=> H2(6) + C2H2(10)
+    CH2(11) + CH2(11) <=> H(3) + H(3) + C2H2(10)
+    CH2(11) + CH3(19) <=> C2H4(25) + H(3)
+    C2H3(23) + CH2(11) <=> C2H2(10) + CH3(19)
+    OH(5) + CH2(11) <=> H(3) + CH2O(15)
+    CH4(21) + CH2(11) <=> CH3(19) + CH3(19)
+    C2H2(10) + CH2(11) <=> C3H4(26)
+    CH3(19) <=> H(3) + CH2(11)
+    C2H5(29) + CH2(11) <=> C2H4(25) + CH3(19)
+    CH2(11) + C[CH]C(136) <=> C3H6(27) + CH3(19)
+    H2(6) + CH2(11) <=> H(3) + CH3(19)
+    CH2(11) + [CH]1CCCCC1(42) <=> CH3(19) + C1=CCCCC1(77)
+    CH2(11) + [CH2]CCCC=C(78) <=> CH3(19) + C=CCCC=C(158)
+    CH2(11) + [CH2]CC=C(145) <=> CH3(19) + C=CC=C(152)
+    CH2(11) + C=C[CH]C(218) <=> CH3(19) + C=CC=C(152)
+    CH2(11) + [CH2]C=C(133) <=> C3H4(26) + CH3(19)
+    OH(5) + CH2(11) <=> O(4) + CH3(19)
+    C3H4(26) + CH2(11) <=> H2CCCH(24) + CH3(19)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 46 species and 115 reactions
+    The model edge has 321 species and 800 reactions
+
+
+At time 3.4954e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9508    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 46 species and 115 reactions
+    The model edge has 321 species and 800 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 116 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 116 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 918 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 918 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:53
+    Memory used: 215.36 MB
+
+Conducting simulation of reaction system 1...
+At time 2.0872e-08 s, species H2O(7) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.4340e+07 mol/m^3*s
+    H2O(7) rate: 4.5297e+06 mol/m^3*s (0.1022)
+    MCH(1) conversion: 0.8344    
+At time 2.0872e-08 s, species H2O(7) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.4340e+07 mol/m^3*s
+    H2O(7) rate: 4.5297e+06 mol/m^3*s (0.1022)
+    MCH(1) conversion: 0.8344    
+
+
+Adding species H2O(7) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    H2O(7)
+Created 0 new edge species
+Moved 7 reactions from edge to core
+    OH(5) + H2(6) <=> H(3) + H2O(7)
+    OH(5) + OH(5) <=> O(4) + H2O(7)
+    H2O(7) + H2O(7) <=> H(3) + OH(5) + H2O(7)
+    H2O(7) <=> H(3) + OH(5)
+    CH4(21) + OH(5) <=> H2O(7) + CH3(19)
+    C2H4(25) + OH(5) <=> C2H3(23) + H2O(7)
+    OH(5) + CH3(19) <=> H2O(7) + CH2(11)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 47 species and 122 reactions
+    The model edge has 320 species and 793 reactions
+
+
+At time 3.5240e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.952     
+
+Generating thermodynamics for new species...
+Found thermo for [CH] in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 1 new edge species
+    [CH](364)
+Added 0 new core reactions
+Created 1 new edge reactions
+    HO2(8) + [CH](364) <=> O2(2) + CH2(11)
+
+After model enlargement:
+    The model core has 47 species and 122 reactions
+    The model edge has 321 species and 794 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 123 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 123 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 919 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 919 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:55
+    Memory used: 214.92 MB
+
+Conducting simulation of reaction system 1...
+At time 2.1653e-08 s, species CO(12) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.2493e+07 mol/m^3*s
+    CO(12) rate: 4.2919e+06 mol/m^3*s (0.101)
+    MCH(1) conversion: 0.8452    
+At time 2.1653e-08 s, species CO(12) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.2493e+07 mol/m^3*s
+    CO(12) rate: 4.2919e+06 mol/m^3*s (0.101)
+    MCH(1) conversion: 0.8452    
+
+
+Adding species CO(12) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CO(12)
+Created 0 new edge species
+Moved 8 reactions from edge to core
+    O(4) + C2H2(10) <=> CH2(11) + CO(12)
+    O2(2) + CH2(11) <=> H(3) + OH(5) + CO(12)
+    O2(2) + CH2(11) <=> H2O(7) + CO(12)
+    C2H3(23) + O(4) <=> CO(12) + CH3(19)
+    H2CCCH(24) + O(4) <=> H(3) + C2H2(10) + CO(12)
+    O(4) + CH2(11) <=> H(3) + H(3) + CO(12)
+    O(4) + CH2(11) <=> H2(6) + CO(12)
+    CH2O(15) <=> H2(6) + CO(12)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 48 species and 130 reactions
+    The model edge has 320 species and 786 reactions
+
+
+At time 3.4806e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9501    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 48 species and 130 reactions
+    The model edge has 320 species and 786 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 131 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 131 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 919 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 919 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:02:57
+    Memory used: 214.26 MB
+
+Conducting simulation of reaction system 1...
+At time 2.4244e-08 s, species C=CO[O](325) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.0514e+07 mol/m^3*s
+    C=CO[O](325) rate: 4.0717e+06 mol/m^3*s (0.1005)
+    MCH(1) conversion: 0.8762    
+At time 2.4244e-08 s, species C=CO[O](325) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.0514e+07 mol/m^3*s
+    C=CO[O](325) rate: 4.0717e+06 mol/m^3*s (0.1005)
+    MCH(1) conversion: 0.8762    
+
+
+Adding species C=CO[O](325) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    C=CO[O](325)
+Created 0 new edge species
+Moved 1 reactions from edge to core
+    O2(2) + C2H3(23) <=> C=CO[O](325)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 49 species and 131 reactions
+    The model edge has 319 species and 785 reactions
+
+
+At time 3.4829e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9502    
+
+Generating thermodynamics for new species...
+Found thermo for [CH]=COO in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 6 new edge species
+    [CH2]C1OO1(365)
+    C=[C]OO(366)
+    [CH]=COO(367)
+    [CH]1COO1(368)
+    [CH2][CH]O[O](369)
+    C=[C]O[O](370)
+Added 0 new core reactions
+Created 8 new edge reactions
+    C=CO[O](325) <=> [CH2]C1OO1(365)
+    CH2HCO(31) + O(4) <=> C=CO[O](325)
+    C=[C]OO(366) <=> C=CO[O](325)
+    [CH]=COO(367) <=> C=CO[O](325)
+    C=CO[O](325) <=> [CH]1COO1(368)
+    [CH2][CH]O[O](369) <=> C=CO[O](325)
+    H(3) + [CH]=CO[O](326) <=> C=CO[O](325)
+    H(3) + C=[C]O[O](370) <=> C=CO[O](325)
+
+After model enlargement:
+    The model core has 49 species and 131 reactions
+    The model edge has 325 species and 793 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 132 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 132 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 927 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 927 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:01
+    Memory used: 214.21 MB
+
+Conducting simulation of reaction system 1...
+At time 1.4300e-08 s, species CH2HCO(31) exceeded the minimum rate for moving to model core
+    Characteristic rate: 5.9838e+07 mol/m^3*s
+    CH2HCO(31) rate: 5.9980e+06 mol/m^3*s (0.1002)
+    MCH(1) conversion: 0.7084    
+At time 1.4300e-08 s, species CH2HCO(31) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 5.9838e+07 mol/m^3*s
+    CH2HCO(31) rate: 5.9980e+06 mol/m^3*s (0.1002)
+    MCH(1) conversion: 0.7084    
+
+
+Adding species CH2HCO(31) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CH2HCO(31)
+Created 0 new edge species
+Moved 2 reactions from edge to core
+    C2H4(25) + O(4) <=> CH2HCO(31) + H(3)
+    CH2HCO(31) + O(4) <=> C=CO[O](325)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 50 species and 133 reactions
+    The model edge has 324 species and 791 reactions
+
+
+At time 3.5033e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9511    
+
+Generating thermodynamics for new species...
+Found thermo for C[C]=O in thermo library: dft_qci_thermo
+Found thermo for [CH]1CO1 in thermo library: dft_qci_thermo
+Resonance isomer 1 [CH2][C]=O gives H298=193740 J/mol
+Resonance isomer 2 C=[C][O] gives H298=272533 J/mol
+Found thermo for C=[C]O in thermo library: dft_qci_thermo
+Found thermo for [CH]=CO in thermo library: dft_qci_thermo
+Found thermo for [CH]=C[O] in thermo library: dft_qci_thermo
+Found thermo for [O]OCC=O in thermo library: dft_qci_thermo
+Generating kinetics for new reactions...
+For reaction CH2HCO(31) <=> [CH]1CO1(372), Ea raised from 148.7 to 150.0 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + CH2HCO(31) <=> [CH2]C([O])O[O](377), Ea raised from 205.0 to 207.5 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + CH2HCO(31) <=> [O][CH]CO[O](379), Ea raised from 213.9 to 216.3 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 9 new edge species
+    C[C]=O(371)
+    [CH]1CO1(372)
+    [CH2][C]=O(373)
+    C=[C]O(374)
+    [CH]=CO(375)
+    [CH]=C[O](376)
+    [CH2]C([O])O[O](377)
+    [O]OCC=O(378)
+    [O][CH]CO[O](379)
+Added 1 new core reactions
+    C2H3(23) + O(4) <=> CH2HCO(31)
+Created 13 new edge reactions
+    H(3) + CH2CO(18) <=> CH2HCO(31)
+    CH2HCO(31) <=> C[C]=O(371)
+    CH2HCO(31) <=> [CH]1CO1(372)
+    H(3) + [CH2][C]=O(373) <=> CH2HCO(31)
+    C=[C]O(374) <=> CH2HCO(31)
+    [CH]=CO(375) <=> CH2HCO(31)
+    H(3) + [CH]=C[O](376) <=> CH2HCO(31)
+    O2(2) + CH2HCO(31) <=> HO2(8) + CH2CO(18)
+    O2(2) + CH2HCO(31) <=> [CH2]C([O])O[O](377)
+    O2(2) + CH2HCO(31) <=> [O]OCC=O(378)
+    O2(2) + CH2HCO(31) <=> [O][CH]CO[O](379)
+    HO2(8) + [CH]=C[O](376) <=> O2(2) + CH2HCO(31)
+    O2(2) + CH2HCO(31) <=> HO2(8) + [CH2][C]=O(373)
+
+After model enlargement:
+    The model core has 50 species and 134 reactions
+    The model edge has 333 species and 804 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 135 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 135 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 941 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 941 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:03
+    Memory used: 213.88 MB
+
+Conducting simulation of reaction system 1...
+At time 2.8508e-09 s, species CH2CO(18) exceeded the minimum rate for moving to model core
+    Characteristic rate: 1.3756e+08 mol/m^3*s
+    CH2CO(18) rate: 1.3887e+07 mol/m^3*s (0.101)
+    MCH(1) conversion: 0.2183    
+At time 2.8508e-09 s, species CH2CO(18) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 1.3756e+08 mol/m^3*s
+    CH2CO(18) rate: 1.3887e+07 mol/m^3*s (0.101)
+    MCH(1) conversion: 0.2183    
+
+
+Adding species CH2CO(18) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    CH2CO(18)
+Created 0 new edge species
+Moved 5 reactions from edge to core
+    H(3) + CH2CO(18) <=> CO(12) + CH3(19)
+    O(4) + CH2CO(18) <=> CO(12) + CH2O(15)
+    C2H4(25) + O(4) <=> H2(6) + CH2CO(18)
+    CH2CO(18) <=> CH2(11) + CO(12)
+    H(3) + CH2CO(18) <=> CH2HCO(31)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 51 species and 139 reactions
+    The model edge has 332 species and 799 reactions
+
+
+At time 3.5017e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.951     
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH2]C(=O)O[O] gives H298=44032 J/mol
+Resonance isomer 2 C=C([O])O[O] gives H298=150766 J/mol
+Generating kinetics for new reactions...
+For reaction O2(2) + CH2CO(18) <=> [O]OC[C]=O(380), Ea raised from 119.6 to 126.1 kJ/mol to match endothermicity of reaction.
+For reaction O2(2) + CH2CO(18) <=> [CH2]C(=O)O[O](381), Ea raised from 92.9 to 97.9 kJ/mol to match endothermicity of reaction.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 2 new edge species
+    [O]OC[C]=O(380)
+    [CH2]C(=O)O[O](381)
+Added 0 new core reactions
+Created 4 new edge reactions
+    H(3) + HCCO(13) <=> CH2CO(18)
+    O2(2) + CH2CO(18) <=> [O]OC[C]=O(380)
+    O2(2) + CH2CO(18) <=> [CH2]C(=O)O[O](381)
+    HO2(8) + HCCO(13) <=> O2(2) + CH2CO(18)
+
+After model enlargement:
+    The model core has 51 species and 139 reactions
+    The model edge has 334 species and 803 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 140 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 140 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 945 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 945 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:07
+    Memory used: 213.88 MB
+
+Conducting simulation of reaction system 1...
+At time 3.2234e-08 s, species HCO(17) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.7417e+07 mol/m^3*s
+    HCO(17) rate: 3.8095e+06 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.9378    
+At time 3.2234e-08 s, species HCO(17) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.7417e+07 mol/m^3*s
+    HCO(17) rate: 3.8095e+06 mol/m^3*s (0.1018)
+    MCH(1) conversion: 0.9378    
+
+
+Adding species HCO(17) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    HCO(17)
+Created 0 new edge species
+Moved 17 reactions from edge to core
+    O(4) + CH2CO(18) <=> H(3) + CO(12) + HCO(17)
+    O(4) + CH2CO(18) <=> HCO(17) + HCO(17)
+    H(3) + HCO(17) <=> H2(6) + CO(12)
+    HCO(17) + CH3(19) <=> CH4(21) + CO(12)
+    O(4) + HCO(17) <=> OH(5) + CO(12)
+    OH(5) + HCO(17) <=> H2O(7) + CO(12)
+    HCO(17) + HCO(17) <=> CO(12) + CH2O(15)
+    CH2(11) + HCO(17) <=> CO(12) + CH3(19)
+    C2H4(25) + O(4) <=> HCO(17) + CH3(19)
+    O2(2) + H2CCCH(24) <=> HCO(17) + CH2CO(18)
+    H(3) + CH2O(15) <=> H2(6) + HCO(17)
+    CH2O(15) + CH3(19) <=> CH4(21) + HCO(17)
+    O(4) + CH2O(15) <=> OH(5) + HCO(17)
+    OH(5) + CH2O(15) <=> H2O(7) + HCO(17)
+    O2(2) + C2H3(23) <=> CH2O(15) + HCO(17)
+    CH2O(15) <=> H(3) + HCO(17)
+    HCO(17) <=> H(3) + CO(12)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 52 species and 156 reactions
+    The model edge has 333 species and 786 reactions
+
+
+At time 3.4920e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9506    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 52 species and 156 reactions
+    The model edge has 333 species and 786 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 157 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 157 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 945 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 945 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:09
+    Memory used: 213.37 MB
+
+Conducting simulation of reaction system 1...
+At time 2.5549e-08 s, species HO2(8) exceeded the minimum rate for moving to model core
+    Characteristic rate: 4.1093e+07 mol/m^3*s
+    HO2(8) rate: 4.1557e+06 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.8893    
+At time 2.5549e-08 s, species HO2(8) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 4.1093e+07 mol/m^3*s
+    HO2(8) rate: 4.1557e+06 mol/m^3*s (0.1011)
+    MCH(1) conversion: 0.8893    
+
+
+Adding species HO2(8) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    HO2(8)
+Created 0 new edge species
+Moved 24 reactions from edge to core
+    H(3) + HO2(8) <=> O2(2) + H2(6)
+    H(3) + HO2(8) <=> OH(5) + OH(5)
+    O(4) + HO2(8) <=> O2(2) + OH(5)
+    OH(5) + HO2(8) <=> O2(2) + H2O(7)
+    O2(2) + H(3) <=> HO2(8)
+    O2(2) + HCO(17) <=> HO2(8) + CO(12)
+    O2(2) + H(3) + H2O(7) <=> H2O(7) + HO2(8)
+    H(3) + HO2(8) <=> O(4) + H2O(7)
+    O2(2) + CH2O(15) <=> HO2(8) + HCO(17)
+    HO2(8) + CH2(11) <=> O2(2) + CH3(19)
+    O2(2) + [CH]1CCCCC1(42) <=> HO2(8) + C1=CCCCC1(77)
+    C2H3(23) + HO2(8) <=> O2(2) + C2H4(25)
+    HO2(8) + [CH2]C=C(133) <=> O2(2) + C3H6(27)
+    O2(2) + C1=CCCCC1(77) <=> HO2(8) + [CH]1CC=CCC1(153)
+    O2(2) + [CH2]CCCC=C(78) <=> HO2(8) + C=CCCC=C(158)
+    HO2(8) + [CH2]C=CCC[CH2](149) <=> O2(2) + [CH2]CCCC=C(78)
+    O2(2) + [CH2]C=C(133) <=> C3H4(26) + HO2(8)
+    HO2(8) + C=[C]C=C(214) <=> O2(2) + C=CC=C(152)
+    H2CCCH(24) + HO2(8) <=> O2(2) + C3H4(26)
+    O2(2) + [CH]1CC=CCC1(153) <=> HO2(8) + C1=CCC=CC1(261)
+    O2(2) + C2H3(23) <=> HO2(8) + C2H2(10)
+    O2(2) + CH4(21) <=> HO2(8) + CH3(19)
+    O2(2) + C=[C]C=C(214) <=> HO2(8) + C#CC=C(343)
+    O2(2) + CH2HCO(31) <=> HO2(8) + CH2CO(18)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 53 species and 180 reactions
+    The model edge has 332 species and 762 reactions
+
+
+At time 3.4909e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9506    
+
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 0 new edge species
+Added 1 new core reactions
+    O(4) + OH(5) <=> HO2(8)
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 53 species and 181 reactions
+    The model edge has 332 species and 762 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 182 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 182 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 946 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 946 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:13
+    Memory used: 213.15 MB
+
+Conducting simulation of reaction system 1...
+At time 3.4691e-08 s, species [CH]1C[CH]C2CC12(285) exceeded the minimum rate for moving to model core
+    Characteristic rate: 3.6036e+07 mol/m^3*s
+    [CH]1C[CH]C2CC12(285) rate: 3.6247e+06 mol/m^3*s (0.1006)
+    MCH(1) conversion: 0.9496    
+At time 3.4691e-08 s, species [CH]1C[CH]C2CC12(285) exceeded the minimum rate for simulation interruption
+    Characteristic rate: 3.6036e+07 mol/m^3*s
+    [CH]1C[CH]C2CC12(285) rate: 3.6247e+06 mol/m^3*s (0.1006)
+    MCH(1) conversion: 0.9496    
+
+
+Adding species [CH]1C[CH]C2CC12(285) to model core
+Generating thermodynamics for new species...
+Generating kinetics for new reactions...
+
+Summary of Model Enlargement
+---------------------------------
+Added 1 new core species
+    [CH]1C[CH]C2CC12(285)
+Created 0 new edge species
+Moved 3 reactions from edge to core
+    H(3) + [CH]1C[CH]C2CC12(285) <=> [CH]1CCC2CC12(259)
+    O2(2) + [CH]1CCC2CC12(259) <=> HO2(8) + [CH]1C[CH]C2CC12(285)
+    [CH]1C[CH]C2CC12(285) <=> C1=CCC=CC1(261)
+Added 0 new core reactions
+Created 0 new edge reactions
+
+After model enlargement:
+    The model core has 54 species and 184 reactions
+    The model edge has 331 species and 759 reactions
+
+
+At time 3.5095e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9514    
+
+Generating thermodynamics for new species...
+Resonance isomer 1 [CH]1C=C[CH]C1 gives H298=289089 J/mol
+Resonance isomer 2 [CH]1[CH]CC=C1 gives H298=349339 J/mol
+Generating kinetics for new reactions...
+For reaction H(3) + [CH]1C=CC2CC12(383) <=> [CH]1C[CH]C2CC12(285), Ea raised from 24.3 to 34.8 kJ/mol to match endothermicity of reaction.
+Warning: Marked reaction [CH]1[CH]CC=CC1(265) <=> [CH]1C[CH]C2CC12(285) as duplicate for saving to Chemkin file.
+Warning: Marked reaction [CH2]C1[CH]CC=C1(302) <=> [CH]1C[CH]C2CC12(285) as duplicate for saving to Chemkin file.
+
+Summary of Secondary Model Edge Enlargement
+---------------------------------
+Added 0 new core species
+Created 9 new edge species
+    [CH]1CC=C2CC12(382)
+    [CH]1C=CC2CC12(383)
+    [CH]1C=C[CH]C1(384)
+    C1C2C1C1CC21(385)
+    [CH2]C1[CH][CH]C[CH]1(386)
+    [CH]1[CH]C[CH][CH]C1(387)
+    [CH]1C[CH]C2C[C]12(388)
+    [CH]1C[CH]C2[CH]C12(389)
+    [CH]1[CH]C2CC2[CH]1(390)
+Added 0 new core reactions
+Created 19 new edge reactions
+    [CH]1[CH]CC=CC1(265) <=> [CH]1C[CH]C2CC12(285)
+    [CH2]C1[CH]CC=C1(302) <=> [CH]1C[CH]C2CC12(285)
+    H(3) + [CH]1CC=C2CC12(382) <=> [CH]1C[CH]C2CC12(285)
+    H(3) + [CH]1C=CC2CC12(383) <=> [CH]1C[CH]C2CC12(285)
+    CH2(S)(16) + [CH]1C=C[CH]C1(384) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1C[CH]C2CC12(285) <=> C1CCC2CC=12(273)
+    [CH]1C[CH]C2CC12(285) <=> C1=CC2CC2C1(274)
+    [CH]1CC[C]2CC12(282) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1[CH]C2CC2C1(286) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1CCC2C[C]12(283) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1CCC2[CH]C12(284) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1[CH]CC=CC1(265) <=> [CH]1C[CH]C2CC12(285)
+    [CH2]C1[CH]CC=C1(302) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1C[CH]C2CC12(285) <=> C1C2C1C1CC21(385)
+    [CH2]C1[CH][CH]C[CH]1(386) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1[CH]C[CH][CH]C1(387) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1C[CH]C2C[C]12(388) + H(3) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1C[CH]C2[CH]C12(389) + H(3) <=> [CH]1C[CH]C2CC12(285)
+    [CH]1[CH]C2CC2[CH]1(390) + H(3) <=> [CH]1C[CH]C2CC12(285)
+
+After model enlargement:
+    The model core has 54 species and 184 reactions
+    The model edge has 340 species and 778 reactions
+
+
+Saving current model core to Chemkin file...
+Chemkin file contains 185 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 185 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 965 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 965 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:17
+    Memory used: 213.15 MB
+
+Conducting simulation of reaction system 1...
+At time 3.5095e-08 s, reached target termination conversion: 0.950000 of MCH(1)
+    MCH(1) conversion: 0.9514    
+
+Saving current model core to Chemkin file...
+Chemkin file contains 185 reactions.
+Saving current model to verbose Chemkin file...
+Chemkin file contains 185 reactions.
+Saving current model core and edge to Chemkin file...
+Chemkin file contains 965 reactions.
+Saving current core and edge to verbose Chemkin file...
+Chemkin file contains 965 reactions.
+Updating RMG execution statistics...
+    Execution time (DD:HH:MM:SS): 00:00:03:18
+    Memory used: 213.15 MB
+
+
+MODEL GENERATION COMPLETED
+
+The final model core has 54 species and 184 reactions
+The final model edge has 340 species and 778 reactions
+
+RMG execution terminated at Fri Mar 25 15:11:01 2016
