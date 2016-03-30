@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
-# MESSAGE=$(git log --format=%B -n 1 HEAD)
-MESSAGE=master
+MESSAGE=$(git log --format=%B -n 1 HEAD)
 echo "Message: "$MESSAGE
+
+export BRANCH=$TRAVIS_BRANCH
+echo "Branch: "$BRANCH
 
 # version of RMG-Py/database to use when the SHA1 is of RMG-database/Py respectively:
 RMG_VERSION="1.0.4"
