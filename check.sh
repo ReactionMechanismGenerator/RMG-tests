@@ -2,12 +2,22 @@
 
 target=$1
 
+if [ -z ${2+x} ]; then 
+	echo "2nd argument not set. Exiting..."
+	exit 1
+fi
+
+if [ -z ${3+x} ]; then 
+	echo "3rd argument not set. Exiting..."
+	exit 1
+fi
+
 if [ -z ${TRAVIS_BUILD_DIR+x} ]; then TRAVIS_BUILD_DIR=$PWD; fi
 
 echo 'Travis Build Dir: '$TRAVIS_BUILD_DIR
 
-benchmarkmodel=$TRAVIS_BUILD_DIR/testing/benchmark/$target
-testmodel=$TRAVIS_BUILD_DIR/testing/testmodel/$target
+benchmarkmodel=$TRAVIS_BUILD_DIR/$2
+testmodel=$TRAVIS_BUILD_DIR/$3
 echo 'benchmark model folder: '$benchmarkmodel
 echo 'Test model folder: '$testmodel
 

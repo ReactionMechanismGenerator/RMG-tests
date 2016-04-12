@@ -16,4 +16,4 @@ run:
 	python $(RMG)/rmg.py testing/testmodel/$(ARGS)/input.py > /dev/null
 
 	# compare both generated models
-	bash check.sh $(ARGS)
+	bash check.sh $(ARGS) testing/benchmark/$(ARGS) testing/testmodel/$(ARGS)
