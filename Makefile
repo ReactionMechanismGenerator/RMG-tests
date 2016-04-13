@@ -23,7 +23,7 @@ run:
 	rm -rf testing/testmodel/$(ARGS)/scoop/*
 	cp examples/rmg/$(ARGS)/input.py testing/testmodel/$(ARGS)/scoop/input.py
 	@ echo "version of RMG running with SCOOP: $(RMG)"
-	python -m scoop $(RMG)/rmg.py testing/testmodel/$(ARGS)/scoop/input.py > /dev/null
+	python -m scoop $(RMG)/rmg.py testing/testmodel/$(ARGS)/scoop/input.py
 
 	# compare both generated models
 	bash check.sh $(ARGS) testing/benchmark/$(ARGS) testing/testmodel/$(ARGS)/scoop
