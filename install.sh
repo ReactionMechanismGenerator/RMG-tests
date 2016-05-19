@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
 MESSAGE=$(git log --format=%B -n 1 HEAD)
 echo "Message: "$MESSAGE
