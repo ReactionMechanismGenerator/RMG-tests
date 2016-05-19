@@ -66,7 +66,6 @@ options(
 generatedSpeciesConstraints(
     allowed=['input species','seed mechanisms','reaction libraries'],
     maximumCarbonAtoms=10,
-    maximumHydrogenAtoms=30,
     maximumOxygenAtoms=10,
     maximumNitrogenAtoms=10,
     maximumSiliconAtoms=0,
