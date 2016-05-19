@@ -19,17 +19,18 @@ before_install:
 install: 
   - chmod +x install.sh
   - . ./install.sh
+  - chmod +x run.sh
 
 script: 
-  - make ARGS="eg1" run
-  - make ARGS="eg3" run
-  - make ARGS="eg5" run
-  - make ARGS="eg6" run
-  - make ARGS="eg7" run
-  - make ARGS="NC" run
-  - make ARGS="MCH" run
-  - make ARGS="solvent_hexane" run
-  - make ARGS="methane" run
+  - ./run.sh eg1
+  - ./run.sh eg3
+  - ./run.sh eg5
+  - ./run.sh eg6
+  - ./run.sh eg7
+  - ./run.sh NC
+  - ./run.sh MCH
+  - ./run.sh solvent_hexane
+  - ./run.sh methane
 
 after_script:
   - chmod +x after_install.sh
