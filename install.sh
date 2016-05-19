@@ -43,6 +43,10 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   SHA1=${pieces[1]}
   echo "SHA1: "$SHA1
   
+  # clone the benchmark environment and call it "tested":
+  conda env remove --name tested -y
+  conda create --name tested --clone benchmark
+
   # clone entire RMG-database:
   git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 
@@ -50,8 +54,14 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   cd RMG-database
   git checkout $SHA1
 
+  # use the rmgrc file to point to the location of the tested RMG-database:
+  rmgrc="database.directory : "$tested/RMG-database/input/
+  mkdir -p $HOME/.rmg
+  echo $rmgrc >> $HOME/.rmg/rmgrc
+
   # set the RMG environment variable to the path with the rmg.py binary:
-  export RMG=$BENCHMARK_RMG
+  source activate benchmark
+  export RMG=$CONDA_ENV_PATH/bin
   echo "RMG: "$RMG
 
   # return to parent directory:
