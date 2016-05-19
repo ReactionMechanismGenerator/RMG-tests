@@ -14,22 +14,14 @@ DB_VERSION="1.1.0"
 # create a folder with benchmark version of RMG-Py and RMG-database:
 # go to parent-folder of the RMG-tests repo:
 cd ..
-benchmark=$PWD/code/benchmark
-mkdir -p $benchmark
-cd $benchmark
+tested=$PWD/code/tested
+rm -rf $tested
+mkdir -p $tested
+cd $tested
 
-# create benchmark versions of RMG-Py and RMG-database in the benchmark code folder
-conda create -c rmg --name rmg_env rmg=$RMG_VERSION -y
-
-# activate environment:
-source activate rmg_env
-
-# set the BENCHMARK_RMG environment variable to the path with the rmg.py binary:
-export BENCHMARK_RMG=$CONDA_ENV_PATH/bin
-echo "Benchmark version of RMG: "$RMG
-
-git clone -b $DB_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
-export BENCHMARK_DB=$benchmark/RMG-database
+# create anaconda environment with benchmark versions of RMG-Py and RMG-database:
+conda env remove --name benchmark -y
+conda create -c rmg --name benchmark rmg=$RMG_VERSION rmgdatabase=$DB_VERSION -y
 
 # split the message on the '-' delimiter
 IFS='-' read -a pieces <<< "$MESSAGE"
