@@ -83,15 +83,16 @@ else
   # check out the SHA-ID of the RMG-Py commit:
   cd RMG-Py
   git checkout $SHA1
+  conda env remove --name tested -y
+  conda env create -n tested 
 
   # set the RMG environment variable and add RMG-Py path to $PYTHONPATH:
   export RMG=`pwd`
   echo "test version of RMG: "$RMG
-  
-  export PYTHONPATH=$RMG:$PYTHONPATH
 
   # compile RMG-Py:
-  make
+  source activate tested
+  PYTHONPATH=$RMG:$PYTHONPATH make
 
   # return to parent directory:
   cd ..
