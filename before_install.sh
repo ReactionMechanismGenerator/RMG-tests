@@ -5,6 +5,3 @@ wget http://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O min
 chmod +x miniconda.sh
 ./miniconda.sh -b -p $HOME/miniconda
 export PATH=$HOME/miniconda/bin:$PATH
-
-# Update conda itself
-conda update --yes conda
