@@ -78,7 +78,8 @@ else
   cd RMG-Py
   git checkout $SHA1
   conda env remove --name tested -y
-  conda env create -n tested 
+  conda env create # name will set by the name key in the environment yaml.
+  conda create --name tested --clone rmg_env
 
   # set the RMG environment variable and add RMG-Py path to $PYTHONPATH:
   export RMG=`pwd`
