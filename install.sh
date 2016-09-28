@@ -10,8 +10,8 @@ export BRANCH=$TRAVIS_BRANCH
 echo "Branch: "$BRANCH
 
 # version of RMG-Py/database to use when the SHA1 is of RMG-database/Py respectively:
-RMG_VERSION="1.0.5"
-DB_VERSION="1.1.1"
+RMG_VERSION="2.0.0"
+DB_VERSION="2.0.0"
 
 # create a folder with benchmark version of RMG-Py and RMG-database:
 # go to parent-folder of the RMG-tests repo:
