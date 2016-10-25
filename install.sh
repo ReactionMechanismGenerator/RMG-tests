@@ -53,7 +53,7 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
 
   # set the RMG environment variable to the path with the rmg.py binary:
   source activate benchmark
-  export RMG=$CONDA_ENV_PATH/bin
+  export RMG=$CONDA_PREFIX/bin
   echo "RMG: "$RMG
 
   # return to parent directory:
