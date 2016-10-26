@@ -41,6 +41,10 @@ cd ..
 
 # clone benchmark RMG-database:
 git clone -b $DB_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
+cd RMG-database
+export RMGDB_BENCHMARK=`pwd`
+echo "benchmark version of RMG-database: "$RMGDB_BENCHMARK
+cd ..
 
 # prepare testing RMG-Py and RMG-db
 cd ..
@@ -61,10 +65,17 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   SHA1=${pieces[1]}
   echo "SHA1: "$SHA1
 
+  # set the RMG environment variable:
+  export RMG_TESTING=$RMG_BENCHMARK
+  echo "test version of RMG (same as benchmark): "$RMG_TESTING
+  conda create --name testing --clone benchmark
+
   # check out the SHA-ID of the RMG-database commit:
   git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
   cd RMG-database
   git checkout $SHA1
+  export RMGDB_TESTING=`pwd`
+  echo "testing version of RMG-database: "$RMGDB_TESTING
 
   # return to parent directory:
   cd ..
@@ -73,7 +84,7 @@ else
   # message is of form: "SHA1"
 
   # pushed commit is of RMG-Py:
-  SHA1=${pieces[0]}
+  SHA1=${pieces[1]}
   echo "SHA1: "$SHA1
 
   # clone entire RMG-Py:
@@ -95,6 +106,9 @@ else
 
   # return to parent directory:
   cd ..
+
+  export RMGDB_TESTING=$RMGDB_BENCHMARK
+  echo "testing version of RMG-database: "$RMGDB_TESTING
 
 fi
 
