@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-if [ -z ${RMG+x} ]; then 
+if [ -z ${RMG_BENCHMARK+x} ]; then 
 	echo "RMG variable is unset. Exiting..."
 	exit 0
 fi

@@ -23,7 +23,7 @@ echo 'Test model folder: '$testmodel
 
 # check generated models:
 # core:
-python $RMG/scripts/checkModels.py $target $benchmarkmodel/chemkin/chem_annotated.inp $benchmarkmodel/chemkin/species_dictionary.txt $testmodel/chemkin/chem_annotated.inp $testmodel/chemkin/species_dictionary.txt
+python $RMG_BENCHMARK/scripts/checkModels.py $target $benchmarkmodel/chemkin/chem_annotated.inp $benchmarkmodel/chemkin/species_dictionary.txt $testmodel/chemkin/chem_annotated.inp $testmodel/chemkin/species_dictionary.txt
 
 echo core for $target:
 if grep "checkModels" $target.log | cut -f2- -d'=' > $target.core ; then
@@ -32,7 +32,7 @@ if grep "checkModels" $target.log | cut -f2- -d'=' > $target.core ; then
 fi
 
 # edge:
-python $RMG/scripts/checkModels.py $target $benchmarkmodel/chemkin/chem_edge_annotated.inp $benchmarkmodel/chemkin/species_edge_dictionary.txt $testmodel/chemkin/chem_edge_annotated.inp $testmodel/chemkin/species_edge_dictionary.txt
+python $RMG_BENCHMARK/scripts/checkModels.py $target $benchmarkmodel/chemkin/chem_edge_annotated.inp $benchmarkmodel/chemkin/species_edge_dictionary.txt $testmodel/chemkin/chem_edge_annotated.inp $testmodel/chemkin/species_edge_dictionary.txt
 echo edge for $target:
 if grep "checkModels" $target.log | cut -f2- -d'=' > $target.edge ; then
 	cat $target.edge
@@ -53,7 +53,7 @@ grep "Memory used:" $testmodel/RMG.log | tail -1
 regr=examples/rmg/$target/regression_input.py
 if [ -f "$regr" ];
 then
-	python $RMG/rmgpy/tools/regression.py $regr $benchmarkmodel/chemkin $testmodel/chemkin/
+	python $RMG_BENCHMARK/rmgpy/tools/regression.py $regr $benchmarkmodel/chemkin $testmodel/chemkin/
 else
 	echo "Regression input file not found. Not running a regression test."
 fi
