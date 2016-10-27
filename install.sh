@@ -23,13 +23,16 @@ mkdir -p $benchmark
 cd $benchmark
 
 # clone benchmark RMG-Py
-git clone -b $RMG_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-Py.git
+git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
 
 # check out the SHA-ID of the RMG-Py commit:
 cd RMG-Py
 conda env create -f environment_linux.yml # name will set by the name key in the environment yaml.
 conda create --name benchmark --clone rmg_env
 conda remove -n rmg_env --all -y
+conda clean --all -y
+
+git checkout tags/$RMG_VERSION
 export RMG_BENCHMARK=`pwd`
 echo "benchmark version of RMG: "$RMG_BENCHMARK
 
