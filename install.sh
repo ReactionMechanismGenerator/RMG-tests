@@ -9,10 +9,6 @@ echo "Message: "$MESSAGE
 export BRANCH=$TRAVIS_BRANCH
 echo "Branch: "$BRANCH
 
-# version of RMG-Py/database to use when the SHA1 is of RMG-database/Py respectively:
-RMG_VERSION="2.0.0"
-DB_VERSION="2.0.0"
-
 # create a folder with benchmark version of RMG-Py and RMG-database:
 # go to parent-folder of the RMG-tests repo:
 cd ..
@@ -31,9 +27,13 @@ sed -i -e 's/rmg_env/benchmark/g' environment_linux.yml
 conda env create -f environment_linux.yml # name will set by the name key in the environment yaml.
 git checkout environment_linux.yml
 
-git checkout -b benchmark tags/$RMG_VERSION
 export RMG_BENCHMARK=`pwd`
+
+# to show benchmark MG-Py HEAD
+echo ""
 echo "benchmark version of RMG: "$RMG_BENCHMARK
+git log --format=%H%n%cd -1
+echo ""
 
 # compile RMG-Py:
 source activate benchmark
@@ -43,10 +43,15 @@ source deactivate
 cd ..
 
 # clone benchmark RMG-database:
-git clone -b $DB_VERSION --single-branch https://github.com/ReactionMechanismGenerator/RMG-database.git
+git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 cd RMG-database
 export RMGDB_BENCHMARK=`pwd`
+
+# to show benchmark RMG-database HEAD
+echo ""
 echo "benchmark version of RMG-database: "$RMGDB_BENCHMARK
+git log --format=%H%n%cd -1
+echo ""
 cd ..
 
 # prepare testing RMG-Py and RMG-db
@@ -70,7 +75,14 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
 
   # set the RMG environment variable:
   export RMG_TESTING=$RMG_BENCHMARK
-  echo "test version of RMG (same as benchmark): "$RMG_TESTING
+
+  # to show testing RMG-Py HEAD
+  echo ""
+  echo "testing version of RMG: "$RMG_TESTING
+  cd $RMG_TESTING
+  git log --format=%H%n%cd -1
+  cd -
+  echo ""
   conda create --name testing --clone benchmark
 
   # check out the SHA-ID of the RMG-database commit:
@@ -78,8 +90,14 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   cd RMG-database
   git checkout $SHA1
   export RMGDB_TESTING=`pwd`
-  echo "testing version of RMG-database: "$RMGDB_TESTING
 
+  # to show testing RMG-database HEAD
+  echo ""
+  echo "testing version of RMG-database: "$RMGDB_TESTING
+  cd $RMG_TESTING
+  git log --format=%H%n%cd -1
+  cd -
+  echo ""
   # return to parent directory:
   cd ..
 
@@ -102,8 +120,11 @@ else
   git checkout environment_linux.yml
 
   # set the RMG environment variable:
+  echo ""
   export RMG_TESTING=`pwd`
-  echo "test version of RMG: "$RMG_TESTING
+  echo "testing version of RMG: "$RMG_TESTING
+  git log --format=%H%n%cd -1
+  echo ""
 
   # compile RMG-Py:
   source activate testing
@@ -113,8 +134,13 @@ else
   # return to parent directory:
   cd ..
 
+  echo ""
   export RMGDB_TESTING=$RMGDB_BENCHMARK
   echo "testing version of RMG-database: "$RMGDB_TESTING
+  cd $RMGDB_TESTING
+  git log --format=%H%n%cd -1
+  cd -
+  echo ""
 
 fi
 
