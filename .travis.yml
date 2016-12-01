@@ -19,6 +19,8 @@ before_install:
 install: 
   - chmod +x install.sh
   - . ./install.sh
+  - chmod +x version_summary.sh
+  - . ./version_summary.sh
   - chmod +x run.sh
 
 script: 
