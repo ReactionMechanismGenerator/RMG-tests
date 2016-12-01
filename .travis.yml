@@ -24,7 +24,15 @@ install:
   - chmod +x run.sh
 
 script: 
-  - ./run.sh eg1
+  - ./run.sh eg1 no
+  - ./run.sh eg3 no
+  - ./run.sh eg5 no
+  - ./run.sh eg6 no
+  - ./run.sh eg7 no
+  - ./run.sh NC no
+  - ./run.sh MCH  yes
+  - ./run.sh solvent_hexane no
+  - ./run.sh methane no
 
 after_script:
   - chmod +x after_install.sh
