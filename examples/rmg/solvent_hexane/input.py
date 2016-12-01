@@ -65,8 +65,8 @@ simulator(
 )
 
 model(
-    toleranceMoveToCore = 0.001,
-    toleranceKeepInEdge = 1e-9,
+    toleranceMoveToCore = 0.1,
+    toleranceKeepInEdge = 0,
     toleranceInterruptSimulation = 0.1,
     maximumEdgeSpecies = 100000,
     minCoreSizeForPrune = 50,

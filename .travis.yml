@@ -19,18 +19,20 @@ before_install:
 install: 
   - chmod +x install.sh
   - . ./install.sh
+  - chmod +x version_summary.sh
+  - . ./version_summary.sh
   - chmod +x run.sh
 
 script: 
-  - ./run.sh eg1
-  - ./run.sh eg3
-  - ./run.sh eg5
-  - ./run.sh eg6
-  - ./run.sh eg7
-  - ./run.sh NC
-  - ./run.sh MCH
-  - ./run.sh solvent_hexane
-  - ./run.sh methane
+  - ./run.sh eg1 no
+  - ./run.sh eg3 no
+  - ./run.sh eg5 no
+  - ./run.sh eg6 no
+  - ./run.sh eg7 no
+  - ./run.sh NC no
+  - ./run.sh MCH  yes
+  - ./run.sh solvent_hexane no
+  - ./run.sh methane no
 
 after_script:
   - chmod +x after_install.sh
