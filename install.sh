@@ -101,7 +101,7 @@ if [ "${pieces[0]}" == "rmgdb" ]; then
   # return to parent directory:
   cd ..
 
-else
+elif [ "${pieces[0]}" == "rmgpy" ]; then
   # message is of form: "SHA1"
 
   # pushed commit is of RMG-Py:
@@ -141,6 +141,55 @@ else
   git log --format=%H%n%cd -1
   cd -
   echo ""
+
+elif [ "${pieces[0]}" == "rmgpydb" ]; then
+  # message is of form: "SHA1"
+
+  # pushed commit is of RMG-Py:
+  SHA1=${pieces[1]}
+  echo "SHA1: "$SHA1
+
+  DB_branch=${pieces[2]}
+  echo "DB_branch: "${DB_branch}
+
+  # clone entire RMG-Py:
+  git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
+
+  # check out the SHA-ID of the RMG-Py commit:
+  cd RMG-Py
+  git checkout $SHA1
+  sed -i -e 's/rmg_env/testing/g' environment_linux.yml
+  conda env create -f environment_linux.yml # name will set by the name key in the environment yaml.
+
+  git checkout environment_linux.yml
+  export RMG_TESTING=`pwd`
+
+  # Show the RMG testing version:
+  echo ""
+  echo "testing version of RMG: "$RMG_TESTING
+  git log --format=%H%n%cd -1
+  echo ""
+
+  # check out right RMG-database
+  cd ..
+  git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
+  cd RMG-database
+  git checkout -b ${DB_branch} origin/${DB_branch}
+  export RMGDB_TESTING=`pwd`
+  
+  # Show the RMG database testing version:
+  echo ""
+  echo "testing version of RMG database: "$RMGDB_TESTING
+  git log --format=%H%n%cd -1
+  echo ""
+
+  # go to RMG-Py
+  cd ../RMG-Py
+
+  # compile RMG-Py:
+  source activate testing
+  make
+  source deactivate
 
 fi
 
