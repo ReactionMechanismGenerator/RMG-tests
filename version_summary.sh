@@ -2,22 +2,22 @@
 echo "Benchmark vs. Testing Version Summary"
 
 echo "========================================="
-echo "benchmark version of RMG: "$RMG_BENCHMARK
+echo -e "${GREEN}benchmark version of RMG${NC}: "$RMG_BENCHMARK
 cd $RMG_BENCHMARK
 git log --format=%H%n%cd -1
 echo ""
 
-echo "testing version of RMG: "$RMG_TESTING  
+echo -e "${RED}testing version of RMG${NC}: "$RMG_TESTING  
 cd $RMG_TESTING
 git log --format=%H%n%cd -1
 echo ""
 
-echo "benchmark version of RMG-database: "$RMGDB_BENCHMARK
+echo -e "${GREEN}benchmark version of RMG-database${NC}: "$RMGDB_BENCHMARK
 cd $RMGDB_BENCHMARK
 git log --format=%H%n%cd -1
 echo ""
 
-echo "testing version of RMG-database: "$RMGDB_TESTING
+echo -e "${RED}testing version of RMG-database${NC}: "$RMGDB_TESTING
 cd $RMGDB_TESTING
 git log --format=%H%n%cd -1
 echo "========================================="
