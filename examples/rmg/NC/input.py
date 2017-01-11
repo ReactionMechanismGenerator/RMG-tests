@@ -58,7 +58,7 @@ options(
     units='si',
     generateOutputHTML=False,
     generatePlots=False,
-    saveEdgeSpecies=False,
+    saveEdgeSpecies=True,
     saveSimulationProfiles=False,
 	saveRestartPeriod=None,
 )
