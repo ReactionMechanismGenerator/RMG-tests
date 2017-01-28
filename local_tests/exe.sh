@@ -6,17 +6,17 @@
 . ../version_summary.sh
 
 if [ $JOBS == "all" ]; then
-	. ./run.sh eg1 no
-	. ./run.sh eg3 no
-	. ./run.sh eg5 no
-	. ./run.sh eg6 no
-	. ./run.sh eg7 no
-	. ./run.sh NC no
-	. ./run.sh MCH  yes
-	. ./run.sh solvent_hexane no
-	. ./run.sh methane no
+	. $BASE_DIR/run.sh eg1 no
+	. $BASE_DIR/run.sh eg3 no
+	. $BASE_DIR/run.sh eg5 no
+	. $BASE_DIR/run.sh eg6 no
+	. $BASE_DIR/run.sh eg7 no
+	. $BASE_DIR/run.sh NC no
+	. $BASE_DIR/run.sh MCH  yes
+	. $BASE_DIR/run.sh solvent_hexane no
+	. $BASE_DIR/run.sh methane no
 else
-	. ./run.sh $JOBS no
+	. $BASE_DIR/run.sh $JOBS no
 fi
 
 . ./clean_up.sh
