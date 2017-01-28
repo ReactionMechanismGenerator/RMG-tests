@@ -58,10 +58,14 @@ source deactivate
 
 
 # compare both generated models
+mkdir -p $BASE_DIR/tests/check/$eg
+rm -rf $BASE_DIR/tests/check/$eg/*
+cd $BASE_DIR/tests/check/$eg
+
 source activate benchmark
 export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH 
 
-bash check.sh $eg $BASE_DIR/tests/benchmark/$eg $BASE_DIR/tests/testmodel/$eg
+bash $BASE_DIR/check.sh $eg $BASE_DIR/tests/benchmark/$eg $BASE_DIR/tests/testmodel/$eg
 
 export PYTHONPATH=$ORIGIN_PYTHONPATH
 source deactivate
@@ -75,6 +79,7 @@ if [ $scoop_test == "yes" ]; then
 	source activate testing
 	export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
 
+	cd $BASE_DIR/tests/testmodel/$eg/scoop
 	python -m scoop -n 1 $RMG_TESTING/rmg.py $BASE_DIR/tests/testmodel/$eg/scoop/input.py > /dev/null
 
 	export PYTHONPATH=$ORIGIN_PYTHONPATH
@@ -84,7 +89,7 @@ if [ $scoop_test == "yes" ]; then
 	source activate benchmark
 	export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH 
 
-	bash check.sh $eg $BASE_DIR/tests/benchmark/$eg $BASE_DIR/tests/testmodel/$eg/scoop
+	bash $BASE_DIR/check.sh $eg $BASE_DIR/tests/benchmark/$eg $BASE_DIR/tests/testmodel/$eg/scoop
 
 	export PYTHONPATH=$ORIGIN_PYTHONPATH
 	source deactivate
