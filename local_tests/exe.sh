@@ -1,7 +1,7 @@
 #!/bin/bash
 
 . ./input.sh
-. ./before_install.sh
+. ../color_define.sh
 . ./install.sh
 . ../version_summary.sh
 
