@@ -22,4 +22,4 @@ cd $RMGDB_TESTING
 git log --format=%H%n%cd -1
 echo "========================================="
 
-cd $TRAVIS_BUILD_DIR
+cd $BASE_DIR
