@@ -1,0 +1,5 @@
+# build files
+code/*
+
+# test files
+tests/*
