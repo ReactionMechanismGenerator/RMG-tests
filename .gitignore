@@ -1,6 +1,5 @@
 # build files
-local_tests/code/*
+code/*
 
 # test files
-local_tests/tests/*
-local_tests/species*
+tests/*
