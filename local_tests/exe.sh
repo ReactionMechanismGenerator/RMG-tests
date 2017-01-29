@@ -3,6 +3,17 @@
 export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 echo "Local tests base dir: "$BASE_DIR
 
+# Figure out OS
+if [[ $MACHTYPE == *"apple"* ]]; then
+	export CURRENT_OS="mac"
+elif [[ $MACHTYPE == *"linux"* ]]; then
+	export CURRENT_OS="linux"
+else
+	echo "$MACHTYPE not supported. Exiting..."
+	exit 0
+fi
+echo "Current OS: "$CURRENT_OS
+
 . $BASE_DIR/local_tests/input.sh
 . $BASE_DIR/color_define.sh
 . $BASE_DIR/install.sh
