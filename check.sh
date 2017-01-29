@@ -16,8 +16,8 @@ if [ -z ${TRAVIS_BUILD_DIR+x} ]; then TRAVIS_BUILD_DIR=$PWD; fi
 
 echo 'Travis Build Dir: '$TRAVIS_BUILD_DIR
 
-benchmarkmodel=$TRAVIS_BUILD_DIR/$2
-testmodel=$TRAVIS_BUILD_DIR/$3
+benchmarkmodel=$2
+testmodel=$3
 echo 'benchmark model folder: '$benchmarkmodel
 echo 'Test model folder: '$testmodel
 
@@ -50,7 +50,7 @@ echo 'Memory used, Tested:'
 grep "Memory used:" $testmodel/RMG.log | tail -1
 
 # regression testing
-regr=examples/rmg/$target/regression_input.py
+regr=$BASE_DIR/examples/rmg/$target/regression_input.py
 if [ -f "$regr" ];
 then
 	python $RMG_BENCHMARK/rmgpy/tools/regression.py $regr $benchmarkmodel/chemkin $testmodel/chemkin/
