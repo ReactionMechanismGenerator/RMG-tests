@@ -1,0 +1,38 @@
+#!/bin/bash
+#SBATCH -p debug
+#SBATCH -J submit
+#SBATCH -n 1
+
+# usage: sbatch submit_parallel.sl $(pwd)
+
+export BASE_DIR="$( cd $1/../ && pwd)"
+echo "Local tests base dir: "$BASE_DIR
+
+# Figure out OS
+if [[ $MACHTYPE == *"apple"* ]]; then
+	export CURRENT_OS="mac"
+elif [[ $MACHTYPE == *"linux"* ]]; then
+	export CURRENT_OS="linux"
+else
+	echo "$MACHTYPE not supported. Exiting..."
+	exit 0
+fi
+echo "Current OS: "$CURRENT_OS
+
+. $BASE_DIR/local_tests/input.sh
+. $BASE_DIR/color_define.sh
+. $BASE_DIR/install.sh
+. $BASE_DIR/version_summary.sh
+
+if [ $JOBS == "all" ]; then
+	for i in eg1 eg3 eg5 eg6 eg7 NC solvent_hexane no
+	do
+		sbatch $BASE_DIR/local_tests/run.sl $i no
+	done
+
+	sbatch $BASE_DIR/local_tests/run.sl MCH yes
+else
+	sbatch $BASE_DIR/local_tests/run.sl $JOBS no
+fi
+
+. $BASE_DIR/local_tests/clean_up.sh
