@@ -27,6 +27,14 @@ Normally RMG-tests run automatically all the examples registered in `examples` f
 	cd local_tests
 	bash exe.sh
 	```
-If you are running on a server, create a submission script with this code in it. 
+If you are running on a server, we've provided two example submission scripts (serial and parallel). 
+For serial mode of testing:
+	```bash
+	sbatch submit_serial.sl
+	``` 
+For parallel mode of testing:
+	```bash
+	sbatch submit_parallel.sl $(pwd)
+	```
 
 5. You'll find the test log in folder `RMG-tests/tests/check/${you job name}`, and two versions of RMG-generated CHEMKIN models in folder `RMG-tests/tests/benchmark/${you job name}` and `RMG-tests/tests/testmodel/${you job name}` for detailed analysis.
