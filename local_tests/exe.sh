@@ -1,9 +1,12 @@
 #!/bin/bash
 
-. ./input.sh
-. ../color_define.sh
-. ./install.sh
-. ../version_summary.sh
+export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+echo "Local tests base dir: "$BASE_DIR
+
+. $BASE_DIR/local_tests/input.sh
+. $BASE_DIR/color_define.sh
+. $BASE_DIR/install.sh
+. $BASE_DIR/version_summary.sh
 
 if [ $JOBS == "all" ]; then
 	. $BASE_DIR/run.sh eg1 no
@@ -19,4 +22,4 @@ else
 	. $BASE_DIR/run.sh $JOBS no
 fi
 
-. ./clean_up.sh
+. $BASE_DIR/local_tests/clean_up.sh
