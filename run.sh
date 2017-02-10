@@ -23,6 +23,10 @@ source activate benchmark
 echo "benchmark version of RMG: "$RMG_BENCHMARK
 export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH 
 
+rm -rf ${RMG_BENCHMARK}/rmgpy/rmgrc
+rmgrc="database.directory : "${RMGDB_BENCHMARK}/input/
+echo $rmgrc >> ${RMG_BENCHMARK}/rmgpy/rmgrc
+
 python $RMG_BENCHMARK/rmg.py $BASE_DIR/tests/benchmark/$eg/input.py > /dev/null
 
 source deactivate
@@ -39,6 +43,10 @@ source activate testing
 echo "test version of RMG: "$RMG_TESTING
 
 export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH 
+
+rm -rf ${RMG_TESTING}/rmgpy/rmgrc
+rmgrc="database.directory : "${RMGDB_TESTING}/input/
+echo $rmgrc >> ${RMG_TESTING}/rmgpy/rmgrc
 
 python $RMG_TESTING/rmg.py $BASE_DIR/tests/testmodel/$eg/input.py > /dev/null
 export PYTHONPATH=$ORIGIN_PYTHONPATH
