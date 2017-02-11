@@ -1,8 +1,8 @@
 # Data sources
 database(
-    thermoLibraries = ['KlippensteinH2O2','primaryThermoLibrary','DFT_QCI_thermo','CHN','GRI-Mech3.0-N','thermo_DFT_CCSDTF12_BAC'],
-    reactionLibraries = [('Nitrogen_Dean_and_Bozzelli',False)],
-    seedMechanisms = ['ERC-FoundationFuelv0.9'],
+    thermoLibraries = ['KlippensteinH2O2','primaryThermoLibrary','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','FFCM1(-)','CHN','GRI-Mech3.0-N'],
+    reactionLibraries = [('KlippensteinH2O2',False),('FFCM1(-)',False),('Nitrogen_Dean_and_Bozzelli',False)],
+    seedMechanisms = [],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
     kineticsEstimator = 'rate rules',
@@ -33,7 +33,7 @@ species(
 # Reaction systems
 simpleReactor(
     temperature=(1500,'K'),
-    pressure=(2,'atm'),
+    pressure=(1,'atm'),
     initialMoleFractions={
         "NC": 0.0005,
 		"O2": 0.002,
@@ -65,12 +65,12 @@ options(
 
 generatedSpeciesConstraints(
     allowed=['input species','seed mechanisms','reaction libraries'],
-    maximumCarbonAtoms=10,
-    maximumOxygenAtoms=10,
-    maximumNitrogenAtoms=10,
+    maximumCarbonAtoms=2,
+    maximumOxygenAtoms=2,
+    maximumNitrogenAtoms=2,
     maximumSiliconAtoms=0,
     maximumSulfurAtoms=0,
-    maximumHeavyAtoms=20,
-    maximumRadicalElectrons=3,
+    maximumHeavyAtoms=3,
+    maximumRadicalElectrons=2,
     allowSingletO2=False,
 )
