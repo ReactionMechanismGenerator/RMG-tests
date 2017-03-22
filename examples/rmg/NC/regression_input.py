@@ -1,7 +1,7 @@
 
 options(
     title = 'NC',
-    tolerance = 0.05
+    tolerance = 0.2
 )
 
 observable(
@@ -33,5 +33,5 @@ reactorSetups(
         "Ar": 0.9975,
     }],
     temperatures=([1500],'K'),
-    pressures=([2.],'atm'),
+    pressures=([1.],'atm'),
 )
