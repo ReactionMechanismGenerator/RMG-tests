@@ -19,7 +19,16 @@ else
 fi
 echo "Current OS: "$CURRENT_OS
 
-. $BASE_DIR/local_tests/input.sh
+# [USER INPUT] please specify the three
+# inputs below
+export RMG_TESTING_BRANCH="master"
+export RMGDB_TESTING_BRANCH="master"
+export JOBS="NC"
+
+echo "Testing RMG-Py Branch: "$RMG_TESTING_BRANCH
+echo "Testing RMG-database Branch: "$RMGDB_TESTING_BRANCH
+echo "Testing Jobs: "$JOBS
+
 . $BASE_DIR/color_define.sh
 . $BASE_DIR/install.sh
 . $BASE_DIR/version_summary.sh

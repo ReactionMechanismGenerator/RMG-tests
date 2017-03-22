@@ -14,7 +14,14 @@ else
 fi
 echo "Current OS: "$CURRENT_OS
 
-. $BASE_DIR/local_tests/input.sh
+export RMG_TESTING_BRANCH=$1
+export RMGDB_TESTING_BRANCH=$2
+export JOBS=$3
+
+echo "Testing RMG-Py Branch: "$RMG_TESTING_BRANCH
+echo "Testing RMG-database Branch: "$RMGDB_TESTING_BRANCH
+echo "Testing Jobs: "$JOBS
+
 . $BASE_DIR/color_define.sh
 . $BASE_DIR/install.sh
 . $BASE_DIR/version_summary.sh
