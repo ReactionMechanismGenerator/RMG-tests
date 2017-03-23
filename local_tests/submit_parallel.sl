@@ -24,6 +24,7 @@ echo "Current OS: "$CURRENT_OS
 export RMG_TESTING_BRANCH="master"
 export RMGDB_TESTING_BRANCH="master"
 export JOBS="NC"
+export DATA_DIR='../data_dir'
 
 echo "Testing RMG-Py Branch: "$RMG_TESTING_BRANCH
 echo "Testing RMG-database Branch: "$RMGDB_TESTING_BRANCH
