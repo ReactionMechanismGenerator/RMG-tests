@@ -6,4 +6,4 @@
 JOB=$1
 SCOOP=$2
 
-bash $BASE_DIR/run.sh $JOB $SCOOP
+bash $BASE_DIR/local_tests/run_local.sh $JOB $SCOOP
