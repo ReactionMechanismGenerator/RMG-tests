@@ -1,6 +1,6 @@
 # Data sources
 database(
-    thermoLibraries = ['KlippensteinH2O2','primaryThermoLibrary','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','FFCM1(-)','CHN','GRI-Mech3.0-N'],
+    thermoLibraries = ['BurkeH2O2','primaryThermoLibrary','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','FFCM1(-)','CHN','GRI-Mech3.0-N'],
     reactionLibraries = [('BurkeH2O2inArHe', False),('FFCM1(-)',False),('Nitrogen_Dean_and_Bozzelli',False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
