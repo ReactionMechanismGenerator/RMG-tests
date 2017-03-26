@@ -3,9 +3,9 @@
 #SBATCH -J submit
 #SBATCH -n 1
 
-# usage: sbatch submit_parallel.sl $(pwd)
+# usage: sbatch submit_parallel.sl
 
-export BASE_DIR="$( cd $1/../ && pwd)"
+export BASE_DIR="$( cd $PWD/../ && pwd)"
 echo "Local tests base dir: "$BASE_DIR
 
 # Figure out OS
