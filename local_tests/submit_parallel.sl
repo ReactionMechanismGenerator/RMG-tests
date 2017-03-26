@@ -24,11 +24,15 @@ echo "Current OS: "$CURRENT_OS
 export RMG_TESTING_BRANCH="master"
 export RMGDB_TESTING_BRANCH="master"
 export JOBS="NC"
-export DATA_DIR='../data_dir'
+
+cd $(dirname "../data_dir")
+export DATA_DIR=$PWD/$(basename data_dir)
+cd -
 
 echo "Testing RMG-Py Branch: "$RMG_TESTING_BRANCH
 echo "Testing RMG-database Branch: "$RMGDB_TESTING_BRANCH
 echo "Testing Jobs: "$JOBS
+echo "Data directory: "$DATA_DIR
 
 . $BASE_DIR/color_define.sh
 . $BASE_DIR/local_tests/install_local.sh

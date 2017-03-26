@@ -17,11 +17,15 @@ echo "Current OS: "$CURRENT_OS
 export RMG_TESTING_BRANCH=$1
 export RMGDB_TESTING_BRANCH=$2
 export JOBS=$3
-export DATA_DIR=$4
+
+cd $(dirname $4)
+export DATA_DIR=$PWD/$(basename $4)
+cd -
 
 echo "Testing RMG-Py Branch: "$RMG_TESTING_BRANCH
 echo "Testing RMG-database Branch: "$RMGDB_TESTING_BRANCH
 echo "Testing Jobs: "$JOBS
+echo "Data directory: "$DATA_DIR
 
 . $BASE_DIR/color_define.sh
 . $BASE_DIR/local_tests/install_local.sh
