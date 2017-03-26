@@ -41,12 +41,12 @@ echo "Data directory: "$DATA_DIR
 if [ $JOBS == "all" ]; then
 	for i in eg1 eg3 eg5 eg6 eg7 NC solvent_hexane no
 	do
-		sbatch $BASE_DIR/local_tests/run_local.sl $i no
+		sbatch $BASE_DIR/local_tests/run.sl $i no
 	done
 
-	sbatch $BASE_DIR/local_tests/run_local.sl MCH yes
+	sbatch $BASE_DIR/local_tests/run.sl MCH yes
 else
-	sbatch $BASE_DIR/local_tests/run_local.sl $JOBS no
+	sbatch $BASE_DIR/local_tests/run.sl $JOBS no
 fi
 
 . $BASE_DIR/local_tests/clean_up.sh
