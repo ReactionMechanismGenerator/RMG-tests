@@ -23,7 +23,7 @@ echo "Current OS: "$CURRENT_OS
 # inputs below
 export RMG_TESTING_BRANCH="master"
 export RMGDB_TESTING_BRANCH="master"
-export JOBS="NC"
+export JOBS="all"
 
 cd $(dirname "../data_dir")
 export DATA_DIR=$PWD/$(basename data_dir)
