@@ -49,4 +49,4 @@ else
 	sbatch $BASE_DIR/local_tests/run.sl $JOBS no
 fi
 
-. $BASE_DIR/local_tests/clean_up.sh
+#. $BASE_DIR/local_tests/clean_up.sh
