@@ -2,6 +2,7 @@
 #SBATCH -p debug
 #SBATCH -J submit
 #SBATCH -n 1
+#SBATCH --output=main_log.out
 
 # usage: sbatch submit_parallel.sl
 
