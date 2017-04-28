@@ -38,6 +38,8 @@ echo "Data directory: "$DATA_DIR
 . $BASE_DIR/local_tests/install_local.sh
 . $BASE_DIR/version_summary.sh
 
+echo "INSTALLATION COMPLETE"
+
 if [ $JOBS == "all" ]; then
 	for i in eg1 eg3 eg5 eg6 eg7 NC solvent_hexane methane
 	do

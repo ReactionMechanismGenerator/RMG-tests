@@ -31,6 +31,8 @@ echo "Data directory: "$DATA_DIR
 . $BASE_DIR/local_tests/install_local.sh
 . $BASE_DIR/version_summary.sh
 
+echo "INSTALLATION COMPLETE"
+
 if [ $JOBS == "all" ]; then
 	. $BASE_DIR/local_tests/run_local.sh eg1 no
 	. $BASE_DIR/local_tests/run_local.sh eg3 no

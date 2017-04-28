@@ -94,3 +94,5 @@ if [ $scoop_test == "yes" ]; then
 	source deactivate
 fi
 
+echo "$eg: TEST JOB COMPLETE"
+
