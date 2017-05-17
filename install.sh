@@ -53,7 +53,7 @@ if [ $RMG_TESTING_BRANCH == "master" ]; then
   cd RMG-database
   if [ $RMGDB_TESTING_BRANCH != "master" ]; then
     git checkout -b ${RMGDB_TESTING_BRANCH} origin/${RMGDB_TESTING_BRANCH}
-  if
+  fi
   export RMGDB_TESTING=`pwd`
   cd ..
 
