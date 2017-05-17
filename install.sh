@@ -51,7 +51,9 @@ if [ $RMG_TESTING_BRANCH == "master" ]; then
   # check out the SHA-ID of the RMG-database commit:
   git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
   cd RMG-database
-  git checkout -b ${RMGDB_TESTING_BRANCH} origin/${RMGDB_TESTING_BRANCH}
+  if [ $RMGDB_TESTING_BRANCH != "master" ]; then
+    git checkout -b ${RMGDB_TESTING_BRANCH} origin/${RMGDB_TESTING_BRANCH}
+  if
   export RMGDB_TESTING=`pwd`
   cd ..
 
