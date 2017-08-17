@@ -3,3 +3,6 @@ code/*
 
 # test files
 tests/*
+
+# .pyc files
+*.pyc
