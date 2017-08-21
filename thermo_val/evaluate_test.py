@@ -16,3 +16,9 @@ class TestEvaluator(unittest.TestCase):
 		self.assertEqual(len(performance_dict), 1)
 		self.assertEqual(performance_dict.keys()[0], ('sdata134k', 'rmg_rings_130_table'))
 		self.assertAlmostEqual(performance_dict.values()[0], 0.2, 1)
+
+		test_df_save_path = os.path.join(os.path.dirname(dataset_file),
+                                        'test_df_{0}_{1}_{2}.csv'.format('sdata134k', 'rmg_rings_130_table', "benchmark"))
+
+		os.remove(test_df_save_path)
+

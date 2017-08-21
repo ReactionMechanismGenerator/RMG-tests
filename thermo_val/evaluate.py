@@ -1,10 +1,13 @@
+import os
 import argparse
 import pandas as pd
 
 from data import get_datasets, get_data
 from model import ThermoEstimator
 
-def evaluate_performance(dataset_file, model_kernel='GA'):
+def evaluate_performance(dataset_file, 
+                        model_kernel='GA', 
+                        test_mode='benchmark'):
     
     # get a list of test table names
     # from files or input
@@ -43,6 +46,12 @@ def evaluate_performance(dataset_file, model_kernel='GA'):
         diff = abs(test_df['H298_pred(kcal/mol)']-test_df['H298_true(kcal/mol)'])
         test_df['H298_diff(kcal/mol)'] = pd.Series(diff, index=test_df.index)
 
+        # save test_df for future reference and possible comparison
+        test_df_save_path = os.path.join(os.path.dirname(dataset_file),
+                                        'test_df_{0}_{1}_{2}.csv'.format(db_name, collection_name, test_mode))
+        with open(test_df_save_path, 'w') as fout:
+            test_df.to_csv(fout)
+
         performance_dict[(db_name, collection_name)] = test_df['H298_diff(kcal/mol)'].describe()['mean']
 
     return performance_dict
@@ -54,6 +63,9 @@ def parseCommandLineArguments():
     parser.add_argument('-d', '--datasets', metavar='FILE', type=str, 
         nargs='+', help='a file specifies on which datasets to test')
 
+    parser.add_argument('-m', '--test_mode', type=str, 
+        help='test mode: whether it is benchmark or testing mode')
+
     return parser.parse_args()
 
 
@@ -61,7 +73,10 @@ def main():
 
     args = parseCommandLineArguments()
     dataset_file = args.datasets[0]
-    performance_dict = evaluate_performance(dataset_file, model_kernel='GA')
+    test_mode = args.test_mode
+    performance_dict = evaluate_performance(dataset_file, 
+                                            model_kernel='GA',
+                                            test_mode=test_mode)
 
     print "\nValidation Test Results"
     for db_name, collection_name in performance_dict:
