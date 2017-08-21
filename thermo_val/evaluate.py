@@ -45,3 +45,32 @@ def evaluate_performance(dataset_file, model_kernel='GA'):
         performance_dict[(db_name, collection_name)] = test_df['H298_diff(kcal/mol)'].describe()['mean']
 
     return performance_dict
+
+def parseCommandLineArguments():
+   
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('-d', '--datasets', metavar='FILE', type=str, 
+        nargs='+', help='a file specifies on which datasets to test')
+
+    return parser.parse_args()
+
+
+def main():
+
+    args = parseCommandLineArguments()
+    dataset_file = args.datasets[0]
+    performance_dict = evaluate_performance(dataset_file, model_kernel='GA')
+
+    print "\nValidation Test Results"
+    for db_name, collection_name in performance_dict:
+
+        performance = performance_dict[(db_name, collection_name)]
+
+        print "========================="
+        print "Database: {0}".format(db_name)
+        print "Dataset: {0}".format(collection_name)
+        print "Performance (MAE): {0:0.2f} kcal/mol".format(performance)
+
+if __name__ == '__main__':
+    main()
