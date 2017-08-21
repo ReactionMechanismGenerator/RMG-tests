@@ -1,0 +1,4 @@
+
+rmg.sdata134k.small_cyclic_table
+rmg.sdata134k.large_linear_polycyclic_table
+rmg.sdata134k.large_fused_polycyclic_table
