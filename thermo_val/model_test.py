@@ -19,10 +19,11 @@ class TestThermoEstimator(unittest.TestCase):
             model = ThermoEstimator(kernel_type='Not-supported')
 
 
-    def test_predict_h298_using_ga_model(self):
+    def test_predict_thermo_using_ga_model(self):
 
         smiles = 'CC'
-        H298_pred = self.model_ga.predict_h298(smiles)
+        thermo = self.model_ga.predict_thermo(smiles)
+        H298_pred = thermo.H298.value_si/4184.0
         H298_expected = -20.40
 
         self.assertAlmostEqual(H298_pred, H298_expected, 2)
