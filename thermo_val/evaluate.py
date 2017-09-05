@@ -1,9 +1,12 @@
 import os
+import time
 import argparse
 import pandas as pd
 
-from data import get_datasets, get_data
 from model import ThermoEstimator
+from data import get_datasets, get_data
+from utils import get_RTD_authentication_info
+from connector import RMGTestsDatabaseInterface
 
 def evaluate_performance(dataset_file, 
                         model_kernel='GA'):
@@ -68,15 +71,21 @@ def parseCommandLineArguments():
     parser.add_argument('-d', '--datasets', metavar='FILE', type=str, 
         nargs='+', help='a file specifies on which datasets to test')
 
+    parser.add_argument('-pb', '--rmgpy_branch', type=str, 
+        help='rmgpy branch name')
+
+    parser.add_argument('-dbb', '--rmgdb_branch', type=str, 
+        help='rmgdb branch name')
+
+    parser.add_argument('-psha', '--rmgpy_sha', type=str, 
+        help='rmgpy last commit sha')
+
+    parser.add_argument('-dbsha', '--rmgdb_sha', type=str, 
+        help='rmgdb last commit sha')
+
     return parser.parse_args()
 
-def main():
-
-    args = parseCommandLineArguments()
-    dataset_file = args.datasets[0]
-
-    performance_dict = evaluate_performance(dataset_file, 
-                                            model_kernel='GA')
+def save_results_in_file(performance_dict, save_path):
 
     print_str = "\nValidation Test Results"
     for db_name, collection_name in performance_dict:
@@ -89,6 +98,9 @@ def main():
         print_str += "\nPerformance (MAE): {0:0.2f} kcal/mol".format(performance)
 
     print(print_str)
+    with open(save_path, 'w') as fout:
+            fout.write(print_str)
+
 def save_results_in_database(table, meta_dict, performance_dict):
 
     # prepare insert_entry and push to database
@@ -105,10 +117,47 @@ def save_results_in_database(table, meta_dict, performance_dict):
 
     table.insert_one(insert_entry)
 
+def main():
+
+    args = parseCommandLineArguments()
+    dataset_file = args.datasets[0]
+    rmgpy_branch = args.rmgpy_branch
+    rmgdb_branch = args.rmgdb_branch
+    rmgpy_sha = args.rmgpy_sha
+    rmgdb_sha = args.rmgdb_sha
+    meta_dict = {
+        "rmgpy_branch": rmgpy_branch,
+        "rmgdb_branch": rmgdb_branch,
+        "rmgpy_sha": rmgpy_sha,
+        "rmgdb_sha": rmgdb_sha
+
+    }
+
+    # connect to database
+    auth_info = get_RTD_authentication_info()
+    rtdi = RMGTestsDatabaseInterface(*auth_info)
+    rtd =  getattr(rtdi.client, 'rmg_tests')
+    thermo_val_table = getattr(rtd, 'thermo_val_table')
+
+    # check if database has this record
+    if thermo_val_table.find(meta_dict).count() == 0:
+        performance_dict = evaluate_performance(dataset_file, 
+                                            model_kernel='GA')
+        # push to database
+        save_results_in_database(thermo_val_table, meta_dict, performance_dict)
+    else:
+        registered_entry = list(thermo_val_table.find(meta_dict))[0]
+
+        performance_dict = {}
+        for key, value in registered_entry.iteritems():
+            if ":" in key:
+                db_name, collection_name = key.split(":")
+                performance_dict[(db_name, collection_name)] = value
+
+    # save to txt file
     validataion_summary_path = os.path.join(os.path.dirname(dataset_file),
                                     'validation_summary.txt')
-    with open(validataion_summary_path, 'w') as fout:
-            fout.write(print_str) 
+    save_results_in_file(performance_dict, validataion_summary_path)
 
 if __name__ == '__main__':
     main()

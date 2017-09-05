@@ -16,7 +16,7 @@ source activate ${benchmark_env}
 echo "benchmark version of RMG: "$RMG_BENCHMARK
 export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH 
 echo "Test mode: benchmark"
-python $BASE_DIR/thermo_val/evaluate.py -d $benchmark_tests/thermo_val_jobs/$eg/dataset.txt
+python $BASE_DIR/thermo_val/evaluate.py -d $benchmark_tests/thermo_val_jobs/$eg/dataset.txt -pb master -dbb master -psha ${benchmark_py_sha} -dbsha ${benchmark_db_sha}
 
 source deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
@@ -28,7 +28,7 @@ export PYTHONPATH=$ORIGIN_PYTHONPATH
 export testing_tests=$DATA_DIR/tests/testing/${testing_py_sha}_${testing_db_sha}/
 mkdir -p $testing_tests/thermo_val_jobs/$eg
 rm -rf $testing_tests/thermo_val_jobs/$eg/*
-cp $BASE_DIR/examples/thermo_val/$eg/dataset.txt $testing_tests/thermo_val_jobs/$eg/dataset.txt
+cp $BASE_DIR/examples/thermo_val/$eg/dataset.txt $testing_tests/thermo_val_jobs/$eg/dataset.txt -pb $RMG_TESTING_BRANCH -dbb $RMGDB_TESTING_BRANCH -psha ${testing_py_sha} -dbsha ${testing_db_sha}
 
 source activate ${testing_env}
 echo "testing version of RMG: "$RMG_TESTING
