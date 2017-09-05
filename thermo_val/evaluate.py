@@ -121,10 +121,25 @@ def save_results_in_database(table, meta_dict, performance_dict):
 
     table.update(meta_dict, {'$set':insert_entry}, upsert=True)
 
+def need_evaluate_performance(thermo_val_table, meta_dict, test_tables):
+
+    # check if database has this record
+    if thermo_val_table.find(meta_dict).count() == 0:
+       return True
+    else:
+        registered_entry = list(thermo_val_table.find(meta_dict))[0]
+
+        for _, db_name, collection_name in test_tables:
+            if db_name + ':' + collection_name not in registered_entry:
+                return True
+
+        return False
+
+
 def main():
 
     args = parseCommandLineArguments()
-    dataset_file = args.datasets[0]
+    
     rmgpy_branch = args.rmgpy_branch
     rmgdb_branch = args.rmgdb_branch
     rmgpy_sha = args.rmgpy_sha
@@ -137,6 +152,9 @@ def main():
 
     }
 
+    dataset_file = args.datasets[0]
+    test_tables = get_datasets(dataset_file)
+
     # connect to database
     auth_info = get_RTD_authentication_info()
     rtdi = RMGTestsDatabaseInterface(*auth_info)
@@ -144,7 +162,8 @@ def main():
     thermo_val_table = getattr(rtd, 'thermo_val_table')
 
     # check if database has this record
-    if thermo_val_table.find(meta_dict).count() == 0:
+    need_evaluation = need_evaluate_performance(thermo_val_table, meta_dict, test_tables)
+    if need_evaluation:
         performance_dict = evaluate_performance(dataset_file, 
                                             model_kernel='GA')
         # push to database
@@ -153,10 +172,9 @@ def main():
         registered_entry = list(thermo_val_table.find(meta_dict))[0]
 
         performance_dict = {}
-        for key, value in registered_entry.iteritems():
-            if ":" in key:
-                db_name, collection_name = key.split(":")
-                performance_dict[(db_name, collection_name)] = value
+        for _, db_name, collection_name in test_tables:
+            key = db_name + ':' + collection_name
+            performance_dict[(db_name, collection_name)] = registered_entry[key]
 
     # save to txt file
     validataion_summary_path = os.path.join(os.path.dirname(dataset_file),
