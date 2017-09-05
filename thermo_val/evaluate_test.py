@@ -23,3 +23,31 @@ class TestEvaluator(unittest.TestCase):
 
         os.remove(test_df_save_path)
 
+    def test_save_results_in_database(self):
+
+        # connect to database
+        auth_info = utils.get_testing_RTD_authentication_info()
+        rtdi = RMGTestsDatabaseInterface(*auth_info)
+        rtd =  getattr(rtdi.client, 'rmg_tests')
+        thermo_val_table = getattr(rtd, 'thermo_val_table')
+
+        # prepare data
+        meta_dict = {
+            "rmgpy_branch": "pybranch",
+            "rmgdb_branch": "dbbranch",
+            "rmgpy_sha": "fadf232124jk3",
+            "rmgdb_sha": "farelsdaem23m"
+
+        }
+
+        performance_dict = {
+            ("db0", "table0"): 12
+        }
+
+        self.assertEqual(thermo_val_table.find(meta_dict).count(), 0)
+        save_results_in_database(thermo_val_table, meta_dict, performance_dict)
+        self.assertEqual(thermo_val_table.find(meta_dict).count(), 1)
+
+        # remove test insertion from db
+        thermo_val_table.delete_many(meta_dict)
+        self.assertEqual(thermo_val_table.find(meta_dict).count(), 0)

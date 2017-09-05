@@ -89,6 +89,22 @@ def main():
         print_str += "\nPerformance (MAE): {0:0.2f} kcal/mol".format(performance)
 
     print(print_str)
+def save_results_in_database(table, meta_dict, performance_dict):
+
+    # prepare insert_entry and push to database
+    insert_entry = {"rmgpy_branch": meta_dict["rmgpy_branch"],
+                    "rmgdb_branch": meta_dict["rmgdb_branch"],
+                    "rmgpy_sha": meta_dict["rmgpy_sha"],
+                    "rmgdb_sha": meta_dict["rmgdb_sha"],
+                    "timestamp" : time.time()}
+
+    for tup, value in performance_dict.iteritems():
+        db_name, collection_name = tup
+        key = db_name + ":" + collection_name
+        insert_entry[key] = value
+
+    table.insert_one(insert_entry)
+
     validataion_summary_path = os.path.join(os.path.dirname(dataset_file),
                                     'validation_summary.txt')
     with open(validataion_summary_path, 'w') as fout:
