@@ -1,5 +1,7 @@
 # build files
-code/*
+data_dir/*
 
-# test files
-tests/*
+# certain files
+*.pyc
+*.ipynb
+*.out

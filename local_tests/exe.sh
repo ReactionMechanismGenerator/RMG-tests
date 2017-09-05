@@ -47,4 +47,9 @@ else
 	. $BASE_DIR/local_tests/run_local.sh $JOBS no
 fi
 
+. $BASE_DIR/local_tests/thermo_val.sh hc_cyclics
+. $BASE_DIR/local_tests/thermo_val.sh hco_cyclics
+. $BASE_DIR/local_tests/thermo_val.sh rmg_internal_cyclics
+
 . $BASE_DIR/local_tests/clean_up.sh
+
