@@ -47,4 +47,7 @@ else
 	. $BASE_DIR/local_tests/run_local.sh $JOBS no
 fi
 
+. $BASE_DIR/local_tests/thermo_val.sh
+
 . $BASE_DIR/local_tests/clean_up.sh
+
