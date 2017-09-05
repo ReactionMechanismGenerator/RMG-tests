@@ -15,8 +15,8 @@ cp $BASE_DIR/examples/thermo_val/$eg/dataset.txt $benchmark_tests/thermo_val_job
 source activate ${benchmark_env}
 echo "benchmark version of RMG: "$RMG_BENCHMARK
 export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH 
-
-python $BASE_DIR/thermo_val/evaluate.py -d $benchmark_tests/thermo_val_jobs/$eg/dataset.txt -m benchmark
+echo "Test mode: benchmark"
+python $BASE_DIR/thermo_val/evaluate.py -d $benchmark_tests/thermo_val_jobs/$eg/dataset.txt
 
 source deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
@@ -33,7 +33,7 @@ cp $BASE_DIR/examples/thermo_val/$eg/dataset.txt $testing_tests/thermo_val_jobs/
 source activate ${testing_env}
 echo "testing version of RMG: "$RMG_TESTING
 export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH 
-
-python $BASE_DIR/thermo_val/evaluate.py -d $testing_tests/thermo_val_jobs/$eg/dataset.txt -m testing
+echo "Test mode: testing"
+python $BASE_DIR/thermo_val/evaluate.py -d $testing_tests/thermo_val_jobs/$eg/dataset.txt
 
 export PYTHONPATH=$ORIGIN_PYTHONPATH

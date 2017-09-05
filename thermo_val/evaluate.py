@@ -6,8 +6,7 @@ from data import get_datasets, get_data
 from model import ThermoEstimator
 
 def evaluate_performance(dataset_file, 
-                        model_kernel='GA', 
-                        test_mode='benchmark'):
+                        model_kernel='GA'):
     
     # get a list of test table names
     # from files or input
@@ -54,7 +53,7 @@ def evaluate_performance(dataset_file,
 
         # save test_df for future reference and possible comparison
         test_df_save_path = os.path.join(os.path.dirname(dataset_file),
-                                        'test_df_{0}_{1}_{2}.csv'.format(db_name, collection_name, test_mode))
+                                        'test_df_{0}_{1}.csv'.format(db_name, collection_name))
         with open(test_df_save_path, 'w') as fout:
             test_df.to_csv(fout, index=False)
 
@@ -69,20 +68,15 @@ def parseCommandLineArguments():
     parser.add_argument('-d', '--datasets', metavar='FILE', type=str, 
         nargs='+', help='a file specifies on which datasets to test')
 
-    parser.add_argument('-m', '--test_mode', type=str, 
-        help='test mode: whether it is benchmark or testing mode')
-
     return parser.parse_args()
 
 def main():
 
     args = parseCommandLineArguments()
     dataset_file = args.datasets[0]
-    test_mode = args.test_mode
-    print('\n\nTest mode: {0}\n'.format(test_mode))
+
     performance_dict = evaluate_performance(dataset_file, 
-                                            model_kernel='GA',
-                                            test_mode=test_mode)
+                                            model_kernel='GA')
 
     print_str = "\nValidation Test Results"
     for db_name, collection_name in performance_dict:
