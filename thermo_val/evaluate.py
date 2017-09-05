@@ -26,31 +26,37 @@ def evaluate_performance(dataset_file,
         spec_dict = {}
         H298s_true = []
         H298s_pred = []
+
+        comments = []
         
         for db_mol in data:
             smiles_in = str(db_mol["SMILES_input"])
-            spec_labels.append(smiles_in)
-            
             H298_true = float(db_mol["Hf298(kcal/mol)"]) # unit: kcal/mol
-            H298s_true.append(H298_true)
             
-            H298_pred = model.predict_h298(smiles_in)
+            thermo = model.predict_thermo(smiles_in)
+            H298_pred = thermo.H298.value_si/4184.0
+            
+            spec_labels.append(smiles_in)
+            H298s_true.append(H298_true)
             H298s_pred.append(H298_pred)
+            comments.append(thermo.comment)
 
         # create pandas dataframe
         test_df = pd.DataFrame(index=spec_labels)
+        test_df['SMILES'] = test_df.index
 
         test_df['H298_pred(kcal/mol)'] = pd.Series(H298s_pred, index=test_df.index)
         test_df['H298_true(kcal/mol)'] = pd.Series(H298s_true, index=test_df.index)
 
         diff = abs(test_df['H298_pred(kcal/mol)']-test_df['H298_true(kcal/mol)'])
         test_df['H298_diff(kcal/mol)'] = pd.Series(diff, index=test_df.index)
+        test_df['Comments'] = pd.Series(comments, index=test_df.index)
 
         # save test_df for future reference and possible comparison
         test_df_save_path = os.path.join(os.path.dirname(dataset_file),
                                         'test_df_{0}_{1}_{2}.csv'.format(db_name, collection_name, test_mode))
         with open(test_df_save_path, 'w') as fout:
-            test_df.to_csv(fout)
+            test_df.to_csv(fout, index=False)
 
         performance_dict[(db_name, collection_name)] = test_df['H298_diff(kcal/mol)'].describe()['mean']
 
