@@ -36,4 +36,5 @@ export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
 echo "Test mode: testing"
 python $BASE_DIR/thermo_val/evaluate.py -d $testing_tests/thermo_val_jobs/$eg/dataset.txt -pb $RMG_TESTING_BRANCH -dbb $RMGDB_TESTING_BRANCH -psha ${testing_py_sha} -dbsha ${testing_db_sha}
 
+source deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
