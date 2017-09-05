@@ -28,12 +28,12 @@ export PYTHONPATH=$ORIGIN_PYTHONPATH
 export testing_tests=$DATA_DIR/tests/testing/${testing_py_sha}_${testing_db_sha}/
 mkdir -p $testing_tests/thermo_val_jobs/$eg
 rm -rf $testing_tests/thermo_val_jobs/$eg/*
-cp $BASE_DIR/examples/thermo_val/$eg/dataset.txt $testing_tests/thermo_val_jobs/$eg/dataset.txt -pb $RMG_TESTING_BRANCH -dbb $RMGDB_TESTING_BRANCH -psha ${testing_py_sha} -dbsha ${testing_db_sha}
+cp $BASE_DIR/examples/thermo_val/$eg/dataset.txt $testing_tests/thermo_val_jobs/$eg/dataset.txt
 
 source activate ${testing_env}
 echo "testing version of RMG: "$RMG_TESTING
 export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH 
 echo "Test mode: testing"
-python $BASE_DIR/thermo_val/evaluate.py -d $testing_tests/thermo_val_jobs/$eg/dataset.txt
+python $BASE_DIR/thermo_val/evaluate.py -d $testing_tests/thermo_val_jobs/$eg/dataset.txt -pb $RMG_TESTING_BRANCH -dbb $RMGDB_TESTING_BRANCH -psha ${testing_py_sha} -dbsha ${testing_db_sha}
 
 export PYTHONPATH=$ORIGIN_PYTHONPATH
