@@ -44,9 +44,25 @@ class TestEvaluator(unittest.TestCase):
             ("db0", "table0"): 12
         }
 
+        # test insert
         self.assertEqual(thermo_val_table.find(meta_dict).count(), 0)
         save_results_in_database(thermo_val_table, meta_dict, performance_dict)
         self.assertEqual(thermo_val_table.find(meta_dict).count(), 1)
+        # test expected entries are there
+        registered_entry = list(thermo_val_table.find(meta_dict))[0]
+        self.assertIn("db0:table0", registered_entry)
+
+        # test upsert
+        performance_dict = {
+            ("db1", "table1"): 100
+        }
+        save_results_in_database(thermo_val_table, meta_dict, performance_dict)
+        self.assertEqual(thermo_val_table.find(meta_dict).count(), 1)
+
+        # test expected entries are there
+        registered_entry = list(thermo_val_table.find(meta_dict))[0]
+        self.assertIn("db0:table0", registered_entry)
+        self.assertIn("db1:table1", registered_entry)
 
         # remove test insertion from db
         thermo_val_table.delete_many(meta_dict)
