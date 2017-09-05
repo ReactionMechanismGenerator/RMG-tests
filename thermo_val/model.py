@@ -12,6 +12,7 @@ class ThermoEstimator(object):
             from rmgpy.data.thermo import ThermoDatabase
             from rmgpy import settings
             database = ThermoDatabase()
+            print('GA Database directory:\n{0}'.format(settings['database.directory']))
             database.load(os.path.join(settings['database.directory'], 'thermo'),libraries = [])
 
             self.kernel = database

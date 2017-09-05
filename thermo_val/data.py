@@ -14,7 +14,6 @@ def get_data(db_name, collection_name):
     db_mols = []
     for db_mol in db_cursor:
         db_mols.append(db_mol)
-    print('Finish reading.')
 
     return db_mols
 

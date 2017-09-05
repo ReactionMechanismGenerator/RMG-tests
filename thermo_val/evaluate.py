@@ -74,12 +74,12 @@ def parseCommandLineArguments():
 
     return parser.parse_args()
 
-
 def main():
 
     args = parseCommandLineArguments()
     dataset_file = args.datasets[0]
     test_mode = args.test_mode
+    print('\n\nTest mode: {0}\n'.format(test_mode))
     performance_dict = evaluate_performance(dataset_file, 
                                             model_kernel='GA',
                                             test_mode=test_mode)
