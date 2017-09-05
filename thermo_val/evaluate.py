@@ -84,15 +84,21 @@ def main():
                                             model_kernel='GA',
                                             test_mode=test_mode)
 
-    print "\nValidation Test Results"
+    print_str = "\nValidation Test Results"
     for db_name, collection_name in performance_dict:
 
         performance = performance_dict[(db_name, collection_name)]
 
-        print "========================="
-        print "Database: {0}".format(db_name)
-        print "Dataset: {0}".format(collection_name)
-        print "Performance (MAE): {0:0.2f} kcal/mol".format(performance)
+        print_str += "\n========================="
+        print_str += "\nDatabase: {0}".format(db_name)
+        print_str += "\nDataset: {0}".format(collection_name)
+        print_str += "\nPerformance (MAE): {0:0.2f} kcal/mol".format(performance)
+
+    print(print_str)
+    validataion_summary_path = os.path.join(os.path.dirname(dataset_file),
+                                    'validation_summary.txt')
+    with open(validataion_summary_path, 'w') as fout:
+            fout.write(print_str) 
 
 if __name__ == '__main__':
     main()
