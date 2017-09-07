@@ -48,3 +48,8 @@ options(
     saveEdgeSpecies=True,
     saveSimulationProfiles=True,
 )
+
+generatedSpeciesConstraints(
+    #allows exceptions to the following restrictions
+    allowed=['reaction libraries']
+)
