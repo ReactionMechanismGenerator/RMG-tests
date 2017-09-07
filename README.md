@@ -20,12 +20,12 @@ Normally RMG-tests run automatically all the examples registered in `examples` f
 	conda update --yes conda
 	```
 
-3. Modify `local_tests/input.sh` by specifying the operating system of your local machine (only linux and mac are supported, the branch name of RMG-Py and RMG-database). Note that these branches must be already pushed and located on github.com/reactionmechanismgenerator. Also change the job name to the one you want to run. If you need to test customized jobs, add a new folder with RMG input file which you want to run to `examples/rmg/`.
+3. Modify `local_tests/submit_serial.sl` by specifying the branch name of RMG-Py and RMG-database. Note that these branches must be already pushed and located on github.com/ReactionMechanismGenerator. Also change the job name to the one you want to run. If you need to test customized jobs, add a new folder with RMG input file which you want to run to `examples/rmg/`.
 
 4. Run RMG-tests by 
 	```bash
 	cd local_tests
-	bash exe.sh
+	bash submit_serial.sl
 	```
 If you are running on a server, we've provided two example submission scripts (serial and parallel). 
 For serial mode of testing:
@@ -38,3 +38,5 @@ For parallel mode of testing:
 	```
 
 5. You'll find the test log in folder `RMG-tests/tests/check/${you job name}`, and two versions of RMG-generated CHEMKIN models in folder `RMG-tests/tests/benchmark/${you job name}` and `RMG-tests/tests/testmodel/${you job name}` for detailed analysis.
+
+6. We're also testing recording test results into a central mongo database. Please contact rmg_dev@mit.edu to get an authentication file (in `config.cfg` format) to access to database. Currently it's required to run thermochemistry validation test.
