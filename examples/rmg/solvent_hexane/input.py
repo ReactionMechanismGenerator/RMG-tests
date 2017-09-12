@@ -71,7 +71,7 @@ model(
     maximumEdgeSpecies = 100000,
     minCoreSizeForPrune = 50,
     minSpeciesExistIterationsForPrune = 2,
-    filterReactions = 0,
+    filterReactions = True,
 )
 
 options(
