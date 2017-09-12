@@ -28,3 +28,5 @@ jobs='NC'
 data_dir='../data_dir'
 
 bash exe.sh $py_branch $db_branch $jobs $data_dir >> main_log.out
+
+bash post_exe.sh
