@@ -1,0 +1,5 @@
+name: rmg_tests_env
+channels:
+  - defaults
+dependencies:
+  - pandas
