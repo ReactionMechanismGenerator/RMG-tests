@@ -65,5 +65,6 @@ options(
 
 generatedSpeciesConstraints(
     #allows exceptions to the following restrictions
-    allowed=['seed mechanisms']
+    allowed=['seed mechanisms'],
+    maximumNitrogenAtoms=2
 )
