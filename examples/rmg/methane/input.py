@@ -2,7 +2,7 @@
 database(
     thermoLibraries = ['primaryThermoLibrary'],
     reactionLibraries = [], #['GRI-Mech3.0-N'],
-    seedMechanisms = ['GRI-Mech3.0'],
+    seedMechanisms = ['GRI-Mech3.0-N'],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
     kineticsEstimator = 'rate rules',
@@ -65,5 +65,6 @@ options(
 
 generatedSpeciesConstraints(
     #allows exceptions to the following restrictions
-    allowed=['seed mechanisms']
+    allowed=['seed mechanisms'],
+    maximumNitrogenAtoms=2
 )
