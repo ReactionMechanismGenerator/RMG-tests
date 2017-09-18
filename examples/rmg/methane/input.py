@@ -2,7 +2,7 @@
 database(
     thermoLibraries = ['primaryThermoLibrary'],
     reactionLibraries = [], #['GRI-Mech3.0-N'],
-    seedMechanisms = ['GRI-Mech3.0'],
+    seedMechanisms = ['GRI-Mech3.0-N'],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
     kineticsEstimator = 'rate rules',
