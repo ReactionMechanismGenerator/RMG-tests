@@ -12,6 +12,9 @@ install:
   - . ./version_summary.sh
   - chmod +x run.sh
 
+after_failure:
+  - . ./after_failure.sh
+
 jobs:
   include:
     - stage: build
@@ -30,8 +33,9 @@ jobs:
         - ./run.sh examples/eg1 no
         - ./run.sh examples/MCH no
     - stage: finish
-      script:
-        - . ./after_install.sh
+      script: skip
+      after_success:
+        - . ./after_success.sh
 
 cache:
   directories:
