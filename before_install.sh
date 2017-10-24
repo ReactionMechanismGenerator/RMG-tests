@@ -1,17 +1,15 @@
 #!/bin/bash
 
-# Set up anaconda
-wget http://repo.continuum.io/miniconda/Miniconda2-4.0.5-Linux-x86_64.sh -O miniconda.sh
-chmod +x miniconda.sh
-./miniconda.sh -b -p $HOME/miniconda
-export PATH=$HOME/miniconda/bin:$PATH
-
-# Update conda itself
-conda update --yes conda
-
 # Standardize dirs
 export BASE_DIR=$TRAVIS_BUILD_DIR
 export CURRENT_OS="linux"
+
+# Create .netrc file for GitHub authentication
+echo "machine api.github.com
+    login RMGdev
+    password $RMG_DEV_TOKEN" > $HOME/.netrc
+# Make ok.sh executable
+chmod +x ok.sh
 
 # Parse message for travis build
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
@@ -28,17 +26,41 @@ IFS='-' read -a branch_pieces <<< "$BRANCH"
 if [ "${branch_pieces[0]}" == "rmgdb" ]; then
 	export RMG_TESTING_BRANCH="master"
 	export RMGDB_TESTING_BRANCH="${branch_pieces[1]}"
+	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-database/statuses/${msg_pieces[1]}"
 
 elif [ "${branch_pieces[0]}" == "rmgpy" ]; then
 	export RMG_TESTING_BRANCH="${branch_pieces[1]}"
 	export RMGDB_TESTING_BRANCH="master"
+	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-py/statuses/${msg_pieces[1]}"
 
 elif [ "${branch_pieces[0]}" == "rmgpydb" ]; then
 	export RMG_TESTING_BRANCH="${branch_pieces[1]}"
 	export RMGDB_TESTING_BRANCH="${msg_pieces[2]}"
+	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-py/statuses/${msg_pieces[1]}"
 fi
 
 echo "RMG_TESTING_BRANCH: "$RMG_TESTING_BRANCH
 echo "RMGDB_TESTING_BRANCH: "$RMGDB_TESTING_BRANCH
 
+# Url of the Travis build page
+export BUILD_URL="https://travis-ci.org/ReactionMechanismGenerator/RMG-tests/builds/$TRAVIS_BUILD_ID"
 
+echo "GitHub URL: " $GITHUB_STATUS_PATH
+echo "Build URL: " $BUILD_URL
+
+# Update GitHub status to pending
+./ok.sh _format_json \
+    state="pending" \
+    context="continuous-integration/rmg-tests" \
+    description="The RMG-tests build is running" \
+    target_url=$BUILD_URL \
+    | ./ok.sh _post $GITHUB_STATUS_PATH > /dev/null
+
+# Set up anaconda
+wget http://repo.continuum.io/miniconda/Miniconda2-4.0.5-Linux-x86_64.sh -O miniconda.sh
+chmod +x miniconda.sh
+./miniconda.sh -b -p $HOME/miniconda
+export PATH=$HOME/miniconda/bin:$PATH
+
+# Update conda itself
+conda update --yes conda
