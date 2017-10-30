@@ -3,8 +3,8 @@ eg=$1
 scoop_test=$2
 set -e
 if [ -z ${RMG_BENCHMARK+x} ]; then 
-	echo "RMG variable is unset. Exiting..."
-	exit 0
+  echo "RMG variable is unset. Exiting..."
+  exit 0
 fi
 
 export ORIGIN_PYTHONPATH=$PYTHONPATH
@@ -91,3 +91,5 @@ if [ $scoop_test == "yes" ]; then
 	source deactivate
 fi
 
+# return to main directory
+cd $BASE_DIR
