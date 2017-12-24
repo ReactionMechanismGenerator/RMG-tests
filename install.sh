@@ -17,7 +17,7 @@ git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
 # check out the SHA-ID of the RMG-Py commit:
 cd RMG-Py
 sed -i -e 's/rmg_env/benchmark/g' environment_${CURRENT_OS}.yml
-conda env create -f environment_${CURRENT_OS}.yml # name will set by the name key in the environment yaml.
+conda env create -q -f environment_${CURRENT_OS}.yml # name will set by the name key in the environment yaml.
 git checkout environment_${CURRENT_OS}.yml
 
 export RMG_BENCHMARK=`pwd`
@@ -65,7 +65,7 @@ elif [ $RMGDB_TESTING_BRANCH == "master" ]; then
   cd RMG-Py
   git checkout -b ${RMG_TESTING_BRANCH} origin/${RMG_TESTING_BRANCH}
   sed -i -e 's/rmg_env/testing/g' environment_${CURRENT_OS}.yml
-  conda env create -f environment_${CURRENT_OS}.yml
+  conda env create -q -f environment_${CURRENT_OS}.yml
 
   git checkout environment_${CURRENT_OS}.yml
   export RMG_TESTING=`pwd`
@@ -87,7 +87,7 @@ else
   cd RMG-Py
   git checkout -b ${RMG_TESTING_BRANCH} origin/${RMG_TESTING_BRANCH}
   sed -i -e 's/rmg_env/testing/g' environment_${CURRENT_OS}.yml
-  conda env create -f environment_${CURRENT_OS}.yml
+  conda env create -q -f environment_${CURRENT_OS}.yml
 
   git checkout environment_${CURRENT_OS}.yml
   export RMG_TESTING=`pwd`
