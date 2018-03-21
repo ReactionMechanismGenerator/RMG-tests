@@ -25,7 +25,7 @@ class ThermoEstimator(object):
 
         if self.kernel_type == 'GA':
             spec = Species().fromSMILES(smiles)
-            spec.generate_resonance_isomers()
+            spec.generate_resonance_structures()
 
             thermo = self.kernel.getThermoDataFromGroups(spec)
 
