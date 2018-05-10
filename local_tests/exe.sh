@@ -43,6 +43,7 @@ if [ $JOBS == "all" ]; then
 	. $BASE_DIR/local_tests/run_local.sh solvent_hexane no
 	. $BASE_DIR/local_tests/run_local.sh methane no
 	. $BASE_DIR/local_tests/run_local.sh MCH no
+	. $BASE_DIR/local_tests/run_local.sh H2S no
 else
 	. $BASE_DIR/local_tests/run_local.sh $JOBS no
 fi
