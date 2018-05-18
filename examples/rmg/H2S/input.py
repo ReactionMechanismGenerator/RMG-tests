@@ -1,7 +1,7 @@
 # Data sources
 database(
-    thermoLibraries = ['BurkeH2O2','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','SOxNOx','primaryThermoLibrary','SulfurGlarborgH2S','SulfurGlarborgMarshall'],
-    reactionLibraries = ['SOx','Sulfur/GlarborgH2S','Sulfur/GlarborgMarshall'],
+    thermoLibraries = ['BurkeH2O2','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','primaryNS','primaryThermoLibrary','SulfurGlarborgH2S','SulfurGlarborgMarshall'],
+    reactionLibraries = ['primarySulfurLibrary','Sulfur/GlarborgH2S','Sulfur/GlarborgMarshall'],
     seedMechanisms = ['BurkeH2O2inN2'],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
