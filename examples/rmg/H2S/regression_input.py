@@ -10,19 +10,16 @@ observable(
 )
 species(
     label='H2S',
-    reactive=True,
     structure=SMILES("S"),
 )
 
 species(
     label='O2',
-    reactive=True,
     structure=SMILES("[O][O]"),
 )
 
 species(
     label='N2',
-    reactive=False,
     structure=SMILES("N#N"),
 )
 
@@ -33,9 +30,8 @@ reactorSetups(
     terminationTimes=([0.01],'s'),
     initialMoleFractionsList=[{
         "H2S": 0.000756,
-		"O2": 0.001290,
-		"N2": 0.997954,
-    }],
+        "O2": 0.001290,
+        "N2": 0.997954}],
     temperatures=([900],'K'),
     pressures=([30.],'bar'),
 )
