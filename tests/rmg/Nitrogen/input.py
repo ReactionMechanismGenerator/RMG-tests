@@ -51,6 +51,7 @@ model(
     maximumEdgeSpecies=10000,
     maxNumObjsPerIter=3,
     terminateAtMaxObjects=True,
+    filterReactions=True,
 )
 
 options(
