@@ -27,7 +27,10 @@ jobs:
     - script: . ./run.sh eg5 no
     - stage: finish
       script:
-        - . ./after_install.sh
+        - . ./after_success.sh
+
+after_failure:
+  - . ./after_failure.sh
 
 cache:
   directories:
