@@ -31,7 +31,13 @@ rmgrc="database.directory : "${RMGDB_BENCHMARK}/input/
 echo $rmgrc >> ${RMG_BENCHMARK}/rmgpy/rmgrc
 
 echo "Running benchmark job"
-python $RMG_BENCHMARK/rmg.py $BASE_DIR/results/benchmark/$test_case/input.py > /dev/null
+if timeout 570 python $RMG_BENCHMARK/rmg.py $BASE_DIR/results/benchmark/$test_case/input.py > /dev/null
+then
+  echo "Benchmark job completed"
+else
+  echo "Benchmark job timed out"
+  exit 1
+fi
 
 source deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
@@ -54,7 +60,13 @@ rmgrc="database.directory : "${RMGDB_TESTING}/input/
 echo $rmgrc >> ${RMG_TESTING}/rmgpy/rmgrc
 
 echo "Running testing job"
-python $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/input.py > /dev/null
+if timeout 570 python $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/input.py > /dev/null
+then
+  echo "Testing job completed"
+else
+  echo "Testing job timed out"
+  exit 1
+fi
 
 source deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
@@ -85,7 +97,13 @@ if [ $scoop_test == "yes" ]; then
   export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
 
   echo "Running test job with scoop"
-  python -m scoop -n 1 $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/scoop/input.py > /dev/null
+  if timeout 570 python -m scoop -n 1 $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/scoop/input.py > /dev/null
+  then
+    echo "Testing job with scoop completed"
+  else
+    echo "Testing job with scoop timed out"
+    exit 1
+  fi
 
   export PYTHONPATH=$ORIGIN_PYTHONPATH
   source deactivate
