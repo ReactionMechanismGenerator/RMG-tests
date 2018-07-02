@@ -2,49 +2,40 @@ language: python
 sudo: false
 python:
   - "2.7"
-virtualenv:
-    system_site_packages: true
-env:
-  global:
-    - secure: "L2ja+ZnV83w4qG3E8FwTjm0D6IWNOnj5wuFOjYTwbzQP4OAgLAWBzCMtxzWy5sMxFLtRgkswBH1d5f5kg8Ab7GIyAMFgQwe8UFqMJ+N05QNszE1mJkAvJtv2XN7669XXQhTt5EXfHrCcGZaODVnI2CEA8GB5DxiHO2Lcqf/xvgE="
-addons:
-  apt:
-    packages:
-    - git
 
 before_install: 
-  - chmod +x before_install.sh
   - . ./before_install.sh
-  - chmod +x color_define.sh
   - . ./color_define.sh
 
-install: 
-  - chmod +x install.sh
+install:
   - . ./install.sh
-  - chmod +x version_summary.sh
   - . ./version_summary.sh
   - chmod +x run.sh
 
-script: 
-  - ./run.sh eg1 no
-  - ./run.sh eg3 no
-  - ./run.sh eg5 no
-  - ./run.sh eg6 no
-  - ./run.sh eg7 no
-  - ./run.sh NC no
-  - ./run.sh MCH  yes
-  - ./run.sh solvent_hexane no
-  - ./run.sh methane no
+jobs:
+  include:
+    - stage: build
+      script:
+        - . ./compile.sh
+    - stage: test
+      script:
+        - ./run.sh rmg/aromatics no
+        - ./run.sh rmg/nitrogen no
+        - ./run.sh rmg/sulfur no
+    - script:
+        - ./run.sh rmg/oxidation no
+        - ./run.sh rmg/liquid_oxidation no
+        - ./run.sh rmg/superminimal no
+    - script:
+        - ./run.sh examples/eg1 no
+        - ./run.sh examples/MCH no
+    - stage: finish
+      script:
+        - . ./after_install.sh
 
-after_script:
-  - chmod +x after_install.sh
-  - . ./after_install.sh
-  
 cache:
-  pip: true
-  apt: true
-  # directories:
-  #   - $HOME/anaconda/pkgs
+  directories:
+    - $TRAVIS_BUILD_DIR/code
 
 branches:
   only:
