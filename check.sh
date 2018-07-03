@@ -1,59 +1,58 @@
 #!/bin/bash
 
-target=$1
+test_case=$1
+test_name=$(basename "$test_case")
+
+set -e
 
 if [ -z ${2+x} ]; then 
-	echo "2nd argument not set. Exiting..."
-	exit 1
+  echo "2nd argument not set. Exiting..."
+  exit 1
 fi
 
 if [ -z ${3+x} ]; then 
-	echo "3rd argument not set. Exiting..."
-	exit 1
+  echo "3rd argument not set. Exiting..."
+  exit 1
 fi
 
-if [ -z ${TRAVIS_BUILD_DIR+x} ]; then TRAVIS_BUILD_DIR=$PWD; fi
-
-echo 'Travis Build Dir: '$TRAVIS_BUILD_DIR
-
-benchmarkmodel=$2
-testmodel=$3
-echo 'benchmark model folder: '$benchmarkmodel
-echo 'Test model folder: '$testmodel
+benchmark_model=$2
+testing_model=$3
+echo 'Benchmark model folder: '$benchmark_model
+echo 'Testing model folder: '$testing_model
 
 # check generated models:
 # core:
-python $RMG_BENCHMARK/scripts/checkModels.py $target $benchmarkmodel/chemkin/chem_annotated.inp $benchmarkmodel/chemkin/species_dictionary.txt $testmodel/chemkin/chem_annotated.inp $testmodel/chemkin/species_dictionary.txt
+python $RMG_BENCHMARK/scripts/checkModels.py $test_name $benchmark_model/chemkin/chem_annotated.inp $benchmark_model/chemkin/species_dictionary.txt $testing_model/chemkin/chem_annotated.inp $testing_model/chemkin/species_dictionary.txt
 
-echo core for $target:
-if grep "checkModels" $target.log | cut -f2- -d'=' > $target.core ; then
-	cat $target.core
-	rm $target.core
+echo "Core for $test_case:"
+if grep "checkModels" $test_name.log | cut -f2- -d'=' > $test_name.core ; then
+  cat $test_name.core
+  rm $test_name.core
 fi
 
 # edge:
-python $RMG_BENCHMARK/scripts/checkModels.py $target $benchmarkmodel/chemkin/chem_edge_annotated.inp $benchmarkmodel/chemkin/species_edge_dictionary.txt $testmodel/chemkin/chem_edge_annotated.inp $testmodel/chemkin/species_edge_dictionary.txt
-echo edge for $target:
-if grep "checkModels" $target.log | cut -f2- -d'=' > $target.edge ; then
-	cat $target.edge
-	rm $target.edge
+python $RMG_BENCHMARK/scripts/checkModels.py $test_name $benchmark_model/chemkin/chem_edge_annotated.inp $benchmark_model/chemkin/species_edge_dictionary.txt $testing_model/chemkin/chem_edge_annotated.inp $testing_model/chemkin/species_edge_dictionary.txt
+echo "Edge for $test_case:"
+if grep "checkModels" $test_name.log | cut -f2- -d'=' > $test_name.edge ; then
+  cat $test_name.edge
+  rm $test_name.edge
 fi
 
 echo 'Execution time, Benchmark:'
-grep "Execution time" $benchmarkmodel/RMG.log | tail -1
+grep "Execution time" $benchmark_model/RMG.log | tail -1
 echo 'Execution time, Tested:'
-grep "Execution time" $testmodel/RMG.log | tail -1
+grep "Execution time" $testing_model/RMG.log | tail -1
 
 echo 'Memory used, Benchmark:'
-grep "Memory used:" $benchmarkmodel/RMG.log | tail -1
+grep "Memory used:" $benchmark_model/RMG.log | tail -1
 echo 'Memory used, Tested:'
-grep "Memory used:" $testmodel/RMG.log | tail -1
+grep "Memory used:" $testing_model/RMG.log | tail -1
 
 # regression testing
-regr=$BASE_DIR/examples/rmg/$target/regression_input.py
+regr=$BASE_DIR/tests/$test_case/regression_input.py
 if [ -f "$regr" ];
 then
-	python $RMG_BENCHMARK/rmgpy/tools/regression.py $regr $benchmarkmodel/chemkin $testmodel/chemkin/
+  python $RMG_BENCHMARK/rmgpy/tools/regression.py $regr $benchmark_model/chemkin $testing_model/chemkin/
 else
-	echo "Regression input file not found. Not running a regression test."
+  echo "Regression input file not found. Not running a regression test."
 fi
