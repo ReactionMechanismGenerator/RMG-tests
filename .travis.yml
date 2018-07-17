@@ -31,7 +31,7 @@ jobs:
         - ./run.sh rmg/superminimal no
     - script:
         - ./run.sh examples/eg1 no
-        - ./run.sh examples/MCH no
+        - ./run.sh examples/eg5 no
     - stage: finish
       script: skip
       after_success:
