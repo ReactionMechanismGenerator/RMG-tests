@@ -65,6 +65,7 @@ model(
     filterReactions=True,
     maxNumObjsPerIter=5,
     terminateAtMaxObjects=True,
+    maxNumSpecies=60,
 )
 
 options(

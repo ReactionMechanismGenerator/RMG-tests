@@ -60,6 +60,7 @@ model(
     toleranceInterruptSimulation=0.1,
     maximumEdgeSpecies=300000,
     filterReactions=True,
+    maxNumSpecies=77,
 )
 
 options(

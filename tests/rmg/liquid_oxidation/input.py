@@ -57,8 +57,8 @@ model(
     minCoreSizeForPrune=10,
     minSpeciesExistIterationsForPrune=2,
     maxNumObjsPerIter=3,
+    maxNumSpecies=37,
     filterReactions=True,
-    maxNumSpecies=35,
 )
 
 options(
