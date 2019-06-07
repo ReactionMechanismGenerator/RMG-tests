@@ -76,10 +76,10 @@ mkdir -p $BASE_DIR/results/check/$test_case
 rm -rf $BASE_DIR/results/check/$test_case/*
 cd $BASE_DIR/results/check/$test_case
 
-source activate benchmark
+source activate testing
 
 echo "Comparing results"
-export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH
+export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
 
 bash $BASE_DIR/check.sh $test_case $BASE_DIR/results/benchmark/$test_case $BASE_DIR/results/testmodel/$test_case
 
