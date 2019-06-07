@@ -1,5 +1,5 @@
 # Catalytic combustion of methane on Pt
-# Tests surface chemistry 
+# Tests surface chemistry and linear scaling relations 
 
 #Data sources
 database(
@@ -12,12 +12,12 @@ database(
 )
 
 catalystProperties(
-    bindingEnergies = {
-                        'H': (-2.479, 'eV/molecule'),
-                        'O': (-3.586, 'eV/molecule'),
-                        'C': (-6.750, 'eV/molecule'),
-                        'N': (-4.352, 'eV/molecule'),
-                    },
+    bindingEnergies = { # For Pd(111) from DFT studies
+                        'H': (-2.70, 'eV/molecule'),
+                        'O': (-3.64, 'eV/molecule'),
+                        'C': (-6.90, 'eV/molecule'),
+                        'N': (-4.70, 'eV/molecule'), #Made up value
+                        }, 
     surfaceSiteDensity=(2.72e-9, 'mol/cm^2'),
 )
 
@@ -119,7 +119,7 @@ model(
 options(
     units='si',
     saveRestartPeriod=None,
-    generateOutputHTML=False,
+    generateOutputHTML=True,
     generatePlots=False,
     saveEdgeSpecies=True,
     saveSimulationProfiles=True,
