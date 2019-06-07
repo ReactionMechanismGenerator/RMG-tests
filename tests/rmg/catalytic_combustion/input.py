@@ -119,7 +119,7 @@ model(
 options(
     units='si',
     saveRestartPeriod=None,
-    generateOutputHTML=True,
+    generateOutputHTML=False,
     generatePlots=False,
     saveEdgeSpecies=True,
     saveSimulationProfiles=True,
