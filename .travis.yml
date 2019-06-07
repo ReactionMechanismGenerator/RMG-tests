@@ -31,6 +31,7 @@ jobs:
         - ./run.sh rmg/superminimal no
     - script:
         - ./run.sh examples/eg1 no
+        - ./run.sh rmg/catalytic_combustion no
     - stage: finish
       script: skip
       after_success:
