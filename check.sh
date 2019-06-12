@@ -21,21 +21,59 @@ echo 'Benchmark model folder: '$benchmark_model
 echo 'Testing model folder: '$testing_model
 
 # check generated models:
-# core:
-python $RMG_TESTING/scripts/checkModels.py $test_name $benchmark_model/chemkin/chem_annotated.inp $benchmark_model/chemkin/species_dictionary.txt $testing_model/chemkin/chem_annotated.inp $testing_model/chemkin/species_dictionary.txt
+if [[ -e ${benchmark_model}/chemkin/chem_annotated.inp ]]; then
+    # This is a normal homogeneous job
+    # core:
+    python $RMG_TESTING/scripts/checkModels.py ${test_name} ${benchmark_model}/chemkin/chem_annotated.inp ${benchmark_model}/chemkin/species_dictionary.txt ${testing_model}/chemkin/chem_annotated.inp ${testing_model}/chemkin/species_dictionary.txt
 
-echo "Core for $test_case:"
-if grep "checkModels" $test_name.log | cut -f2- -d'=' > $test_name.core ; then
-  cat $test_name.core
-  rm $test_name.core
-fi
+    echo "Core for $test_case:"
+    if grep "checkModels" ${test_name}.log | cut -f2- -d'=' > ${test_name}.core ; then
+      cat ${test_name}.core
+      rm ${test_name}.core
+    fi
 
-# edge:
-python $RMG_TESTING/scripts/checkModels.py $test_name $benchmark_model/chemkin/chem_edge_annotated.inp $benchmark_model/chemkin/species_edge_dictionary.txt $testing_model/chemkin/chem_edge_annotated.inp $testing_model/chemkin/species_edge_dictionary.txt
-echo "Edge for $test_case:"
-if grep "checkModels" $test_name.log | cut -f2- -d'=' > $test_name.edge ; then
-  cat $test_name.edge
-  rm $test_name.edge
+    # edge:
+    python $RMG_TESTING/scripts/checkModels.py ${test_name} ${benchmark_model}/chemkin/chem_edge_annotated.inp ${benchmark_model}/chemkin/species_edge_dictionary.txt ${testing_model}/chemkin/chem_edge_annotated.inp ${testing_model}/chemkin/species_edge_dictionary.txt
+    echo "Edge for $test_case:"
+    if grep "checkModels" ${test_name}.log | cut -f2- -d'=' > ${test_name}.edge ; then
+      cat ${test_name}.edge
+      rm ${test_name}.edge
+    fi
+else
+    # This is probably a heterogeneous catalysis job
+    # core:
+    python $RMG_TESTING/scripts/checkModels.py ${test_name} ${benchmark_model}/chemkin/chem_annotated-gas.inp ${benchmark_model}/chemkin/species_dictionary.txt ${testing_model}/chemkin/chem_annotated-gas.inp ${testing_model}/chemkin/species_dictionary.txt
+
+    echo "Core (gas phase) for $test_case:"
+    if grep "checkModels" ${test_name}.log | cut -f2- -d'=' > ${test_name}.core ; then
+      cat ${test_name}.core
+      rm ${test_name}.core
+    fi
+
+    python $RMG_TESTING/scripts/checkModels.py ${test_name} ${benchmark_model}/chemkin/chem_annotated-surface.inp ${benchmark_model}/chemkin/species_dictionary.txt ${testing_model}/chemkin/chem_annotated-surface.inp ${testing_model}/chemkin/species_dictionary.txt
+
+    echo "Core (surface) for $test_case:"
+    if grep "checkModels" ${test_name}.log | cut -f2- -d'=' > ${test_name}.core ; then
+      cat ${test_name}.core
+      rm ${test_name}.core
+    fi
+
+    # edge:
+    python $RMG_TESTING/scripts/checkModels.py ${test_name} ${benchmark_model}/chemkin/chem_edge_annotated-gas.inp ${benchmark_model}/chemkin/species_edge_dictionary.txt ${testing_model}/chemkin/chem_edge_annotated-gas.inp ${testing_model}/chemkin/species_edge_dictionary.txt
+
+    echo "Edge (gas phase) for $test_case:"
+    if grep "checkModels" ${test_name}.log | cut -f2- -d'=' > ${test_name}.edge ; then
+      cat ${test_name}.edge
+      rm ${test_name}.edge
+    fi
+
+    python $RMG_TESTING/scripts/checkModels.py ${test_name} ${benchmark_model}/chemkin/chem_edge_annotated-surface.inp ${benchmark_model}/chemkin/species_edge_dictionary.txt ${testing_model}/chemkin/chem_edge_annotated-surface.inp ${testing_model}/chemkin/species_edge_dictionary.txt
+
+    echo "Edge (surface) for $test_case:"
+    if grep "checkModels" ${test_name}.log | cut -f2- -d'=' > ${test_name}.edge ; then
+      cat ${test_name}.edge
+      rm ${test_name}.edge
+    fi
 fi
 
 echo 'Execution time, Benchmark:'
