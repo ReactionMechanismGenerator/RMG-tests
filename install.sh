@@ -19,7 +19,7 @@ else
   git pull origin master
 fi
 
-conda env create -n benchmark -f environment_${CURRENT_OS}.yml
+conda env create -q -n benchmark -f environment_${CURRENT_OS}.yml
 
 export RMG_BENCHMARK=`pwd`
 cd ..
@@ -59,7 +59,7 @@ else
     git reset --hard origin/${RMG_TESTING_BRANCH}
   fi
 
-  conda env create -n testing -f environment_py3.yml
+  conda env create -q -n testing -f environment_py3.yml
 
   export RMG_TESTING=`pwd`
   cd ..
