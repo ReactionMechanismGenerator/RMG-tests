@@ -59,7 +59,7 @@ else
     git reset --hard origin/${RMG_TESTING_BRANCH}
   fi
 
-  conda env create -q -n testing -f environment_py3.yml
+  conda env create -q -n testing -f environment.yml
 
   export RMG_TESTING=`pwd`
   cd ..
