@@ -5,3 +5,6 @@ data_dir/*
 *.pyc
 *.ipynb
 *.out
+
+# PyCharm files
+.idea/*
