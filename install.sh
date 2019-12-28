@@ -42,6 +42,12 @@ fi
 export RMGDB_BENCHMARK=`pwd`
 cd ..
 
+# clone ARC and export to PYTHONPATH
+git clone https://github.com/ReactionMechanismGenerator/ARC
+cd ARC
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+cd ..
+
 # prepare testing RMG-Py and RMG-db
 export testing=$BASE_DIR/code/testing
 mkdir -p $testing
