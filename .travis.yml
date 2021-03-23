@@ -32,6 +32,7 @@ jobs:
     - script:
         - ./run.sh examples/eg1 no
     - stage: finish
+      install: skip
       script: skip
       after_success:
         - . ./after_success.sh
