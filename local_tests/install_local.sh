@@ -34,9 +34,9 @@ export benchmark=$DATA_DIR/code/benchmark/${benchmark_py_sha}_${benchmark_db_sha
 cd $benchmark/RMG-Py
 
 export benchmark_env='benchmark_env_'${benchmark_py_sha:0:8}'_'${benchmark_db_sha:0:8}
-sed -i -e "s/rmg_env/${benchmark_env}/g" environment_${CURRENT_OS}.yml
-conda env create -f environment_${CURRENT_OS}.yml # name will set by the name key in the environment yaml.
-git checkout environment_${CURRENT_OS}.yml
+sed -i -e "s/rmg_env/${benchmark_env}/g" environment.yml
+conda env create -f environment.yml # name will set by the name key in the environment yaml.
+git checkout environment.yml
 
 # compile RMG-Py:
 source activate ${benchmark_env}
@@ -87,9 +87,9 @@ export testing=$DATA_DIR/code/testing/${testing_py_sha}_${testing_db_sha}
 cd $testing/RMG-Py
 # create testing environment:
 export testing_env='testing_env_'${testing_py_sha:0:8}'_'${testing_db_sha:0:8}
-sed -i -e "s/rmg_env/${testing_env}/g" environment_${CURRENT_OS}.yml
-conda env create -f environment_${CURRENT_OS}.yml
-git checkout environment_${CURRENT_OS}.yml
+sed -i -e "s/rmg_env/${testing_env}/g" environment.yml
+conda env create -f environment.yml
+git checkout environment.yml
 
 # compile RMG-Py:
 source activate ${testing_env}
