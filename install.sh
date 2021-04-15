@@ -19,13 +19,7 @@ else
   git pull origin master
 fi
 
-if [ -f "environment.yml" ]; then
-    env_file="environment.yml"
-else
-    env_file="environment_${CURRENT_OS}.yml"
-fi
-
-conda env create -q -n benchmark -f $env_file
+conda env create -q -n benchmark -f environment.yml
 
 export RMG_BENCHMARK=`pwd`
 cd ..
@@ -65,13 +59,7 @@ else
     git reset --hard origin/${RMG_TESTING_BRANCH}
   fi
 
-  if [ -f "environment.yml" ]; then
-      env_file="environment.yml"
-  else
-      env_file="environment_${CURRENT_OS}.yml"
-  fi
-
-  conda env create -q -n testing -f $env_file
+  conda env create -q -n testing -f environment.yml
 
   export RMG_TESTING=`pwd`
   cd ..
