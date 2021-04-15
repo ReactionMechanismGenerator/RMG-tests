@@ -2,7 +2,6 @@
 
 # Standardize dirs
 export BASE_DIR=$TRAVIS_BUILD_DIR
-export CURRENT_OS="linux"
 
 # Create .netrc file for GitHub authentication
 echo "machine api.github.com

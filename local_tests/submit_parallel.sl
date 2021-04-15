@@ -9,17 +9,6 @@
 export BASE_DIR="$( cd $PWD/../ && pwd)"
 echo "Local tests base dir: "$BASE_DIR
 
-# Figure out OS
-if [[ $MACHTYPE == *"apple"* ]]; then
-	export CURRENT_OS="mac"
-elif [[ $MACHTYPE == *"linux"* ]]; then
-	export CURRENT_OS="linux"
-else
-	echo "$MACHTYPE not supported. Exiting..."
-	exit 0
-fi
-echo "Current OS: "$CURRENT_OS
-
 # [USER INPUT] please specify the three
 # inputs below
 export RMG_TESTING_BRANCH="master"
