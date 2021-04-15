@@ -56,7 +56,7 @@ echo "Build URL: " $BUILD_URL
     | ./ok.sh _post $GITHUB_STATUS_PATH > /dev/null
 
 # Set up anaconda
-wget http://repo.continuum.io/miniconda/Miniconda2-4.0.5-Linux-x86_64.sh -O miniconda.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 bash ./miniconda.sh -b -p $HOME/miniconda
 export PATH=$HOME/miniconda/bin:$PATH
 
