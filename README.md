@@ -11,7 +11,7 @@ Normally RMG-tests run automatically all the examples registered in `examples` f
 
 	```bash
 	# Set up anaconda
-	wget http://repo.continuum.io/miniconda/Miniconda2-4.0.5-Linux-x86_64.sh -O miniconda.sh
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 	chmod +x miniconda.sh
 	./miniconda.sh -b -p $HOME/miniconda
 	export PATH=$HOME/miniconda/bin:$PATH
