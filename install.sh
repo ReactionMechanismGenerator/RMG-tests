@@ -20,6 +20,7 @@ else
 fi
 
 travis_wait conda env create -q -n benchmark -f environment.yml
+conda list -n benchmark
 
 export RMG_BENCHMARK=`pwd`
 cd ..
