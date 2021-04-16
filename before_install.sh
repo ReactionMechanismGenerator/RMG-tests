@@ -30,12 +30,17 @@ if [ "${branch_pieces[0]}" == "rmgdb" ]; then
 elif [ "${branch_pieces[0]}" == "rmgpy" ]; then
 	export RMG_TESTING_BRANCH="${branch_pieces[1]}"
 	export RMGDB_TESTING_BRANCH="master"
-	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-py/statuses/${msg_pieces[1]}"
+	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-Py/statuses/${msg_pieces[1]}"
 
 elif [ "${branch_pieces[0]}" == "rmgpydb" ]; then
 	export RMG_TESTING_BRANCH="${branch_pieces[1]}"
 	export RMGDB_TESTING_BRANCH="${msg_pieces[2]}"
-	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-py/statuses/${msg_pieces[1]}"
+	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-Py/statuses/${msg_pieces[1]}"
+
+elif [ "${branch_pieces[0]}" == "rmgdbpy" ]; then
+	export RMGDB_TESTING_BRANCH="${branch_pieces[1]}"
+	export RMG_TESTING_BRANCH="${msg_pieces[2]}"
+	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-database/statuses/${msg_pieces[1]}"
 fi
 
 echo "RMG_TESTING_BRANCH: "$RMG_TESTING_BRANCH
