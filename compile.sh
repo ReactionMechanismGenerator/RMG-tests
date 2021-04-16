@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -o verbose
 
 cd $RMG_BENCHMARK
 conda activate benchmark
@@ -11,3 +12,5 @@ conda activate testing
 make clean
 make
 conda deactivate
+
+set +o verbose

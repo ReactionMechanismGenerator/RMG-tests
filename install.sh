@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -o verbose  # echo commands before executing.
 # create a folder with benchmark version of RMG-Py and RMG-database:
 # go to parent-folder of the RMG-tests repo:
 cd ..
