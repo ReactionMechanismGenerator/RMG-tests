@@ -87,13 +87,13 @@ else
 fi
 
 # setup MOPAC for both environments
-source activate benchmark
+conda activate benchmark
 yes 'Yes' | $HOME/miniconda/envs/benchmark/bin/mopac $MOPACKEY > /dev/null
-source deactivate
+conda deactivate
 
-source activate testing
+conda activate testing
 yes 'Yes' | $HOME/miniconda/envs/testing/bin/mopac $MOPACKEY > /dev/null
-source deactivate
+conda deactivate
 
 # go to RMG-tests folder
 cd $BASE_DIR
