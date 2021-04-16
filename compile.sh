@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -o verbose
 
 cd $RMG_BENCHMARK
 conda activate benchmark
