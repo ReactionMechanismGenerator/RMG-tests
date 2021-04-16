@@ -16,7 +16,7 @@ if [ ! -d "RMG-Py" ]; then
 else
   # the directory was cached, make sure that it's up to date
   cd RMG-Py
-  git pull origin master
+  git pull --ff-only origin master
 fi
 
 travis_wait conda env create -q -n benchmark -f environment.yml
@@ -30,7 +30,7 @@ if [ ! -d "RMG-database" ]; then
   cd RMG-database
 else
   cd RMG-database
-  git pull origin master
+  git pull --ff-only origin master
 fi
 
 export RMGDB_BENCHMARK=`pwd`
