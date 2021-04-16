@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 cd $RMG_BENCHMARK
-source activate benchmark
+conda activate benchmark
 make clean
 make
-source deactivate
+conda deactivate
 
 cd $RMG_TESTING
-source activate testing
+conda activate testing
 make clean
 make
-source deactivate
+conda deactivate
