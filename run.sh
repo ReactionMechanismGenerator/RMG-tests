@@ -21,6 +21,7 @@ mkdir -p $BASE_DIR/results/benchmark/$test_case
 rm -rf $BASE_DIR/results/benchmark/$test_case/*
 cp $BASE_DIR/tests/$test_case/input.py $BASE_DIR/results/benchmark/$test_case/input.py
 
+source "$HOME/miniconda/etc/profile.d/conda.sh"
 conda activate benchmark
 
 echo "Benchmark code directory: "$RMG_BENCHMARK
