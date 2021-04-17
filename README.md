@@ -2,6 +2,21 @@ This git repository tracks changes in RMG model generation by retaining a histor
 
 Normally RMG-tests run automatically all the examples registered in `examples` folder on Travis platform. For convenience of debugging and running customized jobs (which sometimes violate Travis's restricted rule of memory usage and CPU time), we added the functionality of running RMG-tests locally. To run locally, please follow the instruction below.
 
+## Instructions for simultaneous updates to RMG-Py and RMG-database
+
+If you need an RMG-Py pull request to be tested on a certain branch of the RMG-database,
+add a commit that modifies the file `.github/workflows/CI.yml` in `RMG-Py`
+by changing the line `RMG_DB_BRANCH: master` to instead state the desired database branch.
+
+Likewise, if you wish to test an RMG-database update using a specific branch of RMG-Py,
+then add a commit to the modify the file `.github/workflows/CI.yml` in your `RMG-database`
+changing the line `RMG_PY_BRANCH: master` to instead state the desired RMG-Py branch.
+
+After the tests pass, remove the commits before merging the pull request to master.
+
+## Warning
+Avoid hyphens in your branch names, on either RMG-database or RMG-Py.
+
 
 ## Instructions for Running RMG-tests Locally
 
