@@ -12,3 +12,5 @@ conda activate testing
 make clean
 make
 conda deactivate
+
+set +o verbose
