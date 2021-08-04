@@ -47,7 +47,7 @@ echo "RMG_TESTING_BRANCH: "$RMG_TESTING_BRANCH
 echo "RMGDB_TESTING_BRANCH: "$RMGDB_TESTING_BRANCH
 
 # Url of the Travis build page
-export BUILD_URL="https://travis-ci.org/ReactionMechanismGenerator/RMG-tests/builds/$TRAVIS_BUILD_ID"
+export BUILD_URL="https://travis-ci.com/ReactionMechanismGenerator/RMG-tests/builds/$TRAVIS_BUILD_ID"
 
 echo "GitHub URL: " $GITHUB_STATUS_PATH
 echo "Build URL: " $BUILD_URL
