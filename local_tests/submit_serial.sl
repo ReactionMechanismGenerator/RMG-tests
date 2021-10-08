@@ -22,8 +22,8 @@ done
 rm all_envs.txt
 echo 'ALL POSSIBLE CRASHED ENVIRONMENTS HAVE BEEN REMOVED'
 
-py_branch="master"
-db_branch="master"
+py_branch="main"
+db_branch="main"
 jobs='NC'
 data_dir='../data_dir'
 
