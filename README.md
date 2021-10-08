@@ -6,13 +6,13 @@ Normally RMG-tests run automatically all the examples registered in `examples` f
 
 If you need an RMG-Py pull request to be tested on a certain branch of the RMG-database,
 add a commit that modifies the file `.github/workflows/CI.yml` in `RMG-Py`
-by changing the line `RMG_DB_BRANCH: master` to instead state the desired database branch.
+by changing the line `RMG_DB_BRANCH: main` to instead state the desired database branch.
 
 Likewise, if you wish to test an RMG-database update using a specific branch of RMG-Py,
 then add a commit to the modify the file `.github/workflows/CI.yml` in your `RMG-database`
-changing the line `RMG_PY_BRANCH: master` to instead state the desired RMG-Py branch.
+changing the line `RMG_PY_BRANCH: main` to instead state the desired RMG-Py branch.
 
-After the tests pass, remove the commits before merging the pull request to master.
+After the tests pass, remove the commits before merging the pull request to main.
 
 ## Warning
 Avoid hyphens in your branch names, on either RMG-database or RMG-Py.
