@@ -16,7 +16,7 @@ if [ ! -d "RMG-Py" ]; then
 else
   # the directory was cached, make sure that it's up to date
   cd RMG-Py
-  git pull --ff-only origin master
+  git pull --ff-only origin main
 fi
 
 travis_wait conda env create -q -n benchmark -f environment.yml
@@ -31,7 +31,7 @@ if [ ! -d "RMG-database" ]; then
   cd RMG-database
 else
   cd RMG-database
-  git pull --ff-only origin master
+  git pull --ff-only origin main
 fi
 
 export RMGDB_BENCHMARK=`pwd`
@@ -42,7 +42,7 @@ export testing=$BASE_DIR/code/testing
 mkdir -p $testing
 cd $testing
 
-if [ $RMG_TESTING_BRANCH == "master" ]; then
+if [ $RMG_TESTING_BRANCH == "main" ]; then
   # set the RMG directory variable
   export RMG_TESTING=$RMG_BENCHMARK
   # copy the conda environment
@@ -66,7 +66,7 @@ else
   cd ..
 fi
 
-if [ $RMGDB_TESTING_BRANCH == "master" ]; then
+if [ $RMGDB_TESTING_BRANCH == "main" ]; then
   # set the RMG database directory
   export RMGDB_TESTING=$RMGDB_BENCHMARK
 

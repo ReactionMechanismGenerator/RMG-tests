@@ -23,13 +23,13 @@ IFS='-' read -a msg_pieces <<< "$MESSAGE"
 IFS='-' read -a branch_pieces <<< "$BRANCH"
 
 if [ "${branch_pieces[0]}" == "rmgdb" ]; then
-	export RMG_TESTING_BRANCH="master"
+	export RMG_TESTING_BRANCH="main"
 	export RMGDB_TESTING_BRANCH="${branch_pieces[1]}"
 	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-database/statuses/${msg_pieces[1]}"
 
 elif [ "${branch_pieces[0]}" == "rmgpy" ]; then
 	export RMG_TESTING_BRANCH="${branch_pieces[1]}"
-	export RMGDB_TESTING_BRANCH="master"
+	export RMGDB_TESTING_BRANCH="main"
 	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-Py/statuses/${msg_pieces[1]}"
 
 elif [ "${branch_pieces[0]}" == "rmgpydb" ]; then

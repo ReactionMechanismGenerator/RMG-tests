@@ -58,7 +58,7 @@ git clone https://github.com/ReactionMechanismGenerator/RMG-Py.git
 # checkout right RMG-Py branch:
 cd RMG-Py
 
-if [ $RMG_TESTING_BRANCH != "master" ]; then
+if [ $RMG_TESTING_BRANCH != "main" ]; then
   git checkout -b ${RMG_TESTING_BRANCH} origin/${RMG_TESTING_BRANCH}
 fi
 export testing_py_sha=$(git rev-parse HEAD)
@@ -68,7 +68,7 @@ cd ..
 git clone https://github.com/ReactionMechanismGenerator/RMG-database.git
 cd RMG-database
 # checkout right RMG-database branch:
-if [ $RMGDB_TESTING_BRANCH != "master" ]; then
+if [ $RMGDB_TESTING_BRANCH != "main" ]; then
   git checkout -b ${RMGDB_TESTING_BRANCH} origin/${RMGDB_TESTING_BRANCH}
 fi
 export testing_db_sha=$(git rev-parse HEAD)

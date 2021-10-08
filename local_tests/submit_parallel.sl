@@ -11,8 +11,8 @@ echo "Local tests base dir: "$BASE_DIR
 
 # [USER INPUT] please specify the three
 # inputs below
-export RMG_TESTING_BRANCH="master"
-export RMGDB_TESTING_BRANCH="master"
+export RMG_TESTING_BRANCH="main"
+export RMGDB_TESTING_BRANCH="main"
 export JOBS="all"
 
 cd $(dirname "../data_dir")
