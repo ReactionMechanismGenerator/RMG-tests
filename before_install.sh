@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Standardize dirs
-export BASE_DIR=$TRAVIS_BUILD_DIR
+#export BASE_DIR=$TRAVIS_BUILD_DIR
+export BASE_DIR=$GITHUB_WORKSPACE
 
 # Create .netrc file for GitHub authentication
 echo "machine api.github.com
@@ -15,7 +16,8 @@ chmod +x ok.sh
 MESSAGE=$(git log --format=%B -n 1 HEAD)
 echo "Message: "$MESSAGE
 
-export BRANCH=$TRAVIS_BRANCH
+#export BRANCH=$TRAVIS_BRANCH
+export BRANCH=$GITHUB_REF
 echo "Branch: "$BRANCH
 
 # split the message on the '-' delimiter
