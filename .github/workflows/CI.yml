@@ -25,6 +25,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:  # TODO - change this back to main after testing
+          ref: switch_to_github_actions
       - name: before_install
         run: |
           . ./before_install.sh
