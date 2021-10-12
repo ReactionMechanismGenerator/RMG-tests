@@ -1,6 +1,5 @@
 # This workflow runs the continuous integration and regression tests for RMG-Py and RMG-database
 
-# TODO branches (lines 44-48 of .travis.yml)
 # TODO cache-ing (lines 38-40 of .travis.yml)
 # TODO figure out why the testing was grouped that way
 
@@ -8,11 +7,9 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push for branches that start with the following pattern
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: ['rmgpy-*', 'rmgdb-*', 'rmgpydb-*', 'rmgdbpy-*']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
