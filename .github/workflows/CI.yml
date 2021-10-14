@@ -27,8 +27,12 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REF
           echo ${{ github.repository }}
+          echo $GITHUB_WORKSPACE
+          echo $GITHUB_ENV
+          echo "{myvar}={'5'}" >> $GITHUB_ENV
       - name: before_install
         run: |
+          echo "${{ env.myvar }}
           . ./before_install.sh
           . ./color_define.sh
       - name: install
