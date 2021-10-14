@@ -6,8 +6,13 @@ cd ..
 # prepare benchmark RMG-Py and RMG-db
 
 
-echo "base dir :"
-echo "{$GITHUB_WORKSPACE}"
+echo "base dir: "
+echo "${BASE_DIR}"
+
+echo "GITHUB_WORKSPACE: "
+echo "${GITHUB_WORKSPACE}"
+echo "$GITHUB_WORKSPACE"
+
 export benchmark=$BASE_DIR/code/benchmark
 echo "benchmark dir :"$benchmark
 mkdir -p $benchmark
