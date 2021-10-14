@@ -1,0 +1,48 @@
+# This workflow runs the continuous integration and regression tests for RMG-Py and RMG-database
+
+# TODO cache-ing (lines 38-40 of .travis.yml)
+# TODO figure out why the testing was grouped that way, see if there are ways to parallelize
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push for branches that start with the following pattern
+  push:
+    branches: ['rmgpy-*', 'rmgdb-*', 'rmgpydb-*', 'rmgdbpy-*']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          . ./before_install.sh
+          . ./color_define.sh
+      - name: install
+        run: |
+          . ./install.sh
+          . ./version_summary.sh
+          chmod +x run.sh
+      - name: build
+        run: . ./compile.sh
+      - name: test  # TODO make this part run in parallel
+        run: |
+          ./run.sh rmg/aromatics no
+          ./run.sh rmg/nitrogen no
+          ./run.sh rmg/sulfur no
+          ./run.sh rmg/oxidation no
+          ./run.sh rmg/liquid_oxidation no
+          ./run.sh rmg/superminimal no
+          ./run.sh examples/eg1 no
+      - name: finish  # TODO need to make this conditional
+        run: |
+          . ./after_success.sh
+          . ./after_failure.sh
