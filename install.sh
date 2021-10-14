@@ -77,7 +77,8 @@ else
     git reset --hard origin/${RMG_TESTING_BRANCH}
   fi
 
-  travis_wait conda env create -q -n testing -f environment.yml
+  # travis_wait conda env create -q -n testing -f environment.yml
+  conda env create -q -n testing -f environment.yml
 
   export RMG_TESTING=`pwd`
   echo "RMG_TESTING=$RMG_TESTING" >> $GITHUB_ENV
