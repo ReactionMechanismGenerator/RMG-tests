@@ -8,7 +8,7 @@ cd ..
 echo "GITHUB_ENV: "
 cat $GITHUB_ENV
 
-BASE_DIR=$(cat $GITHUB_ENV)
+export BASE_DIR=$GITHUB_WORKSPACE
 
 echo "base dir :"$BASE_DIR
 export benchmark=$BASE_DIR/code/benchmark
