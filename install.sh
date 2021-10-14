@@ -5,12 +5,9 @@ set -o verbose  # echo commands before executing.
 cd ..
 # prepare benchmark RMG-Py and RMG-db
 
-echo "GITHUB_ENV: "
-cat $GITHUB_ENV
 
-export BASE_DIR=$GITHUB_WORKSPACE
-
-echo "base dir :"$BASE_DIR
+echo "base dir :"
+echo "{$GITHUB_WORKSPACE}"
 export benchmark=$BASE_DIR/code/benchmark
 echo "benchmark dir :"$benchmark
 mkdir -p $benchmark

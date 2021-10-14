@@ -3,7 +3,7 @@
 # Standardize dirs
 #export BASE_DIR=$TRAVIS_BUILD_DIR
 export BASE_DIR=$GITHUB_WORKSPACE
-echo "{BASE_DIR}={$GITHUB_WORKSPACE}" >> $GITHUB_ENV
+echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
 # echo "::set-env name=BASE_DIR::$BASE_DIR"
 echo "base dir: "$BASE_DIR
 echo "action path: "$GITHUB_ACTION_PATH
