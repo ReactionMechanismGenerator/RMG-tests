@@ -9,11 +9,9 @@ cd ..
 echo "base dir: "
 echo "${BASE_DIR}"
 
-echo "GITHUB_WORKSPACE: "
-echo "${GITHUB_WORKSPACE}"
-echo "$GITHUB_WORKSPACE"
-
 export benchmark=$BASE_DIR/code/benchmark
+echo "benchmark=$benchmark" >> $GITHUB_ENV
+
 echo "benchmark dir :"$benchmark
 mkdir -p $benchmark
 cd $benchmark
@@ -30,10 +28,13 @@ else
   git pull --ff-only origin main
 fi
 
-travis_wait conda env create -q -n benchmark -f environment.yml
+# travis_wait conda env create -q -n benchmark -f environment.yml
+conda env create -q -n benchmark -f environment.yml
 conda list -n benchmark
 
 export RMG_BENCHMARK=`pwd`
+echo "RMG_BENCHMARK=$RMG_BENCHMARK" >> $GITHUB_ENV
+
 cd ..
 
 # clone benchmark RMG-database:
@@ -46,16 +47,21 @@ else
 fi
 
 export RMGDB_BENCHMARK=`pwd`
+echo "RMGDB_BENCHMARK=$RMGDB_BENCHMARK" >> $GITHUB_ENV
+
 cd ..
 
 # prepare testing RMG-Py and RMG-db
 export testing=$BASE_DIR/code/testing
+echo "testing=$testing" >> $GITHUB_ENV
+
 mkdir -p $testing
 cd $testing
 
 if [ $RMG_TESTING_BRANCH == "main" ]; then
   # set the RMG directory variable
   export RMG_TESTING=$RMG_BENCHMARK
+  echo "RMG_TESTING=$RMG_TESTING" >> $GITHUB_ENV
   # copy the conda environment
   conda create --name testing --clone benchmark
 
@@ -74,12 +80,14 @@ else
   travis_wait conda env create -q -n testing -f environment.yml
 
   export RMG_TESTING=`pwd`
+  echo "RMG_TESTING=$RMG_TESTING" >> $GITHUB_ENV
   cd ..
 fi
 
 if [ $RMGDB_TESTING_BRANCH == "main" ]; then
   # set the RMG database directory
   export RMGDB_TESTING=$RMGDB_BENCHMARK
+  echo "RMGDB_TESTING=$RMGDB_TESTING" >> $GITHUB_ENV
 
 else
   # clone RMG-database
@@ -94,6 +102,7 @@ else
   fi
 
   export RMGDB_TESTING=`pwd`
+  echo "RMGDB_TESTING=$RMGDB_TESTING" >> $GITHUB_ENV
   cd ..
 fi
 

@@ -8,9 +8,7 @@ BASE_DIR=$GITHUB_WORKSPACE
 echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
 
 echo "BASE_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
-# echo "::set-env name=BASE_DIR::$BASE_DIR"
-echo "base dir: "$BASE_DIR
-echo "action path: "$GITHUB_ACTION_PATH
+
 
 # Create .netrc file for GitHub authentication
 echo "machine api.github.com
@@ -28,8 +26,10 @@ echo "Message: "$MESSAGE
 if [[ "$GITHUB_REF" == "refs/heads/"* ]]; 
 then 
 	export BRANCH=${GITHUB_REF:11}
+	echo "BRANCH=${GITHUB_REF:11}" >> $GITHUB_ENV
 else
 	export BRANCH=$GITHUB_REF
+	echo "BRANCH=$GITHUB_REF" >> $GITHUB_ENV
 fi
 
 echo "Branch: "$BRANCH
@@ -59,6 +59,12 @@ elif [ "${branch_pieces[0]}" == "rmgdbpy" ]; then
 	export GITHUB_STATUS_PATH="/repos/ReactionMechanismGenerator/RMG-database/statuses/${msg_pieces[1]}"
 fi
 
+# export variables into Github Actions environment
+echo "RMG_TESTING_BRANCH=$RMG_TESTING_BRANCH" >> $GITHUB_ENV
+echo "RMGDB_TESTING_BRANCH=$RMGDB_TESTING_BRANCH" >> $GITHUB_ENV
+echo "GITHUB_STATUS_PATH=$GITHUB_STATUS_PATH" >> $GITHUB_ENV
+
+
 echo "RMG_TESTING_BRANCH: "$RMG_TESTING_BRANCH
 echo "RMGDB_TESTING_BRANCH: "$RMGDB_TESTING_BRANCH
 
@@ -82,6 +88,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O mi
 bash ./miniconda.sh -b -p $HOME/miniconda
 source "$HOME/miniconda/etc/profile.d/conda.sh"
 export PATH=$HOME/miniconda/bin:$PATH
+echo "PATH=$HOME/miniconda/bin:$PATH" >> $GITHUB_ENV
 
 # Update conda itself
 conda update --yes conda
