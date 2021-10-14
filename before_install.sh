@@ -55,18 +55,19 @@ echo "RMG_TESTING_BRANCH: "$RMG_TESTING_BRANCH
 echo "RMGDB_TESTING_BRANCH: "$RMGDB_TESTING_BRANCH
 
 # Url of the Travis build page
-export BUILD_URL="https://travis-ci.com/ReactionMechanismGenerator/RMG-tests/builds/$TRAVIS_BUILD_ID"
+# export BUILD_URL="https://travis-ci.com/ReactionMechanismGenerator/RMG-tests/builds/$TRAVIS_BUILD_ID"
 
 echo "GitHub URL: " $GITHUB_STATUS_PATH
-echo "Build URL: " $BUILD_URL
+# echo "Build URL: " $BUILD_URL
 
 # Update GitHub status to pending
-./ok.sh _format_json \
-    state="pending" \
-    context="continuous-integration/rmg-tests" \
-    description="The RMG-tests build is running" \
-    target_url=$BUILD_URL \
-    | ./ok.sh _post $GITHUB_STATUS_PATH > /dev/null
+# TODO add this back in
+#./ok.sh _format_json \
+#    state="pending" \
+#    context="continuous-integration/rmg-tests" \
+#    description="The RMG-tests build is running" \
+#    target_url=$BUILD_URL \
+#    | ./ok.sh _post $GITHUB_STATUS_PATH > /dev/null
 
 # Set up anaconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
