@@ -17,7 +17,13 @@ MESSAGE=$(git log --format=%B -n 1 HEAD)
 echo "Message: "$MESSAGE
 
 #export BRANCH=$TRAVIS_BRANCH
-export BRANCH=$GITHUB_REF
+if [[ "$GITHUB_REF" == "refs/heads/"* ]]; 
+then 
+	export BRANCH=${GITHUB_REF:11}
+else
+	export BRANCH=$GITHUB_REF
+fi
+
 echo "Branch: "$BRANCH
 
 # split the message on the '-' delimiter
