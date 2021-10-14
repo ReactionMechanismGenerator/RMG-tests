@@ -52,7 +52,6 @@ if [ $RMG_TESTING_BRANCH == "main" ]; then
   echo "RMG_TESTING=$RMG_TESTING" >> $GITHUB_ENV
   # copy the conda environment
   conda create --name testing --clone benchmark
-
 else
   # clone entire RMG-Py
   if [ ! -d "RMG-Py" ]; then
@@ -93,6 +92,22 @@ else
   echo "RMGDB_TESTING=$RMGDB_TESTING" >> $GITHUB_ENV
   cd ..
 fi
+
+# Install and link Julia dependencies
+conda activate benchmark
+julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/ReactionMechanismGenerator/ReactionMechanismSimulator.jl\", rev=\"main\"))"
+julia -e "using Pkg; Pkg.add(\"PyCall\"); Pkg.add(\"DifferentialEquations\")"
+python -c "import julia; julia.install()"
+ln -sfn $(which python-jl) $(which python)
+conda deactivate
+
+conda activate testing
+julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/ReactionMechanismGenerator/ReactionMechanismSimulator.jl\", rev=\"main\"))"
+julia -e "using Pkg; Pkg.add(\"PyCall\"); Pkg.add(\"DifferentialEquations\")"
+python -c "import julia; julia.install()"
+ln -sfn $(which python-jl) $(which python)
+conda deactivate
+
 
 # setup MOPAC for both environments
 conda activate benchmark

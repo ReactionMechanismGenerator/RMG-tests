@@ -11,7 +11,7 @@ echo "machine api.github.com
 # Make ok.sh executable
 chmod +x ok.sh
 
-# Parse message for travis build
+# Parse message for Github Actions build
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
 MESSAGE=$(git log --format=%B -n 1 HEAD)
 echo "Message: "$MESSAGE
