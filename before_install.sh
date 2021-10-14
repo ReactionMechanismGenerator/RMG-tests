@@ -3,6 +3,8 @@
 # Standardize dirs
 #export BASE_DIR=$TRAVIS_BUILD_DIR
 export BASE_DIR=$GITHUB_WORKSPACE
+echo "base dir: "$BASE_DIR
+echo "action path: "$GITHUB_ACTION_PATH
 
 # Create .netrc file for GitHub authentication
 echo "machine api.github.com
