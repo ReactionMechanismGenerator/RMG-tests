@@ -4,6 +4,9 @@ set -o verbose  # echo commands before executing.
 # go to parent-folder of the RMG-tests repo:
 cd ..
 # prepare benchmark RMG-Py and RMG-db
+
+BASE_DIR="${{ env.BASE_DIR }}"
+
 echo "base dir :"$BASE_DIR
 export benchmark=$BASE_DIR/code/benchmark
 echo "benchmark dir :"$benchmark
