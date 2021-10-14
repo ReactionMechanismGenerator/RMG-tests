@@ -32,7 +32,7 @@ jobs:
           echo "{myvar}={'5'}" >> $GITHUB_ENV
       - name: before_install
         run: |
-          echo "${{ env.myvar }}
+          echo "${{ env.myvar }}"
           . ./before_install.sh
           . ./color_define.sh
       - name: install
