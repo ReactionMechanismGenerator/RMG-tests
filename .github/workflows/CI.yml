@@ -17,6 +17,8 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    env:
+      myvar2: "helloworld"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,13 +32,16 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo $GITHUB_ENV
           echo "myvar=hello" >> $GITHUB_ENV
+          echo ${{ env.myvar2 }}
       - name: before_install
         run: |
+          echo ${{ env.myvar2 }}
           echo "${{ env.myvar }}"
           . ./before_install.sh
           . ./color_define.sh
       - name: install
         run: |
+          echo ${{ env.myvar2 }}
           . ./install.sh
           . ./version_summary.sh
           chmod +x run.sh
