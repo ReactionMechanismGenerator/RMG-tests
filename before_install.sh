@@ -84,5 +84,9 @@ bash ./miniconda.sh -b -p $BASE_DIR/miniconda
 source "$BASE_DIR/miniconda/etc/profile.d/conda.sh"
 conda activate base
 
+# add conda commands to .bash_profile
+echo ". $BASE_DIR/miniconda/etc/profile.d/conda.sh" >> "$BASE_DIR/.bash_profile"
+echo "conda activate base" >> "$BASE_DIR/.bash_profile"
+
 # Update conda itself
 conda update --yes conda
