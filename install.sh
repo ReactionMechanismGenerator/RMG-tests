@@ -93,6 +93,10 @@ else
   cd ..
 fi
 
+
+source "$BASE_DIR/.bash_profile"
+conda env list
+
 # Get the conda environments from conda env list
 # pick the last column of the row with keyword 'testing' or 'benchmark'
 TESTING_CONDA_ENV=$(conda env list | awk '{print $NF}' | grep testing)
