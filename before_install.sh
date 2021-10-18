@@ -11,6 +11,9 @@ echo "machine api.github.com
 # Make ok.sh executable
 chmod +x ok.sh
 
+# Make run.sh executable
+chmod +x run.sh
+
 # Parse message for Github Actions build
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
 MESSAGE=$(git log --format=%B -n 1 HEAD)
@@ -77,10 +80,9 @@ echo "Build URL: " $BUILD_URL
 
 # Set up anaconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-bash ./miniconda.sh -b -p $HOME/miniconda
-source "$HOME/miniconda/etc/profile.d/conda.sh"
-export PATH=$HOME/miniconda/bin:$PATH
-echo "PATH=$HOME/miniconda/bin:$PATH" >> $GITHUB_ENV
+bash ./miniconda.sh -b -p $BASE_DIR/miniconda
+source "$BASE_DIR/miniconda/etc/profile.d/conda.sh"
+conda activate base
 
 # Update conda itself
 conda update --yes conda

@@ -93,15 +93,23 @@ else
   cd ..
 fi
 
+# Get the conda environments from conda env list
+# pick the last column of the row with keyword 'testing' or 'benchmark'
+TESTING_CONDA_ENV=$(conda env list | awk '{print $NF}' | grep testing)
+BENCHMARK_CONDA_ENV=$(conda env list | awk '{print $NF}' | grep benchmark)
+echo "TESTING_CONDA_ENV=$TESTING_CONDA_ENV" >> $GITHUB_ENV
+echo "BENCHMARK_CONDA_ENV=$BENCHMARK_CONDA_ENV" >> $GITHUB_ENV
+
 # Install and link Julia dependencies
-conda activate benchmark
+echo "Installing and linking Julia dependencies"
+conda activate $BENCHMARK_CONDA_ENV
 julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/ReactionMechanismGenerator/ReactionMechanismSimulator.jl\", rev=\"main\"))"
 julia -e "using Pkg; Pkg.add(\"PyCall\"); Pkg.add(\"DifferentialEquations\")"
 python -c "import julia; julia.install()"
 ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
-conda activate testing
+conda activate $TESTING_CONDA_ENV
 julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/ReactionMechanismGenerator/ReactionMechanismSimulator.jl\", rev=\"main\"))"
 julia -e "using Pkg; Pkg.add(\"PyCall\"); Pkg.add(\"DifferentialEquations\")"
 python -c "import julia; julia.install()"
@@ -110,12 +118,12 @@ conda deactivate
 
 
 # setup MOPAC for both environments
-conda activate benchmark
-yes 'Yes' | $HOME/miniconda/envs/benchmark/bin/mopac $MOPACKEY > /dev/null
+conda activate $BENCHMARK_CONDA_ENV
+yes 'Yes' | $BASE_DIR/miniconda/envs/benchmark/bin/mopac $MOPACKEY > /dev/null
 conda deactivate
 
-conda activate testing
-yes 'Yes' | $HOME/miniconda/envs/testing/bin/mopac $MOPACKEY > /dev/null
+conda activate $TESTING_CONDA_ENV
+yes 'Yes' | $BASE_DIR/miniconda/envs/testing/bin/mopac $MOPACKEY > /dev/null
 conda deactivate
 
 # go to RMG-tests folder
