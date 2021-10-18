@@ -121,14 +121,14 @@ ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
 
-# setup MOPAC for both environments
-conda activate $BENCHMARK_CONDA_ENV
-yes 'Yes' | $BASE_DIR/miniconda/envs/benchmark/bin/mopac $MOPACKEY > /dev/null
-conda deactivate
+# # setup MOPAC for both environments
+# conda activate $BENCHMARK_CONDA_ENV
+# yes 'Yes' | $BASE_DIR/miniconda/envs/benchmark/bin/mopac $MOPACKEY > /dev/null
+# conda deactivate
 
-conda activate $TESTING_CONDA_ENV
-yes 'Yes' | $BASE_DIR/miniconda/envs/testing/bin/mopac $MOPACKEY > /dev/null
-conda deactivate
+# conda activate $TESTING_CONDA_ENV
+# yes 'Yes' | $BASE_DIR/miniconda/envs/testing/bin/mopac $MOPACKEY > /dev/null
+# conda deactivate
 
 # go to RMG-tests folder
 cd $BASE_DIR
