@@ -109,14 +109,14 @@ echo "Installing and linking Julia dependencies"
 conda activate $BENCHMARK_CONDA_ENV
 julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/ReactionMechanismGenerator/ReactionMechanismSimulator.jl\", rev=\"main\"))"
 julia -e "using Pkg; Pkg.add(\"PyCall\"); Pkg.add(\"DifferentialEquations\")"
-python -c "import julia; julia.install()"
+python-jl -c "import julia; julia.install()"
 ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
 conda activate $TESTING_CONDA_ENV
 julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/ReactionMechanismGenerator/ReactionMechanismSimulator.jl\", rev=\"main\"))"
 julia -e "using Pkg; Pkg.add(\"PyCall\"); Pkg.add(\"DifferentialEquations\")"
-python -c "import julia; julia.install()"
+python-jl -c "import julia; julia.install()"
 ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
