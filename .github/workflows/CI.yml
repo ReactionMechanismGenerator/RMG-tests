@@ -45,7 +45,10 @@ jobs:
           ./run.sh rmg/liquid_oxidation no
           ./run.sh rmg/superminimal no
           ./run.sh examples/eg1 no
-      - name: finish  # TODO need to make this conditional
+      - name: finish  # TODO check that this works as expected for both success and failure
         run: |
-          . ./after_success.sh
-          . ./after_failure.sh
+          if [ ${{ job.status }} == 'success' ]; then
+            . ./after_success.sh
+          else
+            . ./after_failure.sh
+          fi
