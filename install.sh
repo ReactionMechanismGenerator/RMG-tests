@@ -107,6 +107,7 @@ echo "BENCHMARK_CONDA_ENV=$BENCHMARK_CONDA_ENV" >> $GITHUB_ENV
 # Install and link Julia dependencies
 echo "Installing and linking Julia dependencies"
 conda activate $BENCHMARK_CONDA_ENV
+PYTHONPATH=$RMG_BENCHMARK:$PYTHONPATH
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); Pkg.instantiate();'
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",version="0.4"));'
@@ -117,6 +118,7 @@ ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
 conda activate $TESTING_CONDA_ENV
+PYTHONPATH=$RMG_TESTING:$PYTHONPATH
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); Pkg.instantiate();'
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",version="0.4"));'
