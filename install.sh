@@ -111,6 +111,8 @@ export PYTHONPATH=$RMG_BENCHMARK:$PYTHONPATH
 export PATH=$RMG_BENCHMARK:$PATH
 echo "path: "$PATH
 echo "python path: "$PYTHONPATH
+cd $RMG_BENCHMARK
+ls
 julia -e 'ENV["PYTHON"]="'$BENCHMARK_CONDA_ENV'/bin/python"; using Pkg; Pkg.add("PyCall"); Pkg.build("PyCall")'
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
@@ -121,7 +123,9 @@ conda activate $TESTING_CONDA_ENV
 export PYTHONPATH=$RMG_TESTING:$PYTHONPATH
 export PATH=$RMG_TESTING:$PATH
 echo "path: "$PATH
-
+echo "python path: "$PYTHONPATH
+cd $RMG_TESTING
+ls
 julia -e 'ENV["PYTHON"]="'$TESTING_CONDA_ENV'/bin/python"; using Pkg; Pkg.add("PyCall"); Pkg.build("PyCall")'
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
