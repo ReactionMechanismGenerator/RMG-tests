@@ -25,9 +25,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: julia-actions/setup-julia@latest
-        with:
-          version: 1.5
+      #- uses: julia-actions/setup-julia@latest
+      #  with:
+      #    version: 1.5
       - name: before_install
         run: |
           . ./before_install.sh
