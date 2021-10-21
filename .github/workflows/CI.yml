@@ -25,6 +25,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
       #- uses: julia-actions/setup-julia@latest
       #  with:
       #    version: 1.5
