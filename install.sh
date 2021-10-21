@@ -98,6 +98,9 @@ fi
 conda env list
 conda info
 
+cd $BASE_DIR
+tree
+
 
 # Get the conda environments from conda env list
 # pick the last column of the row with keyword 'testing' or 'benchmark'
@@ -115,6 +118,9 @@ echo "path: "$PATH
 echo "python path: "$PYTHONPATH
 cd $RMG_BENCHMARK
 ls
+python -c "import rmgpy.molecule"
+
+
 # julia -e 'ENV["PYTHON"]="'$BENCHMARK_CONDA_ENV'/bin/python"; using Pkg; Pkg.add("PyCall"); Pkg.build("PyCall")'
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
 julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
