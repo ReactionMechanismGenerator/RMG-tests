@@ -17,6 +17,9 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     env:
       GH_TOKEN: ${{ secrets.RMG_DEV_TOKEN }}
       # TODO add MOPAC key -- but as separate job/step that is allowed to fail

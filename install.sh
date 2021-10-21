@@ -96,6 +96,8 @@ fi
 
 # source "$BASE_DIR/.bash_profile"
 conda env list
+conda info
+
 
 # Get the conda environments from conda env list
 # pick the last column of the row with keyword 'testing' or 'benchmark'
