@@ -22,7 +22,7 @@ mkdir -p $BASE_DIR/results/benchmark/$test_case
 rm -rf $BASE_DIR/results/benchmark/$test_case/*
 cp $BASE_DIR/tests/$test_case/input.py $BASE_DIR/results/benchmark/$test_case/input.py
 
-source "$BASE_DIR/.bash_profile"
+# source "$BASE_DIR/.bash_profile"
 conda activate $BENCHMARK_CONDA_ENV
 
 echo "Benchmark code directory: "$RMG_BENCHMARK

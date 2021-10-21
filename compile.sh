@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -o verbose
 
-source "$BASE_DIR/.bash_profile"
+# source "$BASE_DIR/.bash_profile"
 
 cd $RMG_BENCHMARK
 conda activate $BENCHMARK_CONDA_ENV

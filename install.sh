@@ -94,7 +94,7 @@ else
 fi
 
 
-source "$BASE_DIR/.bash_profile"
+# source "$BASE_DIR/.bash_profile"
 conda env list
 
 # Get the conda environments from conda env list
