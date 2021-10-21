@@ -79,14 +79,14 @@ echo "Build URL: " $BUILD_URL
     | ./ok.sh _post $GITHUB_STATUS_PATH > /dev/null
 
 # Set up anaconda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-bash ./miniconda.sh -b -p $BASE_DIR/miniconda
-source "$BASE_DIR/miniconda/etc/profile.d/conda.sh"
-conda activate base
+#wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+#bash ./miniconda.sh -b -p $BASE_DIR/miniconda
+#source "$BASE_DIR/miniconda/etc/profile.d/conda.sh"
+#conda activate base
 
 # add conda commands to .bash_profile
-echo ". $BASE_DIR/miniconda/etc/profile.d/conda.sh" >> "$BASE_DIR/.bash_profile"
-echo "conda activate base" >> "$BASE_DIR/.bash_profile"
+#echo ". $BASE_DIR/miniconda/etc/profile.d/conda.sh" >> "$BASE_DIR/.bash_profile"
+#echo "conda activate base" >> "$BASE_DIR/.bash_profile"
 
 # Update conda itself
-conda update --yes conda
+#conda update --yes conda
