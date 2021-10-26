@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -o verbose
 
 source "$BASE_DIR/.bash_profile"

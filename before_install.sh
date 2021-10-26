@@ -8,8 +8,6 @@ echo "BASE_DIR=$BASE_DIR" >> $GITHUB_ENV
 echo "machine api.github.com
     login RMGdev
     password $GH_TOKEN" > $HOME/.netrc
-# Make ok.sh executable
-chmod +x ok.sh
 
 # Parse message for Github Actions build
 # commit message of current head of RMG-tests = SHA1-ID of RMG-Py/database commit to be tested.
