@@ -11,6 +11,7 @@ if [ -z ${RMG_BENCHMARK+x} ]; then
 fi
 
 export ORIGIN_PYTHONPATH=$PYTHONPATH
+echo "ORIGIN_PYTHONPATH=$ORIGIN_PYTHONPATH" >> $GITHUB_ENV
 echo "Running $1 test case"
 
 ###########
@@ -21,11 +22,12 @@ mkdir -p $BASE_DIR/results/benchmark/$test_case
 rm -rf $BASE_DIR/results/benchmark/$test_case/*
 cp $BASE_DIR/tests/$test_case/input.py $BASE_DIR/results/benchmark/$test_case/input.py
 
-source "$HOME/miniconda/etc/profile.d/conda.sh"
-conda activate benchmark
+source "$BASE_DIR/.bash_profile"
+conda activate $BENCHMARK_CONDA_ENV
 
 echo "Benchmark code directory: "$RMG_BENCHMARK
 export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH
+echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
 rm -rf ${RMG_BENCHMARK}/rmgpy/rmgrc
 rmgrc="database.directory : "${RMGDB_BENCHMARK}/input/
@@ -42,6 +44,7 @@ fi
 
 conda deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
+echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
 #########
 #TESTING#
@@ -51,10 +54,11 @@ mkdir -p $BASE_DIR/results/testmodel/$test_case
 rm -rf $BASE_DIR/results/testmodel/$test_case/*
 cp $BASE_DIR/tests/$test_case/input.py $BASE_DIR/results/testmodel/$test_case/input.py
 
-conda activate testing
+conda activate $TESTING_CONDA_ENV
 
 echo "Testing code directory: "$RMG_TESTING
 export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
+echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
 rm -rf ${RMG_TESTING}/rmgpy/rmgrc
 rmgrc="database.directory : "${RMGDB_TESTING}/input/
@@ -71,20 +75,23 @@ fi
 
 conda deactivate
 export PYTHONPATH=$ORIGIN_PYTHONPATH
+echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
 # compare both generated models
 mkdir -p $BASE_DIR/results/check/$test_case
 rm -rf $BASE_DIR/results/check/$test_case/*
 cd $BASE_DIR/results/check/$test_case
 
-conda activate testing
+conda activate $TESTING_CONDA_ENV
 
 echo "Comparing results"
 export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
+echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
 bash $BASE_DIR/check.sh $test_case $BASE_DIR/results/benchmark/$test_case $BASE_DIR/results/testmodel/$test_case
 
 export PYTHONPATH=$ORIGIN_PYTHONPATH
+echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 conda deactivate
 
 if [ $scoop_test == "yes" ]; then
@@ -94,8 +101,9 @@ if [ $scoop_test == "yes" ]; then
   cp $BASE_DIR/tests/$test_case/input.py $BASE_DIR/results/testmodel/$test_case/scoop/input.py
 
   echo "Testing code directory: $RMG_TESTING"
-  conda activate testing
+  conda activate $TESTING_CONDA_ENV
   export PYTHONPATH=$RMG_TESTING:$ORIGIN_PYTHONPATH
+  echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
   echo "Running test job with scoop"
   if timeout 570 python -m scoop -n 1 $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/scoop/input.py > /dev/null
@@ -107,18 +115,21 @@ if [ $scoop_test == "yes" ]; then
   fi
 
   export PYTHONPATH=$ORIGIN_PYTHONPATH
+  echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
   conda deactivate
 
   # compare both generated models
   mkdir -p $BASE_DIR/results/check/$test_case/scoop
   cd $BASE_DIR/results/check/$test_case/scoop
 
-  conda activate benchmark
+  conda activate $BENCHMARK_CONDA_ENV
   export PYTHONPATH=$RMG_BENCHMARK:$ORIGIN_PYTHONPATH
+  echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
   bash $BASE_DIR/check.sh $test_case $BASE_DIR/results/benchmark/$test_case $BASE_DIR/results/testmodel/$test_case/scoop
 
   export PYTHONPATH=$ORIGIN_PYTHONPATH
+  echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
   conda deactivate
 fi
 
