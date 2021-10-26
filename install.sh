@@ -94,12 +94,35 @@ else
   cd ..
 fi
 
+source "$BASE_DIR/.bash_profile"
+conda env list
+
 # Get the conda environments from conda env list
 # pick the last column of the row with keyword 'testing' or 'benchmark'
 TESTING_CONDA_ENV=$(conda env list | awk '{print $NF}' | grep testing)
 BENCHMARK_CONDA_ENV=$(conda env list | awk '{print $NF}' | grep benchmark)
 echo "TESTING_CONDA_ENV=$TESTING_CONDA_ENV" >> $GITHUB_ENV
 echo "BENCHMARK_CONDA_ENV=$BENCHMARK_CONDA_ENV" >> $GITHUB_ENV
+
+
+# Install and link Julia dependencies
+echo "Installing and linking Julia dependencies"
+conda activate $BENCHMARK_CONDA_ENV
+export PYTHONPATH=$RMG_BENCHMARK:$PYTHONPATH
+export PATH=$RMG_BENCHMARK:$PATH
+python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
+julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
+ln -sfn $(which python-jl) $(which python)
+conda deactivate
+
+conda activate $TESTING_CONDA_ENV
+export PYTHONPATH=$RMG_TESTING:$PYTHONPATH
+export PATH=$RMG_TESTING:$PATH
+python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
+julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
+ln -sfn $(which python-jl) $(which python)
+conda deactivate
+
 
 # setup MOPAC for both environments
 conda activate $BENCHMARK_CONDA_ENV
@@ -109,6 +132,7 @@ conda deactivate
 conda activate $TESTING_CONDA_ENV
 yes 'Yes' | $BASE_DIR/miniconda/envs/testing/bin/mopac $MOPACKEY > /dev/null
 conda deactivate
+
 
 # go to RMG-tests folder
 cd $BASE_DIR

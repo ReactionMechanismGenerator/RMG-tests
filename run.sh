@@ -34,7 +34,7 @@ rmgrc="database.directory : "${RMGDB_BENCHMARK}/input/
 echo $rmgrc >> ${RMG_BENCHMARK}/rmgpy/rmgrc
 
 echo "Running benchmark job"
-if timeout 570 python $RMG_BENCHMARK/rmg.py $BASE_DIR/results/benchmark/$test_case/input.py > /dev/null
+if timeout 570 python-jl $RMG_BENCHMARK/rmg.py $BASE_DIR/results/benchmark/$test_case/input.py > /dev/null
 then
   echo "Benchmark job completed"
 else
@@ -65,7 +65,7 @@ rmgrc="database.directory : "${RMGDB_TESTING}/input/
 echo $rmgrc >> ${RMG_TESTING}/rmgpy/rmgrc
 
 echo "Running testing job"
-if timeout 570 python $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/input.py > /dev/null
+if timeout 570 python-jl $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/input.py > /dev/null
 then
   echo "Testing job completed"
 else
@@ -106,7 +106,7 @@ if [ $scoop_test == "yes" ]; then
   echo "PYTHONPATH=$PYTHONPATH" >> $GITHUB_ENV
 
   echo "Running test job with scoop"
-  if timeout 570 python -m scoop -n 1 $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/scoop/input.py > /dev/null
+  if timeout 570 python-jl -m scoop -n 1 $RMG_TESTING/rmg.py $BASE_DIR/results/testmodel/$test_case/scoop/input.py > /dev/null
   then
     echo "Testing job with scoop completed"
   else
