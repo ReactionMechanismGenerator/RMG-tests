@@ -1,0 +1,77 @@
+# This workflow runs the continuous integration and regression tests for RMG-Py and RMG-database
+
+# TODO cache-ing (lines 38-40 of .travis.yml)
+# TODO figure out why the testing was grouped that way, see if there are ways to parallelize
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push for branches that start with the following pattern
+  push:
+    branches: ['rmgpy-*', 'rmgdb-*', 'rmgpydb-*', 'rmgdbpy-*']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    env:
+      GH_TOKEN: ${{ secrets.RMG_DEV_TOKEN }}
+      MOPACKEY: ${{ secrets.MOPACKEY }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: before_install
+        run: |
+          chmod +x *.sh
+          ./before_install.sh
+          ./color_define.sh
+      - name: install
+        run: |
+          ./install.sh
+          ./version_summary.sh
+      - name: build
+        run: ./compile.sh
+      - name: test  # TODO make this part run in parallel
+        run: |
+          ./run.sh rmg/aromatics no
+          aromatics_status=$?
+          ./run.sh rmg/nitrogen no
+          nitrogen_status=$?
+          ./run.sh rmg/sulfur no
+          sulfur_status=$?
+          ./run.sh rmg/oxidation no
+          oxidation_status=$?
+          ./run.sh rmg/liquid_oxidation no
+          liquid_oxidation_status=$?
+          ./run.sh rmg/superminimal no
+          superminimal_status=$?
+          ./run.sh examples/eg1 no
+          eg1_status=$?
+          
+          echo "aromatics status: $aromatics_status"
+          echo "nitrogen status: $nitrogen_status"
+          echo "sulfur status: $sulfur_status"
+          echo "oxidation status: $oxidation_status"
+          echo "liquid oxidation status: $liquid_oxidation_status"
+          echo "superminimal status: $superminimal_status"
+          echo "eg1 status: $eg1_status"
+          if [ $(($aromatics_status | $nitrogen_status | $sulfur_status | $oxidation_status | $liquid_oxidation_status | $superminimal_status | $eg1_status)) -ne 0 ];
+          then
+            echo "Failed regression tests (non-zero exit code from regression test)"
+            exit 1
+          fi
+      - name: finish  # TODO check that this works as expected for both success and failure
+        if: always()
+        run: |
+          if [ ${{ job.status }} == 'success' ]; then
+            ./after_success.sh
+          else
+            ./after_failure.sh
+          fi
