@@ -4,7 +4,7 @@
 database(
     thermoLibraries=['BurkeH2O2','thermo_DFT_CCSDTF12_BAC','primaryNS','primaryThermoLibrary'],
     reactionLibraries=['primarySulfurLibrary'],
-    seedMechanisms=['BurkeH2O2inN2'],
+    seedMechanisms=['primaryH2O2'],
     kineticsDepositories=['training'],
     kineticsFamilies='default',
     kineticsEstimator='rate rules',

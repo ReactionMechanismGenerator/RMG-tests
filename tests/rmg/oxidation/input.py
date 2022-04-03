@@ -4,7 +4,7 @@
 database(
     thermoLibraries = ['primaryThermoLibrary','DFT_QCI_thermo'],
     reactionLibraries = [],
-    seedMechanisms = ['BurkeH2O2inN2','ERC-FoundationFuelv0.9'],
+    seedMechanisms = ['primaryH2O2','ERC-FoundationFuelv0.9'],
     kineticsDepositories = ['training'],
     kineticsFamilies = ['H_Abstraction','R_Addition_MultipleBond','intra_H_migration','R_Recombination','Disproportionation'],
     kineticsEstimator = 'rate rules',

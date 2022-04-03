@@ -2,7 +2,7 @@
 database(
     thermoLibraries = ['BurkeH2O2','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','primaryNS','primaryThermoLibrary','SulfurGlarborgH2S','SulfurGlarborgMarshall'],
     reactionLibraries = ['primarySulfurLibrary','Sulfur/GlarborgH2S','Sulfur/GlarborgMarshall'],
-    seedMechanisms = ['BurkeH2O2inN2'],
+    seedMechanisms = ['primaryH2O2'],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
     kineticsEstimator = 'rate rules',

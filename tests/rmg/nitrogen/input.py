@@ -5,7 +5,7 @@
 database(
     thermoLibraries=['BurkeH2O2','primaryThermoLibrary','thermo_DFT_CCSDTF12_BAC','DFT_QCI_thermo','FFCM1(-)','NitrogenCurran'],
     reactionLibraries=[('FFCM1(-)',False),'Nitrogen_Dean_and_Bozzelli'],
-    seedMechanisms=['BurkeH2O2inArHe'],
+    seedMechanisms=['primaryH2O2'],
     kineticsDepositories=['training'],
     kineticsFamilies='default',
     kineticsEstimator='rate rules',
