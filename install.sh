@@ -111,7 +111,7 @@ conda activate $BENCHMARK_CONDA_ENV
 export PYTHONPATH=$RMG_BENCHMARK:$PYTHONPATH
 export PATH=$RMG_BENCHMARK:$PATH
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
-julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
+julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); using ReactionMechanismSimulator'
 ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
@@ -119,7 +119,7 @@ conda activate $TESTING_CONDA_ENV
 export PYTHONPATH=$RMG_TESTING:$PYTHONPATH
 export PATH=$RMG_TESTING:$PATH
 python -c "import julia; julia.install(); import diffeqpy; diffeqpy.install()"
-julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); Pkg.add(PackageSpec(name="StochasticDiffEq",version="6.36.0")); using ReactionMechanismSimulator'
+julia -e 'using Pkg; Pkg.add(PackageSpec(name="ReactionMechanismSimulator",rev="main")); using ReactionMechanismSimulator'
 ln -sfn $(which python-jl) $(which python)
 conda deactivate
 
