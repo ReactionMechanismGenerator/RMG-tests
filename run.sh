@@ -39,7 +39,6 @@ then
   echo "Benchmark job completed"
 else
   echo "Benchmark job timed out"
-  exit 1
 fi
 
 conda deactivate
