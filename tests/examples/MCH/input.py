@@ -1,7 +1,7 @@
 # Data sources
 database(
     thermoLibraries = ['BurkeH2O2', 'primaryThermoLibrary','DFT_QCI_thermo','CBS_QB3_1dHR'],
-    reactionLibraries = [('BurkeH2O2inN2', False), ('combustion_core/version5', False)],
+    reactionLibraries = [('primaryH2O2', False), ('combustion_core/version5', False)],
     seedMechanisms = [],
     kineticsDepositories = ['training'],
     kineticsFamilies = 'default',
